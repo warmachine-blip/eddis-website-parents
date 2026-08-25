@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  /* Core brand tokens — verified byte-for-byte against the reference site's compiled CSS */
+  --color-navy-deep: #0f1a2e;
+  --color-navy: #1a2740;
+  --color-navy-soft: #2d3a55;
+  --color-off-white: #f8f6f0;
+  --color-pearl: #f0eee8;
+  --color-charcoal: #2a2a2a;
+  --color-charcoal-soft: #4a4a4a;
+  --color-brass: #c19960;
+  --color-brass-light: #d4b27f;
+  --color-brass-deep: #a07f4a;
+  --color-brass-text: #8a6633;
+  --color-line: #e0dcd0;
+  --color-muted: #7c8499;
+
+  /* Full navy scale (reference calls this "navy-50" .. "navy-950") */
+  --color-navy-50: #f2f5f9;
+  --color-navy-100: #e2e8f1;
+  --color-navy-200: #c2cddd;
+  --color-navy-300: #94a3be;
+  --color-navy-400: #5e6f8e;
+  --color-navy-500: #3a4c6b;
+  --color-navy-600: #2d3a55;
+  --color-navy-700: #23344f;
+  --color-navy-800: #142339;
+  --color-navy-900: #1a2740;
+  --color-navy-950: #0f1a2e;
+
+  /* Full gold/brass scale (reference calls this "gold-50" .. "gold-700") */
+  --color-gold-50: #faf6ec;
+  --color-gold-100: #f2e8ce;
+  --color-gold-200: #e5d2a0;
+  --color-gold-300: #d4b27f;
+  --color-gold-400: #c9a66f;
+  --color-gold-700: #856728;
+
+  /* Cyan accent used on content cards/links (blog, etc.) */
+  --color-cyan-50: #eff9fe;
+  --color-cyan-100: #def2fd;
+  --color-cyan-500: #0ea5e9;
+  --color-cyan-600: #0481c0;
+  --color-cyan-700: #076699;
+
+  /* Card border used on elevated cards (distinct from the warm --line divider) */
+  --color-card-border: #e2e8f1;
+
+  --background: var(--color-off-white);
+  --foreground: var(--color-charcoal);
+
+  /* Motion tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-page-exit: 150ms;
+  --duration-page-enter: 220ms;
+  --duration-page-move: 260ms;
+}
+
+@theme inline {
+  --color-navy-deep: var(--color-navy-deep);
+  --color-navy: var(--color-navy);
+  --color-navy-soft: var(--color-navy-soft);
+  --color-off-white: var(--color-off-white);
+  --color-pearl: var(--color-pearl);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-soft: var(--color-charcoal-soft);
+  --color-brass: var(--color-brass);
+  --color-brass-light: var(--color-brass-light);
+  --color-brass-deep: var(--color-brass-deep);
+  --color-brass-text: var(--color-brass-text);
+  --color-line: var(--color-line);
+  --color-muted: var(--color-muted);
+
+  --color-navy-50: var(--color-navy-50);
+  --color-navy-100: var(--color-navy-100);
+  --color-navy-200: var(--color-navy-200);
+  --color-navy-300: var(--color-navy-300);
+  --color-navy-400: var(--color-navy-400);
+  --color-navy-500: var(--color-navy-500);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-950: var(--color-navy-950);
+
+  --color-gold-50: var(--color-gold-50);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-200: var(--color-gold-200);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-700: var(--color-gold-700);
+
+  --color-cyan-50: var(--color-cyan-50);
+  --color-cyan-100: var(--color-cyan-100);
+  --color-cyan-500: var(--color-cyan-500);
+  --color-cyan-600: var(--color-cyan-600);
+  --color-cyan-700: var(--color-cyan-700);
+
+  --color-card-border: var(--color-card-border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond Fallback", Georgia, serif;
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    color: inherit;
+    letter-spacing: -0.01em;
+    font-feature-settings: "kern", "liga", "calt";
+    font-weight: 500;
+    line-height: 1.15;
+  }
+}
+
+/* Page transitions — see src/components/page-transition.tsx */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(.page-exit) {
+  animation: var(--duration-page-exit) var(--ease-out) both page-fade reverse;
+}
+
+::view-transition-new(.page-enter) {
+  animation:
+    var(--duration-page-enter) var(--ease-out) var(--duration-page-exit) both page-fade,
+    var(--duration-page-move) var(--ease-out) both page-slide-up;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-slide-up {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* Scroll reveal — see src/components/scroll-reveal.tsx */
+main section[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+}
+
+main section[data-reveal][data-reveal-visible] {
+  opacity: 1;
+  /* transform: none rather than translateY(0) — any non-"none" transform value
+     creates a new containing block and silently breaks position: sticky in
+     descendants (e.g. the pinned headline in ScrollStroke). */
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main section[data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
