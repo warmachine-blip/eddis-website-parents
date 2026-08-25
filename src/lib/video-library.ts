@@ -3,7 +3,7 @@ export type LibraryVideo = {
   title: string;
 };
 
-export const youtubeChannelUrl = "https://www.youtube.com/@TXPainSpecialist";
+export const youtubeChannelUrl = "https://www.youtube.com/@htxpaincare";
 
 export const libraryVideos: LibraryVideo[] = [
   { videoId: "Rg8h6wTsoHw", title: "Effective Pain Relief Therapies for Athletes | Dr. Edward Baumgartner" },

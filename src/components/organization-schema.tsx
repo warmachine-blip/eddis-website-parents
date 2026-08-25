@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/site";
+import { socialLinks } from "@/lib/social";
 
 export default function OrganizationSchema() {
   const data = {
@@ -17,7 +18,7 @@ export default function OrganizationSchema() {
       medicalSpecialty: ["Anesthesiology", "Pain Medicine"],
     },
     foundingDate: "2018",
-    sameAs: [],
+    sameAs: socialLinks,
     location: [
       {
         "@type": "MedicalClinic",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const quickLinks = [
   { label: "Register for the 5K", sub: "imas5k.itsyourrace.com", href: "https://imas5k.itsyourrace.com", icon: "bolt" as const },
-  { label: "Donate to the 5K", sub: "donorbox.org/imas5k", href: "https://donorbox.org/imas5k", icon: "shield" as const },
+  { label: "Donate to Ima's Home", sub: "imashome.com/give", href: "https://imashome.com/give", icon: "shield" as const },
   { label: "Sponsor a child", sub: "imashome.com", href: "https://imashome.com", icon: "pulse" as const },
 ];
 
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "How can I get involved or donate?",
-    a: "You can register for the 5K at imas5k.itsyourrace.com, donate at donorbox.org/imas5k, or sponsor a child at imashome.com/child-sponsorship.html. Every dollar helps cover food, shelter, education, and care for the children.",
+    a: "You can register for the 5K at imas5k.itsyourrace.com, donate at imashome.com/give, or sponsor a child at imashome.com/child-sponsorship.html. Every dollar helps cover food, shelter, education, and care for the children.",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function ImasHomePage() {
                 daily experience of being known and loved. Help us close the gap.
               </p>
               <a
-                href="https://donorbox.org/imas5k"
+                href="https://imashome.com/give"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-block rounded-full border border-brass bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"

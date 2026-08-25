@@ -11,6 +11,14 @@ import { legalNav, offices, practice } from "@/lib/nav";
 const footerLinkClass =
   "group relative inline-flex w-fit items-center before:pointer-events-none before:absolute before:-bottom-0.5 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-brass-light before:transition-transform before:duration-300 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:text-brass-light hover:before:origin-left hover:before:scale-x-100";
 
+/**
+ * Same sweep technique as footerLinkClass, but `block` instead of
+ * `inline-flex` so multi-line content (an address with a <br>) still
+ * wraps normally — the underline lands beneath the block's own width.
+ */
+const footerLinkBlockClass =
+  "group relative block w-fit before:pointer-events-none before:absolute before:-bottom-0.5 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-brass-light before:transition-transform before:duration-300 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:text-brass-light hover:before:origin-left hover:before:scale-x-100";
+
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link href={href} className={footerLinkClass}>
@@ -117,9 +125,17 @@ export default function SiteFooter() {
                 {office.city} Office
               </h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-off-white/75">
-                {office.addressLine1}
-                <br />
-                {office.addressLine2}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.mapsQuery)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={footerLinkBlockClass}
+                  aria-label={`Get directions to the ${office.city} office`}
+                >
+                  {office.addressLine1}
+                  <br />
+                  {office.addressLine2}
+                </a>
                 <br />
                 <a href={practice.phoneHref} className={`tabular-nums ${footerLinkClass}`}>
                   {practice.phone}
