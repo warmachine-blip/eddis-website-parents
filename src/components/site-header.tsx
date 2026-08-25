@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { practice, primaryNav } from "@/lib/nav";
+import ContactSocialReveal from "@/components/contact-social-reveal";
 
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -84,12 +85,7 @@ export default function SiteHeader() {
           >
             Community
           </Link>
-          <Link
-            href="/contact"
-            className="py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass"
-          >
-            Contact
-          </Link>
+          <ContactSocialReveal />
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">
