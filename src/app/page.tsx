@@ -6,6 +6,7 @@ import SectionHeading from "@/components/section-heading";
 import { IconBadge } from "@/components/icon-badge";
 import ScrollStroke from "@/components/scroll-stroke";
 import ServiceCard, { ServiceBanner } from "@/components/service-card";
+import { TiltCard, TiltCardGroup } from "@/components/tilt-card";
 import ConditionCard from "@/components/condition-card";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
@@ -85,15 +86,6 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-line bg-pearl">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-center lg:px-10">
-          <p className="text-xs leading-relaxed text-charcoal-soft">
-            {practice.name} — formerly {practice.formerNames}. Same Dr. Baumgartner,
-            same locations, expanded vision.
-          </p>
-        </div>
-      </section>
-
       <section className="relative flex min-h-[88vh] items-center overflow-hidden bg-charcoal max-md:min-h-[70vh]">
         <HeroBackground />
 
@@ -211,18 +203,20 @@ export default function Home() {
               own family.
             </p>
 
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {credentials.map((c) => (
-                <div
+                <TiltCard
                   key={c.title}
+                  id={c.title}
+                  accent="brass"
                   className="rounded-xl border border-card-border bg-white p-5 shadow-[0_1px_3px_rgba(26,39,64,0.06),0_8px_24px_-4px_rgba(26,39,64,0.08)]"
                 >
                   <IconBadge icon={c.icon} tone="brass" />
                   <p className="mt-4 font-serif text-lg text-navy">{c.title}</p>
                   <p className="mt-1 text-sm text-charcoal-soft">{c.subtitle}</p>
-                </div>
+                </TiltCard>
               ))}
-            </div>
+            </TiltCardGroup>
 
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link
@@ -253,13 +247,13 @@ export default function Home() {
             title="Modern interventional care, tailored to your pain."
             lead="Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit — applied with the precision and judgment every patient deserves."
           />
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <TiltCardGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services
               .filter((service) => !service.comingSoon)
               .map((service) => (
                 <ServiceCard key={service.slug} service={service} />
               ))}
-          </div>
+          </TiltCardGroup>
           {services
             .filter((service) => service.comingSoon)
             .map((service) => (
@@ -277,11 +271,11 @@ export default function Home() {
           title="The conditions we treat — with the expertise they require."
           lead="From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward."
         />
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <TiltCardGroup className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {conditions.map((condition) => (
             <ConditionCard key={condition.slug} condition={condition} />
           ))}
-        </div>
+        </TiltCardGroup>
         <div className="mt-10 text-center">
           <Link
             href="/pain-center"

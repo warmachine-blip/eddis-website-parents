@@ -160,7 +160,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
 
       {/* FAQ */}
       {data.faqs && (
-        <section className="bg-pearl">
+        <section className="bg-navy-50">
           <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
             <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-5">

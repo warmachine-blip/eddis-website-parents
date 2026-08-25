@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Service } from "@/lib/services";
 import { IconBadge } from "@/components/icon-badge";
+import { TiltCard } from "@/components/tilt-card";
 
 const cardShadow =
   "shadow-[0_1px_3px_rgba(26,39,64,0.06),0_8px_24px_-4px_rgba(26,39,64,0.08)]";
@@ -37,9 +38,12 @@ function LearnMore() {
 
 export default function ServiceCard({ service }: { service: Service }) {
   return (
-    <Link
+    <TiltCard
+      id={service.slug}
       href={service.href}
-      className={`group flex flex-col justify-between rounded-2xl border border-card-border bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-brass-light ${cardShadow} ${cardHoverShadow}`}
+      accent="brass"
+      contentClassName="flex h-full flex-col justify-between"
+      className={`rounded-2xl border border-card-border bg-white p-6 transition-[border-color] duration-300 hover:border-brass-light ${cardShadow} ${cardHoverShadow}`}
     >
       <div>
         <div className="flex items-start justify-between">
@@ -54,7 +58,7 @@ export default function ServiceCard({ service }: { service: Service }) {
       <div className="mt-5">
         <LearnMore />
       </div>
-    </Link>
+    </TiltCard>
   );
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/components/section-heading";
 import ConditionCard from "@/components/condition-card";
+import { TiltCardGroup } from "@/components/tilt-card";
 import { conditions } from "@/lib/conditions";
 
 export const metadata: Metadata = {
@@ -21,10 +22,12 @@ export default function PainCenterPage() {
         />
       </section>
 
-      <section className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {conditions.map((condition) => (
-          <ConditionCard key={condition.slug} condition={condition} />
-        ))}
+      <section className="mt-12">
+        <TiltCardGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {conditions.map((condition) => (
+            <ConditionCard key={condition.slug} condition={condition} />
+          ))}
+        </TiltCardGroup>
       </section>
 
       <section className="mt-16 border-t border-line pt-10">

@@ -1,11 +1,14 @@
-import Link from "next/link";
 import type { Condition } from "@/lib/conditions";
+import { TiltCard } from "@/components/tilt-card";
 
 export default function ConditionCard({ condition }: { condition: Condition }) {
   return (
-    <Link
+    <TiltCard
+      id={condition.slug}
       href={condition.href}
-      className="group flex items-start justify-between gap-4 rounded-xl border border-card-border bg-white p-5 shadow-[0_1px_3px_rgba(26,39,64,0.06),0_8px_24px_-4px_rgba(26,39,64,0.08)] transition-colors hover:border-navy-deep hover:bg-navy-deep"
+      decorated={false}
+      contentClassName="flex h-full items-start justify-between gap-4"
+      className="rounded-xl border border-card-border bg-white p-5 shadow-[0_1px_3px_rgba(26,39,64,0.06),0_8px_24px_-4px_rgba(26,39,64,0.08)] transition-colors hover:border-navy-deep hover:bg-navy-deep"
     >
       <div>
         <h3 className="font-serif text-lg text-navy transition-colors group-hover:text-off-white">
@@ -22,6 +25,6 @@ export default function ConditionCard({ condition }: { condition: Condition }) {
       >
         <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-    </Link>
+    </TiltCard>
   );
 }

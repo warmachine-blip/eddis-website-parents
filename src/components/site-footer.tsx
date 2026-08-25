@@ -1,6 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { legalNav, offices, practice } from "@/lib/nav";
+
+/**
+ * Underline sweeps in from the left on hover, retracts to the right on
+ * leave. Technique adapted from Skiper UI's "Skiper 40" (Link000 variant,
+ * https://skiper-ui.com/v1/skiper40) — pure CSS, no motion library needed.
+ */
+const footerLinkClass =
+  "group relative inline-flex w-fit items-center before:pointer-events-none before:absolute before:-bottom-0.5 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-brass-light before:transition-transform before:duration-300 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:text-brass-light hover:before:origin-left hover:before:scale-x-100";
+
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link href={href} className={footerLinkClass}>
+      {children}
+    </Link>
+  );
+}
 
 const featuredServices = [
   { label: "Spinal Cord Stimulation", href: "/spinal-cord-stimulation-specialist" },
@@ -55,9 +72,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {practiceLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-brass-light">
-                    {l.label}
-                  </Link>
+                  <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -70,15 +85,13 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {featuredServices.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-brass-light">
-                    {l.label}
-                  </Link>
+                  <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
               ))}
               <li className="pt-1">
-                <Link href="/services" className="font-medium text-brass-light hover:underline">
-                  All Services →
-                </Link>
+                <FooterLink href="/services">
+                  <span className="font-medium text-brass-light">All Services →</span>
+                </FooterLink>
               </li>
             </ul>
           </div>
@@ -90,9 +103,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {patientLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-brass-light">
-                    {l.label}
-                  </Link>
+                  <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -110,7 +121,7 @@ export default function SiteFooter() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} className="tabular-nums hover:text-brass-light">
+                <a href={practice.phoneHref} className={`tabular-nums ${footerLinkClass}`}>
                   {practice.phone}
                 </a>
               </address>
@@ -131,9 +142,7 @@ export default function SiteFooter() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {legalNav.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-brass-light">
-                    {l.label}
-                  </Link>
+                  <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
               ))}
             </ul>

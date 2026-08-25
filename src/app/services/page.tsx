@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/components/section-heading";
 import ServiceCard, { ServiceBanner } from "@/components/service-card";
+import { TiltCardGroup } from "@/components/tilt-card";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -21,12 +22,14 @@ export default function ServicesPage() {
         />
       </section>
 
-      <section className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {services
-          .filter((service) => !service.comingSoon)
-          .map((service) => (
-            <ServiceCard key={service.slug} service={service} />
-          ))}
+      <section className="mt-12">
+        <TiltCardGroup className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services
+            .filter((service) => !service.comingSoon)
+            .map((service) => (
+              <ServiceCard key={service.slug} service={service} />
+            ))}
+        </TiltCardGroup>
       </section>
 
       <section>
