@@ -58,7 +58,7 @@ export default function ContactForm() {
               name="name"
               type="text"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
@@ -70,7 +70,7 @@ export default function ContactForm() {
               name="email"
               type="email"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function ContactForm() {
               name="phone"
               type="tel"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
@@ -96,7 +96,7 @@ export default function ContactForm() {
               id="reason"
               name="reason"
               defaultValue=""
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             >
               <option value="" disabled>
                 Select an option
@@ -119,7 +119,7 @@ export default function ContactForm() {
             name="message"
             required
             rows={5}
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           />
         </div>
 

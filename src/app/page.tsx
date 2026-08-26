@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[88vh] items-center overflow-hidden bg-charcoal max-md:min-h-[70vh]">
+      <section className="relative flex items-center overflow-hidden bg-charcoal max-md:min-h-[70vh] max-md:flex-col md:min-h-[88vh]">
         <HeroBackground />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-[100px]">

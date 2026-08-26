@@ -33,7 +33,7 @@ export default function NewsletterSignup() {
           type="email"
           required
           placeholder="you@example.com"
-          className="w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+          className="w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
         />
       </div>
       <button

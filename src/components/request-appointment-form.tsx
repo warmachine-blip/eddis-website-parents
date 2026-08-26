@@ -85,7 +85,7 @@ export default function RequestAppointmentForm() {
               name="firstName"
               type="text"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
@@ -97,7 +97,7 @@ export default function RequestAppointmentForm() {
               name="lastName"
               type="text"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function RequestAppointmentForm() {
               name="email"
               type="email"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
@@ -124,7 +124,7 @@ export default function RequestAppointmentForm() {
               name="phone"
               type="tel"
               required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function RequestAppointmentForm() {
             name="dateOfBirth"
             type="date"
             required
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           />
           <p className="mt-1.5 text-xs text-muted">
             Required for insurance verification.
@@ -154,7 +154,7 @@ export default function RequestAppointmentForm() {
             name="location"
             defaultValue=""
             required
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           >
             <option value="" disabled>
               Select an option
@@ -177,7 +177,7 @@ export default function RequestAppointmentForm() {
               id="preferredDate"
               name="preferredDate"
               type="date"
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
@@ -188,7 +188,7 @@ export default function RequestAppointmentForm() {
               id="preferredTime"
               name="preferredTime"
               defaultValue=""
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             >
               <option value="" disabled>
                 Select an option
@@ -211,7 +211,7 @@ export default function RequestAppointmentForm() {
             name="reason"
             defaultValue=""
             required
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           >
             <option value="" disabled>
               Select an option
@@ -233,7 +233,7 @@ export default function RequestAppointmentForm() {
             name="insuranceProvider"
             type="text"
             placeholder="e.g. BCBS PPO, Medicare, Aetna…"
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal placeholder:text-muted focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal placeholder:text-muted focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           />
           <p className="mt-1.5 text-xs text-muted">
             Workers&rsquo; compensation? Personal injury? Note it below.
@@ -248,7 +248,7 @@ export default function RequestAppointmentForm() {
             id="message"
             name="message"
             rows={5}
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-sm text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
+            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
           />
         </div>
 
