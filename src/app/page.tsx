@@ -165,9 +165,11 @@ export default function Home() {
               aria-hidden="true"
             />
 
-            <button
-              type="button"
-              aria-label="Play video: Why I founded HTx Pain"
+            <a
+              href="https://www.youtube.com/watch?v=G9UXJJICk-w"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Play video: Meet Dr. Edward Baumgartner, on YouTube"
               className="absolute left-1/2 top-1/2 grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-charcoal/30 backdrop-blur-sm transition-transform hover:scale-105"
             >
               <span className="grid h-16 w-16 place-items-center rounded-full bg-brass">
@@ -175,7 +177,7 @@ export default function Home() {
                   <path d="M8 5v14l11-7Z" />
                 </svg>
               </span>
-            </button>
+            </a>
 
             <div className="absolute inset-x-0 bottom-0 p-6">
               <span className="inline-block bg-charcoal/70 px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-off-white">
