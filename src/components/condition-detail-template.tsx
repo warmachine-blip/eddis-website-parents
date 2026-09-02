@@ -203,20 +203,6 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         </section>
       )}
 
-      {/* Testimonial */}
-      {data.testimonial && (
-        <section className="border-t border-line bg-pearl">
-          <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
-            <IconBadge icon="shield" tone="brass" />
-            <blockquote className="mx-auto mt-6 text-pretty font-serif text-2xl italic leading-snug text-navy sm:text-3xl">
-              &ldquo;{data.testimonial.quote}&rdquo;
-            </blockquote>
-            <p className="mt-5 text-sm uppercase tracking-[0.18em] text-brass-text">{data.testimonial.role}</p>
-            <p className="mt-3 text-xs text-muted">Patient testimonial. Individual results may vary.</p>
-          </div>
-        </section>
-      )}
-
       {/* Related conditions */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

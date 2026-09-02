@@ -27,7 +27,6 @@ export type ConditionDetail = {
   recoveryOutlook?: string;
   faqs?: { q: string; a: string }[];
   philosophyBlurb?: string;
-  testimonial?: { quote: string; role: string };
 };
 
 const relatedCore = [
@@ -521,11 +520,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "We do not treat sciatica with a one-size-fits-all injection. We diagnose it. Dr. Baumgartner's approach is to identify the specific anatomic cause on imaging, confirm it with a selective diagnostic injection if needed, and then build a stepwise plan — starting with the least invasive option that actually addresses the cause and escalating only when needed.",
-    testimonial: {
-      quote:
-        "I had been to two other pain clinics, gotten the same generic injections, and was no better. Dr. Baumgartner did one more careful injection at the right level, and the relief lasted long enough for me to actually rehab the disc. I have been back to running for over a year.",
-      role: "Sciatica patient · Cypress",
-    },
     relatedConditions: relatedFor("sciatica"),
   },
 
@@ -587,7 +581,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Bowel or bladder symptoms with low-back pain — emergency, see immediately.",
     ],
     recoveryOutlook:
-      "Most disc herniations improve over 6–12 weeks with a combination of targeted epidural injection (when appropriate), graded activity, and physical therapy focused on neutral-spine mechanics. Cervical herniations sometimes take longer. Patients with significant motor deficits or refractory pain are candidates for spinal cord stimulation if symptoms persist beyond conservative care. We will give you a realistic timeline based on your imaging.",
+      "Most disc herniations improve over 6–12 weeks with a combination of targeted epidural injection (when appropriate), graded activity, and physical therapy focused on neutral-spine mechanics. Cervical herniations sometimes take longer. Progressive or significant motor deficits are an indication for prompt surgical evaluation, not a reason to wait. For patients whose radicular pain remains chronic and neuropathic after conservative care, injections, or surgery, spinal cord stimulation is a later-line option. We will give you a realistic timeline based on your imaging.",
     faqs: [
       {
         q: "Will my disc heal on its own?",
@@ -620,11 +614,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "Imaging tells you where a disc has herniated; it does not tell you whether that disc is the source of your symptoms. Our diagnostic discipline — clinical exam, careful imaging review, and selective injections when needed — is what allows us to treat the right disc, in the right way, at the right time.",
-    testimonial: {
-      quote:
-        "Two surgeons told me I needed a fusion. Dr. Baumgartner reviewed my MRI, did a single targeted injection, and I never needed surgery. Three years later I am still doing fine.",
-      role: "Herniated disc patient · The Woodlands",
-    },
     relatedConditions: relatedFor("herniated-discs"),
   },
 
@@ -720,11 +709,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "We are not stenosis-by-default-injection providers. We carefully assess whether MILD is the right fit (it requires specific MRI findings), whether epidural injections will help, or whether surgical referral is the more honest answer. The MILD procedure is one of our areas of focus, and Dr. Baumgartner has performed it many times — but only for patients who are likely to benefit.",
-    testimonial: {
-      quote:
-        "I could not walk to my mailbox without sitting down halfway. After MILD, I walked nine holes of golf within a month. I had been told for years that surgery was my only option.",
-      role: "MILD patient · Spring, TX",
-    },
     relatedConditions: relatedFor("spinal-stenosis"),
   },
 
@@ -768,7 +752,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       {
         slug: "radiofrequency-ablation",
         title: "Radiofrequency Ablation",
-        blurb: "Genicular and articular branch ablation for moderate-severe hip OA.",
+        blurb: "Radiofrequency ablation of the articular branches of the hip (femoral and obturator articular branches) for moderate-severe hip OA.",
       },
     ],
     diagnosisWorkup: [
@@ -819,11 +803,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "We use ultrasound for every hip injection — it is the only way to be sure you are in the bursa vs. the joint vs. the iliopsoas vs. extra-articular tissue. Many practices still inject the hip blind or with fluoroscopy alone. The accuracy difference is real, and it is one of the reasons our diagnostic injections actually answer the question they are asked.",
-    testimonial: {
-      quote:
-        "I had been getting injections for hip bursitis for two years from another doctor with no real relief. The first ultrasound-guided injection here was actually in the right structure, and I have not needed another one in 14 months.",
-      role: "Hip pain patient · Champions",
-    },
     relatedConditions: relatedFor("hip-pain"),
   },
 
@@ -919,11 +898,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "Ultrasound-guided shoulder injections are the standard of care, and we use them for every shoulder injection. Beyond that, our willingness to use multiple tools — corticosteroid, hydrodissection, PRP, suprascapular nerve block — based on what your specific shoulder needs is what differentiates the work.",
-    testimonial: {
-      quote:
-        "I am 56 and play tennis 4 times a week. A rotator cuff problem put me on the bench for 6 months. The PRP plus the rehab plan they gave me got me back on court — and I have not had a flare in 10 months.",
-      role: "Shoulder injury patient · The Woodlands",
-    },
     relatedConditions: relatedFor("shoulder-injuries"),
   },
 
@@ -1019,11 +993,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "Most pain practices do not focus on headache. Most neurology practices do not have an interventional toolkit. We bring both in one place — coordinated with your neurologist when appropriate — and bring the same diagnostic discipline to headache that we bring to every other pain syndrome.",
-    testimonial: {
-      quote:
-        "I had been to four neurologists and tried every preventive on the list. The occipital nerve blocks here cut my headache days in half within a month, and the cervical RFA the next year reduced them further. I have my life back.",
-      role: "Headache patient · Atascocita",
-    },
     relatedConditions: relatedFor("migraines"),
   },
 
@@ -1117,11 +1086,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "Fibromyalgia patients deserve a clinician who takes the diagnosis seriously and brings a real plan. We do that. We also bring the interventional toolkit for the overlapping musculoskeletal pain generators that other practices often miss — and treating those overlapping sources is frequently what makes the rest of the plan finally work.",
-    testimonial: {
-      quote:
-        "I had been told for years that there was nothing more to do for fibromyalgia. Dr. Baumgartner adjusted my medications, treated the SI joint pain that had been overlooked, and helped me build a routine. Six months in, I am living a life again.",
-      role: "Fibromyalgia patient · Klein",
-    },
     relatedConditions: relatedFor("fibromyalgia"),
   },
 
@@ -1217,11 +1181,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "We treat athletes the way we want to be treated. Real diagnostic precision, honest answers about prognosis, biologic options when they make sense, and a return-to-sport plan that respects the timeline of your tissue rather than the calendar of your season.",
-    testimonial: {
-      quote:
-        "I am a triathlete with chronic Achilles tendinopathy. I had tried PT, eccentric loading, and one round of PRP elsewhere with limited success. The plan they built here — better targeting, paired with the right rehab — finally got me back to racing.",
-      role: "Sports injury patient · Kingwood",
-    },
     relatedConditions: relatedFor("sports-injuries"),
   },
 
@@ -1317,11 +1276,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     ],
     philosophyBlurb:
       "We are willing to take the time to figure out the specific pain generator in a post-surgical case. Many practices either (a) treat all post-surgical pain with one tool, or (b) defer to the surgeon's reassurance that nothing is wrong. Neither helps the patient. Our diagnostic discipline — the willingness to sequence through targeted blocks until we identify the source — is what gets these cases unstuck.",
-    testimonial: {
-      quote:
-        "I had two back surgeries and the leg pain came back worse than before. After a successful spinal cord stimulation trial here, the leg pain is finally manageable. I am off opioids for the first time in five years.",
-      role: "Failed back surgery patient · Tomball",
-    },
     relatedConditions: relatedFor("post-surgical-pain"),
   },
 };

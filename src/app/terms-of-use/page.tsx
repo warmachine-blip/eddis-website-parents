@@ -34,7 +34,7 @@ const data = {
     {
       heading: "4. Intellectual Property",
       paragraphs: [
-        "All content on this website — including text, graphics, logos, images, and software — is the property of HTx Pain Specialists or its content suppliers and is protected by applicable copyright laws.",
+        "All content on this website — including text, graphics, logos, images, and software — is the property of HTx Pain Institute or its content suppliers and is protected by applicable copyright laws.",
       ],
     },
     {
@@ -52,7 +52,7 @@ const data = {
     {
       heading: "7. Limitation Of Liability",
       paragraphs: [
-        "To the maximum extent permitted by law, HTx Pain Specialists, its providers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website.",
+        "To the maximum extent permitted by law, HTx Pain Institute, its providers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website.",
       ],
     },
     {

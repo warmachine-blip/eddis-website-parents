@@ -30,7 +30,7 @@ const data = {
     {
       heading: "3. Information We Collect",
       paragraphs: [
-        "Through this website we may collect: contact information you submit through forms, basic device and browser metadata, and analytics data via standard cookies. We do not knowingly collect PHI through public website forms. Please do not include sensitive medical detail in unsolicited messages.",
+        "Through this website we may collect: contact information you submit through forms, basic device and browser metadata, and analytics data via standard cookies. Our appointment request form asks only for your name, phone number, email address, and preferred location, date, and time. Our contact form asks for your name, email, phone, a topic, and a message. We do not ask for health information through website forms — please save medical detail for your call or visit.",
       ],
     },
     {

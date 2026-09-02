@@ -7,6 +7,12 @@ export type ServiceDetail = {
   eyebrow: string;
   leadLine: string;
   intro: string;
+  /**
+   * Rendered in the Quick Facts card. Each value must be traceable to this
+   * entry's own steps / whatToExpect / recoveryResults / FAQ copy; use
+   * "Discussed at consult" when the page does not state a value.
+   */
+  quickFacts: { setting: string; anesthesia: string; recovery: string };
   steps: string[];
   whoIsItFor: string[];
   whatToExpect: string[];
@@ -16,7 +22,6 @@ export type ServiceDetail = {
   faqs: { q: string; a: string }[];
   insuranceBlurb: string;
   expertiseBlurb: string;
-  testimonial?: { quote: string; attribution: string; role: string };
   relatedServices: { slug: string; title: string; blurb: string }[];
 };
 
@@ -32,8 +37,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Lasting nerve-pain relief, on an outpatient schedule.",
     intro:
       "Radiofrequency ablation (RFA) uses radio-wave energy to create a small, controlled lesion on the nerves carrying pain signals — interrupting the signal at its source. The result is durable, medication-free relief that often lasts six to eighteen months and can be repeated as needed.",
+    quickFacts: {
+      setting: "In-office, outpatient",
+      anesthesia: "Local + light sedation",
+      recovery: "Light activity next day",
+    },
     steps: [
-      "Diagnostic nerve block confirms the exact pain generator.",
+      "Two successful diagnostic medial branch blocks, performed on separate days, confirm the exact pain generator.",
       "Under live fluoroscopic guidance, a fine probe is positioned at the medial branch nerve.",
       "Radiofrequency energy heats and quiets the targeted nerve in a controlled, repeatable way.",
       "The procedure is performed in our office with local anesthetic and light sedation.",
@@ -79,8 +89,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: "RFA is specifically designed to reduce reliance on long-term pain medications. Many patients are able to taper or stop oral pain medications after a successful ablation.",
       },
       {
-        q: "Why is a diagnostic block done first?",
-        a: "We use a diagnostic medial branch block to confirm that the small nerves we plan to ablate are in fact the source of your pain. If the block does not provide meaningful relief, RFA is unlikely to help — and we will redirect to a different therapy.",
+        q: "Why are diagnostic blocks done first?",
+        a: "We use a two-block paradigm — two separate diagnostic medial branch blocks on different days — to confirm that the small nerves we plan to ablate are in fact the source of your pain. Both blocks must provide meaningful relief; this is the standard before RFA and is also what insurers require. If the blocks do not provide meaningful relief, RFA is unlikely to help — and we will redirect to a different therapy.",
       },
       {
         q: "How quickly can I get back to work?",
@@ -96,15 +106,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and Medicare Advantage plans when medical-necessity criteria are met (usually a successful diagnostic block). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling.",
+      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and Medicare Advantage plans when medical-necessity criteria are met (two successful diagnostic medial branch blocks). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling.",
     expertiseBlurb:
       "Dr. Baumgartner has performed thousands of radiofrequency ablation procedures since 2018, with particular expertise in cervical, lumbar, SI, and genicular targets. We use modern probe technology, live fluoroscopic guidance, and the time it takes to do the procedure right — never rushed by the clock.",
-    testimonial: {
-      quote:
-        "After years of being told to 'live with it,' Dr. Baumgartner gave me a real plan. The radiofrequency ablation gave me my life back — I'm gardening, walking, sleeping. I cannot recommend HTx Pain enough.",
-      attribution: "RFA patient",
-      role: "Houston",
-    },
     relatedServices: [
       {
         slug: "injections-blocks-specialist",
@@ -135,11 +139,15 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Targeted relief delivered exactly where pain begins.",
     intro:
       "Image-guided injections and nerve blocks deliver anti-inflammatory medication and local anesthetic directly into the structure generating pain — whether that's a facet joint, epidural space, sympathetic nerve, or peripheral joint. They are both diagnostic and therapeutic.",
+    quickFacts: {
+      setting: "Discussed at consult",
+      anesthesia: "Local; sedation for some spinal injections",
+      recovery: "Most return to work within 24 hours",
+    },
     steps: [
       "We map your pain pattern through history, exam, and imaging review.",
       "Live fluoroscopy or ultrasound is used to position the needle with millimeter precision.",
       "A combination of long-acting steroid and local anesthetic is delivered to the target.",
-      "The injection takes minutes; recovery is brief and most patients drive themselves home.",
     ],
     whoIsItFor: [
       "Radicular pain from disc herniation or stenosis",
@@ -192,7 +200,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Can I drive home afterward?",
-        a: "For most peripheral and superficial injections, yes. For spinal injections under sedation, you will need a driver. We confirm transportation arrangements when we schedule, so this is not a surprise.",
+        a: "If you receive sedation or a spinal injection, you will need a driver. Only minor, local-anesthetic-only procedures may allow you to drive yourself, and only per your provider's guidance. We confirm transportation arrangements when we schedule, so this is not a surprise.",
       },
       {
         q: "Why do I sometimes need a second 'confirmatory' block?",
@@ -215,12 +223,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Image-guided injections and nerve blocks are covered by Medicare, Medicare Advantage, and most commercial insurance plans when medically indicated. Coverage varies by injection type and target. Diagnostic blocks performed before RFA are typically covered as part of the workup. Our team verifies benefits and prior authorization for each planned injection in advance.",
     expertiseBlurb:
       "Image-guided injections are not all the same. Dr. Baumgartner performs every injection under live fluoroscopy or ultrasound (no 'landmark-only' injections), uses contrast to confirm needle position before delivering medication, and selects medications and doses based on your specific case. The accuracy and judgment matter — particularly when the injection is also a diagnostic test.",
-    testimonial: {
-      quote:
-        "I had been getting injections for years from another practice and they barely helped. The first injection here actually worked, because Dr. Baumgartner was treating the right structure. That is what made the difference.",
-      attribution: "Injection patient",
-      role: "Cypress",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -251,6 +253,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Restore height, restore mobility, end fracture pain.",
     intro:
       "Kyphoplasty is a minimally invasive procedure for painful vertebral compression fractures — most commonly caused by age-related bone-mass loss. A small balloon is inflated within the fractured vertebra to restore lost height, then medical-grade cement stabilizes the bone. Most patients feel dramatic pain relief within 24–48 hours.",
+    quickFacts: {
+      setting: "Office or surgery center, same day",
+      anesthesia: "Local + light IV sedation",
+      recovery: "Walk same day; no heavy lifting 6 weeks",
+    },
     steps: [
       "We confirm the acute fracture with MRI or bone scan.",
       "Through a small incision, a thin cannula is placed into the fractured vertebra under fluoroscopic guidance.",
@@ -331,12 +338,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Kyphoplasty is covered by Medicare, Medicare Advantage, and most major commercial insurers when MRI confirms an acute or subacute compression fracture and conservative care has not provided relief. Our team handles benefits verification and prior authorization. Self-pay options are available with transparent pricing.",
     expertiseBlurb:
       "Dr. Baumgartner has performed hundreds of kyphoplasties since fellowship and is fluoroscopy-fluent in both unipedicular and bipedicular approaches. We are particular about case selection — we will not perform kyphoplasty on patients without a clear acute fracture, and we will refer to surgery in the rare cases where vertebroplasty/kyphoplasty is not enough. Bone-health follow-up is built into every kyphoplasty case.",
-    testimonial: {
-      quote:
-        "I went into kyphoplasty unable to stand without pain after a fall. I walked out the next day, drove myself to the grocery store the day after that, and was back to my routine within the week. I cannot believe I waited as long as I did.",
-      attribution: "Kyphoplasty patient",
-      role: "Houston",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -367,6 +368,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "A definitive answer for chronic SI joint pain.",
     intro:
       "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, titanium implants stabilize the joint and allow biological fusion over time.",
+    quickFacts: {
+      setting: "Outpatient, home same day",
+      anesthesia: "Sedation, not general",
+      recovery: "Cane/crutches 3 weeks; full activity 6–12 weeks",
+    },
     steps: [
       "Diagnostic SI joint injections confirm the joint as the pain generator.",
       "A small incision (typically under 3 cm) is made over the joint.",
@@ -447,12 +453,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "SI joint fusion (LinQ, Minuteman, and similar) is covered by Medicare, Medicare Advantage, and most major commercial insurers when SI joint pain is confirmed by diagnostic injections and conservative care has failed. Prior authorization is typically required and our team manages it. Workers' compensation and motor-vehicle injury cases are also commonly covered.",
     expertiseBlurb:
       "We offer both posterior approaches (LinQ and Minuteman) — most pain practices commit to a single device. That matters because SI joint anatomy varies, and the right implant for your case may not be the same as your neighbor's. Dr. Baumgartner's diagnostic discipline — confirming the SI joint as the pain source before recommending fusion — means we do not perform the procedure on patients who are unlikely to benefit.",
-    testimonial: {
-      quote:
-        "After my lumbar fusion, the pain came back in a different spot. Two doctors told me I needed another big spine surgery. Dr. Baumgartner figured out it was actually my SI joint, did a much smaller fusion, and I am back to work.",
-      attribution: "SI joint fusion patient",
-      role: "Spring, TX",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -483,6 +483,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Reprogram pain at the source of the signal.",
     intro:
       "Spinal cord stimulation (SCS) is one of the most studied therapies in modern pain medicine. A small implantable device delivers tailored electrical fields to the spinal cord — interrupting pain signals before they reach the brain. Patients try the system through a temporary trial before committing to a long-term implant.",
+    quickFacts: {
+      setting: "Outpatient trial and implant",
+      anesthesia: "Discussed at consult",
+      recovery: "Light activity 4–6 weeks after implant",
+    },
     steps: [
       "Trial: temporary leads are placed for a 5–7 day in-home test.",
       "If the trial reduces pain by ≥50% and improves function, we proceed to implant.",
@@ -550,12 +555,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Spinal cord stimulation is covered by Medicare, Medicare Advantage, and most major commercial insurance plans when criteria are met. Both the trial and permanent implant typically require prior authorization, which our team handles for you.",
     expertiseBlurb:
       "Spinal cord stimulation is one of Dr. Baumgartner's areas of clinical focus. He has performed hundreds of SCS trials and implants since fellowship and works directly with the major device manufacturers — selecting the right system and waveform for each patient rather than defaulting to one platform.",
-    testimonial: {
-      quote:
-        "I had been on opioids for nearly a decade after a botched back surgery. The team here introduced me to spinal cord stimulation and I am now medication-free.",
-      attribution: "SCS patient",
-      role: "Humble",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -586,6 +585,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "An FDA-cleared answer for vertebrogenic low-back pain.",
     intro:
       "Intracept is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain — pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve, with proven long-term improvement in pain and function.",
+    quickFacts: {
+      setting: "Outpatient, same day",
+      anesthesia: "Sedation + local anesthesia",
+      recovery: "Light activity 1–2 days; work 1–2 weeks",
+    },
     steps: [
       "MRI confirms Modic Type 1 or Type 2 endplate changes — the hallmark of vertebrogenic pain.",
       "Through a small access point, a probe is guided into the vertebral body.",
@@ -634,7 +638,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Is anything left in my body afterward?",
-        a: "No. Intracept is implant-free — the procedure removes a small portion of the basivertebral nerve and leaves no hardware behind. The bone heals around the treated area over time.",
+        a: "No. Intracept is implant-free — the basivertebral nerve is heated and ablated with controlled radiofrequency energy; nothing is removed or excised, and no hardware is left behind. The bone heals around the treated area over time.",
       },
       {
         q: "How long does relief last?",
@@ -653,12 +657,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Intracept is covered by Medicare and many commercial insurers when MRI demonstrates Modic Type 1 or Type 2 endplate changes and conservative care has failed. Coverage and prior authorization vary by plan; our team manages the process for you.",
     expertiseBlurb:
       "Dr. Baumgartner is among the experienced Intracept providers in the Houston area. He has published-data familiarity with the procedure and a careful approach to patient selection — Intracept only works when the pain truly is vertebrogenic, and we will not perform the procedure on patients who do not meet criteria.",
-    testimonial: {
-      quote:
-        "Dr. Baumgartner is the most thorough physician I have seen. He found the cause of pain three other doctors had missed. The Intracept procedure changed my life.",
-      attribution: "Intracept patient",
-      role: "Spring, TX",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -689,6 +687,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Your body's own healing factors, concentrated and delivered.",
     intro:
       "Platelet-rich plasma (PRP) therapy uses a concentrated preparation of your own platelets — rich in growth factors — to accelerate healing in joints, tendons, and soft tissues. It is non-surgical, biologically derived from your own blood, and increasingly used as a first-line option for select musculoskeletal conditions.",
+    quickFacts: {
+      setting: "In-office, ~60-minute visit",
+      anesthesia: "Discussed at consult",
+      recovery: "Reduce strenuous activity 48–72 hours",
+    },
     steps: [
       "A small blood draw is performed in our office.",
       "The blood is processed in a sterile centrifuge to concentrate platelets.",
@@ -704,7 +707,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     whatToExpect: [
       "Total visit time is approximately 60 minutes.",
       "Mild soreness at the injection site is normal for 2–4 days.",
-      "We avoid anti-inflammatory medications for several weeks before and after.",
+      "Hold anti-inflammatory medications (NSAIDs) for 7–14 days before and 2–4 weeks after, as directed by your provider.",
       "Improvement typically progresses over 6–12 weeks.",
     ],
     recoveryResults: [
@@ -750,7 +753,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Should I stop my anti-inflammatory medications?",
-        a: "Yes — typically we ask you to stop NSAIDs (ibuprofen, naproxen, diclofenac, etc.) and aspirin for 7–14 days before and 2–4 weeks after PRP. Anti-inflammatories blunt the very inflammatory cascade we are trying to harness for healing.",
+        a: "Yes — typically we ask you to stop NSAIDs (ibuprofen, naproxen, diclofenac, etc.) and aspirin for 7–14 days before and 2–4 weeks after PRP, as directed by your provider. Anti-inflammatories blunt the very inflammatory cascade we are trying to harness for healing.",
       },
       {
         q: "What is recovery like?",
@@ -769,12 +772,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "PRP therapy is generally not covered by commercial insurance or Medicare for musculoskeletal conditions. We provide transparent self-pay pricing for single sessions and series, and offer CareCredit financing for patients who would prefer to spread payment. We will tell you honestly whether PRP is likely to help in your specific case before you spend money.",
     expertiseBlurb:
       "We are conservative about PRP. We will not sell you a PRP series for a condition where the evidence does not support it. When PRP is right for you, we use ultrasound guidance for every injection, prepare the PRP in our office under sterile technique, and structure the post-procedure plan to maximize the biology — including coordinated physical therapy and clear restrictions on anti-inflammatories.",
-    testimonial: {
-      quote:
-        "I am a runner with a stubborn patellar tendinopathy that had not responded to PT or steroids. The PRP series, paired with the rehab plan they laid out, finally got me back to training. It took time, but it worked.",
-      attribution: "PRP patient",
-      role: "The Woodlands",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -805,6 +802,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "An outpatient answer for lumbar spinal stenosis.",
     intro:
       "MILD (Minimally Invasive Lumbar Decompression) is an FDA-cleared outpatient procedure for patients with lumbar spinal stenosis whose pain and walking limitations stem from a thickened ligamentum flavum. Through an incision the size of a baby aspirin, small fragments of bone and ligament are removed to restore space in the spinal canal — without implants, stitches, or general anesthesia.",
+    quickFacts: {
+      setting: "Outpatient, walk out same day",
+      anesthesia: "Local + light sedation, no general",
+      recovery: "Light activity within 24 hours",
+    },
     steps: [
       "MRI confirms ligamentum flavum hypertrophy as the source of stenosis.",
       "A small access port — about the size of a baby aspirin — is created in the lower back.",
@@ -852,12 +854,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "MILD Procedure is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
     expertiseBlurb:
       "MILD Procedure at HTx Pain Institute is performed by Dr. Edward Baumgartner — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
-    testimonial: {
-      quote:
-        "After years of being told to live with it, the team at HTx Pain Institute gave me a real plan. The MILD procedure made a difference I can feel every day.",
-      attribution: "MILD patient",
-      role: "Houston",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -888,6 +884,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     leadLine: "Posterior SI joint fusion through a minimally invasive approach.",
     intro:
       "The Minuteman device is a posterior, minimally invasive approach to sacroiliac joint fusion. Designed to stabilize and fuse the SI joint with less soft-tissue disruption than traditional lateral approaches, it is one of several techniques Dr. Baumgartner uses to deliver durable relief from confirmed SI joint pain. Selection between Minuteman, LinQ, and other devices is individualized to your anatomy and goals.",
+    quickFacts: {
+      setting: "Outpatient, home same day",
+      anesthesia: "Discussed at consult",
+      recovery: "Assistive device 1–3 weeks; full activity 6–12 weeks",
+    },
     steps: [
       "Diagnostic SI joint injections confirm the joint as the pain source.",
       "Through a small posterior incision, the Minuteman implant is positioned across the SI joint.",
@@ -935,12 +936,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Minuteman SI Joint Fusion is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
     expertiseBlurb:
       "Minuteman SI Joint Fusion at HTx Pain Institute is performed by Dr. Edward Baumgartner — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
-    testimonial: {
-      quote:
-        "After years of being told to live with it, the team at HTx Pain Institute gave me a real plan. The Minuteman procedure made a difference I can feel every day.",
-      attribution: "Minuteman patient",
-      role: "Houston",
-    },
     relatedServices: [
       {
         slug: "radiofrequency-ablation",

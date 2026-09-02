@@ -12,8 +12,6 @@ export type LocationDetail = {
   directionsIntro: string;
   whyThisCityBlurb: string;
   landmarks: string[];
-  testimonialQuote: string;
-  testimonialRole: string;
   finalCtaHeadline: string;
   commonConditions: { slug: string; title: string; blurb: string }[];
   commonServices: { slug: string; title: string; blurb: string }[];
@@ -52,9 +50,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "About 12 minutes from the Spring Park-and-Ride and major retail at Spring Cypress & I-45",
       "Approximately 20 minutes from The Woodlands Mall along I-45 South to FM 1960",
     ],
-    testimonialQuote:
-      "Spring patients consistently tell us they choose HTx Pain Institute because they don't want to drive into the Texas Medical Center for procedures that should be available closer to home. Our Humble office on FM 1960 is a 10–15 minute drive from most of Spring, with same-week consultations available and a clinical scope that matches anything available downtown.",
-    testimonialRole: "Spring patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -102,9 +97,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Memorial Hermann The Woodlands and Houston Methodist The Woodlands nearby for prior imaging",
       "Convenient for residents of Carlton Woods, Grogan's Mill, Cochran's Crossing, and Panther Creek",
     ],
-    testimonialQuote:
-      "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, both Minuteman and LinQ SI fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
-    testimonialRole: "The Woodlands patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -152,9 +144,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "About 20 minutes from Towne Lake and the Cypress Premium Outlets area",
       "Convenient from Highway 6 and Fry Road across the broader Cypress footprint",
     ],
-    testimonialQuote:
-      "Cypress patients tell us our Houston office on Texas 249 is the easiest pain practice to reach without dealing with downtown traffic. We are 15–25 minutes from most of Cypress, offer the full interventional toolkit, and handle workers' comp and motor-vehicle cases with the documentation rigor those cases require.",
-    testimonialRole: "Cypress patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -202,9 +191,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Easy access from FM 2920, FM 2978, and Spring-Cypress Road",
       "Convenient for HCA Houston Healthcare Tomball patients with prior imaging",
     ],
-    testimonialQuote:
-      "For Tomball patients, the proximity to advanced interventional procedures matters. Our Houston office offers Intracept, MILD, spinal cord stimulation, and SI joint fusion — procedures most Tomball patients had been told required a referral into the Texas Medical Center. We are minutes from the office park to home, and we coordinate with Tomball-area primary care and surgical colleagues.",
-    testimonialRole: "Tomball patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -252,9 +238,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Convenient from Klein Forest, Klein Cain, and Klein Collins ISD high schools",
       "Quick connection from Beltway 8 / Sam Houston Tollway",
     ],
-    testimonialQuote:
-      "Klein is one of the communities where word-of-mouth means everything. Our practice is built on patients who refer their friends, neighbors, and family — and many of our long-term patients are from Klein. The continuity of care, the willingness to keep building on a patient's plan over years, and the proximity to the Texas 249 office are what bring Klein patients to us.",
-    testimonialRole: "Klein patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -302,9 +285,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Easy access from Cypresswood Drive and FM 1960 to Texas 249",
       "Convenient for residents of Champions Park, Champions North, and Inverness Forest",
     ],
-    testimonialQuote:
-      "Champions is a community where the proximity to advanced biologic options matters. Our PRP program is one of the most carefully managed in the area — ultrasound-guided, prepared in-office, and integrated with structured rehab. For patients trying to stay on the course or on the court, the combination of accuracy and biology makes the difference.",
-    testimonialRole: "Champions patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
@@ -352,9 +332,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Convenient from Forest Cove, Bear Branch, Kings Forest, and Trailwood",
       "Memorial Hermann Northeast nearby for prior imaging and post-op care",
     ],
-    testimonialQuote:
-      "Kingwood patients value clinicians who respect both their activity level and their preference to stay out of major surgical pathways. We deliver that — biologic options for tendinopathy, MILD and Intracept for stenosis and vertebrogenic pain, and a stepwise approach that keeps patients on the trails as much as possible while we treat what is going on.",
-    testimonialRole: "Kingwood patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -402,9 +379,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Quick connection to US-59/I-69 via FM 1960",
       "Convenient for residents of Eagle Springs, Walden, and Pinehurst Trail areas",
     ],
-    testimonialQuote:
-      "For Atascocita patients, the proximity is hard to beat — we are the closest comprehensive pain practice for most of the area. Add to that the fact that we handle workers' comp, motor-vehicle, and letter-of-protection cases with the documentation rigor those cases require, and we are the natural choice for working-age patients who cannot afford to lose a day to a long drive.",
-    testimonialRole: "Atascocita patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -452,9 +426,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Memorial Hermann Northeast nearby for prior imaging and surgical referrals",
       "Convenient for residents of Walden, Forest Cove, and the broader US-59 corridor",
     ],
-    testimonialQuote:
-      "Humble is where the practice grew up. Our roots in this community shape how we treat — patients are not strangers, names are remembered, and the team takes pride in being the institute-caliber pain practice the community deserves. There is also a practical advantage: comprehensive interventional care without leaving the area.",
-    testimonialRole: "Humble patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
@@ -502,9 +473,6 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Convenient from FM 1960, Cypresswood Drive, and Antoine Drive",
       "Houston Methodist Willowbrook nearby for prior imaging and post-op care",
     ],
-    testimonialQuote:
-      "Northwest Houston has more pain options than most parts of the city — but most of those practices specialize narrowly. We bring the full institute-caliber toolkit (Intracept, MILD, Minuteman, LinQ, SCS, RFA, biologics) into a single practice with diagnostic discipline that is hard to match. For patients in this corridor, that combination is the reason to choose HTx Pain Institute.",
-    testimonialRole: "Northwest Houston patient",
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },

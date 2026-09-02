@@ -1,7 +1,15 @@
 import { SITE_URL } from "@/lib/site";
 import { socialLinks } from "@/lib/social";
+import { openingHours } from "@/lib/nav";
 
 export default function OrganizationSchema() {
+  const openingHoursSpecification = openingHours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  }));
+
   const data = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
@@ -32,11 +40,7 @@ export default function OrganizationSchema() {
           addressCountry: "US",
         },
         telephone: "+1-832-990-8600",
-        openingHoursSpecification: [
-          { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Thursday"], opens: "07:00", closes: "17:00" },
-          { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "08:00", closes: "17:00" },
-          { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "07:00", closes: "16:00" },
-        ],
+        openingHoursSpecification,
       },
       {
         "@type": "MedicalClinic",
@@ -50,11 +54,7 @@ export default function OrganizationSchema() {
           addressCountry: "US",
         },
         telephone: "+1-832-990-8600",
-        openingHoursSpecification: [
-          { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Thursday"], opens: "07:00", closes: "17:00" },
-          { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "08:00", closes: "17:00" },
-          { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "07:00", closes: "16:00" },
-        ],
+        openingHoursSpecification,
       },
     ],
   };
