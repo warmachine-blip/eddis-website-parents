@@ -9,18 +9,10 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Patient Resources · HTx Pain Institute",
   description:
-    "Everything you need before, during, and after your visit to HTx Pain Institute — insurance, what to expect, blog, video library, and more.",
+    "Everything you need before, during, and after your visit to HTx Pain Institute — insurance, what to expect, video library, and more.",
 };
 
 const resourceCards = [
-  {
-    title: "Blog & Articles",
-    body: "Plain-English explanations of common procedures, conditions, and recovery — written by our clinical team.",
-    linkLabel: "Read the blog",
-    href: "/blog",
-    icon: "pulse",
-    tone: "dark",
-  },
   {
     title: "Video Library",
     body: "Procedure walk-throughs, recovery tips, and patient education — visual where words fall short.",
@@ -111,7 +103,7 @@ export default function PatientsPage() {
       {/* Resource cards */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {resourceCards.map((card) => (
               <Link
                 key={card.href}

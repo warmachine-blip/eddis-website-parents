@@ -48,7 +48,6 @@ const patientLinks = [
   { label: "Insurance & Financing", href: "/insurance" },
   { label: "Request Appointment", href: "/request-appointment" },
   { label: "Second Opinion", href: "/second-opinion" },
-  { label: "Blog", href: "/blog" },
 ];
 
 export default function SiteFooter() {

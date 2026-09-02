@@ -117,7 +117,7 @@ export default function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-line bg-off-white lg:hidden">
+        <div className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-line bg-off-white lg:hidden">
           <ul className="divide-y divide-line px-6">
             {primaryNav.map((group) => (
               <li key={group.label}>

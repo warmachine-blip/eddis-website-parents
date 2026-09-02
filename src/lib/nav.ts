@@ -47,7 +47,6 @@ export const aboutNav: NavLink[] = [
 export const patientsNav: NavLink[] = [
   { label: "Patient Resources", href: "/patients" },
   { label: "Insurance & Financing", href: "/insurance" },
-  { label: "Blog", href: "/blog" },
   { label: "Video Library", href: "/video-library" },
   { label: "Second Opinion", href: "/second-opinion" },
 ];
@@ -56,7 +55,7 @@ export const primaryNav: NavGroup[] = [
   { label: "About", href: "/about-us", items: aboutNav },
   { label: "Services", href: "/services", items: servicesNav },
   { label: "Conditions", href: "/pain-center", items: conditionsNav },
-  { label: "Locations", href: "/locations/northwest-houston", items: locationsNav },
+  { label: "Locations", href: "/locations", items: locationsNav },
   { label: "Patients", href: "/patients", items: patientsNav },
 ];
 
