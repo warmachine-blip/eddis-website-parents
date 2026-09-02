@@ -238,7 +238,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
           <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">Medically Reviewed</p>
           <p className="mt-1 text-sm text-off-white/70">
-            Reviewed by Dr. Edward Baumgartner, MD. Information on this page is not medical
+            Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical
             advice. Always consult your physician.
           </p>
         </div>

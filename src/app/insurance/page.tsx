@@ -4,25 +4,15 @@ import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
+import { acceptedPlans } from "@/lib/insurance";
 
 export const metadata: Metadata = {
-  title: "Insurance & Financing — HTx Pain Institute Houston · HTx Pain Institute",
+  title: "Insurance & Financing",
   description:
-    "Most major insurance accepted at HTx Pain Institute. We verify your benefits before your visit and offer financing options. Call (832) 990-8600.",
+    `Most major insurance accepted at HTx Pain Institute. We verify your benefits before your visit and offer financing options. Call ${practice.phone}.`,
 };
 
-const plans = [
-  "Aetna",
-  "Blue Cross Blue Shield (Texas)",
-  "Cigna",
-  "Humana",
-  "Medicare",
-  "Medicare Advantage plans",
-  "TRICARE",
-  "UnitedHealthcare",
-  "Workers' Compensation (most carriers)",
-  "Auto Liability / Letters of Protection",
-];
+const plans = acceptedPlans;
 
 const steps = [
   {

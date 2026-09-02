@@ -17,7 +17,7 @@ export async function generateMetadata(
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} · HTx Pain Institute Blog`,
+    title: post.title,
     description: post.excerpt,
   };
 }

@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/breadcrumb";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Tatyana Baumgartner, COO — HTx Pain Institute · HTx Pain Institute",
+  title: "Tatyana Baumgartner, CPA",
   description:
     "Tatyana Baumgartner, CPA, leads operations and community engagement at HTx Pain Institute and serves on the Board of Directors of Ima's Home for Children.",
 };
@@ -82,7 +82,7 @@ export default function TatyanaBaumgartnerPage() {
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-line">
                 <Image
                   src="/images/tatyana-baumgartner.webp"
-                  alt="Tatyana Baumgartner, CPA — Practice Administrator, HTx Pain Institute"
+                  alt="Tatyana Baumgartner, CPA — Chief Operating Officer, HTx Pain Institute"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover object-top"

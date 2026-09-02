@@ -7,9 +7,9 @@ import { IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "About HTx Pain Institute — Houston's Precision Pain Practice · HTx Pain Institute",
+  title: "About Us",
   description:
-    "Founded by Dr. Edward Baumgartner in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
+    "Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
 };
 
 const pillars = [
@@ -32,11 +32,11 @@ const pillars = [
 
 const team = [
   {
-    name: "Dr. Edward Baumgartner Jr., MD",
+    name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified",
     bio: "Founding Physician, Double Board-Certified, Anesthesiology and Pain Medicine. A Houston native with over fifteen years of interventional pain medicine experience. Specializes in advanced minimally invasive procedures including Intracept, spinal cord stimulation, radiofrequency ablation, and SI joint fusion — with particular focus on patients told their only option is spine surgery.",
     image: "dr-baumgartner.webp",
-    alt: "Dr. Edward Baumgartner Jr., M.D. — Founder of HTx Pain Institute",
+    alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
   },
   {
@@ -44,7 +44,7 @@ const team = [
     role: "Chief Operating Officer · Board Member",
     bio: "Chief Operating Officer, Board of Directors — Ima's Home for Children. Leads the operations and community engagement of HTx Pain Institute. Partners with Dr. Baumgartner to build a practice with institute-caliber discipline and family-led warmth. Eight consecutive years as presenting sponsor of the Ima's Home 5K.",
     image: "tatyana-baumgartner.webp",
-    alt: "Tatyana Baumgartner, CPA — Practice Administrator, HTx Pain Institute",
+    alt: "Tatyana Baumgartner, CPA — Chief Operating Officer, HTx Pain Institute",
     href: "/tatyana-baumgartner-cpa",
   },
   {
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             {practice.tagline} At HTx Pain Institute, every patient deserves a
             personalized and compassionate approach to pain management. Founded
-            by Dr. Edward Baumgartner in 2018, our mission is to put the patient
+            by Edward Baumgartner Jr., MD in 2018, our mission is to put the patient
             first while elevating the standard of care in pain medicine.
           </p>
         </div>
@@ -124,8 +124,7 @@ export default function AboutUsPage() {
               </h2>
               <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-charcoal-soft">
                 <p>
-                  Founded as Texas Interventional Pain Specialists by Dr. Edward
-                  Baumgartner in 2018, the practice rebranded as HTx Pain Care in
+                  Founded as Texas Interventional Pain Specialists by Edward Baumgartner Jr., MD in 2018, the practice rebranded as HTx Pain Care in
                   early 2025 and was elevated to HTx Pain Institute in 2026 to
                   reflect its expanded clinical scope and institute-caliber
                   capabilities. Throughout every name change, the team, the

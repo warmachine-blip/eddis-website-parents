@@ -5,7 +5,7 @@ import { serviceDetails } from "@/lib/service-details";
 const data = serviceDetails["prp-procedure"];
 
 export const metadata: Metadata = {
-  title: `${data.title} in Houston · HTx Pain Institute`,
+  title: `${data.title} in Houston`,
   description: data.metaDescription,
 };
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/legal-page";
-import { practice } from "@/lib/nav";
+import { offices, practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "HIPAA Notice of Privacy Practices — HTx Pain Institute",
+  title: "HIPAA Notice of Privacy Practices",
   description:
     "HTx Pain Institute Notice of Privacy Practices, describing how your protected health information may be used and disclosed.",
 };
@@ -69,7 +69,7 @@ const data = {
     {
       heading: "Complaints",
       paragraphs: [
-        "If you believe your privacy rights have been violated, you may file a complaint with us by contacting our Privacy Officer at our practice address or by phone at (832) 990-8600. You may also file a complaint with the U.S. Department of Health & Human Services Office for Civil Rights. We will not retaliate against you for filing a complaint.",
+        `If you believe your privacy rights have been violated, you may file a complaint with us by contacting our Privacy Officer at either office address or by phone at ${practice.phone}. You may also file a complaint with the U.S. Department of Health & Human Services Office for Civil Rights. We will not retaliate against you for filing a complaint.`,
       ],
     },
   ],
@@ -87,13 +87,15 @@ export default function HipaaNoticePage() {
           Privacy Officer:
         </p>
         <address className="mt-3 not-italic text-sm leading-relaxed text-charcoal-soft">
-          HTx Pain Institute
+          {practice.name}
+          {offices.map((office) => (
+            <span key={office.key} className="block">
+              {office.addressLine1}, {office.addressLine2}
+            </span>
+          ))}
+          Phone: {practice.phone}
           <br />
-          17314 Texas 249, Suite 100, Houston, TX 77064
-          <br />
-          Phone: (832) 990-8600
-          <br />
-          Email: info@htxpaincare.com
+          Email: {practice.email}
         </address>
         <div className="mt-5 rounded-xl border border-line bg-pearl p-4 text-sm leading-relaxed text-charcoal-soft">
           Need a paper copy? Ask the front desk on your next visit, or contact us.

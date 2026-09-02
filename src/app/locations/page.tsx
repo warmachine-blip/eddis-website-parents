@@ -17,7 +17,7 @@ const communities = [
 ];
 
 export const metadata: Metadata = {
-  title: "Locations · HTx Pain Institute",
+  title: "Locations",
   description:
     "HTx Pain Institute serves Houston, Humble, Spring, The Woodlands, Cypress, Tomball, Kingwood, Atascocita, and surrounding communities.",
 };

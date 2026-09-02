@@ -19,7 +19,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "HTx Pain Institute — Precision. Lasting Relief. Houston Pain",
+  title: {
+    default: "HTx Pain Institute · Precision Pain Management in Houston",
+    template: "%s · HTx Pain Institute",
+  },
   description:
     "Precision pain management in Houston. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy. Two locations in Houston and Humble.",
 };

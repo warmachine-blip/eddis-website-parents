@@ -6,7 +6,7 @@ import { TiltCardGroup } from "@/components/tilt-card";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services · HTx Pain Institute",
+  title: "Services",
   description:
     "Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit, offered at HTx Pain Institute in Houston, TX.",
 };
@@ -16,6 +16,7 @@ export default function ServicesPage() {
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
       <section>
         <SectionHeading
+          as="h1"
           eyebrow="What We Treat"
           title="Modern interventional care, tailored to your pain."
           lead="Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit — applied with the precision and judgment every patient deserves."

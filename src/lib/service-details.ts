@@ -853,7 +853,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     insuranceBlurb:
       "MILD Procedure is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
     expertiseBlurb:
-      "MILD Procedure at HTx Pain Institute is performed by Dr. Edward Baumgartner — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
+      "MILD Procedure at HTx Pain Institute is performed by Edward Baumgartner Jr., MD — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -935,7 +935,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     insuranceBlurb:
       "Minuteman SI Joint Fusion is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
     expertiseBlurb:
-      "Minuteman SI Joint Fusion at HTx Pain Institute is performed by Dr. Edward Baumgartner — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
+      "Minuteman SI Joint Fusion at HTx Pain Institute is performed by Edward Baumgartner Jr., MD — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",

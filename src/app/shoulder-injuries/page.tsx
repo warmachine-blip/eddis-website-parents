@@ -5,7 +5,7 @@ import { conditionDetails } from "@/lib/condition-details";
 const data = conditionDetails["shoulder-injuries"];
 
 export const metadata: Metadata = {
-  title: `${data.title} — Houston Specialist Care · HTx Pain Institute`,
+  title: `${data.title} in Houston`,
   description: data.metaDescription,
 };
 

@@ -1,8 +1,14 @@
 import { SITE_URL } from "@/lib/site";
 import { socialLinks } from "@/lib/social";
-import { openingHours } from "@/lib/nav";
+import { offices, openingHours, practice } from "@/lib/nav";
 
+/**
+ * JSON-LD for the practice. Name, contact details, both office addresses and
+ * the opening hours all derive from src/lib/nav.ts so structured data can
+ * never drift from what the pages render.
+ */
 export default function OrganizationSchema() {
+  const telephone = practice.phoneHref.replace(/^tel:/, "");
   const openingHoursSpecification = openingHours.map((h) => ({
     "@type": "OpeningHoursSpecification",
     dayOfWeek: h.days,
@@ -13,57 +19,35 @@ export default function OrganizationSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
-    name: "HTx Pain Institute",
+    name: practice.name,
     alternateName: ["Texas Interventional Pain Specialists", "HTx Pain Care"],
     url: SITE_URL,
     logo: `${SITE_URL}/images/htx-pain-institute-logo.png`,
-    telephone: "+1-832-990-8600",
-    email: "info@htxpaincare.com",
+    telephone,
+    email: practice.email,
     medicalSpecialty: "Pain Medicine",
     founder: {
       "@type": "Physician",
-      name: "Dr. Edward Baumgartner Jr., M.D.",
+      name: "Edward Baumgartner Jr., MD",
       medicalSpecialty: ["Anesthesiology", "Pain Medicine"],
     },
     foundingDate: "2018",
     sameAs: socialLinks,
-    location: [
-      {
-        "@type": "MedicalClinic",
-        name: "HTx Pain Institute — Houston (TX-249)",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "17314 Texas 249, Suite 100",
-          addressLocality: "Houston",
-          addressRegion: "TX",
-          postalCode: "77064",
-          addressCountry: "US",
-        },
-        telephone: "+1-832-990-8600",
-        openingHoursSpecification,
+    location: offices.map((office) => ({
+      "@type": "MedicalClinic",
+      name: office.label,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: office.addressLine1,
+        addressLocality: office.city,
+        addressRegion: office.state,
+        postalCode: office.zip,
+        addressCountry: "US",
       },
-      {
-        "@type": "MedicalClinic",
-        name: "HTx Pain Institute — Humble (FM 1960)",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "1485 FM 1960 Bypass Rd. E, Suite 260",
-          addressLocality: "Humble",
-          addressRegion: "TX",
-          postalCode: "77338",
-          addressCountry: "US",
-        },
-        telephone: "+1-832-990-8600",
-        openingHoursSpecification,
-      },
-    ],
+      telephone,
+      openingHoursSpecification,
+    })),
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

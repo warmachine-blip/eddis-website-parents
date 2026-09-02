@@ -6,7 +6,7 @@ import { TiltCardGroup } from "@/components/tilt-card";
 import { conditions } from "@/lib/conditions";
 
 export const metadata: Metadata = {
-  title: "Pain Center · HTx Pain Institute",
+  title: "Pain Center",
   description:
     "From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward, at HTx Pain Institute in Houston, TX.",
 };
@@ -16,6 +16,7 @@ export default function PainCenterPage() {
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
       <section>
         <SectionHeading
+          as="h1"
           eyebrow="Pain Center"
           title="The conditions we treat — with the expertise they require."
           lead="From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward."

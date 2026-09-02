@@ -5,7 +5,7 @@ import NewsletterSignup from "@/components/newsletter-signup";
 import { blogCategories, blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog — Pain Education, Procedures & Recovery · HTx Pain Institute",
+  title: "Blog",
   description:
     "Plain-English articles on pain medicine, interventional procedures, recovery, and patient stories from HTx Pain Institute in Houston.",
 };

@@ -6,7 +6,7 @@ import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Allison Turner, DNP, APRN, FNP-C — HTx Pain Institute · HTx Pain Institute",
+  title: "Allison Turner, DNP, APRN, FNP-C",
   description:
     "Allison Turner is a Doctor of Nursing Practice and Family Nurse Practitioner specializing in compassionate, individualized pain management at HTx Pain Institute.",
 };

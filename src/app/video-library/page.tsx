@@ -5,9 +5,9 @@ import { practice } from "@/lib/nav";
 import { libraryVideos, youtubeChannelUrl } from "@/lib/video-library";
 
 export const metadata: Metadata = {
-  title: "Video Library — Procedures & Patient Education · HTx Pain Institute",
+  title: "Video Library",
   description:
-    "Procedure walk-throughs, patient stories, and educational videos from HTx Pain Institute in Houston, straight from our YouTube channel.",
+    "Physician interviews, patient education, and practice stories from HTx Pain Institute in Houston, straight from our YouTube channel.",
 };
 
 function PlayIcon() {
@@ -41,7 +41,7 @@ export default function VideoLibraryPage() {
             See what your care will look like.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Procedure walk-throughs, condition explainers, and recovery guides —
+            Physician interviews, patient education, and practice stories —
             straight from our YouTube channel.
           </p>
         </div>

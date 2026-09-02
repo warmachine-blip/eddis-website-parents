@@ -4,7 +4,7 @@ import RequestAppointmentForm from "@/components/request-appointment-form";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Request an Appointment · HTx Pain Institute",
+  title: "Request an Appointment",
   description:
     "Request an appointment at HTx Pain Institute in Houston or Humble. Same-week consultations available. We confirm within one business day.",
 };
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const nextSteps = [
   {
     number: "1",
-    body: "We confirm your request by phone within 24 hours.",
+    body: "We confirm your request by phone within one business day.",
   },
   {
     number: "2",

@@ -88,7 +88,11 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                   <br />
                   {office.addressLine2}
                 </p>
-                <p className="mt-4 text-sm text-charcoal-soft">{practice.hours}</p>
+                <p className="mt-4 text-sm text-charcoal-soft">
+                  {practice.hours}
+                  <br />
+                  {practice.hoursWeekend}
+                </p>
                 <div className="mt-5 grid gap-2">
                   <a
                     href={practice.phoneHref}
@@ -196,7 +200,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
           <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">Medically Reviewed</p>
           <p className="mt-1 text-sm text-off-white/70">
-            Reviewed by Dr. Edward Baumgartner, MD. Information on this page is not medical advice.
+            Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical advice.
           </p>
         </div>
 

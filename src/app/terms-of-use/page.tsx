@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/legal-page";
+import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions · HTx Pain Institute",
+  title: "Terms & Conditions",
   description: "Terms governing your use of the HTx Pain Institute website.",
 };
 
@@ -69,7 +70,7 @@ const data = {
     },
     {
       heading: "10. Contact",
-      paragraphs: ["Questions about these Terms? Contact us at info@htxpaincare.com."],
+      paragraphs: [`Questions about these Terms? Contact us at ${practice.email}.`],
     },
   ],
 };

@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Work Injuries & Accidents — Pain Management Houston · HTx Pain Institute",
+  title: "Work Injuries & Accidents in Houston",
   description:
     "Comprehensive pain management for workplace injuries — back, neck, and joint pain after lifting, repetitive stress, falls, and on-the-job accidents. Houston and Humble.",
 };
@@ -61,7 +61,7 @@ export default function WorkInjuriesPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Injuries", href: "/injuries-pain" }, { label: heroTitle }]} />
+          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Injuries & Accidents", href: "/injuries-pain" }, { label: "Work Injuries & Accidents" }]} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
             Work Injuries &amp; Accidents

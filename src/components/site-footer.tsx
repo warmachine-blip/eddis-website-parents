@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { legalNav, offices, practice } from "@/lib/nav";
+import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from "@/lib/nav";
+import { socialItems } from "@/components/social-icons";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -27,28 +28,17 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   );
 }
 
-const featuredServices = [
-  { label: "Spinal Cord Stimulation", href: "/spinal-cord-stimulation-specialist" },
-  { label: "Radiofrequency Ablation", href: "/radiofrequency-ablation" },
-  { label: "Intracept Procedure", href: "/intracept-procedure" },
-  { label: "MILD Procedure", href: "/mild-procedure" },
-  { label: "SI Joint Fusion", href: "/si-joint-fusions" },
-];
-
+// Link columns come from src/lib/nav.ts so the footer can never drift from the header.
 const practiceLinks = [
-  { label: "Our Story", href: "/about-us" },
-  { label: "Dr. Baumgartner", href: "/dr-edward-baumgartner" },
-  { label: "Tatyana Baumgartner", href: "/tatyana-baumgartner-cpa" },
-  { label: "Allison Turner", href: "/allison-turner" },
+  ...aboutNav,
   { label: "Community — Ima's Home", href: "/community/imas-home" },
+  { label: "Locations", href: "/locations" },
+  { label: "Contact", href: "/contact" },
 ];
 
-const patientLinks = [
-  { label: "Patient Resources", href: "/patients" },
-  { label: "Insurance & Financing", href: "/insurance" },
-  { label: "Request Appointment", href: "/request-appointment" },
-  { label: "Second Opinion", href: "/second-opinion" },
-];
+const serviceLinks = servicesNav.filter((s) => !s.note);
+
+const patientLinks = [...patientsNav, { label: "Request Appointment", href: "/request-appointment" }];
 
 export default function SiteFooter() {
   return (
@@ -70,6 +60,21 @@ export default function SiteFooter() {
               {practice.name} — formerly {practice.formerNames}. Same Dr. Baumgartner,
               same Houston-area locations, expanded clinical scope.
             </p>
+            <ul className="mt-5 flex items-center gap-2" aria-label="Social media">
+              {socialItems.map((item) => (
+                <li key={item.key}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-off-white/15 text-off-white/70 transition-colors hover:border-brass-light hover:text-brass-light"
+                  >
+                    <item.Icon className="h-4 w-4" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>
@@ -87,10 +92,10 @@ export default function SiteFooter() {
 
           <div>
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-              Featured Services
+              Services
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {featuredServices.map((l) => (
+              {serviceLinks.map((l) => (
                 <li key={l.href}>
                   <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
@@ -149,7 +154,7 @@ export default function SiteFooter() {
             <span className="font-semibold text-off-white/70">Medical disclaimer:</span>{" "}
             Information on this site is not medical advice. Always consult your
             physician. Individual results may vary. Content is medically reviewed by
-            Dr. Edward Baumgartner, MD.
+            Edward Baumgartner Jr., MD.
           </p>
 
           <div className="mt-6 flex flex-col gap-4 text-xs text-off-white/60 sm:flex-row sm:items-center sm:justify-between">

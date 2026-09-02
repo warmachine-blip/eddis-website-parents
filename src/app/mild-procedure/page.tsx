@@ -5,7 +5,7 @@ import { serviceDetails } from "@/lib/service-details";
 const data = serviceDetails["mild-procedure"];
 
 export const metadata: Metadata = {
-  title: "MILD Procedure — HTx Pain Institute Houston · HTx Pain Institute",
+  title: `${data.title} in Houston`,
   description: data.metaDescription,
 };
 

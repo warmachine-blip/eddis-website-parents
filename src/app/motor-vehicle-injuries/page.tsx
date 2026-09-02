@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Motor Vehicle Injuries — Pain Management Houston · HTx Pain Institute",
+  title: "Motor Vehicle Injuries in Houston",
   description:
     "Houston-based pain management for whiplash, cervical and lumbar injuries, post-concussive headache, and chronic spine pain following motor vehicle collisions.",
 };
@@ -61,7 +61,7 @@ export default function MotorVehicleInjuriesPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Injuries", href: "/injuries-pain" }, { label: heroTitle }]} />
+          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Injuries & Accidents", href: "/injuries-pain" }, { label: "Motor Vehicle Injuries" }]} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
             Motor Vehicle Injuries

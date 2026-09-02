@@ -5,7 +5,7 @@ import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Second Opinion Consultations · HTx Pain Institute",
+  title: "Second Opinion Consultations",
   description:
     "Considering surgery or stuck on long-term medication? Get a thorough, evidence-based second opinion at HTx Pain Institute in Houston.",
 };

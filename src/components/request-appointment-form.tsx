@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { practice, offices } from "@/lib/nav";
 
 const preferredTimes = [
@@ -13,6 +13,14 @@ const preferredTimes = [
 export default function RequestAppointmentForm() {
   const [consent, setConsent] = useState(false);
   const [sent, setSent] = useState(false);
+  // Earliest selectable preferred date: today in the visitor's local time.
+  // Applied after mount via a ref so server and client markup match.
+  const preferredDateRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const now = new Date();
+    const local = new Date(now.getTime() - now.getTimezoneOffset() * 60_000);
+    if (preferredDateRef.current) preferredDateRef.current.min = local.toISOString().slice(0, 10);
+  }, []);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -43,17 +51,17 @@ export default function RequestAppointmentForm() {
   }
 
   return (
-    <div id="appointment-form" className="border border-line bg-off-white p-7 sm:p-9">
+    <div id="appointment-form" className="rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-9">
       <h2 className="font-serif text-2xl text-navy">Appointment Request</h2>
       <p className="mt-1.5 text-sm text-charcoal-soft">
-        We will confirm your appointment within 24 hours. Required fields are marked
-        with an asterisk.
+        We will confirm your request within one business day. Required fields are
+        marked with an asterisk.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-5">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-navy">
+            <label htmlFor="firstName" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               First Name <span aria-hidden="true">*</span>
             </label>
             <input
@@ -65,7 +73,7 @@ export default function RequestAppointmentForm() {
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-navy">
+            <label htmlFor="lastName" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               Last Name <span aria-hidden="true">*</span>
             </label>
             <input
@@ -80,7 +88,7 @@ export default function RequestAppointmentForm() {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-navy">
+            <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               Email <span aria-hidden="true">*</span>
             </label>
             <input
@@ -92,7 +100,7 @@ export default function RequestAppointmentForm() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-navy">
+            <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               Phone <span aria-hidden="true">*</span>
             </label>
             <input
@@ -106,7 +114,7 @@ export default function RequestAppointmentForm() {
         </div>
 
         <div>
-          <label htmlFor="location" className="block text-sm font-medium text-navy">
+          <label htmlFor="location" className="block text-xs font-semibold uppercase tracking-wide text-navy">
             Preferred Location <span aria-hidden="true">*</span>
           </label>
           <select
@@ -121,7 +129,7 @@ export default function RequestAppointmentForm() {
             </option>
             {offices.map((office) => (
               <option key={office.key} value={office.label}>
-                {office.city === "Houston" ? "Houston (TX-249)" : "Humble (FM 1960)"}
+                {office.label.replace(/^.*— /, "")}
               </option>
             ))}
             <option value="No preference">Either / no preference</option>
@@ -130,18 +138,19 @@ export default function RequestAppointmentForm() {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="preferredDate" className="block text-sm font-medium text-navy">
+            <label htmlFor="preferredDate" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               Preferred Date
             </label>
             <input
               id="preferredDate"
               name="preferredDate"
               type="date"
+              ref={preferredDateRef}
               className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
           </div>
           <div>
-            <label htmlFor="preferredTime" className="block text-sm font-medium text-navy">
+            <label htmlFor="preferredTime" className="block text-xs font-semibold uppercase tracking-wide text-navy">
               Preferred Time
             </label>
             <select
@@ -176,7 +185,7 @@ export default function RequestAppointmentForm() {
 
         <button
           type="submit"
-          className="w-full border border-brass bg-navy px-6 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white transition-colors hover:bg-navy-deep sm:w-auto"
+          className="w-full border border-brass bg-navy px-6 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep"
         >
           Submit Appointment Request
         </button>

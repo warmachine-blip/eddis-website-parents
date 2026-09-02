@@ -230,7 +230,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <SectionHeading
           eyebrow="Expertise"
-          title={`The standard of ${data.eyebrow.toLowerCase()} care, raised to where it belongs.`}
+          title={`The standard of ${data.eyebrow} care, raised to where it belongs.`}
         />
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-charcoal-soft">
           {data.expertiseBlurb}
@@ -287,7 +287,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
             Medically Reviewed
           </p>
           <p className="mt-1 text-sm text-off-white/70">
-            Reviewed by Dr. Edward Baumgartner, MD. Information on this page is not medical
+            Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical
             advice. Always consult your physician.
           </p>
         </div>

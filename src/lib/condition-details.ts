@@ -426,7 +426,28 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         blurb: "Considered for CRPS and select refractory pain.",
       },
     ],
-    relatedConditions: relatedFor("other-pain-conditions"),
+    relatedConditions: [
+      {
+        slug: "migraines",
+        title: "Migraines & Chronic Headache",
+        blurb: "Beyond medication management — interventional options when headaches don't respond.",
+      },
+      {
+        slug: "post-surgical-pain",
+        title: "Post-Surgical Pain",
+        blurb: "When surgery resolved the issue but pain remained — interventional options that can help.",
+      },
+      {
+        slug: "neuropathic-pain",
+        title: "Neuropathic Pain",
+        blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
+      },
+      {
+        slug: "chronic-pain",
+        title: "Chronic Pain",
+        blurb: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
+      },
+    ],
   },
 
   sciatica: {
@@ -438,7 +459,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Sciatica is the term for pain that radiates from the lower back into the buttock and down the leg, following the path of the sciatic nerve. The cause is rarely the nerve itself — it is most often a lumbar disc herniation, foraminal stenosis, or piriformis-related compression. The right diagnosis is the difference between getting durable relief and chasing symptoms.",
     introParagraphs: [
-      "Sciatica is the term for pain that radiates from the lower back into the buttock and down the leg, following the path of the sciatic nerve. The cause is rarely the nerve itself — it is most often a lumbar disc herniation, foraminal stenosis, or piriformis-related compression. The right diagnosis is the difference between getting durable relief and chasing symptoms.",
       "Sciatica is one of the most common chief complaints we see — and one of the most commonly misdiagnosed. The word \"sciatica\" describes a symptom pattern, not a single diagnosis. The vast majority of cases trace back to a specific structural cause that can be identified on imaging and addressed with a targeted plan: a lumbar disc herniation pressing on a nerve root, a stenotic foramen narrowing the space the nerve travels through, or a piriformis-related compression of the sciatic nerve outside the spine.",
       "Most acute sciatica improves with time and conservative care. The minority that persists is what we treat at HTx Pain Institute — patients whose pain has not responded to physical therapy, oral medications, and time, and who need a more decisive intervention before sciatica derails their work, sleep, or function.",
     ],
@@ -532,7 +552,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "A herniated disc occurs when the soft nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a spinal nerve. Most herniations improve with time and targeted care — and most do not require surgery. Image-guided injections, careful diagnosis, and a tailored recovery plan get the majority of patients back to their lives.",
     introParagraphs: [
-      "A herniated disc occurs when the soft nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a spinal nerve. Most herniations improve with time and targeted care — and most do not require surgery. Image-guided injections, careful diagnosis, and a tailored recovery plan get the majority of patients back to their lives.",
       "A herniated disc — sometimes called a slipped, bulging, or ruptured disc — happens when the gel-like nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a nearby spinal nerve. The result is the classic cocktail of back pain plus radiating arm or leg pain, often with numbness, tingling, or weakness in the dermatome of the affected nerve.",
       "Here is what most patients are not told: most disc herniations heal. Imaging studies of asymptomatic adults routinely show disc bulges and herniations on MRI. The body resorbs disc material over time, and the inflammatory response that drives the pain settles. The job of pain medicine is to manage symptoms and protect function during that healing window — not necessarily to operate.",
       "When herniations do not resolve, or when they cause progressive neurologic deficits, we have a stepwise interventional toolkit. We start with the least invasive options that address the cause and reserve more involved procedures for cases that genuinely need them.",
@@ -626,7 +645,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Lumbar spinal stenosis is the narrowing of the spinal canal — most commonly from age-related thickening of the ligamentum flavum, disc degeneration, and facet hypertrophy. The hallmark is neurogenic claudication: leg pain or heaviness with walking that improves with sitting or leaning forward. The MILD procedure has changed what is possible for these patients.",
     introParagraphs: [
-      "Lumbar spinal stenosis is the narrowing of the spinal canal — most commonly from age-related thickening of the ligamentum flavum, disc degeneration, and facet hypertrophy. The hallmark is neurogenic claudication: leg pain or heaviness with walking that improves with sitting or leaning forward. The MILD procedure has changed what is possible for these patients.",
       "Lumbar spinal stenosis is the gradual narrowing of the spinal canal — most commonly from age-related thickening of the ligamentum flavum, disc degeneration, and facet hypertrophy. The hallmark is neurogenic claudication: leg pain, heaviness, or numbness that comes on with walking or standing and improves with sitting, leaning forward, or using a shopping cart for support.",
       "Stenosis is one of the most common conditions in patients over 60, and it is also one where outdated thinking still shapes treatment. For decades, patients with stenosis had two options: live with it, or undergo a laminectomy or fusion. The MILD procedure has changed that. For patients whose stenosis is driven by ligamentum flavum hypertrophy, MILD offers an outpatient, implant-free option that preserves the spine's natural anatomy.",
       "We treat stenosis at every stage — from early symptomatic patients still benefitting from conservative care, to patients exploring MILD and other targeted procedures, to patients who have already had surgery and need ongoing management.",
@@ -721,7 +739,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Hip pain can come from the joint itself, the surrounding tendons and bursa, or referred pain from the spine and SI joint. Diagnostic clarity matters — a targeted injection often confirms the source and provides immediate relief. We coordinate with orthopedic colleagues when surgery is the right answer, and offer image-guided non-surgical care when it is not.",
     introParagraphs: [
-      "Hip pain can come from the joint itself, the surrounding tendons and bursa, or referred pain from the spine and SI joint. Diagnostic clarity matters — a targeted injection often confirms the source and provides immediate relief. We coordinate with orthopedic colleagues when surgery is the right answer, and offer image-guided non-surgical care when it is not.",
       "Hip pain is deceptively complex. The hip joint itself, the surrounding tendons (gluteal, iliopsoas), the bursa, and even the lumbar spine and SI joint all refer pain into the hip region. A single physical exam often cannot tell these apart with confidence — and that is why image-guided diagnostic injections are so valuable here.",
       "Dr. Baumgartner takes a thoughtful approach to hip pain: figure out where the pain is actually coming from, treat that source with the least invasive tool that works, and coordinate with our orthopedic colleagues if and when surgery becomes the right answer. We are not in the business of doing the same injection over and over and hoping for a different result.",
     ],
@@ -815,7 +832,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Shoulder pain rarely has a single cause. The rotator cuff, labrum, biceps tendon, AC joint, and cervical spine can all contribute. Image-guided injections are both diagnostic and therapeutic — and PRP is increasingly an excellent first-line biologic option for tendinopathy. We work with orthopedic and physical therapy partners to build the right plan.",
     introParagraphs: [
-      "Shoulder pain rarely has a single cause. The rotator cuff, labrum, biceps tendon, AC joint, and cervical spine can all contribute. Image-guided injections are both diagnostic and therapeutic — and PRP is increasingly an excellent first-line biologic option for tendinopathy. We work with orthopedic and physical therapy partners to build the right plan.",
       "The shoulder is the most mobile joint in the body, and that mobility comes at the cost of stability — which is why shoulder problems are common, and often layered. The rotator cuff, the labrum, the biceps tendon, the AC joint, the bursa, and the cervical spine can all contribute to what a patient experiences as \"shoulder pain.\" The trick is sorting them out.",
       "Most shoulder pain has a tendinous or bursal contribution that responds to a precise, ultrasound-guided injection plus targeted physical therapy. Some shoulders need biologic support — PRP for partial rotator cuff tears or persistent tendinopathy. Others need surgical referral, and we will tell you when that is the right call.",
       "We coordinate closely with orthopedic shoulder colleagues. We do not see ourselves as competing with them — our job is to treat the cases that do not require surgery and to be honest about the ones that do.",
@@ -910,7 +926,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Chronic and refractory headaches are not just a medication problem. Occipital nerve blocks, sphenopalatine ganglion procedures, and selective nerve targeting can dramatically change the trajectory of a chronic headache patient. We coordinate with neurology when appropriate and bring the interventional toolkit when standard therapy isn't enough.",
     introParagraphs: [
-      "Chronic and refractory headaches are not just a medication problem. Occipital nerve blocks, sphenopalatine ganglion procedures, and selective nerve targeting can dramatically change the trajectory of a chronic headache patient. We coordinate with neurology when appropriate and bring the interventional toolkit when standard therapy isn't enough.",
       "Migraine and chronic headache are among the most disabling conditions in medicine — and among the most under-treated. Most patients with chronic headache have been on rotating medications for years, often without much benefit, and have not been offered the interventional options that can dramatically change their trajectory.",
       "We do not replace neurology — we work alongside it. For patients with cervicogenic headache, occipital neuralgia, or migraine that has not responded to standard preventives, interventional pain medicine has a real toolkit: occipital nerve blocks, sphenopalatine ganglion procedures, cervical medial branch blocks and RFA when the upper cervical facets are involved, and selective targeting of other cranial nerves.",
       "Our goal is simple: fewer headache days, less disability, and less reliance on rescue medications.",
@@ -1005,7 +1020,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Fibromyalgia is a chronic central pain syndrome that causes widespread musculoskeletal pain along with fatigue, sleep disturbance, and cognitive symptoms. There is no single procedure that resolves fibromyalgia — but careful medication management, treatment of co-occurring pain generators, and a structured plan can meaningfully improve quality of life.",
     introParagraphs: [
-      "Fibromyalgia is a chronic central pain syndrome that causes widespread musculoskeletal pain along with fatigue, sleep disturbance, and cognitive symptoms. There is no single procedure that resolves fibromyalgia — but careful medication management, treatment of co-occurring pain generators, and a structured plan can meaningfully improve quality of life.",
       "Fibromyalgia is real. The pain is real, the fatigue is real, the cognitive symptoms are real — and patients with fibromyalgia have often been dismissed for years by clinicians who do not know what to do with the diagnosis. We do.",
       "Modern understanding of fibromyalgia frames it as a central pain syndrome — a state of amplified pain processing in the central nervous system, often triggered by stressful illness, trauma, or surgery, and shaped by genetic predisposition. There is no single procedure that resolves it, but there is also no longer any reason to leave fibromyalgia patients without a plan.",
       "We treat the central pain pathology through careful medication management (membrane stabilizers, SNRIs, low-dose adjuncts), and we treat the overlapping musculoskeletal pain generators that almost always coexist — facet, SI, peripheral nerve. The combination is often what moves the needle.",
@@ -1098,7 +1112,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "From the recreational athlete to the weekend warrior, sports injuries deserve a precise diagnosis and a treatment plan calibrated to your goals. Ultrasound-guided diagnostic injections, PRP therapy, and selective nerve blocks let us treat tendinopathy, joint injuries, and post-traumatic pain without unnecessary downtime.",
     introParagraphs: [
-      "From the recreational athlete to the weekend warrior, sports injuries deserve a precise diagnosis and a treatment plan calibrated to your goals. Ultrasound-guided diagnostic injections, PRP therapy, and selective nerve blocks let us treat tendinopathy, joint injuries, and post-traumatic pain without unnecessary downtime.",
       "Sports injuries deserve a treatment plan calibrated to your goals. A 25-year-old runner with patellar tendinopathy, a 52-year-old golfer with rotator cuff trouble, and a 70-year-old pickleball player with knee OA all face different decisions about timeline, recovery, and risk tolerance.",
       "Modern interventional pain medicine offers options that did not exist a decade ago. Ultrasound-guided diagnostic injections give us precision the orthopedic clinic of 2010 did not have. PRP therapy gives us a biologic option for tendinopathy and select joint injuries. Selective nerve blocks address peripheral nerve sensitization that often layers on top of orthopedic injuries.",
       "We work with athletes of every level — and we take the same care for the recreational athlete that we take for anyone else.",
@@ -1193,7 +1206,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Persistent pain after surgery is one of the most under-recognized chronic-pain syndromes. Whether after spine surgery, knee or hip replacement, hernia repair, or thoracic surgery, post-surgical pain has specific interventional answers — many of them not offered by general pain practices. A careful diagnostic plan opens the door to durable relief.",
     introParagraphs: [
-      "Persistent pain after surgery is one of the most under-recognized chronic-pain syndromes. Whether after spine surgery, knee or hip replacement, hernia repair, or thoracic surgery, post-surgical pain has specific interventional answers — many of them not offered by general pain practices. A careful diagnostic plan opens the door to durable relief.",
       "Persistent post-surgical pain is one of the most under-recognized and most treatable chronic pain syndromes in medicine. Whether the surgery was on the spine, knee, hip, chest, abdomen, or breast, a meaningful percentage of patients develop pain that outlasts the expected healing window — and most of these patients do not get the focused interventional workup their case deserves.",
       "We see this every week. The patient who had a successful spine surgery but the leg pain came back. The patient with persistent groin pain after hernia repair. The patient with thoracic pain after a thoracotomy. The patient with mastectomy pain that everyone said \"would just take time\" but did not.",
       "There is almost always a specific anatomic explanation, and almost always an interventional toolkit that can address it — selective nerve blocks, RFA, sympathetic blocks, scar neuroma injection, spinal cord stimulation. We will work through it methodically.",

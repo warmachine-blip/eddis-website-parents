@@ -92,7 +92,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     whyThisCityBlurb:
       "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, both Minuteman and LinQ SI fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
     landmarks: [
-      "Approximately 15–20 minutes from The Woodlands Mall via I-45 South to FM 1960",
+      "Approximately 15–25 minutes from The Woodlands Mall via I-45 South to FM 1960",
       "Easy access from Research Forest Drive, Lake Woodlands Drive, and Grogan's Mill",
       "Memorial Hermann The Woodlands and Houston Methodist The Woodlands nearby for prior imaging",
       "Convenient for residents of Carlton Woods, Grogan's Mill, Cochran's Crossing, and Panther Creek",
@@ -260,7 +260,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Precision interventional pain medicine for Champions, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Champions, TX patients.",
     heroIntro:
-      "The Champions area is one of the closest communities to our Houston office, with most patients arriving in about 10 minutes. Most patients reach our Houston office in 10 min.",
+      "The Champions area is one of the closest communities to our Houston office, with most patients arriving in about 10 minutes.",
     nearestOfficeKey: "houston",
     commuteLine: "10 min from most of Champions to our Houston office.",
     aboutParagraphs: [
@@ -307,7 +307,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Precision interventional pain medicine for Kingwood, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Kingwood, TX patients.",
     heroIntro:
-      "Kingwood is one of our closest communities to the Humble office — most patients arrive in 10–15 minutes. Most patients reach our Humble office in 10–15 min.",
+      "Kingwood is one of our closest communities to the Humble office — most patients arrive in 10–15 minutes.",
     nearestOfficeKey: "humble",
     commuteLine: "10–15 min from most of Kingwood to our Humble office.",
     aboutParagraphs: [
@@ -443,19 +443,19 @@ export const locationDetails: Record<string, LocationDetail> = {
   },
   "northwest-houston": {
     slug: "northwest-houston",
-    city: "NW Houston",
+    city: "Northwest Houston",
     metaDescription:
       "Precision interventional pain medicine for Northwest Houston patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Northwest Houston patients.",
     heroIntro:
       "Northwest Houston neighborhoods — including Vintage Park, Willowbrook, and the 249 corridor — are among our closest communities. Most patients reach our Houston office in 10–20 min.",
     nearestOfficeKey: "houston",
-    commuteLine: "10–20 min from most of NW Houston to our Houston office.",
+    commuteLine: "10–20 min from most of Northwest Houston to our Houston office.",
     aboutParagraphs: [
       "Northwest Houston is the broad geography along the Texas 249 corridor — Vintage Park, Willowbrook, Champion Forest, and the FM 1960 retail spine. It is one of the most diverse parts of our service area, with everything from young professionals in newer apartment communities to longtime suburban families to active retirees in established neighborhoods.",
       "We treat the full range here — motor-vehicle injuries from the area's busy highways, workers' compensation cases from light industrial and warehousing employers, chronic spine pain in office-based professionals, and biologic options for active patients trying to keep up with their lifestyles. The Texas 249 corridor is the spine of our practice, geographically and clinically.",
     ],
-    patientsListIntro: "Patients we commonly see in NW Houston",
+    patientsListIntro: "Patients we commonly see in Northwest Houston",
     patientsList: [
       "Office workers with cervical and lumbar pain from desk and commute",
       "Motor-vehicle injury cases from area highways (249, Beltway 8, FM 1960)",

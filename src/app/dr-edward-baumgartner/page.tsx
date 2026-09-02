@@ -6,7 +6,7 @@ import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Dr. Edward Baumgartner Jr., MD — HTx Pain Institute · HTx Pain Institute",
+  title: "Edward Baumgartner Jr., MD",
   description:
     "Houston native, double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute. Precision care for patients told their only option is spine surgery.",
 };
@@ -68,7 +68,7 @@ export default function DrBaumgartnerPage() {
             items={[
               { label: "Home", href: "/" },
               { label: "About", href: "/about-us" },
-              { label: "Dr. Edward Baumgartner Jr., MD" },
+              { label: "Edward Baumgartner Jr., MD" },
             ]}
           />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
@@ -76,7 +76,7 @@ export default function DrBaumgartnerPage() {
             Founding Physician · Pain Specialist
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Dr. Edward Baumgartner Jr., MD
+            Edward Baumgartner Jr., MD
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Double Board-Certified · Anesthesiology &amp; Pain Medicine
@@ -92,7 +92,7 @@ export default function DrBaumgartnerPage() {
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-line">
                 <Image
                   src="/images/dr-baumgartner.webp"
-                  alt="Dr. Edward Baumgartner Jr., M.D. — Founder of HTx Pain Institute"
+                  alt="Edward Baumgartner Jr., MD — Founder of HTx Pain Institute"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover object-top"
@@ -131,7 +131,7 @@ export default function DrBaumgartnerPage() {
               Houston Native · Texas A&amp;M · UT Health Houston · Rush University
             </p>
             <p className="mt-3 text-pretty text-lg leading-relaxed text-charcoal-soft">
-              Dr. Edward Baumgartner, Jr. is a Houston native and double
+              Edward Baumgartner Jr., MD is a Houston native and double
               board-certified specialist in Anesthesiology and Pain Medicine, with
               over fifteen years of interventional pain medicine experience. He
               founded the practice in 2018 — first as Texas Interventional Pain

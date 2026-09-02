@@ -149,7 +149,7 @@ export default function Home() {
           <div className="group relative aspect-[3/2] w-full overflow-hidden border border-line">
             <Image
               src="/images/dr-baumgartner.webp"
-              alt="Dr. Edward Baumgartner Jr., M.D. at HTx Pain Institute"
+              alt="Edward Baumgartner Jr., MD at HTx Pain Institute"
               fill
               sizes="(min-width: 1024px) 560px, 100vw"
               className="object-cover object-[50%_18%]"
@@ -189,10 +189,10 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              Houston-trained. Houston-raised. Returning home to put patients first.
+              Houston-raised. Chicago-trained. Returning home to put patients first.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
-              Dr. Edward Baumgartner Jr. founded HTx Pain Institute with a clear
+              Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
               mission: bring the modern interventional toolkit to Houston — applied
               with the time, precision, and judgment every patient deserves. No
               shortcuts. No high-volume churn. Just the care he&rsquo;d want for his

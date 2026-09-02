@@ -5,7 +5,7 @@ import { locationDetails } from "@/lib/location-details";
 const data = locationDetails["cypress"];
 
 export const metadata: Metadata = {
-  title: `Pain Doctor in ${data.city} — HTx Pain Institute`,
+  title: `Pain Doctor in ${data.city}`,
   description: data.metaDescription,
 };
 

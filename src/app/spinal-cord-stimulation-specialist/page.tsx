@@ -5,7 +5,7 @@ import { serviceDetails } from "@/lib/service-details";
 const data = serviceDetails["spinal-cord-stimulation-specialist"];
 
 export const metadata: Metadata = {
-  title: `${data.title} in Houston · HTx Pain Institute`,
+  title: `${data.title} in Houston`,
   description: data.metaDescription,
 };
 

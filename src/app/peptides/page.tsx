@@ -5,7 +5,7 @@ import { IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Peptides & Wellness — HTx Pain Institute (Coming Soon) · HTx Pain Institute",
+  title: "Peptides & Wellness (Coming Soon)",
   description:
     "HTx Pain Institute is building a dedicated wellness program — physician-supervised peptides, weight loss, and recovery. Talk to Dr. Baumgartner.",
 };
@@ -111,7 +111,7 @@ export default function Page() {
                 Medically Reviewed
               </p>
               <p className="mt-1 text-sm leading-relaxed text-charcoal-soft">
-                Reviewed by Dr. Edward Baumgartner, MD. Information on this page is not medical
+                Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical
                 advice. Always consult your physician.
               </p>
             </div>

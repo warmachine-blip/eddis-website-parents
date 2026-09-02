@@ -6,7 +6,7 @@ import SectionHeading from "@/components/section-heading";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Injury Pain — Work Injuries & Motor Vehicle Accidents · HTx Pain Institute",
+  title: "Injuries & Accidents",
   description:
     "Comprehensive interventional pain care for workplace injuries and motor vehicle accidents in Houston. Coordinated with workers' compensation carriers, attorneys, and case managers.",
 };

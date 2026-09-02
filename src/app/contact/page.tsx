@@ -4,7 +4,7 @@ import ContactForm from "@/components/contact-form";
 import { offices, practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Contact Us · HTx Pain Institute",
+  title: "Contact Us",
   description:
     "Reach HTx Pain Institute by phone, email, or message. Two Houston-area locations — same-week appointments available.",
 };
@@ -123,7 +123,11 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-2.5 pt-1 text-off-white/75">
                 <ClockIcon className="h-4 w-4 shrink-0 text-brass-light" />
-                {practice.hours}
+                <span>
+                  {practice.hours}
+                  <br />
+                  {practice.hoursWeekend}
+                </span>
               </div>
             </dl>
           </div>

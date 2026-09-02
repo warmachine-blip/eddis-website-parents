@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
-import FaqCards from "@/components/faq-cards";
+import FaqAccordion from "@/components/faq-accordion";
 import SectionHeading from "@/components/section-heading";
 import { IconBadge } from "@/components/icon-badge";
 
 export const metadata: Metadata = {
-  title: "Ima's Home for Children — HTx Pain Institute Community · HTx Pain Institute",
+  title: "Ima's Home for Children",
   description:
     "Eight years presenting sponsor of the Ima's Home 5K. Tatyana Baumgartner serves on the Board of Directors. Caring for 155 orphaned children in the Philippines.",
 };
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "How can I get involved or donate?",
-    a: "You can register for the 5K at imas5k.itsyourrace.com, donate at imashome.com/give, or sponsor a child at imashome.com/child-sponsorship.html. Every dollar helps cover food, shelter, education, and care for the children.",
+    a: "You can register for the 5K at imas5k.itsyourrace.com, donate at imashome.com/give, or learn about child sponsorship at imashome.com. Every dollar helps cover food, shelter, education, and care for the children.",
   },
 ];
 
@@ -249,7 +249,7 @@ export default function ImasHomePage() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
           <SectionHeading eyebrow="FAQ" title="Frequently asked" />
           <div className="mt-10 max-w-3xl">
-            <FaqCards faqs={faqs} />
+            <FaqAccordion faqs={faqs} allClosed />
           </div>
           <p className="mt-8 max-w-3xl text-center text-sm text-charcoal-soft">
             Want to support Ima&rsquo;s Home directly? Visit{" "}

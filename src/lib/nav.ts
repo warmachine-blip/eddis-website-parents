@@ -39,8 +39,8 @@ export const locationsNav: NavLink[] = [
 
 export const aboutNav: NavLink[] = [
   { label: "Our Story", href: "/about-us" },
-  { label: "Dr. Edward Baumgartner Jr.", href: "/dr-edward-baumgartner" },
-  { label: "Tatyana Baumgartner", href: "/tatyana-baumgartner-cpa" },
+  { label: "Edward Baumgartner Jr., MD", href: "/dr-edward-baumgartner" },
+  { label: "Tatyana Baumgartner, CPA", href: "/tatyana-baumgartner-cpa" },
   { label: "Allison Turner, DNP", href: "/allison-turner" },
 ];
 
@@ -142,6 +142,8 @@ export const practice = {
 export type Office = {
   key: string;
   city: string;
+  state: string;
+  zip: string;
   label: string;
   addressLine1: string;
   addressLine2: string;
@@ -152,7 +154,9 @@ export const offices: Office[] = [
   {
     key: "houston",
     city: "Houston",
-    label: "HTx Pain — Houston (TX-249)",
+    state: "TX",
+    zip: "77064",
+    label: "HTx Pain Institute — Houston (TX-249)",
     addressLine1: "17314 Texas 249, Suite 100",
     addressLine2: "Houston, TX 77064",
     mapsQuery: "17314 Texas 249, Suite 100, Houston, TX 77064",
@@ -160,7 +164,9 @@ export const offices: Office[] = [
   {
     key: "humble",
     city: "Humble",
-    label: "HTx Pain — Humble (FM 1960)",
+    state: "TX",
+    zip: "77338",
+    label: "HTx Pain Institute — Humble (FM 1960)",
     addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 260",
     addressLine2: "Humble, TX 77338",
     mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 260, Humble, TX 77338",

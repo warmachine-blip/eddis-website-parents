@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/legal-page";
+import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy · HTx Pain Institute",
+  title: "Privacy Policy",
   description:
     "How HTx Pain Institute collects, uses, and protects information — including HIPAA-protected health information.",
 };
@@ -30,7 +31,7 @@ const data = {
     {
       heading: "3. Information We Collect",
       paragraphs: [
-        "Through this website we may collect: contact information you submit through forms, basic device and browser metadata, and analytics data via standard cookies. Our appointment request form asks only for your name, phone number, email address, and preferred location, date, and time. Our contact form asks for your name, email, phone, a topic, and a message. We do not ask for health information through website forms — please save medical detail for your call or visit.",
+        "Through this website we may collect: contact information you submit through forms, and basic device and browser metadata in standard server logs. Our appointment request form asks only for your name, phone number, email address, and preferred location, date, and time. Our contact form asks for your name, email, phone, a topic, and a message. We do not ask for health information through website forms — please save medical detail for your call or visit.",
       ],
     },
     {
@@ -42,7 +43,7 @@ const data = {
     {
       heading: "5. Cookies & Analytics",
       paragraphs: [
-        "We use a limited set of cookies and analytics tools to understand how visitors use our website. You may disable cookies through your browser settings.",
+        "This website does not currently set cookies or run analytics scripts. Our hosting provider keeps standard server logs (IP address, browser type, pages requested) for security and performance. If we add analytics in the future, we will update this policy.",
       ],
     },
     {
@@ -54,7 +55,7 @@ const data = {
     {
       heading: "7. Your Rights",
       paragraphs: [
-        "You have rights to access, amend, and request restrictions on your PHI under HIPAA. To exercise these rights, contact our office at (832) 990-8600 or info@htxpaincare.com.",
+        `You have rights to access, amend, and request restrictions on your PHI under HIPAA. To exercise these rights, contact our office at ${practice.phone} or ${practice.email}.`,
       ],
     },
     {
@@ -72,7 +73,7 @@ const data = {
     {
       heading: "10. Contact",
       paragraphs: [
-        "For privacy questions, contact our Privacy Officer at info@htxpaincare.com or (832) 990-8600.",
+        `For privacy questions, contact our Privacy Officer at ${practice.email} or ${practice.phone}.`,
       ],
     },
   ],

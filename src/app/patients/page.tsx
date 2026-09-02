@@ -5,9 +5,10 @@ import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
+import { acceptedPlans } from "@/lib/insurance";
 
 export const metadata: Metadata = {
-  title: "Patient Resources · HTx Pain Institute",
+  title: "Patient Resources",
   description:
     "Everything you need before, during, and after your visit to HTx Pain Institute — insurance, what to expect, video library, and more.",
 };
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 const resourceCards = [
   {
     title: "Video Library",
-    body: "Procedure walk-throughs, recovery tips, and patient education — visual where words fall short.",
+    body: "Physician interviews, patient education, and practice stories — visual where words fall short.",
     linkLabel: "Watch the library",
     href: "/video-library",
     icon: "bolt",
@@ -62,13 +63,7 @@ const steps = [
   },
 ];
 
-const plans = [
-  "Most major commercial plans",
-  "Medicare",
-  "Medicaid (select plans)",
-  "Workers' Compensation",
-  "Personal Injury / Letter of Protection (case-by-case)",
-];
+const plans = acceptedPlans;
 
 function ArrowIcon() {
   return (
