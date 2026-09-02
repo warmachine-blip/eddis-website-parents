@@ -401,9 +401,9 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Precision interventional pain medicine for Humble, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Humble, TX patients.",
     heroIntro:
-      "Humble is home — our Humble office on FM 1960 serves the heart of the community. Most patients reach our Humble office in Local.",
+      "Humble is home — our Humble office on FM 1960 serves the heart of the community. Most patients reach our Humble office in about 5 min.",
     nearestOfficeKey: "humble",
-    commuteLine: "Local from most of Humble to our Humble office.",
+    commuteLine: "About 5 min from most of Humble to our Humble office.",
     aboutParagraphs: [
       "Humble is home — our Humble office on FM 1960 has been a fixture since the practice opened, and many of our longest-tenured patients are from the immediate area. Humble combines older established neighborhoods with newer retail and residential growth along the FM 1960 and US-59 corridors.",
       "The Humble patient mix is diverse: long-term residents managing chronic spine and joint conditions across multiple decades, working-age adults with motor-vehicle and work injuries, and retirees navigating osteoarthritis and stenosis. Our practice's cultural roots are in this community, and the relationship goes both ways.",

@@ -12,7 +12,7 @@ const communities = [
   { slug: "champions", label: "Champions, TX", commute: "10 min from TX-249" },
   { slug: "kingwood", label: "Kingwood, TX", commute: "10–15 min from FM 1960" },
   { slug: "atascocita", label: "Atascocita, TX", commute: "5–10 min from FM 1960" },
-  { slug: "humble", label: "Humble, TX", commute: "Local from FM 1960" },
+  { slug: "humble", label: "Humble, TX", commute: "About 5 min from FM 1960" },
   { slug: "northwest-houston", label: "Northwest Houston", commute: "10–20 min from TX-249" },
 ];
 

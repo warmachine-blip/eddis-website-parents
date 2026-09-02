@@ -49,49 +49,41 @@ const shareItems = [
   { key: "linkedin", label: "Dr. Edward Baumgartner on LinkedIn", Icon: LinkedInIcon, href: linkedInUrl },
 ];
 
+/**
+ * "Contact" nav item with a hover/focus-revealed row of social icons.
+ * The icons open in a small panel BELOW the link (same pattern as the other
+ * header dropdowns) so the Contact link itself always stays visible and
+ * clickable; previously the icon row was layered over the link and stole
+ * every mouse click.
+ */
 export default function ContactSocialReveal() {
   const handleClick = (item: (typeof shareItems)[number]) => {
     window.open(item.href, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="group grid grid-cols-1 grid-rows-1 items-center justify-items-center py-2">
+    <div className="group relative">
       <Link
         href="/contact"
-        className={[
-          "col-start-1 row-start-1 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft",
-          "transition-opacity duration-150 ease-out",
-          "group-hover:opacity-0 group-hover:text-brass",
-        ].join(" ")}
+        className="inline-flex items-center py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass group-hover:text-brass group-focus-within:text-brass"
       >
         Contact
       </Link>
 
-      <div
-        className={[
-          "pointer-events-none col-start-1 row-start-1 flex items-center gap-0.5 opacity-0",
-          "transition-opacity duration-150 ease-out",
-          "group-hover:pointer-events-auto group-hover:opacity-100",
-        ].join(" ")}
-      >
-        {shareItems.map((item, i) => (
-          <button
-            key={item.key}
-            type="button"
-            aria-label={item.label}
-            onClick={() => handleClick(item)}
-            className={[
-              "flex h-6 w-6 shrink-0 -translate-x-1.5 items-center justify-center rounded-full text-charcoal-soft opacity-0",
-              "transition-[opacity,transform,background-color,color] duration-150 ease-out",
-              "group-hover:translate-x-0 group-hover:opacity-100",
-              "hover:bg-pearl hover:text-brass-deep active:scale-90",
-              "motion-reduce:translate-x-0",
-            ].join(" ")}
-            style={{ transitionDelay: `${i * 30}ms` }}
-          >
-            <item.Icon className="h-3.5 w-3.5" />
-          </button>
-        ))}
+      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+        <div className="flex items-center gap-0.5 rounded-sm border border-line bg-off-white p-1.5 shadow-[0_18px_40px_-24px_rgba(15,26,46,0.35)]">
+          {shareItems.map((item) => (
+            <button
+              key={item.key}
+              type="button"
+              aria-label={item.label}
+              onClick={() => handleClick(item)}
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-deep active:scale-90"
+            >
+              <item.Icon className="h-3.5 w-3.5" />
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

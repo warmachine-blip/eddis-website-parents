@@ -27,7 +27,7 @@ const plans = [
 const steps = [
   {
     title: "Share your insurance information",
-    body: "When you request an appointment online or by phone, share your card details. We collect everything we need to verify your benefits.",
+    body: "When we call to confirm your appointment, have your insurance card handy. We collect everything we need to verify your benefits.",
   },
   {
     title: "We verify before your visit",
