@@ -3,19 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { practice, offices } from "@/lib/nav";
 
-const reasons = [
-  "Back pain",
-  "Neck pain",
-  "Knee pain",
-  "Joint pain",
-  "Neuropathic pain / nerve pain",
-  "Post-surgical pain",
-  "Second opinion",
-  "Motor vehicle injury",
-  "Work injury",
-  "Other / not sure",
-];
-
 const preferredTimes = [
   "Morning (before noon)",
   "Midday (11–2)",
@@ -35,32 +22,21 @@ export default function RequestAppointmentForm() {
     const name = [firstName, lastName].filter(Boolean).join(" ");
     const email = String(form.get("email") ?? "");
     const phone = String(form.get("phone") ?? "");
-    const dateOfBirth = String(form.get("dateOfBirth") ?? "");
     const location = String(form.get("location") ?? "");
     const preferredDate = String(form.get("preferredDate") ?? "");
     const preferredTime = String(form.get("preferredTime") ?? "");
-    const reason = String(form.get("reason") ?? "");
-    const insuranceProvider = String(form.get("insuranceProvider") ?? "");
-    const workersCompNote = String(form.get("workersCompNote") ?? "");
-    const message = String(form.get("message") ?? "");
 
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
-      `Date of birth: ${dateOfBirth}`,
       `Preferred location: ${location}`,
       `Preferred date: ${preferredDate}`,
       `Preferred time: ${preferredTime}`,
-      `Reason: ${reason}`,
-      `Insurance provider: ${insuranceProvider}`,
-      `Workers' compensation / personal injury: ${workersCompNote}`,
-      "",
-      message,
     ].join("\n");
 
     window.location.href = `mailto:${practice.email}?subject=${encodeURIComponent(
-      `Appointment Request: ${reason || "New patient"}`
+      `Appointment Request: ${name || "New patient"}`
     )}&body=${encodeURIComponent(body)}`;
 
     setSent(true);
@@ -130,22 +106,6 @@ export default function RequestAppointmentForm() {
         </div>
 
         <div>
-          <label htmlFor="dateOfBirth" className="block text-sm font-medium text-navy">
-            Date of Birth <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="dateOfBirth"
-            name="dateOfBirth"
-            type="date"
-            required
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-          />
-          <p className="mt-1.5 text-xs text-muted">
-            Required for insurance verification.
-          </p>
-        </div>
-
-        <div>
           <label htmlFor="location" className="block text-sm font-medium text-navy">
             Preferred Location <span aria-hidden="true">*</span>
           </label>
@@ -202,56 +162,6 @@ export default function RequestAppointmentForm() {
           </div>
         </div>
 
-        <div>
-          <label htmlFor="reason" className="block text-sm font-medium text-navy">
-            Reason for Visit <span aria-hidden="true">*</span>
-          </label>
-          <select
-            id="reason"
-            name="reason"
-            defaultValue=""
-            required
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-          >
-            <option value="" disabled>
-              Select an option
-            </option>
-            {reasons.map((r) => (
-              <option key={r} value={r}>
-                {r}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="insuranceProvider" className="block text-sm font-medium text-navy">
-            Insurance Provider
-          </label>
-          <input
-            id="insuranceProvider"
-            name="insuranceProvider"
-            type="text"
-            placeholder="e.g. BCBS PPO, Medicare, Aetna…"
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal placeholder:text-muted focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-          />
-          <p className="mt-1.5 text-xs text-muted">
-            Workers&rsquo; compensation? Personal injury? Note it below.
-          </p>
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-navy">
-            Anything else we should know?
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-          />
-        </div>
-
         <label className="flex items-start gap-3 text-sm text-charcoal-soft">
           <input
             type="checkbox"
@@ -261,7 +171,7 @@ export default function RequestAppointmentForm() {
             className="mt-0.5 h-4 w-4 border-line accent-navy"
           />
           I understand this is a request — not a confirmed appointment — and I agree
-          to be contacted by HTx Pain Specialists.
+          to be contacted by {practice.name}.
         </label>
 
         <button

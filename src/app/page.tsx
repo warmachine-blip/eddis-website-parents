@@ -63,12 +63,6 @@ const whyHtx = [
   },
 ];
 
-const testimonialStats = [
-  { value: "15+", label: "Years Experience" },
-  { value: "2x", label: "Board-Certified" },
-  { value: "2", label: "Houston Locations" },
-];
-
 const injuries = [
   {
     title: "Work Injuries & Accidents",
@@ -292,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* Why HTx Pain */}
-      <section className="border-y border-line bg-navy-deep text-off-white">
+      <section className="border-t border-line bg-navy-deep text-off-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <SectionHeading
             eyebrow="Why HTx Pain"
@@ -309,53 +303,6 @@ export default function Home() {
                 <h3 className="font-serif text-xl text-brass-light">{item.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-off-white/70">
                   {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <SectionHeading
-          eyebrow="Patient Stories"
-          title="Real Houstonians, real outcomes."
-          lead="A glimpse of what's possible when chronic pain is treated with skill, time, and a plan that fits your life."
-        />
-
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <figure className="lg:col-span-8">
-            <blockquote className="text-pretty font-serif text-2xl leading-snug text-navy sm:text-3xl">
-              &ldquo;After years of being told to &lsquo;live with it,&rsquo; Dr.
-              Baumgartner gave me a real plan. The radiofrequency ablation gave me my
-              life back — I&rsquo;m gardening, walking, sleeping. I cannot recommend
-              HTx Pain enough.&rdquo;
-            </blockquote>
-            <figcaption className="mt-6 flex items-center gap-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy font-serif text-lg text-off-white">
-                L
-              </span>
-              <span>
-                <span className="block font-sans text-sm font-semibold text-navy">
-                  Linda M.
-                </span>
-                <span className="block text-xs text-muted">
-                  Radiofrequency Ablation patient · Houston
-                </span>
-              </span>
-              <span className="ml-auto font-sans text-sm text-brass-text">
-                4.9 / 5 average
-              </span>
-            </figcaption>
-          </figure>
-
-          <div className="grid grid-cols-3 gap-6 border-t border-line pt-8 lg:col-span-4 lg:grid-cols-1 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
-            {testimonialStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="font-serif text-3xl text-navy">{stat.value}</p>
-                <p className="mt-1 font-sans text-xs uppercase tracking-wide text-muted">
-                  {stat.label}
                 </p>
               </div>
             ))}

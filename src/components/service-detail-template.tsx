@@ -66,15 +66,15 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 <dl className="mt-4 grid gap-3 text-sm">
                   <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
                     <dt className="font-medium text-muted">Setting</dt>
-                    <dd className="font-semibold text-navy">Outpatient</dd>
+                    <dd className="text-right font-semibold text-navy">{data.quickFacts.setting}</dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
                     <dt className="font-medium text-muted">Anesthesia</dt>
-                    <dd className="font-semibold text-navy">Local + light sedation</dd>
+                    <dd className="text-right font-semibold text-navy">{data.quickFacts.anesthesia}</dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
                     <dt className="font-medium text-muted">Recovery</dt>
-                    <dd className="font-semibold text-navy">Same / next day</dd>
+                    <dd className="text-right font-semibold text-navy">{data.quickFacts.recovery}</dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-3">
                     <dt className="font-medium text-muted">Provided by</dt>
@@ -236,24 +236,6 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
           {data.expertiseBlurb}
         </p>
       </section>
-
-      {/* Testimonial */}
-      {data.testimonial && (
-        <section className="border-t border-line bg-off-white">
-          <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
-            <IconBadge icon="shield" tone="brass" />
-            <blockquote className="mt-6 text-pretty font-serif text-2xl italic leading-snug text-navy sm:text-3xl">
-              &ldquo;{data.testimonial.quote}&rdquo;
-            </blockquote>
-            <p className="mt-5 text-sm uppercase tracking-[0.18em] text-brass-text">
-              {data.testimonial.attribution} · {data.testimonial.role}
-            </p>
-            <p className="mt-3 text-xs text-muted">
-              Patient testimonial. Individual results may vary.
-            </p>
-          </div>
-        </section>
-      )}
 
       {/* Related services */}
       <section className="bg-pearl">

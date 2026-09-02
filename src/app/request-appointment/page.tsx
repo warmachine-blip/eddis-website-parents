@@ -96,8 +96,9 @@ export default function RequestAppointmentPage() {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <p className="text-sm leading-relaxed text-charcoal-soft">
-                  Your information is kept confidential and protected under HIPAA.
-                  We will only use it to coordinate your care.
+                  This form asks only for your name, contact details, and scheduling
+                  preferences. It opens your email app to send the request to our team,
+                  so please save medical details for your call or visit.
                 </p>
               </div>
               <div className="flex items-start gap-3">

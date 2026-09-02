@@ -191,18 +191,6 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="border-t border-line bg-pearl">
-        <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
-          <IconBadge icon="shield" tone="brass" />
-          <blockquote className="mx-auto mt-6 text-pretty font-serif text-2xl italic leading-snug text-navy sm:text-3xl">
-            &ldquo;{data.testimonialQuote}&rdquo;
-          </blockquote>
-          <p className="mt-5 text-sm uppercase tracking-[0.18em] text-brass-text">{data.testimonialRole}</p>
-          <p className="mt-3 text-xs text-muted">Patient testimonial. Individual results may vary.</p>
-        </div>
-      </section>
-
       {/* Medically reviewed + final CTA */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">

@@ -72,6 +72,63 @@ export const legalNav: NavLink[] = [
   { label: "Insurance", href: "/insurance" },
 ];
 
+export type Weekday =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+export type OpeningHours = {
+  days: Weekday[];
+  /** 24-hour "HH:MM" */
+  opens: string;
+  closes: string;
+};
+
+/**
+ * Single source of truth for office hours. Both offices keep the same schedule.
+ * The display string (`practice.hours`) and the JSON-LD openingHoursSpecification
+ * are derived from this array — edit hours here only.
+ */
+export const openingHours: OpeningHours[] = [
+  { days: ["Monday", "Tuesday", "Thursday"], opens: "07:00", closes: "17:00" },
+  { days: ["Wednesday"], opens: "08:00", closes: "17:00" },
+  { days: ["Friday"], opens: "07:00", closes: "16:00" },
+];
+
+const DAY_ABBR: Record<Weekday, string> = {
+  Monday: "Mon",
+  Tuesday: "Tue",
+  Wednesday: "Wed",
+  Thursday: "Thu",
+  Friday: "Fri",
+  Saturday: "Sat",
+  Sunday: "Sun",
+};
+
+function formatTime(time: string): string {
+  const [h, m] = time.split(":").map(Number);
+  const suffix = h >= 12 ? "PM" : "AM";
+  const hour12 = h % 12 || 12;
+  return m ? `${hour12}:${String(m).padStart(2, "0")}${suffix}` : `${hour12}${suffix}`;
+}
+
+function formatDays(days: Weekday[]): string {
+  const abbr = days.map((d) => DAY_ABBR[d]);
+  if (abbr.length === 1) return abbr[0];
+  return `${abbr.slice(0, -1).join(", ")} & ${abbr[abbr.length - 1]}`;
+}
+
+/** "Mon, Tue & Thu 7AM–5PM · Wed 8AM–5PM · Fri 7AM–4PM" */
+export function formatHours(spec: OpeningHours[]): string {
+  return spec
+    .map((h) => `${formatDays(h.days)} ${formatTime(h.opens)}–${formatTime(h.closes)}`)
+    .join(" · ");
+}
+
 export const practice = {
   name: "HTx Pain Institute",
   formerNames: "Texas Interventional Pain Specialists and HTx Pain Care",
@@ -79,7 +136,7 @@ export const practice = {
   phoneHref: "tel:+18329908600",
   email: "info@htxpaincare.com",
   tagline: "Precision. Lasting Relief.",
-  hours: "Mon–Thu 7AM–5PM · Wed 8AM–5PM · Fri 7AM–4PM",
+  hours: formatHours(openingHours),
   hoursWeekend: "Sat–Sun: Closed",
 };
 
