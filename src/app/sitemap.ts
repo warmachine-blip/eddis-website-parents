@@ -3,6 +3,7 @@ import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
 import { locationsNav, aboutNav } from "@/lib/nav";
 import { SITE_URL } from "@/lib/site";
+import { lastModified } from "@/lib/last-modified";
 
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
@@ -26,11 +27,13 @@ const staticRoutes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // Per-route last commit dates from scripts/last-modified.mjs; newest date as fallback.
+  const newest = Object.values(lastModified).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
+  const modified = (p: string) => new Date(lastModified[p] ?? newest);
 
   const entries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
     url: `${SITE_URL}${r.path}`,
-    lastModified: now,
+    lastModified: modified(r.path),
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
@@ -38,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const service of services) {
     entries.push({
       url: `${SITE_URL}${service.href}`,
-      lastModified: now,
+      lastModified: modified(service.href),
       changeFrequency: "monthly",
       priority: 0.8,
     });
@@ -47,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const condition of conditions) {
     entries.push({
       url: `${SITE_URL}${condition.href}`,
-      lastModified: now,
+      lastModified: modified(condition.href),
       changeFrequency: "monthly",
       priority: 0.7,
     });
@@ -56,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const location of locationsNav) {
     entries.push({
       url: `${SITE_URL}${location.href}`,
-      lastModified: now,
+      lastModified: modified(location.href),
       changeFrequency: "monthly",
       priority: 0.6,
     });
@@ -66,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (person.href === "/about-us") continue;
     entries.push({
       url: `${SITE_URL}${person.href}`,
-      lastModified: now,
+      lastModified: modified(person.href),
       changeFrequency: "monthly",
       priority: 0.5,
     });

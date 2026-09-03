@@ -26,7 +26,7 @@ export default function PainCenterPage() {
       <section className="mt-12">
         <TiltCardGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {conditions.map((condition) => (
-            <ConditionCard key={condition.slug} condition={condition} />
+            <ConditionCard key={condition.slug} condition={condition} headingLevel="h2" />
           ))}
         </TiltCardGroup>
       </section>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function PlayIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 text-off-white" fill="currentColor">
+    <svg viewBox="0 0 24 24" className="h-6 w-6 text-off-white" fill="currentColor" aria-hidden="true">
       <path d="M8 5.5v13l11-6.5z" />
     </svg>
   );
@@ -62,7 +62,7 @@ export default function VideoLibraryPage() {
                 <div className="relative aspect-video w-full overflow-hidden bg-navy-deep">
                   <img
                     src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
-                    alt={video.title}
+                    alt=""
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
@@ -77,9 +77,9 @@ export default function VideoLibraryPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-serif text-lg leading-snug text-navy transition-colors group-hover:text-brass-text">
+                  <h2 className="font-serif text-lg leading-snug text-navy transition-colors group-hover:text-brass-text">
                     {video.title}
-                  </h3>
+                  </h2>
                 </div>
               </a>
             ))}

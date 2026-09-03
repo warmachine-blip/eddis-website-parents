@@ -16,13 +16,7 @@ const TILT_MAX = 6;
 const TILT_SPRING = { stiffness: 300, damping: 28 } as const;
 const GLOW_SPRING = { stiffness: 180, damping: 22 } as const;
 
-const ACCENTS = {
-  brass: "var(--color-brass)",
-  navy: "var(--color-navy)",
-  cyan: "var(--color-cyan-500)",
-} as const;
-
-type Accent = keyof typeof ACCENTS;
+const ACCENT = "var(--color-brass)";
 
 const DimContext = createContext<{
   hovered: string | null;
@@ -50,7 +44,6 @@ const MotionLink = motion.create(Link);
 export function TiltCard({
   id,
   href,
-  accent = "brass",
   className = "",
   decorated = true,
   contentClassName = "flex h-full flex-col",
@@ -58,7 +51,6 @@ export function TiltCard({
 }: {
   id: string;
   href?: string;
-  accent?: Accent;
   className?: string;
   /** Set false to keep the magnetic tilt + sibling-dim but skip the glow/shimmer/accent-line overlays — for cards that already have their own hover treatment. */
   decorated?: boolean;
@@ -68,7 +60,7 @@ export function TiltCard({
 }) {
   const ctx = useContext(DimContext);
   const cardRef = useRef<HTMLDivElement & HTMLAnchorElement>(null);
-  const color = ACCENTS[accent];
+  const color = ACCENT;
 
   // Reduced motion keeps the glow/dim feedback but drops the spatial tilt —
   // rotation is the part most likely to bother motion-sensitive users.
@@ -92,6 +84,9 @@ export function TiltCard({
   }
 
   function handleMouseEnter() {
+    // Touch devices fire mouseenter on tap but never mouseleave, which would
+    // leave siblings dimmed; hover feedback is pointer-only.
+    if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) return;
     glowOpacity.set(1);
     ctx?.setHovered(id);
   }

@@ -204,7 +204,6 @@ export default function Home() {
                 <TiltCard
                   key={c.title}
                   id={c.title}
-                  accent="brass"
                   className="rounded-xl border border-card-border bg-white p-5 shadow-[0_1px_3px_rgba(26,39,64,0.06),0_8px_24px_-4px_rgba(26,39,64,0.08)]"
                 >
                   <IconBadge icon={c.icon} tone="brass" />
@@ -331,7 +330,7 @@ export default function Home() {
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-sans text-sm font-medium text-brass-text">
                   Learn more
-                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>

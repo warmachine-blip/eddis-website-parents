@@ -57,7 +57,7 @@ function LabeledItem({ text }: { text: string }) {
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -149,7 +149,7 @@ export default function AllisonTurnerPage() {
 
             <div className="mt-12 space-y-12">
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Education &amp; Credentials</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Education &amp; Credentials</h2>
                 <ul className="mt-5 grid gap-3">
                   {credentials.map((item) => (
                     <li key={item} className="flex items-start gap-3 rounded-xl border border-line bg-off-white p-4">
@@ -161,7 +161,7 @@ export default function AllisonTurnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Role at HTx Pain Institute</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Role at HTx Pain Institute</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Allison&rsquo;s role at HTx Pain Institute is one of the
                   reasons our patients describe their care as continuous and
@@ -181,7 +181,7 @@ export default function AllisonTurnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Approach</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Approach</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Allison&rsquo;s clinical philosophy is built on three
@@ -209,7 +209,7 @@ export default function AllisonTurnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">What Patients Can Expect</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">What Patients Can Expect</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">When you see Allison, expect:</p>
                 <ul className="mt-5 space-y-3">
                   {expectations.map((item) => (
@@ -224,7 +224,7 @@ export default function AllisonTurnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Why Pain Management</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Why Pain Management</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Allison chose pain medicine for the same reason most

@@ -46,7 +46,7 @@ export default function LocationsPage() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {offices.map((office) => (
             <div key={office.key} className="border border-line p-7">
-              <h3 className="font-serif text-xl text-navy">{office.label}</h3>
+              <h2 className="font-serif text-xl text-navy">{office.label}</h2>
               <address className="mt-3 not-italic text-sm leading-relaxed text-charcoal-soft">
                 {office.addressLine1}
                 <br />

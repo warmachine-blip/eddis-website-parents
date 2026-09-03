@@ -57,6 +57,7 @@ function MapPlaceholder({ city }: { city: string }) {
         viewBox="0 0 24 24"
         className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 text-navy"
         fill="currentColor"
+        aria-hidden="true"
       >
         <path d="M12 2c-4.14 0-7.5 3.36-7.5 7.5 0 5.63 6.55 11.54 6.83 11.79a1 1 0 0 0 1.34 0c.28-.25 6.83-6.16 6.83-11.79C19.5 5.36 16.14 2 12 2Zm0 10.25a2.75 2.75 0 1 1 0-5.5 2.75 2.75 0 0 1 0 5.5Z" />
       </svg>
@@ -103,31 +104,34 @@ export default function ContactPage() {
               The fastest way to reach us.
             </h2>
             <dl className="mt-4 space-y-2.5 text-sm">
-              <div className="flex items-center gap-2.5">
+              <div>
                 <dt className="sr-only">Phone</dt>
-                <PhoneIcon className="h-4 w-4 shrink-0 text-brass-light" />
-                <dd>
+                <dd className="flex items-center gap-2.5">
+                  <PhoneIcon className="h-4 w-4 shrink-0 text-brass-light" />
                   <a href={practice.phoneHref} className="tabular-nums text-off-white hover:text-brass-light">
                     {practice.phone}
                   </a>
                 </dd>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div>
                 <dt className="sr-only">Email</dt>
-                <MailIcon className="h-4 w-4 shrink-0 text-brass-light" />
-                <dd>
+                <dd className="flex items-center gap-2.5">
+                  <MailIcon className="h-4 w-4 shrink-0 text-brass-light" />
                   <a href={`mailto:${practice.email}`} className="text-off-white hover:text-brass-light">
                     {practice.email}
                   </a>
                 </dd>
               </div>
-              <div className="flex items-center gap-2.5 pt-1 text-off-white/75">
-                <ClockIcon className="h-4 w-4 shrink-0 text-brass-light" />
-                <span>
-                  {practice.hours}
-                  <br />
-                  {practice.hoursWeekend}
-                </span>
+              <div className="pt-1 text-off-white/75">
+                <dt className="sr-only">Hours</dt>
+                <dd className="flex items-start gap-2.5">
+                  <ClockIcon className="mt-1 h-4 w-4 shrink-0 text-brass-light" />
+                  <span>
+                    {practice.hours}
+                    <br />
+                    {practice.hoursWeekend}
+                  </span>
+                </dd>
               </div>
             </dl>
           </div>

@@ -91,20 +91,20 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
           <span className="h-px w-8 bg-current opacity-50" />
           Treatments at HTx Pain
         </span>
-        <h3 className="mt-5 max-w-3xl text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+        <h2 className="mt-5 max-w-3xl text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
           {data.approachIntro}
-        </h3>
+        </h2>
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {data.approachServices.map((service) => {
             const content = (
               <div className="group flex h-full flex-col rounded-2xl border border-line bg-pearl p-7 transition-all hover:-translate-y-0.5 hover:bg-off-white hover:shadow-md">
                 <IconBadge icon="bolt" tone="brass" />
-                <h4 className="mt-6 font-serif text-lg leading-tight text-navy">{service.title}</h4>
+                <h3 className="mt-6 font-serif text-lg leading-tight text-navy">{service.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-soft">{service.blurb}</p>
                 {service.slug && (
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text">
                     Learn more
-                    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+                    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
@@ -147,9 +147,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
                 <span className="h-px w-8 bg-current opacity-50" />
                 Recovery & outlook
               </span>
-              <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 What to expect over time.
-              </h3>
+              </h2>
             </div>
             <div className="lg:col-span-7">
               <p className="text-base leading-relaxed text-charcoal-soft">{data.recoveryOutlook}</p>
@@ -168,9 +168,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
                   <span className="h-px w-8 bg-current opacity-50" />
                   Common Questions
                 </span>
-                <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+                <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                   Direct answers — no jargon.
-                </h3>
+                </h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   If your question isn&rsquo;t here, ask us at your consultation.
                 </p>
@@ -192,9 +192,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
                 <span className="h-px w-8 bg-current opacity-70" />
                 Why HTx Pain Institute
               </span>
-              <h3 className="mt-5 text-balance font-serif text-2xl leading-tight sm:text-3xl">
+              <h2 className="mt-5 text-balance font-serif text-2xl leading-tight sm:text-3xl">
                 {`How we treat ${data.title.toLowerCase()}, differently.`}
-              </h3>
+              </h2>
             </div>
             <div className="lg:col-span-5">
               <p className="text-base leading-relaxed text-off-white/90">{data.philosophyBlurb}</p>
@@ -206,9 +206,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
       {/* Related conditions */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <h3 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+          <h2 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
             Other conditions we treat.
-          </h3>
+          </h2>
           <Link href="/pain-center" className="text-sm font-medium text-navy underline">
             See all conditions
           </Link>
@@ -220,11 +220,11 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
               href={`/${c.slug}`}
               className="group flex flex-col rounded-2xl border border-line bg-off-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
-              <span className="font-serif text-lg leading-tight text-navy">{c.title}</span>
+              <h3 className="font-serif text-lg leading-tight text-navy">{c.title}</h3>
               <span className="mt-2 line-clamp-2 text-sm text-charcoal-soft">{c.blurb}</span>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text">
                 Learn more
-                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>

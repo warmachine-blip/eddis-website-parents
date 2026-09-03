@@ -57,9 +57,9 @@ const relatedCore = [
   },
 ];
 
-// The live site's "Other conditions we treat" module always shows the first four
+// The "Other conditions we treat" module shows the first four
 // conditions in canonical order, excluding the current page — verified against
-// each scraped page's own textBlocks.
+// each page's own copy.
 function relatedFor(selfSlug: string) {
   return relatedCore.filter((c) => c.slug !== selfSlug).slice(0, 4);
 }

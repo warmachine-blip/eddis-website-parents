@@ -25,19 +25,19 @@ export default function HeroHeadline() {
       >
         Live <em className="not-italic text-brass-light">beyond</em> the limits of chronic pain
       </h1>
-      <h1
+      <p
         className={`col-start-1 row-start-1 m-0 font-serif font-medium leading-[1.14] tracking-tight text-off-white transition-opacity duration-700 ease-in-out ${
           showAlt ? "opacity-100" : "opacity-0"
         }`}
         style={{ fontSize: "clamp(40px, 4.4vw, 60px)" }}
-        aria-hidden={!showAlt}
+        aria-hidden="true"
       >
         For the next <em className="not-italic text-brass-light">match.</em>
         <br />
         The next <em className="not-italic text-brass-light">morning.</em>
         <br />
         The next <em className="not-italic text-brass-light">decade.</em>
-      </h1>
+      </p>
     </div>
   );
 }

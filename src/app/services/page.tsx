@@ -28,7 +28,7 @@ export default function ServicesPage() {
           {services
             .filter((service) => !service.comingSoon)
             .map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+              <ServiceCard key={service.slug} service={service} headingLevel="h2" />
             ))}
         </TiltCardGroup>
       </section>
@@ -38,7 +38,7 @@ export default function ServicesPage() {
           .filter((service) => service.comingSoon)
           .map((service) => (
             <div key={service.slug} className="mt-5">
-              <ServiceBanner service={service} />
+              <ServiceBanner service={service} headingLevel="h2" />
             </div>
           ))}
       </section>

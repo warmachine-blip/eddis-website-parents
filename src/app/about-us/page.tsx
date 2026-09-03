@@ -59,7 +59,7 @@ const team = [
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -225,7 +225,7 @@ export default function AboutUsPage() {
               </p>
               <Link
                 href="/request-appointment"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-brass px-7 py-3.5 text-sm font-semibold text-navy-deep transition-all hover:bg-brass-light"
+                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-brass px-7 py-3.5 text-sm font-semibold text-navy-deep transition-all hover:bg-brass-light"
               >
                 Request a Consultation
                 <ArrowIcon />

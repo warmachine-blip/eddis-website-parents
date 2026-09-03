@@ -59,11 +59,6 @@ export const primaryNav: NavGroup[] = [
   { label: "Patients", href: "/patients", items: patientsNav },
 ];
 
-export const injuryNav: NavLink[] = [
-  { label: "Work Injuries", href: "/work-injuries-accidents" },
-  { label: "Motor Vehicle Accidents", href: "/motor-vehicle-injuries" },
-];
-
 export const legalNav: NavLink[] = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms-of-use" },

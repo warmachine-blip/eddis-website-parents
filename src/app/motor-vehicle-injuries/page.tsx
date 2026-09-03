@@ -105,7 +105,7 @@ export default function MotorVehicleInjuriesPage() {
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text"
                 >
                   Contact us about a case
-                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none">
+                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>

@@ -139,11 +139,11 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
               href={`/${c.slug}`}
               className="group flex flex-col rounded-2xl border border-line bg-pearl p-6 transition-all hover:-translate-y-0.5 hover:bg-off-white hover:shadow-md"
             >
-              <span className="font-serif text-lg leading-tight text-navy">{c.title}</span>
+              <h3 className="font-serif text-lg leading-tight text-navy">{c.title}</h3>
               <span className="mt-2 line-clamp-2 text-sm text-charcoal-soft">{c.blurb}</span>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text">
                 Learn more
-                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
@@ -167,7 +167,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal-soft">{service.blurb}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-brass-text">
                   Learn more
-                  <svg viewBox="0 0 16 16" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" fill="none">
+                  <svg viewBox="0 0 16 16" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
@@ -185,9 +185,9 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
               <span className="h-px w-8 bg-current opacity-70" />
               Why HTx Pain Institute for {data.city}
             </span>
-            <h3 className="mt-5 text-balance font-serif text-2xl leading-tight sm:text-3xl">
+            <h2 className="mt-5 text-balance font-serif text-2xl leading-tight sm:text-3xl">
               Institute-caliber care, minutes from {data.city}.
-            </h3>
+            </h2>
           </div>
           <div className="lg:col-span-5">
             <p className="text-base leading-relaxed text-off-white/90">{data.whyThisCityBlurb}</p>

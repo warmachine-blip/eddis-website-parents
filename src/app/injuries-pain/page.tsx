@@ -51,7 +51,7 @@ const features = [
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -91,7 +91,7 @@ export default function InjuriesPainPage() {
               >
                 <span className="absolute -top-4 -right-4 h-16 w-16 rounded-full bg-pearl" />
                 <IconBadge icon={item.icon} tone="dark" />
-                <h3 className="relative mt-6 font-serif text-xl text-navy">{item.title}</h3>
+                <h2 className="relative mt-6 font-serif text-xl text-navy">{item.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal-soft">
                   {item.body}
                 </p>

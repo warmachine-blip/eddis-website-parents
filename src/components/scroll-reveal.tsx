@@ -32,7 +32,7 @@ export default function ScrollReveal() {
 
     for (const el of sections) {
       const rect = el.getBoundingClientRect();
-      const alreadyVisible = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+      const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
       if (alreadyVisible) {
         el.setAttribute("data-reveal-visible", "");
       } else {

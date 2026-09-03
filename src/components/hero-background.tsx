@@ -6,7 +6,7 @@ export default function HeroBackground() {
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
       >
         <source src="/videos/hero-clinic-hallway.mp4" type="video/mp4" />
       </video>

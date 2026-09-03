@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from "@/lib/nav";
 import { socialItems } from "@/components/social-icons";
+import CopyrightYear from "@/components/copyright-year";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -49,7 +50,7 @@ export default function SiteFooter() {
             <Image
               src="/images/htx-pain-institute-logo.png"
               alt="HTx Pain Institute"
-              width={168}
+              width={144}
               height={96}
               className="h-12 w-auto"
             />
@@ -158,7 +159,9 @@ export default function SiteFooter() {
           </p>
 
           <div className="mt-6 flex flex-col gap-4 text-xs text-off-white/60 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} {practice.name}. All rights reserved.</p>
+            <p>
+              © <CopyrightYear /> {practice.name}. All rights reserved.
+            </p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {legalNav.map((l) => (
                 <li key={l.href}>

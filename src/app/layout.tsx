@@ -5,6 +5,8 @@ import SiteFooter from "@/components/site-footer";
 import OrganizationSchema from "@/components/organization-schema";
 import PageTransition from "@/components/page-transition";
 import ScrollReveal from "@/components/scroll-reveal";
+import { SITE_URL } from "@/lib/site";
+import { practice } from "@/lib/nav";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,6 +21,16 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    siteName: practice.name,
+    locale: "en_US",
+    url: "./",
+    images: [{ url: "/images/lobby.webp", width: 1320, height: 729, alt: "HTx Pain Institute lobby" }],
+  },
+  twitter: { card: "summary_large_image" },
   title: {
     default: "HTx Pain Institute · Precision Pain Management in Houston",
     template: "%s · HTx Pain Institute",
@@ -38,10 +50,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"
+        >
+          Skip to content
+        </a>
         <OrganizationSchema />
         <ScrollReveal />
         <SiteHeader />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <PageTransition>{children}</PageTransition>
         </main>
         <SiteFooter />

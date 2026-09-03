@@ -41,7 +41,7 @@ function LabeledItem({ text }: { text: string }) {
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -132,7 +132,7 @@ export default function TatyanaBaumgartnerPage() {
 
             <div className="mt-12 space-y-12">
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Role at HTx Pain Institute</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Role at HTx Pain Institute</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   As Chief Operating Officer, Tatyana owns the systems that make
                   excellent clinical care possible. Her remit covers every part
@@ -152,7 +152,7 @@ export default function TatyanaBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Background</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Background</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   From the vibrant streets of Moscow to the complex financial
                   world of the United States, Tatyana brings broad experience
@@ -170,9 +170,9 @@ export default function TatyanaBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">
                   Board Service · Ima&rsquo;s Home for Children
-                </h3>
+                </h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Tatyana serves on the Board of Directors of Ima&rsquo;s Home
@@ -191,7 +191,7 @@ export default function TatyanaBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">In Her Own Words</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">In Her Own Words</h2>
                 <p className="mt-5 font-serif text-xl italic leading-snug text-brass-text">
                   &ldquo;We treat every patient like they&rsquo;re part of our
                   family, and we run this practice the way we run our home
@@ -201,7 +201,7 @@ export default function TatyanaBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Outside the Clinic</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Outside the Clinic</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Outside of the practice, Tatyana enjoys travel, design, and
                   spending time with her family — especially her children, and

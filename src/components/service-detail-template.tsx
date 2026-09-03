@@ -105,7 +105,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
       {/* Step-by-step */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="mt-10">
-          <h3 className="font-serif text-xl text-navy">A clear, step-by-step approach.</h3>
+          <h2 className="font-serif text-xl text-navy">A clear, step-by-step approach.</h2>
           <ol className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {data.steps.map((step, i) => (
               <li key={step} className="border-t-2 border-brass pt-4">
@@ -132,9 +132,9 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 <span className="h-px w-8 bg-current opacity-50" />
                 Risks & Side Effects
               </span>
-              <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 Honest about what to expect.
-              </h3>
+              </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">{data.risksIntro}</p>
             </div>
             <div className="lg:col-span-7">
@@ -168,9 +168,9 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 <span className="h-px w-8 bg-current opacity-50" />
                 FAQ
               </span>
-              <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 Direct answers — no jargon.
-              </h3>
+              </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                 If your question isn&rsquo;t here, ask us at your consultation. We will give you the
                 same answer in plain English.
@@ -191,9 +191,9 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
               <span className="h-px w-8 bg-current opacity-50" />
               Cost, Insurance &amp; Financing
             </span>
-            <h3 className="mt-5 text-balance font-serif text-2xl leading-tight text-navy sm:text-3xl">
+            <h2 className="mt-5 text-balance font-serif text-2xl leading-tight text-navy sm:text-3xl">
               We verify your benefits before your visit.
-            </h3>
+            </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">
               {data.insuranceBlurb}
             </p>
@@ -208,20 +208,20 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
               Quick answers
             </h3>
-            <dl className="mt-4 grid gap-3 text-sm leading-relaxed text-charcoal-soft">
-              <div>
+            <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-charcoal-soft">
+              <li>
                 <span className="font-semibold text-navy">Will my insurance cover this?</span> We
                 check before your visit.
-              </div>
-              <div>
+              </li>
+              <li>
                 <span className="font-semibold text-navy">Self-pay options?</span> Yes, with
                 transparent pricing.
-              </div>
-              <div>
+              </li>
+              <li>
                 <span className="font-semibold text-navy">Financing?</span> CareCredit and similar
                 programs available.
-              </div>
-            </dl>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -246,9 +246,9 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 <span className="h-px w-8 bg-current opacity-50" />
                 Related Treatments
               </span>
-              <h3 className="mt-3 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-3 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 Other treatments we offer.
-              </h3>
+              </h2>
             </div>
             <Link href="/services" className="text-sm font-medium text-navy underline">
               See all services
@@ -270,7 +270,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal-soft">{service.blurb}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 font-sans text-sm font-medium text-brass-text">
                   Learn more
-                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>

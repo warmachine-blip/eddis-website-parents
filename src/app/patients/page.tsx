@@ -67,7 +67,7 @@ const plans = acceptedPlans;
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -106,7 +106,7 @@ export default function PatientsPage() {
                 className="group flex h-full flex-col rounded-2xl border border-line bg-off-white p-7 transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <IconBadge icon={card.icon} tone={card.tone} />
-                <h3 className="mt-7 font-serif text-xl leading-tight text-navy">{card.title}</h3>
+                <h2 className="mt-7 font-serif text-xl leading-tight text-navy">{card.title}</h2>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-soft">
                   {card.body}
                 </p>
@@ -152,9 +152,9 @@ export default function PatientsPage() {
                 <span className="h-px w-8 bg-current opacity-50" />
                 Insurance &amp; Billing
               </span>
-              <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 We work with most major plans.
-              </h3>
+              </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                 Insurance shouldn&rsquo;t be a barrier to care. Our team will verify
                 benefits and walk you through your specific plan before any
@@ -186,9 +186,9 @@ export default function PatientsPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-light">
                   Patient Forms
                 </p>
-                <h4 className="mt-4 font-serif text-3xl leading-tight text-off-white">
+                <h3 className="mt-4 font-serif text-3xl leading-tight text-off-white">
                   New patient? Save time at check-in.
-                </h4>
+                </h3>
                 <p className="mt-4 text-[15px] leading-relaxed text-off-white/90">
                   Complete your intake forms before your appointment. We can also
                   email or mail them to you — whichever you prefer.

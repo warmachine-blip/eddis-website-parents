@@ -51,7 +51,7 @@ const servicesProvided = [
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -142,7 +142,7 @@ export default function DrBaumgartnerPage() {
 
             <div className="mt-12 space-y-12">
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Education &amp; Training</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Education &amp; Training</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Dr. Baumgartner&rsquo;s training represents a deliberate
                   progression through some of the most respected institutions in
@@ -160,7 +160,7 @@ export default function DrBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Focus</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Focus</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Dr. Baumgartner has a particular focus on patients who have
@@ -182,7 +182,7 @@ export default function DrBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Philosophy of Care</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Philosophy of Care</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Dr. Baumgartner founded the practice after experiencing the
@@ -203,10 +203,10 @@ export default function DrBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Community</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Community</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Dr. Baumgartner is a committed supporter of{" "}
-                  <Link href="/community/imas-home" className="font-semibold text-brass-text hover:text-brass-deep">
+                  <Link href="/community/imas-home" className="font-semibold text-brass-text hover:text-navy">
                     Ima&rsquo;s Home for Children
                   </Link>
                   , a 501(c)(3) caring for orphaned children in the Philippines.
@@ -217,7 +217,7 @@ export default function DrBaumgartnerPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Outside the Clinic</h3>
+                <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Outside the Clinic</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   A Houston native through and through, Dr. Baumgartner trained
                   in Chicago and returned home to serve his community. Outside
@@ -228,7 +228,7 @@ export default function DrBaumgartnerPage() {
             </div>
 
             <div className="mt-12 rounded-2xl border border-line bg-off-white p-7">
-              <h4 className="font-serif text-xl text-navy">Services Dr. Baumgartner provides</h4>
+              <h3 className="font-serif text-xl text-navy">Services Dr. Baumgartner provides</h3>
               <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {servicesProvided.map((s) => (
                   <li key={s.href}>

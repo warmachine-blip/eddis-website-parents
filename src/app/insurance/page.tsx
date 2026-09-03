@@ -56,21 +56,9 @@ function PhoneIcon() {
   );
 }
 
-function FileIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-      <path d="M14 2v6h6" />
-      <path d="M16 13H8" />
-      <path d="M16 17H8" />
-      <path d="M10 9H8" />
-    </svg>
-  );
-}
-
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -168,18 +156,18 @@ export default function InsurancePage() {
           <span className="h-px w-8 bg-current opacity-50" />
           How Verification Works
         </span>
-        <h3 className="mt-5 max-w-3xl text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+        <h2 className="mt-5 max-w-3xl text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
           Four steps. No surprises at checkout.
-        </h3>
+        </h2>
         <ol className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <li key={step.title} className="h-full rounded-2xl border border-line bg-pearl p-6">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-navy-deep font-serif text-sm text-off-white">
                 {i + 1}
               </span>
-              <h4 className="mt-5 font-serif text-lg leading-tight text-navy">
+              <h3 className="mt-5 font-serif text-lg leading-tight text-navy">
                 {step.title}
-              </h4>
+              </h3>
               <p className="mt-3 text-sm leading-relaxed text-charcoal-soft">
                 {step.body}
               </p>
@@ -194,9 +182,9 @@ export default function InsurancePage() {
           <div className="grid gap-10 rounded-2xl border border-line bg-off-white p-10 sm:p-14 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <IconBadge icon="shield" tone="brass" />
-              <h3 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
                 Self-pay &amp; financing options
-              </h3>
+              </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                 Some services — particularly elective regenerative therapies like PRP
                 and certain wellness programs — are not covered by most insurance

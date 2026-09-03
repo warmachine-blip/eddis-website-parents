@@ -12,7 +12,7 @@ export default function ContactSocialReveal() {
     <div className="group relative">
       <Link
         href="/contact"
-        className="inline-flex items-center py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass group-hover:text-brass group-focus-within:text-brass"
+        className="inline-flex items-center py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass-text group-hover:text-brass-text group-focus-within:text-brass-text"
       >
         Contact
       </Link>

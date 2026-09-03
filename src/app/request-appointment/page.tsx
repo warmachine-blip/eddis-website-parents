@@ -60,7 +60,7 @@ export default function RequestAppointmentPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
                 Faster?
               </p>
-              <h3 className="mt-1.5 font-serif text-xl text-navy">Call us directly.</h3>
+              <h2 className="mt-1.5 font-serif text-xl text-navy">Call us directly.</h2>
               <p className="mt-1.5 text-sm text-charcoal-soft">
                 Our front desk can typically schedule you on the spot — and answer
                 any questions about your visit.
@@ -74,7 +74,7 @@ export default function RequestAppointmentPage() {
             </div>
 
             <div className="rounded-2xl border border-line bg-pearl p-7">
-              <h3 className="font-serif text-lg text-navy">What Happens Next</h3>
+              <h2 className="font-serif text-lg text-navy">What Happens Next</h2>
               <ol className="mt-5 space-y-5">
                 {nextSteps.map((step) => (
                   <li key={step.number} className="flex gap-4">

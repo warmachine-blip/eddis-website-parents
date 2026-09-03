@@ -29,19 +29,20 @@ function LearnMore() {
   return (
     <span className="inline-flex items-center gap-1.5 font-sans text-sm font-medium text-brass-text">
       Learn more
-      <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none">
+      <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </span>
   );
 }
 
-export default function ServiceCard({ service }: { service: Service }) {
+type HeadingLevel = "h2" | "h3";
+
+export default function ServiceCard({ service, headingLevel: Heading = "h3" }: { service: Service; headingLevel?: HeadingLevel }) {
   return (
     <TiltCard
       id={service.slug}
       href={service.href}
-      accent="brass"
       contentClassName="flex h-full flex-col justify-between"
       className={`rounded-2xl border border-card-border bg-white p-6 transition-[border-color] duration-300 hover:border-brass-light ${cardShadow} ${cardHoverShadow}`}
     >
@@ -50,7 +51,7 @@ export default function ServiceCard({ service }: { service: Service }) {
           <IconBadge icon={service.icon} tone="brass" hover />
           <ArrowUpRight />
         </div>
-        <h3 className="mt-5 font-serif text-xl text-navy">{service.title}</h3>
+        <Heading className="mt-5 font-serif text-xl text-navy">{service.title}</Heading>
         <p className="mt-2.5 text-sm leading-relaxed text-charcoal-soft">
           {service.summary}
         </p>
@@ -62,7 +63,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   );
 }
 
-export function ServiceBanner({ service }: { service: Service }) {
+export function ServiceBanner({ service, headingLevel: Heading = "h3" }: { service: Service; headingLevel?: HeadingLevel }) {
   return (
     <Link
       href={service.href}
@@ -71,7 +72,7 @@ export function ServiceBanner({ service }: { service: Service }) {
       <div className="flex items-center gap-5">
         <IconBadge icon={service.icon} tone="brass" hover />
         <div>
-          <h3 className="font-serif text-lg text-navy">{service.title}</h3>
+          <Heading className="font-serif text-lg text-navy">{service.title}</Heading>
           <p className="mt-1 max-w-2xl text-sm leading-relaxed text-charcoal-soft">
             {service.summary}
           </p>

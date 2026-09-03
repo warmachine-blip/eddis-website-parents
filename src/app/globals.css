@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-:root {
-  /* Core brand tokens — verified byte-for-byte against the reference site's compiled CSS */
+/* Brand palette. Tailwind emits these as :root custom properties, so they are
+   also available to inline styles via var(--color-…). */
+@theme {
   --color-navy-deep: #0f1a2e;
   --color-navy: #1a2740;
-  --color-navy-soft: #2d3a55;
   --color-off-white: #f8f6f0;
   --color-pearl: #f0eee8;
   --color-charcoal: #2a2a2a;
@@ -12,41 +12,31 @@
   --color-brass: #c19960;
   --color-brass-light: #d4b27f;
   --color-brass-deep: #a07f4a;
-  --color-brass-text: #8a6633;
+  /* Text-safe brass: 5.3:1 on off-white, 4.9:1 on pearl */
+  --color-brass-text: #83602f;
   --color-line: #e0dcd0;
-  --color-muted: #7c8499;
+  /* Secondary text: 4.9:1 on off-white, 4.6:1 on pearl */
+  --color-muted: #646b7f;
 
-  /* Full navy scale (reference calls this "navy-50" .. "navy-950") */
+  /* Navy tints used by cards */
   --color-navy-50: #f2f5f9;
-  --color-navy-100: #e2e8f1;
-  --color-navy-200: #c2cddd;
-  --color-navy-300: #94a3be;
-  --color-navy-400: #5e6f8e;
   --color-navy-500: #3a4c6b;
   --color-navy-600: #2d3a55;
-  --color-navy-700: #23344f;
-  --color-navy-800: #142339;
   --color-navy-900: #1a2740;
-  --color-navy-950: #0f1a2e;
 
-  /* Full gold/brass scale (reference calls this "gold-50" .. "gold-700") */
-  --color-gold-50: #faf6ec;
-  --color-gold-100: #f2e8ce;
-  --color-gold-200: #e5d2a0;
-  --color-gold-300: #d4b27f;
-  --color-gold-400: #c9a66f;
-  --color-gold-700: #856728;
-
-  /* Cyan accent used on content cards/links (blog, etc.) */
+  /* Cyan accent used on content cards */
   --color-cyan-50: #eff9fe;
   --color-cyan-100: #def2fd;
-  --color-cyan-500: #0ea5e9;
-  --color-cyan-600: #0481c0;
   --color-cyan-700: #076699;
 
   /* Card border used on elevated cards (distinct from the warm --line divider) */
   --color-card-border: #e2e8f1;
 
+  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond Fallback", Georgia, serif;
+}
+
+:root {
   --background: var(--color-off-white);
   --foreground: var(--color-charcoal);
 
@@ -56,55 +46,6 @@
   --duration-page-exit: 150ms;
   --duration-page-enter: 220ms;
   --duration-page-move: 260ms;
-}
-
-@theme inline {
-  --color-navy-deep: var(--color-navy-deep);
-  --color-navy: var(--color-navy);
-  --color-navy-soft: var(--color-navy-soft);
-  --color-off-white: var(--color-off-white);
-  --color-pearl: var(--color-pearl);
-  --color-charcoal: var(--color-charcoal);
-  --color-charcoal-soft: var(--color-charcoal-soft);
-  --color-brass: var(--color-brass);
-  --color-brass-light: var(--color-brass-light);
-  --color-brass-deep: var(--color-brass-deep);
-  --color-brass-text: var(--color-brass-text);
-  --color-line: var(--color-line);
-  --color-muted: var(--color-muted);
-
-  --color-navy-50: var(--color-navy-50);
-  --color-navy-100: var(--color-navy-100);
-  --color-navy-200: var(--color-navy-200);
-  --color-navy-300: var(--color-navy-300);
-  --color-navy-400: var(--color-navy-400);
-  --color-navy-500: var(--color-navy-500);
-  --color-navy-600: var(--color-navy-600);
-  --color-navy-700: var(--color-navy-700);
-  --color-navy-800: var(--color-navy-800);
-  --color-navy-900: var(--color-navy-900);
-  --color-navy-950: var(--color-navy-950);
-
-  --color-gold-50: var(--color-gold-50);
-  --color-gold-100: var(--color-gold-100);
-  --color-gold-200: var(--color-gold-200);
-  --color-gold-300: var(--color-gold-300);
-  --color-gold-400: var(--color-gold-400);
-  --color-gold-700: var(--color-gold-700);
-
-  --color-cyan-50: var(--color-cyan-50);
-  --color-cyan-100: var(--color-cyan-100);
-  --color-cyan-500: var(--color-cyan-500);
-  --color-cyan-600: var(--color-cyan-600);
-  --color-cyan-700: var(--color-cyan-700);
-
-  --color-card-border: var(--color-card-border);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), "Cormorant Garamond Fallback", Georgia, serif;
 }
 
 @layer base {

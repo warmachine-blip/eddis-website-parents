@@ -24,22 +24,26 @@ export default function Breadcrumb({ items, dark }: { items: Crumb[]; dark?: boo
   const currentColor = dark ? "text-off-white" : "text-navy";
 
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className={`mb-6 flex flex-wrap items-center gap-1.5 text-xs font-medium ${textColor}`}
-    >
-      {items.map((item, i) => (
-        <span key={item.label} className="inline-flex items-center gap-1.5">
-          {item.href ? (
-            <Link href={item.href} className="hover:underline">
-              {item.label}
-            </Link>
-          ) : (
-            <span className={currentColor}>{item.label}</span>
-          )}
-          {i < items.length - 1 && <ChevronIcon />}
-        </span>
-      ))}
+    <nav aria-label="Breadcrumb" className={`mb-6 text-xs font-medium ${textColor}`}>
+      <ol className="flex flex-wrap items-center gap-1.5">
+        {items.map((item, i) => {
+          const isLast = i === items.length - 1;
+          return (
+            <li key={item.label} className="inline-flex items-center gap-1.5">
+              {item.href && !isLast ? (
+                <Link href={item.href} className="hover:underline">
+                  {item.label}
+                </Link>
+              ) : (
+                <span className={currentColor} aria-current={isLast ? "page" : undefined}>
+                  {item.label}
+                </span>
+              )}
+              {!isLast && <ChevronIcon />}
+            </li>
+          );
+        })}
+      </ol>
     </nav>
   );
 }
