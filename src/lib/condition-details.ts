@@ -132,8 +132,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "neuropathic-pain",
     title: "Neuropathic Pain",
     metaDescription: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
-    heroImage: "service-neuropathic-pain-1.jpg",
-    heroImageAlt: "Specialist care for neuropathic pain at HTx Pain Institute",
+    heroImage: "clinician-examining-patient-foot.jpg",
+    heroImageAlt: "A clinician in blue scrubs presses both thumbs into the sole of a patient's bare foot resting on a white towel in a clinic room.",
     intro:
       "Neuropathic pain originates from the nervous system itself — not from tissue damage. It is often described as burning, electric, shooting, or tingling, and it can be persistent and life-limiting. The right diagnosis is essential because neuropathic pain typically does not respond to standard anti-inflammatory treatments.",
     symptoms: [
@@ -397,8 +397,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "other-pain-conditions",
     title: "Other Pain Conditions",
     metaDescription: "Headaches, abdominal pain, post-surgical pain, CRPS, and more.",
-    heroImage: "service-other-pain-conditions.jpg",
-    heroImageAlt: "Treatment for other pain conditions at HTx Pain Institute",
+    heroImage: "man-hand-on-forehead-eyes-shut-warm-window-light.jpg",
+    heroImageAlt: "A man in a dark patterned shirt sits indoors with his eyes squeezed shut and one hand pressed to his forehead, lit by warm side light.",
     intro:
       "Pain rarely fits neatly into one category. Headaches, post-surgical pain, abdominal pain, and complex regional pain syndrome each have specific interventional answers — many of which are under-recognized in primary care. If your pain has not responded to standard treatment, we welcome the consultation.",
     symptoms: [
@@ -454,8 +454,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "sciatica",
     title: "Sciatica",
     metaDescription: "Radiating leg pain from compression or irritation of the sciatic nerve.",
-    heroImage: "blog-sciatica.jpg",
-    heroImageAlt: "Sciatica treatment at HTx Pain Institute",
+    heroImage: "woman-hand-on-lower-back-standing.jpg",
+    heroImageAlt: "A woman in a white blouse and light-wash jeans stands in profile with one hand pressed against her lower back.",
     intro:
       "Sciatica is the term for pain that radiates from the lower back into the buttock and down the leg, following the path of the sciatic nerve. The cause is rarely the nerve itself — it is most often a lumbar disc herniation, foraminal stenosis, or piriformis-related compression. The right diagnosis is the difference between getting durable relief and chasing symptoms.",
     introParagraphs: [
@@ -827,8 +827,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "shoulder-injuries",
     title: "Shoulder Injuries",
     metaDescription: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully.",
-    heroImage: "blog-minimally-invasive-sports-injury.jpg",
-    heroImageAlt: "Shoulder injury treatment at HTx Pain Institute",
+    heroImage: "man-gripping-shoulder-pain.jpg",
+    heroImageAlt: "A young man in a grey t-shirt grimaces while gripping his right shoulder with his left hand against a plain white wall.",
     intro:
       "Shoulder pain rarely has a single cause. The rotator cuff, labrum, biceps tendon, AC joint, and cervical spine can all contribute. Image-guided injections are both diagnostic and therapeutic — and PRP is increasingly an excellent first-line biologic option for tendinopathy. We work with orthopedic and physical therapy partners to build the right plan.",
     introParagraphs: [
@@ -921,8 +921,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "migraines",
     title: "Migraines & Chronic Headache",
     metaDescription: "Beyond medication management — interventional options when headaches don't respond.",
-    heroImage: "service-other-pain-conditions.jpg",
-    heroImageAlt: "Migraine and chronic headache treatment at HTx Pain Institute",
+    heroImage: "woman-hand-to-temple-eyes-closed-headache.jpg",
+    heroImageAlt: "A woman in a white shirt with her eyes closed presses her hand against her temple and forehead in soft natural light.",
     intro:
       "Chronic and refractory headaches are not just a medication problem. Occipital nerve blocks, sphenopalatine ganglion procedures, and selective nerve targeting can dramatically change the trajectory of a chronic headache patient. We coordinate with neurology when appropriate and bring the interventional toolkit when standard therapy isn't enough.",
     introParagraphs: [
@@ -1107,8 +1107,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "sports-injuries",
     title: "Sports Injuries",
     metaDescription: "Get back to your sport — with diagnostics and biologics that respect the timeline.",
-    heroImage: "blog-minimally-invasive-sports-injury.jpg",
-    heroImageAlt: "Sports injury treatment at HTx Pain Institute",
+    heroImage: "young-woman-stretching-leg-on-deck-rail.jpg",
+    heroImageAlt: "A young woman in athletic wear stretches her hamstring with one leg extended onto a wooden deck railing outdoors.",
     intro:
       "From the recreational athlete to the weekend warrior, sports injuries deserve a precise diagnosis and a treatment plan calibrated to your goals. Ultrasound-guided diagnostic injections, PRP therapy, and selective nerve blocks let us treat tendinopathy, joint injuries, and post-traumatic pain without unnecessary downtime.",
     introParagraphs: [
@@ -1201,8 +1201,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "post-surgical-pain",
     title: "Post-Surgical Pain",
     metaDescription: "When surgery resolved the issue but pain remained — interventional options that can help.",
-    heroImage: "blog-complex-regional-pain-syndrome.jpg",
-    heroImageAlt: "Post-surgical pain care at HTx Pain Institute",
+    heroImage: "physical-therapist-guiding-resistance-band-exercise.jpg",
+    heroImageAlt: "A physical therapist's hands guide a patient's arm as she pulls a green resistance band against a plain wall.",
     intro:
       "Persistent pain after surgery is one of the most under-recognized chronic-pain syndromes. Whether after spine surgery, knee or hip replacement, hernia repair, or thoracic surgery, post-surgical pain has specific interventional answers — many of them not offered by general pain practices. A careful diagnostic plan opens the door to durable relief.",
     introParagraphs: [

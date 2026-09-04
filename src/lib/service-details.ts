@@ -31,8 +31,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Radiofrequency Ablation",
     metaDescription:
       "Radiofrequency ablation (RFA) uses radio-wave energy to create a small, controlled lesion on the nerves carrying pain signals — interrupting the signal at its source. The result is durable, medication-free relief that often lasts six to eighteen months and can be repeated as needed.",
-    heroImage: "service-radiofrequency.jpg",
-    heroImageAlt: "Radiofrequency ablation procedure at HTx Pain Institute",
+    heroImage: "surgeon-under-operating-lights.jpg",
+    heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
     eyebrow: "RFA",
     leadLine: "Lasting nerve-pain relief, on an outpatient schedule.",
     intro:
@@ -247,8 +247,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Kyphoplasty",
     metaDescription:
       "Kyphoplasty is a minimally invasive procedure for painful vertebral compression fractures — most commonly caused by age-related bone-mass loss. A small balloon is inflated within the fractured vertebra to restore lost height, then medical-grade cement stabilizes the bone. Most patients feel dramatic pain relief within 24–48 hours.",
-    heroImage: "service-kyphoplasty-specialist.jpg",
-    heroImageAlt: "Kyphoplasty procedure for vertebral compression fractures at HTx Pain Institute",
+    heroImage: "older-man-walking-upright-garden-path.jpg",
+    heroImageAlt: "A white-haired man in a green shirt, jeans and flat cap walks upright away from the camera along a dirt path lined with green shrubs.",
     eyebrow: "Kyphoplasty",
     leadLine: "Restore height, restore mobility, end fracture pain.",
     intro:
@@ -362,8 +362,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "SI Joint Fusions",
     metaDescription:
       "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
-    heroImage: "service-si-joint-fusions.jpg",
-    heroImageAlt: "Minimally invasive SI joint fusion procedure at HTx Pain Institute",
+    heroImage: "clinician-hands-on-patient-lower-back.jpg",
+    heroImageAlt: "Close-up of a practitioner's stacked hands pressing on the lower back of a patient lying face down on a treatment table.",
     eyebrow: "SI Joint Fusion",
     leadLine: "A definitive answer for chronic SI joint pain.",
     intro:
@@ -477,8 +477,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Spinal Cord Stimulation",
     metaDescription:
       "Spinal cord stimulation (SCS) is one of the most studied therapies in modern pain medicine. A small implantable device delivers tailored electrical fields to the spinal cord — interrupting pain signals before they reach the brain. Patients try the system through a temporary trial before committing to a long-term implant.",
-    heroImage: "service-spinal-cord-stimulation-specialist.jpg",
-    heroImageAlt: "Spinal cord stimulation therapy at HTx Pain Institute",
+    heroImage: "practitioner-showing-spine-model-to-patient.jpg",
+    heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
     eyebrow: "Spinal Cord Stimulation",
     leadLine: "Reprogram pain at the source of the signal.",
     intro:
@@ -878,8 +878,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Minuteman Lumbar Fusion",
     metaDescription:
       "Minuteman posterior lumbar interspinous-interlaminar fusion at HTx Pain Institute Houston. A minimally invasive device that stabilizes a painful lumbar segment. Schedule a consultation.",
-    heroImage: "service-si-joint-fusions.jpg",
-    heroImageAlt: "Minuteman lumbar interspinous fusion at HTx Pain Institute",
+    heroImage: "lumbar-spine-model-closeup.jpg",
+    heroImageAlt: "Close-up of an anatomical lumbar spine model with sacrum, yellow nerve roots, and a red herniated disc resting on a black treatment table.",
     eyebrow: "Minuteman",
     leadLine: "Posterior lumbar fusion through a minimally invasive interspinous approach.",
     intro:
