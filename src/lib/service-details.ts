@@ -361,23 +361,23 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "si-joint-fusions",
     title: "SI Joint Fusions",
     metaDescription:
-      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, titanium implants stabilize the joint and allow biological fusion over time.",
+      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
     heroImage: "service-si-joint-fusions.jpg",
     heroImageAlt: "Minimally invasive SI joint fusion procedure at HTx Pain Institute",
     eyebrow: "SI Joint Fusion",
     leadLine: "A definitive answer for chronic SI joint pain.",
     intro:
-      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, titanium implants stabilize the joint and allow biological fusion over time.",
+      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
     quickFacts: {
       setting: "Outpatient, home same day",
       anesthesia: "Sedation, not general",
-      recovery: "Cane/crutches 3 weeks; full activity 6–12 weeks",
+      recovery: "Walk same day; full activity 6–12 weeks",
     },
     steps: [
       "Diagnostic SI joint injections confirm the joint as the pain generator.",
       "A small incision (typically under 3 cm) is made over the joint.",
-      "Specialized titanium implants are placed across the joint under fluoroscopic guidance.",
-      "The implants stabilize the joint immediately and promote biological fusion over months.",
+      "A fusion implant or graft, selected for your anatomy, is placed across the joint under fluoroscopic guidance.",
+      "The implant or graft stabilizes the joint immediately and promotes biological fusion over months.",
     ],
     whoIsItFor: [
       "Confirmed SI joint pain unresponsive to physical therapy and injections",
@@ -388,11 +388,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     whatToExpect: [
       "Procedure time is typically under 60 minutes.",
       "Most patients go home the same day.",
-      "Walking with light support is encouraged within 24 hours.",
+      "Most patients walk unassisted the same day.",
       "Pain relief progresses over 2–3 months.",
     ],
     recoveryResults: [
-      "Use an assistive device (cane or crutches) on the operative side for 3 weeks.",
+      "Most patients walk unassisted the same day; an assistive device is used only if Dr. Baumgartner advises it for you individually.",
       "Light activities resume within 1–2 weeks.",
       "Full activity typically by 6–12 weeks, individualized to recovery.",
       "Imaging follow-up to confirm fusion at 6 and 12 months.",
@@ -421,12 +421,12 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: "We confirm SI joint pain through diagnostic injections — typically two separate injections on different visits — that must each provide significant temporary relief. We do not proceed with fusion unless the diagnostic case is solid.",
       },
       {
-        q: "What is the difference between LinQ and Minuteman?",
-        a: "Both are FDA-cleared posterior approaches to SI joint fusion that use different implant designs. LinQ places an allograft bone implant across the joint; Minuteman uses an interspinous-interlaminar device that compresses across the joint surface. Selection depends on your anatomy, prior surgeries, and the specific imaging findings — we offer both.",
+        q: "Which fusion system will you use?",
+        a: "Dr. Baumgartner uses more than one SI fusion system and graft type — including allograft and implant-based options — and selects for each patient based on anatomy, prior surgeries, and the specific imaging findings. We discuss the choice with you before the procedure.",
       },
       {
         q: "How is this different from a lateral SI fusion (e.g., iFuse)?",
-        a: "Lateral SI fusion uses titanium implants placed through the side of the pelvis, with a different anatomic risk profile. The posterior approaches we offer (LinQ, Minuteman) avoid some of those structures and use smaller incisions. Each approach has a role; we discuss options openly.",
+        a: "Lateral SI fusion places implants through the side of the pelvis, with a different anatomic risk profile. The posterior approach we offer (LinQ) avoids some of those structures and uses a smaller incision. Each approach has a role; we discuss options openly.",
       },
       {
         q: "What is recovery like at 6 weeks?",
@@ -442,7 +442,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Will the implant set off airport metal detectors?",
-        a: "Modern titanium SI fusion implants are typically below the threshold of standard airport metal detectors. We provide an implant card you can carry in your wallet for reference if needed.",
+        a: "Implant-based SI fusion systems are typically below the threshold of standard airport metal detectors, and allograft-only fusions contain no metal. We provide an implant card you can carry in your wallet for reference if needed.",
       },
       {
         q: "What if the fusion doesn't work?",
@@ -450,9 +450,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "SI joint fusion (LinQ, Minuteman, and similar) is covered by Medicare, Medicare Advantage, and most major commercial insurers when SI joint pain is confirmed by diagnostic injections and conservative care has failed. Prior authorization is typically required and our team manages it. Workers' compensation and motor-vehicle injury cases are also commonly covered.",
+      "SI joint fusion (LinQ and similar systems) is covered by Medicare, Medicare Advantage, and most major commercial insurers when SI joint pain is confirmed by diagnostic injections and conservative care has failed. Prior authorization is typically required and our team manages it. Workers' compensation and motor-vehicle injury cases are also commonly covered.",
     expertiseBlurb:
-      "We offer both posterior approaches (LinQ and Minuteman) — most pain practices commit to a single device. That matters because SI joint anatomy varies, and the right implant for your case may not be the same as your neighbor's. Dr. Baumgartner's diagnostic discipline — confirming the SI joint as the pain source before recommending fusion — means we do not perform the procedure on patients who are unlikely to benefit.",
+      "We use more than one SI fusion system and graft type — including allograft and implant-based options — where most pain practices commit to a single device. That matters because SI joint anatomy varies, and the right implant or graft for your case may not be the same as your neighbor's. Dr. Baumgartner's diagnostic discipline — confirming the SI joint as the pain source before recommending fusion — means we do not perform the procedure on patients who are unlikely to benefit.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -465,9 +465,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures.",
       },
       {
-        slug: "kyphoplasty-specialist",
-        title: "Kyphoplasty",
-        blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
+        slug: "minuteman-procedure",
+        title: "Minuteman Lumbar Fusion",
+        blurb: "A separate procedure for the lumbar spine — a posterior interspinous-interlaminar fusion device, not an SI joint treatment.",
       },
     ],
   },
@@ -690,7 +690,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     quickFacts: {
       setting: "In-office, ~60-minute visit",
       anesthesia: "Discussed at consult",
-      recovery: "Reduce strenuous activity 48–72 hours",
+      recovery: "Return to activity as comfort allows",
     },
     steps: [
       "A small blood draw is performed in our office.",
@@ -711,7 +711,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Improvement typically progresses over 6–12 weeks.",
     ],
     recoveryResults: [
-      "Reduce strenuous activity for 48–72 hours.",
+      "Most patients resume normal activity as comfort allows, guided by their provider.",
       "Gradual return to activity guided by symptoms.",
       "A series of 1–3 injections, spaced weeks apart, may be recommended.",
       "Many patients combine PRP with structured physical therapy.",
@@ -757,7 +757,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "What is recovery like?",
-        a: "Most patients have mild soreness at the injection site for 2–4 days. Activity restriction is typically light — avoid strenuous use of the treated area for 48–72 hours, then gradually return to activity guided by symptoms. Many patients combine PRP with structured physical therapy to optimize results.",
+        a: "Most patients have mild soreness at the injection site for 2–4 days. There are no formal activity restrictions — most patients resume normal activity as comfort allows, guided by their provider. Many patients combine PRP with structured physical therapy to optimize results.",
       },
       {
         q: "Is PRP the same as stem cell therapy?",
@@ -875,30 +875,30 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   "minuteman-procedure": {
     slug: "minuteman-procedure",
-    title: "Minuteman SI Joint Fusion",
+    title: "Minuteman Lumbar Fusion",
     metaDescription:
-      "Minuteman SI joint fusion at HTx Pain Institute Houston. Posterior minimally invasive approach for chronic SI joint pain. Schedule a consultation.",
+      "Minuteman posterior lumbar interspinous-interlaminar fusion at HTx Pain Institute Houston. A minimally invasive device that stabilizes a painful lumbar segment. Schedule a consultation.",
     heroImage: "service-si-joint-fusions.jpg",
-    heroImageAlt: "Minuteman SI joint fusion at HTx Pain Institute",
+    heroImageAlt: "Minuteman lumbar interspinous fusion at HTx Pain Institute",
     eyebrow: "Minuteman",
-    leadLine: "Posterior SI joint fusion through a minimally invasive approach.",
+    leadLine: "Posterior lumbar fusion through a minimally invasive interspinous approach.",
     intro:
-      "The Minuteman device is a posterior, minimally invasive approach to sacroiliac joint fusion. Designed to stabilize and fuse the SI joint with less soft-tissue disruption than traditional lateral approaches, it is one of several techniques Dr. Baumgartner uses to deliver durable relief from confirmed SI joint pain. Selection between Minuteman, LinQ, and other devices is individualized to your anatomy and goals.",
+      "The Minuteman is a posterior, minimally invasive interspinous-interlaminar fusion device for the lumbar spine. Placed between the spinous processes of a painful lumbar segment, it provides immediate stabilization with less soft-tissue disruption than traditional open fusion and supports biological fusion over the following months. It is a separate procedure from SI joint fusion; Dr. Baumgartner selects it for patients whose anatomy and imaging fit.",
     quickFacts: {
       setting: "Outpatient, home same day",
       anesthesia: "Discussed at consult",
-      recovery: "Assistive device 1–3 weeks; full activity 6–12 weeks",
+      recovery: "Walk same day; full activity 6–12 weeks",
     },
     steps: [
-      "Diagnostic SI joint injections confirm the joint as the pain source.",
-      "Through a small posterior incision, the Minuteman implant is positioned across the SI joint.",
+      "Imaging and diagnostic evaluation confirm the lumbar segment as the pain source.",
+      "Through a small posterior incision, the Minuteman implant is positioned between the spinous processes of the treated lumbar level.",
       "The device is locked in place under fluoroscopic guidance, providing immediate stability.",
-      "Bone graft promotes biological fusion of the joint over the following months.",
+      "Bone graft promotes biological fusion of the segment over the following months.",
     ],
     whoIsItFor: [
-      "Confirmed SI joint pain unresponsive to physical therapy and injections",
-      "Patients seeking a posterior minimally invasive alternative to lateral fusion",
-      "SI joint dysfunction following lumbar fusion",
+      "Lumbar pain that has not responded to physical therapy and injections",
+      "Imaging that shows a lumbar segment that would benefit from stabilization",
+      "Patients seeking a posterior, minimally invasive alternative to open lumbar fusion",
       "Failure of conservative care over 6+ months",
     ],
     whatToExpect: [
@@ -908,7 +908,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Pain relief progresses over 2–3 months as fusion biology develops.",
     ],
     recoveryResults: [
-      "Use an assistive device for 1–3 weeks as needed for comfort.",
+      "Most patients walk unassisted the same day; an assistive device is used only if Dr. Baumgartner advises it for you individually.",
       "Light activities resume within 1–2 weeks.",
       "Full activity by 6–12 weeks, individualized.",
       "Imaging follow-up to confirm fusion at 6 and 12 months.",
@@ -924,18 +924,18 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     faqs: [
       {
-        q: "How is Minuteman different from lateral SI joint fusion?",
-        a: "The lateral approach (e.g., iFuse) places implants through the side of the pelvis. Minuteman uses a smaller posterior incision that may be preferable for certain anatomies and avoids some lateral approach risks. Dr. Baumgartner offers both and selects based on your imaging and goals.",
+        q: "Is Minuteman the same as SI joint fusion?",
+        a: "No. Minuteman is a lumbar spine procedure — the device sits between the spinous processes of a lumbar segment to stabilize it. SI joint fusion treats the sacroiliac joint of the pelvis and uses different systems. Both are offered here, and the diagnostic workup determines which, if either, fits your pain source.",
       },
       {
         q: "Will the device set off airport security?",
-        a: "Modern titanium SI fusion implants are typically below the threshold of airport metal detectors. We provide an implant card you can carry if needed.",
+        a: "The Minuteman implant is typically below the threshold of airport metal detectors. We provide an implant card you can carry if needed.",
       },
     ],
     insuranceBlurb:
-      "Minuteman SI Joint Fusion is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
+      "Minuteman lumbar fusion is typically covered by major commercial insurance, Medicare, and most government plans when medically indicated. Our team verifies your benefits, copays, and prior-authorization requirements before your visit. For services not covered by insurance, we offer transparent self-pay pricing and CareCredit financing.",
     expertiseBlurb:
-      "Minuteman SI Joint Fusion at HTx Pain Institute is performed by Edward Baumgartner Jr., MD — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
+      "Minuteman lumbar fusion at HTx Pain Institute is performed by Edward Baumgartner Jr., MD — double board-certified in Anesthesiology and Pain Medicine, with over fifteen years of interventional pain medicine experience. We combine institute-caliber technical execution with the time and judgment every patient deserves. Precision. Lasting Relief.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -948,9 +948,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures.",
       },
       {
-        slug: "kyphoplasty-specialist",
-        title: "Kyphoplasty",
-        blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
+        slug: "si-joint-fusions",
+        title: "SI Joint Fusions",
+        blurb: "A separate procedure for the sacroiliac joint of the pelvis — minimally invasive fusion for confirmed SI joint pain.",
       },
     ],
   },

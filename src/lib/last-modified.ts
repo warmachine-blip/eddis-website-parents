@@ -21,7 +21,7 @@ export const lastModified: Record<string, string> = {
   "/joint-pain": "2026-09-03",
   "/knee-pain": "2026-09-03",
   "/kyphoplasty-specialist": "2026-09-03",
-  "/locations": "2026-09-03",
+  "/locations": "2026-09-04",
   "/locations/atascocita": "2026-09-03",
   "/locations/champions": "2026-09-03",
   "/locations/cypress": "2026-09-03",

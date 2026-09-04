@@ -1189,7 +1189,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         q: "Can I run while on PRP?",
-        a: "We typically restrict running for 7–14 days post-PRP, then gradually return. Anti-inflammatory medications must be paused around the procedure to allow the inflammatory healing response to work.",
+        a: "There are no formal activity restrictions after PRP — most patients resume running and other activity as comfort allows, guided by their provider. Anti-inflammatory medications must be paused around the procedure to allow the inflammatory healing response to work.",
       },
     ],
     philosophyBlurb:

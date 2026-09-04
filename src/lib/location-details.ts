@@ -90,7 +90,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From most of The Woodlands, take I-45 South to US-59/I-69 South, then exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260. Most patients reach us in 15–25 minutes.",
     whyThisCityBlurb:
-      "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, both Minuteman and LinQ SI fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
+      "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, LinQ SI fusion, Minuteman lumbar fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
     landmarks: [
       "Approximately 15–25 minutes from The Woodlands Mall via I-45 South to FM 1960",
       "Easy access from Research Forest Drive, Lake Woodlands Drive, and Grogan's Mill",

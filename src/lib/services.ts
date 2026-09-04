@@ -77,9 +77,9 @@ export const services: Service[] = [
   {
     slug: "minuteman-procedure",
     href: "/minuteman-procedure",
-    title: "Minuteman SI Joint Fusion",
+    title: "Minuteman Lumbar Fusion",
     summary:
-      "An interspinous-interlaminar implant that stabilizes the SI joint with minimal disruption.",
+      "A posterior interspinous-interlaminar implant that stabilizes a painful lumbar segment with minimal disruption.",
     icon: "spine",
   },
   {
