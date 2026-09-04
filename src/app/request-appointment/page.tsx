@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
-import RequestAppointmentForm from "@/components/request-appointment-form";
+import NimblrScheduler from "@/components/nimblr-scheduler";
 import { practice } from "@/lib/nav";
+import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
   title: "Request an Appointment",
   description:
-    "Request an appointment at HTx Pain Institute in Houston or Humble. Same-week consultations available. We confirm within one business day.",
+    "Book an appointment at HTx Pain Institute in Houston or Humble online in a few minutes, or call us. Same-week consultations available.",
 };
 
 const nextSteps = [
   {
     number: "1",
-    body: "We confirm your request by phone within one business day.",
+    body: "Pick a time in the scheduler and you will receive a confirmation from our scheduling system.",
   },
   {
     number: "2",
@@ -43,8 +44,8 @@ export default function RequestAppointmentPage() {
             Schedule your consultation.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Same-week consultations are typically available. We will confirm your
-            appointment by phone within one business day.
+            Same-week consultations are typically available. Pick a time in the
+            scheduler below, or call us and our front desk will book you on the spot.
           </p>
         </div>
       </section>
@@ -52,7 +53,7 @@ export default function RequestAppointmentPage() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <RequestAppointmentForm />
+            <NimblrScheduler />
           </div>
 
           <div className="space-y-8 lg:col-span-5">
@@ -70,6 +71,24 @@ export default function RequestAppointmentPage() {
                 className="mt-5 inline-block rounded-full border border-brass bg-brass px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
               >
                 {practice.phone}
+              </a>
+            </div>
+
+            <div className="rounded-2xl border border-line bg-off-white p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
+                Already booked?
+              </p>
+              <h2 className="mt-1.5 font-serif text-xl text-navy">Reschedule an appointment.</h2>
+              <p className="mt-1.5 text-sm text-charcoal-soft">
+                Change or cancel an existing appointment through our scheduling system.
+              </p>
+              <a
+                href={scheduling.manageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-block rounded-full border border-navy px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
+              >
+                Reschedule an appointment
               </a>
             </div>
 
@@ -96,9 +115,9 @@ export default function RequestAppointmentPage() {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <p className="text-sm leading-relaxed text-charcoal-soft">
-                  This form asks only for your name, contact details, and scheduling
-                  preferences. It opens your email app to send the request to our team,
-                  so please save medical details for your call or visit.
+                  Booking runs through Nimblr, our online appointment scheduler. What you
+                  enter there goes to Nimblr and to our office to book your visit, so
+                  please save medical details for your call or visit.
                 </p>
               </div>
               <div className="flex items-start gap-3">

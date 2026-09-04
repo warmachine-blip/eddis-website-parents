@@ -29,5 +29,5 @@ npm run lint    # eslint
 
 ## Notes
 
-- Forms open the visitor's email client (`mailto:`); there is no server-side submission.
+- Appointment booking is Nimblr's embedded scheduler (URLs in `src/lib/scheduling.ts`); the contact form opens the visitor's email client (`mailto:`). There is no server-side form handling.
 - `/blog` and every `/blog/*` URL redirect to the homepage until real posts exist (see `next.config.ts`). The blog files are kept in `src/app/blog`.

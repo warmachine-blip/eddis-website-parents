@@ -6,6 +6,7 @@ import SectionHeading from "@/components/section-heading";
 import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 import { acceptedPlans } from "@/lib/insurance";
+import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
   title: "Patient Resources",
@@ -37,6 +38,15 @@ const resourceCards = [
     href: "/second-opinion",
     icon: "shield",
     tone: "dark",
+  },
+  {
+    title: "Reschedule an Appointment",
+    body: "Already booked? Change or cancel an existing appointment through our scheduling system.",
+    linkLabel: "Reschedule an appointment",
+    href: scheduling.manageUrl,
+    icon: "pulse",
+    tone: "dark",
+    external: true,
   },
 ] as const;
 
@@ -98,11 +108,13 @@ export default function PatientsPage() {
       {/* Resource cards */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {resourceCards.map((card) => (
               <Link
                 key={card.href}
                 href={card.href}
+                target={"external" in card ? "_blank" : undefined}
+                rel={"external" in card ? "noopener noreferrer" : undefined}
                 className="group flex h-full flex-col rounded-2xl border border-line bg-off-white p-7 transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <IconBadge icon={card.icon} tone={card.tone} />
