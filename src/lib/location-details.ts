@@ -119,7 +119,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Precision interventional pain medicine for Cypress, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Cypress, TX patients.",
     heroIntro:
-      "Cypress patients are a short drive from our Houston office on Texas 249, where we offer the full interventional pain medicine toolkit. Most patients reach our Houston office in 15–25 min.",
+      "Cypress patients are a short drive from our Houston office near Willowbrook, where we offer the full interventional pain medicine toolkit. Most patients reach our Houston office in 15–25 min.",
     nearestOfficeKey: "houston",
     commuteLine: "15–25 min from most of Cypress to our Houston office.",
     aboutParagraphs: [
@@ -135,9 +135,9 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Workers' compensation cases with documentation needs",
     ],
     directionsIntro:
-      "From most of Cypress, take US-290 East and exit at Texas 249 North. Our Houston office is at 17314 Texas 249, Suite 100. Most patients reach us in 15–25 minutes.",
+      "From most of Cypress, take US-290 East to Texas 249 North toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Most patients reach us in 15–25 minutes.",
     whyThisCityBlurb:
-      "Cypress patients tell us our Houston office on Texas 249 is the easiest pain practice to reach without dealing with downtown traffic. We are 15–25 minutes from most of Cypress, offer the full interventional toolkit, and handle workers' comp and motor-vehicle cases with the documentation rigor those cases require.",
+      "Cypress patients tell us our Houston office near Willowbrook is the easiest pain practice to reach without dealing with downtown traffic. We are 15–25 minutes from most of Cypress, offer the full interventional toolkit, and handle workers' comp and motor-vehicle cases with the documentation rigor those cases require.",
     landmarks: [
       "Easy access from US-290 East to Texas 249 North",
       "Approximately 15 minutes from Bridgeland and Cypress Creek Lakes",
@@ -166,11 +166,11 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Precision interventional pain medicine for Tomball, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
     heroHeadline: "Precision pain care for Tomball, TX patients.",
     heroIntro:
-      "Tomball is one of our closest communities — our Houston office sits on Texas 249 just south of the Tomball area. Most patients reach our Houston office in 10–15 min.",
+      "Tomball is one of our closest communities — our Houston office is near Willowbrook, straight down Texas 249 from the Tomball area. Most patients reach our Houston office in 10–15 min.",
     nearestOfficeKey: "houston",
     commuteLine: "10–15 min from most of Tomball to our Houston office.",
     aboutParagraphs: [
-      "Tomball has the unusual distinction of being one of the closest suburbs to our Houston office while also retaining a small-town feel that many of our patients value. Texas 249 — the highway our office sits on — connects Tomball directly down into the Houston metro, which means most Tomball patients can be at the door in 10 minutes.",
+      "Tomball has the unusual distinction of being one of the closest suburbs to our Houston office while also retaining a small-town feel that many of our patients value. Texas 249 connects Tomball directly down to our office near Willowbrook, which means most Tomball patients can be at the door in 10 minutes.",
       "Our Tomball patient mix is broad: longtime Tomball residents with chronic spine and joint pain, growing families in newer Tomball ISD neighborhoods with motor-vehicle injuries and overuse pain, and a substantial number of patients who have been told their only option is spine surgery and are looking for an honest second opinion.",
     ],
     patientsListIntro: "Patients we commonly see in Tomball",
@@ -182,7 +182,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients told they need spine surgery seeking interventional alternatives",
     ],
     directionsIntro:
-      "From most of Tomball, take Texas 249 South. Our Houston office is at 17314 Texas 249, Suite 100, on the west side of the highway. Most patients reach us in 10–15 minutes.",
+      "From most of Tomball, take Texas 249 South toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "For Tomball patients, the proximity to advanced interventional procedures matters. Our Houston office offers Intracept, MILD, spinal cord stimulation, and SI joint fusion — procedures most Tomball patients had been told required a referral into the Texas Medical Center. We are minutes from the office park to home, and we coordinate with Tomball-area primary care and surgical colleagues.",
     landmarks: [
@@ -229,7 +229,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients post-spine-surgery managing recurrent or new pain",
     ],
     directionsIntro:
-      "From most of Klein, take Stuebner Airline or Spring-Cypress Road west to Texas 249, then south. Our Houston office is at 17314 Texas 249, Suite 100. Most patients reach us in 10–15 minutes.",
+      "From most of Klein, take Stuebner Airline or Spring-Cypress Road west to Texas 249, then south toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "Klein is one of the communities where word-of-mouth means everything. Our practice is built on patients who refer their friends, neighbors, and family — and many of our long-term patients are from Klein. The continuity of care, the willingness to keep building on a patient's plan over years, and the proximity to the Texas 249 office are what bring Klein patients to us.",
     landmarks: [
@@ -276,7 +276,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Long-term chronic pain patients valuing continuity of care",
     ],
     directionsIntro:
-      "From most of Champions, take Cypresswood Drive or FM 1960 to Texas 249. Our Houston office is at 17314 Texas 249, Suite 100. Most patients reach us in 10 minutes.",
+      "From most of Champions, take Cypresswood Drive or FM 1960 west toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Most patients reach us in 10 minutes.",
     whyThisCityBlurb:
       "Champions is a community where the proximity to advanced biologic options matters. Our PRP program is one of the most carefully managed in the area — ultrasound-guided, prepared in-office, and integrated with structured rehab. For patients trying to stay on the course or on the court, the combination of accuracy and biology makes the difference.",
     landmarks: [
@@ -464,7 +464,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Younger patients exploring neuromodulation for refractory pain",
     ],
     directionsIntro:
-      "From most of Northwest Houston, our Houston office is on Texas 249 at 17314 Texas 249, Suite 100. Easy access from Beltway 8 and Sam Houston Tollway; ample parking on site.",
+      "From most of Northwest Houston, our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Easy access from Beltway 8 and Sam Houston Tollway; ample parking on site.",
     whyThisCityBlurb:
       "Northwest Houston has more pain options than most parts of the city — but most of those practices specialize narrowly. We bring the full institute-caliber toolkit (Intracept, MILD, Minuteman, LinQ, SCS, RFA, biologics) into a single practice with diagnostic discipline that is hard to match. For patients in this corridor, that combination is the reason to choose HTx Pain Institute.",
     landmarks: [

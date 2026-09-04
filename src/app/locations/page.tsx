@@ -6,14 +6,14 @@ import { offices, practice } from "@/lib/nav";
 const communities = [
   { slug: "spring-tx", label: "Spring, TX", commute: "10–15 min from FM 1960" },
   { slug: "the-woodlands", label: "The Woodlands, TX", commute: "15–25 min from FM 1960" },
-  { slug: "cypress", label: "Cypress, TX", commute: "15–25 min from TX-249" },
-  { slug: "tomball", label: "Tomball, TX", commute: "10–15 min from TX-249" },
-  { slug: "klein", label: "Klein, TX", commute: "10–15 min from TX-249" },
-  { slug: "champions", label: "Champions, TX", commute: "10 min from TX-249" },
+  { slug: "cypress", label: "Cypress, TX", commute: "15–25 min from Willowbrook" },
+  { slug: "tomball", label: "Tomball, TX", commute: "10–15 min from Willowbrook" },
+  { slug: "klein", label: "Klein, TX", commute: "10–15 min from Willowbrook" },
+  { slug: "champions", label: "Champions, TX", commute: "10 min from Willowbrook" },
   { slug: "kingwood", label: "Kingwood, TX", commute: "10–15 min from FM 1960" },
   { slug: "atascocita", label: "Atascocita, TX", commute: "5–10 min from FM 1960" },
   { slug: "humble", label: "Humble, TX", commute: "About 5 min from FM 1960" },
-  { slug: "northwest-houston", label: "Northwest Houston", commute: "10–20 min from TX-249" },
+  { slug: "northwest-houston", label: "Northwest Houston", commute: "10–20 min from Willowbrook" },
 ];
 
 export const metadata: Metadata = {
