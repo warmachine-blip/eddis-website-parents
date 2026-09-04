@@ -796,8 +796,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "MILD Procedure",
     metaDescription:
       "MILD procedure for lumbar spinal stenosis at HTx Pain Institute. Outpatient, no implants, walk out the same day. Schedule your consultation today.",
-    heroImage: "blog-treatment-options-for-spinal-stenosis.jpg",
-    heroImageAlt: "MILD procedure for lumbar spinal stenosis at HTx Pain Institute",
+    heroImage: "fluoroscopy-c-arm-procedure-suite.jpg",
+    heroImageAlt: "A fluoroscopy C-arm and patient table in a bright, empty interventional procedure suite with a bank of imaging monitors.",
     eyebrow: "MILD",
     leadLine: "An outpatient answer for lumbar spinal stenosis.",
     intro:

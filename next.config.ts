@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        // Photos and the hero video change by filename, so they can be cached for a year.
+        source: "/:dir(images|videos)/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+    ];
+  },
   async redirects() {
     return [
       // Blog is parked until real post bodies exist: /blog and every /blog/* URL

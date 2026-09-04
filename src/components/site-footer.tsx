@@ -52,6 +52,7 @@ export default function SiteFooter() {
               alt="HTx Pain Institute"
               width={144}
               height={96}
+              sizes="144px"
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-sm font-serif text-lg italic text-brass-light">
@@ -127,7 +128,7 @@ export default function SiteFooter() {
           {offices.map((office) => (
             <div key={office.key}>
               <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-                <FooterLink href={office.pageHref}>{office.city} Office</FooterLink>
+                <FooterLink href={office.pageHref}>{office.shortLabel} Office</FooterLink>
               </h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-off-white/75">
                 <a
@@ -135,11 +136,11 @@ export default function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={footerLinkBlockClass}
-                  aria-label={`Get directions to the ${office.city} office`}
                 >
                   {office.addressLine1}
                   <br />
                   {office.addressLine2}
+                  <span className="sr-only"> (get directions in Google Maps)</span>
                 </a>
                 <br />
                 <a href={practice.phoneHref} className={`tabular-nums ${footerLinkClass}`}>

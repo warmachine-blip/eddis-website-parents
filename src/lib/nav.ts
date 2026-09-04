@@ -30,6 +30,8 @@ export type Office = {
   state: string;
   zip: string;
   label: string;
+  /** Office label without the practice name, e.g. "Houston (Willowbrook)". */
+  shortLabel: string;
   /** Short label for nav menus. */
   navLabel: string;
   /** The office's own page under /locations. */
@@ -46,6 +48,7 @@ export const offices: Office[] = [
     state: "TX",
     zip: "77070",
     label: "HTx Pain Institute — Houston (Willowbrook)",
+    shortLabel: "Houston (Willowbrook)",
     navLabel: "Houston (Willowbrook) / Northwest Houston",
     pageHref: "/locations/northwest-houston",
     addressLine1: "13323 Dotson Rd, Ste 210",
@@ -58,6 +61,7 @@ export const offices: Office[] = [
     state: "TX",
     zip: "77338",
     label: "HTx Pain Institute — Humble (FM 1960)",
+    shortLabel: "Humble (FM 1960)",
     navLabel: "Humble (FM 1960)",
     pageHref: "/locations/humble",
     addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 260",

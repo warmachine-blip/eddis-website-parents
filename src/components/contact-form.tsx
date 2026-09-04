@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { practice } from "@/lib/nav";
 
 const reasons = [
-  "Schedule an appointment",
   "Second opinion",
   "Billing or insurance",
   "Medical records",
@@ -44,7 +44,11 @@ export default function ContactForm() {
     <div className="rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-9">
       <h2 className="font-serif text-2xl text-navy">Send us a message</h2>
       <p className="mt-1.5 text-sm text-charcoal-soft">
-        Required fields are marked with an asterisk.
+        Required fields are marked with an asterisk. To book or reschedule a visit, use our{" "}
+        <Link href="/request-appointment" className="font-medium text-brass-text underline">
+          online scheduler
+        </Link>
+        .
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-5">

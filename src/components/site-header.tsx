@@ -50,6 +50,7 @@ export default function SiteHeader() {
             alt="HTx Pain Institute"
             width={144}
             height={96}
+            sizes="144px"
             className="h-14 w-auto"
             priority
           />

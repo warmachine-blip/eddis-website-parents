@@ -69,8 +69,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "back-pain",
     title: "Back Pain",
     metaDescription: "The most common reason patients come to us — and where we have the most to offer.",
-    heroImage: "service-back-pain.jpg",
-    heroImageAlt: "Back pain diagnosis and treatment at HTx Pain Institute",
+    heroImage: "woman-from-behind-hand-on-lower-back-outdoors.jpg",
+    heroImageAlt: "Woman in black athletic wear seen from behind outdoors, pressing one hand to her lower back.",
     intro:
       "Most adults will experience meaningful back pain at some point. The right care begins with the right diagnosis: is the pain coming from the disc, the facet joint, the SI joint, the endplate, or the nerve? Each of those answers points to a different — and far more effective — treatment.",
     symptoms: [
@@ -169,8 +169,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "chronic-pain",
     title: "Chronic Pain",
     metaDescription: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
-    heroImage: "treatment-chronic-pain-treatment-houston.jpg",
-    heroImageAlt: "Chronic pain treatment at HTx Pain Institute in Houston",
+    heroImage: "older-woman-seated-on-sofa-head-down-hands-over-face.jpg",
+    heroImageAlt: "An older woman with gray hair sits on the edge of a beige sofa in jeans and a white shirt, head bowed with both hands covering her face.",
     intro:
       "Chronic pain is pain that has lasted longer than three months — long past the point where typical injury or surgery should have healed. It is its own medical condition and requires a comprehensive plan that often blends interventional procedures, rehabilitation, and lifestyle medicine.",
     symptoms: [
@@ -284,8 +284,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "joint-pain",
     title: "Joint Pain",
     metaDescription: "From shoulder to hip — image-guided care for the joints that move you.",
-    heroImage: "treatment-joint-pain-treatment-options.jpg",
-    heroImageAlt: "Joint pain treatment options at HTx Pain Institute",
+    heroImage: "hand-pressing-painful-knee-seated-on-bed.jpg",
+    heroImageAlt: "Close-up of a woman seated on a bed in a floral dress pressing her hand against her bare knee.",
     intro:
       "Joint pain — whether from osteoarthritis, tendinopathy, or post-traumatic injury — can erode the everyday life you take for granted. Our image-guided approach delivers therapy directly into the joint, with biologic options like PRP for select cases.",
     symptoms: [
@@ -547,8 +547,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "herniated-discs",
     title: "Herniated Discs",
     metaDescription: "When the soft inner disc material pushes through the outer wall and irritates a nerve.",
-    heroImage: "service-back-pain.jpg",
-    heroImageAlt: "Herniated disc treatment at HTx Pain Institute",
+    heroImage: "hand-on-spine-xray-lightbox.jpg",
+    heroImageAlt: "A hand resting on a backlit spine X-ray, the vertebral column running down the center of the film with the lumbar spine in the lower half.",
     intro:
       "A herniated disc occurs when the soft nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a spinal nerve. Most herniations improve with time and targeted care — and most do not require surgery. Image-guided injections, careful diagnosis, and a tailored recovery plan get the majority of patients back to their lives.",
     introParagraphs: [
@@ -640,8 +640,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "spinal-stenosis",
     title: "Spinal Stenosis",
     metaDescription: "Narrowing of the spinal canal that compresses nerves and limits walking.",
-    heroImage: "blog-treatment-options-for-spinal-stenosis.jpg",
-    heroImageAlt: "Spinal stenosis treatment at HTx Pain Institute",
+    heroImage: "older-man-resting-on-park-bench-by-pond.jpg",
+    heroImageAlt: "A grey-haired man in a dark vest sits alone on a wooden park bench, seen from behind, resting and looking out over a calm pond and green hillside.",
     intro:
       "Lumbar spinal stenosis is the narrowing of the spinal canal — most commonly from age-related thickening of the ligamentum flavum, disc degeneration, and facet hypertrophy. The hallmark is neurogenic claudication: leg pain or heaviness with walking that improves with sitting or leaning forward. The MILD procedure has changed what is possible for these patients.",
     introParagraphs: [
@@ -734,8 +734,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "hip-pain",
     title: "Hip Pain",
     metaDescription: "From bursitis to osteoarthritis — image-guided care for the hip joint.",
-    heroImage: "treatment-joint-pain-treatment-options.jpg",
-    heroImageAlt: "Hip pain treatment at HTx Pain Institute",
+    heroImage: "man-hand-pressed-to-hip-side-view.jpg",
+    heroImageAlt: "Close-up side view of a man in a light blue shirt and jeans pressing his hand against his hip in discomfort.",
     intro:
       "Hip pain can come from the joint itself, the surrounding tendons and bursa, or referred pain from the spine and SI joint. Diagnostic clarity matters — a targeted injection often confirms the source and provides immediate relief. We coordinate with orthopedic colleagues when surgery is the right answer, and offer image-guided non-surgical care when it is not.",
     introParagraphs: [
@@ -1015,8 +1015,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "fibromyalgia",
     title: "Fibromyalgia",
     metaDescription: "A whole-person condition that benefits from a coordinated, individualized plan.",
-    heroImage: "treatment-chronic-pain-treatment-houston.jpg",
-    heroImageAlt: "Fibromyalgia care at HTx Pain Institute",
+    heroImage: "person-in-knit-sweater-resting-on-armchair-hand-on-lap.jpg",
+    heroImageAlt: "A person in an oversized ribbed knit sweater sits curled on a cream armchair with one hand resting on their lap in a patch of afternoon sunlight, face out of frame.",
     intro:
       "Fibromyalgia is a chronic central pain syndrome that causes widespread musculoskeletal pain along with fatigue, sleep disturbance, and cognitive symptoms. There is no single procedure that resolves fibromyalgia — but careful medication management, treatment of co-occurring pain generators, and a structured plan can meaningfully improve quality of life.",
     introParagraphs: [
