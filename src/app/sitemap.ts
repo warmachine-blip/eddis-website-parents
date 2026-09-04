@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
-import { locationsNav, aboutNav } from "@/lib/nav";
+import { serviceAreas, aboutNav } from "@/lib/nav";
 import { SITE_URL } from "@/lib/site";
 import { lastModified } from "@/lib/last-modified";
 
@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const location of locationsNav) {
+  for (const location of serviceAreas) {
     entries.push({
       url: `${SITE_URL}${location.href}`,
       lastModified: modified(location.href),

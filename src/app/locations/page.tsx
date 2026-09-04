@@ -43,10 +43,11 @@ export default function LocationsPage() {
 
       {/* Office cards */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <SectionHeading eyebrow="Our Offices" title="Two offices in the Houston area." />
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {offices.map((office) => (
             <div key={office.key} className="border border-line p-7">
-              <h2 className="font-serif text-xl text-navy">{office.label}</h2>
+              <h3 className="font-serif text-xl text-navy">{office.label}</h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-charcoal-soft">
                 {office.addressLine1}
                 <br />
@@ -76,18 +77,24 @@ export default function LocationsPage() {
                 >
                   Call this office
                 </a>
+                <Link
+                  href={office.pageHref}
+                  className="border border-line px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:border-brass"
+                >
+                  Office page
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Communities we serve */}
-      <section className="border-y border-line bg-pearl">
+      {/* Areas we serve */}
+      <section id="areas-we-serve" className="border-y border-line bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
           <SectionHeading
-            eyebrow="Service Area"
-            title="Communities we serve"
+            eyebrow="Areas We Serve"
+            title="Areas we serve"
             lead="HTx Pain Institute is the convenient choice for patients across the Houston metro — north, northwest, and northeast."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

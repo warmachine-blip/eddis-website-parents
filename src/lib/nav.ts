@@ -24,7 +24,50 @@ export const conditionsNav: NavLink[] = conditions.map((c) => ({
   href: c.href,
 }));
 
-export const locationsNav: NavLink[] = [
+export type Office = {
+  key: string;
+  city: string;
+  state: string;
+  zip: string;
+  label: string;
+  /** Short label for nav menus. */
+  navLabel: string;
+  /** The office's own page under /locations. */
+  pageHref: string;
+  addressLine1: string;
+  addressLine2: string;
+  mapsQuery: string;
+};
+
+export const offices: Office[] = [
+  {
+    key: "houston",
+    city: "Houston",
+    state: "TX",
+    zip: "77064",
+    label: "HTx Pain Institute — Houston (TX-249)",
+    navLabel: "Houston (TX-249) / Northwest Houston",
+    pageHref: "/locations/northwest-houston",
+    addressLine1: "17314 Texas 249, Suite 100",
+    addressLine2: "Houston, TX 77064",
+    mapsQuery: "17314 Texas 249, Suite 100, Houston, TX 77064",
+  },
+  {
+    key: "humble",
+    city: "Humble",
+    state: "TX",
+    zip: "77338",
+    label: "HTx Pain Institute — Humble (FM 1960)",
+    navLabel: "Humble (FM 1960)",
+    pageHref: "/locations/humble",
+    addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 260",
+    addressLine2: "Humble, TX 77338",
+    mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 260, Humble, TX 77338",
+  },
+];
+
+/** Every city page under /locations — used by the sitemap and the /locations index, not the menus. */
+export const serviceAreas: NavLink[] = [
   { label: "Northwest Houston", href: "/locations/northwest-houston" },
   { label: "Humble", href: "/locations/humble" },
   { label: "Spring, TX", href: "/locations/spring-tx" },
@@ -36,6 +79,9 @@ export const locationsNav: NavLink[] = [
   { label: "Kingwood", href: "/locations/kingwood" },
   { label: "Atascocita", href: "/locations/atascocita" },
 ];
+
+/** Header/footer "Locations" menu: only the two physical offices. */
+export const locationsNav: NavLink[] = offices.map((o) => ({ label: o.navLabel, href: o.pageHref }));
 
 export const aboutNav: NavLink[] = [
   { label: "Our Story", href: "/about-us" },
@@ -134,36 +180,3 @@ export const practice = {
   hoursWeekend: "Sat–Sun: Closed",
 };
 
-export type Office = {
-  key: string;
-  city: string;
-  state: string;
-  zip: string;
-  label: string;
-  addressLine1: string;
-  addressLine2: string;
-  mapsQuery: string;
-};
-
-export const offices: Office[] = [
-  {
-    key: "houston",
-    city: "Houston",
-    state: "TX",
-    zip: "77064",
-    label: "HTx Pain Institute — Houston (TX-249)",
-    addressLine1: "17314 Texas 249, Suite 100",
-    addressLine2: "Houston, TX 77064",
-    mapsQuery: "17314 Texas 249, Suite 100, Houston, TX 77064",
-  },
-  {
-    key: "humble",
-    city: "Humble",
-    state: "TX",
-    zip: "77338",
-    label: "HTx Pain Institute — Humble (FM 1960)",
-    addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 260",
-    addressLine2: "Humble, TX 77338",
-    mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 260, Humble, TX 77338",
-  },
-];

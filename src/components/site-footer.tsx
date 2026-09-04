@@ -127,7 +127,7 @@ export default function SiteFooter() {
           {offices.map((office) => (
             <div key={office.key}>
               <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-                {office.city} Office
+                <FooterLink href={office.pageHref}>{office.city} Office</FooterLink>
               </h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-off-white/75">
                 <a
