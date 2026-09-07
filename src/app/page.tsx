@@ -8,6 +8,7 @@ import ScrollStroke from "@/components/scroll-stroke";
 import ServiceCard, { ServiceBanner } from "@/components/service-card";
 import { TiltCard, TiltCardGroup } from "@/components/tilt-card";
 import ConditionCard from "@/components/condition-card";
+import ReviewsSection from "@/components/reviews-section";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
 import { offices, practice } from "@/lib/nav";
@@ -308,6 +309,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Patient reviews */}
+      <ReviewsSection />
 
       {/* Injuries */}
       <section className="border-t border-line bg-pearl">

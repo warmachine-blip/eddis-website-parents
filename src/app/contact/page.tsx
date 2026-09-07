@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import ContactForm from "@/components/contact-form";
+import ReviewsSection from "@/components/reviews-section";
 import { offices, practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
@@ -230,6 +231,8 @@ export default function ContactPage() {
         ))}
       </div>
       </div>
+
+      <ReviewsSection className="border-t border-line bg-pearl" />
     </div>
   );
 }
