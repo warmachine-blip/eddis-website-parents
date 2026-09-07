@@ -787,7 +787,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Hip pain after a fall or trauma in an older adult.",
     ],
     recoveryOutlook:
-      "Recovery depends on the cause and treatment. Bursitis and tendinopathy often respond well to a single image-guided injection plus targeted physical therapy, with improvement over 4–8 weeks. PRP for tendinopathy works on a slower biological timeline (8–12 weeks). Hip osteoarthritis is managed with combinations of injection, RFA of the articular nerves, and lifestyle. We will give you a realistic timeline at consult.",
+      "Recovery depends on the cause and treatment. Bursitis and tendinopathy often respond well to a single image-guided injection plus targeted physical therapy, with improvement over 4–8 weeks. PRP for tendinopathy works on a slower biological timeline — improvement builds over several weeks, with continued improvement over the following months. Hip osteoarthritis is managed with combinations of injection, RFA of the articular nerves, and lifestyle. We will give you a realistic timeline at consult.",
     faqs: [
       {
         q: "What is the difference between hip joint pain and bursitis?",
@@ -881,7 +881,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Multiple failed prior treatments at other practices.",
     ],
     recoveryOutlook:
-      "Most shoulder conditions respond to a combination of one or two image-guided injections and a thoughtful PT plan over 6–12 weeks. PRP cases work on a slower biological timeline — typically 8–12 weeks for noticeable improvement, with continued benefit at 6 months. Patients with significant structural tears who need surgical repair are referred to a trusted orthopedic colleague; we provide pain management coverage during their post-op course.",
+      "Most shoulder conditions respond to a combination of one or two image-guided injections and a thoughtful PT plan over 6–12 weeks. PRP cases work on a slower biological timeline — improvement builds over several weeks, with continued improvement over the following months, and individual timing varies. Patients with significant structural tears who need surgical repair are referred to a trusted orthopedic colleague; we provide pain management coverage during their post-op course.",
     faqs: [
       {
         q: "Do I have a rotator cuff tear?",

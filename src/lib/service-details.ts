@@ -425,8 +425,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: "Dr. Baumgartner uses more than one SI fusion system and graft type — including allograft and implant-based options — and selects for each patient based on anatomy, prior surgeries, and the specific imaging findings. We discuss the choice with you before the procedure.",
       },
       {
-        q: "How is this different from a lateral SI fusion (e.g., iFuse)?",
-        a: "Lateral SI fusion places implants through the side of the pelvis, with a different anatomic risk profile. The posterior approach we offer (LinQ) avoids some of those structures and uses a smaller incision. Each approach has a role; we discuss options openly.",
+        q: "Which approach will you use — posterior oblique, lateral, or posterior?",
+        a: "Dr. Baumgartner performs SI joint fusion through all three approaches: posterior oblique, lateral, and posterior. Each takes a different path to the joint and carries a different anatomic profile, so the approach is chosen for your anatomy, prior surgeries, and imaging rather than by which technique the practice happens to offer. We discuss the options with you before scheduling.",
       },
       {
         q: "What is recovery like at 6 weeks?",
@@ -708,7 +708,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Total visit time is approximately 60 minutes.",
       "Mild soreness at the injection site is normal for 2–4 days.",
       "Hold anti-inflammatory medications (NSAIDs) for 7–14 days before and 2–4 weeks after, as directed by your provider.",
-      "Improvement typically progresses over 6–12 weeks.",
+      "Improvement typically builds over several weeks, with continued improvement over the following months.",
     ],
     recoveryResults: [
       "Most patients resume normal activity as comfort allows, guided by their provider.",
@@ -745,7 +745,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "How long until I notice a difference?",
-        a: "PRP works on biological timeframes. Most patients begin to notice improvement at the 4–6 week mark, with continued improvement out to 3 months. It is not an overnight fix; it is a healing response we are amplifying.",
+        a: "PRP works on biological timeframes. Most patients notice improvement over several weeks, with continued improvement over the following months; individual timing varies. It is not an overnight fix; it is a healing response we are amplifying.",
       },
       {
         q: "Will I need more than one injection?",
