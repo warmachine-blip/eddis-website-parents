@@ -11,12 +11,17 @@ import ConditionCard from "@/components/condition-card";
 import ReviewsSection from "@/components/reviews-section";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
+import { reviews } from "@/lib/reviews";
 import { offices, practice } from "@/lib/nav";
 
-const heroStats = [
+const heroStats: { value: string; label: string; href?: string }[] = [
   { value: "15+", label: "Years Experience" },
   { value: "10K+", label: "Procedures" },
-  { value: "4.9★", label: "Patient Rating" },
+  {
+    value: `${reviews.rating}★`,
+    label: `${reviews.reviewCount.toLocaleString("en-US")} Reviews`,
+    href: "#reviews",
+  },
 ];
 
 const valueProps = [
@@ -116,16 +121,31 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-10 right-10 z-10 flex gap-10 rounded-sm border border-brass-deep/35 bg-pearl/95 px-8 py-[22px] backdrop-blur-[10px] max-md:static max-md:mx-5 max-md:mb-10 max-md:gap-5 max-md:bg-pearl max-md:px-5 max-md:py-[18px]">
-          {heroStats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="mb-1 font-serif text-[32px] font-medium leading-none text-brass-deep max-md:text-[24px]">
-                {stat.value}
+          {heroStats.map((stat) => {
+            const body = (
+              <>
+                <div className="mb-1 font-serif text-[32px] font-medium leading-none text-brass-deep max-md:text-[24px]">
+                  {stat.value}
+                </div>
+                <div className="text-[10px] font-medium uppercase tracking-[0.15em] text-charcoal-soft">
+                  {stat.label}
+                </div>
+              </>
+            );
+            return stat.href ? (
+              <Link
+                key={stat.label}
+                href={stat.href}
+                className="rounded-sm text-center transition-opacity hover:opacity-75"
+              >
+                {body}
+              </Link>
+            ) : (
+              <div key={stat.label} className="text-center">
+                {body}
               </div>
-              <div className="text-[10px] font-medium uppercase tracking-[0.15em] text-charcoal-soft">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

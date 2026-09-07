@@ -8,7 +8,7 @@ import { reviews } from "@/lib/reviews";
  */
 export default function ReviewsSection({ className }: { className?: string }) {
   return (
-    <section className={className}>
+    <section id="reviews" className={["scroll-mt-24", className].filter(Boolean).join(" ")}>
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <SectionHeading
           align="center"

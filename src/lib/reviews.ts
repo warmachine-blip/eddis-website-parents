@@ -8,4 +8,11 @@ export const reviews = {
    */
   googleProfileUrl:
     "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Ste+210+Houston+TX+77070",
+  /**
+   * Rating shown in the homepage hero stat. The embedded widget is always
+   * live; these two numbers are a static snapshot and need a manual refresh.
+   * Source: the Birdeye widget above. Last checked 2026-09-07.
+   */
+  rating: "5.0",
+  reviewCount: 647,
 };
