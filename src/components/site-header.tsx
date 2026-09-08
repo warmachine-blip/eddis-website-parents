@@ -43,15 +43,15 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-off-white/92 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:gap-6 lg:py-3.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-3 pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] max-lg:landscape:py-1.5 sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] lg:gap-6 lg:py-3.5">
         <Link href="/" className="shrink-0" onClick={closeMobile}>
           <Image
             src="/images/htx-pain-institute-logo.png"
             alt="HTx Pain Institute"
             width={144}
             height={96}
-            sizes="144px"
-            className="h-14 w-auto"
+            sizes="84px"
+            className="h-14 w-auto max-lg:landscape:h-9"
             priority
           />
         </Link>
@@ -113,10 +113,22 @@ export default function SiteHeader() {
           </Link>
         </div>
 
+        {/* Tap-to-call: the top mobile action on a pain clinic, previously
+            reachable only after opening the menu. */}
+        <a
+          href={practice.phoneHref}
+          aria-label={`Call ${practice.phone}`}
+          className="ml-auto mr-2 flex h-11 w-11 items-center justify-center border border-line text-navy lg:hidden"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+          </svg>
+        </a>
+
         <button
           ref={toggleRef}
           type="button"
-          className="flex h-10 w-10 items-center justify-center border border-line text-navy lg:hidden"
+          className="flex h-11 w-11 items-center justify-center border border-line text-navy lg:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           aria-label="Toggle menu"
@@ -144,10 +156,10 @@ export default function SiteHeader() {
               const expanded = mobileGroup === group.label;
               return (
                 <li key={group.label}>
-                  <div className="flex items-center justify-between py-3">
+                  <div className="flex items-stretch justify-between">
                     <Link
                       href={group.href}
-                      className="font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
+                      className="flex min-h-11 flex-1 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
                       onClick={closeMobile}
                     >
                       {group.label}
@@ -158,7 +170,7 @@ export default function SiteHeader() {
                       aria-expanded={expanded}
                       aria-controls={subId}
                       onClick={() => setMobileGroup(expanded ? null : group.label)}
-                      className="flex h-8 w-8 items-center justify-center text-navy"
+                      className="-mr-2 flex h-11 w-11 shrink-0 items-center justify-center text-navy"
                     >
                       <svg
                         viewBox="0 0 12 8"
@@ -174,7 +186,7 @@ export default function SiteHeader() {
                     <ul id={subId} className="pb-3 pl-2">
                       {group.items.map((item) => (
                         <li key={item.href}>
-                          <Link href={item.href} onClick={closeMobile} className="block py-1.5 text-sm text-charcoal-soft">
+                          <Link href={item.href} onClick={closeMobile} className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft">
                             {item.label}
                           </Link>
                         </li>
@@ -187,7 +199,7 @@ export default function SiteHeader() {
             <li>
               <Link
                 href="/community/imas-home"
-                className="block py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
+                className="flex min-h-11 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
                 onClick={closeMobile}
               >
                 Community
@@ -196,15 +208,15 @@ export default function SiteHeader() {
             <li>
               <Link
                 href="/contact"
-                className="block py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
+                className="flex min-h-11 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
                 onClick={closeMobile}
               >
                 Contact
               </Link>
             </li>
           </ul>
-          <div className="flex flex-col gap-3 border-t border-line px-6 py-4">
-            <a href={practice.phoneHref} className="text-center text-sm font-semibold tabular-nums text-navy">
+          <div className="flex flex-col gap-3 border-t border-line px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+            <a href={practice.phoneHref} className="flex min-h-12 items-center justify-center border border-line text-center text-sm font-semibold tabular-nums text-navy">
               {practice.phone}
             </a>
             <Link

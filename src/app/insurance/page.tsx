@@ -117,7 +117,7 @@ export default function InsurancePage() {
             </ul>
           </div>
           <div className="lg:col-span-5">
-            <div className="sticky top-32 grid gap-4">
+            <div className="grid gap-4 lg:sticky lg:top-32">
               <div className="rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-7 text-off-white shadow-md">
                 <IconBadge icon="bolt" tone="brassSolid" />
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-brass-light">
@@ -179,7 +179,7 @@ export default function InsurancePage() {
       {/* Self-pay & financing + common questions */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid gap-10 rounded-2xl border border-line bg-off-white p-10 sm:p-14 lg:grid-cols-12">
+          <div className="grid gap-10 rounded-2xl border border-line bg-off-white p-6 sm:p-10 lg:grid-cols-12 lg:p-14">
             <div className="lg:col-span-7">
               <IconBadge icon="shield" tone="brass" />
               <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">

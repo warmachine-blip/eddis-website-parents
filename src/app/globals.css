@@ -57,6 +57,16 @@
     line-height: 1.6;
   }
 
+  /* Anchor targets and keyboard-focused fields must clear the 81px sticky header. */
+  :where([id]) {
+    scroll-margin-top: 6rem;
+  }
+
+  :where(input, select, textarea) {
+    scroll-margin-top: 6rem;
+    scroll-margin-bottom: 1.5rem;
+  }
+
   h1,
   h2,
   h3,

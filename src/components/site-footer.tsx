@@ -23,7 +23,7 @@ const footerLinkBlockClass =
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Link href={href} className={footerLinkClass}>
+    <Link href={href} className={`${footerLinkClass} min-h-11 py-2`}>
       {children}
     </Link>
   );
@@ -52,7 +52,7 @@ export default function SiteFooter() {
               alt="HTx Pain Institute"
               width={144}
               height={96}
-              sizes="144px"
+              sizes="84px"
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-sm font-serif text-lg italic text-brass-light">
@@ -62,7 +62,7 @@ export default function SiteFooter() {
               {practice.name} — formerly {practice.formerNames}. Same Dr. Baumgartner,
               same Houston-area locations, expanded clinical scope.
             </p>
-            <ul className="mt-5 flex items-center gap-2" aria-label="Social media">
+            <ul className="mt-5 flex items-center gap-3" aria-label="Social media">
               {socialItems.map((item) => (
                 <li key={item.key}>
                   <a
@@ -70,7 +70,7 @@ export default function SiteFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-off-white/15 text-off-white/70 transition-colors hover:border-brass-light hover:text-brass-light"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-off-white/15 text-off-white/70 transition-colors hover:border-brass-light hover:text-brass-light"
                   >
                     <item.Icon className="h-4 w-4" />
                   </a>
@@ -83,7 +83,7 @@ export default function SiteFooter() {
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
               Practice
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-1 text-sm">
               {practiceLinks.map((l) => (
                 <li key={l.href}>
                   <FooterLink href={l.href}>{l.label}</FooterLink>
@@ -96,7 +96,7 @@ export default function SiteFooter() {
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
               Services
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-1 text-sm">
               {serviceLinks.map((l) => (
                 <li key={l.href}>
                   <FooterLink href={l.href}>{l.label}</FooterLink>
@@ -114,7 +114,7 @@ export default function SiteFooter() {
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
               For Patients
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-1 text-sm">
               {patientLinks.map((l) => (
                 <li key={l.href}>
                   <FooterLink href={l.href}>{l.label}</FooterLink>
@@ -143,7 +143,7 @@ export default function SiteFooter() {
                   <span className="sr-only"> (get directions in Google Maps)</span>
                 </a>
                 <br />
-                <a href={practice.phoneHref} className={`tabular-nums ${footerLinkClass}`}>
+                <a href={practice.phoneHref} className={`min-h-11 py-2 tabular-nums ${footerLinkClass}`}>
                   {practice.phone}
                 </a>
               </address>

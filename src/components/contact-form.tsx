@@ -61,6 +61,8 @@ export default function ContactForm() {
               id="name"
               name="name"
               type="text"
+              autoComplete="name"
+              enterKeyHint="next"
               required
               className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
@@ -73,6 +75,9 @@ export default function ContactForm() {
               id="email"
               name="email"
               type="email"
+              autoComplete="email"
+              inputMode="email"
+              enterKeyHint="next"
               required
               className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
@@ -88,6 +93,9 @@ export default function ContactForm() {
               id="phone"
               name="phone"
               type="tel"
+              autoComplete="tel"
+              inputMode="tel"
+              enterKeyHint="next"
               required
               className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
             />
@@ -121,6 +129,7 @@ export default function ContactForm() {
           <textarea
             id="message"
             name="message"
+            enterKeyHint="done"
             required
             rows={5}
             className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
@@ -133,7 +142,7 @@ export default function ContactForm() {
             required
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
-            className="mt-0.5 h-4 w-4 border-line accent-navy"
+            className="mt-0.5 h-5 w-5 shrink-0 border-line accent-navy"
           />
           I understand this form is not for medical emergencies and I agree to be
           contacted by {practice.name} about my inquiry.

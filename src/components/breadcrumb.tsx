@@ -25,13 +25,13 @@ export default function Breadcrumb({ items, dark }: { items: Crumb[]; dark?: boo
 
   return (
     <nav aria-label="Breadcrumb" className={`mb-6 text-xs font-medium ${textColor}`}>
-      <ol className="flex flex-wrap items-center gap-1.5">
+      <ol className="flex flex-wrap items-center gap-x-1.5">
         {items.map((item, i) => {
           const isLast = i === items.length - 1;
           return (
             <li key={item.label} className="inline-flex items-center gap-1.5">
               {item.href && !isLast ? (
-                <Link href={item.href} className="hover:underline">
+                <Link href={item.href} className="-mx-1 -my-2.5 inline-flex min-h-11 min-w-11 items-center justify-center px-1 py-2.5 hover:underline">
                   {item.label}
                 </Link>
               ) : (

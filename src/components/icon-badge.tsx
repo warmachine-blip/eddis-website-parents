@@ -73,7 +73,7 @@ export function IconBadge({
   const def = ICONS[icon];
   return (
     <span
-      className={`grid h-11 w-11 place-items-center rounded-xl transition-colors ${TONES[tone]} ${hover ? HOVER_TONES[tone] : ""}`}
+      className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors ${TONES[tone]} ${hover ? HOVER_TONES[tone] : ""}`}
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
         {"circle" in def && def.circle && (

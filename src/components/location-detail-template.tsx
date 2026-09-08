@@ -179,7 +179,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
 
       {/* Why HTx Pain Institute for this city */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-10 text-off-white sm:p-14 lg:grid-cols-12">
+        <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-6 text-off-white sm:p-10 lg:grid-cols-12 lg:p-14">
           <div className="lg:col-span-7">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
               <span className="h-px w-8 bg-current opacity-70" />
@@ -212,7 +212,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
             {data.finalCtaHeadline}
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">{data.commuteLine}</p>
+          <p className="mx-auto mt-4 max-w-md text-base text-off-white/80">{data.commuteLine}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/request-appointment"

@@ -80,7 +80,7 @@ export default function Page() {
       {/* Launch list */}
       <section className="border-y border-line bg-pearl">
         <div className="mx-auto max-w-2xl px-6 pb-16 lg:px-10 lg:pb-20">
-          <div className="rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-10 text-center text-off-white shadow-md">
+          <div className="rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-7 text-center text-off-white shadow-md sm:p-10">
             <h2 className="text-balance font-serif text-2xl leading-tight sm:text-3xl">
               Want to be the first to hear when wellness launches?
             </h2>

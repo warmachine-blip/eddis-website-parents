@@ -75,18 +75,21 @@ export function TiltCard({
 
   const dimmed = ctx !== null && ctx.hovered !== null && ctx.hovered !== id;
 
+  // Touch devices synthesise a mousemove on tap but never fire mouseleave, so
+  // every pointer handler is gated on a real hover-capable pointer.
+  const canHover = () =>
+    typeof window === "undefined" || window.matchMedia("(hover: hover)").matches;
+
   function handleMouseMove(e: React.MouseEvent) {
     const el = cardRef.current;
-    if (!el) return;
+    if (!el || !canHover()) return;
     const rect = el.getBoundingClientRect();
     normX.set((e.clientX - rect.left) / rect.width);
     normY.set((e.clientY - rect.top) / rect.height);
   }
 
   function handleMouseEnter() {
-    // Touch devices fire mouseenter on tap but never mouseleave, which would
-    // leave siblings dimmed; hover feedback is pointer-only.
-    if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) return;
+    if (!canHover()) return;
     glowOpacity.set(1);
     ctx?.setHovered(id);
   }

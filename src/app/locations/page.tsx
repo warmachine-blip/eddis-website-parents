@@ -53,7 +53,7 @@ export default function LocationsPage() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} className="tabular-nums hover:text-brass-text">
+                <a href={practice.phoneHref} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text">
                   {practice.phone}
                 </a>
               </address>
@@ -62,24 +62,24 @@ export default function LocationsPage() {
                 <br />
                 {practice.hoursWeekend}
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.mapsQuery)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-navy px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
+                  className="inline-flex min-h-11 items-center justify-center border border-navy px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
                 >
                   Get Directions
                 </a>
                 <a
                   href={practice.phoneHref}
-                  className="border border-line px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:border-brass"
+                  className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass"
                 >
                   Call this office
                 </a>
                 <Link
                   href={office.pageHref}
-                  className="border border-line px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:border-brass"
+                  className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass"
                 >
                   Office page
                 </Link>
@@ -97,12 +97,12 @@ export default function LocationsPage() {
             title="Areas we serve"
             lead="HTx Pain Institute is the convenient choice for patients across the Houston metro — north, northwest, and northeast."
           />
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {communities.map((c) => (
               <Link
                 key={c.slug}
                 href={`/locations/${c.slug}`}
-                className="group border border-line bg-off-white p-5 transition-colors hover:border-brass"
+                className="group flex min-h-11 flex-col justify-center border border-line bg-off-white p-4 transition-colors hover:border-brass sm:p-5"
               >
                 <h3 className="font-serif text-base text-navy group-hover:text-brass-text">
                   {c.label}

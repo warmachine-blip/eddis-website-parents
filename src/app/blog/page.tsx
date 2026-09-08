@@ -41,7 +41,7 @@ export default function BlogPage() {
       {/* Newsletter */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-3xl px-6 pb-16 lg:px-10 lg:pb-24">
-          <div className="rounded-2xl bg-off-white p-10 text-center shadow-sm sm:p-14">
+          <div className="rounded-2xl bg-off-white p-6 text-center shadow-sm sm:p-10 lg:p-14">
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
               <span className="h-px w-8 bg-current opacity-50" />
               Stay Informed

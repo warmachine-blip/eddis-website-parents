@@ -81,8 +81,8 @@ export default function MotorVehicleInjuriesPage() {
       <section className="bg-pearl">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 py-16 lg:grid-cols-12 lg:px-10 lg:py-24">
           <div className="lg:col-span-5">
-            <div className="sticky top-32 grid gap-6">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-line">
+            <div className="grid gap-6 lg:sticky lg:top-32">
+              <div className="relative aspect-[16/10] max-h-[60svh] w-full overflow-hidden rounded-2xl border border-line sm:aspect-[2/1] lg:aspect-[3/4] lg:max-h-none">
                 <Image
                   src="/images/treatment-motor-vehicle-treatment.jpg"
                   alt="Motor vehicle injury pain treatment at HTx Pain Institute"
@@ -134,7 +134,7 @@ export default function MotorVehicleInjuriesPage() {
                 lead="We provide thorough, professional documentation suitable for both clinical follow-up and any associated personal-injury case. We coordinate directly with your attorney's office when records or letters are needed."
               />
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <InfoGridCard icon="shield" title="Common Injuries" items={commonInjuries} />
                 <InfoGridCard icon="pulse" title="What to Expect" items={whatToExpect} />
                 <InfoGridCard icon="alert" title="Documentation" items={documentation} />

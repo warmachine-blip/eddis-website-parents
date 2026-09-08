@@ -28,7 +28,7 @@ export default function NotFound() {
         </Link>
         <Link
           href="/contact"
-          className="border border-line px-6 py-3 font-sans text-sm font-medium text-navy hover:border-brass"
+          className="inline-flex min-h-11 items-center border border-navy/40 px-6 py-3 font-sans text-sm font-medium text-navy hover:border-brass"
         >
           Contact Us
         </Link>

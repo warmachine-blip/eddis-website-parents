@@ -194,7 +194,7 @@ export default function PatientsPage() {
               </div>
             </div>
             <div className="lg:col-span-6">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-10 text-off-white shadow-md">
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-6 text-off-white shadow-md sm:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-light">
                   Patient Forms
                 </p>

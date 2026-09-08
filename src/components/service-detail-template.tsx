@@ -64,19 +64,19 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                   Quick Facts
                 </p>
                 <dl className="mt-4 grid gap-3 text-sm">
-                  <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
+                  <div className="flex flex-col gap-0.5 border-b border-line pb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
                     <dt className="font-medium text-muted">Setting</dt>
                     <dd className="text-right font-semibold text-navy">{data.quickFacts.setting}</dd>
                   </div>
-                  <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
+                  <div className="flex flex-col gap-0.5 border-b border-line pb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
                     <dt className="font-medium text-muted">Anesthesia</dt>
                     <dd className="text-right font-semibold text-navy">{data.quickFacts.anesthesia}</dd>
                   </div>
-                  <div className="flex items-baseline justify-between gap-3 border-b border-line pb-3">
+                  <div className="flex flex-col gap-0.5 border-b border-line pb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
                     <dt className="font-medium text-muted">Recovery</dt>
                     <dd className="text-right font-semibold text-navy">{data.quickFacts.recovery}</dd>
                   </div>
-                  <div className="flex items-baseline justify-between gap-3">
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
                     <dt className="font-medium text-muted">Provided by</dt>
                     <dd className="text-right font-semibold text-navy">Dr. Baumgartner</dd>
                   </div>
@@ -94,7 +94,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                   alt={data.heroImageAlt}
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
-                  className="object-cover"
+                  className="object-cover object-[50%_35%]"
                 />
               </div>
             </div>
@@ -103,8 +103,8 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
       </section>
 
       {/* Step-by-step */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <div className="mt-10">
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-10 lg:py-24">
+        <div>
           <h2 className="font-serif text-xl text-navy">A clear, step-by-step approach.</h2>
           <ol className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {data.steps.map((step, i) => (
@@ -185,7 +185,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
 
       {/* Insurance */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <div className="grid grid-cols-1 gap-10 rounded-2xl border border-line bg-pearl p-10 sm:p-14 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-10 rounded-2xl border border-line bg-pearl p-6 sm:p-10 lg:grid-cols-12 lg:p-14">
           <div className="lg:col-span-7">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
               <span className="h-px w-8 bg-current opacity-50" />
@@ -250,7 +250,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 Other treatments we offer.
               </h2>
             </div>
-            <Link href="/services" className="text-sm font-medium text-navy underline">
+            <Link href="/services" className="inline-flex min-h-11 w-fit items-center self-start text-sm font-medium text-navy underline">
               See all services
             </Link>
           </div>
@@ -300,7 +300,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
             Get the care you deserve. Schedule your consultation today.
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
+          <p className="mx-auto mt-4 max-w-md text-base text-off-white/80">
             Two Houston-area locations. Same-week consults available. Most insurance accepted.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

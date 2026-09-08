@@ -205,7 +205,7 @@ export default function AboutUsPage() {
       {/* Our Commitment */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-10 text-off-white sm:p-14 lg:grid-cols-12 lg:items-center">
+          <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-6 text-off-white sm:p-10 lg:grid-cols-12 lg:items-center lg:p-14">
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
                 <span className="h-px w-8 bg-current opacity-70" />
@@ -225,7 +225,7 @@ export default function AboutUsPage() {
               </p>
               <Link
                 href="/request-appointment"
-                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-brass px-7 py-3.5 text-sm font-semibold text-navy-deep transition-all hover:bg-brass-light"
+                className="group mt-7 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full bg-brass px-5 py-3.5 text-sm font-semibold text-navy-deep transition-all hover:bg-brass-light sm:px-7"
               >
                 Request a Consultation
                 <ArrowIcon />

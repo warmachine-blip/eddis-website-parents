@@ -78,8 +78,8 @@ export default function TatyanaBaumgartnerPage() {
       <section className="bg-pearl">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 py-16 lg:grid-cols-12 lg:px-10 lg:py-24">
           <div className="lg:col-span-5">
-            <div className="sticky top-32">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-line">
+            <div className="lg:sticky lg:top-32">
+              <div className="relative aspect-[4/3] max-h-[60svh] w-full overflow-hidden rounded-2xl bg-line sm:aspect-[3/2] lg:aspect-[3/4] lg:max-h-none">
                 <Image
                   src="/images/tatyana-baumgartner.webp"
                   alt="Tatyana Baumgartner, CPA — Chief Operating Officer, HTx Pain Institute"

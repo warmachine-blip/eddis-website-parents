@@ -52,7 +52,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
       <section className="bg-pearl">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 py-16 lg:grid-cols-12 lg:px-10 lg:py-24">
           <div className="lg:col-span-5">
-            <div className="sticky top-32 relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-line">
+            <div className="relative aspect-[16/10] max-h-[60svh] w-full overflow-hidden rounded-2xl bg-line sm:aspect-[2/1] lg:sticky lg:top-32 lg:aspect-[3/4] lg:max-h-none">
               <Image
                 src={`/images/${data.heroImage}`}
                 alt={data.heroImageAlt}
@@ -186,7 +186,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
       {/* Why HTx Pain Institute: philosophy */}
       {data.philosophyBlurb && (
         <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-10 text-off-white sm:p-14 lg:grid-cols-12">
+          <div className="grid gap-10 rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-6 text-off-white sm:p-10 lg:grid-cols-12 lg:p-14">
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
                 <span className="h-px w-8 bg-current opacity-70" />
@@ -209,7 +209,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
           <h2 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
             Other conditions we treat.
           </h2>
-          <Link href="/pain-center" className="text-sm font-medium text-navy underline">
+          <Link href="/pain-center" className="inline-flex min-h-11 w-fit items-center self-start text-sm font-medium text-navy underline">
             See all conditions
           </Link>
         </div>
@@ -221,7 +221,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
               className="group flex flex-col rounded-2xl border border-line bg-off-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="font-serif text-lg leading-tight text-navy">{c.title}</h3>
-              <span className="mt-2 line-clamp-2 text-sm text-charcoal-soft">{c.blurb}</span>
+              <span className="mt-2 text-[15px] leading-relaxed text-charcoal-soft sm:text-sm">{c.blurb}</span>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text">
                 Learn more
                 <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
@@ -251,7 +251,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
             Get the care you deserve. Schedule your consultation today.
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
+          <p className="mx-auto mt-4 max-w-md text-base text-off-white/80">
             Two Houston-area locations. Same-week consults available. Most insurance accepted.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

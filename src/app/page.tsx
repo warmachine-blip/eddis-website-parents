@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-center overflow-hidden bg-charcoal max-md:min-h-[70vh] max-md:flex-col md:min-h-[88vh]">
+      <section className="relative flex items-center overflow-hidden bg-charcoal max-md:min-h-[70svh] max-md:flex-col md:min-h-[88svh]">
         <HeroBackground />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-[100px]">
@@ -167,38 +167,53 @@ export default function Home() {
       {/* Physician */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="group relative aspect-[3/2] w-full overflow-hidden border border-line">
-            <Image
-              src="/images/dr-baumgartner.webp"
-              alt="Edward Baumgartner Jr., MD at HTx Pain Institute"
-              fill
-              sizes="(min-width: 1024px) 560px, 100vw"
-              className="object-cover object-[50%_18%]"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent"
-              aria-hidden="true"
-            />
+          <div>
+            <div className="group relative aspect-[3/2] w-full overflow-hidden border border-line">
+              <Image
+                src="/images/dr-baumgartner.webp"
+                alt="Edward Baumgartner Jr., MD at HTx Pain Institute"
+                fill
+                sizes="(min-width: 1024px) 560px, calc(100vw - 48px)"
+                className="object-cover object-[50%_18%]"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent"
+                aria-hidden="true"
+              />
 
-            <a
-              href="https://www.youtube.com/watch?v=G9UXJJICk-w"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Play video: Meet Dr. Edward Baumgartner, on YouTube"
-              className="absolute left-1/2 top-1/2 grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-charcoal/30 backdrop-blur-sm transition-transform hover:scale-105"
-            >
-              <span className="grid h-16 w-16 place-items-center rounded-full bg-brass">
-                <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-navy-deep" aria-hidden="true">
-                  <path d="M8 5v14l11-7Z" />
-                </svg>
-              </span>
-            </a>
+              <a
+                href="https://www.youtube.com/watch?v=G9UXJJICk-w"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Play video: Meet Dr. Edward Baumgartner, on YouTube"
+                className="absolute left-1/2 top-1/2 grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-charcoal/30 backdrop-blur-sm transition-transform hover:scale-105"
+              >
+                <span className="grid h-16 w-16 place-items-center rounded-full bg-brass">
+                  <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-navy-deep" aria-hidden="true">
+                    <path d="M8 5v14l11-7Z" />
+                  </svg>
+                </span>
+              </a>
 
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <span className="inline-block bg-charcoal/70 px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-off-white">
+              {/* Overlay caption only from 640px up, where the photo is tall
+                  enough to hold it clear of the centred play button. */}
+              <div className="absolute inset-x-0 bottom-0 hidden p-6 sm:block">
+                <span className="inline-block bg-charcoal/70 px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-off-white">
+                  Meet Your Physician
+                </span>
+                <p className="mt-3 max-w-sm font-serif text-2xl leading-tight text-off-white">
+                  Why I founded HTx Pain — and what makes our care different.
+                </p>
+              </div>
+            </div>
+
+            {/* Phones: same caption, below the photo — legible, and it cannot
+                collide with the play control however the text wraps. */}
+            <div className="mt-4 sm:hidden">
+              <span className="inline-block bg-navy-deep px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-off-white">
                 Meet Your Physician
               </span>
-              <p className="mt-3 max-w-sm font-serif text-2xl leading-tight text-off-white">
+              <p className="mt-3 font-serif text-xl leading-tight text-navy">
                 Why I founded HTx Pain — and what makes our care different.
               </p>
             </div>
@@ -246,7 +261,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/request-appointment"
-                className="font-sans text-sm font-semibold text-navy underline decoration-brass decoration-2 underline-offset-4 hover:text-brass-text"
+                className="inline-flex min-h-11 items-center font-sans text-sm font-semibold text-navy underline decoration-brass decoration-2 underline-offset-4 hover:text-brass-text"
               >
                 Schedule with Dr. B
               </Link>
@@ -309,12 +324,9 @@ export default function Home() {
       <section className="border-t border-line bg-navy-deep text-off-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <SectionHeading
+            tone="dark"
             eyebrow="Why HTx Pain"
-            title={
-              <span className="text-off-white">
-                The standard of pain care, raised to where it belongs.
-              </span>
-            }
+            title="The standard of pain care, raised to where it belongs."
             lead="A clinic built around clinical excellence and the human relationship between physician and patient — without compromise on either."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -380,7 +392,7 @@ export default function Home() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} className="tabular-nums hover:text-brass-text">
+                <a href={practice.phoneHref} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text">
                   {practice.phone}
                 </a>
               </address>
@@ -394,13 +406,13 @@ export default function Home() {
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.mapsQuery)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-navy px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
+                  className="inline-flex min-h-11 items-center justify-center border border-navy px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
                 >
                   Get Directions
                 </a>
                 <a
                   href={practice.phoneHref}
-                  className="border border-line px-5 py-2.5 font-sans text-xs font-medium tracking-wide text-navy hover:border-brass"
+                  className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass"
                 >
                   Call this office
                 </a>
