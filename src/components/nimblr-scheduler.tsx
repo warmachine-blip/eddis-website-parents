@@ -16,8 +16,8 @@ export default function NimblrScheduler() {
           src={scheduling.embedUrl}
           title="Schedule Appointment"
           width="100%"
-          style={{ minHeight: "100dvh" }}
-          className="block w-full border-0"
+          height="560"
+          className="block min-h-[560px] w-full border-0"
         />
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted">
