@@ -7,7 +7,7 @@ export const reviews = {
    * canonical Google Business Profile URL (the place_id link) when available.
    */
   googleProfileUrl:
-    "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Ste+210+Houston+TX+77070",
+    "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Suite+200+Houston+TX+77070",
   /**
    * Rating shown in the homepage hero stat. The embedded widget is always
    * live; these two numbers are a static snapshot and need a manual refresh.

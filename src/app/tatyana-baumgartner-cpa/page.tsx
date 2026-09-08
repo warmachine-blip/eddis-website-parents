@@ -81,8 +81,8 @@ export default function TatyanaBaumgartnerPage() {
             <div className="lg:sticky lg:top-32">
               <div className="relative aspect-[4/3] max-h-[60svh] w-full overflow-hidden rounded-2xl bg-line sm:aspect-[3/2] lg:aspect-[3/4] lg:max-h-none">
                 <Image
-                  src="/images/tatyana-baumgartner.webp"
-                  alt="Tatyana Baumgartner, CPA — Chief Operating Officer, HTx Pain Institute"
+                  src="/images/tatyana-baumgartner-portrait.webp"
+                  alt="Tatyana Baumgartner, CPA, Chief Operating Officer of HTx Pain Institute — head-and-shoulders portrait in a dark green top against a sunlit cream wall."
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover object-top"

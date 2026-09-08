@@ -40,20 +40,20 @@ const team = [
     href: "/dr-edward-baumgartner",
   },
   {
-    name: "Tatyana Baumgartner, CPA",
-    role: "Chief Operating Officer · Board Member",
-    bio: "Chief Operating Officer, Board of Directors — Ima's Home for Children. Leads the operations and community engagement of HTx Pain Institute. Partners with Dr. Baumgartner to build a practice with institute-caliber discipline and family-led warmth. Eight consecutive years as presenting sponsor of the Ima's Home 5K.",
-    image: "tatyana-baumgartner.webp",
-    alt: "Tatyana Baumgartner, CPA — Chief Operating Officer, HTx Pain Institute",
-    href: "/tatyana-baumgartner-cpa",
-  },
-  {
     name: "Allison Turner, DNP, APRN, FNP-C",
     role: "Doctor of Nursing Practice",
     bio: "A Louisiana native and Doctor of Nursing Practice with a deep passion for helping patients manage pain effectively. The connective tissue of HTx Pain Institute — coordinating consultations, post-procedural follow-ups, and ongoing care plans alongside Dr. Baumgartner.",
     image: "allison-turner.webp",
     alt: "Allison Turner, DNP, APRN, FNP-C — HTx Pain Institute",
     href: "/allison-turner",
+  },
+  {
+    name: "Tatyana Baumgartner, CPA",
+    role: "Chief Operating Officer · Board Member",
+    bio: "Chief Operating Officer, Board of Directors — Ima's Home for Children. Leads the operations and community engagement of HTx Pain Institute. Partners with Dr. Baumgartner to build a practice with institute-caliber discipline and family-led warmth. Eight consecutive years as presenting sponsor of the Ima's Home 5K.",
+    image: "tatyana-baumgartner-portrait.webp",
+    alt: "Tatyana Baumgartner, CPA, Chief Operating Officer of HTx Pain Institute — head-and-shoulders portrait in a dark green top against a sunlit cream wall.",
+    href: "/tatyana-baumgartner-cpa",
   },
 ];
 
@@ -91,16 +91,31 @@ export default function AboutUsPage() {
       {/* Vision */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:items-center">
+          <figure>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-line sm:aspect-[16/9]">
+              <Image
+                src="/images/htx-pain-institute-team-front-desk.webp"
+                alt="Eight team members, most in scrubs, stand shoulder to shoulder beneath the gold htx pain institute wall sign; Edward Baumgartner Jr., MD, in navy scrubs, is fourth from left."
+                fill
+                sizes="(min-width: 1280px) 1200px, 92vw"
+                className="object-cover object-bottom"
+                priority
+              />
+            </div>
+            <figcaption className="mt-4 text-[13px] leading-relaxed text-muted">
+              The HTx Pain Institute team at our front desk.
+            </figcaption>
+          </figure>
+
+          <div className="mt-14 grid grid-cols-1 gap-14 lg:mt-20 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-line">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-line">
                 <Image
-                  src="/images/team.webp"
-                  alt="The HTx Pain Institute team"
+                  src="/images/allison-turner-and-dr-baumgartner-front-desk.webp"
+                  alt="Allison Turner, DNP, and Edward Baumgartner Jr., MD, in navy scrubs, standing side by side at the clinic reception desk beneath the gold htx pain institute wall sign."
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover"
-                  priority
                 />
               </div>
               <div className="mt-5 grid grid-cols-[auto_1fr] items-center gap-5 rounded-2xl bg-off-white p-5 shadow-sm">

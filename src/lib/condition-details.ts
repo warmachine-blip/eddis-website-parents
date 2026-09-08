@@ -101,7 +101,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       {
         slug: "spinal-cord-stimulation-specialist",
         title: "Spinal Cord Stimulation",
-        blurb: "For persistent post-surgical or radicular pain.",
+        blurb: "For persistent axial back pain, post-surgical pain, or radicular pain.",
       },
     ],
     relatedConditions: [
@@ -999,7 +999,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         q: "How quickly will I see improvement?",
-        a: "Some interventional procedures (occipital block, SPG block) provide rapid relief within hours. Others (RFA) take 1–3 weeks to reach full effect. We track headache-day frequency over the first 1–3 months.",
+        a: "Some interventional procedures (occipital block, SPG block) provide rapid relief within hours. Others (RFA) build over the following weeks, reaching full benefit at about the 6-week mark. We track headache-day frequency over the first 1–3 months.",
       },
       {
         q: "What about Botox for migraines?",
@@ -1165,7 +1165,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     faqs: [
       {
         q: "Is PRP worth it for tendinopathy?",
-        a: "For chronic tendinopathy that has failed conservative care, PRP has solid evidence — particularly tennis elbow, patellar tendon, and rotator cuff. We use ultrasound for every PRP injection.",
+        a: "For chronic tendinopathy that has failed conservative care, PRP has solid evidence — particularly tennis elbow, patellar tendon, and rotator cuff. We use image guidance — ultrasound or fluoroscopy — for every PRP injection.",
       },
       {
         q: "How long until I can get back to my sport?",

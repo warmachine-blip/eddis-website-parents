@@ -51,9 +51,9 @@ export const offices: Office[] = [
     shortLabel: "Houston (Willowbrook)",
     navLabel: "Houston (Willowbrook) / Northwest Houston",
     pageHref: "/locations/northwest-houston",
-    addressLine1: "13323 Dotson Rd, Ste 210",
+    addressLine1: "13323 Dotson Rd, Suite 200",
     addressLine2: "Houston, TX 77070",
-    mapsQuery: "13323 Dotson Rd, Ste 210, Houston, TX 77070",
+    mapsQuery: "13323 Dotson Rd, Suite 200, Houston, TX 77070",
   },
   {
     key: "humble",
@@ -64,9 +64,9 @@ export const offices: Office[] = [
     shortLabel: "Humble (FM 1960)",
     navLabel: "Humble (FM 1960)",
     pageHref: "/locations/humble",
-    addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 260",
+    addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 100",
     addressLine2: "Humble, TX 77338",
-    mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 260, Humble, TX 77338",
+    mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 100, Humble, TX 77338",
   },
 ];
 
@@ -90,8 +90,8 @@ export const locationsNav: NavLink[] = offices.map((o) => ({ label: o.navLabel, 
 export const aboutNav: NavLink[] = [
   { label: "Our Story", href: "/about-us" },
   { label: "Edward Baumgartner Jr., MD", href: "/dr-edward-baumgartner" },
-  { label: "Tatyana Baumgartner, CPA", href: "/tatyana-baumgartner-cpa" },
   { label: "Allison Turner, DNP", href: "/allison-turner" },
+  { label: "Tatyana Baumgartner, CPA", href: "/tatyana-baumgartner-cpa" },
 ];
 
 export const patientsNav: NavLink[] = [

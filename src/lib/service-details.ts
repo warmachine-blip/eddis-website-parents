@@ -55,15 +55,15 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Patients seeking durable relief without long-term opioid medication",
     ],
     whatToExpect: [
-      "Most procedures take 30–60 minutes from prep to recovery.",
+      "The procedure itself takes about 15 minutes; total time in the office is longer to allow for prep and recovery.",
       "Mild soreness at the site is normal for 2–5 days.",
-      "Pain relief typically begins within 1–3 weeks as the nerve quiets.",
+      "Relief builds gradually over the following weeks as the treated nerve quiets.",
     ],
     recoveryResults: [
       "Most patients return to light activity the next day.",
       "Avoid heavy lifting for 24–48 hours.",
       "Resume gentle stretching and walking within 1–2 days.",
-      "Full benefit is reached at the 3–4 week mark.",
+      "Full benefit is reached at about the 6-week mark.",
       "Relief commonly lasts 6–18 months and the procedure can be repeated.",
     ],
     risksIntro:
@@ -133,8 +133,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Injections & Nerve Blocks",
     metaDescription:
       "Image-guided injections and nerve blocks deliver anti-inflammatory medication and local anesthetic directly into the structure generating pain — whether that's a facet joint, epidural space, sympathetic nerve, or peripheral joint. They are both diagnostic and therapeutic.",
-    heroImage: "treatment-injections-and-blocks-specialist.jpg",
-    heroImageAlt: "Image-guided injections and nerve blocks at HTx Pain Institute",
+    heroImage: "ultrasound-guided-nerve-block-procedure-room.jpg",
+    heroImageAlt: "Two clinicians in surgical gowns, caps, and masks stand on either side of a patient covered by a sheet during an ultrasound-guided nerve block, an imaging monitor and a vitals monitor beside the table.",
     eyebrow: "Injections & Blocks",
     leadLine: "Targeted relief delivered exactly where pain begins.",
     intro:
@@ -362,8 +362,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "SI Joint Fusions",
     metaDescription:
       "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
-    heroImage: "clinician-hands-on-patient-lower-back.jpg",
-    heroImageAlt: "Close-up of a practitioner's stacked hands pressing on the lower back of a patient lying face down on a treatment table.",
+    heroImage: "clinician-palpating-lower-back-seated-patient.jpg",
+    heroImageAlt: "A clinician in mint-green scrubs presses one hand against the mid-back and the other against the lower back of a woman seated upright and fully clothed on the edge of a padded exam table.",
     eyebrow: "SI Joint Fusion",
     leadLine: "A definitive answer for chronic SI joint pain.",
     intro:
@@ -442,7 +442,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Will the implant set off airport metal detectors?",
-        a: "Implant-based SI fusion systems are typically below the threshold of standard airport metal detectors, and allograft-only fusions contain no metal. We provide an implant card you can carry in your wallet for reference if needed.",
+        a: "Implant-based SI fusion systems are typically below the threshold of standard airport metal detectors, and allograft-only fusions contain no metal. When an implant is used, its manufacturer supplies an implant card you can carry in your wallet for reference if needed.",
       },
       {
         q: "What if the fusion doesn't work?",
@@ -496,7 +496,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     whoIsItFor: [
       "Failed back surgery syndrome / persistent post-surgical spine pain",
-      "Diabetic peripheral neuropathy",
+      "Axial back pain — pain centered in the back itself rather than radiating into a limb",
+      "Various neuropathies, including diabetic peripheral neuropathy",
       "Complex regional pain syndrome (CRPS)",
       "Refractory radicular pain",
     ],
@@ -528,7 +529,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Is this reversible?",
-        a: "Yes. SCS is fully reversible — both the trial and the permanent system can be removed if it is no longer providing benefit.",
+        a: "Yes. SCS is fully reversible — both the trial and the permanent system can be removed.",
       },
       {
         q: "What does the trial period feel like?",
@@ -536,7 +537,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Is the implant safe with MRI scans?",
-        a: "Modern SCS systems are MRI-conditional, meaning MRI is safe under specific conditions. We provide a wallet card with the exact parameters your imaging facility needs.",
+        a: "Modern SCS systems are MRI-conditional, meaning MRI is safe under specific conditions. The device manufacturer provides a wallet card with the exact parameters your imaging facility needs.",
       },
       {
         q: "How long does the battery last?",
@@ -695,7 +696,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     steps: [
       "A small blood draw is performed in our office.",
       "The blood is processed in a sterile centrifuge to concentrate platelets.",
-      "Under ultrasound guidance, the PRP is injected directly into the injured tissue.",
+      "Under ultrasound or fluoroscopic guidance, the PRP is injected directly into the injured tissue.",
       "Growth factors stimulate the body's natural healing response.",
     ],
     whoIsItFor: [
@@ -707,7 +708,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     whatToExpect: [
       "Total visit time is approximately 60 minutes.",
       "Mild soreness at the injection site is normal for 2–4 days.",
-      "Hold anti-inflammatory medications (NSAIDs) for 7–14 days before and 2–4 weeks after, as directed by your provider.",
+      "Hold anti-inflammatory medications (NSAIDs) for 7 days before and 2–4 weeks after, as directed by your provider.",
       "Improvement typically builds over several weeks, with continued improvement over the following months.",
     ],
     recoveryResults: [
@@ -737,7 +738,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "How is PRP made?",
-        a: "We draw a small amount of your blood (about the volume of a routine blood test), spin it in a sterile centrifuge to concentrate the platelets and growth factors, and then inject the resulting plasma into your injured tissue under ultrasound guidance.",
+        a: "We draw a small amount of your blood (about the volume of a routine blood test), spin it in a sterile centrifuge to concentrate the platelets and growth factors, and then inject the resulting plasma into your injured tissue under ultrasound or fluoroscopic guidance.",
       },
       {
         q: "What conditions respond best to PRP?",
@@ -753,7 +754,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Should I stop my anti-inflammatory medications?",
-        a: "Yes — typically we ask you to stop NSAIDs (ibuprofen, naproxen, diclofenac, etc.) and aspirin for 7–14 days before and 2–4 weeks after PRP, as directed by your provider. Anti-inflammatories blunt the very inflammatory cascade we are trying to harness for healing.",
+        a: "Yes — typically we ask you to stop NSAIDs (ibuprofen, naproxen, diclofenac, etc.) and aspirin for 7 days before and 2–4 weeks after PRP, as directed by your provider. Anti-inflammatories blunt the very inflammatory cascade we are trying to harness for healing.",
       },
       {
         q: "What is recovery like?",
@@ -771,7 +772,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     insuranceBlurb:
       "PRP therapy is generally not covered by commercial insurance or Medicare for musculoskeletal conditions. We provide transparent self-pay pricing for single sessions and series, and offer CareCredit financing for patients who would prefer to spread payment. We will tell you honestly whether PRP is likely to help in your specific case before you spend money.",
     expertiseBlurb:
-      "We are conservative about PRP. We will not sell you a PRP series for a condition where the evidence does not support it. When PRP is right for you, we use ultrasound guidance for every injection, prepare the PRP in our office under sterile technique, and structure the post-procedure plan to maximize the biology — including coordinated physical therapy and clear restrictions on anti-inflammatories.",
+      "We are conservative about PRP. We will not sell you a PRP series for a condition where the evidence does not support it. When PRP is right for you, we use image guidance — ultrasound or fluoroscopy — for every injection, prepare the PRP in our office under sterile technique, and structure the post-procedure plan to maximize the biology — including coordinated physical therapy and clear restrictions on anti-inflammatories.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",
@@ -929,7 +930,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Will the device set off airport security?",
-        a: "The Minuteman implant is typically below the threshold of airport metal detectors. We provide an implant card you can carry if needed.",
+        a: "The Minuteman implant is typically below the threshold of airport metal detectors. The device manufacturer supplies an implant card you can carry if needed.",
       },
     ],
     insuranceBlurb:

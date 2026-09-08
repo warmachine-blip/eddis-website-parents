@@ -41,7 +41,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients seeking second opinions before considering spine surgery",
     ],
     directionsIntro:
-      "From most of Spring, take Cypresswood Drive or Spring-Cypress Road east to FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260, just east of US-59. Most patients reach us in 10–15 minutes.",
+      "From most of Spring, take Cypresswood Drive or Spring-Cypress Road east to FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100, just east of US-59. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "Spring patients consistently tell us they choose HTx Pain Institute because they don't want to drive into the Texas Medical Center for procedures that should be available closer to home. Our Humble office on FM 1960 is a 10–15 minute drive from most of Spring, with same-week consultations available and a clinical scope that matches anything available downtown.",
     landmarks: [
@@ -88,7 +88,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients seeking second opinions before major spine surgery",
     ],
     directionsIntro:
-      "From most of The Woodlands, take I-45 South to US-59/I-69 South, then exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260. Most patients reach us in 15–25 minutes.",
+      "From most of The Woodlands, take I-45 South to US-59/I-69 South, then exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 15–25 minutes.",
     whyThisCityBlurb:
       "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, LinQ SI fusion, Minuteman lumbar fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
     landmarks: [
@@ -135,7 +135,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Workers' compensation cases with documentation needs",
     ],
     directionsIntro:
-      "From most of Cypress, take US-290 East to Texas 249 North toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Most patients reach us in 15–25 minutes.",
+      "From most of Cypress, take US-290 East to Texas 249 North toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Suite 200, near Willowbrook. Most patients reach us in 15–25 minutes.",
     whyThisCityBlurb:
       "Cypress patients tell us our Houston office near Willowbrook is the easiest pain practice to reach without dealing with downtown traffic. We are 15–25 minutes from most of Cypress, offer the full interventional toolkit, and handle workers' comp and motor-vehicle cases with the documentation rigor those cases require.",
     landmarks: [
@@ -182,7 +182,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients told they need spine surgery seeking interventional alternatives",
     ],
     directionsIntro:
-      "From most of Tomball, take Texas 249 South toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210. Most patients reach us in 10–15 minutes.",
+      "From most of Tomball, take Texas 249 South toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Suite 200. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "For Tomball patients, the proximity to advanced interventional procedures matters. Our Houston office offers Intracept, MILD, spinal cord stimulation, and SI joint fusion — procedures most Tomball patients had been told required a referral into the Texas Medical Center. We are minutes from the office park to home, and we coordinate with Tomball-area primary care and surgical colleagues.",
     landmarks: [
@@ -229,7 +229,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients post-spine-surgery managing recurrent or new pain",
     ],
     directionsIntro:
-      "From most of Klein, take Stuebner Airline or Spring-Cypress Road west to Texas 249, then south toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210. Most patients reach us in 10–15 minutes.",
+      "From most of Klein, take Stuebner Airline or Spring-Cypress Road west to Texas 249, then south toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Suite 200. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "Klein is one of the communities where word-of-mouth means everything. Our practice is built on patients who refer their friends, neighbors, and family — and many of our long-term patients are from Klein. The continuity of care, the willingness to keep building on a patient's plan over years, and the proximity to the Texas 249 office are what bring Klein patients to us.",
     landmarks: [
@@ -276,9 +276,9 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Long-term chronic pain patients valuing continuity of care",
     ],
     directionsIntro:
-      "From most of Champions, take Cypresswood Drive or FM 1960 west toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Most patients reach us in 10 minutes.",
+      "From most of Champions, take Cypresswood Drive or FM 1960 west toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Suite 200, near Willowbrook. Most patients reach us in 10 minutes.",
     whyThisCityBlurb:
-      "Champions is a community where the proximity to advanced biologic options matters. Our PRP program is one of the most carefully managed in the area — ultrasound-guided, prepared in-office, and integrated with structured rehab. For patients trying to stay on the course or on the court, the combination of accuracy and biology makes the difference.",
+      "Champions is a community where the proximity to advanced biologic options matters. Our PRP program is one of the most carefully managed in the area — image-guided, prepared in-office, and integrated with structured rehab. For patients trying to stay on the course or on the court, the combination of accuracy and biology makes the difference.",
     landmarks: [
       "Champions Golf Club and surrounding country-club neighborhoods",
       "Approximately 10 minutes from FM 1960 retail and Champions Forest",
@@ -323,7 +323,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Working professionals with cervical pain from commute and desk work",
     ],
     directionsIntro:
-      "From Kingwood, take Kingwood Drive west to US-59/I-69 South, exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260. Most patients reach us in 10–15 minutes.",
+      "From Kingwood, take Kingwood Drive west to US-59/I-69 South, exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
       "Kingwood patients value clinicians who respect both their activity level and their preference to stay out of major surgical pathways. We deliver that — biologic options for tendinopathy, MILD and Intracept for stenosis and vertebrogenic pain, and a stepwise approach that keeps patients on the trails as much as possible while we treat what is going on.",
     landmarks: [
@@ -370,7 +370,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Post-surgical pain patients seeking ongoing management",
     ],
     directionsIntro:
-      "From most of Atascocita, take Atascocita Road or West Lake Houston Parkway west to FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260. Most patients reach us in 5–10 minutes.",
+      "From most of Atascocita, take Atascocita Road or West Lake Houston Parkway west to FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 5–10 minutes.",
     whyThisCityBlurb:
       "For Atascocita patients, the proximity is hard to beat — we are the closest comprehensive pain practice for most of the area. Add to that the fact that we handle workers' comp, motor-vehicle, and letter-of-protection cases with the documentation rigor those cases require, and we are the natural choice for working-age patients who cannot afford to lose a day to a long drive.",
     landmarks: [
@@ -417,11 +417,11 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients with prior spine surgery managing recurrence or new pain",
     ],
     directionsIntro:
-      "Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 260, just east of US-59/I-69 on the Bypass. Ample parking; the building is on the south side of the road.",
+      "Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100, just east of US-59/I-69 on the Bypass. Ample parking; the building is on the south side of the road.",
     whyThisCityBlurb:
       "Humble is where the practice grew up. Our roots in this community shape how we treat — patients are not strangers, names are remembered, and the team takes pride in being the institute-caliber pain practice the community deserves. There is also a practical advantage: comprehensive interventional care without leaving the area.",
     landmarks: [
-      "Our Humble office: 1485 FM 1960 Bypass Rd. E, Suite 260 — east of US-59 on the Bypass",
+      "Our Humble office: 1485 FM 1960 Bypass Rd. E, Suite 100 — east of US-59 on the Bypass",
       "Approximately 5 minutes from Humble High School and downtown Humble",
       "Memorial Hermann Northeast nearby for prior imaging and surgical referrals",
       "Convenient for residents of Walden, Forest Cove, and the broader US-59 corridor",
@@ -464,7 +464,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Younger patients exploring neuromodulation for refractory pain",
     ],
     directionsIntro:
-      "From most of Northwest Houston, our Houston office is at 13323 Dotson Rd, Ste 210, near Willowbrook. Easy access from Beltway 8 and Sam Houston Tollway; ample parking on site.",
+      "From most of Northwest Houston, our Houston office is at 13323 Dotson Rd, Suite 200, near Willowbrook. Easy access from Beltway 8 and Sam Houston Tollway; ample parking on site.",
     whyThisCityBlurb:
       "Northwest Houston has more pain options than most parts of the city — but most of those practices specialize narrowly. We bring the full institute-caliber toolkit (Intracept, MILD, Minuteman, LinQ, SCS, RFA, biologics) into a single practice with diagnostic discipline that is hard to match. For patients in this corridor, that combination is the reason to choose HTx Pain Institute.",
     landmarks: [
