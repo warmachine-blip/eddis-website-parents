@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import ConditionCard from "@/components/condition-card";
 import { TiltCardGroup } from "@/components/tilt-card";
 import { conditions } from "@/lib/conditions";
 
 export const metadata: Metadata = {
-  title: "Pain Center",
+  title: "Conditions We Treat in Houston",
   description:
     "From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward, at HTx Pain Institute in Houston, TX.",
 };
@@ -15,11 +16,12 @@ export default function PainCenterPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
       <section>
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Conditions" }]} />
         <SectionHeading
           as="h1"
           eyebrow="Pain Center"
-          title="The conditions we treat — with the expertise they require."
-          lead="From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward."
+          title="Conditions we treat in Houston & Humble."
+          lead="The conditions we treat, with the expertise they require — from neuropathic pain to chronic back pain, knee pain, and more."
         />
       </section>
 

@@ -1,7 +1,12 @@
+import { conditions } from "./conditions";
+
 export type ConditionDetail = {
   slug: string;
   title: string;
+  /** 120-160 char meta description; not rendered on the page. */
   metaDescription: string;
+  /** The sentence under the h1 in the hero. */
+  leadLine: string;
   heroImage: string;
   heroImageAlt: string;
   intro: string;
@@ -29,46 +34,48 @@ export type ConditionDetail = {
   philosophyBlurb?: string;
 };
 
-const relatedCore = [
-  {
-    slug: "neuropathic-pain",
-    title: "Neuropathic Pain",
-    blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
-  },
-  {
-    slug: "chronic-pain",
-    title: "Chronic Pain",
-    blurb: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
-  },
-  {
-    slug: "pelvic-pain",
-    title: "Pelvic Pain",
-    blurb: "A complex region requiring careful, compassionate diagnosis and treatment.",
-  },
-  {
-    slug: "cancer-pain",
-    title: "Cancer Pain",
-    blurb: "Compassionate interventional support that complements oncology care.",
-  },
-  {
-    slug: "joint-pain",
-    title: "Joint Pain",
-    blurb: "From shoulder to hip — image-guided care for the joints that move you.",
-  },
-];
+/**
+ * Topical adjacency for the "Other conditions we treat" module. Previously every
+ * page showed the same four hub conditions, so 13 of 18 condition pages had no
+ * inbound link from any peer. These clusters point a reader at what they would
+ * plausibly look at next, and every slug appears in at least three other lists.
+ */
+const relatedSlugs: Record<string, string[]> = {
+  "back-pain": ["sciatica", "herniated-discs", "spinal-stenosis", "neck-pain"],
+  "neck-pain": ["back-pain", "herniated-discs", "migraines", "shoulder-injuries"],
+  "sciatica": ["herniated-discs", "spinal-stenosis", "back-pain", "neuropathic-pain"],
+  "herniated-discs": ["sciatica", "back-pain", "neck-pain", "spinal-stenosis"],
+  "spinal-stenosis": ["sciatica", "back-pain", "herniated-discs", "neuropathic-pain"],
+  "joint-pain": ["knee-pain", "hip-pain", "shoulder-injuries", "sports-injuries"],
+  "knee-pain": ["joint-pain", "hip-pain", "sports-injuries", "shoulder-injuries"],
+  "hip-pain": ["joint-pain", "knee-pain", "back-pain", "sports-injuries"],
+  "shoulder-injuries": ["joint-pain", "sports-injuries", "neck-pain", "knee-pain"],
+  "sports-injuries": ["knee-pain", "shoulder-injuries", "joint-pain", "hip-pain"],
+  "neuropathic-pain": ["sciatica", "chronic-pain", "fibromyalgia", "post-surgical-pain"],
+  "chronic-pain": ["neuropathic-pain", "fibromyalgia", "post-surgical-pain", "other-pain-conditions", "pelvic-pain"],
+  "fibromyalgia": ["chronic-pain", "neuropathic-pain", "migraines", "other-pain-conditions"],
+  "migraines": ["neck-pain", "neuropathic-pain", "chronic-pain", "fibromyalgia"],
+  "post-surgical-pain": ["neuropathic-pain", "chronic-pain", "cancer-pain", "back-pain"],
+  "cancer-pain": ["chronic-pain", "neuropathic-pain", "post-surgical-pain", "pelvic-pain"],
+  "pelvic-pain": ["neuropathic-pain", "chronic-pain", "cancer-pain", "other-pain-conditions"],
+  "other-pain-conditions": ["chronic-pain", "neuropathic-pain", "migraines", "pelvic-pain", "cancer-pain"],
+};
 
-// The "Other conditions we treat" module shows the first four
-// conditions in canonical order, excluding the current page — verified against
-// each page's own copy.
+/** Cards are built from the canonical condition list so titles and blurbs cannot drift. */
 function relatedFor(selfSlug: string) {
-  return relatedCore.filter((c) => c.slug !== selfSlug).slice(0, 4);
+  return (relatedSlugs[selfSlug] ?? []).map((slug) => {
+    const c = conditions.find((x) => x.slug === slug);
+    if (!c) throw new Error(`relatedFor(${selfSlug}): unknown condition "${slug}"`);
+    return { slug: c.slug, title: c.title, blurb: c.summary };
+  });
 }
 
 export const conditionDetails: Record<string, ConditionDetail> = {
   "back-pain": {
     slug: "back-pain",
     title: "Back Pain",
-    metaDescription: "The most common reason patients come to us — and where we have the most to offer.",
+    metaDescription: "Back pain treatment in Houston and Humble. We find the source — disc, facet, SI joint, or nerve — then treat it with targeted, minimally invasive care.",
+    leadLine: "The most common reason patients come to us — and where we have the most to offer.",
     heroImage: "woman-from-behind-hand-on-lower-back-outdoors.jpg",
     heroImageAlt: "Woman in black athletic wear seen from behind outdoors, pressing one hand to her lower back.",
     intro:
@@ -103,35 +110,20 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         title: "Spinal Cord Stimulation",
         blurb: "For persistent axial back pain, post-surgical pain, or radicular pain.",
       },
-    ],
-    relatedConditions: [
       {
-        slug: "neuropathic-pain",
-        title: "Neuropathic Pain",
-        blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
-      },
-      {
-        slug: "chronic-pain",
-        title: "Chronic Pain",
-        blurb: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
-      },
-      {
-        slug: "pelvic-pain",
-        title: "Pelvic Pain",
-        blurb: "A complex region requiring careful, compassionate diagnosis and treatment.",
-      },
-      {
-        slug: "cancer-pain",
-        title: "Cancer Pain",
-        blurb: "Compassionate interventional support that complements oncology care.",
+        slug: "si-joint-fusions",
+        title: "SI Joint Fusion",
+        blurb: "When diagnostic blocks confirm the sacroiliac joint as the pain source.",
       },
     ],
+    relatedConditions: relatedFor("back-pain"),
   },
 
   "neuropathic-pain": {
     slug: "neuropathic-pain",
     title: "Neuropathic Pain",
-    metaDescription: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
+    metaDescription: "Burning, electric, or tingling nerve pain treated in Houston and Humble — from diabetic neuropathy to CRPS, with nerve blocks, ablation, and stimulation.",
+    leadLine: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
     heroImage: "clinician-examining-patient-foot.jpg",
     heroImageAlt: "A clinician in blue scrubs presses both thumbs into the sole of a patient's bare foot resting on a white towel in a clinic room.",
     intro:
@@ -168,7 +160,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "chronic-pain": {
     slug: "chronic-pain",
     title: "Chronic Pain",
-    metaDescription: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
+    metaDescription: "Chronic pain care in Houston and Humble for pain that outlasts healing. Double board-certified diagnosis and a plan built to reduce medication reliance.",
+    leadLine: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
     heroImage: "older-woman-seated-on-sofa-head-down-hands-over-face.jpg",
     heroImageAlt: "An older woman with gray hair sits on the edge of a beige sofa in jeans and a white shirt, head bowed with both hands covering her face.",
     intro:
@@ -205,7 +198,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "pelvic-pain": {
     slug: "pelvic-pain",
     title: "Pelvic Pain",
-    metaDescription: "A complex region requiring careful, compassionate diagnosis and treatment.",
+    metaDescription: "Chronic pelvic pain treatment in Houston and Humble. Careful diagnosis of a complex region, with image-guided blocks and neuromodulation when they fit.",
+    leadLine: "A complex region requiring careful, compassionate diagnosis and treatment.",
     heroImage: "treatment-pelvic-pain-treatment.jpg",
     heroImageAlt: "Pelvic pain treatment at HTx Pain Institute",
     intro:
@@ -242,7 +236,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "cancer-pain": {
     slug: "cancer-pain",
     title: "Cancer Pain",
-    metaDescription: "Compassionate interventional support that complements oncology care.",
+    metaDescription: "Cancer pain management in Houston and Humble. Interventional options that complement your oncology care and reduce reliance on systemic medication.",
+    leadLine: "Compassionate interventional support that complements oncology care.",
     heroImage: "treatment-cancer-pain-treatment.jpg",
     heroImageAlt: "Cancer pain management at HTx Pain Institute",
     intro:
@@ -283,7 +278,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "joint-pain": {
     slug: "joint-pain",
     title: "Joint Pain",
-    metaDescription: "From shoulder to hip — image-guided care for the joints that move you.",
+    metaDescription: "Joint pain treatment in Houston and Humble — shoulder, hip, knee and more. Ultrasound-guided injections, PRP, and radiofrequency ablation where they help.",
+    leadLine: "From shoulder to hip — image-guided care for the joints that move you.",
     heroImage: "hand-pressing-painful-knee-seated-on-bed.jpg",
     heroImageAlt: "Close-up of a woman seated on a bed in a floral dress pressing her hand against her bare knee.",
     intro:
@@ -319,7 +315,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "knee-pain": {
     slug: "knee-pain",
     title: "Knee Pain",
-    metaDescription: "Stay on your feet. Stay in your life. We focus on what works.",
+    metaDescription: "Knee pain treatment in Houston and Humble. Image-guided injections, PRP, and genicular nerve ablation to keep you on your feet without rushing to surgery.",
+    leadLine: "Stay on your feet. Stay in your life. We focus on what works.",
     heroImage: "treatment-knee-pain-treatment.jpg",
     heroImageAlt: "Knee pain treatment at HTx Pain Institute",
     intro:
@@ -360,7 +357,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "neck-pain": {
     slug: "neck-pain",
     title: "Neck Pain",
-    metaDescription: "Precision care for the cervical spine — without rushing to surgery.",
+    metaDescription: "Neck pain treatment in Houston and Humble. Precision cervical care — diagnostic blocks, radiofrequency ablation, and injections before considering surgery.",
+    leadLine: "Precision care for the cervical spine — without rushing to surgery.",
     heroImage: "treatment-neck-pain-treatment-houston.jpg",
     heroImageAlt: "Neck pain treatment at HTx Pain Institute in Houston",
     intro:
@@ -396,7 +394,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "other-pain-conditions": {
     slug: "other-pain-conditions",
     title: "Other Pain Conditions",
-    metaDescription: "Headaches, abdominal pain, post-surgical pain, CRPS, and more.",
+    metaDescription: "Headaches, abdominal pain, post-surgical pain, CRPS and more — interventional pain care in Houston and Humble for conditions that resist standard treatment.",
+    leadLine: "Headaches, abdominal pain, post-surgical pain, CRPS, and more.",
     heroImage: "man-hand-on-forehead-eyes-shut-warm-window-light.jpg",
     heroImageAlt: "A man in a dark patterned shirt sits indoors with his eyes squeezed shut and one hand pressed to his forehead, lit by warm side light.",
     intro:
@@ -426,34 +425,14 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         blurb: "Considered for CRPS and select refractory pain.",
       },
     ],
-    relatedConditions: [
-      {
-        slug: "migraines",
-        title: "Migraines & Chronic Headache",
-        blurb: "Beyond medication management — interventional options when headaches don't respond.",
-      },
-      {
-        slug: "post-surgical-pain",
-        title: "Post-Surgical Pain",
-        blurb: "When surgery resolved the issue but pain remained — interventional options that can help.",
-      },
-      {
-        slug: "neuropathic-pain",
-        title: "Neuropathic Pain",
-        blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves.",
-      },
-      {
-        slug: "chronic-pain",
-        title: "Chronic Pain",
-        blurb: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
-      },
-    ],
+    relatedConditions: relatedFor("other-pain-conditions"),
   },
 
   sciatica: {
     slug: "sciatica",
     title: "Sciatica",
-    metaDescription: "Radiating leg pain from compression or irritation of the sciatic nerve.",
+    metaDescription: "Sciatica treatment in Houston and Humble. Radiating leg pain from a compressed sciatic nerve, treated with image-guided injections and targeted nerve care.",
+    leadLine: "Radiating leg pain from compression or irritation of the sciatic nerve.",
     heroImage: "woman-hand-on-lower-back-standing.jpg",
     heroImageAlt: "A woman in a white blouse and light-wash jeans stands in profile with one hand pressed against her lower back.",
     intro:
@@ -546,7 +525,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "herniated-discs": {
     slug: "herniated-discs",
     title: "Herniated Discs",
-    metaDescription: "When the soft inner disc material pushes through the outer wall and irritates a nerve.",
+    metaDescription: "Herniated disc treatment in Houston and Humble. Epidural steroid injections and targeted nerve care for disc material pressing on a spinal nerve root.",
+    leadLine: "When the soft inner disc material pushes through the outer wall and irritates a nerve.",
     heroImage: "hand-on-spine-xray-lightbox.jpg",
     heroImageAlt: "A hand resting on a backlit spine X-ray, the vertebral column running down the center of the film with the lumbar spine in the lower half.",
     intro:
@@ -639,7 +619,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "spinal-stenosis": {
     slug: "spinal-stenosis",
     title: "Spinal Stenosis",
-    metaDescription: "Narrowing of the spinal canal that compresses nerves and limits walking.",
+    metaDescription: "Spinal stenosis treatment in Houston and Humble. The MILD procedure, injections, and stimulation to relieve narrowing that limits how far you can walk.",
+    leadLine: "Narrowing of the spinal canal that compresses nerves and limits walking.",
     heroImage: "older-man-resting-on-park-bench-by-pond.jpg",
     heroImageAlt: "A grey-haired man in a dark vest sits alone on a wooden park bench, seen from behind, resting and looking out over a calm pond and green hillside.",
     intro:
@@ -733,7 +714,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "hip-pain": {
     slug: "hip-pain",
     title: "Hip Pain",
-    metaDescription: "From bursitis to osteoarthritis — image-guided care for the hip joint.",
+    metaDescription: "Hip pain treatment in Houston and Humble — bursitis, osteoarthritis, and tendinopathy. Ultrasound-guided injections, PRP, and articular nerve ablation.",
+    leadLine: "From bursitis to osteoarthritis — image-guided care for the hip joint.",
     heroImage: "man-hand-pressed-to-hip-side-view.jpg",
     heroImageAlt: "Close-up side view of a man in a light blue shirt and jeans pressing his hand against his hip in discomfort.",
     intro:
@@ -825,8 +807,9 @@ export const conditionDetails: Record<string, ConditionDetail> = {
 
   "shoulder-injuries": {
     slug: "shoulder-injuries",
-    title: "Shoulder Injuries",
-    metaDescription: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully.",
+    title: "Shoulder Pain & Injuries",
+    metaDescription: "Shoulder pain treatment in Houston and Humble. Rotator cuff, labrum, and tendon problems diagnosed precisely and treated with ultrasound-guided care.",
+    leadLine: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully.",
     heroImage: "man-gripping-shoulder-pain.jpg",
     heroImageAlt: "A young man in a grey t-shirt grimaces while gripping his right shoulder with his left hand against a plain white wall.",
     intro:
@@ -861,7 +844,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         blurb: "Biologic option for rotator cuff tendinopathy.",
       },
       {
-        slug: "injections-blocks-specialist",
         title: "Suprascapular Nerve Block",
         blurb: "Targeted relief for refractory shoulder pain or frozen shoulder.",
       },
@@ -920,7 +902,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   migraines: {
     slug: "migraines",
     title: "Migraines & Chronic Headache",
-    metaDescription: "Beyond medication management — interventional options when headaches don't respond.",
+    metaDescription: "Migraine and headache treatment in Houston and Humble. Occipital and sphenopalatine blocks, cervical ablation, and Botox when medication is not enough.",
+    leadLine: "Beyond medication management — interventional options when headaches don't respond.",
     heroImage: "woman-hand-to-temple-eyes-closed-headache.jpg",
     heroImageAlt: "A woman in a white shirt with her eyes closed presses her hand against her temple and forehead in soft natural light.",
     intro:
@@ -950,7 +933,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         blurb: "Targeted relief for occipital neuralgia and cervicogenic headache.",
       },
       {
-        slug: "injections-blocks-specialist",
         title: "Sphenopalatine Ganglion Block",
         blurb: "Office-based option for migraine and cluster headache.",
       },
@@ -1014,7 +996,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   fibromyalgia: {
     slug: "fibromyalgia",
     title: "Fibromyalgia",
-    metaDescription: "A whole-person condition that benefits from a coordinated, individualized plan.",
+    metaDescription: "Fibromyalgia care in Houston and Humble. A coordinated, whole-person plan combining interventional options, medication review, and structured rehabilitation.",
+    leadLine: "A whole-person condition that benefits from a coordinated, individualized plan.",
     heroImage: "person-in-knit-sweater-resting-on-armchair-hand-on-lap.jpg",
     heroImageAlt: "A person in an oversized ribbed knit sweater sits curled on a cream armchair with one hand resting on their lap in a patch of afternoon sunlight, face out of frame.",
     intro:
@@ -1106,7 +1089,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "sports-injuries": {
     slug: "sports-injuries",
     title: "Sports Injuries",
-    metaDescription: "Get back to your sport — with diagnostics and biologics that respect the timeline.",
+    metaDescription: "Sports injury treatment in Houston and Humble. Ultrasound-guided diagnosis, PRP, and nerve blocks that respect the timeline and get you back to your sport.",
+    leadLine: "Get back to your sport — with diagnostics and biologics that respect the timeline.",
     heroImage: "young-woman-stretching-leg-on-deck-rail.jpg",
     heroImageAlt: "A young woman in athletic wear stretches her hamstring with one leg extended onto a wooden deck railing outdoors.",
     intro:
@@ -1141,7 +1125,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         blurb: "Biologic option for tendinopathy and select joint injuries.",
       },
       {
-        slug: "injections-blocks-specialist",
         title: "Selective Nerve Blocks",
         blurb: "When peripheral nerve sensitization is part of the picture.",
       },
@@ -1200,7 +1183,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "post-surgical-pain": {
     slug: "post-surgical-pain",
     title: "Post-Surgical Pain",
-    metaDescription: "When surgery resolved the issue but pain remained — interventional options that can help.",
+    metaDescription: "Post-surgical pain treatment in Houston and Humble for pain that persists after surgery — nerve blocks, ablation, and spinal cord stimulation when needed.",
+    leadLine: "When surgery resolved the issue but pain remained — interventional options that can help.",
     heroImage: "physical-therapist-guiding-resistance-band-exercise.jpg",
     heroImageAlt: "A physical therapist's hands guide a patient's arm as she pulls a green resistance band against a plain wall.",
     intro:

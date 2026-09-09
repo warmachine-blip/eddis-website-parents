@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
+import OfficeMap from "@/components/office-map";
 import ContactForm from "@/components/contact-form";
 import ReviewsSection from "@/components/reviews-section";
 import { offices, practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Our Houston & Humble Offices",
   description:
-    "Reach HTx Pain Institute by phone, email, or message. Two Houston-area locations — same-week appointments available.",
+    "Contact HTx Pain Institute in Houston or Humble by phone, email, or message. Two Houston-area locations, with same-week consultations available.",
 };
 
 function PhoneIcon({ className }: { className?: string }) {
@@ -44,31 +45,6 @@ function PinIcon({ className }: { className?: string }) {
   );
 }
 
-function MapPlaceholder({ city }: { city: string }) {
-  return (
-    <div
-      className="relative h-[120px] w-full rounded-t-2xl border-b border-line bg-pearl"
-      style={{
-        backgroundImage: "radial-gradient(var(--color-line) 1px, transparent 1px)",
-        backgroundSize: "14px 14px",
-      }}
-      aria-hidden="true"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 text-navy"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path d="M12 2c-4.14 0-7.5 3.36-7.5 7.5 0 5.63 6.55 11.54 6.83 11.79a1 1 0 0 0 1.34 0c.28-.25 6.83-6.16 6.83-11.79C19.5 5.36 16.14 2 12 2Zm0 10.25a2.75 2.75 0 1 1 0-5.5 2.75 2.75 0 0 1 0 5.5Z" />
-      </svg>
-      <span className="absolute right-3 top-3 rounded-full bg-navy px-3 py-1 font-sans text-[0.65rem] font-semibold uppercase tracking-wide text-off-white">
-        {city}
-      </span>
-    </div>
-  );
-}
-
 export default function ContactPage() {
   return (
     <div>
@@ -81,7 +57,7 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Get in touch with us.
+            Contact our Houston and Humble offices.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             We&rsquo;re here to help you on your journey to pain relief. Send us a
@@ -189,7 +165,7 @@ export default function ContactPage() {
       <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {offices.map((office) => (
           <div key={office.key} className="overflow-hidden rounded-2xl border border-line bg-off-white">
-            <MapPlaceholder city={office.city} />
+            <OfficeMap office={office} height={180} />
             <div className="p-7">
               <span className="font-sans text-xs font-semibold uppercase tracking-wide text-brass-text">
                 {office.city}

@@ -5,7 +5,7 @@ import { locationDetails } from "@/lib/location-details";
 const data = locationDetails["tomball"];
 
 export const metadata: Metadata = {
-  title: `Pain Doctor in ${data.city}`,
+  title: `Pain Doctor in ${data.city}, TX`,
   description: data.metaDescription,
 };
 

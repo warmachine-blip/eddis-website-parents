@@ -2,16 +2,52 @@ import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import { IconBadge } from "@/components/icon-badge";
 import SectionHeading from "@/components/section-heading";
-import type { LocationDetail } from "@/lib/location-details";
+import JsonLd from "@/components/json-ld";
+import OfficeMap from "@/components/office-map";
+import { SITE_URL } from "@/lib/site";
+import { WEBSITE_ID, FOUNDER_ID, clinicId } from "@/lib/schema";
+import { locationDetails, type LocationDetail } from "@/lib/location-details";
 import { offices, practice } from "@/lib/nav";
 
 export default function LocationDetailTemplate({ data }: { data: LocationDetail }) {
   const office = offices.find((o) => o.key === data.nearestOfficeKey)!;
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.mapsQuery)}`;
-  const mapsEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(office.mapsQuery)}&output=embed`;
+  const url = `${SITE_URL}/locations/${data.slug}`;
+
+  /**
+   * The other communities this same office serves. Before this, each city page
+   * had exactly one inbound link on the whole site (the /locations index), so
+   * the ten of them formed no mesh at all.
+   */
+  const nearby = Object.values(locationDetails)
+    .filter((l) => l.slug !== data.slug && l.nearestOfficeKey === data.nearestOfficeKey)
+    .slice(0, 5);
+
+  /**
+   * The city page points at the office that actually serves it, rather than
+   * re-declaring a clinic — the sitewide graph already lists every city this
+   * office serves.
+   */
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: `Pain Doctor in ${data.city}`,
+        description: data.metaDescription,
+        isPartOf: { "@id": WEBSITE_ID },
+        about: { "@id": clinicId(office) },
+        reviewedBy: { "@id": FOUNDER_ID },
+        significantLink: `${SITE_URL}${office.pageHref}`,
+      },
+    ],
+  };
 
   return (
     <div>
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -110,17 +146,46 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                   </a>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-2xl border border-line bg-white">
-                <iframe
-                  src={mapsEmbedSrc}
-                  width="100%"
-                  height="260"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map to HTx Pain Institute — ${office.city}`}
-                />
-              </div>
+              <OfficeMap office={office} height={260} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Getting here — the most city-specific copy on the page, and the only
+          section that names the roads and landmarks a local actually searches. */}
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <SectionHeading
+              eyebrow="Getting here"
+              title={`Directions from ${data.city} to our ${office.city} office.`}
+            />
+            <p className="mt-6 text-pretty text-base leading-relaxed text-charcoal-soft">
+              {data.directionsIntro}
+            </p>
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-brass-text underline decoration-brass decoration-2 underline-offset-4 hover:text-navy"
+            >
+              Open directions to {office.addressLine1} in Google Maps
+            </a>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl border border-line bg-pearl p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
+                Landmarks near you
+              </p>
+              <ul className="mt-4 grid gap-2.5 text-sm leading-relaxed text-navy">
+                {data.landmarks.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-brass" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -194,6 +259,37 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
           </div>
         </div>
       </section>
+
+      {/* Nearby areas — the interlink between sibling city pages */}
+      {nearby.length > 0 && (
+        <section className="border-t border-line bg-pearl">
+          <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
+              Also serving, from our {office.city} office
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {nearby.map((l) => (
+                <li key={l.slug}>
+                  <Link
+                    href={`/locations/${l.slug}`}
+                    className="inline-flex min-h-11 items-center text-navy underline decoration-line underline-offset-4 hover:decoration-brass"
+                  >
+                    Pain management in {l.city}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/locations"
+                  className="inline-flex min-h-11 items-center font-semibold text-brass-text underline decoration-brass decoration-2 underline-offset-4"
+                >
+                  All service areas
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Medically reviewed + final CTA */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">

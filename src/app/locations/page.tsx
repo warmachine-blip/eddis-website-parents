@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
+import OfficeMap from "@/components/office-map";
 import { offices, practice } from "@/lib/nav";
+import { locationDetails } from "@/lib/location-details";
 
-const communities = [
-  { slug: "spring-tx", label: "Spring, TX", commute: "10–15 min from FM 1960" },
-  { slug: "the-woodlands", label: "The Woodlands, TX", commute: "15–25 min from FM 1960" },
-  { slug: "cypress", label: "Cypress, TX", commute: "15–25 min from Willowbrook" },
-  { slug: "tomball", label: "Tomball, TX", commute: "10–15 min from Willowbrook" },
-  { slug: "klein", label: "Klein, TX", commute: "10–15 min from Willowbrook" },
-  { slug: "champions", label: "Champions, TX", commute: "10 min from Willowbrook" },
-  { slug: "kingwood", label: "Kingwood, TX", commute: "10–15 min from FM 1960" },
-  { slug: "atascocita", label: "Atascocita, TX", commute: "5–10 min from FM 1960" },
-  { slug: "humble", label: "Humble, TX", commute: "About 5 min from FM 1960" },
-  { slug: "northwest-houston", label: "Northwest Houston", commute: "10–20 min from Willowbrook" },
-];
+// Derived from the city pages so the index can never drift from them.
+const communities = Object.values(locationDetails).map((l) => ({
+  slug: l.slug,
+  label: l.city === "Northwest Houston" ? l.city : `${l.city}, TX`,
+  commute: l.commuteShort,
+}));
 
 export const metadata: Metadata = {
-  title: "Locations",
+  title: "Houston & Humble Clinic Locations",
   description:
     "HTx Pain Institute serves Houston, Humble, Spring, The Woodlands, Cypress, Tomball, Kingwood, Atascocita, and surrounding communities.",
 };
@@ -32,22 +29,24 @@ export default function LocationsPage() {
             Locations
           </p>
           <h1 className="mx-auto mt-3 max-w-2xl text-balance font-serif text-4xl leading-tight text-navy sm:text-5xl">
-            Two Houston-area offices, easy to reach.
+            Pain clinic locations in Houston &amp; Humble.
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-charcoal-soft">
-            Same-week appointments. Most insurance accepted. Ample parking at both
-            locations.
+            Two Houston-area offices, easy to reach. Same-week appointments, most
+            insurance accepted, and ample parking at both locations.
           </p>
         </div>
       </section>
 
       {/* Office cards */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
         <SectionHeading eyebrow="Our Offices" title="Two offices in the Houston area." />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {offices.map((office) => (
             <div key={office.key} className="border border-line p-7">
-              <h3 className="font-serif text-xl text-navy">{office.label}</h3>
+              <OfficeMap office={office} height={200} />
+              <h3 className="mt-6 font-serif text-xl text-navy">{office.label}</h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-charcoal-soft">
                 {office.addressLine1}
                 <br />

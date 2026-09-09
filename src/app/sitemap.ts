@@ -43,7 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}${service.href}`,
       lastModified: modified(service.href),
       changeFrequency: "monthly",
-      priority: 0.8,
+      // A "coming soon" stub should not rank alongside the real procedure pages.
+      priority: service.comingSoon ? 0.4 : 0.8,
     });
   }
 

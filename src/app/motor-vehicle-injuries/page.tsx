@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Motor Vehicle Injuries in Houston",
+  title: "Car Accident Injury Doctor in Houston",
   description:
     "Houston-based pain management for whiplash, cervical and lumbar injuries, post-concussive headache, and chronic spine pain following motor vehicle collisions.",
 };
@@ -36,7 +36,7 @@ const documentation = [
   "Letters / records to counsel as needed",
 ];
 
-const heroTitle = "After the collision — clinical care that matches the moment.";
+const heroTitle = "Car accident injury care in Houston.";
 
 function InfoGridCard({ icon, title, items }: { icon: "shield" | "pulse" | "alert"; title: string; items: string[] }) {
   return (
@@ -71,8 +71,9 @@ export default function MotorVehicleInjuriesPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Whiplash, post-concussive headache, and chronic spine pain after a
-            collision are among the most under-diagnosed injuries we see. We
-            bring the clinical and documentation rigor your recovery deserves.
+            car accident are among the most under-diagnosed injuries we see. We
+            bring the clinical and documentation rigor your recovery deserves —
+            for auto accident and motor vehicle collision injuries alike.
           </p>
         </div>
       </section>

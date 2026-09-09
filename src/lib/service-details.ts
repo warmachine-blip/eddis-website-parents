@@ -1,3 +1,5 @@
+import { conditions } from "./conditions";
+
 export type ServiceDetail = {
   slug: string;
   title: string;
@@ -23,14 +25,25 @@ export type ServiceDetail = {
   insuranceBlurb: string;
   expertiseBlurb: string;
   relatedServices: { slug: string; title: string; blurb: string }[];
+  /** Conditions this procedure treats — the inverse of each condition page's approachServices. */
+  treatsConditions: { slug: string; title: string; blurb: string }[];
 };
+
+/** Condition cards built from the canonical list so titles and blurbs cannot drift. */
+function treats(...slugs: string[]) {
+  return slugs.map((slug) => {
+    const c = conditions.find((x) => x.slug === slug);
+    if (!c) throw new Error(`treats(): unknown condition "${slug}"`);
+    return { slug: c.slug, title: c.title, blurb: c.summary };
+  });
+}
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   "radiofrequency-ablation": {
     slug: "radiofrequency-ablation",
     title: "Radiofrequency Ablation",
     metaDescription:
-      "Radiofrequency ablation (RFA) uses radio-wave energy to create a small, controlled lesion on the nerves carrying pain signals — interrupting the signal at its source. The result is durable, medication-free relief that often lasts six to eighteen months and can be repeated as needed.",
+      "Radiofrequency ablation in Houston and Humble. A 15-minute outpatient procedure that quiets the nerves carrying your pain, with relief lasting 6–18 months.",
     heroImage: "surgeon-under-operating-lights.jpg",
     heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
     eyebrow: "RFA",
@@ -126,13 +139,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive fusion for sacroiliac dysfunction that hasn't responded to conservative care.",
       },
     ],
+    treatsConditions: treats("back-pain", "neck-pain", "knee-pain", "hip-pain", "chronic-pain"),
   },
 
   "injections-blocks-specialist": {
     slug: "injections-blocks-specialist",
     title: "Injections & Nerve Blocks",
     metaDescription:
-      "Image-guided injections and nerve blocks deliver anti-inflammatory medication and local anesthetic directly into the structure generating pain — whether that's a facet joint, epidural space, sympathetic nerve, or peripheral joint. They are both diagnostic and therapeutic.",
+      "Image-guided injections and nerve blocks in Houston and Humble — epidural, facet, and sympathetic blocks placed precisely, both diagnostic and therapeutic.",
     heroImage: "ultrasound-guided-nerve-block-procedure-room.jpg",
     heroImageAlt: "Two clinicians in surgical gowns, caps, and masks stand on either side of a patient covered by a sheet during an ultrasound-guided nerve block, an imaging monitor and a vitals monitor beside the table.",
     eyebrow: "Injections & Blocks",
@@ -240,13 +254,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive fusion for sacroiliac dysfunction that hasn't responded to conservative care.",
       },
     ],
+    treatsConditions: treats("sciatica", "herniated-discs", "spinal-stenosis", "neck-pain", "joint-pain"),
   },
 
   "kyphoplasty-specialist": {
     slug: "kyphoplasty-specialist",
     title: "Kyphoplasty",
     metaDescription:
-      "Kyphoplasty is a minimally invasive procedure for painful vertebral compression fractures — most commonly caused by age-related bone-mass loss. A small balloon is inflated within the fractured vertebra to restore lost height, then medical-grade cement stabilizes the bone. Most patients feel dramatic pain relief within 24–48 hours.",
+      "Kyphoplasty in Houston and Humble for painful vertebral compression fractures. A minimally invasive procedure that stabilizes the bone and relieves pain.",
     heroImage: "older-man-walking-upright-garden-path.jpg",
     heroImageAlt: "A white-haired man in a green shirt, jeans and flat cap walks upright away from the camera along a dirt path lined with green shrubs.",
     eyebrow: "Kyphoplasty",
@@ -355,13 +370,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive fusion for sacroiliac dysfunction that hasn't responded to conservative care.",
       },
     ],
+    treatsConditions: treats("back-pain", "cancer-pain"),
   },
 
   "si-joint-fusions": {
     slug: "si-joint-fusions",
     title: "SI Joint Fusions",
     metaDescription:
-      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
+      "SI joint fusion in Houston and Humble. Minimally invasive stabilization for confirmed sacroiliac joint pain that has not responded to conservative care.",
     heroImage: "clinician-palpating-lower-back-seated-patient.jpg",
     heroImageAlt: "A clinician in mint-green scrubs presses one hand against the mid-back and the other against the lower back of a woman seated upright and fully clothed on the edge of a padded exam table.",
     eyebrow: "SI Joint Fusion",
@@ -470,13 +486,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "A separate procedure for the lumbar spine — a posterior interspinous-interlaminar fusion device, not an SI joint treatment.",
       },
     ],
+    treatsConditions: treats("back-pain", "hip-pain", "chronic-pain"),
   },
 
   "spinal-cord-stimulation-specialist": {
     slug: "spinal-cord-stimulation-specialist",
     title: "Spinal Cord Stimulation",
     metaDescription:
-      "Spinal cord stimulation (SCS) is one of the most studied therapies in modern pain medicine. A small implantable device delivers tailored electrical fields to the spinal cord — interrupting pain signals before they reach the brain. Patients try the system through a temporary trial before committing to a long-term implant.",
+      "Spinal cord stimulation in Houston and Humble. A trial-first implantable therapy that interrupts pain signals before they reach the brain, fully reversible.",
     heroImage: "practitioner-showing-spine-model-to-patient.jpg",
     heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
     eyebrow: "Spinal Cord Stimulation",
@@ -573,13 +590,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
       },
     ],
+    treatsConditions: treats("back-pain", "neuropathic-pain", "post-surgical-pain", "sciatica", "chronic-pain"),
   },
 
   "intracept-procedure": {
     slug: "intracept-procedure",
     title: "Intracept Procedure",
     metaDescription:
-      "Intracept is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain — pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve, with proven long-term improvement in pain and function.",
+      "Intracept in Houston and Humble. An implant-free, FDA-cleared procedure that treats vertebrogenic low-back pain at its source, the basivertebral nerve.",
     heroImage: "treatment-intracept-procedure.jpg",
     heroImageAlt: "Intracept procedure for vertebrogenic low-back pain at HTx Pain Institute",
     eyebrow: "Intracept",
@@ -675,13 +693,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
       },
     ],
+    treatsConditions: treats("back-pain", "chronic-pain"),
   },
 
   "prp-procedure": {
     slug: "prp-procedure",
     title: "PRP (Platelet-Rich Plasma)",
     metaDescription:
-      "Platelet-rich plasma (PRP) therapy uses a concentrated preparation of your own platelets — rich in growth factors — to accelerate healing in joints, tendons, and soft tissues. It is non-surgical, biologically derived from your own blood, and increasingly used as a first-line option for select musculoskeletal conditions.",
+      "PRP therapy in Houston and Humble. Platelet-rich plasma from your own blood, injected under image guidance to support healing in joints and tendons.",
     heroImage: "treatment-prp-procedure-houston.jpg",
     heroImageAlt: "Platelet-rich plasma (PRP) therapy at HTx Pain Institute in Houston",
     eyebrow: "PRP",
@@ -790,6 +809,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
       },
     ],
+    treatsConditions: treats("knee-pain", "shoulder-injuries", "hip-pain", "joint-pain", "sports-injuries"),
   },
 
   "mild-procedure": {
@@ -872,13 +892,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
       },
     ],
+    treatsConditions: treats("spinal-stenosis", "sciatica", "back-pain"),
   },
 
   "minuteman-procedure": {
     slug: "minuteman-procedure",
     title: "Minuteman Lumbar Fusion",
     metaDescription:
-      "Minuteman posterior lumbar interspinous-interlaminar fusion at HTx Pain Institute Houston. A minimally invasive device that stabilizes a painful lumbar segment. Schedule a consultation.",
+      "Minuteman lumbar fusion in Houston and Humble. A posterior, minimally invasive interspinous implant that stabilizes a painful lumbar segment.",
     heroImage: "lumbar-spine-model-closeup.jpg",
     heroImageAlt: "Close-up of an anatomical lumbar spine model with sacrum, yellow nerve roots, and a red herniated disc resting on a black treatment table.",
     eyebrow: "Minuteman",
@@ -954,5 +975,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "A separate procedure for the sacroiliac joint of the pelvis — minimally invasive fusion for confirmed SI joint pain.",
       },
     ],
+    treatsConditions: treats("back-pain", "spinal-stenosis", "chronic-pain"),
   },
 };

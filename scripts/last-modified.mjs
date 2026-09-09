@@ -55,10 +55,16 @@ function walk(dir, prefix = "") {
 
 const entries = [["/", `${APP}/page.tsx`], ...walk(APP)];
 const conditionSlugs = new Set(
-  (await import("../src/lib/conditions.ts").catch(() => ({ conditions: [] }))).conditions?.map((c) => c.slug) ?? []
+  (await import("../src/lib/conditions.ts").catch((err) => {
+    console.error("[last-modified] cannot import conditions:", err);
+    process.exit(1);
+  })).conditions?.map((c) => c.slug) ?? []
 );
 const serviceSlugs = new Set(
-  (await import("../src/lib/services.ts").catch(() => ({ services: [] }))).services?.map((s) => s.slug) ?? []
+  (await import("../src/lib/services.ts").catch((err) => {
+    console.error("[last-modified] cannot import services:", err);
+    process.exit(1);
+  })).services?.map((s) => s.slug) ?? []
 );
 
 const map = {};

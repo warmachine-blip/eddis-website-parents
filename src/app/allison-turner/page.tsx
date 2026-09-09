@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
+import { SITE_URL } from "@/lib/site";
+import { ORG_ID, NURSE_PRACTITIONER_ID } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
   title: "Allison Turner, DNP, APRN, FNP-C",
   description:
-    "Allison Turner is a Doctor of Nursing Practice and Family Nurse Practitioner specializing in compassionate, individualized pain management at HTx Pain Institute.",
+    "Allison Turner, DNP, APRN, FNP-C — Doctor of Nursing Practice at HTx Pain Institute, coordinating consultations, follow-ups, and ongoing pain care.",
 };
 
 const facts = [
@@ -63,9 +66,42 @@ function ArrowIcon() {
   );
 }
 
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": NURSE_PRACTITIONER_ID,
+  name: "Allison Turner, DNP, APRN, FNP-C",
+  givenName: "Allison",
+  familyName: "Turner",
+  honorificSuffix: "DNP, APRN, FNP-C",
+  jobTitle: "Doctor of Nursing Practice",
+  url: `${SITE_URL}/allison-turner`,
+  image: `${SITE_URL}/images/allison-turner.webp`,
+  worksFor: { "@id": ORG_ID },
+  knowsAbout: ["Pain management", "Interventional pain medicine", "Family nurse practice"],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Degree",
+      name: "Doctor of Nursing Practice (DNP)",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Certification",
+      name: "Family Nurse Practitioner, Board Certified (FNP-C)",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "License",
+      name: "Advanced Practice Registered Nurse, Texas (APRN)",
+    },
+  ],
+};
+
 export default function AllisonTurnerPage() {
   return (
     <div>
+      <JsonLd data={personLd} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

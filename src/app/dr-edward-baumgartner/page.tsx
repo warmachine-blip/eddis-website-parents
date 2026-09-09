@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
+import { SITE_URL } from "@/lib/site";
+import { linkedInUrl } from "@/lib/social";
+import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Houston native, double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute. Precision care for patients told their only option is spine surgery.",
+    "Edward Baumgartner Jr., MD — Houston native, double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
 };
 
 const facts = [
@@ -57,9 +61,42 @@ function ArrowIcon() {
   );
 }
 
+/**
+ * The founder as a real person, referenced by `founder` on the organization
+ * node. Only credentials this page actually states are claimed here.
+ */
+const physicianLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": FOUNDER_ID,
+  name: "Edward Baumgartner Jr., MD",
+  givenName: "Edward",
+  familyName: "Baumgartner",
+  honorificSuffix: "MD",
+  jobTitle: "Founding Physician",
+  url: `${SITE_URL}/dr-edward-baumgartner`,
+  image: `${SITE_URL}/images/dr-baumgartner.webp`,
+  worksFor: { "@id": ORG_ID },
+  knowsAbout: KNOWS_ABOUT,
+  sameAs: [linkedInUrl],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Board Certification",
+      name: "Board Certified in Anesthesiology",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Board Certification",
+      name: "Board Certified in Pain Medicine",
+    },
+  ],
+};
+
 export default function DrBaumgartnerPage() {
   return (
     <div>
+      <JsonLd data={physicianLd} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

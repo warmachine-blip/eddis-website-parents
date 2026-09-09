@@ -5,7 +5,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How HTx Pain Institute collects, uses, and protects information — including HIPAA-protected health information.",
+    "How HTx Pain Institute collects, uses, and protects your information, including HIPAA-protected health information, across our website and both offices.",
 };
 
 const data = {

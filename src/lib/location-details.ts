@@ -6,6 +6,8 @@ export type LocationDetail = {
   heroIntro: string;
   nearestOfficeKey: "houston" | "humble";
   commuteLine: string;
+  /** Abbreviated commute for the /locations index grid. */
+  commuteShort: string;
   aboutParagraphs: string[];
   patientsListIntro: string;
   patientsList: string[];
@@ -28,6 +30,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients across Spring choose HTx Pain Institute for advanced interventional pain care close to home. Our Humble office on FM 1960 is a short drive from most of Spring. Most patients reach our Humble office in 10–15 min.",
     nearestOfficeKey: "humble",
     commuteLine: "10–15 min from most of Spring to our Humble office.",
+    commuteShort: "10–15 min from FM 1960",
     aboutParagraphs: [
       "Spring is one of the fastest-growing communities in the Houston metro, anchored along the I-45 corridor between Houston and The Woodlands. The area runs the gamut — from established neighborhoods like Bender's Landing and Augusta Pines to new master-planned communities continuing to fill in along Spring-Cypress and Cypresswood. Many of our Spring patients work along the Hardy Toll Road or in The Woodlands corporate corridor, with commutes that put a real premium on convenient pain care that does not eat their workday.",
       "The patient mix here reflects the demographics — active families with overuse injuries from kids' sports, professionals dealing with cervical and lumbar pain from desk work, and a growing retiree population starting to navigate osteoarthritis, spinal stenosis, and degenerative disc disease.",
@@ -75,6 +78,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Patients across The Woodlands choose HTx Pain Institute for institute-caliber interventional care without the drive into the Texas Medical Center. Most patients reach our Humble office in 15–25 min.",
     nearestOfficeKey: "humble",
     commuteLine: "15–25 min from most of The Woodlands to our Humble office.",
+    commuteShort: "15–25 min from FM 1960",
     aboutParagraphs: [
       "The Woodlands is one of the most well-known master-planned communities in the country — and one of the most demanding patient populations in our practice. Many of our Woodlands patients are executives, physicians themselves, professional athletes, or accomplished retirees who have already explored multiple options for chronic pain. They expect institute-caliber expertise, and they want a clinician who will give them an honest answer about whether a procedure is the right call.",
       "We see a notably high proportion of failed-back-surgery patients, refractory joint pain, and second-opinion consults from this area. The Woodlands also has a sizable population of active retirees who play tennis, run, and golf — and want to keep doing so. PRP therapy, image-guided injections, and SI joint procedures are all common requests.",
@@ -122,6 +126,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Cypress patients are a short drive from our Houston office near Willowbrook, where we offer the full interventional pain medicine toolkit. Most patients reach our Houston office in 15–25 min.",
     nearestOfficeKey: "houston",
     commuteLine: "15–25 min from most of Cypress to our Houston office.",
+    commuteShort: "15–25 min from Willowbrook",
     aboutParagraphs: [
       "Cypress is a sprawling suburban community along US-290 northwest of Houston, growing rapidly with master-planned developments like Bridgeland, Towne Lake, and Cypress Creek Lakes. The area is family-heavy, with a high proportion of patients who balance work, kids' sports schedules, and the demands of long commutes into Houston or up to The Woodlands.",
       "We see a wide mix from Cypress — motor-vehicle injury cases from area highways (290, Beltway 8, Grand Parkway), parents and grandparents managing osteoarthritis, weekend warriors with tendinopathy looking for biologic options like PRP, and a steady stream of patients with chronic spine pain who simply want a thoughtful interventional plan.",
@@ -169,6 +174,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Tomball is one of our closest communities — our Houston office is near Willowbrook, straight down Texas 249 from the Tomball area. Most patients reach our Houston office in 10–15 min.",
     nearestOfficeKey: "houston",
     commuteLine: "10–15 min from most of Tomball to our Houston office.",
+    commuteShort: "10–15 min from Willowbrook",
     aboutParagraphs: [
       "Tomball has the unusual distinction of being one of the closest suburbs to our Houston office while also retaining a small-town feel that many of our patients value. Texas 249 connects Tomball directly down to our office near Willowbrook, which means most Tomball patients can be at the door in 10 minutes.",
       "Our Tomball patient mix is broad: longtime Tomball residents with chronic spine and joint pain, growing families in newer Tomball ISD neighborhoods with motor-vehicle injuries and overuse pain, and a substantial number of patients who have been told their only option is spine surgery and are looking for an honest second opinion.",
@@ -216,6 +222,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Klein-area patients reach our Houston office via Texas 249 — a quick, predictable drive. Most patients reach our Houston office in 10–15 min.",
     nearestOfficeKey: "houston",
     commuteLine: "10–15 min from most of Klein to our Houston office.",
+    commuteShort: "10–15 min from Willowbrook",
     aboutParagraphs: [
       "Klein is a tight-knit community in the northern Houston metro, anchored by Klein ISD and a network of established neighborhoods like Memorial Northwest, Champions Forest, and Inverness Forest. Patients from Klein tend to value continuity of care, physician-led decision-making, and the kind of small-clinic experience that has become harder to find in healthcare.",
       "We see a steady volume from Klein — facet-mediated back and neck pain, knee osteoarthritis, post-surgical pain syndromes, and patients managing ongoing chronic pain plans. Many of our Klein patients have been with us for years, across multiple procedures and life stages.",
@@ -263,6 +270,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "The Champions area is one of the closest communities to our Houston office, with most patients arriving in about 10 minutes.",
     nearestOfficeKey: "houston",
     commuteLine: "10 min from most of Champions to our Houston office.",
+    commuteShort: "10 min from Willowbrook",
     aboutParagraphs: [
       "The Champions area is one of the most established neighborhoods in north Houston, anchored by the Champions Golf Club and surrounded by a high concentration of golfers, tennis players, and active retirees. The patient mix here skews older and more active than many surrounding suburbs — which means we see a lot of osteoarthritis management, tendinopathy, and patients trying to keep playing the sports they love.",
       "Many of our Champions patients have been longtime fans of biologic options like PRP for joint and tendon issues, and a high proportion of our knee and shoulder PRP cases come from this area. We also see a steady volume of degenerative spine disease and post-surgical pain from this demographic.",
@@ -310,6 +318,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Kingwood is one of our closest communities to the Humble office — most patients arrive in 10–15 minutes.",
     nearestOfficeKey: "humble",
     commuteLine: "10–15 min from most of Kingwood to our Humble office.",
+    commuteShort: "10–15 min from FM 1960",
     aboutParagraphs: [
       "Kingwood — \"the Livable Forest\" — is one of the most distinctive communities in the Houston metro. Heavily wooded, family-oriented, and built around a network of greenbelts and recreational trails, Kingwood has an active patient population that tends to be hard on their bodies in good ways: runners, cyclists, golfers, weekend hikers, and longtime residents who have raised their kids here.",
       "Our Kingwood patient mix reflects that activity profile — overuse injuries, runner's knee, patellar tendinopathy, rotator cuff issues from cycling — alongside the chronic spine and joint pain we see broadly. We also see a notable contingent of Kingwood patients who have had prior spine surgery and are looking for ongoing management or second opinions before another surgery.",
@@ -357,6 +366,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Atascocita patients are minutes from our Humble office on FM 1960 — one of our closest communities. Most patients reach our Humble office in 5–10 min.",
     nearestOfficeKey: "humble",
     commuteLine: "5–10 min from most of Atascocita to our Humble office.",
+    commuteShort: "5–10 min from FM 1960",
     aboutParagraphs: [
       "Atascocita is one of the fastest-growing communities east of Humble, with continued residential expansion along West Lake Houston Parkway and FM 1960. The area is family-heavy and has a younger demographic profile than some surrounding suburbs — meaning we see a high volume of motor-vehicle injury cases, work injuries, and post-injury chronic pain.",
       "Many Atascocita patients work in the energy corridor, downtown Houston, or along FM 1960 — and they need a pain practice that fits into a working day. Our Humble office is 5–10 minutes away for most of Atascocita, which makes follow-up visits practical even for patients with demanding schedules.",
@@ -404,6 +414,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Humble is home — our Humble office on FM 1960 serves the heart of the community. Most patients reach our Humble office in about 5 min.",
     nearestOfficeKey: "humble",
     commuteLine: "About 5 min from most of Humble to our Humble office.",
+    commuteShort: "About 5 min from FM 1960",
     aboutParagraphs: [
       "Humble is home — our Humble office on FM 1960 has been a fixture since the practice opened, and many of our longest-tenured patients are from the immediate area. Humble combines older established neighborhoods with newer retail and residential growth along the FM 1960 and US-59 corridors.",
       "The Humble patient mix is diverse: long-term residents managing chronic spine and joint conditions across multiple decades, working-age adults with motor-vehicle and work injuries, and retirees navigating osteoarthritis and stenosis. Our practice's cultural roots are in this community, and the relationship goes both ways.",
@@ -451,6 +462,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Northwest Houston neighborhoods — including Vintage Park, Willowbrook, and the 249 corridor — are among our closest communities. Most patients reach our Houston office in 10–20 min.",
     nearestOfficeKey: "houston",
     commuteLine: "10–20 min from most of Northwest Houston to our Houston office.",
+    commuteShort: "10–20 min from Willowbrook",
     aboutParagraphs: [
       "Northwest Houston is the broad geography along the Texas 249 corridor — Vintage Park, Willowbrook, Champion Forest, and the FM 1960 retail spine. It is one of the most diverse parts of our service area, with everything from young professionals in newer apartment communities to longtime suburban families to active retirees in established neighborhoods.",
       "We treat the full range here — motor-vehicle injuries from the area's busy highways, workers' compensation cases from light industrial and warehousing employers, chronic spine pain in office-based professionals, and biologic options for active patients trying to keep up with their lifestyles. The Texas 249 corridor is the spine of our practice, geographically and clinically.",

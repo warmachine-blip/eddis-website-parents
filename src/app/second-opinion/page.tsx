@@ -5,7 +5,7 @@ import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Second Opinion Consultations",
+  title: "Pain Second Opinions in Houston",
   description:
     "Considering surgery or stuck on long-term medication? Get a thorough, evidence-based second opinion at HTx Pain Institute in Houston.",
 };
@@ -66,7 +66,7 @@ export default function SecondOpinionPage() {
             Second Opinion
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Looking for a second opinion?
+            Pain and spine surgery second opinions in Houston.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Experience exceptional care with our pain specialists. A second opinion

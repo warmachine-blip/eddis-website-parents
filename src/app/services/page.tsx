@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import ServiceCard, { ServiceBanner } from "@/components/service-card";
 import { TiltCardGroup } from "@/components/tilt-card";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Pain Management Services in Houston",
   description:
     "Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit, offered at HTx Pain Institute in Houston, TX.",
 };
@@ -15,11 +16,12 @@ export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
       <section>
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
         <SectionHeading
           as="h1"
           eyebrow="What We Treat"
-          title="Modern interventional care, tailored to your pain."
-          lead="Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit — applied with the precision and judgment every patient deserves."
+          title="Pain management services in Houston & Humble."
+          lead="Modern interventional care, tailored to your pain — image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit."
         />
       </section>
 

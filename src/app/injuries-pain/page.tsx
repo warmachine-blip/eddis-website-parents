@@ -6,9 +6,9 @@ import SectionHeading from "@/components/section-heading";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Injuries & Accidents",
+  title: "Injury & Accident Pain Care in Houston",
   description:
-    "Comprehensive interventional pain care for workplace injuries and motor vehicle accidents in Houston. Coordinated with workers' compensation carriers, attorneys, and case managers.",
+    "Interventional pain care for work injuries and motor vehicle accidents in Houston and Humble, coordinated with workers' compensation carriers and attorneys.",
 };
 
 const injuryTypes = [
@@ -69,7 +69,7 @@ export default function InjuriesPainPage() {
             Injuries &amp; Accidents
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Hurt at work or in a collision? We can help.
+            Injury and accident pain care in Houston.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             A thorough, evidence-driven approach to injury-related pain —

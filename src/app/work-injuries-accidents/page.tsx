@@ -9,7 +9,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Work Injuries & Accidents in Houston",
   description:
-    "Comprehensive pain management for workplace injuries — back, neck, and joint pain after lifting, repetitive stress, falls, and on-the-job accidents. Houston and Humble.",
+    "Work injury pain treatment in Houston and Humble — back, neck, and joint pain after lifting, repetitive stress, falls, and on-the-job accidents.",
 };
 
 const commonInjuries = [
@@ -36,7 +36,7 @@ const documentation = [
   "Direct adjuster/case-manager contact",
 ];
 
-const heroTitle = "Pain after a workplace injury — done right.";
+const heroTitle = "Work injury pain treatment in Houston.";
 
 function InfoGridCard({ icon, title, items }: { icon: "shield" | "pulse" | "alert"; title: string; items: string[] }) {
   return (

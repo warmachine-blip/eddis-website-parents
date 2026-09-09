@@ -4,12 +4,75 @@ import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
 import { IconBadge, InfoCard } from "@/components/icon-badge";
 import SectionHeading from "@/components/section-heading";
+import JsonLd from "@/components/json-ld";
+import { SITE_URL } from "@/lib/site";
+import { FOUNDER_ID, WEBSITE_ID, MEDICAL_SPECIALTY } from "@/lib/schema";
 import type { ConditionDetail } from "@/lib/condition-details";
 import { practice } from "@/lib/nav";
 
 export default function ConditionDetailTemplate({ data }: { data: ConditionDetail }) {
+  const url = `${SITE_URL}/${data.slug}`;
+
+  /**
+   * The condition itself plus the medically reviewed page describing it. The
+   * symptoms, causes and treatment cards the page already renders are the same
+   * values fed to signOrSymptom, cause and possibleTreatment, so the markup can
+   * never describe something the page does not show.
+   */
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: `${data.title} in Houston`,
+        description: data.metaDescription,
+        isPartOf: { "@id": WEBSITE_ID },
+        about: { "@id": `${url}#condition` },
+        reviewedBy: { "@id": FOUNDER_ID },
+        primaryImageOfPage: `${SITE_URL}/images/${data.heroImage}`,
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${url}#condition`,
+        name: data.title,
+        description: data.intro,
+        url,
+        relevantSpecialty: MEDICAL_SPECIALTY,
+        signOrSymptom: data.symptoms.map((name) => ({
+          "@type": "MedicalSignOrSymptom",
+          name,
+        })),
+        cause: data.causes.map((name) => ({ "@type": "MedicalCause", name })),
+        possibleTreatment: data.approachServices
+          .filter((a) => a.slug)
+          .map((a) => ({
+            "@type": "MedicalProcedure",
+            "@id": `${SITE_URL}/${a.slug}#procedure`,
+            name: a.title,
+            url: `${SITE_URL}/${a.slug}`,
+          })),
+      },
+      ...(data.faqs?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#faq`,
+              mainEntity: data.faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
+
   return (
     <div>
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -29,7 +92,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
             {data.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            {data.metaDescription}
+            {data.leadLine}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -57,7 +120,8 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
                 src={`/images/${data.heroImage}`}
                 alt={data.heroImageAlt}
                 fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 90vw, 70vw"
+                quality={60}
                 className="object-cover"
                 priority
               />

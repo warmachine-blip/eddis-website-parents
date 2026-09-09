@@ -14,8 +14,10 @@ import { useSyncExternalStore } from "react";
  * poster, which is the hero's LCP candidate. Reduced-motion visitors keep the
  * poster and fetch no video at all.
  *
- * The poster is the video's own frame 0, so nothing shifts when the video takes
- * over, and both carry the same object-position at portrait widths.
+ * The poster image is the video's own frame 0 and sits directly beneath the
+ * video in the same container, so nothing shifts when the video takes over and
+ * the <video> needs no `poster` attribute of its own — that only re-downloaded
+ * the same frame unoptimized.
  */
 const POSTER = "/videos/hero-clinic-hallway-poster.jpg";
 const VIDEO = "/videos/hero-clinic-hallway-720.mp4";
@@ -69,7 +71,6 @@ export default function HeroBackground() {
           loop
           playsInline
           preload="metadata"
-          poster={POSTER}
           className="absolute inset-0 h-full w-full object-cover max-md:object-[25%_50%]"
         >
           <source src={VIDEO} type="video/mp4" />

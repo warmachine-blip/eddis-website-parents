@@ -5,7 +5,7 @@ import { practice } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
-  title: "Request an Appointment",
+  title: "Request an Appointment in Houston",
   description:
     "Book an appointment at HTx Pain Institute in Houston or Humble online in a few minutes, or call us. Same-week consultations available.",
 };

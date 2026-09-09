@@ -373,6 +373,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
+            <Link
+              href="/injuries-pain"
+              className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-navy underline decoration-brass decoration-2 underline-offset-4 hover:text-brass-text"
+            >
+              See all injury and accident care
+            </Link>
         </div>
       </section>
 

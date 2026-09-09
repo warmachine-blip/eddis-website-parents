@@ -7,7 +7,7 @@ import { IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Our Houston Pain Practice",
   description:
     "Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
 };

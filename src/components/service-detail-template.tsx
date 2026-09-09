@@ -4,12 +4,73 @@ import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
 import { IconBadge, InfoCard } from "@/components/icon-badge";
 import SectionHeading from "@/components/section-heading";
+import JsonLd from "@/components/json-ld";
+import { SITE_URL } from "@/lib/site";
+import { ORG_ID, FOUNDER_ID, WEBSITE_ID, MEDICAL_SPECIALTY } from "@/lib/schema";
 import type { ServiceDetail } from "@/lib/service-details";
 import { practice } from "@/lib/nav";
 
 export default function ServiceDetailTemplate({ data }: { data: ServiceDetail }) {
+  const url = `${SITE_URL}/${data.slug}`;
+
+  /**
+   * Page-level entity graph. The procedure itself, the page that describes it
+   * (medically reviewed, which is the E-E-A-T signal that matters for health
+   * content), and the visible Q&A. Everything references the sitewide
+   * organization rather than restating it.
+   */
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: `${data.title} in Houston`,
+        description: data.metaDescription,
+        isPartOf: { "@id": WEBSITE_ID },
+        about: { "@id": `${url}#procedure` },
+        reviewedBy: { "@id": FOUNDER_ID },
+        primaryImageOfPage: `${SITE_URL}/images/${data.heroImage}`,
+      },
+      {
+        "@type": "MedicalProcedure",
+        "@id": `${url}#procedure`,
+        name: data.title,
+        description: data.intro,
+        url,
+        image: `${SITE_URL}/images/${data.heroImage}`,
+        // Every procedure on this site is needle- or cannula-based rather than open.
+        procedureType: "https://schema.org/PercutaneousProcedure",
+        howPerformed: data.steps.join(" "),
+        followup: data.recoveryResults.join(" "),
+        relevantSpecialty: MEDICAL_SPECIALTY,
+        provider: { "@id": ORG_ID },
+        indication: data.treatsConditions.map((c) => ({
+          "@type": "MedicalIndication",
+          name: c.title,
+          url: `${SITE_URL}/${c.slug}`,
+        })),
+      },
+      ...(data.faqs.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#faq`,
+              mainEntity: data.faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
+
   return (
     <div>
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -235,6 +296,44 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-charcoal-soft">
           {data.expertiseBlurb}
         </p>
+      </section>
+
+      {/* Conditions treated — the return leg of the condition/procedure graph.
+          Condition pages already link out to their procedures; this sends the
+          reader (and the crawler) back the other way. */}
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
+              <span className="h-px w-8 bg-current opacity-50" />
+              Conditions Treated
+            </span>
+            <h2 className="mt-3 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
+              What {data.title} is used for.
+            </h2>
+          </div>
+          <Link href="/pain-center" className="inline-flex min-h-11 w-fit items-center self-start text-sm font-medium text-navy underline">
+            See all conditions
+          </Link>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {data.treatsConditions.map((condition) => (
+            <Link
+              key={condition.slug}
+              href={`/${condition.slug}`}
+              className="group flex flex-col rounded-2xl border border-line bg-pearl p-6 transition-all hover:-translate-y-0.5 hover:bg-off-white hover:shadow-md"
+            >
+              <h3 className="font-serif text-lg leading-tight text-navy">{condition.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal-soft">{condition.blurb}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 font-sans text-sm font-medium text-brass-text">
+                Learn more
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* Related services */}

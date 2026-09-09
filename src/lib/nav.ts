@@ -39,6 +39,12 @@ export type Office = {
   addressLine1: string;
   addressLine2: string;
   mapsQuery: string;
+  /**
+   * WGS84 coordinates for this street address, resolved against the US Census
+   * Bureau geocoder (Public_AR_Current benchmark, exact street-address match).
+   * Used for the GeoCoordinates node in the clinic's structured data.
+   */
+  geo: { latitude: number; longitude: number };
 };
 
 export const offices: Office[] = [
@@ -54,6 +60,7 @@ export const offices: Office[] = [
     addressLine1: "13323 Dotson Rd, Suite 200",
     addressLine2: "Houston, TX 77070",
     mapsQuery: "13323 Dotson Rd, Suite 200, Houston, TX 77070",
+    geo: { latitude: 29.96835, longitude: -95.553155 },
   },
   {
     key: "humble",
@@ -67,6 +74,7 @@ export const offices: Office[] = [
     addressLine1: "1485 FM 1960 Bypass Rd. E, Suite 100",
     addressLine2: "Humble, TX 77338",
     mapsQuery: "1485 FM 1960 Bypass Rd. E, Suite 100, Humble, TX 77338",
+    geo: { latitude: 30.004532, longitude: -95.253443 },
   },
 ];
 

@@ -7,7 +7,7 @@ import { practice } from "@/lib/nav";
 import { acceptedPlans } from "@/lib/insurance";
 
 export const metadata: Metadata = {
-  title: "Insurance & Financing",
+  title: "Insurance & Financing in Houston",
   description:
     `Most major insurance accepted at HTx Pain Institute. We verify your benefits before your visit and offer financing options. Call ${practice.phone}.`,
 };
@@ -83,9 +83,9 @@ export default function InsurancePage() {
             Insurance &amp; Financing
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            We verify your benefits
+            Insurance &amp; financing for pain care
             <br />
-            <em className="italic text-brass-light">before your visit.</em>
+            <em className="italic text-brass-light">in Houston &amp; Humble.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             HTx Pain Institute is in-network with most major insurance carriers in

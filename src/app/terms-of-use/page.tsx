@@ -4,7 +4,8 @@ import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
-  description: "Terms governing your use of the HTx Pain Institute website.",
+  description:
+    "The terms governing your use of the HTx Pain Institute website, including acceptable use, medical disclaimers, and limitations of liability.",
 };
 
 const data = {

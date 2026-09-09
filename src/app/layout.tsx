@@ -28,7 +28,14 @@ export const metadata: Metadata = {
     siteName: practice.name,
     locale: "en_US",
     url: "./",
-    images: [{ url: "/images/lobby.webp", width: 1320, height: 729, alt: "HTx Pain Institute lobby" }],
+    images: [
+      {
+        url: "/images/og/htx-pain-institute.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The HTx Pain Institute team at the reception desk",
+      },
+    ],
   },
   twitter: { card: "summary_large_image" },
   title: {
@@ -36,7 +43,7 @@ export const metadata: Metadata = {
     template: "%s · HTx Pain Institute",
   },
   description:
-    "Precision pain management in Houston. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy. Two locations in Houston and Humble.",
+    "Precision pain management in Houston and Humble. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy.",
 };
 
 export const viewport: Viewport = {

@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Next 16 serves only the qualities declared here; 60 is used for the large
+    // photographic heroes, where the extra bytes at 75 buy nothing visible.
+    qualities: [60, 75],
+  },
   async headers() {
     return [
       {

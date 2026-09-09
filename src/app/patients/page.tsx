@@ -9,7 +9,7 @@ import { acceptedPlans } from "@/lib/insurance";
 import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
-  title: "Patient Resources",
+  title: "Patient Resources · Houston & Humble",
   description:
     "Everything you need before, during, and after your visit to HTx Pain Institute — insurance, what to expect, video library, and more.",
 };
