@@ -892,7 +892,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive procedure that stabilizes painful spinal compression fractures.",
       },
     ],
-    treatsConditions: treats("spinal-stenosis", "sciatica", "back-pain"),
+    treatsConditions: treats("spinal-stenosis", "sciatica"),
   },
 
   "minuteman-procedure": {
@@ -975,6 +975,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "A separate procedure for the sacroiliac joint of the pelvis — minimally invasive fusion for confirmed SI joint pain.",
       },
     ],
-    treatsConditions: treats("back-pain", "spinal-stenosis", "chronic-pain"),
+    treatsConditions: treats("back-pain", "chronic-pain"),
   },
 };
