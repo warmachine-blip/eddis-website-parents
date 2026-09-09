@@ -13,6 +13,9 @@ import { useSyncExternalStore } from "react";
  * The video mounts only after load + idle, so its bytes never contend with the
  * poster, which is the hero's LCP candidate. Reduced-motion visitors keep the
  * poster and fetch no video at all.
+ *
+ * The poster is the video's own frame 0, so nothing shifts when the video takes
+ * over, and both carry the same object-position at portrait widths.
  */
 const POSTER = "/videos/hero-clinic-hallway-poster.jpg";
 const VIDEO = "/videos/hero-clinic-hallway-720.mp4";
@@ -58,7 +61,7 @@ export default function HeroBackground() {
 
   return (
     <div className="absolute inset-0" aria-hidden="true">
-      <Image src={POSTER} alt="" fill priority sizes="100vw" className="object-cover" />
+      <Image src={POSTER} alt="" fill priority sizes="100vw" className="object-cover max-md:object-[25%_50%]" />
       {playVideo && (
         <video
           autoPlay
@@ -67,7 +70,7 @@ export default function HeroBackground() {
           playsInline
           preload="metadata"
           poster={POSTER}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover max-md:object-[25%_50%]"
         >
           <source src={VIDEO} type="video/mp4" />
         </video>

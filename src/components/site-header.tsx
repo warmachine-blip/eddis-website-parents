@@ -42,21 +42,21 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-off-white/92 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-3 pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] max-lg:landscape:py-1.5 sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] lg:gap-6 lg:py-3.5">
+    <header className="sticky top-0 z-50 border-b border-line bg-off-white/92 backdrop-blur-md [--header-h:6.0625rem] max-lg:landscape:[--header-h:3.8125rem]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-2 pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] max-lg:landscape:py-1 sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] lg:gap-2 lg:py-2.5 xl:gap-6">
         <Link href="/" className="shrink-0" onClick={closeMobile}>
           <Image
             src="/images/htx-pain-institute-logo.png"
             alt="HTx Pain Institute"
             width={144}
             height={96}
-            sizes="84px"
-            className="h-14 w-auto max-lg:landscape:h-9"
+            sizes="120px"
+            className="h-20 w-auto max-lg:landscape:h-13"
             priority
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-5 xl:gap-7">
+        <nav aria-label="Primary" className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:gap-6">
           {primaryNav.map((group) => (
             <div key={group.label} className="group relative">
               <Link
@@ -104,10 +104,10 @@ export default function SiteHeader() {
           <ContactSocialReveal />
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden shrink-0 items-center gap-5 lg:flex">
           <Link
             href="/request-appointment"
-            className="border border-brass bg-navy px-5 py-2.5 font-sans text-sm font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep"
+            className="shrink-0 whitespace-nowrap border border-brass bg-navy px-2.5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep xl:px-5 xl:text-sm"
           >
             Request Appointment
           </Link>
@@ -148,7 +148,7 @@ export default function SiteHeader() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-line bg-off-white lg:hidden"
+          className="max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-line bg-off-white lg:hidden"
         >
           <ul className="divide-y divide-line px-6">
             {primaryNav.map((group) => {
