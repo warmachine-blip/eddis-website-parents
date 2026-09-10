@@ -121,6 +121,16 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         title: "SI Joint Fusion",
         blurb: "When diagnostic blocks confirm the sacroiliac joint as the pain source.",
       },
+      {
+        slug: "minuteman-procedure",
+        title: "Minuteman Lumbar Fusion",
+        blurb: "Posterior, minimally invasive stabilization when imaging shows a lumbar segment that would benefit from it.",
+      },
+      {
+        slug: "kyphoplasty-specialist",
+        title: "Kyphoplasty",
+        blurb: "Stabilizes a painful vertebral compression fracture.",
+      },
     ],
     diagnosisWorkup: [
       "Detailed history — where the pain sits, what provokes it, and whether it radiates below the knee.",
@@ -302,6 +312,16 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         slug: "spinal-cord-stimulation-specialist",
         title: "Spinal Cord Stimulation",
         blurb: "When pain has not responded to conservative care.",
+      },
+      {
+        slug: "minuteman-procedure",
+        title: "Minuteman Lumbar Fusion",
+        blurb: "For lumbar pain that has not responded to physical therapy and injections over 6+ months.",
+      },
+      {
+        slug: "peptides",
+        title: "Wellness & Peptides",
+        blurb: "Physician-supervised peptide therapy and weight-loss support alongside interventional care — a dedicated page is coming soon.",
       },
     ],
     diagnosisWorkup: [
@@ -1423,6 +1443,11 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       {
         title: "Coordinated Lifestyle Plan",
         blurb: "Sleep, graded movement, and stress modulation alongside medical care.",
+      },
+      {
+        slug: "peptides",
+        title: "Wellness & Peptides",
+        blurb: "Physician-supervised peptide therapy and weight-loss support — a dedicated page is coming soon.",
       },
     ],
     diagnosisWorkup: [

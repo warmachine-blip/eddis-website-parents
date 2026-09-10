@@ -33,8 +33,8 @@ const pillars = [
 const team = [
   {
     name: "Edward Baumgartner Jr., MD",
-    role: "Founding Physician · Double Board-Certified",
-    bio: "Founding Physician, Double Board-Certified, Anesthesiology and Pain Medicine. A Houston native with over fifteen years of interventional pain medicine experience. Specializes in advanced minimally invasive procedures including Intracept, spinal cord stimulation, radiofrequency ablation, and SI joint fusion — with particular focus on patients told their only option is spine surgery.",
+    role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
+    bio: "Founding Physician, Double Board-Certified in Anesthesiology and Pain Medicine, and a listed Texas Top Doctor. A Houston native with over fifteen years of interventional pain medicine experience. Specializes in advanced minimally invasive procedures including Intracept, spinal cord stimulation, radiofrequency ablation, and SI joint fusion — with particular focus on patients told their only option is spine surgery.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",

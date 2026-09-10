@@ -12,6 +12,7 @@ import ReviewsSection from "@/components/reviews-section";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
 import { reviews } from "@/lib/reviews";
+import { txTopDocsUrl } from "@/lib/social";
 import { offices, practice } from "@/lib/nav";
 
 const heroStats: { value: string; label: string; href?: string }[] = [
@@ -248,6 +249,21 @@ export default function Home() {
                 </TiltCard>
               ))}
             </TiltCardGroup>
+
+            {/* Third-party credential. Kept as a linked line rather than a fifth
+                card so the 2x2 grid above stays balanced. */}
+            <p className="mt-5 text-sm leading-relaxed text-charcoal-soft">
+              Recognized as a{" "}
+              <a
+                href={txTopDocsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brass-text underline decoration-brass decoration-2 underline-offset-4 hover:text-navy"
+              >
+                Texas Top Doctor
+              </a>
+              .
+            </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
 import { SITE_URL } from "@/lib/site";
-import { linkedInUrl } from "@/lib/social";
+import { linkedInUrl, txTopDocsUrl } from "@/lib/social";
 import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
@@ -19,15 +19,17 @@ const facts = [
   { label: "Board Cert.", value: "Anesthesiology" },
   { label: "Board Cert.", value: "Pain Medicine" },
   { label: "Experience", value: "15+ years" },
+  { label: "Recognition", value: "Texas Top Doctor" },
   { label: "Founded", value: "2018" },
 ];
 
 const education = [
   "B.S. in Biomedical Science, Texas A&M University — Magna Cum Laude, with University and Foundation Honors.",
   "M.D., University of Texas Health Science Center at Houston — Alpha Omega Alpha Research Fellowship.",
-  "General Surgery Residency (2 years), University of Illinois — Mt. Sinai Hospital, Chicago.",
+  "General Surgery Internship (2 years), University of Illinois at Chicago / Mount Sinai Hospital Medical Center.",
   "Anesthesiology Residency, Rush University Medical Center, Chicago.",
   "Pain Medicine Fellowship, Rush University Medical Center, Chicago.",
+  "Adjunct Faculty, Rush Health System.",
 ];
 
 const toolkit = [
@@ -78,7 +80,9 @@ const physicianLd = {
   image: `${SITE_URL}/images/dr-baumgartner.webp`,
   worksFor: { "@id": ORG_ID },
   knowsAbout: KNOWS_ABOUT,
-  sameAs: [linkedInUrl],
+  award: "Texas Top Doctor",
+  affiliation: { "@type": "Organization", name: "Rush Health System" },
+  sameAs: [linkedInUrl, txTopDocsUrl],
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
@@ -194,6 +198,18 @@ export default function DrBaumgartnerPage() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-5 text-sm leading-relaxed text-charcoal-soft">
+                  Dr. Baumgartner is listed as a{" "}
+                  <a
+                    href={txTopDocsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-brass-text underline decoration-brass decoration-2 underline-offset-4 hover:text-navy"
+                  >
+                    Texas Top Doctor
+                  </a>
+                  .
+                </p>
               </div>
 
               <div>

@@ -24,6 +24,21 @@ const nextConfig: NextConfig = {
         destination: "/",
         statusCode: 301,
       },
+      // Legacy URL structure used by third-party listings (txtopdocs.com among
+      // them). None of these paths ever existed here; mapping them keeps those
+      // backlinks resolving instead of 404ing.
+      { source: "/services/intracept", destination: "/intracept-procedure", statusCode: 301 },
+      { source: "/services/spinal-cord-stimulation", destination: "/spinal-cord-stimulation-specialist", statusCode: 301 },
+      { source: "/services/radiofrequency-ablation", destination: "/radiofrequency-ablation", statusCode: 301 },
+      { source: "/services/si-joint-fusion", destination: "/si-joint-fusions", statusCode: 301 },
+      { source: "/services/kyphoplasty", destination: "/kyphoplasty-specialist", statusCode: 301 },
+      { source: "/services/mild", destination: "/mild-procedure", statusCode: 301 },
+      { source: "/services/prp", destination: "/prp-procedure", statusCode: 301 },
+      { source: "/services/epidural-injections", destination: "/injections-blocks-specialist", statusCode: 301 },
+      { source: "/conditions/motor-vehicle-injuries", destination: "/motor-vehicle-injuries", statusCode: 301 },
+      { source: "/conditions/work-injuries", destination: "/work-injuries-accidents", statusCode: 301 },
+      // Not on the listing, but the obvious parent of the two above.
+      { source: "/conditions", destination: "/pain-center", statusCode: 301 },
       // Cancer pain management is medication-led and outside this practice's
       // scope, so the page was withdrawn; send its traffic to the conditions hub.
       {
