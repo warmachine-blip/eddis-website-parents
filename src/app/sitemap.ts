@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}${condition.href}`,
       lastModified: modified(condition.href),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: condition.deEmphasized ? 0.5 : 0.7,
     });
   }
 

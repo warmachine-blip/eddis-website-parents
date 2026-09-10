@@ -375,7 +375,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         blurb: "Minimally invasive fusion for sacroiliac dysfunction that hasn't responded to conservative care.",
       },
     ],
-    treatsConditions: treats("back-pain", "cancer-pain"),
+    treatsConditions: treats("back-pain", "chronic-pain"),
   },
 
   "si-joint-fusions": {

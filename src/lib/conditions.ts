@@ -3,6 +3,11 @@ export type Condition = {
   href: string;
   title: string;
   summary: string;
+  /**
+   * Kept live, indexable and in the Conditions menu, but not surfaced on the
+   * homepage and sorted last on the Pain Center hub.
+   */
+  deEmphasized?: boolean;
 };
 
 export const conditions: Condition[] = [
@@ -23,12 +28,7 @@ export const conditions: Condition[] = [
     href: "/pelvic-pain",
     title: "Pelvic Pain",
     summary: "A complex region requiring careful, compassionate diagnosis and treatment.",
-  },
-  {
-    slug: "cancer-pain",
-    href: "/cancer-pain",
-    title: "Cancer Pain",
-    summary: "Compassionate interventional support that complements oncology care.",
+    deEmphasized: true,
   },
   {
     slug: "joint-pain",

@@ -43,7 +43,7 @@ export type ConditionDetail = {
  * plausibly look at next, and every slug appears in at least three other lists.
  */
 const relatedSlugs: Record<string, string[]> = {
-  "back-pain": ["sciatica", "herniated-discs", "spinal-stenosis", "neck-pain"],
+  "back-pain": ["sciatica", "herniated-discs", "spinal-stenosis", "neck-pain", "post-surgical-pain"],
   "neck-pain": ["back-pain", "herniated-discs", "migraines", "shoulder-injuries"],
   "sciatica": ["herniated-discs", "spinal-stenosis", "back-pain", "neuropathic-pain"],
   "herniated-discs": ["sciatica", "back-pain", "neck-pain", "spinal-stenosis"],
@@ -54,13 +54,12 @@ const relatedSlugs: Record<string, string[]> = {
   "shoulder-injuries": ["joint-pain", "sports-injuries", "neck-pain", "knee-pain"],
   "sports-injuries": ["knee-pain", "shoulder-injuries", "joint-pain", "hip-pain"],
   "neuropathic-pain": ["sciatica", "chronic-pain", "fibromyalgia", "post-surgical-pain"],
-  "chronic-pain": ["neuropathic-pain", "fibromyalgia", "post-surgical-pain", "other-pain-conditions", "pelvic-pain"],
+  "chronic-pain": ["neuropathic-pain", "fibromyalgia", "post-surgical-pain", "other-pain-conditions"],
   "fibromyalgia": ["chronic-pain", "neuropathic-pain", "migraines", "other-pain-conditions"],
-  "migraines": ["neck-pain", "neuropathic-pain", "chronic-pain", "fibromyalgia"],
-  "post-surgical-pain": ["neuropathic-pain", "chronic-pain", "cancer-pain", "back-pain"],
-  "cancer-pain": ["chronic-pain", "neuropathic-pain", "post-surgical-pain", "pelvic-pain"],
-  "pelvic-pain": ["neuropathic-pain", "chronic-pain", "cancer-pain", "other-pain-conditions"],
-  "other-pain-conditions": ["chronic-pain", "neuropathic-pain", "migraines", "pelvic-pain", "cancer-pain"],
+  "migraines": ["neck-pain", "neuropathic-pain", "chronic-pain", "fibromyalgia", "other-pain-conditions"],
+  "post-surgical-pain": ["neuropathic-pain", "chronic-pain", "back-pain"],
+  "pelvic-pain": ["neuropathic-pain", "chronic-pain", "other-pain-conditions"],
+  "other-pain-conditions": ["chronic-pain", "neuropathic-pain", "migraines"],
 };
 
 /** Cards are built from the canonical condition list so titles and blurbs cannot drift. */
@@ -411,7 +410,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Pain that is limiting work, sleep, or intimacy.",
     ],
     recoveryOutlook:
-      "Pelvic pain usually improves in steps rather than all at once. A diagnostic block tells us whether the pathway we suspect is the right one, and that information is valuable even when the relief is temporary. Where a block confirms the source, relief can often be extended with a therapeutic version, and pelvic floor physical therapy does a substantial part of the work alongside it. For pain that remains refractory, spinal cord stimulation is considered and trialed for 5 to 7 days first, so you know whether it helps before anything is implanted. Progress here is measured in sitting tolerance, sleep, and function.",
+      "Pelvic pain usually improves in steps rather than all at once. A diagnostic block tells us whether the pathway we suspect is the right one, and that information is valuable even when the relief is temporary. Where a block confirms the source, relief can often be extended with a therapeutic version, and physical therapy does a substantial part of the work alongside it. For pain that remains refractory, spinal cord stimulation is considered and trialed for 5 to 7 days first, so you know whether it helps before anything is implanted. Progress here is measured in sitting tolerance, sleep, and function.",
     faqs: [
       {
         q: "Why has nobody been able to tell me what is wrong?",
@@ -434,8 +433,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
         a: "For most pelvic blocks, yes — they are performed with sedation or as spinal injections. We confirm transportation when we schedule so it is not a surprise on the day.",
       },
       {
-        q: "Is pelvic floor physical therapy worth it?",
-        a: "In our experience it is one of the highest-yield treatments in this area, and it works better once the painful driver has been identified and treated. We refer to therapists who specialize in it.",
+        q: "Is physical therapy worth it?",
+        a: "In our experience it is one of the highest-yield treatments in this area, and it works better once the painful driver has been identified and treated. We refer to physical therapists we work with regularly.",
       },
       {
         q: "Is this pain permanent?",
@@ -445,101 +444,6 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     philosophyBlurb:
       "Pelvic pain patients are, more than any other group we see, tired of being handed between specialties. Our role is narrow and specific: identify and treat the neural, joint, and musculoskeletal contributors, be clear about which parts of the problem belong elsewhere, and coordinate with the team you already have rather than compete with it.",
     relatedConditions: relatedFor("pelvic-pain"),
-  },
-
-  "cancer-pain": {
-    slug: "cancer-pain",
-    title: "Cancer Pain",
-    metaDescription: "Cancer pain management in Houston and Humble. Interventional options that complement your oncology care and reduce reliance on systemic medication.",
-    lastReviewed: "2026-09-10",
-    leadLine: "Compassionate interventional support that complements oncology care.",
-    heroImage: "treatment-cancer-pain-treatment.jpg",
-    heroImageAlt: "Cancer pain management at HTx Pain Institute",
-    intro:
-      "Cancer-related pain — whether from the disease itself, surgery, chemotherapy, or radiation — deserves a dedicated specialist. We coordinate closely with your oncology team to bring proven interventional options that can dramatically improve quality of life and reduce reliance on systemic medications.",
-    introParagraphs: [
-      "Cancer pain is under-treated more often than it is over-treated. It can come from the disease itself pressing on bone, nerve, or organ; from surgery, radiation, or chemotherapy; or from a fracture through weakened bone. Each has a different answer, and several of those answers are interventional rather than pharmacological.",
-      "We work as part of your oncology team, not around it. The goal is usually specific — reduce pain enough to tolerate treatment, lower the systemic medication burden and its side effects, and protect the function and clarity that matter most. Where a procedure can do that better than escalating opioids, we say so.",
-    ],
-    symptoms: [
-      "Pain from tumor invasion of bone, nerves, or organs",
-      "Chemotherapy-induced peripheral neuropathy",
-      "Post-surgical or post-radiation pain",
-      "Compression fractures from disease or treatment",
-    ],
-    causes: [
-      "Direct tumor effect",
-      "Chemotherapy-induced neuropathy",
-      "Radiation fibrosis or neuropathy",
-      "Pathologic fractures",
-    ],
-    approachIntro: "How we approach cancer pain.",
-    approachServices: [
-      {
-        slug: "kyphoplasty-specialist",
-        title: "Kyphoplasty",
-        blurb: "For painful pathologic compression fractures.",
-      },
-      {
-        slug: "injections-blocks-specialist",
-        title: "Sympathetic & Plexus Blocks",
-        blurb: "Celiac plexus, superior hypogastric, ganglion impar.",
-      },
-      {
-        slug: "spinal-cord-stimulation-specialist",
-        title: "Spinal Cord Stimulation",
-        blurb: "Considered for chemotherapy-induced neuropathy.",
-      },
-    ],
-    diagnosisWorkup: [
-      "A history that separates tumor-related pain from treatment-related pain, since they are managed differently.",
-      "Review of imaging and the oncologic plan, in coordination with your oncology team.",
-      "Examination for neuropathic features, bone tenderness, and fracture.",
-      "Assessment of current medication, its effectiveness, and the side effects limiting the dose.",
-      "Diagnostic block where a sympathetic or plexus target is suspected, before committing to a longer-acting approach.",
-    ],
-    whenToSeeSpecialist: [
-      "Pain that is not controlled despite escalating oral medication.",
-      "Side effects — sedation, nausea, constipation, confusion — limiting the dose you can tolerate.",
-      "New, focal back pain in a patient with known cancer, which may indicate a compression fracture.",
-      "Burning or electric pain in the hands or feet during or after chemotherapy.",
-      "Abdominal or visceral pain from an upper abdominal malignancy, where a celiac plexus block may help.",
-    ],
-    recoveryOutlook:
-      "Interventional cancer pain treatment tends to work quickly relative to medication adjustment. Kyphoplasty for a painful compression fracture is performed with local anesthetic and light IV sedation, most patients walk the same day, and we ask for no heavy lifting for 6 weeks. Sympathetic and plexus blocks — celiac, superior hypogastric, ganglion impar — often reduce pain within days and frequently allow a meaningful reduction in systemic medication. Chemotherapy-induced peripheral neuropathy is more persistent; where it does not respond to medication, spinal cord stimulation is considered and trialed for 5 to 7 days first. We coordinate timing with your oncology team around chemotherapy, radiation, and bone-modifying agents.",
-    faqs: [
-      {
-        q: "Should I see a pain specialist while I am still in treatment?",
-        a: "Yes, and earlier is usually better. Pain control is not something to defer until treatment finishes. We coordinate timing with your oncology team so nothing interferes with your cancer care.",
-      },
-      {
-        q: "Can you help with pain from a compression fracture?",
-        a: "Often, yes. Kyphoplasty is an established option for painful fractures from multiple myeloma, metastatic disease, and osteoporosis. We coordinate closely with your oncology team on timing relative to chemotherapy, radiation, and bone-modifying agents.",
-      },
-      {
-        q: "What is a celiac plexus block?",
-        a: "An injection targeting the nerve bundle that carries pain from the upper abdominal organs. It is well established for pain from pancreatic and other upper abdominal cancers, and it frequently allows a substantial reduction in opioid dose.",
-      },
-      {
-        q: "Will interventional treatment replace my pain medication?",
-        a: "Sometimes it allows a large reduction; sometimes it makes an existing dose work better. We aim for the lowest medication burden that keeps you comfortable and functional, and we make changes together with your oncology team.",
-      },
-      {
-        q: "Is chemotherapy-induced neuropathy treatable?",
-        a: "The pain often is, even when the nerve damage is not reversible. We start with medication chosen for nerve pain, and for pain that remains refractory, spinal cord stimulation is considered and trialed before anything permanent.",
-      },
-      {
-        q: "Do you work with my oncologist?",
-        a: "Always. We are one part of the team. We share our plan and coordinate timing rather than making unilateral changes to your care.",
-      },
-      {
-        q: "What if my prognosis is limited?",
-        a: "Then time matters more, not less, and we prioritize accordingly — the fastest route to comfort and clarity, with fewer steps and less deferral. We will be direct with you about what is realistic.",
-      },
-    ],
-    philosophyBlurb:
-      "The most useful thing an interventional pain physician brings to cancer care is a set of options that do not run through the opioid dose. A well-placed plexus block or a stabilized fracture can return comfort and clarity that no amount of medication adjustment would have. We coordinate closely with oncology and keep our part of the plan specific.",
-    relatedConditions: relatedFor("cancer-pain"),
   },
 
   "joint-pain": {

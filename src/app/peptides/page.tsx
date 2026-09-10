@@ -101,18 +101,20 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Medically reviewed */}
+      {/* Disclaimer. No physician byline until the real wellness page ships and
+          is reviewed — a "Medically Reviewed" card on a coming-soon stub would
+          be claiming a review that has not happened. */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-2xl px-6 pb-16 lg:px-10 lg:pb-24">
           <div className="flex items-start gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm">
             <IconBadge icon="shield" tone="brass" />
             <div>
               <p className="font-sans text-xs font-semibold uppercase tracking-wide text-navy">
-                Medically Reviewed
+                Please Note
               </p>
               <p className="mt-1 text-sm leading-relaxed text-charcoal-soft">
-                Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical
-                advice. Always consult your physician.
+                Information on this page is not medical advice. Always consult your
+                physician.
               </p>
             </div>
           </div>
