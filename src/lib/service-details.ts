@@ -4,6 +4,8 @@ export type ServiceDetail = {
   slug: string;
   title: string;
   metaDescription: string;
+  /** ISO date of the physician review shown in this page's byline. */
+  lastReviewed: string;
   heroImage: string;
   heroImageAlt: string;
   eyebrow: string;
@@ -44,6 +46,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Radiofrequency Ablation",
     metaDescription:
       "Radiofrequency ablation in Houston and Humble. A 15-minute outpatient procedure that quiets the nerves carrying your pain, with relief lasting 6–18 months.",
+    lastReviewed: "2026-09-10",
     heroImage: "surgeon-under-operating-lights.jpg",
     heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
     eyebrow: "RFA",
@@ -147,6 +150,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Injections & Nerve Blocks",
     metaDescription:
       "Image-guided injections and nerve blocks in Houston and Humble — epidural, facet, and sympathetic blocks placed precisely, both diagnostic and therapeutic.",
+    lastReviewed: "2026-09-10",
     heroImage: "ultrasound-guided-nerve-block-procedure-room.jpg",
     heroImageAlt: "Two clinicians in surgical gowns, caps, and masks stand on either side of a patient covered by a sheet during an ultrasound-guided nerve block, an imaging monitor and a vitals monitor beside the table.",
     eyebrow: "Injections & Blocks",
@@ -262,6 +266,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Kyphoplasty",
     metaDescription:
       "Kyphoplasty in Houston and Humble for painful vertebral compression fractures. A minimally invasive procedure that stabilizes the bone and relieves pain.",
+    lastReviewed: "2026-09-10",
     heroImage: "older-man-walking-upright-garden-path.jpg",
     heroImageAlt: "A white-haired man in a green shirt, jeans and flat cap walks upright away from the camera along a dirt path lined with green shrubs.",
     eyebrow: "Kyphoplasty",
@@ -378,6 +383,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "SI Joint Fusions",
     metaDescription:
       "SI joint fusion in Houston and Humble. Minimally invasive stabilization for confirmed sacroiliac joint pain that has not responded to conservative care.",
+    lastReviewed: "2026-09-10",
     heroImage: "clinician-palpating-lower-back-seated-patient.jpg",
     heroImageAlt: "A clinician in mint-green scrubs presses one hand against the mid-back and the other against the lower back of a woman seated upright and fully clothed on the edge of a padded exam table.",
     eyebrow: "SI Joint Fusion",
@@ -494,6 +500,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Spinal Cord Stimulation",
     metaDescription:
       "Spinal cord stimulation in Houston and Humble. A trial-first implantable therapy that interrupts pain signals before they reach the brain, fully reversible.",
+    lastReviewed: "2026-09-10",
     heroImage: "practitioner-showing-spine-model-to-patient.jpg",
     heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
     eyebrow: "Spinal Cord Stimulation",
@@ -598,6 +605,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Intracept Procedure",
     metaDescription:
       "Intracept in Houston and Humble. An implant-free, FDA-cleared procedure that treats vertebrogenic low-back pain at its source, the basivertebral nerve.",
+    lastReviewed: "2026-09-10",
     heroImage: "treatment-intracept-procedure.jpg",
     heroImageAlt: "Intracept procedure for vertebrogenic low-back pain at HTx Pain Institute",
     eyebrow: "Intracept",
@@ -701,6 +709,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "PRP (Platelet-Rich Plasma)",
     metaDescription:
       "PRP therapy in Houston and Humble. Platelet-rich plasma from your own blood, injected under image guidance to support healing in joints and tendons.",
+    lastReviewed: "2026-09-10",
     heroImage: "treatment-prp-procedure-houston.jpg",
     heroImageAlt: "Platelet-rich plasma (PRP) therapy at HTx Pain Institute in Houston",
     eyebrow: "PRP",
@@ -817,6 +826,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "MILD Procedure",
     metaDescription:
       "MILD procedure for lumbar spinal stenosis at HTx Pain Institute. Outpatient, no implants, walk out the same day. Schedule your consultation today.",
+    lastReviewed: "2026-09-10",
     heroImage: "fluoroscopy-c-arm-procedure-suite.jpg",
     heroImageAlt: "A fluoroscopy C-arm and patient table in a bright, empty interventional procedure suite with a bank of imaging monitors.",
     eyebrow: "MILD",
@@ -900,6 +910,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Minuteman Lumbar Fusion",
     metaDescription:
       "Minuteman lumbar fusion in Houston and Humble. A posterior, minimally invasive interspinous implant that stabilizes a painful lumbar segment.",
+    lastReviewed: "2026-09-10",
     heroImage: "lumbar-spine-model-closeup.jpg",
     heroImageAlt: "Close-up of an anatomical lumbar spine model with sacrum, yellow nerve roots, and a red herniated disc resting on a black treatment table.",
     eyebrow: "Minuteman",

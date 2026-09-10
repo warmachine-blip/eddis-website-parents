@@ -5,6 +5,7 @@ import FaqAccordion from "@/components/faq-accordion";
 import { IconBadge, InfoCard } from "@/components/icon-badge";
 import SectionHeading from "@/components/section-heading";
 import JsonLd from "@/components/json-ld";
+import { formatReviewDate } from "@/lib/review";
 import { SITE_URL } from "@/lib/site";
 import { FOUNDER_ID, WEBSITE_ID, MEDICAL_SPECIALTY } from "@/lib/schema";
 import type { ConditionDetail } from "@/lib/condition-details";
@@ -31,6 +32,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": `${url}#condition` },
         reviewedBy: { "@id": FOUNDER_ID },
+        lastReviewed: data.lastReviewed,
         primaryImageOfPage: `${SITE_URL}/images/${data.heroImage}`,
       },
       {
@@ -302,8 +304,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
           <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">Medically Reviewed</p>
           <p className="mt-1 text-sm text-off-white/70">
-            Reviewed by Edward Baumgartner Jr., MD. Information on this page is not medical
-            advice. Always consult your physician.
+            Reviewed by Edward Baumgartner Jr., MD &middot; Last reviewed{" "}
+            <time dateTime={data.lastReviewed}>{formatReviewDate(data.lastReviewed)}</time>.
+            Information on this page is not medical advice. Always consult your physician.
           </p>
         </div>
 

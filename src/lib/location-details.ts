@@ -2,6 +2,8 @@ export type LocationDetail = {
   slug: string;
   city: string;
   metaDescription: string;
+  /** ISO date of the physician review shown in this page's byline. */
+  lastReviewed: string;
   heroHeadline: string;
   heroIntro: string;
   nearestOfficeKey: "houston" | "humble";
@@ -25,6 +27,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Spring",
     metaDescription:
       "Precision interventional pain medicine for Spring, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Spring, TX patients.",
     heroIntro:
       "Patients across Spring choose HTx Pain Institute for advanced interventional pain care close to home. Our Humble office on FM 1960 is a short drive from most of Spring. Most patients reach our Humble office in 10–15 min.",
@@ -73,6 +76,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "The Woodlands",
     metaDescription:
       "Precision interventional pain medicine for The Woodlands, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for The Woodlands, TX patients.",
     heroIntro:
       "Patients across The Woodlands choose HTx Pain Institute for institute-caliber interventional care without the drive into the Texas Medical Center. Most patients reach our Humble office in 15–25 min.",
@@ -121,6 +125,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Cypress",
     metaDescription:
       "Precision interventional pain medicine for Cypress, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Cypress, TX patients.",
     heroIntro:
       "Cypress patients are a short drive from our Houston office near Willowbrook, where we offer the full interventional pain medicine toolkit. Most patients reach our Houston office in 15–25 min.",
@@ -169,6 +174,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Tomball",
     metaDescription:
       "Precision interventional pain medicine for Tomball, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Tomball, TX patients.",
     heroIntro:
       "Tomball is one of our closest communities — our Houston office is near Willowbrook, straight down Texas 249 from the Tomball area. Most patients reach our Houston office in 10–15 min.",
@@ -217,6 +223,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Klein",
     metaDescription:
       "Precision interventional pain medicine for Klein, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Klein, TX patients.",
     heroIntro:
       "Klein-area patients reach our Houston office via Texas 249 — a quick, predictable drive. Most patients reach our Houston office in 10–15 min.",
@@ -265,6 +272,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Champions",
     metaDescription:
       "Precision interventional pain medicine for Champions, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Champions, TX patients.",
     heroIntro:
       "The Champions area is one of the closest communities to our Houston office, with most patients arriving in about 10 minutes.",
@@ -313,6 +321,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Kingwood",
     metaDescription:
       "Precision interventional pain medicine for Kingwood, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Kingwood, TX patients.",
     heroIntro:
       "Kingwood is one of our closest communities to the Humble office — most patients arrive in 10–15 minutes.",
@@ -361,6 +370,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Atascocita",
     metaDescription:
       "Precision interventional pain medicine for Atascocita, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Atascocita, TX patients.",
     heroIntro:
       "Atascocita patients are minutes from our Humble office on FM 1960 — one of our closest communities. Most patients reach our Humble office in 5–10 min.",
@@ -409,6 +419,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Humble",
     metaDescription:
       "Precision interventional pain medicine for Humble, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Humble, TX patients.",
     heroIntro:
       "Humble is home — our Humble office on FM 1960 serves the heart of the community. Most patients reach our Humble office in about 5 min.",
@@ -457,6 +468,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     city: "Northwest Houston",
     metaDescription:
       "Precision interventional pain medicine for Northwest Houston patients. Double board-certified care, two Houston-area locations. Schedule today.",
+    lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Northwest Houston patients.",
     heroIntro:
       "Northwest Houston neighborhoods — including Vintage Park, Willowbrook, and the 249 corridor — are among our closest communities. Most patients reach our Houston office in 10–20 min.",
