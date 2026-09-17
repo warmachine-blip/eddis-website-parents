@@ -1,4 +1,48 @@
 import type { NextConfig } from "next";
+import { SITE_URL } from "./src/lib/site";
+import { HTX_PAIN_CARE_PATHS } from "./src/lib/legacy-urls";
+
+/**
+ * Domains that used to serve this practice, 301'd to SITE_URL. Host values are
+ * anchored regexes matched against the lowercased, port-stripped Host header.
+ *
+ * These only run on requests this app actually receives, so each domain below
+ * must also be added to the Vercel project (Settings -> Domains) and left
+ * pointing here rather than given Vercel's own "Redirect to" setting — the
+ * rules below handle the redirect, and doing both would double-hop.
+ */
+const HTX_PAIN_CARE_HOST = "(?:www\\.)?htxpaincare\\.com";
+
+/**
+ * The Texas Interventional Pain Specialists domain, if it is being pointed here
+ * too. Set to the host regex (e.g. "(?:www\\.)?example\\.com") to switch on the
+ * rules below; while it is null they are not emitted.
+ */
+const TEXAS_INTERVENTIONAL_HOST: string | null = null;
+
+/**
+ * Old Texas Interventional Pain Specialists paths whose structure differs from
+ * this site's. Anything already identical needs no entry — the blanket domain
+ * rule preserves the path. Keys are old paths, values are paths on this site.
+ */
+const TEXAS_INTERVENTIONAL_PATHS: Record<string, string> = {};
+
+/** Per-path 301s off one legacy host, for URLs the new site spells differently. */
+const pathRedirects = (hostPattern: string, paths: Record<string, string>) =>
+  Object.entries(paths).map(([from, to]) => ({
+    source: from,
+    has: [{ type: "host" as const, value: hostPattern }],
+    destination: `${SITE_URL}${to}`,
+    statusCode: 301 as const,
+  }));
+
+/** Catch-all 301 off one legacy host, keeping the requested path. */
+const domainRedirect = (hostPattern: string) => ({
+  source: "/:path*",
+  has: [{ type: "host" as const, value: hostPattern }],
+  destination: `${SITE_URL}/:path*`,
+  statusCode: 301 as const,
+});
 
 const nextConfig: NextConfig = {
   images: {
@@ -17,6 +61,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ---- Old domains -> htxpaininstitute.com -------------------------------
+      // Per-path remaps run first: a page the new site spells differently has to
+      // reach its real URL, not a 404 at the old path on the new domain.
+      ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_PATHS),
+      ...(TEXAS_INTERVENTIONAL_HOST
+        ? pathRedirects(TEXAS_INTERVENTIONAL_HOST, TEXAS_INTERVENTIONAL_PATHS)
+        : []),
+      // Everything else on a legacy domain keeps its path and only changes host.
+      domainRedirect(HTX_PAIN_CARE_HOST),
+      ...(TEXAS_INTERVENTIONAL_HOST ? [domainRedirect(TEXAS_INTERVENTIONAL_HOST)] : []),
+
+      // ---- Within this site -------------------------------------------------
       // Blog is parked until real post bodies exist: /blog and every /blog/* URL
       // permanently redirect to the homepage. Content files are kept in src/app/blog.
       {

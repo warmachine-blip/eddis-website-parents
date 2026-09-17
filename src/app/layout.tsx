@@ -7,6 +7,12 @@ import PageTransition from "@/components/page-transition";
 import ScrollReveal from "@/components/scroll-reveal";
 import { SITE_URL } from "@/lib/site";
 import { practice } from "@/lib/nav";
+import {
+  GOOGLE_ADS_ID,
+  GOOGLE_ADS_SNIPPET,
+  GTM_NOSCRIPT_SRC,
+  GTM_SNIPPET,
+} from "@/lib/analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -56,7 +62,48 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
     >
+      {/*
+        Written as a literal <head> rather than next/script: in the App Router
+        `strategy="beforeInteractive"` does not emit a real <script>, it queues
+        the code into `self.__next_s` for the Next runtime to replay after the
+        framework bundle loads. Google's install checks (and Tag Assistant)
+        expect parser-executed tags at the top of <head>, which is what these
+        are. Next merges its own metadata tags in after them.
+      */}
+      <head>
+        {/*
+          React hoists resource links and async scripts above these inline
+          snippets, and the hoisted stylesheet delays inline script execution
+          until the CSS lands. Warming the connection here means the container
+          request costs one round trip instead of DNS + TLS + fetch.
+        */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Google Tag Manager — first element in <head>, per Google's snippet. */}
+        <script
+          id="gtm-container"
+          dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
+        />
+        {/* Google tag (gtag.js) — Google Ads. The page's only gtag.js loader. */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+        />
+        <script
+          id="google-ads-tag"
+          dangerouslySetInnerHTML={{ __html: GOOGLE_ADS_SNIPPET }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
+        {/* Google Tag Manager (noscript) — immediately after <body>. */}
+        <noscript>
+          <iframe
+            src={GTM_NOSCRIPT_SRC}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"

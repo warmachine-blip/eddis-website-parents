@@ -2,13 +2,13 @@
 // Last git commit date (YYYY-MM-DD) for the files behind each route.
 export const lastModified: Record<string, string> = {
   "/": "2026-09-10",
-  "/about-us": "2026-09-09",
+  "/about-us": "2026-09-10",
   "/allison-turner": "2026-09-09",
   "/back-pain": "2026-09-10",
   "/chronic-pain": "2026-09-10",
   "/community/imas-home": "2026-09-03",
   "/contact": "2026-09-09",
-  "/dr-edward-baumgartner": "2026-09-09",
+  "/dr-edward-baumgartner": "2026-09-10",
   "/fibromyalgia": "2026-09-10",
   "/herniated-discs": "2026-09-10",
   "/hip-pain": "2026-09-10",
