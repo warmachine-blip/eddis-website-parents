@@ -186,7 +186,7 @@ export const practice = {
   formerNames: "Texas Interventional Pain Specialists and HTx Pain Care",
   phone: "832.990.8600",
   phoneHref: "tel:+18329908600",
-  email: "info@htxpaincare.com",
+  email: "info@htxpaininstitute.com",
   tagline: "Precision. Lasting Relief.",
   hours: formatHours(openingHours),
   hoursWeekend: "Sat–Sun: Closed",

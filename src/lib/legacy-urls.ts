@@ -48,3 +48,46 @@ export const HTX_PAIN_CARE_PATHS: Record<string, string> = {
   "/page-sitemap.xml": "/sitemap.xml",
   "/post-sitemap.xml": "/sitemap.xml",
 };
+
+/**
+ * Old txpainspecialists.com paths. The practice traded as Texas Interventional
+ * Pain Specialists on a site-builder platform (not the WordPress), so this is a
+ * third URL scheme again: no trailing slashes, and its own names for shared
+ * pages — "/pain-conditions" for the conditions hub, "/about" for the story
+ * page, "/injections-block-specialist" with a singular "block".
+ *
+ * Recovered from the sitemap.xml captured in the Wayback Machine on 2024-04-05,
+ * the only full inventory of that site that still exists: 24 pages, 26 blog
+ * posts and 7 archive URLs. Nine pages already share a path with a route here
+ * and need no entry; the 15 below do not.
+ *
+ * 25 of the 26 blog slugs were carried over to the WordPress unchanged, so the
+ * existing /blog rule already covers them. The exception is
+ * "/blog/living-with-fibromyalgia", which WordPress renamed to
+ * "living-with-fibromyalgia-symptoms-coping" — worth an entry when the blog is
+ * republished, pointless while every /blog URL goes to the homepage.
+ */
+export const TX_PAIN_SPECIALISTS_PATHS: Record<string, string> = {
+  // Pages this site names differently.
+  "/about": "/about-us",
+  "/pain-conditions": "/pain-center",
+  "/patients-resources": "/patients",
+  "/injections-block-specialist": "/injections-blocks-specialist",
+  "/spinal-cord-stimulation": "/spinal-cord-stimulation-specialist",
+  "/vehicle-injury-doctor": "/motor-vehicle-injuries",
+  "/work-injuries": "/work-injuries-accidents",
+  "/edward-baumgartner-md": "/dr-edward-baumgartner",
+  "/injury-pain": "/injuries-pain",
+  // Duplicate pages the old builder left behind, alongside the real ones.
+  "/services-1": "/services",
+  "/pain-center-1": "/pain-center",
+  "/home-brine": "/",
+  // The old post-booking thank-you page, same as the WordPress one.
+  "/thank-you": "/appointment-confirmed",
+  // A COVID-19 policy page with no successor; patient resources is the nearest
+  // page that answers what it answered.
+  "/covid19": "/patients",
+  // Never captured by the archive, so its content is unknown — the homepage is
+  // the only honest destination.
+  "/google": "/",
+};

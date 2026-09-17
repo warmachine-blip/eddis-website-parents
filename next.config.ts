@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import { SITE_URL } from "./src/lib/site";
-import { HTX_PAIN_CARE_PATHS } from "./src/lib/legacy-urls";
+import { HTX_PAIN_CARE_PATHS, TX_PAIN_SPECIALISTS_PATHS } from "./src/lib/legacy-urls";
 
 /**
  * Domains that used to serve this practice, 301'd to SITE_URL. Host values are
@@ -14,18 +14,14 @@ import { HTX_PAIN_CARE_PATHS } from "./src/lib/legacy-urls";
 const HTX_PAIN_CARE_HOST = "(?:www\\.)?htxpaincare\\.com";
 
 /**
- * The Texas Interventional Pain Specialists domain, if it is being pointed here
- * too. Set to the host regex (e.g. "(?:www\\.)?example\\.com") to switch on the
- * rules below; while it is null they are not emitted.
+ * The practice's Texas Interventional Pain Specialists domain. It is still
+ * owned, and until this ships it forwards to htxpaincare.com at the registrar —
+ * but only from the root: every deeper path returns a bare 404, so today every
+ * inbound link to an old TIPS page is discarded. These rules replace that
+ * forwarding, which has to be switched off at the registrar once DNS points
+ * here, or the request never reaches this app.
  */
-const TEXAS_INTERVENTIONAL_HOST: string | null = null;
-
-/**
- * Old Texas Interventional Pain Specialists paths whose structure differs from
- * this site's. Anything already identical needs no entry — the blanket domain
- * rule preserves the path. Keys are old paths, values are paths on this site.
- */
-const TEXAS_INTERVENTIONAL_PATHS: Record<string, string> = {};
+const TX_PAIN_SPECIALISTS_HOST = "(?:www\\.)?txpainspecialists\\.com";
 
 /** Per-path 301s off one legacy host, for URLs the new site spells differently. */
 const pathRedirects = (hostPattern: string, paths: Record<string, string>) =>
@@ -65,12 +61,12 @@ const nextConfig: NextConfig = {
       // Per-path remaps run first: a page the new site spells differently has to
       // reach its real URL, not a 404 at the old path on the new domain.
       ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_PATHS),
-      ...(TEXAS_INTERVENTIONAL_HOST
-        ? pathRedirects(TEXAS_INTERVENTIONAL_HOST, TEXAS_INTERVENTIONAL_PATHS)
-        : []),
+      ...pathRedirects(TX_PAIN_SPECIALISTS_HOST, TX_PAIN_SPECIALISTS_PATHS),
       // Everything else on a legacy domain keeps its path and only changes host.
+      // Most old TIPS paths do not exist here, so this lands them on a 404 at
+      // the canonical domain — which still beats serving the whole site twice.
       domainRedirect(HTX_PAIN_CARE_HOST),
-      ...(TEXAS_INTERVENTIONAL_HOST ? [domainRedirect(TEXAS_INTERVENTIONAL_HOST)] : []),
+      domainRedirect(TX_PAIN_SPECIALISTS_HOST),
 
       // ---- Within this site -------------------------------------------------
       // Blog is parked until real post bodies exist: /blog and every /blog/* URL

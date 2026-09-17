@@ -4,6 +4,7 @@ export const lastModified: Record<string, string> = {
   "/": "2026-09-10",
   "/about-us": "2026-09-10",
   "/allison-turner": "2026-09-09",
+  "/appointment-confirmed": "2026-09-17",
   "/back-pain": "2026-09-10",
   "/chronic-pain": "2026-09-10",
   "/community/imas-home": "2026-09-03",
