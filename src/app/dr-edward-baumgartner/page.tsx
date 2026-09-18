@@ -13,7 +13,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD — the physician you see instead of a surgeon. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
+    "Edward Baumgartner Jr., MD — the physician you see before the surgeon. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
 };
 
 const facts = [
@@ -140,7 +140,7 @@ export default function DrBaumgartnerPage() {
             Edward Baumgartner Jr., MD
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            The physician you see instead of a surgeon. Double board-certified
+            The physician you see before the surgeon. Double board-certified
             in Anesthesiology and Pain Medicine.
           </p>
         </div>
@@ -195,12 +195,12 @@ export default function DrBaumgartnerPage() {
             <div className="mt-3 space-y-4 text-pretty text-lg leading-relaxed text-charcoal-soft">
               <p>
                 Most back and joint pain never needs an operation. Edward
-                Baumgartner Jr., MD is the physician you see instead of a
-                surgeon — a Houston native, double board-certified in
-                Anesthesiology and Pain Medicine, with over fifteen years of
-                interventional pain medicine experience. He does not perform
-                joint replacement or open spine surgery. Telling you that you do
-                not need either costs him nothing.
+                Baumgartner Jr., MD is the physician you see before the surgeon
+                — a Houston native, double board-certified in Anesthesiology and
+                Pain Medicine, with over fifteen years of interventional pain
+                medicine experience. He operates, but he is not an orthopedic
+                surgeon or a neurosurgeon. Telling you that you do not need a
+                joint replacement or an open fusion costs him nothing.
               </p>
               <p>
                 He spent the five years between fellowship and founding his own
@@ -311,11 +311,14 @@ export default function DrBaumgartnerPage() {
                     it — the operation was never his to perform.
                   </p>
                   <p>
-                    That line is worth drawing precisely. He does perform
-                    image-guided procedures, including minimally invasive
-                    stabilization where the imaging supports it. What he is not
-                    is a surgeon: open decompression, multi-level fusion, and
-                    joint replacement are not his to offer, and never have been.
+                    That line is worth drawing precisely, because it is not a
+                    limitation. He operates, at Townsen Memorial Hospital: SI
+                    joint fusion, Minuteman interspinous fusion, kyphoplasty,
+                    and spinal cord stimulator implants are all his own work.
+                    What he is not is an orthopedic surgeon or a neurosurgeon.
+                    Open decompression, multi-level instrumented fusion and
+                    joint replacement belong to those specialties — they are not
+                    his to offer, and never have been.
                   </p>
                 </div>
               </div>

@@ -54,8 +54,8 @@ const credentials = [
 
 const whyHtx = [
   {
-    title: "No Surgical Stake",
-    body: "Dr. Baumgartner performs neither joint replacement nor open spine surgery. When he tells you an operation will not help, he is not turning down work of his own.",
+    title: "No Stake in That Operation",
+    body: "Dr. Baumgartner operates, but he is not an orthopedic surgeon or a neurosurgeon. The joint replacement or the open fusion is not his to perform — so recommending against one costs him nothing.",
   },
   {
     title: "Double Board-Certified",
@@ -102,7 +102,7 @@ export default function Home() {
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
               Most back and joint pain never needs an operation. Dr. Baumgartner
-              is the physician you see instead of a surgeon — image-guided
+              is the physician you see before the surgeon — image-guided
               treatment, and a straight answer about what your pain actually
               needs.
             </p>
@@ -229,15 +229,17 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              The physician you see instead of a surgeon.
+              The physician you see before the surgeon.
             </h2>
             <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
               <p>
                 Most back and joint pain never needs an operation. Edward
                 Baumgartner Jr., MD is the physician who can tell you so without
-                a stake in the answer: he performs neither joint replacement
-                nor open spine surgery, so the operation he would otherwise be
-                sending you toward is not one he performs.
+                a stake in the answer. He operates — SI joint fusion, Minuteman
+                interspinous fusion, kyphoplasty, spinal cord stimulator
+                implants — but he is not an orthopedic surgeon or a
+                neurosurgeon. The joint replacement or the open fusion you are
+                weighing is not his to perform.
               </p>
               <p>
                 What makes that judgment worth having is the training behind it.

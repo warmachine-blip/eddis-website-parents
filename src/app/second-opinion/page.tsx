@@ -8,7 +8,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Second Opinions Before Spine or Joint Surgery in Houston",
   description:
-    "Told you need an operation? A second opinion from a physician who performs neither joint replacement nor open spine surgery — and is free to tell you that you do not need one. Houston and Humble.",
+    "Told you need an operation? A second opinion from a physician who operates, but is not an orthopedic surgeon or a neurosurgeon — and is free to tell you that you do not need one. Houston and Humble.",
 };
 
 /**
@@ -88,8 +88,9 @@ export default function SecondOpinionPage() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Most back and joint pain never needs surgery. Edward Baumgartner
             Jr., MD is double board-certified in Anesthesiology and Pain
-            Medicine, and he performs neither joint replacement nor open spine
-            surgery — so a recommendation against operating costs him nothing.
+            Medicine. He operates — but not as an orthopedic surgeon or a
+            neurosurgeon, so the joint replacement or the open fusion you are
+            weighing is not his to perform.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
@@ -123,10 +124,13 @@ export default function SecondOpinionPage() {
                 not shaped by what they would be the one to perform.
               </p>
               <p>
-                Open decompression, multi-level fusion, and joint replacement
-                are not Dr. Baumgartner&rsquo;s to offer, and never have been.
-                When he tells you an operation will not help, he is not turning
-                down work of his own.
+                Dr. Baumgartner operates — SI joint fusion, Minuteman
+                interspinous fusion, kyphoplasty, spinal cord stimulator
+                implants. What he is not is an orthopedic surgeon or a
+                neurosurgeon, so open decompression, multi-level instrumented
+                fusion and joint replacement are not his to offer. When he tells
+                you one of those will not help, he is not turning down work of
+                his own.
               </p>
             </div>
             <div className="space-y-4">

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    title: "No Surgical Stake",
-    body: "No joint replacement, no open spine surgery.",
+    title: "No Stake in That Operation",
+    body: "He operates, but not as an orthopedic surgeon or a neurosurgeon.",
     icon: "pulse",
   },
   {
@@ -35,7 +35,7 @@ const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "The physician you see instead of a surgeon. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he now performs hospital-based procedures at Townsen Memorial Hospital. He performs neither joint replacement nor open spine surgery — which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
+    bio: "The physician you see before the surgeon. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he operates at Townsen Memorial Hospital — SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. He is not an orthopedic surgeon or a neurosurgeon, which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
@@ -160,9 +160,10 @@ export default function AboutUsPage() {
                   interventional pain medicine — applied carefully,
                   individually, and with judgment — can return people to the
                   lives they want: usually without an operation, and often
-                  without long-term medication reliance. Dr. Baumgartner performs
-                  neither joint replacement nor open spine surgery, so a
-                  recommendation against operating costs him nothing.
+                  without long-term medication reliance. Dr. Baumgartner
+                  operates, but he is not an orthopedic surgeon or a
+                  neurosurgeon — so a recommendation against a joint replacement
+                  or an open fusion costs him nothing.
                 </p>
               </div>
 
