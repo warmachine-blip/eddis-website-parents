@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import LegalPage from "@/components/legal-page";
 import { offices, practice } from "@/lib/nav";
+import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices",
@@ -102,34 +102,7 @@ export default function HipaaNoticePage() {
         </div>
       </div>
 
-      <section className="border-t border-line bg-navy-deep text-off-white">
-        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-10 lg:py-20">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
-            <span className="h-px w-8 bg-current opacity-70" />
-            Ready When You Are
-          </p>
-          <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight sm:text-4xl">
-            Get a straight answer about what your pain actually needs.
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
-            Two Houston-area locations. Same-week consults available. Most insurance accepted.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/request-appointment"
-              className="border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
-            >
-              Request Appointment
-            </Link>
-            <a
-              href={practice.phoneHref}
-              className="border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
-            >
-              {practice.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <FinalCta surface="bordered" size="md" />
     </div>
   );
 }

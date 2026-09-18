@@ -10,6 +10,7 @@ import { SITE_URL } from "@/lib/site";
 import { ORG_ID, FOUNDER_ID, WEBSITE_ID, MEDICAL_SPECIALTY } from "@/lib/schema";
 import type { ServiceDetail } from "@/lib/service-details";
 import { practice } from "@/lib/nav";
+import FinalCta from "@/components/final-cta";
 
 export default function ServiceDetailTemplate({ data }: { data: ServiceDetail }) {
   const url = `${SITE_URL}/${data.slug}`;
@@ -382,45 +383,18 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
       </section>
 
       {/* Medically reviewed + final CTA */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
+      <FinalCta size="md" lead="base">
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
-          <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">
-            Medically Reviewed
-          </p>
-          <p className="mt-1 text-sm text-off-white/70">
-            Reviewed by Edward Baumgartner Jr., MD &middot; Last reviewed{" "}
-            <time dateTime={data.lastReviewed}>{formatReviewDate(data.lastReviewed)}</time>.
-            Information on this page is not medical advice. Always consult your physician.
-          </p>
+        <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">
+        Medically Reviewed
+        </p>
+        <p className="mt-1 text-sm text-off-white/70">
+        Reviewed by Edward Baumgartner Jr., MD &middot; Last reviewed{" "}
+        <time dateTime={data.lastReviewed}>{formatReviewDate(data.lastReviewed)}</time>.
+        Information on this page is not medical advice. Always consult your physician.
+        </p>
         </div>
-
-        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-10 lg:py-20">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
-            <span className="h-px w-8 bg-current opacity-70" />
-            Ready When You Are
-          </p>
-          <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Get a straight answer about what your pain actually needs.
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-base text-off-white/80">
-            Two Houston-area locations. Same-week consults available. Most insurance accepted.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/request-appointment"
-              className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
-            >
-              Request Appointment
-            </Link>
-            <a
-              href={practice.phoneHref}
-              className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
-            >
-              {practice.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      </FinalCta>
     </div>
   );
 }

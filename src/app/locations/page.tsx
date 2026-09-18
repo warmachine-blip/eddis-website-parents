@@ -5,6 +5,7 @@ import SectionHeading from "@/components/section-heading";
 import OfficeMap from "@/components/office-map";
 import { offices, practice } from "@/lib/nav";
 import { locationDetails } from "@/lib/location-details";
+import FinalCta from "@/components/final-cta";
 
 // Derived from the city pages so the index can never drift from them.
 const communities = Object.values(locationDetails).map((l) => ({
@@ -116,34 +117,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-navy-deep text-off-white">
-        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-10 lg:py-20">
-          <p className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-brass-light">
-            Ready When You Are
-          </p>
-          <h2 className="mx-auto mt-3 max-w-2xl text-balance font-serif text-3xl leading-tight sm:text-4xl">
-            Get a straight answer about what your pain actually needs.
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
-            Two Houston-area locations. Same-week consults available. Most
-            insurance accepted.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/request-appointment"
-              className="border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
-            >
-              Request Appointment
-            </Link>
-            <a
-              href={practice.phoneHref}
-              className="border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
-            >
-              {practice.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <FinalCta surface="plain" eyebrow="plain" size="md" />
     </div>
   );
 }
