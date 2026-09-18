@@ -13,7 +13,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD — the physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
+    "Edward Baumgartner Jr., MD — the Houston physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine.",
 };
 
 const facts = [

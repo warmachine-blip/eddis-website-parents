@@ -8,7 +8,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Second Opinions Before Spine or Joint Surgery in Houston",
   description:
-    "Told you need an operation? A second opinion from a physician who operates, but is not an orthopedic surgeon or a neurosurgeon — and is free to tell you that you do not need one. Houston and Humble.",
+    "Told you need an operation? A second opinion from a physician who operates but is not an orthopedic surgeon or neurosurgeon — and has no stake in the answer.",
 };
 
 /**

@@ -15,7 +15,7 @@ const SCHEMA_DESCRIPTION =
 export const metadata: Metadata = {
   title: "The ‘Kel Strong’ Mabatah Foundation",
   description:
-    "The ‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. Founded by Kel Mabatah, a former Division I and professional tennis player. HTx Pain Institute supports it financially and attended its annual gala.",
+    "‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. HTx Pain Institute supports it financially and attended its gala.",
 };
 
 /**

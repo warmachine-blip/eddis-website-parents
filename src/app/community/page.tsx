@@ -8,7 +8,7 @@ import { supportedOrgs } from "@/lib/community";
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "The organizations HTx Pain Institute supports — Ima's Home for Children in the Philippines, and the ‘Kel Strong’ Mabatah Foundation for traumatic brain injury survivors.",
+    "The organizations HTx Pain Institute supports: Ima's Home for Children in the Philippines, and the ‘Kel Strong’ Mabatah Foundation for brain injury survivors.",
 };
 
 export default function CommunityPage() {

@@ -14,7 +14,7 @@ const SCHEMA_DESCRIPTION =
 export const metadata: Metadata = {
   title: "Ima's Home for Children",
   description:
-    "Twelve years supporting Ima's Home for Children, the last five as presenting sponsor of the annual 5K. Tatyana Baumgartner serves on the Board of Directors. Caring for 155 orphaned children in the Philippines.",
+    "Ima's Home for Children cares for 155 orphaned children in the Philippines. Twelve years of HTx Pain Institute support, five as presenting sponsor of its 5K.",
 };
 
 const quickLinks = [

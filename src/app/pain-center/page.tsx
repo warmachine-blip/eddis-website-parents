@@ -9,7 +9,7 @@ import { conditions } from "@/lib/conditions";
 export const metadata: Metadata = {
   title: "Conditions We Treat in Houston",
   description:
-    "Most back and joint pain never needs an operation. From neuropathic pain to chronic back pain and knee pain, find the diagnosis that fits and the right path forward — at HTx Pain Institute in Houston, TX.",
+    "Most back and joint pain never needs an operation. Find the diagnosis that fits — back pain, knee pain, sciatica, neuropathic pain — and the path forward.",
 };
 
 export default function PainCenterPage() {

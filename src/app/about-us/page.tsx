@@ -10,7 +10,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "About Our Houston Pain Practice",
   description:
-    "Most back and joint pain never needs an operation. Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute finds the source of your pain and treats it directly — in Houston and Humble.",
+    "Founded in 2018 by Edward Baumgartner Jr., MD, HTx Pain Institute finds the source of your pain and treats it directly — most often without an operation.",
 };
 
 const pillars = [
