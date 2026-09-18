@@ -15,7 +15,7 @@ const SCHEMA_DESCRIPTION =
 export const metadata: Metadata = {
   title: "The ‘Kel Strong’ Mabatah Foundation",
   description:
-    "The ‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. Founded by Kel Mabatah, a former Division I and professional tennis player. HTx Pain Institute sponsored its annual gala.",
+    "The ‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. Founded by Kel Mabatah, a former Division I and professional tennis player. HTx Pain Institute supports it financially and attended its annual gala.",
 };
 
 /**
@@ -25,8 +25,11 @@ export const metadata: Metadata = {
  * it was supplied by the practice and sourced to TCU Magazine, the USTA, and
  * Fox 26 Houston.
  *
- * The practice's involvement is a gala sponsorship and attendance. It is not a
- * presenting sponsor of either event, and nothing here should imply otherwise.
+ * The practice's involvement is financial support for the foundation, and
+ * attendance at its Annual Fundraising Gala. The sponsorship level was never
+ * confirmed, so nothing here calls the practice a sponsor of either event. A
+ * sponsorship at the fall event is expected but has not happened yet; it goes
+ * on the page once it has, and not before.
  */
 const faqs = [
   {
@@ -39,7 +42,7 @@ const faqs = [
   },
   {
     q: "How does HTx Pain Institute support the foundation?",
-    a: "HTx Pain Institute sponsored the foundation's Annual Fundraising Gala and attended. The foundation holds two fundraising events each year — an Annual Tennis Day and an Annual Fundraising Gala — both of which fund the 'Kel Strong' Rehab Scholarship.",
+    a: "HTx Pain Institute supports the foundation financially and attended its Annual Fundraising Gala. The foundation holds two fundraising events each year — an Annual Tennis Day and an Annual Fundraising Gala — both of which fund the 'Kel Strong' Rehab Scholarship.",
   },
   {
     q: "How can I support the foundation directly?",
@@ -56,7 +59,7 @@ const events = [
   {
     icon: "sparkles" as const,
     name: "Annual Fundraising Gala",
-    body: "An evening bringing together survivors, families, supporters, healthcare professionals, and community leaders. HTx Pain Institute sponsored it and attended.",
+    body: "An evening bringing together survivors, families, supporters, healthcare professionals, and community leaders. HTx Pain Institute attended.",
   },
 ];
 
@@ -89,8 +92,8 @@ export default function KelStrongFoundationPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             The ‘Kel Strong’ Mabatah Foundation exists for the months and years
-            after that point. HTx Pain Institute sponsored its annual
-            fundraising gala, and we were in the room.
+            after that point. HTx Pain Institute supports its work, and we were
+            in the room at the annual fundraising gala.
           </p>
         </div>
       </section>

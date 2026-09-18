@@ -1507,8 +1507,8 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     metaDescription: "Sports injury treatment in Houston and Humble. Ultrasound-guided diagnosis, PRP, and nerve blocks that respect the timeline and get you back to your sport.",
     lastReviewed: "2026-09-10",
     leadLine: "Get back to your sport — with diagnostics and biologics that respect the timeline.",
-    heroImage: "young-woman-stretching-leg-on-deck-rail.jpg",
-    heroImageAlt: "A young woman in athletic wear stretches her hamstring with one leg extended onto a wooden deck railing outdoors.",
+    heroImage: "tennis-player-mid-swing-clay-court.jpg",
+    heroImageAlt: "A young man in athletic wear and a dark cap swings a tennis racquet with both hands on an outdoor clay court, feet planted wide.",
     intro:
       "From the recreational athlete to the weekend warrior, sports injuries deserve a precise diagnosis and a treatment plan calibrated to your goals. Ultrasound-guided diagnostic injections, PRP therapy, and selective nerve blocks let us treat tendinopathy, joint injuries, and post-traumatic pain without unnecessary downtime.",
     introParagraphs: [

@@ -58,7 +58,7 @@ export const supportedOrgs: SupportedOrg[] = [
     summary:
       "A 501(c)(3) funding rehabilitation and recovery for people living with traumatic brain injury.",
     involvement:
-      "HTx Pain Institute sponsored the foundation's annual fundraising gala and attended.",
+      "HTx Pain Institute supports the foundation financially and attended its annual fundraising gala.",
   },
 ];
 
