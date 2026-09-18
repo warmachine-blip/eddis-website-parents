@@ -257,17 +257,28 @@ export default function DrBaumgartnerPage() {
 
               <div>
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Community</h2>
-                <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                  Dr. Baumgartner is a committed supporter of{" "}
-                  <Link href="/community/imas-home" className="font-semibold text-brass-text hover:text-navy">
-                    Ima&rsquo;s Home for Children
-                  </Link>
-                  , a 501(c)(3) caring for orphaned children in the Philippines.
-                  The practice has supported Ima&rsquo;s Home for twelve years and
-                  has been the presenting sponsor of its annual 5K for the last
-                  five, and his wife Tatyana serves on the organization&rsquo;s
-                  Board of Directors.
-                </p>
+                <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
+                  <p>
+                    Dr. Baumgartner is a committed supporter of{" "}
+                    <Link href="/community/imas-home" className="font-semibold text-brass-text hover:text-navy">
+                      Ima&rsquo;s Home for Children
+                    </Link>
+                    , a 501(c)(3) caring for orphaned children in the
+                    Philippines. The practice has supported Ima&rsquo;s Home for
+                    twelve years and has been the presenting sponsor of its
+                    annual 5K for the last five, and his wife Tatyana serves on
+                    the organization&rsquo;s Board of Directors.
+                  </p>
+                  <p>
+                    The practice also supports the{" "}
+                    <Link href="/community/kel-strong-foundation" className="font-semibold text-brass-text hover:text-navy">
+                      ‘Kel Strong’ Mabatah Foundation
+                    </Link>{" "}
+                    financially — a 501(c)(3) funding rehabilitation for
+                    traumatic brain injury survivors — and attended its annual
+                    fundraising gala.
+                  </p>
+                </div>
               </div>
 
               <div>
