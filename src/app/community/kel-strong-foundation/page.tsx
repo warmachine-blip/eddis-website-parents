@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
 import SectionHeading from "@/components/section-heading";
@@ -14,13 +15,18 @@ const SCHEMA_DESCRIPTION =
 export const metadata: Metadata = {
   title: "The ‘Kel Strong’ Mabatah Foundation",
   description:
-    "HTx Pain Institute supports the ‘Kel Strong’ Mabatah Foundation, a 501(c)(3) funding rehabilitation and recovery for traumatic brain injury survivors.",
+    "The ‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. Founded by Kel Mabatah, a former Division I and professional tennis player. HTx Pain Institute sponsored its annual gala.",
 };
 
 /**
- * Every factual claim below is taken from kelstrongfoundation.com. Nothing about
- * the foundation is inferred, and the practice's involvement is stated as
- * support — it is not a presenting sponsor of either event.
+ * Claims about the foundation come from kelstrongfoundation.com. Kel Mabatah's
+ * playing career — the junior ranking, Purdue and TCU, the professional spell
+ * ended by an elbow injury, and the left-handed return — is not on that site;
+ * it was supplied by the practice and sourced to TCU Magazine, the USTA, and
+ * Fox 26 Houston.
+ *
+ * The practice's involvement is a gala sponsorship and attendance. It is not a
+ * presenting sponsor of either event, and nothing here should imply otherwise.
  */
 const faqs = [
   {
@@ -33,7 +39,7 @@ const faqs = [
   },
   {
     q: "How does HTx Pain Institute support the foundation?",
-    a: "HTx Pain Institute supports the foundation's work for traumatic brain injury survivors and their families. The foundation holds two annual fundraising events — an Annual Tennis Day and an Annual Fundraising Gala.",
+    a: "HTx Pain Institute sponsored the foundation's Annual Fundraising Gala and attended. The foundation holds two fundraising events each year — an Annual Tennis Day and an Annual Fundraising Gala — both of which fund the 'Kel Strong' Rehab Scholarship.",
   },
   {
     q: "How can I support the foundation directly?",
@@ -45,19 +51,23 @@ const events = [
   {
     icon: "bolt" as const,
     name: "Annual Tennis Day",
-    body: "A day on the court that brings supporters, families, sponsors, and volunteers together around traumatic brain injury recovery.",
+    body: "Played in the sport Kel ranked in nationally, competed in at Purdue and TCU, and came back to left-handed. Supporters, families, sponsors, and volunteers spend the day on court.",
   },
   {
     icon: "sparkles" as const,
     name: "Annual Fundraising Gala",
-    body: "An evening bringing together survivors, families, supporters, healthcare professionals, and community leaders.",
+    body: "An evening bringing together survivors, families, supporters, healthcare professionals, and community leaders. HTx Pain Institute sponsored it and attended.",
   },
 ];
 
 export default function KelStrongFoundationPage() {
   return (
     <div>
-      <SupportedOrgSchema org={org} description={SCHEMA_DESCRIPTION} />
+      <SupportedOrgSchema
+        org={org}
+        description={SCHEMA_DESCRIPTION}
+        founder="Kel Mabatah"
+      />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
@@ -79,7 +89,8 @@ export default function KelStrongFoundationPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             The ‘Kel Strong’ Mabatah Foundation exists for the months and years
-            after that point. HTx Pain Institute is proud to support its work.
+            after that point. HTx Pain Institute sponsored its annual
+            fundraising gala, and we were in the room.
           </p>
         </div>
       </section>
@@ -140,22 +151,31 @@ export default function KelStrongFoundationPage() {
               Its Founder
             </p>
             <h3 className="mt-3 text-balance font-serif text-2xl leading-tight text-navy sm:text-3xl">
-              Kel Mabatah built it out of his own recovery.
+              Kel Mabatah was a tennis player first.
             </h3>
           </div>
           <div className="space-y-4 text-base leading-relaxed text-charcoal-soft lg:col-span-8">
             <p>
-              In 2014 Kel Mabatah survived an attack that left him with a severe
+              He reached a top-ten national junior ranking through the USTA
+              system in Texas, played Division I tennis at Purdue and then TCU,
+              and had begun competing professionally when an elbow injury ended
+              it.
+            </p>
+            <p>
+              In 2014 he survived an attack that left him with a severe
               traumatic brain injury. He spent a week in a coma, underwent four
               brain surgeries, and was brought back to Houston, where he
               rehabilitated at Memorial Hermann and later at TIRR Memorial
               Hermann Rehabilitation. He had to relearn how to walk and speak.
+              He still lives with partial paralysis on his right side and
+              continues outpatient rehabilitation.
             </p>
             <p>
-              He still lives with partial paralysis on his right side and
-              continues outpatient rehabilitation. In 2020 he founded the
-              organization that carries his name, to give other survivors access
-              to the recovery he had to fight for.
+              He plays tennis again. He plays it left-handed.
+            </p>
+            <p>
+              In 2020 he founded the organization that carries his name, to give
+              other survivors access to the recovery he had to fight for.
             </p>
           </div>
         </div>
@@ -166,7 +186,7 @@ export default function KelStrongFoundationPage() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
           <SectionHeading
             eyebrow="How It Raises Money"
-            title="Two events a year, both open to the community."
+            title="Two events a year. The tennis is not incidental."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {events.map((e) => (
@@ -212,7 +232,18 @@ export default function KelStrongFoundationPage() {
             Chronic pain and brain injury are different conditions, but they
             share a shape: the hardest stretch usually begins once the acute
             care is finished and the funding runs out. That is the stretch this
-            foundation pays for, and it is why the practice supports it.
+            foundation pays for.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-charcoal-soft">
+            It also sits close to work we already do. We treat{" "}
+            <Link
+              href="/sports-injuries"
+              className="font-semibold text-brass-text hover:underline"
+            >
+              sports injuries
+            </Link>{" "}
+            at every level, and we know what it costs an athlete to lose their
+            sport &mdash; and what it takes to get any part of it back.
           </p>
         </div>
       </section>

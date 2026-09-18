@@ -12,9 +12,12 @@ import { ORG_ID, supportedOrgId } from "@/lib/schema";
 export default function SupportedOrgSchema({
   org,
   description,
+  founder,
 }: {
   org: SupportedOrg;
   description: string;
+  /** Named founder, where the organization publishes one. */
+  founder?: string;
 }) {
   return (
     <JsonLd
@@ -26,6 +29,7 @@ export default function SupportedOrgSchema({
         url: org.website,
         ...(org.sameAs.length > 0 ? { sameAs: org.sameAs } : {}),
         foundingDate: org.foundingDate,
+        ...(founder ? { founder: { "@type": "Person", name: founder } } : {}),
         description,
         funder: { "@id": ORG_ID },
       }}

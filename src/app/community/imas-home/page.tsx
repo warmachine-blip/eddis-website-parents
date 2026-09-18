@@ -247,7 +247,8 @@ export default function ImasHomePage() {
             growth phase of the practice. From Texas Interventional Pain
             Specialists to HTx Pain Care to HTx Pain Institute, the practice has
             shown up — every February, in League City, with the team in matching
-            shirts — as the presenting sponsor of the annual 5K.
+            shirts. For the last five years it has done so as the presenting
+            sponsor of the annual 5K.
           </p>
           <p className="mt-6 font-serif text-xl italic text-brass-text">
             Twelve years and counting.
