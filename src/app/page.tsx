@@ -42,8 +42,8 @@ const credentials = [
   { icon: "cap" as const, title: "Rush University", subtitle: "Residency · Fellowship" },
   {
     icon: "award" as const,
-    title: "Alpha Omega Alpha",
-    subtitle: "Research Fellowship Honor",
+    title: "Research Fellowship",
+    subtitle: "Alpha Omega Alpha Research Fellowship — a research scholarship",
   },
   {
     icon: "stethoscope" as const,

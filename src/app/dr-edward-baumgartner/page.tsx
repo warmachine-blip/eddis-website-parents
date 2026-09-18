@@ -28,7 +28,7 @@ const facts = [
 
 const education = [
   "B.S. in Biomedical Science, Texas A&M University — Magna Cum Laude, with University and Foundation Honors.",
-  "M.D., University of Texas Health Science Center at Houston — Alpha Omega Alpha Research Fellowship.",
+  "M.D., University of Texas Health Science Center at Houston — awarded the Alpha Omega Alpha Research Fellowship, a research scholarship.",
   "General Surgery Internship (2 years), University of Illinois at Chicago / Mount Sinai Hospital Medical Center.",
   "Anesthesiology Residency, Rush University Medical Center, Chicago.",
   "Pain Medicine Fellowship, Rush University Medical Center, Chicago.",
