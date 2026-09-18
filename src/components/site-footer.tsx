@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from "@/lib/nav";
+import { scheduling } from "@/lib/scheduling";
 import { socialItems } from "@/components/social-icons";
 import CopyrightYear from "@/components/copyright-year";
 
@@ -21,9 +22,26 @@ const footerLinkClass =
 const footerLinkBlockClass =
   "group relative block w-fit before:pointer-events-none before:absolute before:-bottom-0.5 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-brass-light before:transition-transform before:duration-300 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:text-brass-light hover:before:origin-left hover:before:scale-x-100";
 
-function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+function FooterLink({
+  href,
+  external,
+  children,
+}: {
+  href: string;
+  external?: boolean;
+  children: ReactNode;
+}) {
+  const className = `${footerLinkClass} min-h-11 py-2`;
+  // The scheduler lives on Nimblr, so that one link leaves the app entirely.
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
+      </a>
+    );
+  }
   return (
-    <Link href={href} className={`${footerLinkClass} min-h-11 py-2`}>
+    <Link href={href} className={className}>
       {children}
     </Link>
   );
@@ -32,14 +50,19 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
 // Link columns come from src/lib/nav.ts so the footer can never drift from the header.
 const practiceLinks = [
   ...aboutNav,
-  { label: "Community — Ima's Home", href: "/community/imas-home" },
+  { label: "Community", href: "/community" },
   { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ];
 
 const serviceLinks = servicesNav.filter((s) => !s.note);
 
-const patientLinks = [...patientsNav, { label: "Request Appointment", href: "/request-appointment" }];
+const patientLinks = [
+  ...patientsNav,
+  { label: "Request Appointment", href: "/request-appointment" },
+  // External (Nimblr). Patients were phoning the front desk to reschedule.
+  { label: "Reschedule Appointment", href: scheduling.manageUrl, external: true },
+];
 
 export default function SiteFooter() {
   return (
@@ -117,7 +140,9 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-1 text-sm">
               {patientLinks.map((l) => (
                 <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
+                  <FooterLink href={l.href} external={"external" in l}>
+                    {l.label}
+                  </FooterLink>
                 </li>
               ))}
             </ul>

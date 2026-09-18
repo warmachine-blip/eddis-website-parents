@@ -263,9 +263,10 @@ export default function DrBaumgartnerPage() {
                     Ima&rsquo;s Home for Children
                   </Link>
                   , a 501(c)(3) caring for orphaned children in the Philippines.
-                  The practice has been the presenting sponsor of the annual
-                  Ima&rsquo;s Home 5K for eight consecutive years, and his wife
-                  Tatyana serves on the organization&rsquo;s Board of Directors.
+                  The practice has supported Ima&rsquo;s Home for twelve years and
+                  has been the presenting sponsor of its annual 5K for the last
+                  five, and his wife Tatyana serves on the organization&rsquo;s
+                  Board of Directors.
                 </p>
               </div>
 

@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
 import SectionHeading from "@/components/section-heading";
+import SupportedOrgSchema from "@/components/supported-org-schema";
 import { IconBadge } from "@/components/icon-badge";
+import { orgBySlug } from "@/lib/community";
+
+const org = orgBySlug("imas-home")!;
+
+const SCHEMA_DESCRIPTION =
+  "A 501(c)(3) founded in 2013 that cares for orphaned and abandoned children in the Philippines, providing food, shelter, education, healthcare, and a family environment.";
 
 export const metadata: Metadata = {
   title: "Ima's Home for Children",
   description:
-    "Eight years presenting sponsor of the Ima's Home 5K. Tatyana Baumgartner serves on the Board of Directors. Caring for 155 orphaned children in the Philippines.",
+    "Twelve years supporting Ima's Home for Children, the last five as presenting sponsor of the annual 5K. Tatyana Baumgartner serves on the Board of Directors. Caring for 155 orphaned children in the Philippines.",
 };
 
 const quickLinks = [
@@ -31,7 +38,7 @@ const faqs = [
   },
   {
     q: "How is HTx Pain Institute involved?",
-    a: "HTx Pain Institute has been the presenting sponsor of the annual Ima's Home 5K for eight consecutive years. Tatyana Baumgartner, Chief Operating Officer of HTx Pain Institute, serves on the Board of Directors of Ima's Home for Children. The Baumgartner family has known the founders through church and family connection for years.",
+    a: "HTx Pain Institute has supported Ima's Home for Children for twelve years, and has been the presenting sponsor of the annual Ima's Home 5K for the last five consecutive years. Tatyana Baumgartner, Chief Operating Officer of HTx Pain Institute, serves on the Board of Directors of Ima's Home for Children. The Baumgartner family has known the founders through church and family connection for years.",
   },
   {
     q: "When and where is the Ima's Home 5K?",
@@ -46,10 +53,12 @@ const faqs = [
 export default function ImasHomePage() {
   return (
     <div>
+      <SupportedOrgSchema org={org} description={SCHEMA_DESCRIPTION} />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Community" }, { label: "Ima's Home for Children" }]} />
+          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Community", href: "/community" }, { label: "Ima's Home for Children" }]} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
             Community
@@ -59,8 +68,9 @@ export default function ImasHomePage() {
             Children is more than philanthropy.
           </h1>
           <p className="mt-4 max-w-xl font-serif text-xl italic text-brass-light">
-            It is family. Eight years presenting sponsor. A board seat. A
-            relationship measured in lives changed across two continents.
+            It is family. Twelve years of support, the last five as presenting
+            sponsor. A board seat. A relationship measured in lives changed
+            across two continents.
           </p>
         </div>
       </section>
@@ -117,10 +127,11 @@ export default function ImasHomePage() {
 
             <div className="rounded-2xl bg-navy-deep p-6 text-center text-off-white">
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-brass-light">
-                Eight years &amp; counting
+                Twelve years of support
               </p>
               <p className="mt-2 text-sm leading-relaxed text-off-white/75">
-                Presenting sponsor of the annual Ima&rsquo;s Home 5K since 2018.
+                Twelve years alongside Ima&rsquo;s Home &mdash; the last five as
+                presenting sponsor of the annual 5K.
               </p>
             </div>
           </div>
@@ -226,7 +237,7 @@ export default function ImasHomePage() {
       <section className="bg-off-white">
         <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-brass-text">
-            Eight Years &amp; Counting
+            Twelve Years &amp; Counting
           </p>
           <h3 className="mt-3 text-balance font-serif text-2xl leading-tight text-navy sm:text-3xl">
             Through every name change, the commitment has only deepened.
@@ -239,7 +250,7 @@ export default function ImasHomePage() {
             shirts — as the presenting sponsor of the annual 5K.
           </p>
           <p className="mt-6 font-serif text-xl italic text-brass-text">
-            Eight years and counting.
+            Twelve years and counting.
           </p>
         </div>
       </section>

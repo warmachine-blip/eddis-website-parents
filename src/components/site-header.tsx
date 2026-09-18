@@ -95,12 +95,6 @@ export default function SiteHeader() {
               </div>
             </div>
           ))}
-          <Link
-            href="/community/imas-home"
-            className="py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass-text"
-          >
-            Community
-          </Link>
           <ContactSocialReveal />
         </nav>
 
@@ -196,15 +190,6 @@ export default function SiteHeader() {
                 </li>
               );
             })}
-            <li>
-              <Link
-                href="/community/imas-home"
-                className="flex min-h-11 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
-                onClick={closeMobile}
-              >
-                Community
-              </Link>
-            </li>
             <li>
               <Link
                 href="/contact"

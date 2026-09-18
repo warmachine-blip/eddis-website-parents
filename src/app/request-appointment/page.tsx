@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import NimblrScheduler from "@/components/nimblr-scheduler";
+import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
-import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
   title: "Request an Appointment in Houston",
@@ -50,6 +50,11 @@ export default function RequestAppointmentPage() {
         </div>
       </section>
 
+      {/* Rescheduling is a different job from booking; say so before the scheduler. */}
+      <div className="mx-auto max-w-7xl px-6 pt-10 lg:px-10 lg:pt-14">
+        <RescheduleCallout />
+      </div>
+
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -71,24 +76,6 @@ export default function RequestAppointmentPage() {
                 className="mt-5 inline-block rounded-full border border-brass bg-brass px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
               >
                 {practice.phone}
-              </a>
-            </div>
-
-            <div className="rounded-2xl border border-line bg-off-white p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
-                Already booked?
-              </p>
-              <h2 className="mt-1.5 font-serif text-xl text-navy">Reschedule an appointment.</h2>
-              <p className="mt-1.5 text-sm text-charcoal-soft">
-                Change or cancel an existing appointment through our scheduling system.
-              </p>
-              <a
-                href={scheduling.manageUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-block rounded-full border border-navy px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:bg-navy hover:text-off-white"
-              >
-                Reschedule an appointment
               </a>
             </div>
 

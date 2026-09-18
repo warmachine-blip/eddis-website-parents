@@ -12,6 +12,9 @@ export const NURSE_PRACTITIONER_ID = `${SITE_URL}/allison-turner#person`;
 
 export const clinicId = (office: Office) => `${SITE_URL}${office.pageHref}#clinic`;
 
+/** Stable @id for a charity the practice supports; entries live in src/lib/community.ts. */
+export const supportedOrgId = (slug: string) => `${SITE_URL}/community/${slug}#organization`;
+
 export const absolute = (path: string) => `${SITE_URL}${path}`;
 
 /**

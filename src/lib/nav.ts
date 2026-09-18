@@ -102,6 +102,12 @@ export const aboutNav: NavLink[] = [
   { label: "Tatyana Baumgartner, CPA", href: "/tatyana-baumgartner-cpa" },
 ];
 
+/** Organizations the practice supports. One page each, hub at /community. */
+export const communityNav: NavLink[] = [
+  { label: "Ima's Home for Children", href: "/community/imas-home" },
+  { label: "'Kel Strong' Mabatah Foundation", href: "/community/kel-strong-foundation" },
+];
+
 export const patientsNav: NavLink[] = [
   { label: "Patient Resources", href: "/patients" },
   { label: "Insurance & Financing", href: "/insurance" },
@@ -115,6 +121,7 @@ export const primaryNav: NavGroup[] = [
   { label: "Conditions", href: "/pain-center", items: conditionsNav },
   { label: "Locations", href: "/locations", items: locationsNav },
   { label: "Patients", href: "/patients", items: patientsNav },
+  { label: "Community", href: "/community", items: communityNav },
 ];
 
 export const legalNav: NavLink[] = [

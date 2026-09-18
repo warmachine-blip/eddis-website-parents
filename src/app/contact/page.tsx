@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import OfficeMap from "@/components/office-map";
 import ContactForm from "@/components/contact-form";
+import RescheduleCallout from "@/components/reschedule-callout";
 import ReviewsSection from "@/components/reviews-section";
 import { offices, practice } from "@/lib/nav";
 
@@ -65,6 +66,11 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
+
+      {/* Reschedules were arriving by phone; offer the self-serve path first. */}
+      <div className="mx-auto max-w-7xl px-6 pt-10 lg:px-10 lg:pt-14">
+        <RescheduleCallout />
+      </div>
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">

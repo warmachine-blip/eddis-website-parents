@@ -50,7 +50,7 @@ const team = [
   {
     name: "Tatyana Baumgartner, CPA",
     role: "Chief Operating Officer · Board Member",
-    bio: "Chief Operating Officer, Board of Directors — Ima's Home for Children. Leads the operations and community engagement of HTx Pain Institute. Partners with Dr. Baumgartner to build a practice with institute-caliber discipline and family-led warmth. Eight consecutive years as presenting sponsor of the Ima's Home 5K.",
+    bio: "Chief Operating Officer, Board of Directors — Ima's Home for Children. Leads the operations and community engagement of HTx Pain Institute. Partners with Dr. Baumgartner to build a practice with institute-caliber discipline and family-led warmth. Twelve years supporting Ima's Home, the last five as presenting sponsor of its annual 5K.",
     image: "tatyana-baumgartner-portrait.webp",
     alt: "Tatyana Baumgartner, CPA, Chief Operating Officer of HTx Pain Institute — head-and-shoulders portrait in a dark green top against a sunlit cream wall.",
     href: "/tatyana-baumgartner-cpa",

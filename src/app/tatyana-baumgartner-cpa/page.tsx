@@ -125,9 +125,9 @@ export default function TatyanaBaumgartnerPage() {
               development, and community engagement at HTx Pain Institute. She
               partners with Dr. Baumgartner to build a practice with
               institute-caliber discipline and family-led warmth. She also serves
-              on the Board of Directors of Ima&rsquo;s Home for Children, the
-              501(c)(3) the practice has been the presenting sponsor of for eight
-              consecutive years.
+              on the Board of Directors of Ima&rsquo;s Home for Children, a
+              501(c)(3) the practice has supported for twelve years and has
+              presented its annual 5K for the last five.
             </p>
 
             <div className="mt-12 space-y-12">
@@ -182,10 +182,10 @@ export default function TatyanaBaumgartnerPage() {
                     founders through church and family connection for years.
                   </p>
                   <p>
-                    Under her operational leadership, HTx Pain Institute has
-                    been the presenting sponsor of the annual Ima&rsquo;s Home
-                    5K at Walter Hall Park in League City for eight consecutive
-                    years.
+                    The practice has supported Ima&rsquo;s Home for twelve
+                    years, and under her operational leadership has been the
+                    presenting sponsor of the annual 5K at Walter Hall Park in
+                    League City for the last five.
                   </p>
                 </div>
               </div>
@@ -204,9 +204,7 @@ export default function TatyanaBaumgartnerPage() {
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Outside the Clinic</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Outside of the practice, Tatyana enjoys travel, design, and
-                  spending time with her family — especially her children, and
-                  the children of Ima&rsquo;s Home she has come to know over
-                  the years.
+                  spending time with her family.
                 </p>
               </div>
             </div>

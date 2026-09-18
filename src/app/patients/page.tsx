@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
+import RescheduleCallout from "@/components/reschedule-callout";
 import { CheckBullet, IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 import { acceptedPlans } from "@/lib/insurance";
-import { scheduling } from "@/lib/scheduling";
 
 export const metadata: Metadata = {
   title: "Patient Resources · Houston & Humble",
@@ -38,15 +38,6 @@ const resourceCards = [
     href: "/second-opinion",
     icon: "shield",
     tone: "dark",
-  },
-  {
-    title: "Reschedule an Appointment",
-    body: "Already booked? Change or cancel an existing appointment through our scheduling system.",
-    linkLabel: "Reschedule an appointment",
-    href: scheduling.manageUrl,
-    icon: "pulse",
-    tone: "dark",
-    external: true,
   },
 ] as const;
 
@@ -128,6 +119,10 @@ export default function PatientsPage() {
                 </span>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <RescheduleCallout />
           </div>
         </div>
       </section>
