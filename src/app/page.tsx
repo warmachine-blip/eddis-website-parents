@@ -102,9 +102,9 @@ export default function Home() {
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
               Most back and joint pain never needs an operation. Dr. Baumgartner
-              is the physician you see before the surgeon — image-guided
-              treatment, and a straight answer about what your pain actually
-              needs.
+              is the physician you see before you agree to surgery —
+              image-guided treatment, and a straight answer about what your pain
+              actually needs.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -229,7 +229,7 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              The physician you see before the surgeon.
+              The physician you see before you agree to surgery.
             </h2>
             <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
               <p>

@@ -13,7 +13,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD — the physician you see before the surgeon. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
+    "Edward Baumgartner Jr., MD — the physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
 };
 
 const facts = [
@@ -140,8 +140,8 @@ export default function DrBaumgartnerPage() {
             Edward Baumgartner Jr., MD
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            The physician you see before the surgeon. Double board-certified
-            in Anesthesiology and Pain Medicine.
+            The physician you see before you agree to surgery. Double
+            board-certified in Anesthesiology and Pain Medicine.
           </p>
         </div>
       </section>
@@ -195,9 +195,10 @@ export default function DrBaumgartnerPage() {
             <div className="mt-3 space-y-4 text-pretty text-lg leading-relaxed text-charcoal-soft">
               <p>
                 Most back and joint pain never needs an operation. Edward
-                Baumgartner Jr., MD is the physician you see before the surgeon
-                — a Houston native, double board-certified in Anesthesiology and
-                Pain Medicine, with over fifteen years of interventional pain
+                Baumgartner Jr., MD is the physician you see before you agree
+                to surgery — a Houston native, double board-certified in
+                Anesthesiology and Pain Medicine, with over fifteen years of
+                interventional pain
                 medicine experience. He operates, but he is not an orthopedic
                 surgeon or a neurosurgeon. Telling you that you do not need a
                 joint replacement or an open fusion costs him nothing.

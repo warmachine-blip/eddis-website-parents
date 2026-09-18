@@ -35,7 +35,7 @@ const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "The physician you see before the surgeon. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he operates at Townsen Memorial Hospital — SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. He is not an orthopedic surgeon or a neurosurgeon, which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
+    bio: "The physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he operates at Townsen Memorial Hospital — SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. He is not an orthopedic surgeon or a neurosurgeon, which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
