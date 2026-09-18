@@ -30,10 +30,13 @@ export const KNOWS_ABOUT = [
   "Pain Medicine",
   "Anesthesiology",
   "Radiofrequency ablation",
+  "Genicular nerve block",
   "Spinal cord stimulation",
   "Epidural steroid injection",
+  "Peripheral nerve block",
   "Vertebral augmentation",
   "Sacroiliac joint fusion",
+  "Joint injection",
   "Platelet-rich plasma therapy",
 ];
 

@@ -65,6 +65,7 @@ export default function OrganizationSchema() {
         slogan: practice.tagline,
         medicalSpecialty: MEDICAL_SPECIALTY,
         knowsAbout: KNOWS_ABOUT,
+        knowsLanguage: ["English", "Spanish"],
         founder: { "@id": FOUNDER_ID },
         foundingDate: "2018",
         areaServed,

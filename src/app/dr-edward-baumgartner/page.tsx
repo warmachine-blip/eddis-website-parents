@@ -12,15 +12,17 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD — Houston native, double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
+    "Edward Baumgartner Jr., MD — the physician you see instead of a surgeon. Double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
 };
 
 const facts = [
   { label: "Board Cert.", value: "Anesthesiology" },
   { label: "Board Cert.", value: "Pain Medicine" },
   { label: "Experience", value: "15+ years" },
+  { label: "Hospital", value: "Townsen Memorial" },
   { label: "Recognition", value: "Texas Top Doctor" },
   { label: "Founded", value: "2018" },
+  { label: "Languages", value: "English" },
 ];
 
 const education = [
@@ -33,14 +35,27 @@ const education = [
 ];
 
 const toolkit = [
-  "Intracept Procedure for vertebrogenic low-back pain.",
-  "Spinal cord stimulation (trial and permanent implant).",
-  "Radiofrequency ablation — cervical, lumbar, SI, and genicular.",
-  "SI joint fusion (LinQ and other systems) and Minuteman lumbar interspinous fusion.",
-  "Kyphoplasty for vertebral compression fractures.",
-  "MILD procedure for lumbar spinal stenosis.",
-  "Epidural steroid injections and selective nerve blocks.",
-  "PRP therapy for tendinopathy and select joint pain.",
+  {
+    label: "Spine",
+    items: [
+      "Intracept Procedure for vertebrogenic low-back pain.",
+      "Radiofrequency ablation — cervical, lumbar, and sacroiliac.",
+      "SI joint fusion (LinQ and other systems) and Minuteman lumbar interspinous fusion.",
+      "Kyphoplasty for vertebral compression fractures.",
+      "MILD procedure for lumbar spinal stenosis.",
+      "Epidural steroid injections and selective nerve blocks.",
+    ],
+  },
+  {
+    label: "Joints, Tendons & Nerves",
+    items: [
+      "Genicular nerve blocks and radiofrequency ablation for knee pain.",
+      "Ultrasound-guided joint injections — knee, hip, and shoulder.",
+      "PRP therapy for tendinopathy and select joint pain.",
+      "Peripheral nerve blocks, including suprascapular for the shoulder.",
+      "Spinal cord stimulation for neuropathic and post-surgical pain.",
+    ],
+  },
 ];
 
 const servicesProvided = [
@@ -81,7 +96,11 @@ const physicianLd = {
   worksFor: { "@id": ORG_ID },
   knowsAbout: KNOWS_ABOUT,
   award: "Texas Top Doctor",
-  affiliation: { "@type": "Organization", name: "Rush Health System" },
+  affiliation: [
+    { "@type": "Organization", name: "Rush Health System" },
+    { "@type": "Hospital", name: "Townsen Memorial Hospital" },
+  ],
+  knowsLanguage: "English",
   sameAs: [linkedInUrl, txTopDocsUrl],
   hasCredential: [
     {
@@ -120,7 +139,8 @@ export default function DrBaumgartnerPage() {
             Edward Baumgartner Jr., MD
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Double Board-Certified · Anesthesiology &amp; Pain Medicine
+            The physician you see instead of a surgeon. Double board-certified
+            in Anesthesiology and Pain Medicine.
           </p>
         </div>
       </section>
@@ -171,15 +191,25 @@ export default function DrBaumgartnerPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
               Houston Native · Texas A&amp;M · UT Health Houston · Rush University
             </p>
-            <p className="mt-3 text-pretty text-lg leading-relaxed text-charcoal-soft">
-              Edward Baumgartner Jr., MD is a Houston native and double
-              board-certified specialist in Anesthesiology and Pain Medicine, with
-              over fifteen years of interventional pain medicine experience. He
-              founded the practice in 2018 — first as Texas Interventional Pain
-              Specialists, then HTx Pain Care, and now HTx Pain Institute — to
-              bring the modern minimally invasive toolkit to Houston with the
-              time, precision, and judgment every patient deserves.
-            </p>
+            <div className="mt-3 space-y-4 text-pretty text-lg leading-relaxed text-charcoal-soft">
+              <p>
+                Most back and joint pain never needs an operation. Edward
+                Baumgartner Jr., MD is the physician you see instead of a
+                surgeon — a Houston native, double board-certified in
+                Anesthesiology and Pain Medicine, with over fifteen years of
+                interventional pain medicine experience. He does not perform
+                joint replacement or open spine surgery. Telling you that you do
+                not need either costs him nothing.
+              </p>
+              <p>
+                He spent the five years between fellowship and founding his own
+                practice as Medical Director at US Pain &amp; Spine Hospital. He
+                founded the practice in 2018 — first as Texas Interventional
+                Pain Specialists, then HTx Pain Care, and now HTx Pain Institute
+                — and performs hospital-based procedures at Townsen Memorial
+                Hospital.
+              </p>
+            </div>
 
             <div className="mt-12 space-y-12">
               <div>
@@ -216,41 +246,75 @@ export default function DrBaumgartnerPage() {
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Focus</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
-                    Dr. Baumgartner has a particular focus on patients who have
-                    been told their only remaining option is spine surgery —
-                    patients who have been through physical therapy, injections,
-                    and conservative care without lasting relief, and are
-                    looking for an alternative path.
+                    Dr. Baumgartner&rsquo;s practice is built around patients
+                    who have been told an operation is their only remaining
+                    option — a spinal fusion, a knee replacement, a shoulder
+                    repair — after physical therapy, injections, and
+                    conservative care have not held. Most of them have never had
+                    the source of their pain identified precisely.
                   </p>
-                  <p>His procedural toolkit spans the full spectrum of modern interventional pain medicine:</p>
+                  <p>
+                    That is the work, and the method does not change with the
+                    joint: find which structure is generating the pain, confirm
+                    it with a diagnostic block, and treat that structure
+                    directly. A lumbar facet and an arthritic knee are different
+                    problems answered the same way.
+                  </p>
+                  <p>Spine is a large part of the practice. It is not the whole of it:</p>
                 </div>
-                <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
-                  {toolkit.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-charcoal-soft">
-                      <CheckBullet tone="brass" />
-                      {item}
-                    </li>
+                <div className="mt-6 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+                  {toolkit.map((group) => (
+                    <div key={group.label}>
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brass-text">
+                        {group.label}
+                      </p>
+                      <ul className="mt-3 grid gap-3">
+                        {group.items.map((item) => (
+                          <li key={item} className="flex gap-3 text-sm leading-relaxed text-charcoal-soft">
+                            <CheckBullet tone="brass" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
+                <p className="mt-6 text-sm leading-relaxed text-charcoal-soft">
+                  Looking for a particular problem? See{" "}
+                  <Link href="/pain-center" className="font-semibold text-brass-text hover:text-navy">
+                    every condition we treat
+                  </Link>
+                  .
+                </p>
               </div>
 
               <div>
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Philosophy of Care</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
-                    Dr. Baumgartner founded the practice after experiencing the
-                    realities of group practice — and concluding that
-                    patient-first care required building a different kind of
-                    practice from the ground up. He believes the best pain
-                    medicine combines{" "}
+                    Dr. Baumgartner concluded that patient-first care required
+                    a different kind of practice, built from the ground up, and
+                    founded this one. He believes the best pain medicine
+                    combines{" "}
                     <span className="font-semibold text-navy">technical excellence</span> with{" "}
                     <span className="font-semibold text-navy">unhurried clinical judgment</span> — the time to
                     understand the full picture before recommending a plan.
                   </p>
-                  <p className="font-serif text-xl italic leading-snug text-brass-text">
-                    &ldquo;Precision. Lasting Relief.&rdquo; is more than a
-                    tagline — it is the standard he holds himself to with every
-                    patient.
+                  <p>
+                    The two certifications do different work: Anesthesiology
+                    gives him the anatomy and the image-guided technique, Pain
+                    Medicine the diagnostic discipline that says which structure
+                    to treat. Together they are why he can treat pain properly
+                    without defaulting to surgery. An honest
+                    &ldquo;no&rdquo; is part of the job, and he is free to give
+                    it — the operation was never his to perform.
+                  </p>
+                  <p>
+                    That line is worth drawing precisely. He does perform
+                    image-guided procedures, including minimally invasive
+                    stabilization where the imaging supports it. What he is not
+                    is a surgeon: open decompression, multi-level fusion, and
+                    joint replacement are not his to offer, and never have been.
                   </p>
                 </div>
               </div>
@@ -322,7 +386,7 @@ export default function DrBaumgartnerPage() {
             Ready When You Are
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Get the care you deserve. Schedule your consultation today.
+            Get a straight answer about what your pain actually needs.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
             Two Houston-area locations. Same-week consults available. Most

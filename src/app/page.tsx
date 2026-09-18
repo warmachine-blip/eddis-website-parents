@@ -46,27 +46,27 @@ const credentials = [
   },
   {
     icon: "stethoscope" as const,
-    title: "Houston Native",
-    subtitle: "Returning home to elevate care",
+    title: "Medical Director",
+    subtitle: "US Pain & Spine Hospital, before founding the practice",
   },
 ];
 
 const whyHtx = [
   {
+    title: "No Surgical Stake",
+    body: "Dr. Baumgartner performs neither joint replacement nor open spine surgery. When he tells you an operation will not help, he is not turning down work of his own.",
+  },
+  {
     title: "Double Board-Certified",
-    body: "Anesthesiology and Pain Medicine — the credentials that signal both technical mastery and a focused subspecialty.",
+    body: "Anesthesiology for command of the anatomy and the image-guided technique. Pain Medicine to identify which structure is actually generating the pain.",
   },
   {
-    title: "Patient-First Philosophy",
-    body: "Dr. Baumgartner left group practice to build a clinic that prioritizes time, listening, and individualized plans over throughput.",
+    title: "Time to Get It Right",
+    body: "He left group practice to build a clinic where the diagnosis gets the hour it needs — because the wrong procedure is not a small mistake.",
   },
   {
-    title: "Cutting-Edge Treatments",
-    body: "Spinal cord stimulation, Intracept, kyphoplasty, RFA, PRP — the full modern toolkit, applied with skill.",
-  },
-  {
-    title: "Non-Invasive Focus",
-    body: "Scientifically proven approaches that minimize medication reliance and preserve your quality of life.",
+    title: "Treatment, Not Maintenance",
+    body: "Genicular RFA for knees, PRP for tendons and joints, Intracept and spinal cord stimulation for the spine — aimed at the source, so you are not managed on medication indefinitely.",
   },
 ];
 
@@ -100,8 +100,10 @@ export default function Home() {
             <HeroHeadline />
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
-              Advanced interventional pain management and regenerative wellness —
-              personalized to your life, your goals, and your body.
+              Most back and joint pain never needs an operation. Dr. Baumgartner
+              is the physician you see instead of a surgeon — image-guided
+              treatment, and a straight answer about what your pain actually
+              needs.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -226,15 +228,25 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              Houston-raised. Chicago-trained. Returning home to put patients first.
+              The physician you see instead of a surgeon.
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
-              Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
-              mission: bring the modern interventional toolkit to Houston — applied
-              with the time, precision, and judgment every patient deserves. No
-              shortcuts. No high-volume churn. Just the care he&rsquo;d want for his
-              own family.
-            </p>
+            <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
+              <p>
+                Most back and joint pain never needs an operation. Edward
+                Baumgartner Jr., MD is the physician who can tell you so without
+                a stake in the answer: he performs neither joint replacement
+                nor open spine surgery, so the operation he would otherwise be
+                sending you toward is not one he performs.
+              </p>
+              <p>
+                What makes that judgment worth having is the training behind it.
+                Anesthesiology gave him command of the anatomy and the
+                image-guided technique; Pain Medicine taught him to find which
+                structure is actually generating the pain — and to treat it
+                directly. A Houston native, he founded the practice in 2018 and
+                performs hospital-based procedures at Townsen Memorial Hospital.
+              </p>
+            </div>
 
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {credentials.map((c) => (
@@ -344,8 +356,8 @@ export default function Home() {
           <SectionHeading
             tone="dark"
             eyebrow="Why HTx Pain"
-            title="The standard of pain care, raised to where it belongs."
-            lead="A clinic built around clinical excellence and the human relationship between physician and patient — without compromise on either."
+            title="Why patients come here before they say yes to surgery."
+            lead="Most back and joint pain has a source that can be found and treated directly. Finding it takes time, imaging read properly, and a physician with no reason to reach for the operating room."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyHtx.map((item) => (
@@ -453,7 +465,7 @@ export default function Home() {
             Ready When You Are
           </p>
           <h2 className="mx-auto mt-3 max-w-2xl text-balance font-serif text-3xl leading-tight sm:text-4xl">
-            Get the care you deserve. Schedule your consultation today.
+            Get a straight answer about what your pain actually needs.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
             Two Houston-area locations. Same-week consults available. Most insurance

@@ -9,13 +9,13 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "About Our Houston Pain Practice",
   description:
-    "Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
+    "Most back and joint pain never needs an operation. Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute finds the source of your pain and treats it directly — in Houston and Humble.",
 };
 
 const pillars = [
   {
-    title: "Patient-First",
-    body: "Time, listening, and individualized plans.",
+    title: "No Surgical Stake",
+    body: "No joint replacement, no open spine surgery.",
     icon: "pulse",
   },
   {
@@ -25,7 +25,7 @@ const pillars = [
   },
   {
     title: "Precision Toolkit",
-    body: "From Intracept to MILD to spinal cord stimulation.",
+    body: "From genicular RFA and PRP to Intracept and spinal cord stimulation.",
     icon: "bolt",
   },
 ] as const;
@@ -34,7 +34,7 @@ const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "Founding Physician, Double Board-Certified in Anesthesiology and Pain Medicine, and a listed Texas Top Doctor. A Houston native with over fifteen years of interventional pain medicine experience. Specializes in advanced minimally invasive procedures including Intracept, spinal cord stimulation, radiofrequency ablation, and SI joint fusion — with particular focus on patients told their only option is spine surgery.",
+    bio: "The physician you see instead of a surgeon. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he now performs hospital-based procedures at Townsen Memorial Hospital. He performs neither joint replacement nor open spine surgery — which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
@@ -80,10 +80,11 @@ export default function AboutUsPage() {
             Compassionate care, <em className="not-italic text-brass-light">precision medicine.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            {practice.tagline} At HTx Pain Institute, every patient deserves a
-            personalized and compassionate approach to pain management. Founded
-            by Edward Baumgartner Jr., MD in 2018, our mission is to put the patient
-            first while elevating the standard of care in pain medicine.
+            {practice.tagline} Most back and joint pain never needs an
+            operation — and the physician who tells you so should have nothing
+            to gain either way. Founded by Edward Baumgartner Jr., MD in 2018,
+            HTx Pain Institute exists to find the source of your pain and treat
+            it directly.
           </p>
         </div>
       </section>
@@ -147,17 +148,20 @@ export default function AboutUsPage() {
                   care that delivers lasting relief.
                 </p>
                 <p>
-                  After experiencing the inefficiencies of group practice, Dr.
-                  Baumgartner was driven to create a more patient-focused model.
-                  His vision was clear: elevate the standard of care by
-                  prioritizing patient well-being and offering comprehensive,
-                  innovative pain management solutions.
+                  After fellowship, Dr. Baumgartner spent five years as Medical
+                  Director at US Pain &amp; Spine Hospital. What he took from
+                  those years, and from the inefficiencies of group practice,
+                  was that patient-first care needed a different kind of
+                  practice — built from the ground up.
                 </p>
                 <p>
                   HTx Pain Institute is built on the conviction that
                   interventional pain medicine — applied carefully,
                   individually, and with judgment — can return people to the
-                  lives they want, often without long-term medication reliance.
+                  lives they want: usually without an operation, and often
+                  without long-term medication reliance. Dr. Baumgartner performs
+                  neither joint replacement nor open spine surgery, so a
+                  recommendation against operating costs him nothing.
                 </p>
               </div>
 
@@ -181,7 +185,7 @@ export default function AboutUsPage() {
           <SectionHeading
             eyebrow="Leadership"
             title="People who chose this work for the right reasons."
-            lead="A small, focused team — every patient is known to us."
+            lead="A small, focused team — every patient is known to us. Our staff speak English and Spanish."
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -258,7 +262,7 @@ export default function AboutUsPage() {
             Ready When You Are
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Get the care you deserve. Schedule your consultation today.
+            Get a straight answer about what your pain actually needs.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
             Two Houston-area locations. Same-week consults available. Most

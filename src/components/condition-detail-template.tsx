@@ -316,7 +316,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
             Ready When You Are
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Get the care you deserve. Schedule your consultation today.
+            Get a straight answer about what your pain actually needs.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-base text-off-white/80">
             Two Houston-area locations. Same-week consults available. Most insurance accepted.

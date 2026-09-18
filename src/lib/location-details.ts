@@ -495,7 +495,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       "Texas 249 corridor: easy access from Beltway 8 / Sam Houston Tollway",
       "Approximately 10 minutes from Vintage Park and Willowbrook Mall",
       "Convenient from FM 1960, Cypresswood Drive, and Antoine Drive",
-      "Houston Methodist Willowbrook nearby for prior imaging and post-op care",
+      "Houston Methodist Willowbrook nearby for prior imaging",
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [

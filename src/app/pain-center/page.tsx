@@ -9,7 +9,7 @@ import { conditions } from "@/lib/conditions";
 export const metadata: Metadata = {
   title: "Conditions We Treat in Houston",
   description:
-    "From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward, at HTx Pain Institute in Houston, TX.",
+    "Most back and joint pain never needs an operation. From neuropathic pain to chronic back pain and knee pain, find the diagnosis that fits and the right path forward — at HTx Pain Institute in Houston, TX.",
 };
 
 export default function PainCenterPage() {
@@ -21,7 +21,7 @@ export default function PainCenterPage() {
           as="h1"
           eyebrow="Pain Center"
           title="Conditions we treat in Houston & Humble."
-          lead="The conditions we treat, with the expertise they require — from neuropathic pain to chronic back pain, knee pain, and more."
+          lead="Most of what follows has a source that can be found and treated without an operation. Start with the diagnosis that fits — from neuropathic pain to chronic back pain, knee pain, and more."
         />
       </section>
 
