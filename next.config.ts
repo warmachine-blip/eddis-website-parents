@@ -1,6 +1,8 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 import { SITE_URL } from "./src/lib/site";
 import { HTX_PAIN_CARE_PATHS, TX_PAIN_SPECIALISTS_PATHS } from "./src/lib/legacy-urls";
+import { HTX_PAIN_CARE_BLOG_PATHS } from "./src/lib/blog-redirects";
 
 /**
  * Domains that used to serve this practice, 301'd to SITE_URL. Host values are
@@ -61,6 +63,9 @@ const nextConfig: NextConfig = {
       // Per-path remaps run first: a page the new site spells differently has to
       // reach its real URL, not a 404 at the old path on the new domain.
       ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_PATHS),
+      // The old WordPress blog. Only the posts that did not survive appear here;
+      // a kept post keeps its slug and is carried by domainRedirect below.
+      ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_BLOG_PATHS),
       ...pathRedirects(TX_PAIN_SPECIALISTS_HOST, TX_PAIN_SPECIALISTS_PATHS),
       // Everything else on a legacy domain keeps its path and only changes host.
       // Most old TIPS paths do not exist here, so this lands them on a 404 at
@@ -108,4 +113,9 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+/**
+ * Article bodies are .mdx files in src/content/blog, imported by the post
+ * route. `pageExtensions` is deliberately NOT widened to include mdx: these are
+ * content, not routes — the only blog route is src/app/blog/[slug]/page.tsx.
+ */
+export default createMDX()(nextConfig);

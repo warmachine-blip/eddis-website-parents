@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog-posts";
+import { formatReviewDate } from "@/lib/review";
 
 export default function BlogPostsGrid({
   categories,
@@ -66,7 +67,7 @@ export default function BlogPostsGrid({
                   {post.excerpt}
                 </p>
                 <div className="mt-4 flex items-center justify-between border-t border-card-border pt-4 text-xs font-medium text-navy-500">
-                  <span>{post.date}</span>
+                  <span>{formatReviewDate(post.datePublished)}</span>
                   <span>{post.readTime}</span>
                 </div>
                 <Link

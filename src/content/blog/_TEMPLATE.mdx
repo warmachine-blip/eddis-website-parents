@@ -1,0 +1,34 @@
+{/*
+  Article body template. Copy to <slug>.mdx, where <slug> matches the post's
+  entry in src/lib/blog-posts.ts exactly.
+
+  No frontmatter and no metadata here — title, excerpt, image, dates and the
+  physician review date all live in blog-posts.ts, so the card and the article
+  can never disagree. This file is the prose only.
+
+  No className anywhere either: src/mdx-components.tsx maps every element to the
+  site's type scale. Write plain markdown and it comes out looking like the rest
+  of the site.
+
+  Underscore-prefixed, so it is never a real slug.
+*/}
+
+Opening paragraph. No H1 — the post route renders the headline from
+blog-posts.ts, and a second one here would give the page two.
+
+## A section heading
+
+Body copy. Internal links route through next/link automatically, so write them
+plainly: [radiofrequency ablation](/radiofrequency-ablation). External links
+open in a new tab on their own.
+
+Use **bold** for the term a reader is scanning for, not for emphasis.
+
+- A list item
+- Another one
+
+### A subsection
+
+Keep paragraphs short. These read on a phone more often than not.
+
+> A pull quote, where one earns its place.

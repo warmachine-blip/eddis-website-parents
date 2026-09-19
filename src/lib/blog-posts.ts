@@ -11,7 +11,22 @@ export type BlogPost = {
   image: string;
   alt: string;
   category: string;
-  date: string;
+  /** ISO. For migrated posts this is the date it first ran on the old site. */
+  datePublished: string;
+  /** ISO. Omit when the post has not been substantively edited since. */
+  dateModified?: string;
+  /**
+   * ISO date a physician last reviewed the clinical content. Required before a
+   * post with a body can publish — the post route throws at build time if a
+   * body exists without one, so unreviewed medical content cannot ship.
+   */
+  lastReviewed?: string;
+  /**
+   * Who the BlogPosting names as author. Defaults to the practice: the migrated
+   * posts were written under old branding and their authorship is not
+   * established. Set "physician" only where that is actually true.
+   */
+  author?: "practice" | "physician";
   readTime: string;
   relatedHref: string;
   relatedLabel: string;
@@ -36,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     image: "blog-radiofrequency-ablation.jpg",
     alt: "Radiofrequency ablation for facet joint pain",
     category: "Spine",
-    date: "Feb 24, 2026",
+    datePublished: "2026-02-24",
     readTime: "5 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
@@ -50,7 +65,7 @@ export const blogPosts: BlogPost[] = [
     image: "blog-spinal-cord-stimulation.jpg",
     alt: "Spinal cord stimulation recovery",
     category: "Recovery",
-    date: "Mar 18, 2026",
+    datePublished: "2026-03-18",
     readTime: "6 min read",
     relatedHref: "/spinal-cord-stimulation-specialist",
     relatedLabel: "Spinal Cord Stimulation",
@@ -63,7 +78,7 @@ export const blogPosts: BlogPost[] = [
     image: "blog-treatment-options-for-spinal-stenosis.jpg",
     alt: "Vertebrogenic low-back pain diagnosis",
     category: "Conditions",
-    date: "Apr 9, 2026",
+    datePublished: "2026-04-09",
     readTime: "4 min read",
     relatedHref: "/intracept-procedure",
     relatedLabel: "Intracept Procedure",
@@ -76,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     image: "blog-interventional-pain-management.jpg",
     alt: "Pain medication and interventional pain management",
     category: "Lifestyle",
-    date: "May 28, 2026",
+    datePublished: "2026-05-28",
     readTime: "3 min read",
     relatedHref: "/patients",
     relatedLabel: "Patient Resources",
@@ -89,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     image: "treatment-prp-procedure.jpg",
     alt: "Platelet-rich plasma (PRP) therapy",
     category: "Procedures",
-    date: "Jun 15, 2026",
+    datePublished: "2026-06-15",
     readTime: "5 min read",
     relatedHref: "/prp-procedure",
     relatedLabel: "PRP (Platelet-Rich Plasma)",
@@ -103,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     image: "blog-kyphoplasty.jpg",
     alt: "Kyphoplasty patient recovery story",
     category: "Patient Stories",
-    date: "Jul 4, 2026",
+    datePublished: "2026-07-04",
     readTime: "6 min read",
     relatedHref: "/kyphoplasty-specialist",
     relatedLabel: "Kyphoplasty",

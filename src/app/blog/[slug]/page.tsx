@@ -3,8 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import { blogPosts } from "@/lib/blog-posts";
+import { formatReviewDate } from "@/lib/review";
+import { SITE_URL } from "@/lib/site";
+import { ORG_ID, FOUNDER_ID, WEBSITE_ID } from "@/lib/schema";
 import FinalCta from "@/components/final-cta";
+
+/**
+ * Article body, or null while a post is still metadata-only. The path prefix is
+ * static so the bundler can resolve the directory; only the slug varies.
+ */
+async function bodyFor(slug: string) {
+  try {
+    const mod = await import(`../../../content/blog/${slug}.mdx`);
+    return mod.default as React.ComponentType;
+  } catch {
+    return null;
+  }
+}
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -28,9 +45,51 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
+  const Body = await bodyFor(slug);
+
+  /**
+   * Every one of these posts is medical content. A body without a physician
+   * review date is a publishing mistake, not a rendering case — throwing here
+   * fails the static build rather than shipping unreviewed clinical claims.
+   */
+  if (Body && !post.lastReviewed) {
+    throw new Error(
+      `Blog post "${slug}" has an article body but no lastReviewed date. ` +
+        `Medical content does not publish without physician review — add ` +
+        `lastReviewed to its entry in src/lib/blog-posts.ts.`
+    );
+  }
+
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  /**
+   * One BlogPosting node. Author, publisher and reviewer are @id references
+   * into the site-wide @graph emitted by OrganizationSchema, so the person and
+   * the practice are described once for the whole site rather than restated on
+   * every post.
+   */
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    url,
+    mainEntityOfPage: url,
+    headline: post.title,
+    description: post.excerpt,
+    image: `${SITE_URL}/images/${post.image}`,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified ?? post.datePublished,
+    author: { "@id": post.author === "physician" ? FOUNDER_ID : ORG_ID },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": WEBSITE_ID },
+    inLanguage: "en-US",
+    ...(post.lastReviewed
+      ? { reviewedBy: { "@id": FOUNDER_ID }, lastReviewed: post.lastReviewed }
+      : {}),
+  };
 
   return (
     <div>
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-3xl px-6 py-16 lg:px-10 lg:py-24">
@@ -50,7 +109,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
             {post.title}
           </h1>
           <div className="mt-6 flex items-center gap-3 text-sm text-off-white/70">
-            <span>{post.date}</span>
+            <span>{formatReviewDate(post.datePublished)}</span>
             <span aria-hidden="true">&middot;</span>
             <span>{post.readTime}</span>
           </div>
@@ -65,6 +124,12 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           </div>
 
           <p className="mt-10 text-lg leading-relaxed text-charcoal">{post.excerpt}</p>
+
+          {Body ? (
+            <div className="mt-2">
+              <Body />
+            </div>
+          ) : null}
 
           <div className="mt-10 rounded-2xl border border-line bg-off-white p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
@@ -96,8 +161,19 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <FinalCta surface="bordered" eyebrow="plain" />
+      {/* Medically reviewed + final CTA — the same block the clinical pages carry. */}
+      <FinalCta surface="bordered" eyebrow="plain">
+        {post.lastReviewed ? (
+          <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
+            <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">Medically Reviewed</p>
+            <p className="mt-1 text-sm text-off-white/70">
+              Reviewed by Edward Baumgartner Jr., MD &middot; Last reviewed{" "}
+              <time dateTime={post.lastReviewed}>{formatReviewDate(post.lastReviewed)}</time>.
+              Information on this page is not medical advice. Always consult your physician.
+            </p>
+          </div>
+        ) : null}
+      </FinalCta>
     </div>
   );
 }
