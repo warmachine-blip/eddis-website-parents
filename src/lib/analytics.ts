@@ -7,16 +7,15 @@
 export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
 
 /**
- * Google Ads. This is the site's only gtag.js loader — Google's "only one
- * Google tag per page" rule means additional destinations (a GA4 property,
- * a second Ads account) get another `gtag('config', ...)` line below, never a
- * second `googletagmanager.com/gtag/js` script tag.
+ * Google Ads conversion ID AW-700388531 is NOT configured here. It is a tag
+ * inside the GTM container above, which is the only thing that should load it.
  *
- * Note for whoever edits the GTM container: do NOT also deploy a Google tag
- * for this same AW- ID inside GTM-PP5NDT4H. The hard-coded tag here already
- * covers it, and running both double-counts conversions.
+ * This file used to also hard-code a gtag.js loader and a gtag('config', ...)
+ * for that same ID. With the container tag in place, both were live: two
+ * connections to one conversion ID, double-counting every booking. The
+ * hard-coded pair was removed — do not restore it. A second destination (a GA4
+ * property, another Ads account) belongs in the container too, not here.
  */
-export const GOOGLE_ADS_ID = "AW-700388531";
 
 /**
  * dataLayer event pushed by /appointment-confirmed. Use this as the GTM
@@ -24,9 +23,6 @@ export const GOOGLE_ADS_ID = "AW-700388531";
  * trigger, so the conversion survives a change to the page's path.
  */
 export const BOOKING_CONVERSION_EVENT = "appointment_confirmed";
-
-/** Google tag (gtag.js) bootstrap. Runs inline, in <head>, during parse. */
-export const GOOGLE_ADS_SNIPPET = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}');`;
 
 /** Google Tag Manager container bootstrap — Google's published snippet, minified. */
 export const GTM_SNIPPET = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`;
