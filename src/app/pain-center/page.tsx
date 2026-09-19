@@ -9,7 +9,7 @@ import { conditions } from "@/lib/conditions";
 export const metadata: Metadata = {
   title: "Conditions We Treat in Houston",
   description:
-    "Most back and joint pain never needs an operation. Find the diagnosis that fits — back pain, knee pain, sciatica, neuropathic pain — and the path forward.",
+    "Most back and joint pain never needs an operation. Start with the diagnosis that fits: back pain, knee pain, sciatica, neuropathic pain.",
 };
 
 export default function PainCenterPage() {
@@ -21,7 +21,7 @@ export default function PainCenterPage() {
           as="h1"
           eyebrow="Pain Center"
           title="Conditions we treat in Houston & Humble."
-          lead="Most of what follows has a source that can be found and treated without an operation. Start with the diagnosis that fits — from neuropathic pain to chronic back pain, knee pain, and more."
+          lead="Start with the diagnosis that fits: back pain, knee pain, sciatica, neuropathic pain, and the rest. Most of what is here can be treated without an operation."
         />
       </section>
 

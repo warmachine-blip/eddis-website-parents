@@ -10,13 +10,13 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "About Our Houston Pain Practice",
   description:
-    "Founded in 2018 by Edward Baumgartner Jr., MD, HTx Pain Institute finds the source of your pain and treats it directly — most often without an operation.",
+    "Founded in 2018 by Edward Baumgartner Jr., MD, HTx Pain Institute finds the source of your pain and treats it directly, most often without an operation.",
 };
 
 const pillars = [
   {
-    title: "No Stake in That Operation",
-    body: "He operates, but not as an orthopedic surgeon or a neurosurgeon.",
+    title: "Not the One Operating",
+    body: "He does not perform joint replacements or open fusions.",
     icon: "pulse",
   },
   {
@@ -35,7 +35,7 @@ const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "The physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years of interventional pain medicine experience. Medical Director at US Pain & Spine Hospital before founding the practice in 2018, he operates at Townsen Memorial Hospital — SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. He is not an orthopedic surgeon or a neurosurgeon, which is why patients told an operation is their only option, on a spine or a joint, come to him for the other answer.",
+    bio: "Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years in interventional pain medicine. He was Medical Director at US Pain & Spine Hospital before founding this practice in 2018, and operates at Townsen Memorial Hospital: SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. Joint replacement and open fusion are another specialty's work, which is why patients told surgery is their only option come to him for a second read.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
@@ -81,11 +81,10 @@ export default function AboutUsPage() {
             Compassionate care, <em className="not-italic text-brass-light">precision medicine.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            {practice.tagline} Most back and joint pain never needs an
-            operation — and the physician who tells you so should have nothing
-            to gain either way. Founded by Edward Baumgartner Jr., MD in 2018,
-            HTx Pain Institute exists to find the source of your pain and treat
-            it directly.
+            {practice.tagline} Edward Baumgartner Jr., MD founded HTx Pain
+            Institute in 2018 to do one thing properly: find what is causing a
+            patient&rsquo;s pain, and treat that. Most of the time it does not
+            take an operation.
           </p>
         </div>
       </section>
@@ -153,17 +152,16 @@ export default function AboutUsPage() {
                   Director at US Pain &amp; Spine Hospital. What he took from
                   those years, and from the inefficiencies of group practice,
                   was that patient-first care needed a different kind of
-                  practice — built from the ground up.
+                  practice, built from the ground up.
                 </p>
                 <p>
                   HTx Pain Institute is built on the conviction that
-                  interventional pain medicine — applied carefully,
-                  individually, and with judgment — can return people to the
-                  lives they want: usually without an operation, and often
-                  without long-term medication reliance. Dr. Baumgartner
-                  operates, but he is not an orthopedic surgeon or a
-                  neurosurgeon — so a recommendation against a joint replacement
-                  or an open fusion costs him nothing.
+                  interventional pain medicine, applied carefully and with
+                  judgment, can return people to the lives they want. Usually
+                  that happens without an operation, and often without long-term
+                  medication. And since joint replacement and open fusion are
+                  not work Dr. Baumgartner does, it makes no difference to him
+                  which way that goes.
                 </p>
               </div>
 
@@ -187,7 +185,7 @@ export default function AboutUsPage() {
           <SectionHeading
             eyebrow="Leadership"
             title="People who chose this work for the right reasons."
-            lead="A small, focused team — every patient is known to us. Our staff speak English and Spanish."
+            lead="A small, focused team. Every patient is known to us, and our staff speak English and Spanish."
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

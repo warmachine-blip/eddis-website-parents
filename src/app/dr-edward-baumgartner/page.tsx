@@ -13,7 +13,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD — the Houston physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine.",
+    "Edward Baumgartner Jr., MD, the Houston physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine.",
 };
 
 const facts = [
@@ -194,22 +194,18 @@ export default function DrBaumgartnerPage() {
             </p>
             <div className="mt-3 space-y-4 text-pretty text-lg leading-relaxed text-charcoal-soft">
               <p>
-                Most back and joint pain never needs an operation. Edward
-                Baumgartner Jr., MD is the physician you see before you agree
-                to surgery — a Houston native, double board-certified in
-                Anesthesiology and Pain Medicine, with over fifteen years of
-                interventional pain
-                medicine experience. He operates, but he is not an orthopedic
-                surgeon or a neurosurgeon. Telling you that you do not need a
-                joint replacement or an open fusion costs him nothing.
+                Edward Baumgartner Jr., MD is a Houston native with over fifteen
+                years in interventional pain medicine. He does not perform joint
+                replacements or open fusions. That is worth knowing, because it
+                means he has no reason to talk you into one, and none to talk
+                you out of one either.
               </p>
               <p>
                 He spent the five years between fellowship and founding his own
-                practice as Medical Director at US Pain &amp; Spine Hospital. He
-                founded the practice in 2018 — first as Texas Interventional
-                Pain Specialists, then HTx Pain Care, and now HTx Pain Institute
-                — and performs hospital-based procedures at Townsen Memorial
-                Hospital.
+                practice as Medical Director at US Pain &amp; Spine Hospital. The
+                practice he founded in 2018 has carried three names since: Texas
+                Interventional Pain Specialists, then HTx Pain Care, and now HTx
+                Pain Institute. He operates at Townsen Memorial Hospital.
               </p>
             </div>
 
@@ -249,11 +245,11 @@ export default function DrBaumgartnerPage() {
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Dr. Baumgartner&rsquo;s practice is built around patients
-                    who have been told an operation is their only remaining
-                    option — a spinal fusion, a knee replacement, a shoulder
-                    repair — after physical therapy, injections, and
-                    conservative care have not held. Most of them have never had
-                    the source of their pain identified precisely.
+                    who have been told an operation is the only thing left. A
+                    spinal fusion, a knee replacement, a shoulder repair, after
+                    physical therapy and injections have not held. Most of them
+                    have never had the source of their pain identified
+                    precisely.
                   </p>
                   <p>
                     That is the work, and the method does not change with the
@@ -299,7 +295,7 @@ export default function DrBaumgartnerPage() {
                     founded this one. He believes the best pain medicine
                     combines{" "}
                     <span className="font-semibold text-navy">technical excellence</span> with{" "}
-                    <span className="font-semibold text-navy">unhurried clinical judgment</span> — the time to
+                    <span className="font-semibold text-navy">unhurried clinical judgment</span>: the time to
                     understand the full picture before recommending a plan.
                   </p>
                   <p>
@@ -308,18 +304,18 @@ export default function DrBaumgartnerPage() {
                     Medicine the diagnostic discipline that says which structure
                     to treat. Together they are why he can treat pain properly
                     without defaulting to surgery. An honest
-                    &ldquo;no&rdquo; is part of the job, and he is free to give
-                    it — the operation was never his to perform.
+                    &ldquo;no&rdquo; is part of the job, and nothing stops him
+                    giving it.
                   </p>
                   <p>
-                    That line is worth drawing precisely, because it is not a
-                    limitation. He operates, at Townsen Memorial Hospital: SI
-                    joint fusion, Minuteman interspinous fusion, kyphoplasty,
-                    and spinal cord stimulator implants are all his own work.
-                    What he is not is an orthopedic surgeon or a neurosurgeon.
-                    Open decompression, multi-level instrumented fusion and
-                    joint replacement belong to those specialties — they are not
-                    his to offer, and never have been.
+                    It is worth being precise about that line, because it is
+                    not a limitation. He operates at Townsen Memorial Hospital,
+                    and SI joint fusion, Minuteman interspinous fusion,
+                    kyphoplasty and spinal cord stimulator implants are all his
+                    own work. What he is not is an orthopedic surgeon or a
+                    neurosurgeon. Open decompression, multi-level instrumented
+                    fusion and joint replacement belong to those specialties. He
+                    has never done them, and does not claim to.
                   </p>
                 </div>
               </div>

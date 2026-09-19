@@ -8,7 +8,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Houston Second Opinions Before Surgery",
   description:
-    "Told you need an operation? A second opinion from a physician who operates but is not an orthopedic surgeon or neurosurgeon — and has no stake in the answer.",
+    "Told you need an operation? A second opinion from a physician who does not perform joint replacements or open fusions, and has nothing riding on your answer.",
 };
 
 /**
@@ -28,7 +28,7 @@ const visit = [
   {
     number: "1",
     title: "Your records are read before you arrive",
-    body: "Prior imaging, procedures, and notes — including operative reports where there has already been surgery. The appointment starts from what is already known about you, not from a blank page.",
+    body: "Prior imaging, procedures, and notes, including operative reports where there has already been surgery. The appointment starts from what is already known about you, not from a blank page.",
   },
   {
     number: "2",
@@ -43,12 +43,12 @@ const visit = [
   {
     number: "4",
     title: "A diagnostic block, where one applies",
-    body: "Where the pattern points at a specific structure, a block confirms it before anything is recommended — two separate medial branch blocks before radiofrequency ablation, a genicular block before knee ablation.",
+    body: "Where the pattern points at a specific structure, a block confirms it before anything is recommended. Two separate medial branch blocks before radiofrequency ablation, a genicular block before knee ablation.",
   },
   {
     number: "5",
     title: "A written impression you can act on",
-    body: "A clear recommendation in writing — including a referral if the operation turns out to be the right answer.",
+    body: "A clear recommendation in writing, including a referral if surgery turns out to be the right answer.",
   },
 ];
 
@@ -65,7 +65,7 @@ const considerations = [
   "A surgeon has recommended an operation and you want another read before you agree.",
   "You have had the operation and the pain is still there.",
   "You've been on long-term opioids and want a real path off them.",
-  "You're getting injections that haven't worked — or have stopped working.",
+  "You're getting injections that haven't worked, or have stopped working.",
   "You have a diagnosis but doubt it's complete.",
   "You're considering an implanted device, such as a spinal cord stimulator.",
 ];
@@ -82,15 +82,15 @@ export default function SecondOpinionPage() {
             Second Opinion
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Before you agree to the operation, get a read from someone who
-            doesn&rsquo;t perform it.
+            Before you agree to surgery, get a read from someone who would not
+            be the one operating.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Most back and joint pain never needs surgery. Edward Baumgartner
             Jr., MD is double board-certified in Anesthesiology and Pain
-            Medicine. He operates — but not as an orthopedic surgeon or a
-            neurosurgeon, so the joint replacement or the open fusion you are
-            weighing is not his to perform.
+            Medicine, and he does not perform joint replacements or open
+            fusions. Whatever he tells you about yours, he has nothing riding
+            on it.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
@@ -119,18 +119,18 @@ export default function SecondOpinionPage() {
           <div className="mt-6 grid max-w-5xl gap-x-14 gap-y-4 text-base leading-relaxed text-charcoal-soft lg:grid-cols-2">
             <div className="space-y-4">
               <p>
-                A second opinion is not adversarial. It is diligent — and it is
-                most useful when it comes from someone whose recommendation is
-                not shaped by what they would be the one to perform.
+                A second opinion is not adversarial. It is diligent. And it is
+                most useful coming from someone whose recommendation is not
+                shaped by what they would be the one to perform.
               </p>
               <p>
-                Dr. Baumgartner operates — SI joint fusion, Minuteman
+                Dr. Baumgartner operates: SI joint fusion, Minuteman
                 interspinous fusion, kyphoplasty, spinal cord stimulator
                 implants. What he is not is an orthopedic surgeon or a
                 neurosurgeon, so open decompression, multi-level instrumented
-                fusion and joint replacement are not his to offer. When he tells
-                you one of those will not help, he is not turning down work of
-                his own.
+                fusion and joint replacement are not procedures he does. When he
+                tells you one of them will not help, he is not turning down work
+                of his own.
               </p>
             </div>
             <div className="space-y-4">
@@ -213,8 +213,8 @@ export default function SecondOpinionPage() {
               <p>
                 Most back and joint pain has a source that can be found and
                 treated directly. Where that is true, the work is to identify
-                the structure, confirm it, and treat it — and an operation does
-                not enter the conversation.
+                the structure, confirm it, and treat it. An operation never
+                enters the conversation.
               </p>
               <p>
                 Sometimes it runs the other way. If the exam, the imaging and
@@ -256,7 +256,7 @@ export default function SecondOpinionPage() {
           <SectionHeading
             eyebrow="Worth A Second Opinion"
             title="When it is worth the appointment."
-            lead="Pain medicine has changed. The plan you were given five — or even two — years ago may no longer be the best one for you."
+            lead="Pain medicine has changed. The plan you were given five years ago, or even two, may no longer be the best one for you."
           />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
             {considerations.map((item) => (
@@ -280,7 +280,7 @@ export default function SecondOpinionPage() {
             Ready When You Are
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Find out whether you actually need the operation.
+            Find out whether you actually need surgery.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
             Two Houston-area locations. Same-week consults available. Most insurance

@@ -43,7 +43,7 @@ const credentials = [
   {
     icon: "award" as const,
     title: "Research Fellowship",
-    subtitle: "Alpha Omega Alpha Research Fellowship — a research scholarship",
+    subtitle: "Alpha Omega Alpha Research Fellowship, a research scholarship",
   },
   {
     icon: "stethoscope" as const,
@@ -54,20 +54,20 @@ const credentials = [
 
 const whyHtx = [
   {
-    title: "No Stake in That Operation",
-    body: "Dr. Baumgartner operates, but he is not an orthopedic surgeon or a neurosurgeon. The joint replacement or the open fusion is not his to perform — so recommending against one costs him nothing.",
+    title: "Nothing To Gain",
+    body: "Nothing about his recommendation depends on whether you have surgery. He is not the one who would perform it.",
   },
   {
     title: "Double Board-Certified",
-    body: "Anesthesiology for command of the anatomy and the image-guided technique. Pain Medicine to identify which structure is actually generating the pain.",
+    body: "Anesthesiology taught him the anatomy and the imaging. Pain Medicine taught him to work out which structure is causing the pain before anything gets treated.",
   },
   {
     title: "Time to Get It Right",
-    body: "He left group practice to build a clinic where the diagnosis gets the hour it needs — because the wrong procedure is not a small mistake.",
+    body: "He left group practice to build a clinic where the diagnosis gets the hour it needs. The wrong procedure is not a small mistake.",
   },
   {
     title: "Treatment, Not Maintenance",
-    body: "Genicular RFA for knees, PRP for tendons and joints, Intracept and spinal cord stimulation for the spine — aimed at the source, so you are not managed on medication indefinitely.",
+    body: "Genicular RFA for knees. PRP for tendons and joints. Intracept and spinal cord stimulation for the spine. All aimed at the source, so you are not left managing pain on medication.",
   },
 ];
 
@@ -101,10 +101,9 @@ export default function Home() {
             <HeroHeadline />
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
-              Most back and joint pain never needs an operation. Dr. Baumgartner
-              is the physician you see before you agree to surgery —
-              image-guided treatment, and a straight answer about what your pain
-              actually needs.
+              Most back and joint pain never needs an operation. We find what is
+              causing yours, treat it directly, and tell you plainly if surgery
+              is the right answer.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -233,21 +232,16 @@ export default function Home() {
             </h2>
             <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
               <p>
-                Most back and joint pain never needs an operation. Edward
-                Baumgartner Jr., MD is the physician who can tell you so without
-                a stake in the answer. He operates — SI joint fusion, Minuteman
-                interspinous fusion, kyphoplasty, spinal cord stimulator
-                implants — but he is not an orthopedic surgeon or a
-                neurosurgeon. The joint replacement or the open fusion you are
-                weighing is not his to perform.
+                Edward Baumgartner Jr., MD does not perform joint replacements or
+                open fusions. So when he tells you that you do not need one,
+                there is nothing in it for him.
               </p>
               <p>
-                What makes that judgment worth having is the training behind it.
-                Anesthesiology gave him command of the anatomy and the
-                image-guided technique; Pain Medicine taught him to find which
-                structure is actually generating the pain — and to treat it
-                directly. A Houston native, he founded the practice in 2018 and
-                performs hospital-based procedures at Townsen Memorial Hospital.
+                He does operate: SI joint fusion, kyphoplasty and spinal cord
+                stimulator implants, at Townsen Memorial Hospital. A Houston
+                native, he founded this practice in 2018. Double board
+                certification in Anesthesiology and Pain Medicine is what lets
+                him find the structure causing your pain and treat it directly.
               </p>
             </div>
 
@@ -360,7 +354,7 @@ export default function Home() {
             tone="dark"
             eyebrow="Why HTx Pain"
             title="Why patients come here before they say yes to surgery."
-            lead="Most back and joint pain has a source that can be found and treated directly. Finding it takes time, imaging read properly, and a physician with no reason to reach for the operating room."
+            lead="Back and joint pain almost always has a specific source. Finding it takes time, imaging read properly, and a physician with no reason to reach for the operating room."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyHtx.map((item) => (
