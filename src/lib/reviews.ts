@@ -9,10 +9,15 @@ export const reviews = {
   googleProfileUrl:
     "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Suite+200+Houston+TX+77070",
   /**
-   * Rating shown in the homepage hero stat. The embedded widget is always
-   * live; these two numbers are a static snapshot and need a manual refresh.
-   * Source: the Birdeye widget above. Last checked 2026-09-07.
+   * The homepage hero stat, and the only place these numbers are used. The
+   * embedded widget above is always live; these are a hand-copied snapshot of
+   * it, so they go stale silently. Updating them is this one edit.
+   *
+   * Deliberately not published as schema.org aggregateRating — see the note in
+   * src/components/organization-schema.tsx for why.
    */
   rating: "5.0",
-  reviewCount: 647,
+  reviewCount: 653,
+  /** When the two numbers above were last read off the widget. */
+  countLastChecked: "2026-09-19",
 };

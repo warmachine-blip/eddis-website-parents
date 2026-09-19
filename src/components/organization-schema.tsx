@@ -22,9 +22,10 @@ import JsonLd from "@/components/json-ld";
  * MedicalProcedure, a MedicalCondition, a Person) can reference these instead
  * of restating them.
  *
- * Deliberately absent: aggregateRating. The 5.0/647 figure in src/lib/reviews.ts
- * comes from a third-party widget, not from reviews collected on this site, and
- * Google's review-snippet policy forbids self-serving markup of that kind.
+ * Deliberately absent: aggregateRating. The rating and count in
+ * src/lib/reviews.ts come from a third-party widget, not from reviews collected
+ * on this site, and Google's review-snippet policy forbids self-serving markup
+ * of that kind. Sourcing them from an API would not change that.
  */
 export default function OrganizationSchema() {
   const telephone = practice.phoneHref.replace(/^tel:/, "");
