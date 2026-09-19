@@ -3,29 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
-import { IconBadge, type IconName } from "@/components/icon-badge";
+import { IconBadge } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
   title: "About Our Houston Pain Practice",
   description:
-    "Founded in 2018 by Edward Baumgartner Jr., MD, HTx Pain Institute finds the source of your pain and treats it directly, most often without an operation.",
+    "Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
 };
 
-/**
- * Only the first pillar goes anywhere, so only it is a link. The site's rule is
- * that a clickable card shows it: condition cards carry a chevron, service and
- * team cards carry a "Learn more" row. A card that looks identical to its
- * neighbours but behaves differently is the thing that reads as broken, so the
- * affordance below is what keeps one link among three from being a trap.
- */
-const pillars: { title: string; body: string; icon: IconName; href?: string }[] = [
+const pillars = [
   {
-    title: "A Second Opinion Before Surgery",
-    body: "If an operation is the only option you have been offered, he will look again.",
+    title: "Patient-First",
+    body: "Time, listening, and individualized plans.",
     icon: "pulse",
-    href: "/second-opinion",
   },
   {
     title: "Evidence-Based",
@@ -34,16 +26,16 @@ const pillars: { title: string; body: string; icon: IconName; href?: string }[] 
   },
   {
     title: "Precision Toolkit",
-    body: "From genicular RFA and PRP to Intracept and spinal cord stimulation.",
+    body: "From Intracept to MILD to spinal cord stimulation.",
     icon: "bolt",
   },
-];
+] as const;
 
 const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years in interventional pain medicine. He was Medical Director at US Pain & Spine Hospital before founding this practice in 2018, and operates at Townsen Memorial Hospital: SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. Joint replacement and open fusion are another specialty's work, so he has nothing riding on that recommendation; spine, knees, hips, shoulders and nerve pain are his.",
+    bio: "Founding Physician, Double Board-Certified in Anesthesiology and Pain Medicine, and a listed Texas Top Doctor. A Houston native with over fifteen years of interventional pain medicine experience. Specializes in advanced minimally invasive procedures including Intracept, spinal cord stimulation, radiofrequency ablation, and SI joint fusion — with particular focus on patients told their only option is spine surgery.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
@@ -89,10 +81,10 @@ export default function AboutUsPage() {
             Compassionate care, <em className="not-italic text-brass-light">precision medicine.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            {practice.tagline} Edward Baumgartner Jr., MD founded HTx Pain
-            Institute in 2018 to do one thing properly: find what is causing a
-            patient&rsquo;s pain, and treat that. Most of the time it does not
-            take an operation.
+            {practice.tagline} At HTx Pain Institute, every patient deserves a
+            personalized and compassionate approach to pain management. Founded
+            by Edward Baumgartner Jr., MD in 2018, our mission is to put the patient
+            first while elevating the standard of care in pain medicine.
           </p>
         </div>
       </section>
@@ -156,52 +148,30 @@ export default function AboutUsPage() {
                   care that delivers lasting relief.
                 </p>
                 <p>
-                  After fellowship, Dr. Baumgartner spent five years as Medical
-                  Director at US Pain &amp; Spine Hospital. What he took from
-                  those years, and from the inefficiencies of group practice,
-                  was that patient-first care needed a different kind of
-                  practice, built from the ground up.
+                  After five years as Medical Director at US Pain &amp; Spine
+                  Hospital, and experiencing the inefficiencies of group
+                  practice, Dr. Baumgartner was driven to create a more
+                  patient-focused model.
+                  His vision was clear: elevate the standard of care by
+                  prioritizing patient well-being and offering comprehensive,
+                  innovative pain management solutions.
                 </p>
                 <p>
                   HTx Pain Institute is built on the conviction that
-                  interventional pain medicine, applied carefully and with
-                  judgment, can return people to the lives they want. Usually
-                  that happens without an operation, and often without long-term
-                  medication. And when the answer is an operation he does not
-                  perform, he tells you so and points you to a surgeon who
-                  does.
+                  interventional pain medicine — applied carefully,
+                  individually, and with judgment — can return people to the
+                  lives they want, often without long-term medication reliance.
                 </p>
               </div>
 
               <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {pillars.map((p) => {
-                  const inner = (
-                    <>
-                      <IconBadge icon={p.icon} tone="brass" />
-                      <p className="mt-4 font-semibold text-navy">{p.title}</p>
-                      <p className="mt-1 text-[13px] text-charcoal-soft">{p.body}</p>
-                      {p.href ? (
-                        <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brass-text">
-                          Learn more
-                          <ArrowIcon />
-                        </span>
-                      ) : null}
-                    </>
-                  );
-                  return p.href ? (
-                    <Link
-                      key={p.title}
-                      href={p.href}
-                      className="group rounded-xl border border-line bg-off-white p-5 transition-colors hover:border-brass"
-                    >
-                      {inner}
-                    </Link>
-                  ) : (
-                    <div key={p.title} className="rounded-xl border border-line bg-off-white p-5">
-                      {inner}
-                    </div>
-                  );
-                })}
+                {pillars.map((p) => (
+                  <div key={p.title} className="rounded-xl border border-line bg-off-white p-5">
+                    <IconBadge icon={p.icon} tone="brass" />
+                    <p className="mt-4 font-semibold text-navy">{p.title}</p>
+                    <p className="mt-1 text-[13px] text-charcoal-soft">{p.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -214,7 +184,7 @@ export default function AboutUsPage() {
           <SectionHeading
             eyebrow="Leadership"
             title="People who chose this work for the right reasons."
-            lead="A small, focused team. Every patient is known to us, and our staff speak English and Spanish."
+            lead="A small, focused team — every patient is known to us, and our staff speak English and Spanish."
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

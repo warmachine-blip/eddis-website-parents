@@ -9,7 +9,7 @@ import { conditions } from "@/lib/conditions";
 export const metadata: Metadata = {
   title: "Conditions We Treat in Houston",
   description:
-    "Start with what hurts: back pain, knee pain, sciatica, neuropathic pain. Each page explains how the cause is found and treated, usually without surgery.",
+    "From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward, at HTx Pain Institute in Houston, TX.",
 };
 
 export default function PainCenterPage() {
@@ -21,7 +21,7 @@ export default function PainCenterPage() {
           as="h1"
           eyebrow="Pain Center"
           title="Conditions we treat in Houston & Humble."
-          lead="Start with the diagnosis that fits: back pain, knee pain, sciatica, neuropathic pain, and the rest. Dr. Baumgartner works out what is causing each one before treating it, and for most of them the treatment is not an operation."
+          lead="The conditions we treat, with the expertise they require — from neuropathic pain to chronic back pain, knee pain, and more."
         />
       </section>
 

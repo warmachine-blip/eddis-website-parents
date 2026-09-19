@@ -71,9 +71,9 @@ export default function MotorVehicleInjuriesPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Whiplash, post-concussive headache, and chronic spine pain after a
-            car accident are among the most under-diagnosed injuries we see. We look for those injuries specifically, treat what we find, and
-            document it thoroughly enough for your recovery and for any claim
-            that comes with it.
+            car accident are among the most under-diagnosed injuries we see. We
+            bring the clinical and documentation rigor your recovery deserves —
+            for auto accident and motor vehicle collision injuries alike.
           </p>
         </div>
       </section>

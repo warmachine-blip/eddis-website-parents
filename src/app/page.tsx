@@ -54,20 +54,20 @@ const credentials = [
 
 const whyHtx = [
   {
-    title: "Nothing To Gain",
-    body: "He does not perform joint replacements or open fusions. So whether the answer is an injection, physical therapy, or a surgeon's name, he has nothing riding on which one it is.",
-  },
-  {
     title: "Double Board-Certified",
-    body: "Anesthesiology taught him the anatomy and the imaging. Pain Medicine taught him to work out which structure is causing the pain before anything gets treated.",
+    body: "Anesthesiology and Pain Medicine — the credentials that signal both technical mastery and a focused subspecialty.",
   },
   {
-    title: "Time to Get It Right",
-    body: "He left group practice to build a clinic where the diagnosis gets the hour it needs. The wrong procedure is not a small mistake.",
+    title: "Patient-First Philosophy",
+    body: "Dr. Baumgartner left group practice to build a clinic that prioritizes time, listening, and individualized plans over throughput.",
   },
   {
-    title: "Treatment, Not Maintenance",
-    body: "Genicular RFA for knees. PRP for tendons and joints. Intracept and spinal cord stimulation for the spine. All aimed at the source, so you are not left managing pain on medication.",
+    title: "Cutting-Edge Treatments",
+    body: "Spinal cord stimulation, Intracept, kyphoplasty, RFA, PRP — the full modern toolkit, applied with skill.",
+  },
+  {
+    title: "Non-Invasive Focus",
+    body: "Scientifically proven approaches that minimize medication reliance and preserve your quality of life.",
   },
 ];
 
@@ -79,7 +79,7 @@ const injuries = [
   },
   {
     title: "Motor Vehicle Injuries",
-    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We find what is causing the pain and treat that directly, and we provide the documentation a claim or attorney requires.",
+    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We provide thorough documentation for legal counsel.",
     href: "/motor-vehicle-injuries",
   },
 ];
@@ -101,9 +101,8 @@ export default function Home() {
             <HeroHeadline />
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
-              A bad knee, sciatica, pain that has not gone away since the
-              accident. We find what is causing yours and treat that directly.
-              Most of the time that does not take an operation.
+              Advanced interventional pain management and regenerative wellness —
+              personalized to your life, your goals, and your body.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -228,22 +227,15 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              The physician who finds what is causing the pain, then treats that.
+              Houston-raised. Chicago-trained. Returning home to put patients first.
             </h2>
-            <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
-              <p>
-                Most people who come here have a knee, a back or a nerve that
-                has hurt for months and no clear explanation for why. The
-                first job is finding which structure is producing it.
-              </p>
-              <p>
-                A Houston native, he founded this practice in 2018. He does
-                operate: SI joint fusion, kyphoplasty and spinal cord
-                stimulator implants, at Townsen Memorial Hospital. He does not
-                perform joint replacements or open fusions, so nothing he
-                recommends depends on you having one.
-              </p>
-            </div>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
+              Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
+              mission: bring the modern interventional toolkit to Houston — applied
+              with the time, precision, and judgment every patient deserves. No
+              shortcuts. No high-volume churn. Just the care he&rsquo;d want for his
+              own family.
+            </p>
 
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {credentials.map((c) => (
@@ -353,8 +345,8 @@ export default function Home() {
           <SectionHeading
             tone="dark"
             eyebrow="Why HTx Pain"
-            title="Why patients come here to find out what is actually causing the pain."
-            lead="Back and joint pain almost always has a specific source. Finding it takes time, imaging read properly, and a physician who would rather find the cause than treat around it."
+            title="The standard of pain care, raised to where it belongs."
+            lead="A clinic built around clinical excellence and the human relationship between physician and patient — without compromise on either."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyHtx.map((item) => (

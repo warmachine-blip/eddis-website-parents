@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: "%s · HTx Pain Institute",
   },
   description:
-    "A double board-certified pain physician in Houston and Humble finds the structure causing your back, neck or joint pain and treats it, usually without surgery.",
+    "Precision pain management in Houston and Humble. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy.",
 };
 
 export const viewport: Viewport = {

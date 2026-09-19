@@ -5,7 +5,6 @@ import { useState, type FormEvent } from "react";
 import { practice } from "@/lib/nav";
 
 const reasons = [
-  "New patient question",
   "Second opinion",
   "Billing or insurance",
   "Medical records",

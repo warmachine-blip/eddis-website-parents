@@ -93,7 +93,7 @@ export default function FinalCta({
         </p>
       )}
       <h2 className={heading}>
-        Get a straight answer about what your pain actually needs.
+        Get the care you deserve. Schedule your consultation today.
       </h2>
       <p className={LEAD[lead]}>
         Two Houston-area locations. Same-week consults available. Most insurance accepted.

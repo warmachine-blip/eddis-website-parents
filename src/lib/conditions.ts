@@ -46,13 +46,13 @@ export const conditions: Condition[] = [
     slug: "neck-pain",
     href: "/neck-pain",
     title: "Neck Pain",
-    summary: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine.",
+    summary: "Precision care for the cervical spine — without rushing to surgery.",
   },
   {
     slug: "back-pain",
     href: "/back-pain",
     title: "Back Pain",
-    summary: "The back has several structures that can produce the same ache. The first visit is about finding which one.",
+    summary: "The most common reason patients come to us — and where we have the most to offer.",
   },
   {
     slug: "other-pain-conditions",
@@ -94,7 +94,7 @@ export const conditions: Condition[] = [
     slug: "migraines",
     href: "/migraines",
     title: "Migraines & Chronic Headache",
-    summary: "Not every headache is a migraine, and which one you have decides the treatment.",
+    summary: "Beyond medication management — interventional options when headaches don't respond.",
   },
   {
     slug: "fibromyalgia",
@@ -112,6 +112,6 @@ export const conditions: Condition[] = [
     slug: "post-surgical-pain",
     href: "/post-surgical-pain",
     title: "Post-Surgical Pain",
-    summary: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation.",
+    summary: "When surgery resolved the issue but pain remained — interventional options that can help.",
   },
 ];
