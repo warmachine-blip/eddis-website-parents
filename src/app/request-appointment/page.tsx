@@ -25,7 +25,7 @@ const nextSteps = [
   },
   {
     number: "4",
-    body: "Together we build your personalized plan.",
+    body: "We go over what the exam and any imaging show, and build the plan from there.",
   },
 ];
 

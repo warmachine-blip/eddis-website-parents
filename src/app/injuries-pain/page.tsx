@@ -8,7 +8,7 @@ import { practice } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Injury & Accident Pain Care in Houston",
   description:
-    "Interventional pain care for work injuries and motor vehicle accidents in Houston and Humble, coordinated with workers' compensation carriers and attorneys.",
+    "Pain after a work injury or car accident, treated in Houston and Humble. We find what was damaged, treat that, and document it for carriers and attorneys.",
 };
 
 const injuryTypes = [
@@ -20,7 +20,7 @@ const injuryTypes = [
   },
   {
     title: "Motor Vehicle Injuries",
-    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We provide thorough documentation for legal counsel.",
+    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We find what is causing the pain and treat that directly, and we provide the documentation a claim or attorney requires.",
     href: "/motor-vehicle-injuries",
     icon: "pulse",
   },
@@ -72,9 +72,11 @@ export default function InjuriesPainPage() {
             Injury and accident pain care in Houston.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            A thorough, evidence-driven approach to injury-related pain —
-            clinically rigorous, professionally documented, and always centered on
-            the patient.
+            Pain after an injury needs a diagnosis before it needs a plan. We
+            work out what was actually damaged and treat that directly, which
+            most of the time does not take an operation. If there is a claim
+            or a case, the documentation is thorough enough for a carrier or
+            an attorney.
           </p>
         </div>
       </section>
@@ -135,11 +137,12 @@ export default function InjuriesPainPage() {
             Don&rsquo;t Wait
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
-            Earlier care leads to better outcomes — both clinical and legal.
+            Get the injury diagnosed early, not just documented.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-off-white/70">
-            The sooner injury-related pain is professionally evaluated and
-            documented, the better — for your recovery and your case.
+            An early evaluation tells you what is actually injured while it is
+            still fresh, and it starts the record an insurer or attorney will
+            ask for if there is a claim.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link

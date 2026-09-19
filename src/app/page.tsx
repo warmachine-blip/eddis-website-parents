@@ -55,7 +55,7 @@ const credentials = [
 const whyHtx = [
   {
     title: "Nothing To Gain",
-    body: "Nothing about his recommendation depends on whether you have surgery. He is not the one who would perform it.",
+    body: "He does not perform joint replacements or open fusions. So whether the answer is an injection, physical therapy, or a surgeon's name, he has nothing riding on which one it is.",
   },
   {
     title: "Double Board-Certified",
@@ -79,7 +79,7 @@ const injuries = [
   },
   {
     title: "Motor Vehicle Injuries",
-    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We provide thorough documentation for legal counsel.",
+    body: "Whiplash, post-concussive headaches, and chronic spine pain after a collision are among the most under-diagnosed injuries we see. We find what is causing the pain and treat that directly, and we provide the documentation a claim or attorney requires.",
     href: "/motor-vehicle-injuries",
   },
 ];
@@ -101,9 +101,9 @@ export default function Home() {
             <HeroHeadline />
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
-              Most back and joint pain never needs an operation. We find what is
-              causing yours, treat it directly, and tell you plainly if surgery
-              is the right answer.
+              A bad knee, sciatica, pain that has not gone away since the
+              accident. We find what is causing yours and treat that directly.
+              Most of the time that does not take an operation.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -228,20 +228,20 @@ export default function Home() {
               Meet Dr. Baumgartner
             </div>
             <h2 className="text-balance font-serif text-3xl leading-[1.15] text-navy sm:text-4xl lg:text-[2.75rem]">
-              The physician you see before you agree to surgery.
+              The physician who finds what is causing the pain, then treats that.
             </h2>
             <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-charcoal-soft">
               <p>
-                Edward Baumgartner Jr., MD does not perform joint replacements or
-                open fusions. So when he tells you that you do not need one,
-                there is nothing in it for him.
+                Most people who come here have a knee, a back or a nerve that
+                has hurt for months and no clear explanation for why. The
+                first job is finding which structure is producing it.
               </p>
               <p>
-                He does operate: SI joint fusion, kyphoplasty and spinal cord
-                stimulator implants, at Townsen Memorial Hospital. A Houston
-                native, he founded this practice in 2018. Double board
-                certification in Anesthesiology and Pain Medicine is what lets
-                him find the structure causing your pain and treat it directly.
+                A Houston native, he founded this practice in 2018. He does
+                operate: SI joint fusion, kyphoplasty and spinal cord
+                stimulator implants, at Townsen Memorial Hospital. He does not
+                perform joint replacements or open fusions, so nothing he
+                recommends depends on you having one.
               </p>
             </div>
 
@@ -353,8 +353,8 @@ export default function Home() {
           <SectionHeading
             tone="dark"
             eyebrow="Why HTx Pain"
-            title="Why patients come here before they say yes to surgery."
-            lead="Back and joint pain almost always has a specific source. Finding it takes time, imaging read properly, and a physician with no reason to reach for the operating room."
+            title="Why patients come here to find out what is actually causing the pain."
+            lead="Back and joint pain almost always has a specific source. Finding it takes time, imaging read properly, and a physician who would rather find the cause than treat around it."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyHtx.map((item) => (

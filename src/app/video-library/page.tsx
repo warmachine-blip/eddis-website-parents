@@ -5,7 +5,7 @@ import { libraryVideos, youtubeChannelUrl } from "@/lib/video-library";
 import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
-  title: "Pain Procedure Video Library",
+  title: "Houston Pain Management Video Library",
   description:
     "Physician interviews, patient education, and practice stories from HTx Pain Institute in Houston, straight from our YouTube channel.",
 };

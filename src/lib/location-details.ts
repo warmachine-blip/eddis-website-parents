@@ -58,8 +58,8 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "spinal-stenosis", title: "Spinal Stenosis", blurb: "Narrowing of the spinal canal that compresses nerves and limits walking." },
@@ -85,13 +85,13 @@ export const locationDetails: Record<string, LocationDetail> = {
     commuteShort: "15–25 min from FM 1960",
     aboutParagraphs: [
       "The Woodlands is one of the most well-known master-planned communities in the country — and one of the most demanding patient populations in our practice. Many of our Woodlands patients are executives, physicians themselves, professional athletes, or accomplished retirees who have already explored multiple options for chronic pain. They expect institute-caliber expertise, and they want a clinician who will give them an honest answer about whether a procedure is the right call.",
-      "We see a notably high proportion of failed-back-surgery patients, refractory joint pain, and second-opinion consults from this area. The Woodlands also has a sizable population of active retirees who play tennis, run, and golf — and want to keep doing so. PRP therapy, image-guided injections, and SI joint procedures are all common requests.",
+      "Most of what comes to us from The Woodlands is everyday pain that has gone on too long: necks and low backs that have hurt for months, knees that have stopped cooperating, shoulders that will not go overhead. Those visits start with working out which structure is actually generating the pain, which is not always where it is felt. The area also sends us a notably high share of failed-back-surgery cases and second-opinion consults, along with a sizable population of active retirees who play tennis, run, and golf and want to keep doing so. PRP therapy, image-guided injections, and SI joint procedures are all common requests.",
     ],
     patientsListIntro: "Patients we commonly see in The Woodlands",
     patientsList: [
       "Executives and professionals with chronic spine pain from long desk hours and travel",
       "Active retirees managing osteoarthritis, tendinopathy, and spinal stenosis",
-      "Patients with failed back surgery seeking spinal cord stimulation",
+      "Patients who have been on pain medication for months without anyone finding the cause",
       "Athletes (tennis, golf, running) with overuse and joint injuries",
       "Patients seeking second opinions before major spine surgery",
     ],
@@ -107,8 +107,8 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "When surgery resolved the issue but pain remained — interventional options that can help." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
       { slug: "neuropathic-pain", title: "Neuropathic Pain", blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves." },
@@ -156,8 +156,8 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
       { slug: "sports-injuries", title: "Sports Injuries", blurb: "Get back to your sport — with diagnostics and biologics that respect the timeline." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
@@ -183,12 +183,12 @@ export const locationDetails: Record<string, LocationDetail> = {
     commuteShort: "10–15 min from Willowbrook",
     aboutParagraphs: [
       "Tomball has the unusual distinction of being one of the closest suburbs to our Houston office while also retaining a small-town feel that many of our patients value. Texas 249 connects Tomball directly down to our office near Willowbrook, which means most Tomball patients can be at the door in 10 minutes.",
-      "Our Tomball patient mix is broad: longtime Tomball residents with chronic spine and joint pain, growing families in newer Tomball ISD neighborhoods with motor-vehicle injuries and overuse pain, and a substantial number of patients who have been told their only option is spine surgery and are looking for an honest second opinion.",
+      "Our Tomball patient mix is broad: longtime Tomball residents with chronic spine and joint pain, growing families in newer Tomball ISD neighborhoods with motor-vehicle injuries and overuse pain, patients who have been told spine surgery is their only option and want a second opinion first, and a substantial number who have been medicating a bad back or a bad knee for months without anyone establishing what is causing it.",
     ],
     patientsListIntro: "Patients we commonly see in Tomball",
     patientsList: [
       "Longtime Tomball residents managing chronic spine and joint conditions",
-      "Patients with prior spine surgery experiencing recurrent or new pain",
+      "Patients with sciatica or radiating leg pain that has been medicated but never diagnosed",
       "Workers' compensation and motor-vehicle injury cases",
       "Active grandparents staying ahead of osteoarthritis and stenosis",
       "Patients told they need spine surgery seeking interventional alternatives",
@@ -205,7 +205,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "spinal-stenosis", title: "Spinal Stenosis", blurb: "Narrowing of the spinal canal that compresses nerves and limits walking." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
@@ -222,7 +222,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     slug: "klein",
     city: "Klein",
     metaDescription:
-      "Precision interventional pain medicine for Klein, TX patients. Double board-certified care, two Houston-area locations. Schedule today.",
+      "Back, neck, knee, and nerve pain in Klein, TX, diagnosed and treated, most often without an operation. Double board-certified. Schedule today.",
     lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Klein, TX patients.",
     heroIntro:
@@ -254,11 +254,11 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
-      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "When surgery resolved the issue but pain remained — interventional options that can help." },
+      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
@@ -281,7 +281,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commuteShort: "10 min from Willowbrook",
     aboutParagraphs: [
       "The Champions area is one of the most established neighborhoods in north Houston, anchored by the Champions Golf Club and surrounded by a high concentration of golfers, tennis players, and active retirees. The patient mix here skews older and more active than many surrounding suburbs — which means we see a lot of osteoarthritis management, tendinopathy, and patients trying to keep playing the sports they love.",
-      "Many of our Champions patients have been longtime fans of biologic options like PRP for joint and tendon issues, and a high proportion of our knee and shoulder PRP cases come from this area. We also see a steady volume of degenerative spine disease and post-surgical pain from this demographic.",
+      "Many of our Champions patients have been longtime fans of biologic options like PRP for joint and tendon issues, and a high proportion of our knee and shoulder PRP cases come from this area. We also see a steady volume of long-running back, neck and joint pain from this demographic.",
     ],
     patientsListIntro: "Patients we commonly see in Champions",
     patientsList: [
@@ -305,7 +305,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonConditions: [
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
       { slug: "sports-injuries", title: "Sports Injuries", blurb: "Get back to your sport — with diagnostics and biologics that respect the timeline." },
     ],
@@ -343,19 +343,19 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From Kingwood, take Kingwood Drive west to US-59/I-69 South, exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
-      "Kingwood patients value clinicians who respect both their activity level and their preference to stay out of major surgical pathways. We deliver that — biologic options for tendinopathy, MILD and Intracept for stenosis and vertebrogenic pain, and a stepwise approach that keeps patients on the trails as much as possible while we treat what is going on.",
+      "Kingwood patients are active and want to stay that way. We start by finding what is actually causing the pain, whether that is a tendon, a joint, or a nerve in the spine, then treat that source directly: biologics for tendinopathy, MILD and Intracept for stenosis and vertebrogenic pain, and a stepwise approach that keeps you on the trails as much as possible. Dr. Baumgartner does not perform joint replacements or open fusions, so if surgery is the right answer for you, he has no reason not to say so.",
     landmarks: [
       "Easy access from Kingwood Drive west to US-59/I-69 South",
       "Approximately 12 minutes from the Kingwood Town Center area",
       "Convenient from Forest Cove, Bear Branch, Kings Forest, and Trailwood",
-      "Memorial Hermann Northeast nearby for prior imaging and post-op care",
+      "Memorial Hermann Northeast nearby, so prior imaging and records are easy to pull",
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
-      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "When surgery resolved the issue but pain remained — interventional options that can help." },
+      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
       { slug: "sports-injuries", title: "Sports Injuries", blurb: "Get back to your sport — with diagnostics and biologics that respect the timeline." },
     ],
     commonServices: [
@@ -401,11 +401,11 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
-      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "When surgery resolved the issue but pain remained — interventional options that can help." },
+      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
     commonServices: [
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
@@ -445,16 +445,16 @@ export const locationDetails: Record<string, LocationDetail> = {
     landmarks: [
       "Our Humble office: 1485 FM 1960 Bypass Rd. E, Suite 100 — east of US-59 on the Bypass",
       "Approximately 5 minutes from Humble High School and downtown Humble",
-      "Memorial Hermann Northeast nearby for prior imaging and surgical referrals",
+      "Memorial Hermann Northeast nearby for prior imaging and records",
       "Convenient for residents of Walden, Forest Cove, and the broader US-59 corridor",
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
-      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "When surgery resolved the issue but pain remained — interventional options that can help." },
+      { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
@@ -467,7 +467,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     slug: "northwest-houston",
     city: "Northwest Houston",
     metaDescription:
-      "Precision interventional pain medicine for Northwest Houston patients. Double board-certified care, two Houston-area locations. Schedule today.",
+      "Back, neck, knee, and nerve pain in Northwest Houston. Double board-certified care that finds the cause and treats it, usually without surgery.",
     lastReviewed: "2026-09-10",
     heroHeadline: "Precision pain care for Northwest Houston patients.",
     heroIntro:
@@ -499,8 +499,8 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "back-pain", title: "Back Pain", blurb: "The most common reason patients come to us — and where we have the most to offer." },
-      { slug: "neck-pain", title: "Neck Pain", blurb: "Precision care for the cervical spine — without rushing to surgery." },
+      { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
+      { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
       { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },

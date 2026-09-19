@@ -77,7 +77,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     title: "Back Pain",
     metaDescription: "Back pain treatment in Houston and Humble. We find the source — disc, facet, SI joint, or nerve — then treat it with targeted, minimally invasive care.",
     lastReviewed: "2026-09-10",
-    leadLine: "The most common reason patients come to us — and where we have the most to offer.",
+    leadLine: "The back has several structures that can produce the same ache. The first visit is about finding which one.",
     heroImage: "woman-from-behind-hand-on-lower-back-outdoors.jpg",
     heroImageAlt: "Woman in black athletic wear seen from behind outdoors, pressing one hand to her lower back.",
     intro:
@@ -559,7 +559,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "knee-pain": {
     slug: "knee-pain",
     title: "Knee Pain",
-    metaDescription: "Knee pain treatment in Houston and Humble. Image-guided injections, PRP, and genicular nerve ablation to keep you on your feet without rushing to surgery.",
+    metaDescription: "Knee pain care in Houston and Humble. We find which part of the knee is driving the pain, then treat that with image-guided injections, PRP, or nerve ablation.",
     lastReviewed: "2026-09-10",
     leadLine: "Stay on your feet. Stay in your life. We focus on what works.",
     heroImage: "treatment-knee-pain-treatment.jpg",
@@ -567,7 +567,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     intro:
       "Knee pain is one of the most common reasons patients see us. From early osteoarthritis to post-surgical pain, our goal is the same: keep you on your feet, in your life, with the least invasive plan that genuinely works.",
     introParagraphs: [
-      "Most knee pain that reaches us has already been through the obvious steps — rest, anti-inflammatories, physical therapy, perhaps an injection or an arthroscopy. The question by then is not whether the knee hurts but what specifically is generating the pain, and whether anything useful sits between conservative care and joint replacement. Usually something does.",
+      "Knee pain arrives here at every stage. Some people have only just started noticing it on the stairs; others have already been through rest, anti-inflammatories, physical therapy, and perhaps an arthroscopy. The useful question is the same either way: what specifically in this knee is producing the pain. Once that is answered the treatment usually follows from it, and most of the time it is not an operation. Dr. Baumgartner does not perform knee replacements, which is worth knowing when a physician tells you that you may not need one.",
       "Osteoarthritis is the most common driver but not the only one. Patellar and quadriceps tendinopathy, persistent pain after meniscectomy or replacement, and sensitized genicular nerves all present as \"knee pain\" and respond to different things. We use image guidance for the injections that answer those questions, because an injection that misses its target answers nothing.",
     ],
     symptoms: [
@@ -654,9 +654,9 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   "neck-pain": {
     slug: "neck-pain",
     title: "Neck Pain",
-    metaDescription: "Neck pain treatment in Houston and Humble. Precision cervical care — diagnostic blocks, radiofrequency ablation, and injections before considering surgery.",
+    metaDescription: "Neck pain treatment in Houston and Humble. Diagnostic blocks, radiofrequency ablation, and injections aimed at the structure causing the pain.",
     lastReviewed: "2026-09-10",
-    leadLine: "Precision care for the cervical spine — without rushing to surgery.",
+    leadLine: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine.",
     heroImage: "treatment-neck-pain-treatment-houston.jpg",
     heroImageAlt: "Neck pain treatment at HTx Pain Institute in Houston",
     intro:
@@ -843,7 +843,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Sciatica is the term for pain that radiates from the lower back into the buttock and down the leg, following the path of the sciatic nerve. The cause is rarely the nerve itself — it is most often a lumbar disc herniation, foraminal stenosis, or piriformis-related compression. The right diagnosis is the difference between getting durable relief and chasing symptoms.",
     introParagraphs: [
       "Sciatica is one of the most common chief complaints we see — and one of the most commonly misdiagnosed. The word \"sciatica\" describes a symptom pattern, not a single diagnosis. The vast majority of cases trace back to a specific structural cause that can be identified on imaging and addressed with a targeted plan: a lumbar disc herniation pressing on a nerve root, a stenotic foramen narrowing the space the nerve travels through, or a piriformis-related compression of the sciatic nerve outside the spine.",
-      "Most acute sciatica improves with time and conservative care. The minority that persists is what we treat at HTx Pain Institute — patients whose pain has not responded to physical therapy, oral medications, and time, and who need a more decisive intervention before sciatica derails their work, sleep, or function.",
+      "Most acute sciatica improves with time and conservative care. Some of it does not, and some of it hurts enough in the meantime to cost you work and sleep. Either case is worth an appointment, because the question that decides the treatment is the same on week two as on week twelve: which structure is compressing or irritating the nerve, and what takes the pressure off it.",
     ],
     symptoms: [
       "Sharp, burning, or electric pain radiating from the back into the leg",
@@ -938,7 +938,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "A herniated disc occurs when the soft nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a spinal nerve. Most herniations improve with time and targeted care — and most do not require surgery. Image-guided injections, careful diagnosis, and a tailored recovery plan get the majority of patients back to their lives.",
     introParagraphs: [
       "A herniated disc — sometimes called a slipped, bulging, or ruptured disc — happens when the gel-like nucleus of an intervertebral disc pushes through a tear in the outer annulus and contacts a nearby spinal nerve. The result is the classic cocktail of back pain plus radiating arm or leg pain, often with numbness, tingling, or weakness in the dermatome of the affected nerve.",
-      "Here is what most patients are not told: most disc herniations heal. Imaging studies of asymptomatic adults routinely show disc bulges and herniations on MRI. The body resorbs disc material over time, and the inflammatory response that drives the pain settles. The job of pain medicine is to manage symptoms and protect function during that healing window — not necessarily to operate.",
+      "Here is what most patients are not told: most disc herniations heal. Imaging studies of asymptomatic adults routinely show disc bulges and herniations on MRI. The body resorbs disc material over time, and the inflammatory response that drives the pain settles. The job of pain medicine is to confirm the disc is actually what is causing your pain, then control the symptoms so you can keep working, sleeping, and moving while it heals.",
       "When herniations do not resolve, or when they cause progressive neurologic deficits, we have a stepwise interventional toolkit. We start with the least invasive options that address the cause and reserve more involved procedures for cases that genuinely need them.",
     ],
     symptoms: [
@@ -1225,7 +1225,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     introParagraphs: [
       "The shoulder is the most mobile joint in the body, and that mobility comes at the cost of stability — which is why shoulder problems are common, and often layered. The rotator cuff, the labrum, the biceps tendon, the AC joint, the bursa, and the cervical spine can all contribute to what a patient experiences as \"shoulder pain.\" The trick is sorting them out.",
       "Most shoulder pain has a tendinous or bursal contribution that responds to a precise, ultrasound-guided injection plus targeted physical therapy. Some shoulders need biologic support — PRP for partial rotator cuff tears or persistent tendinopathy. Others need surgical referral, and we will tell you when that is the right call.",
-      "We coordinate closely with orthopedic shoulder colleagues. We do not see ourselves as competing with them — our job is to treat the cases that do not require surgery and to be honest about the ones that do.",
+      "We coordinate closely with orthopedic shoulder colleagues, and we are not competing with them: shoulder repair is their work, not ours, so nothing rides on which way yours goes. Most shoulders we see need an accurate diagnosis and the right injection or rehab plan rather than an operation.",
     ],
     symptoms: [
       "Pain with overhead reaching or lifting",
@@ -1310,15 +1310,15 @@ export const conditionDetails: Record<string, ConditionDetail> = {
   migraines: {
     slug: "migraines",
     title: "Migraines & Chronic Headache",
-    metaDescription: "Migraine and headache treatment in Houston and Humble. Occipital and sphenopalatine blocks, cervical ablation, and Botox when medication is not enough.",
+    metaDescription: "Migraine, cervicogenic headache, and occipital neuralgia treated in Houston and Humble. We find which one is driving your headaches, then treat that directly.",
     lastReviewed: "2026-09-10",
-    leadLine: "Beyond medication management — interventional options when headaches don't respond.",
+    leadLine: "Not every headache is a migraine, and which one you have decides the treatment.",
     heroImage: "woman-hand-to-temple-eyes-closed-headache.jpg",
     heroImageAlt: "A woman in a white shirt with her eyes closed presses her hand against her temple and forehead in soft natural light.",
     intro:
-      "Chronic and refractory headaches are not just a medication problem. Occipital nerve blocks, sphenopalatine ganglion procedures, and selective nerve targeting can dramatically change the trajectory of a chronic headache patient. We coordinate with neurology when appropriate and bring the interventional toolkit when standard therapy isn't enough.",
+      "Chronic and recurring headaches are not one condition, and they are not only a medication problem. Migraine, cervicogenic headache, and occipital neuralgia respond to different treatments, so the first job is working out which one is driving the pain. Once that is clear, options include occipital nerve blocks, sphenopalatine ganglion procedures, and cervical medial branch RFA, and we coordinate with neurology when migraine pathology leads.",
     introParagraphs: [
-      "Migraine and chronic headache are among the most disabling conditions in medicine — and among the most under-treated. Most patients with chronic headache have been on rotating medications for years, often without much benefit, and have not been offered the interventional options that can dramatically change their trajectory.",
+      "Migraine and chronic headache are among the most disabling conditions in medicine, and among the most under-treated. Some patients arrive after years of rotating medications without much benefit. Others arrive having been handed a prescription at the first visit and never told which kind of headache they actually have. Both are worth a proper workup, because migraine, cervicogenic headache, and occipital neuralgia are not treated the same way.",
       "We do not replace neurology — we work alongside it. For patients with cervicogenic headache, occipital neuralgia, or migraine that has not responded to standard preventives, interventional pain medicine has a real toolkit: occipital nerve blocks, sphenopalatine ganglion procedures, cervical medial branch blocks and RFA when the upper cervical facets are involved, and selective targeting of other cranial nerves.",
       "Our goal is simple: fewer headache days, less disability, and less reliance on rescue medications.",
     ],
@@ -1359,7 +1359,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Diagnostic occipital or sphenopalatine block to test interventional candidacy.",
     ],
     whenToSeeSpecialist: [
-      "Headache 8 or more days per month despite preventive medication.",
+      "Headache 8 or more days per month, whether or not you have tried prescription medication for it.",
       "Failed multiple migraine preventives at adequate trial doses.",
       "Suspected cervicogenic headache or occipital neuralgia.",
       "Reliance on triptans or rescue medications more than twice per week.",
@@ -1601,7 +1601,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     title: "Post-Surgical Pain",
     metaDescription: "Post-surgical pain treatment in Houston and Humble for pain that persists after surgery — nerve blocks, ablation, and spinal cord stimulation when needed.",
     lastReviewed: "2026-09-10",
-    leadLine: "When surgery resolved the issue but pain remained — interventional options that can help.",
+    leadLine: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation.",
     heroImage: "physical-therapist-guiding-resistance-band-exercise.jpg",
     heroImageAlt: "A physical therapist's hands guide a patient's arm as she pulls a green resistance band against a plain wall.",
     intro:
@@ -1672,7 +1672,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         q: "How long should I wait after surgery before seeing you?",
-        a: "Generally 3 months for elective surgeries — that lets the normal healing window play out. Sooner if the pain pattern is clearly neuropathic or if your surgeon agrees a pain consult would help.",
+        a: "Generally 3 months after an elective operation, which lets the normal healing window play out. Sooner if the pain pattern is clearly neuropathic. You do not need a referral or your surgeon's sign-off to be seen: pain that has outlasted the healing window is reason enough on its own to find out what is causing it.",
       },
       {
         q: "Do you communicate with my surgeon?",
@@ -1680,7 +1680,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         q: "Will I need more surgery?",
-        a: "Often no. The reason patients come to pain medicine after surgery is precisely to avoid more surgery. We have many tools that work in this setting.",
+        a: "Often no. Post-surgical pain usually has a specific cause, such as an irritated nerve, a neuroma in the scar, or a joint now carrying load differently, and most of the time that cause can be treated without another operation. Finding it is where we start. We do not perform these operations ourselves, so if your case does need a surgeon, we have nothing riding on telling you.",
       },
       {
         q: "What about CRPS after surgery?",

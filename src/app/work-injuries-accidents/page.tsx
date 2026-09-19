@@ -70,9 +70,9 @@ export default function WorkInjuriesPage() {
             {heroTitle}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Workplace injuries are some of the most under-treated pain syndromes
-            we see. The right plan starts with the right diagnosis — and the
-            right documentation.
+            Workplace injuries are among the most under-treated pain problems
+            we see. The plan starts with finding what is actually causing it,
+            and the documentation follows from there.
           </p>
         </div>
       </section>

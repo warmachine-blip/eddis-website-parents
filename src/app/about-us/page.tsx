@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
-import { IconBadge } from "@/components/icon-badge";
+import { IconBadge, type IconName } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
 
@@ -13,11 +13,19 @@ export const metadata: Metadata = {
     "Founded in 2018 by Edward Baumgartner Jr., MD, HTx Pain Institute finds the source of your pain and treats it directly, most often without an operation.",
 };
 
-const pillars = [
+/**
+ * Only the first pillar goes anywhere, so only it is a link. The site's rule is
+ * that a clickable card shows it: condition cards carry a chevron, service and
+ * team cards carry a "Learn more" row. A card that looks identical to its
+ * neighbours but behaves differently is the thing that reads as broken, so the
+ * affordance below is what keeps one link among three from being a trap.
+ */
+const pillars: { title: string; body: string; icon: IconName; href?: string }[] = [
   {
     title: "A Second Opinion Before Surgery",
     body: "If an operation is the only option you have been offered, he will look again.",
     icon: "pulse",
+    href: "/second-opinion",
   },
   {
     title: "Evidence-Based",
@@ -29,13 +37,13 @@ const pillars = [
     body: "From genicular RFA and PRP to Intracept and spinal cord stimulation.",
     icon: "bolt",
   },
-] as const;
+];
 
 const team = [
   {
     name: "Edward Baumgartner Jr., MD",
     role: "Founding Physician · Double Board-Certified · Texas Top Doctor",
-    bio: "Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years in interventional pain medicine. He was Medical Director at US Pain & Spine Hospital before founding this practice in 2018, and operates at Townsen Memorial Hospital: SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. Joint replacement and open fusion are another specialty's work, which is why patients told surgery is their only option come to him for a second read.",
+    bio: "Double board-certified in Anesthesiology and Pain Medicine, a listed Texas Top Doctor, and a Houston native with over fifteen years in interventional pain medicine. He was Medical Director at US Pain & Spine Hospital before founding this practice in 2018, and operates at Townsen Memorial Hospital: SI joint fusion, Minuteman interspinous fusion, kyphoplasty, spinal cord stimulator implants. Joint replacement and open fusion are another specialty's work, so he has nothing riding on that recommendation; spine, knees, hips, shoulders and nerve pain are his.",
     image: "dr-baumgartner.webp",
     alt: "Edward Baumgartner Jr., MD — Founder of HTx Pain Institute",
     href: "/dr-edward-baumgartner",
@@ -166,13 +174,34 @@ export default function AboutUsPage() {
               </div>
 
               <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {pillars.map((p) => (
-                  <div key={p.title} className="rounded-xl border border-line bg-off-white p-5">
-                    <IconBadge icon={p.icon} tone="brass" />
-                    <p className="mt-4 font-semibold text-navy">{p.title}</p>
-                    <p className="mt-1 text-[13px] text-charcoal-soft">{p.body}</p>
-                  </div>
-                ))}
+                {pillars.map((p) => {
+                  const inner = (
+                    <>
+                      <IconBadge icon={p.icon} tone="brass" />
+                      <p className="mt-4 font-semibold text-navy">{p.title}</p>
+                      <p className="mt-1 text-[13px] text-charcoal-soft">{p.body}</p>
+                      {p.href ? (
+                        <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brass-text">
+                          Learn more
+                          <ArrowIcon />
+                        </span>
+                      ) : null}
+                    </>
+                  );
+                  return p.href ? (
+                    <Link
+                      key={p.title}
+                      href={p.href}
+                      className="group rounded-xl border border-line bg-off-white p-5 transition-colors hover:border-brass"
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div key={p.title} className="rounded-xl border border-line bg-off-white p-5">
+                      {inner}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

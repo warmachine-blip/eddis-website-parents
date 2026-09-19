@@ -9,7 +9,7 @@ export const lastModified: Record<string, string> = {
   "/chronic-pain": "2026-09-18",
   "/community": "2026-09-18",
   "/community/imas-home": "2026-09-18",
-  "/community/kel-strong-foundation": "2026-09-18",
+  "/community/kel-strong-foundation": "2026-09-19",
   "/contact": "2026-09-18",
   "/dr-edward-baumgartner": "2026-09-19",
   "/fibromyalgia": "2026-09-18",

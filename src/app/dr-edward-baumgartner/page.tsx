@@ -13,7 +13,7 @@ import FinalCta from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
   description:
-    "Edward Baumgartner Jr., MD, the Houston physician you see before you agree to surgery. Double board-certified in Anesthesiology and Pain Medicine.",
+    "Edward Baumgartner Jr., MD. Double board-certified in Anesthesiology and Pain Medicine, finding what causes the pain and treating that, in Houston and Humble.",
 };
 
 const facts = [
@@ -140,8 +140,9 @@ export default function DrBaumgartnerPage() {
             Edward Baumgartner Jr., MD
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            The physician you see before you agree to surgery. Double
-            board-certified in Anesthesiology and Pain Medicine.
+            Double board-certified in Anesthesiology and Pain Medicine. The first
+            job of any visit is finding which structure is generating the pain, and
+            most of the time treating it does not take an operation.
           </p>
         </div>
       </section>
@@ -194,11 +195,13 @@ export default function DrBaumgartnerPage() {
             </p>
             <div className="mt-3 space-y-4 text-pretty text-lg leading-relaxed text-charcoal-soft">
               <p>
-                Edward Baumgartner Jr., MD is a Houston native with over fifteen
-                years in interventional pain medicine. He does not perform joint
-                replacements or open fusions. That is worth knowing, because it
-                means he has no reason to talk you into one, and none to talk
-                you out of one either.
+                Edward Baumgartner Jr., MD is a Houston native with over
+                fifteen years in interventional pain medicine. Most of what
+                comes through the door is ordinary: a back that has hurt for
+                months, a knee that gives out, sciatica, pain that started
+                after a car accident. The question is the same every time:
+                what, specifically, is causing it. Most of the time, treating
+                it does not take an operation.
               </p>
               <p>
                 He spent the five years between fellowship and founding his own
@@ -244,12 +247,13 @@ export default function DrBaumgartnerPage() {
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Clinical Focus</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
-                    Dr. Baumgartner&rsquo;s practice is built around patients
-                    who have been told an operation is the only thing left. A
-                    spinal fusion, a knee replacement, a shoulder repair, after
-                    physical therapy and injections have not held. Most of them
-                    have never had the source of their pain identified
-                    precisely.
+                    Most of Dr. Baumgartner's patients arrive without a
+                    precise explanation for their pain. A knee that has hurt
+                    for a year, a back that gives out, sciatica no one has
+                    traced to a level. Some have had months of physical
+                    therapy, some a drawer of prescriptions, some a surgeon's
+                    recommendation they are not sure about. What almost none
+                    of them have had is a diagnosis specific enough to treat.
                   </p>
                   <p>
                     That is the work, and the method does not change with the
@@ -302,14 +306,15 @@ export default function DrBaumgartnerPage() {
                     The two certifications do different work: Anesthesiology
                     gives him the anatomy and the image-guided technique, Pain
                     Medicine the diagnostic discipline that says which structure
-                    to treat. Together they are why he can treat pain properly
-                    without defaulting to surgery. An honest
+                    to treat. Together they are why a patient here gets a diagnosis
+                    rather than another prescription, and why treating the
+                    cause usually does not take an operation. An honest
                     &ldquo;no&rdquo; is part of the job, and nothing stops him
                     giving it.
                   </p>
                   <p>
-                    It is worth being precise about that line, because it is
-                    not a limitation. He operates at Townsen Memorial Hospital,
+                    It is worth saying plainly which procedures he performs
+                    himself and which belong to other specialties. He operates at Townsen Memorial Hospital,
                     and SI joint fusion, Minuteman interspinous fusion,
                     kyphoplasty and spinal cord stimulator implants are all his
                     own work. What he is not is an orthopedic surgeon or a

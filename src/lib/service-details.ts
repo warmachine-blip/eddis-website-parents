@@ -171,7 +171,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Radicular pain from disc herniation or stenosis",
       "Facet joint, sacroiliac joint, or peripheral joint pain",
       "Sympathetic-mediated pain syndromes (CRPS, post-surgical pain)",
-      "Patients seeking diagnostic clarity before surgery or ablation",
+      "Patients who want the source confirmed before committing to ablation or a longer-term procedure",
     ],
     whatToExpect: [
       "The procedure typically takes 10–20 minutes.",
@@ -382,14 +382,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "si-joint-fusions",
     title: "SI Joint Fusions",
     metaDescription:
-      "SI joint fusion in Houston and Humble. Minimally invasive stabilization for confirmed sacroiliac joint pain that has not responded to conservative care.",
+      "Minimally invasive SI joint fusion in Houston and Humble. We confirm the sacroiliac joint is causing your low back, buttock, or groin pain before fusing it.",
     lastReviewed: "2026-09-10",
     heroImage: "clinician-palpating-lower-back-seated-patient.jpg",
     heroImageAlt: "A clinician in mint-green scrubs presses one hand against the mid-back and the other against the lower back of a woman seated upright and fully clothed on the edge of a padded exam table.",
     eyebrow: "SI Joint Fusion",
-    leadLine: "A definitive answer for chronic SI joint pain.",
+    leadLine: "First we confirm the SI joint is the real source of the pain. Fusion comes up only after that, and only if simpler treatment has not held.",
     intro:
-      "When the sacroiliac (SI) joint is the source of chronic low-back, buttock, or groin pain — and conservative care has not worked — minimally invasive SI joint fusion offers a definitive solution. Through a small incision, a fusion implant or graft — chosen for your anatomy from several fusion systems and graft types, including allograft and implant-based options — stabilizes the joint and allows biological fusion over time.",
+      "Pain in the low back, buttock, or groin is often blamed on the lumbar spine when the sacroiliac (SI) joint is the actual source. Diagnostic injections settle which one it is. When they confirm the SI joint and conservative care has not worked, minimally invasive fusion stabilizes the joint through a small incision. The fusion implant or graft is chosen for your anatomy from several systems and graft types, including allograft and implant-based options, and it allows biological fusion over the months that follow.",
     quickFacts: {
       setting: "Outpatient, home same day",
       anesthesia: "Sedation, not general",
@@ -519,7 +519,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Therapy is fine-tuned remotely by our team using your feedback.",
     ],
     whoIsItFor: [
-      "Failed back surgery syndrome / persistent post-surgical spine pain",
+      "Pain that continued or came back after spine surgery, sometimes called failed back surgery syndrome",
       "Axial back pain — pain centered in the back itself rather than radiating into a limb",
       "Various neuropathies, including diabetic peripheral neuropathy",
       "Complex regional pain syndrome (CRPS)",
@@ -715,7 +715,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     eyebrow: "PRP",
     leadLine: "Your body's own healing factors, concentrated and delivered.",
     intro:
-      "Platelet-rich plasma (PRP) therapy uses a concentrated preparation of your own platelets — rich in growth factors — to accelerate healing in joints, tendons, and soft tissues. It is non-surgical, biologically derived from your own blood, and increasingly used as a first-line option for select musculoskeletal conditions.",
+      "Platelet-rich plasma (PRP) therapy uses a concentrated preparation of your own platelets — rich in growth factors — to accelerate healing in joints, tendons, and soft tissues. The whole thing happens in one office visit of about an hour, and the only material going back in is your own blood. For some musculoskeletal problems it is a reasonable first thing to try rather than a last resort.",
     quickFacts: {
       setting: "In-office, ~60-minute visit",
       anesthesia: "Discussed at consult",
@@ -825,7 +825,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "mild-procedure",
     title: "MILD Procedure",
     metaDescription:
-      "MILD procedure for lumbar spinal stenosis at HTx Pain Institute. Outpatient, no implants, walk out the same day. Schedule your consultation today.",
+      "MILD in Houston and Humble for lumbar spinal stenosis: leg pain or numbness when you stand or walk, eased by sitting. Outpatient, no general anesthesia.",
     lastReviewed: "2026-09-10",
     heroImage: "fluoroscopy-c-arm-procedure-suite.jpg",
     heroImageAlt: "A fluoroscopy C-arm and patient table in a bright, empty interventional procedure suite with a bank of imaging monitors.",
@@ -909,14 +909,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "minuteman-procedure",
     title: "Minuteman Lumbar Fusion",
     metaDescription:
-      "Minuteman lumbar fusion in Houston and Humble. A posterior, minimally invasive interspinous implant that stabilizes a painful lumbar segment.",
+      "Back pain traced to one lumbar segment: Minuteman fusion in Houston and Humble, a minimally invasive posterior interspinous implant that stabilizes it.",
     lastReviewed: "2026-09-10",
     heroImage: "lumbar-spine-model-closeup.jpg",
     heroImageAlt: "Close-up of an anatomical lumbar spine model with sacrum, yellow nerve roots, and a red herniated disc resting on a black treatment table.",
     eyebrow: "Minuteman",
-    leadLine: "Posterior lumbar fusion through a minimally invasive interspinous approach.",
+    leadLine: "For low-back pain that traces to one lumbar segment and has not responded to therapy or injections.",
     intro:
-      "The Minuteman is a posterior, minimally invasive interspinous-interlaminar fusion device for the lumbar spine. Placed between the spinous processes of a painful lumbar segment, it provides immediate stabilization with less soft-tissue disruption than traditional open fusion and supports biological fusion over the following months. It is a separate procedure from SI joint fusion; Dr. Baumgartner selects it for patients whose anatomy and imaging fit.",
+      "The Minuteman is for back pain that imaging and diagnostic work have traced to a specific lumbar segment. A small implant is placed between the spinous processes of that segment through a posterior, minimally invasive interspinous-interlaminar approach. It stabilizes the level immediately, with less soft-tissue disruption than a traditional open fusion, and bone graft supports biological fusion over the following months. It is a separate procedure from SI joint fusion; Dr. Baumgartner selects it for patients whose anatomy and imaging fit.",
     quickFacts: {
       setting: "Outpatient, home same day",
       anesthesia: "Discussed at consult",

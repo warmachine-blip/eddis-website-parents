@@ -34,10 +34,18 @@ const resourceCards = [
   },
   {
     title: "Get a Second Opinion",
-    body: "Considering surgery? Stuck on long-term medication? Our second-opinion consultations offer clarity.",
+    body: "Told you need an operation, or on the same medication for years? Bring what imaging and notes you have. You leave with a written impression you can act on.",
     linkLabel: "Learn about second opinions",
     href: "/second-opinion",
     icon: "shield",
+    tone: "dark",
+  },
+  {
+    title: "Conditions We Treat",
+    body: "Back, neck, knee, hip, and nerve pain, plus pain that started with a car accident. Find yours and see what is actually causing it.",
+    linkLabel: "Browse conditions",
+    href: "/pain-center",
+    icon: "spine",
     tone: "dark",
   },
 ] as const;
@@ -46,7 +54,7 @@ const steps = [
   {
     number: "01",
     title: "Initial Consultation",
-    body: "An unhurried review of your history, exam, imaging, and prior treatments. We listen first.",
+    body: "An unhurried review of your history, exam, any imaging, and prior treatments. We listen first, then work to identify where the pain is coming from.",
   },
   {
     number: "02",
@@ -240,7 +248,7 @@ export default function PatientsPage() {
             <SectionHeading
               eyebrow="Our Environment"
               title="A welcoming space — designed for your comfort."
-              lead="Our practice was intentionally designed to feel calm and unhurried — a quiet contrast to the high-volume clinics most pain patients have already endured. From check-in to follow-up, you'll find a team that has the time and the focus to truly listen."
+              lead="Our practice was intentionally designed to feel calm and unhurried, not the high-volume pain clinic many patients expect. From check-in to follow-up, you'll find a team with the time and the focus to listen."
             />
           </div>
         </div>
