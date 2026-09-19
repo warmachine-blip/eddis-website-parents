@@ -232,9 +232,8 @@ export default function Home() {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
               Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
               mission: bring the modern interventional toolkit to Houston — applied
-              with the time, precision, and judgment every patient deserves. No
-              shortcuts. No high-volume churn. Just the care he&rsquo;d want for his
-              own family.
+              with the time, precision, and judgment every patient deserves. Just
+              the care he&rsquo;d want for his own family.
             </p>
 
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">

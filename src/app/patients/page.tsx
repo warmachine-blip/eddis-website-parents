@@ -240,7 +240,7 @@ export default function PatientsPage() {
             <SectionHeading
               eyebrow="Our Environment"
               title="A welcoming space — designed for your comfort."
-              lead="Our practice was intentionally designed to feel calm and unhurried — a quiet contrast to the high-volume clinics most pain patients have already endured. From check-in to follow-up, you'll find a team that has the time and the focus to truly listen."
+              lead="Calm and unhurried, from check-in to follow-up. Appointments are long enough to go through your history, your exam, and your questions."
             />
           </div>
         </div>
