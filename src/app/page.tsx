@@ -21,7 +21,7 @@ const heroStats: { value: string; label: string; href?: string }[] = [
   { value: "10K+", label: "Procedures" },
   {
     value: `${reviews.rating}★`,
-    label: `${reviews.reviewCount.toLocaleString("en-US")} Reviews`,
+    label: `${reviews.reviewCountFloor} Reviews`,
     href: "#reviews",
   },
 ];

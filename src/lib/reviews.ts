@@ -9,15 +9,22 @@ export const reviews = {
   googleProfileUrl:
     "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Suite+200+Houston+TX+77070",
   /**
-   * The homepage hero stat, and the only place these numbers are used. The
-   * embedded widget above is always live; these are a hand-copied snapshot of
-   * it, so they go stale silently. Updating them is this one edit.
+   * The homepage hero stat, and the only place these values are used.
    *
    * Deliberately not published as schema.org aggregateRating — see the note in
    * src/components/organization-schema.tsx for why.
    */
   rating: "5.0",
-  reviewCount: 653,
-  /** When the two numbers above were last read off the widget. */
+  /**
+   * A floor, not the live total. New reviews land every few weeks, so an exact
+   * figure is wrong within days of being typed. "650+" stays true on its own
+   * and only needs raising once the real count passes 700.
+   *
+   * The "+" is part of the value rather than of the template, so a later edit
+   * to the hero cannot quietly turn a floor back into a false exact claim.
+   * Real total behind it when last read off the widget: 653.
+   */
+  reviewCountFloor: "650+",
+  /** When the rating and the real total behind the floor were last checked. */
   countLastChecked: "2026-09-19",
 };
