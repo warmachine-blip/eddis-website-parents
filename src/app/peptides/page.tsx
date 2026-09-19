@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import { IconBadge } from "@/components/icon-badge";
-import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
-  title: "Peptides & Wellness (Coming Soon)",
+  title: "Peptide & Weight Therapy (Coming Soon)",
   description:
-    "HTx Pain Institute is building a dedicated wellness program — physician-supervised peptides, weight loss, and recovery. Talk to Dr. Baumgartner.",
+    "A physician-supervised program for weight, hormones, and recovery. Peptides and GLP-1 medications, prescribed and monitored by Dr. Baumgartner. Coming soon.",
 };
 
 const features = [
@@ -40,13 +39,12 @@ export default function Page() {
             Peptides &amp; Wellness
           </p>
           <h1 className="mt-5 max-w-2xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            A dedicated wellness program — coming soon.
+            A dedicated wellness program, coming soon.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            HTx Pain Institute is building a physician-supervised peptide therapy and wellness
-            program to complement our core pain care. The full program will launch on its own —
-            for now, please contact us to discuss whether a wellness consultation is right for
-            you.
+            We are building a physician-supervised program for weight management, hormone
+            support, and recovery. It will launch on its own. For now, contact us to talk about
+            whether a wellness consultation is right for you.
           </p>
         </div>
       </section>
@@ -56,14 +54,13 @@ export default function Page() {
         <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
           <IconBadge icon="pulse" tone="brass" className="mx-auto" />
           <h2 className="mx-auto mt-6 text-balance font-serif text-3xl leading-[1.1] text-navy sm:text-4xl lg:text-[2.75rem]">
-            Wellness, integrated with serious pain medicine.
+            Weight, hormones, recovery. Managed by a physician.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-relaxed text-charcoal-soft">
-            Our forthcoming wellness program will include physician-supervised weight management
-            with GLP-1 medications, nerve-repair peptides, recovery protocols, and growth-hormone
-            support — all selected, dosed, and monitored by Dr. Baumgartner and our team. We are
-            taking the time to launch this program the right way, with the same precision
-            standards we apply to our interventional pain care.
+            The program will cover weight management with GLP-1 medications, nerve-repair
+            peptides, recovery protocols, and growth-hormone support. Dr. Baumgartner selects,
+            doses, and monitors every one of them. We are taking the time to launch it properly
+            rather than quickly.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {features.map((f) => (
@@ -82,12 +79,11 @@ export default function Page() {
         <div className="mx-auto max-w-2xl px-6 pb-16 lg:px-10 lg:pb-20">
           <div className="rounded-2xl bg-gradient-to-br from-navy-deep to-navy p-7 text-center text-off-white shadow-md sm:p-10">
             <h2 className="text-balance font-serif text-2xl leading-tight sm:text-3xl">
-              Want to be the first to hear when wellness launches?
+              Want to know when the program opens?
             </h2>
             <p className="mt-4 text-base leading-relaxed text-off-white/85">
-              Contact our office and let us know you&rsquo;re interested in the wellness program.
-              We&rsquo;ll add you to the launch list and schedule a consultation when the program
-              is live.
+              Contact the office and tell us you are interested. We will add you to the launch
+              list and book a consultation once the program is live.
             </p>
             <div className="mt-8">
               <Link
@@ -121,8 +117,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <FinalCta />
     </div>
   );
 }
