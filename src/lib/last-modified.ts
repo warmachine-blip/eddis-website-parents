@@ -46,7 +46,7 @@ export const lastModified: Record<string, string> = {
   "/pelvic-pain": "2026-09-18",
   "/peptides": "2026-09-19",
   "/post-surgical-pain": "2026-09-18",
-  "/privacy": "2026-09-09",
+  "/privacy": "2026-09-19",
   "/prp-procedure": "2026-09-18",
   "/radiofrequency-ablation": "2026-09-18",
   "/request-appointment": "2026-09-18",

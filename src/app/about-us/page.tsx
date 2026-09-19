@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    title: "Not the One Operating",
-    body: "He does not perform joint replacements or open fusions.",
+    title: "A Second Opinion Before Surgery",
+    body: "If an operation is the only option you have been offered, he will look again.",
     icon: "pulse",
   },
   {
@@ -159,9 +159,9 @@ export default function AboutUsPage() {
                   interventional pain medicine, applied carefully and with
                   judgment, can return people to the lives they want. Usually
                   that happens without an operation, and often without long-term
-                  medication. And since joint replacement and open fusion are
-                  not work Dr. Baumgartner does, it makes no difference to him
-                  which way that goes.
+                  medication. And when the answer is an operation he does not
+                  perform, he tells you so and points you to a surgeon who
+                  does.
                 </p>
               </div>
 

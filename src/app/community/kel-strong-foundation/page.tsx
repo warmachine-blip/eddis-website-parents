@@ -54,7 +54,7 @@ const events = [
   {
     icon: "bolt" as const,
     name: "Annual Tennis Day",
-    body: "Played in the sport Kel ranked in nationally, competed in at Purdue and TCU, and came back to left-handed. Supporters, families, sponsors, and volunteers spend the day on court.",
+    body: "Kel reached a top-ten national junior ranking, played Division I tennis at Purdue and TCU, and plays again today, left-handed. Supporters, families, sponsors, and volunteers spend the day on court.",
   },
   {
     icon: "sparkles" as const,
