@@ -1,6 +1,12 @@
 export type BlogPost = {
   slug: string;
+  /** The headline, used as the H1 and — unless seoTitle is set — the title tag. */
   title: string;
+  /**
+   * Title-tag override, for headlines that run past the ~60 characters Google
+   * shows. The H1 keeps `title`; only the tab and the search result change.
+   */
+  seoTitle?: string;
   excerpt: string;
   image: string;
   alt: string;
@@ -38,6 +44,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "first-week-after-spinal-cord-stimulation",
     title: "What to expect in the first week after spinal cord stimulation.",
+    seoTitle: "The first week after spinal cord stimulation",
     excerpt:
       "From the moment the trial leads come out to the first programming session — a realistic, day-by-day guide for new SCS patients.",
     image: "blog-spinal-cord-stimulation.jpg",
@@ -90,6 +97,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "er-to-5k-kyphoplasty-recovery",
     title: "From the ER to her first 5K: a kyphoplasty patient's recovery.",
+    seoTitle: "From the ER to her first 5K: a kyphoplasty recovery",
     excerpt:
       "After a vertebral fracture took her off her feet, our patient walked back into running through a careful, staged plan.",
     image: "blog-kyphoplasty.jpg",

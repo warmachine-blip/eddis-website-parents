@@ -17,7 +17,9 @@ export async function generateMetadata(
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: post.title,
+    // Absolute: a post headline is long enough on its own, and the brand suffix
+    // would push every one of these past what Google displays.
+    title: { absolute: post.seoTitle ?? post.title },
     description: post.excerpt,
   };
 }

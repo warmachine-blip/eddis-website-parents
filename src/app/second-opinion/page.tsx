@@ -6,7 +6,7 @@ import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Second Opinions Before Spine or Joint Surgery in Houston",
+  title: "Houston Second Opinions Before Surgery",
   description:
     "Told you need an operation? A second opinion from a physician who operates but is not an orthopedic surgeon or neurosurgeon — and has no stake in the answer.",
 };
