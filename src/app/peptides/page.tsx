@@ -54,7 +54,7 @@ export default function Page() {
       {/* Wellness overview */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
-          <IconBadge icon="pulse" tone="brass" />
+          <IconBadge icon="pulse" tone="brass" className="mx-auto" />
           <h2 className="mx-auto mt-6 text-balance font-serif text-3xl leading-[1.1] text-navy sm:text-4xl lg:text-[2.75rem]">
             Wellness, integrated with serious pain medicine.
           </h2>

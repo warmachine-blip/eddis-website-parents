@@ -65,15 +65,22 @@ export function IconBadge({
   icon,
   tone = "brass",
   hover = false,
+  className = "",
 }: {
   icon: IconName;
   tone?: Tone;
   hover?: boolean;
+  /**
+   * Extra classes for the badge box. This renders as a grid, so it is a block
+   * box of fixed width: `text-center` on an ancestor will not centre it, and a
+   * centred section needs `mx-auto` passed here.
+   */
+  className?: string;
 }) {
   const def = ICONS[icon];
   return (
     <span
-      className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors ${TONES[tone]} ${hover ? HOVER_TONES[tone] : ""}`}
+      className={["grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors", TONES[tone], hover ? HOVER_TONES[tone] : "", className].filter(Boolean).join(" ")}
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
         {"circle" in def && def.circle && (
