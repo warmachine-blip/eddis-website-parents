@@ -561,7 +561,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     title: "Knee Pain",
     metaDescription: "Knee pain care in Houston and Humble. We find which part of the knee is driving the pain, then treat that with image-guided injections, PRP, or nerve ablation.",
     lastReviewed: "2026-09-10",
-    leadLine: "Stay on your feet. Stay in your life. We focus on what works.",
+    leadLine: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint.",
     heroImage: "treatment-knee-pain-treatment.jpg",
     heroImageAlt: "Knee pain treatment at HTx Pain Institute",
     intro:

@@ -40,7 +40,7 @@ export const conditions: Condition[] = [
     slug: "knee-pain",
     href: "/knee-pain",
     title: "Knee Pain",
-    summary: "Stay on your feet. Stay in your life. We focus on what works.",
+    summary: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint.",
   },
   {
     slug: "neck-pain",

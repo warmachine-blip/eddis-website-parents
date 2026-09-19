@@ -61,7 +61,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "spinal-stenosis", title: "Spinal Stenosis", blurb: "Narrowing of the spinal canal that compresses nerves and limits walking." },
     ],
     commonServices: [
@@ -109,7 +109,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
       { slug: "neuropathic-pain", title: "Neuropathic Pain", blurb: "Burning, electric, or tingling pain caused by injury or irritation of the nerves themselves." },
     ],
@@ -208,7 +208,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "spinal-stenosis", title: "Spinal Stenosis", blurb: "Narrowing of the spinal canal that compresses nerves and limits walking." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
     ],
     commonServices: [
@@ -256,7 +256,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
       { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
@@ -303,7 +303,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     finalCtaHeadline: "Pain care that fits your life — and your commute.",
     commonConditions: [
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
@@ -354,7 +354,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
       { slug: "sports-injuries", title: "Sports Injuries", blurb: "Get back to your sport — with diagnostics and biologics that respect the timeline." },
     ],
@@ -404,7 +404,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "sciatica", title: "Sciatica", blurb: "Radiating leg pain from compression or irritation of the sciatic nerve." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
     commonServices: [
@@ -452,7 +452,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonConditions: [
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
       { slug: "post-surgical-pain", title: "Post-Surgical Pain", blurb: "Pain that outlasts the surgery, whether or not it went well. Almost always a specific cause, rarely another operation." },
     ],
@@ -502,7 +502,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "back-pain", title: "Back Pain", blurb: "The back has several structures that can produce the same ache. The first visit is about finding which one." },
       { slug: "neck-pain", title: "Neck Pain", blurb: "Stiffness, headaches, and arm pain traced back to the joints or nerves of the cervical spine." },
       { slug: "joint-pain", title: "Joint Pain", blurb: "From shoulder to hip — image-guided care for the joints that move you." },
-      { slug: "knee-pain", title: "Knee Pain", blurb: "Stay on your feet. Stay in your life. We focus on what works." },
+      { slug: "knee-pain", title: "Knee Pain", blurb: "Arthritis, tendon pain, and knees that still hurt after surgery, from the cartilage to the nerves that supply the joint." },
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
     ],
     commonServices: [
