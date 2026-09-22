@@ -98,7 +98,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
               href="/request-appointment"
               className="border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
-              Schedule Consultation
+              Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref}
@@ -149,7 +149,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                   href="/request-appointment"
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy"
                 >
-                  Schedule Consultation
+                  Schedule Appointment
                 </Link>
               </div>
               <div className="relative isolate aspect-[4/3] overflow-hidden rounded-2xl bg-line">

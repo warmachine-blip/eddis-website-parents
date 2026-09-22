@@ -74,7 +74,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
               href="/request-appointment"
               className="border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
-              Schedule Consultation
+              Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref}

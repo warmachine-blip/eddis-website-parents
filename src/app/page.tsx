@@ -110,7 +110,7 @@ export default function Home() {
                 href="/request-appointment"
                 className="border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep transition-colors hover:bg-brass-light"
               >
-                Book Consultation
+                Schedule Appointment
               </Link>
               <Link
                 href="#services"
