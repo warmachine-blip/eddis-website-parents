@@ -59,7 +59,7 @@ const serviceLinks = servicesNav.filter((s) => !s.note);
 
 const patientLinks = [
   ...patientsNav,
-  { label: "Request Appointment", href: "/request-appointment" },
+  { label: "Schedule Appointment", href: "/request-appointment" },
   // External (Nimblr). Patients were phoning the front desk to reschedule.
   { label: "Reschedule Appointment", href: scheduling.manageUrl, external: true },
 ];

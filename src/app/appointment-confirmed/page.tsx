@@ -23,7 +23,7 @@ const nextSteps = [
   {
     number: "2",
     title: "We verify your benefits",
-    body: "Our team confirms your coverage ahead of time and calls you if anything needs clarifying — so there are no surprises at the desk.",
+    body: "Our team verifies your insurance benefits in advance, so there are no surprises. If there's a coverage issue, we'll reach out before your appointment.",
   },
   {
     number: "3",

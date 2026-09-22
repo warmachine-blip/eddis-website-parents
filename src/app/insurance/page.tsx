@@ -213,7 +213,7 @@ export default function InsurancePage() {
                 href="/request-appointment"
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy-deep"
               >
-                Request Appointment
+                Schedule Appointment
                 <ArrowIcon />
               </Link>
             </div>

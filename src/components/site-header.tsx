@@ -103,7 +103,7 @@ export default function SiteHeader() {
             href="/request-appointment"
             className="shrink-0 whitespace-nowrap border border-brass bg-navy px-2.5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep xl:px-5 xl:text-sm"
           >
-            Request Appointment
+            Schedule Appointment
           </Link>
         </div>
 
@@ -209,7 +209,7 @@ export default function SiteHeader() {
               onClick={closeMobile}
               className="border border-brass bg-navy px-5 py-3 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white"
             >
-              Request Appointment
+              Schedule Appointment
             </Link>
           </div>
         </nav>

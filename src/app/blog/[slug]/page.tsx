@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
-import { blogPosts } from "@/lib/blog-posts";
+import { publishedPosts } from "@/lib/blog-posts";
 import { formatReviewDate } from "@/lib/review";
 import { SITE_URL } from "@/lib/site";
 import { ORG_ID, FOUNDER_ID, WEBSITE_ID } from "@/lib/schema";
@@ -24,14 +24,14 @@ async function bodyFor(slug: string) {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  return publishedPosts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata(
   props: PageProps<"/blog/[slug]">
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = publishedPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
     // Absolute: a post headline is long enough on its own, and the brand suffix
@@ -43,7 +43,7 @@ export async function generateMetadata(
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = publishedPosts.find((p) => p.slug === slug);
   if (!post) notFound();
   const Body = await bodyFor(slug);
 

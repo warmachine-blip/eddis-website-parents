@@ -5,7 +5,7 @@ import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Request an Appointment in Houston",
+  title: "Schedule an Appointment in Houston",
   description:
     "Book an appointment at HTx Pain Institute in Houston or Humble online in a few minutes, or call us. Same-week consultations available.",
 };
@@ -17,7 +17,7 @@ const nextSteps = [
   },
   {
     number: "2",
-    body: "We verify benefits and walk you through coverage.",
+    body: "Our team verifies your insurance benefits in advance, so there are no surprises. If there's a coverage issue, we'll reach out before your appointment.",
   },
   {
     number: "3",
@@ -35,10 +35,10 @@ export default function RequestAppointmentPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Request Appointment" }]} />
+          <Breadcrumb dark items={[{ label: "Home", href: "/" }, { label: "Schedule Appointment" }]} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
-            Request Appointment
+            Schedule Appointment
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
             Schedule your consultation.

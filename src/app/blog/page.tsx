@@ -2,13 +2,21 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import BlogPostsGrid from "@/components/blog-posts-grid";
 import NewsletterSignup from "@/components/newsletter-signup";
-import { blogCategories, blogPosts } from "@/lib/blog-posts";
+import { blogCategories, publishedPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Plain-English articles on pain medicine, interventional procedures, recovery, and patient stories from HTx Pain Institute in Houston.",
 };
+
+/**
+ * Only the categories that actually have a post, so the filter row never offers
+ * a tab that leads to an empty grid. It grows on its own as posts are migrated.
+ */
+const activeCategories = blogCategories.filter(
+  (category) => category === "All" || publishedPosts.some((p) => p.category === category)
+);
 
 export default function BlogPage() {
   return (
@@ -34,7 +42,7 @@ export default function BlogPage() {
       {/* Posts */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <BlogPostsGrid categories={blogCategories} posts={blogPosts} />
+          <BlogPostsGrid categories={activeCategories} posts={publishedPosts} />
         </div>
       </section>
 

@@ -42,85 +42,110 @@ export const blogCategories = [
   "Patient Stories",
 ];
 
+/**
+ * TODO — physician review outstanding on all six posts below.
+ *
+ * They were migrated from the old WordPress blog on 2026-09-22 with their
+ * bodies intact, but none carries a `lastReviewed` date, so `publishedPosts`
+ * is empty and none of them renders. Each needs Dr. Baumgartner to read it and
+ * supply the date he read it; adding that date publishes the post.
+ *
+ * The blog stays parked in next.config.ts until at least one is reviewed —
+ * unparking with none published would 404 the six old post URLs instead of
+ * redirecting them to the homepage as it does today.
+ */
 export const blogPosts: BlogPost[] = [
   {
-    slug: "facet-joint-pain-radiofrequency-ablation",
-    title: "When does facet joint pain warrant radiofrequency ablation?",
+    slug: "expect-after-a-radio-frequency-ablation",
+    title: "What to Expect After a Radiofrequency Ablation",
     excerpt:
-      "Diagnostic medial branch blocks remain the gold standard. Here's how we use them — and what it tells us about who is likely to respond well.",
-    image: "blog-radiofrequency-ablation.jpg",
-    alt: "Radiofrequency ablation for facet joint pain",
-    category: "Spine",
-    datePublished: "2026-02-24",
-    readTime: "5 min read",
+      "Relief usually starts between two days and two weeks, and the average run is about fifteen months. Here is the recovery timeline, appointment by appointment.",
+    image: "blog-after-radiofrequency-ablation.jpg",
+    alt: "Gloved clinician guiding a needle into a knee using ultrasound",
+    category: "Recovery",
+    datePublished: "2024-02-06",
+    dateModified: "2025-03-28",
+    readTime: "4 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
   },
   {
-    slug: "first-week-after-spinal-cord-stimulation",
-    title: "What to expect in the first week after spinal cord stimulation.",
-    seoTitle: "The first week after spinal cord stimulation",
+    slug: "understanding-radiofrequency-ablation",
+    title: "What if Radiofrequency Ablation Doesn’t Work?",
     excerpt:
-      "From the moment the trial leads come out to the first programming session — a realistic, day-by-day guide for new SCS patients.",
-    image: "blog-spinal-cord-stimulation.jpg",
-    alt: "Spinal cord stimulation recovery",
-    category: "Recovery",
-    datePublished: "2026-03-18",
-    readTime: "6 min read",
+      "A misidentified pain source, needle placement, or ordinary biological variation can each blunt the result. What that points to next, and which options remain.",
+    image: "blog-radiofrequency-ablation-next-steps.jpg",
+    alt: "Illustration of radiofrequency probes targeting the nerves around a knee and a hip",
+    category: "Procedures",
+    datePublished: "2023-10-13",
+    dateModified: "2025-04-02",
+    readTime: "3 min read",
+    relatedHref: "/radiofrequency-ablation",
+    relatedLabel: "Radiofrequency Ablation",
+  },
+  {
+    slug: "spinal-cord-stimulator-trial-works",
+    title: "How a Spinal Cord Stimulator Trial Works",
+    excerpt:
+      "The trial is the point: a temporary lead lets you test the therapy for days before anything is implanted. What the week involves, and how success is judged.",
+    image: "blog-spinal-cord-stimulator-trial.jpg",
+    alt: "Illustration of spinal cord stimulator leads and pulse generator along the lower spine",
+    category: "Procedures",
+    datePublished: "2023-11-20",
+    dateModified: "2025-04-02",
+    readTime: "4 min read",
     relatedHref: "/spinal-cord-stimulation-specialist",
     relatedLabel: "Spinal Cord Stimulation",
   },
   {
-    slug: "vertebrogenic-pain-missed-diagnosis",
-    title: "Vertebrogenic pain: the diagnosis that's still being missed.",
+    slug: "how-long-does-it-take-to-feel-better-after-kyphoplasty",
+    title: "How Long Does It Take to Feel Better After Kyphoplasty?",
+    seoTitle: "How long does kyphoplasty recovery take?",
     excerpt:
-      "MRI Modic changes are a critical clue. Here's how to think about vertebrogenic low-back pain — and why Intracept matters.",
-    image: "blog-treatment-options-for-spinal-stenosis.jpg",
-    alt: "Vertebrogenic low-back pain diagnosis",
-    category: "Conditions",
-    datePublished: "2026-04-09",
-    readTime: "4 min read",
-    relatedHref: "/intracept-procedure",
-    relatedLabel: "Intracept Procedure",
-  },
-  {
-    slug: "questions-before-starting-pain-medication",
-    title: "Five questions to ask before starting any pain medication.",
-    excerpt:
-      "Long-term medications come with trade-offs. We walk through the questions every patient should be asking.",
-    image: "blog-interventional-pain-management.jpg",
-    alt: "Pain medication and interventional pain management",
-    category: "Lifestyle",
-    datePublished: "2026-05-28",
+      "Most people notice a change within a day or two of a vertebral compression fracture being stabilized. What the first week looks like, and what slows it down.",
+    image: "blog-kyphoplasty-recovery-timeline.jpg",
+    alt: "Illustration of a kyphoplasty balloon expanding a collapsed vertebra",
+    category: "Recovery",
+    datePublished: "2023-08-07",
+    dateModified: "2025-04-02",
     readTime: "3 min read",
-    relatedHref: "/patients",
-    relatedLabel: "Patient Resources",
-  },
-  {
-    slug: "prp-therapy-where-the-evidence-is",
-    title: "PRP therapy in 2026: where the evidence actually is.",
-    excerpt:
-      "PRP is more than a buzzword. We break down the conditions where the evidence is strong — and where it isn't yet.",
-    image: "treatment-prp-procedure.jpg",
-    alt: "Platelet-rich plasma (PRP) therapy",
-    category: "Procedures",
-    datePublished: "2026-06-15",
-    readTime: "5 min read",
-    relatedHref: "/prp-procedure",
-    relatedLabel: "PRP (Platelet-Rich Plasma)",
-  },
-  {
-    slug: "er-to-5k-kyphoplasty-recovery",
-    title: "From the ER to her first 5K: a kyphoplasty patient's recovery.",
-    seoTitle: "From the ER to her first 5K: a kyphoplasty recovery",
-    excerpt:
-      "After a vertebral fracture took her off her feet, our patient walked back into running through a careful, staged plan.",
-    image: "blog-kyphoplasty.jpg",
-    alt: "Kyphoplasty patient recovery story",
-    category: "Patient Stories",
-    datePublished: "2026-07-04",
-    readTime: "6 min read",
     relatedHref: "/kyphoplasty-specialist",
     relatedLabel: "Kyphoplasty",
   },
+  {
+    slug: "understanding-stellate-ganglion-block",
+    title: "Understanding Stellate Ganglion Block: A Path to Pain Relief",
+    seoTitle: "What a stellate ganglion block treats",
+    excerpt:
+      "An injection near a cluster of sympathetic nerves in the neck. It both diagnoses and treats — CRPS, shingles pain, phantom limb pain and some facial pain.",
+    image: "blog-stellate-ganglion-block.jpg",
+    alt: "Cervical spine highlighted on a person holding the back of their neck",
+    category: "Procedures",
+    datePublished: "2024-01-05",
+    dateModified: "2025-03-06",
+    readTime: "3 min read",
+    relatedHref: "/injections-blocks-specialist",
+    relatedLabel: "Injections & Nerve Blocks",
+  },
+  {
+    slug: "intracept-procedure-for-chronic-low-back-pain",
+    title: "Intracept Procedure for Chronic Low Back Pain",
+    excerpt:
+      "Vertebrogenic pain comes from the vertebral endplates, not the disc or facet. Intracept ablates the basivertebral nerve that carries it, implanting nothing.",
+    image: "blog-intracept-procedure.jpg",
+    alt: "Illustration of a probe reaching the basivertebral nerve inside a vertebral body",
+    category: "Procedures",
+    datePublished: "2026-04-07",
+    readTime: "2 min read",
+    relatedHref: "/intracept-procedure",
+    relatedLabel: "Intracept Procedure",
+  },
 ];
+
+/**
+ * The posts that may actually render. A migrated post lands in `blogPosts` with
+ * its body and metadata but no `lastReviewed` date, and stays out of the routes
+ * and the index until a physician has read it — so unreviewed clinical content
+ * cannot reach the site even by accident. Adding the date publishes the post.
+ */
+export const publishedPosts = blogPosts.filter((post) => post.lastReviewed);

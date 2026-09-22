@@ -153,9 +153,11 @@ export type OpeningHours = {
  * are derived from this array — edit hours here only.
  */
 export const openingHours: OpeningHours[] = [
-  { days: ["Monday", "Tuesday", "Thursday"], opens: "07:00", closes: "17:00" },
-  { days: ["Wednesday"], opens: "08:00", closes: "17:00" },
-  { days: ["Friday"], opens: "07:00", closes: "16:00" },
+  {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "07:00",
+    closes: "17:00",
+  },
 ];
 
 const DAY_ABBR: Record<Weekday, string> = {
@@ -175,13 +177,43 @@ function formatTime(time: string): string {
   return m ? `${hour12}:${String(m).padStart(2, "0")}${suffix}` : `${hour12}${suffix}`;
 }
 
+const WEEK_ORDER: Weekday[] = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
+/**
+ * "Mon–Fri" for a consecutive run, "Mon, Wed & Fri" for a broken one. Runs of
+ * three or more collapse to a range; two consecutive days stay listed, because
+ * "Mon & Tue" is shorter to read than "Mon–Tue".
+ */
 function formatDays(days: Weekday[]): string {
-  const abbr = days.map((d) => DAY_ABBR[d]);
-  if (abbr.length === 1) return abbr[0];
-  return `${abbr.slice(0, -1).join(", ")} & ${abbr[abbr.length - 1]}`;
+  const sorted = [...days].sort((a, b) => WEEK_ORDER.indexOf(a) - WEEK_ORDER.indexOf(b));
+
+  const runs: Weekday[][] = [];
+  for (const day of sorted) {
+    const run = runs[runs.length - 1];
+    const prev = run?.[run.length - 1];
+    if (prev && WEEK_ORDER.indexOf(day) === WEEK_ORDER.indexOf(prev) + 1) run.push(day);
+    else runs.push([day]);
+  }
+
+  const parts = runs.map((run) =>
+    run.length >= 3
+      ? `${DAY_ABBR[run[0]]}–${DAY_ABBR[run[run.length - 1]]}`
+      : run.map((d) => DAY_ABBR[d]).join(", ")
+  );
+
+  if (parts.length === 1) return parts[0];
+  return `${parts.slice(0, -1).join(", ")} & ${parts[parts.length - 1]}`;
 }
 
-/** "Mon, Tue & Thu 7AM–5PM · Wed 8AM–5PM · Fri 7AM–4PM" */
+/** "Mon–Fri 7AM–5PM" */
 export function formatHours(spec: OpeningHours[]): string {
   return spec
     .map((h) => `${formatDays(h.days)} ${formatTime(h.opens)}–${formatTime(h.closes)}`)

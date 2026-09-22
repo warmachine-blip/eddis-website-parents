@@ -100,7 +100,7 @@ export default function FinalCta({
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Link href="/request-appointment" className={PRIMARY[shape]}>
-          Request Appointment
+          Schedule Appointment
         </Link>
         <a href={practice.phoneHref} className={SECONDARY[shape]}>
           {practice.phone}

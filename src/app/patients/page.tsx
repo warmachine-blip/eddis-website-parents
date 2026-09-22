@@ -25,9 +25,9 @@ const resourceCards = [
     tone: "dark",
   },
   {
-    title: "Request an Appointment",
+    title: "Schedule an Appointment",
     body: "Same-week consultations are typically available. Most major insurance accepted.",
-    linkLabel: "Request appointment",
+    linkLabel: "Schedule appointment",
     href: "/request-appointment",
     icon: "alert",
     tone: "dark",
@@ -164,10 +164,9 @@ export default function PatientsPage() {
                 We work with most major plans.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                Insurance shouldn&rsquo;t be a barrier to care. Our team will verify
-                benefits and walk you through your specific plan before any
-                procedure. If we are out-of-network for your plan, we&rsquo;ll tell
-                you immediately.
+                Our team verifies your insurance benefits in advance, so there are
+                no surprises. If there&rsquo;s a coverage issue, we&rsquo;ll reach out
+                before your appointment.
               </p>
               <ul className="mt-7 grid gap-3">
                 {plans.map((plan) => (
@@ -213,7 +212,7 @@ export default function PatientsPage() {
                     href="/request-appointment"
                     className="text-sm font-semibold text-off-white underline-offset-4 hover:underline"
                   >
-                    Request appointment instead
+                    Schedule appointment instead
                   </Link>
                 </div>
               </div>
