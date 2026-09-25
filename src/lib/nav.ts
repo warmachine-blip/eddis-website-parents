@@ -113,6 +113,7 @@ export const patientsNav: NavLink[] = [
   { label: "Patient Resources", href: "/patients" },
   { label: "Insurance & Financing", href: "/insurance" },
   { label: "Video Library", href: "/video-library" },
+  { label: "Blog", href: "/blog" },
   { label: "Second Opinion", href: "/second-opinion" },
 ];
 
