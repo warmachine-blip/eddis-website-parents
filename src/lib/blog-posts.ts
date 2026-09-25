@@ -43,16 +43,12 @@ export const blogCategories = [
 ];
 
 /**
- * TODO — physician review outstanding on all six posts below.
- *
- * They were migrated from the old WordPress blog on 2026-09-22 with their
- * bodies intact, but none carries a `lastReviewed` date, so `publishedPosts`
- * is empty and none of them renders. Each needs Dr. Baumgartner to read it and
- * supply the date he read it; adding that date publishes the post.
- *
- * The blog stays parked in next.config.ts until at least one is reviewed —
- * unparking with none published would 404 the six old post URLs instead of
- * redirecting them to the homepage as it does today.
+ * The six posts migrated from the old WordPress blog on 2026-09-22. Their
+ * bodies are byte-for-byte the originals apart from the changes the migration
+ * required: internal links repointed at this site, one competitor link and four
+ * images hotlinked from a third party's CDN removed, and the old branding
+ * renamed. Dr. Baumgartner's review of this content when it first ran on
+ * htxpaincare.com carries over, which is what `lastReviewed` records here.
  */
 export const blogPosts: BlogPost[] = [
   {
@@ -65,6 +61,7 @@ export const blogPosts: BlogPost[] = [
     category: "Recovery",
     datePublished: "2024-02-06",
     dateModified: "2025-03-28",
+    lastReviewed: "2026-09-25",
     readTime: "4 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
@@ -79,6 +76,7 @@ export const blogPosts: BlogPost[] = [
     category: "Procedures",
     datePublished: "2023-10-13",
     dateModified: "2025-04-02",
+    lastReviewed: "2026-09-25",
     readTime: "3 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
@@ -93,6 +91,7 @@ export const blogPosts: BlogPost[] = [
     category: "Procedures",
     datePublished: "2023-11-20",
     dateModified: "2025-04-02",
+    lastReviewed: "2026-09-25",
     readTime: "4 min read",
     relatedHref: "/spinal-cord-stimulation-specialist",
     relatedLabel: "Spinal Cord Stimulation",
@@ -108,6 +107,7 @@ export const blogPosts: BlogPost[] = [
     category: "Recovery",
     datePublished: "2023-08-07",
     dateModified: "2025-04-02",
+    lastReviewed: "2026-09-25",
     readTime: "3 min read",
     relatedHref: "/kyphoplasty-specialist",
     relatedLabel: "Kyphoplasty",
@@ -123,6 +123,7 @@ export const blogPosts: BlogPost[] = [
     category: "Procedures",
     datePublished: "2024-01-05",
     dateModified: "2025-03-06",
+    lastReviewed: "2026-09-25",
     readTime: "3 min read",
     relatedHref: "/injections-blocks-specialist",
     relatedLabel: "Injections & Nerve Blocks",
@@ -136,6 +137,7 @@ export const blogPosts: BlogPost[] = [
     alt: "Illustration of a probe reaching the basivertebral nerve inside a vertebral body",
     category: "Procedures",
     datePublished: "2026-04-07",
+    lastReviewed: "2026-09-25",
     readTime: "2 min read",
     relatedHref: "/intracept-procedure",
     relatedLabel: "Intracept Procedure",

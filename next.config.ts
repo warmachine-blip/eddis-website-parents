@@ -74,13 +74,6 @@ const nextConfig: NextConfig = {
       domainRedirect(TX_PAIN_SPECIALISTS_HOST),
 
       // ---- Within this site -------------------------------------------------
-      // Blog is parked until real post bodies exist: /blog and every /blog/* URL
-      // permanently redirect to the homepage. Content files are kept in src/app/blog.
-      {
-        source: "/blog/:slug*",
-        destination: "/",
-        statusCode: 301,
-      },
       // Legacy URL structure used by third-party listings (txtopdocs.com among
       // them). None of these paths ever existed here; mapping them keeps those
       // backlinks resolving instead of 404ing.

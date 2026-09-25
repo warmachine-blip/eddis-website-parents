@@ -7,7 +7,7 @@ import { blogCategories, publishedPosts } from "@/lib/blog-posts";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Plain-English articles on pain medicine, interventional procedures, recovery, and patient stories from HTx Pain Institute in Houston.",
+    "Plain-English articles on pain medicine, interventional procedures, and recovery from HTx Pain Institute in Houston.",
 };
 
 /**
@@ -33,8 +33,7 @@ export default function BlogPage() {
             Pain medicine — explained clearly.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Plain-English articles on procedures, recovery, conditions, and patient
-            stories. Written by our clinical team.
+            Plain-English articles on procedures and recovery.
           </p>
         </div>
       </section>

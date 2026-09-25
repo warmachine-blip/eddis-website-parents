@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
 import { serviceAreas, aboutNav } from "@/lib/nav";
+import { publishedPosts } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/site";
 import { lastModified } from "@/lib/last-modified";
 
@@ -14,6 +15,7 @@ const staticRoutes = [
   { path: "/patients", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/insurance", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/video-library", priority: 0.5, changeFrequency: "monthly" as const },
+  { path: "/blog", priority: 0.6, changeFrequency: "weekly" as const },
   { path: "/second-opinion", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/request-appointment", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
@@ -65,6 +67,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: modified(location.href),
       changeFrequency: "monthly",
       priority: 0.6,
+    });
+  }
+
+  // Only physician-reviewed posts route, so only those belong in the sitemap.
+  for (const post of publishedPosts) {
+    entries.push({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.dateModified ?? post.datePublished),
+      changeFrequency: "yearly",
+      priority: 0.5,
     });
   }
 
