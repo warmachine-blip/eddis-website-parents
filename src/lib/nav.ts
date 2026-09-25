@@ -106,6 +106,7 @@ export const aboutNav: NavLink[] = [
 export const communityNav: NavLink[] = [
   { label: "Ima's Home for Children", href: "/community/imas-home" },
   { label: "'Kel Strong' Mabatah Foundation", href: "/community/kel-strong-foundation" },
+  { label: "Houston Tennis Academy", href: "/community/houston-tennis-academy" },
 ];
 
 export const patientsNav: NavLink[] = [

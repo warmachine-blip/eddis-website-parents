@@ -8,7 +8,7 @@ import { supportedOrgs } from "@/lib/community";
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "The organizations HTx Pain Institute supports: Ima's Home for Children in the Philippines, and the ‘Kel Strong’ Mabatah Foundation for brain injury survivors.",
+    "Who HTx Pain Institute supports and partners with: Ima's Home for Children, the ‘Kel Strong’ Mabatah Foundation, and Houston Tennis Academy.",
 };
 
 export default function CommunityPage() {
@@ -26,8 +26,9 @@ export default function CommunityPage() {
             The work we support outside the clinic.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Two organizations, both built around the same idea: that recovery
-            should not stop because the money did.
+            Two charities we help fund, and one partnership: a junior tennis
+            program where the work is keeping young players out of our clinic in
+            the first place.
           </p>
         </div>
       </section>
@@ -36,10 +37,10 @@ export default function CommunityPage() {
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
           <SectionHeading
-            eyebrow="Supported Organizations"
-            title="Who we support, and how."
+            eyebrow="Supported Organizations & Partners"
+            title="Who we support and partner with, and how."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {supportedOrgs.map((org) => (
               <article
                 key={org.slug}

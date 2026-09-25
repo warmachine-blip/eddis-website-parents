@@ -1,16 +1,21 @@
 /**
- * The organizations the practice supports. One entry per organization, read by
- * the /community hub, each detail page, and the JSON-LD on both — so the facts
- * on the page and the facts in the structured data cannot drift apart.
+ * The organizations the practice supports or partners with. One entry per
+ * organization, read by the /community hub, each detail page, and the JSON-LD
+ * on both — so the facts on the page and the facts in the structured data
+ * cannot drift apart.
  *
  * Every claim about an organization here is taken from that organization's own
  * site. Claims about the practice's involvement come from the practice.
+ *
+ * Two of these are charities the practice funds; Houston Tennis Academy is a
+ * partnership, not a donation, so its page states no funding relationship and
+ * its schema is a SportsOrganization rather than an NGO.
  */
 
 export type SupportedOrg = {
   slug: string;
   /** Icon for the hub card; names come from src/components/icon-badge.tsx. */
-  icon: "shield" | "pulse";
+  icon: "shield" | "pulse" | "bolt";
   /** Name as the organization writes it. */
   name: string;
   /** Shorter form for nav and breadcrumbs. */
@@ -22,7 +27,8 @@ export type SupportedOrg = {
   websiteLabel: string;
   /** Other profiles the organization runs, for schema.org sameAs. */
   sameAs: string[];
-  foundingDate: string;
+  /** Only where the organization publishes one. */
+  foundingDate?: string;
   /** One line for the hub card. */
   summary: string;
   /** How the practice is involved — one line, for the hub card. */
@@ -59,6 +65,20 @@ export const supportedOrgs: SupportedOrg[] = [
       "A 501(c)(3) funding rehabilitation and recovery for people living with traumatic brain injury.",
     involvement:
       "HTx Pain Institute supports the foundation financially and attended its annual fundraising gala.",
+  },
+  {
+    slug: "houston-tennis-academy",
+    icon: "bolt",
+    name: "Houston Tennis Academy",
+    shortName: "Houston Tennis Academy",
+    href: "/community/houston-tennis-academy",
+    website: "https://houstontennisacademy.com",
+    websiteLabel: "houstontennisacademy.com",
+    sameAs: [],
+    summary:
+      "A junior tennis program at Club Westside in west Houston, training players from age 5 through 18.",
+    involvement:
+      "HTx Pain Institute partners with the academy on injury prevention, with talks for players and for parents.",
   },
 ];
 

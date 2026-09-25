@@ -28,7 +28,7 @@ export default function SupportedOrgSchema({
         name: org.name,
         url: org.website,
         ...(org.sameAs.length > 0 ? { sameAs: org.sameAs } : {}),
-        foundingDate: org.foundingDate,
+        ...(org.foundingDate ? { foundingDate: org.foundingDate } : {}),
         ...(founder ? { founder: { "@type": "Person", name: founder } } : {}),
         description,
         funder: { "@id": ORG_ID },

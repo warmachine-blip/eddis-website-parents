@@ -287,6 +287,14 @@ export default function DrBaumgartnerPage() {
                     traumatic brain injury survivors — and attended its annual
                     fundraising gala.
                   </p>
+                  <p>
+                    He also partners with{" "}
+                    <Link href="/community/houston-tennis-academy" className="font-semibold text-brass-text hover:text-navy">
+                      Houston Tennis Academy
+                    </Link>{" "}
+                    at Club Westside on injury prevention for its junior
+                    players, with talks for players and for their parents.
+                  </p>
                 </div>
               </div>
 

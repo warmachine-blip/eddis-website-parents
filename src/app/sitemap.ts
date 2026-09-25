@@ -3,6 +3,7 @@ import { services } from "@/lib/services";
 import { conditions } from "@/lib/conditions";
 import { serviceAreas, aboutNav } from "@/lib/nav";
 import { publishedPosts } from "@/lib/blog-posts";
+import { supportedOrgs } from "@/lib/community";
 import { SITE_URL } from "@/lib/site";
 import { lastModified } from "@/lib/last-modified";
 
@@ -23,8 +24,6 @@ const staticRoutes = [
   { path: "/work-injuries-accidents", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/motor-vehicle-injuries", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/community", priority: 0.5, changeFrequency: "monthly" as const },
-  { path: "/community/imas-home", priority: 0.4, changeFrequency: "monthly" as const },
-  { path: "/community/kel-strong-foundation", priority: 0.4, changeFrequency: "monthly" as const },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" as const },
   { path: "/terms-of-use", priority: 0.2, changeFrequency: "yearly" as const },
   { path: "/hipaa-notice", priority: 0.2, changeFrequency: "yearly" as const },
@@ -67,6 +66,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: modified(location.href),
       changeFrequency: "monthly",
       priority: 0.6,
+    });
+  }
+
+  // Derived from the same list the hub and the detail pages read.
+  for (const supported of supportedOrgs) {
+    entries.push({
+      url: `${SITE_URL}${supported.href}`,
+      lastModified: modified(supported.href),
+      changeFrequency: "monthly",
+      priority: 0.4,
     });
   }
 

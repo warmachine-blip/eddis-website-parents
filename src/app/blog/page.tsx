@@ -30,7 +30,7 @@ export default function BlogPage() {
             Blog
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Pain medicine — explained clearly.
+            Pain medicine, explained clearly.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Plain-English articles on procedures and recovery.
