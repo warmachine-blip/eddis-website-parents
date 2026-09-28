@@ -517,7 +517,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     title: "Spinal Cord Stimulation",
     metaDescription:
       "Spinal cord and dorsal root ganglion (DRG) stimulation in Houston and Humble. A trial-first implant that interrupts pain signals. Fully reversible.",
-    lastReviewed: "2026-09-10",
+    lastReviewed: "2026-09-28",
     heroImage: "practitioner-showing-spine-model-to-patient.jpg",
     heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
     eyebrow: "Spinal Cord Stimulation",
@@ -554,12 +554,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Most patients return to work within 1–2 weeks.",
       "Long-term follow-up to optimize programming as needed.",
     ],
-    /**
-     * PENDING PHYSICIAN REVIEW — added 2026-09-28, after Dr. Baumgartner
-     * confirmed he offers DRG stimulation. The page's lastReviewed above is
-     * 2026-09-10 and therefore predates this text and the DRG FAQ entry below.
-     * Both need reading before the date is moved forward.
-     */
     spotlight: {
       eyebrow: "DRG Stimulation",
       title: "When the pain stays in one specific place.",
