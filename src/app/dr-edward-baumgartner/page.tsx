@@ -9,6 +9,7 @@ import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
+import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
 export const metadata: Metadata = {
   title: "Edward Baumgartner Jr., MD",
@@ -129,6 +130,20 @@ export default function DrBaumgartnerPage() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Double Board-Certified · Anesthesiology &amp; Pain Medicine
           </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Link
+              href="/request-appointment"
+              className="inline-flex min-h-11 items-center rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
+            >
+              Schedule Appointment
+            </Link>
+            <a
+              href={practice.phoneHref}
+              className="inline-flex min-h-11 items-center rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-off-white hover:border-off-white"
+            >
+              {practice.phone}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -170,6 +185,12 @@ export default function DrBaumgartnerPage() {
                   Schedule Appointment
                   <ArrowIcon />
                 </Link>
+                <a
+                  href={practice.phoneHref}
+                  className="mt-3 flex min-h-11 items-center justify-center rounded-full border border-off-white/30 px-5 py-2.5 text-sm font-semibold tabular-nums text-off-white hover:border-off-white"
+                >
+                  {practice.phone}
+                </a>
               </div>
             </div>
           </div>
@@ -331,8 +352,11 @@ export default function DrBaumgartnerPage() {
         </div>
       </section>
 
+      <InlineBooking />
+
       {/* Final CTA */}
       <FinalCta />
+      <StickyBookingBar />
     </div>
   );
 }

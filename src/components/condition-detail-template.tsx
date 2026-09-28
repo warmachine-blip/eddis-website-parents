@@ -11,6 +11,7 @@ import { FOUNDER_ID, WEBSITE_ID, MEDICAL_SPECIALTY } from "@/lib/schema";
 import type { ConditionDetail } from "@/lib/condition-details";
 import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
+import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
 export default function ConditionDetailTemplate({ data }: { data: ConditionDetail }) {
   const url = `${SITE_URL}/${data.slug}`;
@@ -225,6 +226,9 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         </section>
       )}
 
+      {/* Inline booking — ad landing pages only. */}
+      {data.adLanding ? <InlineBooking /> : null}
+
       {/* FAQ */}
       {data.faqs && (
         <section className="bg-navy-50">
@@ -311,6 +315,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
         </p>
         </div>
       </FinalCta>
+      {data.adLanding ? <StickyBookingBar /> : null}
     </div>
   );
 }

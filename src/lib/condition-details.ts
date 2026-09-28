@@ -34,6 +34,11 @@ export type ConditionDetail = {
   recoveryOutlook?: string;
   faqs?: { q: string; a: string }[];
   philosophyBlurb?: string;
+  /**
+   * Google Ads sends paid traffic to this page, so it carries the extra booking
+   * affordances in src/components/booking-actions.tsx. Off everywhere else.
+   */
+  adLanding?: boolean;
 };
 
 /**
@@ -74,6 +79,7 @@ function relatedFor(selfSlug: string) {
 export const conditionDetails: Record<string, ConditionDetail> = {
   "back-pain": {
     slug: "back-pain",
+    adLanding: true,
     title: "Back Pain",
     metaDescription: "Back pain treatment in Houston and Humble. We find the source — disc, facet, SI joint, or nerve — then treat it with targeted, minimally invasive care.",
     lastReviewed: "2026-09-10",
@@ -468,6 +474,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
 
   "joint-pain": {
     slug: "joint-pain",
+    adLanding: true,
     title: "Joint Pain",
     metaDescription: "Joint pain treatment in Houston and Humble — shoulder, hip, knee and more. Ultrasound-guided injections, PRP, and radiofrequency ablation where they help.",
     lastReviewed: "2026-09-10",

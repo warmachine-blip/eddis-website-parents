@@ -29,6 +29,11 @@ export type ServiceDetail = {
   relatedServices: { slug: string; title: string; blurb: string }[];
   /** Conditions this procedure treats — the inverse of each condition page's approachServices. */
   treatsConditions: { slug: string; title: string; blurb: string }[];
+  /**
+   * Google Ads sends paid traffic to this page, so it carries the extra booking
+   * affordances in src/components/booking-actions.tsx. Off everywhere else.
+   */
+  adLanding?: boolean;
 };
 
 /** Condition cards built from the canonical list so titles and blurbs cannot drift. */
@@ -497,6 +502,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   "spinal-cord-stimulation-specialist": {
     slug: "spinal-cord-stimulation-specialist",
+    adLanding: true,
     title: "Spinal Cord Stimulation",
     metaDescription:
       "Spinal cord stimulation in Houston and Humble. A trial-first implantable therapy that interrupts pain signals before they reach the brain, fully reversible.",

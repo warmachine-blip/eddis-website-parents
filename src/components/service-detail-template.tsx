@@ -12,6 +12,7 @@ import type { ServiceDetail } from "@/lib/service-details";
 import { publishedPosts } from "@/lib/blog-posts";
 import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
+import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
 export default function ServiceDetailTemplate({ data }: { data: ServiceDetail }) {
   const url = `${SITE_URL}/${data.slug}`;
@@ -230,6 +231,9 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
           </div>
         </div>
       </section>
+
+      {/* Inline booking — ad landing pages only. */}
+      {data.adLanding ? <InlineBooking /> : null}
 
       {/* FAQ */}
       <section className="bg-navy-50">
@@ -454,6 +458,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
         </p>
         </div>
       </FinalCta>
+      {data.adLanding ? <StickyBookingBar /> : null}
     </div>
   );
 }
