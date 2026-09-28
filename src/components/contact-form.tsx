@@ -99,32 +99,7 @@ export default function ContactForm() {
         </>
       )}
 
-      <dl className="mt-7 space-y-3 border-t border-line pt-6 text-sm">
-        <div className="flex flex-wrap items-baseline gap-x-2">
-          <dt className="font-semibold text-navy">Phone</dt>
-          <dd>
-            <a href={practice.phoneHref} className="tabular-nums text-brass-text underline underline-offset-4">
-              {practice.phone}
-            </a>
-          </dd>
-        </div>
-        <div className="flex flex-wrap items-baseline gap-x-2">
-          <dt className="font-semibold text-navy">Email</dt>
-          <dd>
-            <a href={`mailto:${practice.email}`} className="break-all text-brass-text underline underline-offset-4">
-              {practice.email}
-            </a>
-          </dd>
-        </div>
-        <div className="flex flex-wrap items-baseline gap-x-2">
-          <dt className="font-semibold text-navy">Hours</dt>
-          <dd className="text-charcoal-soft">
-            {practice.hours} &middot; {practice.hoursWeekend}
-          </dd>
-        </div>
-      </dl>
-
-      <p className="mt-6 text-xs leading-relaxed text-muted">
+      <p className="mt-6 border-t border-line pt-6 text-xs leading-relaxed text-muted">
         Please don&rsquo;t send medical details or anything you consider private
         through the message window, and don&rsquo;t use it for emergencies. If
         this is an emergency, call 911.

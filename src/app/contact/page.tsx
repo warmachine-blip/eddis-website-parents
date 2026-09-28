@@ -146,8 +146,8 @@ export default function ContactPage() {
               <a href="tel:911" className="font-semibold text-brass-text">
                 911
               </a>{" "}
-              or go to your nearest emergency department immediately. This form is
-              not monitored 24/7.
+              or go to your nearest emergency department immediately. Messages
+              here are not monitored 24/7.
             </p>
           </div>
         </div>
