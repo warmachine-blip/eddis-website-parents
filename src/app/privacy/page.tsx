@@ -31,7 +31,8 @@ const data = {
     {
       heading: "3. Information We Collect",
       paragraphs: [
-        "Our contact form and newsletter signup do not send anything to this website. They open a pre-filled message in your own email program, which you choose to send to our office. We then hold it as ordinary email. The contact form asks for your name, email, phone, a topic, and a message.",
+        "The Send us a message button on our contact page opens the LeadConnector chat widget described in section 5. It asks for your name, phone number, and message. What you enter goes to LeadConnector and on to our office, and is handled under LeadConnector's privacy policy as well as ours. Before it sends, the widget asks you to agree to be contacted by SMS or email at the number or address you gave.",
+        "Our newsletter signup works differently. It does not send anything to this website: it opens a pre-filled message in your own email program, which you choose to send to our office. We then hold it as ordinary email.",
         "Online appointment scheduling runs through Nimblr, an embedded third-party scheduler. What you enter there, including your name, contact information, and appointment preferences, goes to Nimblr and to our office to book your visit, and is handled under Nimblr's privacy policy as well as ours.",
         "Our hosting provider keeps standard server logs, which record your IP address, browser type, and the pages you request. The third-party services listed in section 5 also collect information about your visit.",
         "We do not ask for health information through website forms. Please save medical detail for your call or visit.",

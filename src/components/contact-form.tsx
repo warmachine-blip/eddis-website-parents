@@ -1,171 +1,134 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { practice } from "@/lib/nav";
+import { LeadForm } from "@/components/booking-actions";
+import { leadFormConfigured } from "@/lib/lead-form";
 
-const reasons = [
-  "Second opinion",
-  "Billing or insurance",
-  "Medical records",
-  "Other",
-];
+/**
+ * Contact card for /contact.
+ *
+ * This used to be a form that built a mailto: URL and handed the message to
+ * whatever mail client the visitor had, which on most phones and on any machine
+ * without a configured mail app did nothing at all. Nothing ever reached the
+ * practice, and nothing was recorded.
+ *
+ * It now opens the LeadConnector chat widget that already loads on every page,
+ * through the API its loader exposes:
+ *
+ *   window.leadConnector.chatWidget.openWidget()   // also closeWidget, isActive, isLoaded
+ *
+ * The widget is loaded with next/script strategy="lazyOnload", so a fast
+ * clicker can reach the button before the widget exists. openChat polls briefly
+ * rather than assuming, and if the widget never arrives it says so and points
+ * at the phone number instead of failing silently.
+ *
+ * When the agency's inline form embed lands in src/lib/lead-form.ts, that form
+ * replaces the button here, same as on the ad landing pages.
+ */
+
+type ChatWidget = {
+  isLoaded?: boolean;
+  openWidget?: () => void;
+  isActive?: () => boolean;
+};
+
+declare global {
+  interface Window {
+    leadConnector?: { chatWidget?: ChatWidget };
+  }
+}
+
+/** Resolves true once the widget has been asked to open. */
+async function openChat(): Promise<boolean> {
+  for (let attempt = 0; attempt < 12; attempt++) {
+    const widget = window.leadConnector?.chatWidget;
+    if (widget?.isLoaded && typeof widget.openWidget === "function") {
+      widget.openWidget();
+      return true;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 250));
+  }
+  return false;
+}
 
 export default function ContactForm() {
-  const [consent, setConsent] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "opening" | "unavailable">("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") ?? "");
-    const email = String(form.get("email") ?? "");
-    const phone = String(form.get("phone") ?? "");
-    const reason = String(form.get("reason") ?? "");
-    const message = String(form.get("message") ?? "");
-
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Reason: ${reason}`,
-      "",
-      message,
-    ].join("\n");
-
-    window.location.href = `mailto:${practice.email}?subject=${encodeURIComponent(
-      `Website inquiry: ${reason || "General"}`
-    )}&body=${encodeURIComponent(body)}`;
-
-    setSent(true);
+  async function handleClick() {
+    setStatus("opening");
+    setStatus((await openChat()) ? "idle" : "unavailable");
   }
 
   return (
     <div className="rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-9">
       <h2 className="font-serif text-2xl text-navy">Send us a message</h2>
-      <p className="mt-1.5 text-sm text-charcoal-soft">
-        Required fields are marked with an asterisk. To book or reschedule a visit, use our{" "}
+      <p className="mt-1.5 text-sm leading-relaxed text-charcoal-soft">
+        Ask us anything about your pain, our procedures, or insurance. We
+        typically respond within one business day. To book or reschedule a visit,
+        use our{" "}
         <Link href="/request-appointment" className="font-medium text-brass-text underline">
           online scheduler
         </Link>
         .
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <div>
-            <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wide text-navy">
-              Full Name <span aria-hidden="true">*</span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autoComplete="name"
-              enterKeyHint="next"
-              required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wide text-navy">
-              Email <span aria-hidden="true">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              inputMode="email"
-              enterKeyHint="next"
-              required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-            />
-          </div>
+      {leadFormConfigured ? (
+        <LeadForm />
+      ) : (
+        <>
+          <button
+            type="button"
+            onClick={handleClick}
+            aria-live="polite"
+            className="mt-6 w-full border border-brass bg-navy px-6 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep disabled:opacity-70"
+            disabled={status === "opening"}
+          >
+            {status === "opening" ? "Opening…" : "Send us a message"}
+          </button>
+          {status === "unavailable" ? (
+            <p role="status" className="mt-3 text-sm leading-relaxed text-charcoal-soft">
+              Our message window isn&rsquo;t loading. Call us at{" "}
+              <a href={practice.phoneHref} className="font-semibold text-brass-text underline tabular-nums">
+                {practice.phone}
+              </a>{" "}
+              and we will pick it up from there.
+            </p>
+          ) : null}
+        </>
+      )}
+
+      <dl className="mt-7 space-y-3 border-t border-line pt-6 text-sm">
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <dt className="font-semibold text-navy">Phone</dt>
+          <dd>
+            <a href={practice.phoneHref} className="tabular-nums text-brass-text underline underline-offset-4">
+              {practice.phone}
+            </a>
+          </dd>
         </div>
-
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <div>
-            <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wide text-navy">
-              Phone <span aria-hidden="true">*</span>
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              autoComplete="tel"
-              inputMode="tel"
-              enterKeyHint="next"
-              required
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-            />
-          </div>
-          <div>
-            <label htmlFor="reason" className="block text-xs font-semibold uppercase tracking-wide text-navy">
-              Reason
-            </label>
-            <select
-              id="reason"
-              name="reason"
-              defaultValue=""
-              className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-            >
-              <option value="" disabled>
-                Select an option
-              </option>
-              {reasons.map((r) => (
-                <option key={r} value={r}>
-                  {r}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wide text-navy">
-            Message <span aria-hidden="true">*</span>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            enterKeyHint="done"
-            required
-            rows={5}
-            className="mt-1.5 w-full border border-line bg-off-white px-3.5 py-2.5 text-base text-charcoal focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
-          />
-        </div>
-
-        <label className="flex items-start gap-3 text-sm text-charcoal-soft">
-          <input
-            type="checkbox"
-            required
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-0.5 h-5 w-5 shrink-0 border-line accent-navy"
-          />
-          I understand this form is not for medical emergencies and I agree to be
-          contacted by {practice.name} about my inquiry.
-        </label>
-
-        <button
-          type="submit"
-          className="w-full border border-brass bg-navy px-6 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep"
-        >
-          Send Message
-        </button>
-
-        {sent && (
-          <p role="status" className="text-sm text-charcoal-soft">
-            Opening your email app to send this to our team — if nothing opened,
-            reach us directly at{" "}
-            <a href={`mailto:${practice.email}`} className="text-brass-text underline">
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <dt className="font-semibold text-navy">Email</dt>
+          <dd>
+            <a href={`mailto:${practice.email}`} className="break-all text-brass-text underline underline-offset-4">
               {practice.email}
-            </a>{" "}
-            or {practice.phone}.
-          </p>
-        )}
-      </form>
+            </a>
+          </dd>
+        </div>
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <dt className="font-semibold text-navy">Hours</dt>
+          <dd className="text-charcoal-soft">
+            {practice.hours} &middot; {practice.hoursWeekend}
+          </dd>
+        </div>
+      </dl>
+
+      <p className="mt-6 text-xs leading-relaxed text-muted">
+        Please don&rsquo;t send medical details or anything you consider private
+        through the message window, and don&rsquo;t use it for emergencies. If
+        this is an emergency, call 911.
+      </p>
     </div>
   );
 }
