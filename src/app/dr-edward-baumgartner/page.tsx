@@ -22,7 +22,7 @@ const facts = [
   { label: "Board Cert.", value: "Pain Medicine" },
   { label: "Experience", value: "15+ years" },
   { label: "Recognition", value: "Texas Top Doctor" },
-  { label: "Hospital", value: "Townsen Memorial" },
+  { label: "Hospitals", value: "Townsen Memorial, Houston Methodist, St. Luke’s Health" },
   { label: "Founded", value: "2018" },
 ];
 
@@ -88,7 +88,11 @@ const physicianLd = {
   award: "Texas Top Doctor",
   affiliation: [
     { "@type": "Organization", name: "Rush Health System" },
+    // Operating privileges, named as each system writes itself. No campuses:
+    // he works across more than one location within these systems.
     { "@type": "Hospital", name: "Townsen Memorial Hospital" },
+    { "@type": "Hospital", name: "Houston Methodist" },
+    { "@type": "Hospital", name: "St. Luke's Health" },
   ],
   sameAs: [linkedInUrl, txTopDocsUrl],
   hasCredential: [
@@ -208,7 +212,8 @@ export default function DrBaumgartnerPage() {
               Interventional Pain Specialists, then HTx Pain Care, and now HTx
               Pain Institute — to bring the modern minimally invasive toolkit to
               Houston with the time, precision, and judgment every patient
-              deserves. He operates at Townsen Memorial Hospital.
+              deserves. He operates at Townsen Memorial Hospital, Houston
+              Methodist, and St. Luke&rsquo;s Health.
             </p>
 
             <div className="mt-12 space-y-12">

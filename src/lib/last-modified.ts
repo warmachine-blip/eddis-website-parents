@@ -11,7 +11,7 @@ export const lastModified: Record<string, string> = {
   "/community/houston-tennis-academy": "2026-09-25",
   "/community/imas-home": "2026-09-18",
   "/community/kel-strong-foundation": "2026-09-19",
-  "/contact": "2026-09-18",
+  "/contact": "2026-09-28",
   "/dr-edward-baumgartner": "2026-09-28",
   "/fibromyalgia": "2026-09-28",
   "/herniated-discs": "2026-09-28",

@@ -233,7 +233,8 @@ export default function Home() {
               Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
               mission: bring the modern interventional toolkit to Houston — applied
               with the time, precision, and judgment every patient deserves. Just
-              the care he&rsquo;d want for his own family.
+              the care he&rsquo;d want for his own family. He operates at Townsen
+              Memorial Hospital, Houston Methodist, and St. Luke&rsquo;s Health.
             </p>
 
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
