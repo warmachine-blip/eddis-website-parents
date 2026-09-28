@@ -516,7 +516,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     adLanding: true,
     title: "Spinal Cord Stimulation",
     metaDescription:
-      "Spinal cord stimulation in Houston and Humble. A trial-first implantable therapy that interrupts pain signals before they reach the brain, fully reversible.",
+      "Spinal cord and dorsal root ganglion (DRG) stimulation in Houston and Humble. A trial-first implant that interrupts pain signals. Fully reversible.",
     lastReviewed: "2026-09-10",
     heroImage: "practitioner-showing-spine-model-to-patient.jpg",
     heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
