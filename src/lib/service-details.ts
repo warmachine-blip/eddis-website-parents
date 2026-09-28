@@ -34,6 +34,17 @@ export type ServiceDetail = {
    * affordances in src/components/booking-actions.tsx. Off everywhere else.
    */
   adLanding?: boolean;
+  /**
+   * An optional extra section for a variant of the procedure that is different
+   * enough to need explaining on its own. Rendered after the step-by-step.
+   */
+  spotlight?: {
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+    /** Optional labelled points, for a short "how it differs" list. */
+    points?: { label: string; body: string }[];
+  };
 };
 
 /** Condition cards built from the canonical list so titles and blurbs cannot drift. */
@@ -543,6 +554,34 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Most patients return to work within 1–2 weeks.",
       "Long-term follow-up to optimize programming as needed.",
     ],
+    /**
+     * PENDING PHYSICIAN REVIEW — added 2026-09-28, after Dr. Baumgartner
+     * confirmed he offers DRG stimulation. The page's lastReviewed above is
+     * 2026-09-10 and therefore predates this text and the DRG FAQ entry below.
+     * Both need reading before the date is moved forward.
+     */
+    spotlight: {
+      eyebrow: "DRG Stimulation",
+      title: "When the pain stays in one specific place.",
+      paragraphs: [
+        "The dorsal root ganglion is a small bundle of sensory nerve cell bodies sitting just outside the spinal cord at each level. Every signal from one region of the body passes through it. DRG stimulation places a lead beside that ganglion rather than over the spinal cord itself.",
+        "In the United States, DRG stimulation is FDA-approved for complex regional pain syndrome of the lower limbs. It is also worth discussing when neuropathic pain has stayed in one defined area after a specific operation, such as a hernia repair or a knee replacement. The path is the same as standard SCS: a trial first, and an implant only if the trial works.",
+      ],
+      points: [
+        {
+          label: "Narrower target",
+          body: "Traditional SCS covers a broad area, which suits pain spread across the back and down a limb. DRG concentrates coverage on a smaller, well-defined area such as a foot, a knee, or the groin.",
+        },
+        {
+          label: "Steadier with position",
+          body: "There is very little cerebrospinal fluid between the lead and the ganglion, so stimulation tends to stay consistent whether you are standing or lying down.",
+        },
+        {
+          label: "Same trial-first path",
+          body: "A temporary trial comes first, exactly as it does with standard SCS, and nothing is implanted unless the trial reduces your pain and improves what you can do.",
+        },
+      ],
+    },
     risksIntro:
       "Every procedure carries some risk. We explain everything in plain language during your consultation, and again on the day of the procedure — so you know what is normal, what to watch for, and when to call.",
     risks: [
@@ -576,6 +615,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         q: "Will I need to stop taking pain medications?",
         a: "We do not require it, but most patients find they need significantly less medication after a successful trial and implant. We coordinate any medication changes with you over time.",
+      },
+      {
+        q: "What is the difference between SCS and DRG stimulation?",
+        a: "Traditional spinal cord stimulation places leads over the spinal cord and covers a broad area. DRG stimulation targets the dorsal root ganglion at a single level, which concentrates coverage on a smaller, well-defined area such as a foot, a knee, or the groin. In the United States it is FDA-approved for complex regional pain syndrome of the lower limbs. Both follow the same trial-first path, and Dr. Baumgartner offers both.",
       },
       {
         q: "Can SCS help with diabetic neuropathy?",

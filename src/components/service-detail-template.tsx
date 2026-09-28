@@ -196,6 +196,30 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
         </div>
       </section>
 
+      {/* Spotlight — a variant of the procedure that needs its own explanation. */}
+      {data.spotlight ? (
+        <section className="bg-pearl">
+          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+            <SectionHeading eyebrow={data.spotlight.eyebrow} title={data.spotlight.title} />
+            <div className="mt-6 grid max-w-5xl gap-x-14 gap-y-4 text-base leading-relaxed text-charcoal-soft lg:grid-cols-2">
+              {data.spotlight.paragraphs.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
+            {data.spotlight.points ? (
+              <dl className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                {data.spotlight.points.map((point) => (
+                  <div key={point.label} className="border-t-2 border-brass pt-4">
+                    <dt className="font-serif text-lg leading-tight text-navy">{point.label}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-charcoal-soft">{point.body}</dd>
+                  </div>
+                ))}
+              </dl>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       {/* Risks */}
       <section className="bg-off-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
