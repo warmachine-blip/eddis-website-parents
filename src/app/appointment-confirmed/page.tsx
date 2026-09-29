@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import BookingConversion from "@/components/booking-conversion";
 import { practice } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
 
@@ -40,7 +39,6 @@ const nextSteps = [
 export default function AppointmentConfirmedPage() {
   return (
     <div>
-      <BookingConversion />
 
       {/* Confirmation */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
@@ -74,8 +72,8 @@ export default function AppointmentConfirmedPage() {
             If anything about your booking doesn&rsquo;t look right — or you
             simply want to speak to someone — call us at{" "}
             <a
-              href={practice.phoneHref}
-              className="font-medium tabular-nums text-brass-light underline decoration-brass-light/50 underline-offset-4 hover:text-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="font-medium tabular-nums text-brass-light underline decoration-brass-light/50 underline-offset-4 hover:text-off-white phone"
             >
               {practice.phone}
             </a>{" "}
@@ -83,8 +81,8 @@ export default function AppointmentConfirmedPage() {
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
-              href={practice.phoneHref}
-              className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
             >
               Call {practice.phone}
             </a>

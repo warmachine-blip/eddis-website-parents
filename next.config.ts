@@ -42,6 +42,34 @@ const domainRedirect = (hostPattern: string) => ({
   statusCode: 301 as const,
 });
 
+/**
+ * The old WordPress blog's archive URLs. None exist here: this blog is a flat
+ * list of posts, so a tag, category, author, date or pagination URL has nothing
+ * to land on and would 404.
+ *
+ * Each pattern is anchored on a segment a real post slug cannot be — a literal
+ * archive prefix, or a run of digits — so /blog/<slug> is never caught.
+ */
+const BLOG_ARCHIVE_SOURCES = [
+  "/blog/tag/:rest*",
+  "/blog/category/:rest*",
+  "/blog/author/:rest*",
+  "/blog/page/:rest*",
+  // Date archives: /blog/2024, /blog/2024/05, /blog/2024/05/12.
+  "/blog/:year(\\d{4})/:rest*",
+  // Plain pagination: /blog/2 through /blog/6.
+  "/blog/:page(\\d+)",
+];
+
+/** Archive rules for one legacy host, landing on the canonical blog in one hop. */
+const blogArchiveRedirects = (hostPattern: string) =>
+  BLOG_ARCHIVE_SOURCES.map((source) => ({
+    source,
+    has: [{ type: "host" as const, value: hostPattern }],
+    destination: `${SITE_URL}/blog`,
+    statusCode: 301 as const,
+  }));
+
 const nextConfig: NextConfig = {
   images: {
     // Next 16 serves only the qualities declared here; 60 is used for the large
@@ -67,6 +95,11 @@ const nextConfig: NextConfig = {
       // a kept post keeps its slug and is carried by domainRedirect below.
       ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_BLOG_PATHS),
       ...pathRedirects(TX_PAIN_SPECIALISTS_HOST, TX_PAIN_SPECIALISTS_PATHS),
+      // Archive URLs off the legacy hosts, before the catch-all below, so they
+      // reach the canonical blog directly instead of bouncing through the old
+      // path on the new domain.
+      ...blogArchiveRedirects(HTX_PAIN_CARE_HOST),
+      ...blogArchiveRedirects(TX_PAIN_SPECIALISTS_HOST),
       // Everything else on a legacy domain keeps its path and only changes host.
       // Most old TIPS paths do not exist here, so this lands them on a 404 at
       // the canonical domain — which still beats serving the whole site twice.
@@ -74,6 +107,13 @@ const nextConfig: NextConfig = {
       domainRedirect(TX_PAIN_SPECIALISTS_HOST),
 
       // ---- Within this site -------------------------------------------------
+      // The same archive patterns on the canonical domain.
+      ...BLOG_ARCHIVE_SOURCES.map((source) => ({
+        source,
+        destination: "/blog",
+        statusCode: 301 as const,
+      })),
+
       // Legacy URL structure used by third-party listings (txtopdocs.com among
       // them). None of these paths ever existed here; mapping them keeps those
       // backlinks resolving instead of 404ing.

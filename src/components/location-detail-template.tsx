@@ -77,8 +77,8 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
               Schedule Appointment
             </Link>
             <a
-              href={practice.phoneHref}
-              className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>
@@ -133,8 +133,8 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                 </p>
                 <div className="mt-5 grid gap-2">
                   <a
-                    href={practice.phoneHref}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy"
+                    href={practice.phoneHref} data-phone={practice.phone}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy phone"
                   >
                     {practice.phone}
                   </a>
@@ -321,8 +321,8 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
               Schedule Appointment
             </Link>
             <a
-              href={practice.phoneHref}
-              className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>

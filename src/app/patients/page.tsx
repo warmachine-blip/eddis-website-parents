@@ -178,8 +178,8 @@ export default function PatientsPage() {
               </ul>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a
-                  href={practice.phoneHref}
-                  className="rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
+                  href={practice.phoneHref} data-phone={practice.phone}
+                  className="rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
                 >
                   Verify Benefits — {practice.phone}
                 </a>

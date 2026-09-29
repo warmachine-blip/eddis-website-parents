@@ -90,7 +90,7 @@ export default function ContactForm() {
           {status === "unavailable" ? (
             <p role="status" className="mt-3 text-sm leading-relaxed text-charcoal-soft">
               Our message window isn&rsquo;t loading. Call us at{" "}
-              <a href={practice.phoneHref} className="font-semibold text-brass-text underline tabular-nums">
+              <a href={practice.phoneHref} data-phone={practice.phone} className="font-semibold text-brass-text underline tabular-nums phone">
                 {practice.phone}
               </a>{" "}
               and we will pick it up from there.

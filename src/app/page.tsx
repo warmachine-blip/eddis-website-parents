@@ -417,7 +417,7 @@ export default function Home() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text">
+                <a href={practice.phoneHref} data-phone={practice.phone} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text phone">
                   {practice.phone}
                 </a>
               </address>
@@ -436,8 +436,8 @@ export default function Home() {
                   Get Directions
                 </a>
                 <a
-                  href={practice.phoneHref}
-                  className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass"
+                  href={practice.phoneHref} data-phone={practice.phone}
+                  className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass phone"
                 >
                   Call this office
                 </a>

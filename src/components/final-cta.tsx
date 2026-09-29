@@ -102,7 +102,7 @@ export default function FinalCta({
         <Link href="/request-appointment" className={PRIMARY[shape]}>
           Schedule Appointment
         </Link>
-        <a href={practice.phoneHref} className={SECONDARY[shape]}>
+        <a href={practice.phoneHref} data-phone={practice.phone} className={`${SECONDARY[shape]} phone`}>
           {practice.phone}
         </a>
       </div>

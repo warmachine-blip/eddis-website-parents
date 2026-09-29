@@ -77,8 +77,8 @@ export function InlineBooking({ lead }: { lead?: string }) {
                 Schedule Appointment
               </Link>
               <a
-                href={practice.phoneHref}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-navy hover:border-brass"
+                href={practice.phoneHref} data-phone={practice.phone}
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-navy hover:border-brass phone"
               >
                 {PHONE_SVG}
                 {practice.phone}
@@ -106,8 +106,8 @@ export function StickyBookingBar() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-off-white/95 backdrop-blur lg:hidden">
         <div className="flex items-center gap-2 px-4 pt-2.5 pr-[84px] pb-[max(0.625rem,env(safe-area-inset-bottom))]">
           <a
-            href={practice.phoneHref}
-            className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-3 font-sans text-sm font-semibold tabular-nums text-navy"
+            href={practice.phoneHref} data-phone={practice.phone}
+            className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-3 font-sans text-sm font-semibold tabular-nums text-navy phone"
           >
             {PHONE_SVG}
             Call

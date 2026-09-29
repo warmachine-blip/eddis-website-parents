@@ -48,10 +48,10 @@ export default function RescheduleCallout({
             No need to call during office hours &mdash; change your date and time
             online in about a minute. Prefer to talk to someone? Call{" "}
             <a
-              href={practice.phoneHref}
+              href={practice.phoneHref} data-phone={practice.phone}
               className={`font-medium tabular-nums underline underline-offset-2 ${
                 dark ? "text-brass-light hover:text-off-white" : "text-brass-text"
-              }`}
+              } phone`}
             >
               {practice.phone}
             </a>

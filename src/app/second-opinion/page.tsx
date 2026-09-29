@@ -100,8 +100,8 @@ export default function SecondOpinionPage() {
               Request Second Opinion
             </Link>
             <a
-              href={practice.phoneHref}
-              className="rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>
@@ -294,8 +294,8 @@ export default function SecondOpinionPage() {
               Request Second Opinion
             </Link>
             <a
-              href={practice.phoneHref}
-              className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>

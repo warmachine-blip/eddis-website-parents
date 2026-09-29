@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <dt className="sr-only">Phone</dt>
                 <dd className="flex items-center gap-2.5">
                   <PhoneIcon className="h-4 w-4 shrink-0 text-brass-light" />
-                  <a href={practice.phoneHref} className="inline-flex min-h-11 items-center tabular-nums text-off-white underline decoration-brass-light/50 underline-offset-4 hover:text-brass-light">
+                  <a href={practice.phoneHref} data-phone={practice.phone} className="inline-flex min-h-11 items-center tabular-nums text-off-white underline decoration-brass-light/50 underline-offset-4 hover:text-brass-light phone">
                     {practice.phone}
                   </a>
                 </dd>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text">
+                <a href={practice.phoneHref} data-phone={practice.phone} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text phone">
                   {practice.phone}
                 </a>
               </address>
@@ -202,8 +202,8 @@ export default function ContactPage() {
                   <span aria-hidden="true">&rarr;</span>
                 </a>
                 <a
-                  href={practice.phoneHref}
-                  className="inline-flex min-h-11 items-center font-sans text-sm font-medium tracking-wide text-navy underline underline-offset-4 hover:text-brass-text"
+                  href={practice.phoneHref} data-phone={practice.phone}
+                  className="inline-flex min-h-11 items-center font-sans text-sm font-medium tracking-wide text-navy underline underline-offset-4 hover:text-brass-text phone"
                 >
                   Call this office
                 </a>

@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { practice } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
+import BookingConversion from "@/components/booking-conversion";
 
 /**
  * Nimblr's embedded scheduler. The helper script loads after hydration
@@ -10,6 +11,7 @@ import { scheduling } from "@/lib/scheduling";
 export default function NimblrScheduler() {
   return (
     <div>
+      <BookingConversion />
       <Script src={scheduling.scriptSrc} strategy="afterInteractive" />
       <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
         <iframe
@@ -31,7 +33,7 @@ export default function NimblrScheduler() {
           Open it in a new tab
         </a>{" "}
         or call{" "}
-        <a href={practice.phoneHref} className="font-medium tabular-nums text-brass-text underline">
+        <a href={practice.phoneHref} data-phone={practice.phone} className="font-medium tabular-nums text-brass-text underline phone">
           {practice.phone}
         </a>
         .

@@ -72,8 +72,8 @@ export default function RequestAppointmentPage() {
                 any questions about your visit.
               </p>
               <a
-                href={practice.phoneHref}
-                className="mt-5 inline-block rounded-full border border-brass bg-brass px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
+                href={practice.phoneHref} data-phone={practice.phone}
+                className="mt-5 inline-block rounded-full border border-brass bg-brass px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
               >
                 {practice.phone}
               </a>

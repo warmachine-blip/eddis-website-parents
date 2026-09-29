@@ -8,4 +8,10 @@ export const scheduling = {
   manageUrl: "https://appointment.nimblr.ai/htxpaininstitute",
   /** Nimblr's iframe helper (resizes the embed and passes messages). */
   scriptSrc: "https://assets.nimblr.ai/js/iframe.js",
+  /**
+   * Exact origin the scheduler posts booking messages from. Compared with ===
+   * in src/components/booking-conversion.tsx: a suffix or includes() test would
+   * also accept a lookalike host ending in the same string.
+   */
+  messageOrigin: "https://book.nimblr.co",
 };

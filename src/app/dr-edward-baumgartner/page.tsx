@@ -142,8 +142,8 @@ export default function DrBaumgartnerPage() {
               Schedule Appointment
             </Link>
             <a
-              href={practice.phoneHref}
-              className="inline-flex min-h-11 items-center rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="inline-flex min-h-11 items-center rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>
@@ -190,8 +190,8 @@ export default function DrBaumgartnerPage() {
                   <ArrowIcon />
                 </Link>
                 <a
-                  href={practice.phoneHref}
-                  className="mt-3 flex min-h-11 items-center justify-center rounded-full border border-off-white/30 px-5 py-2.5 text-sm font-semibold tabular-nums text-off-white hover:border-off-white"
+                  href={practice.phoneHref} data-phone={practice.phone}
+                  className="mt-3 flex min-h-11 items-center justify-center rounded-full border border-off-white/30 px-5 py-2.5 text-sm font-semibold tabular-nums text-off-white hover:border-off-white phone"
                 >
                   {practice.phone}
                 </a>

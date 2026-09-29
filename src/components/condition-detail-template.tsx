@@ -106,8 +106,8 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
               Schedule Appointment
             </Link>
             <a
-              href={practice.phoneHref}
-              className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white"
+              href={practice.phoneHref} data-phone={practice.phone}
+              className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
             </a>

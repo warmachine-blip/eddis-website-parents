@@ -8,6 +8,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { SITE_URL } from "@/lib/site";
 import { practice } from "@/lib/nav";
 import Script from "next/script";
+import ChatGreeting from "@/components/chat-greeting";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
 import "./globals.css";
 
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           blocking time, while nobody needs the chat bubble in the first second.
           Loading it after load keeps it out of LCP and TBT entirely.
         */}
+        <ChatGreeting />
         <Script
           id="leadconnector-chat"
           strategy="lazyOnload"

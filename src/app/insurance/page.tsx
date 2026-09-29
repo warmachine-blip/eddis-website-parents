@@ -128,8 +128,8 @@ export default function InsurancePage() {
                   Call us — we&rsquo;ll handle the rest.
                 </p>
                 <a
-                  href={practice.phoneHref}
-                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-brass px-5 py-3 text-sm font-semibold text-navy-deep hover:bg-brass-light"
+                  href={practice.phoneHref} data-phone={practice.phone}
+                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-brass px-5 py-3 text-sm font-semibold text-navy-deep hover:bg-brass-light phone"
                 >
                   <PhoneIcon />
                   {practice.phone}

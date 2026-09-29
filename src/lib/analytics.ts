@@ -18,9 +18,11 @@ export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
  */
 
 /**
- * dataLayer event pushed by /appointment-confirmed. Use this as the GTM
- * trigger for the Google Ads booking conversion rather than a URL-path
- * trigger, so the conversion survives a change to the page's path.
+ * dataLayer event pushed when the embedded Nimblr scheduler reports a booking
+ * has completed. Use this as the GTM trigger for the Google Ads booking
+ * conversion rather than a URL-path trigger: /appointment-confirmed is
+ * reachable without booking anything, since the legacy /thank-you URLs
+ * redirect to it.
  */
 export const BOOKING_CONVERSION_EVENT = "appointment_confirmed";
 

@@ -168,7 +168,7 @@ export default function SiteFooter() {
                   <span className="sr-only"> (get directions in Google Maps)</span>
                 </a>
                 <br />
-                <a href={practice.phoneHref} className={`min-h-11 py-2 tabular-nums ${footerLinkClass}`}>
+                <a href={practice.phoneHref} data-phone={practice.phone} className={`min-h-11 py-2 tabular-nums ${footerLinkClass} phone`}>
                   {practice.phone}
                 </a>
               </address>
