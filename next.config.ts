@@ -71,6 +71,19 @@ const blogArchiveRedirects = (hostPattern: string) =>
   }));
 
 const nextConfig: NextConfig = {
+  /**
+   * The 404 for unmatched URLs lives in src/app/global-not-found.tsx rather
+   * than src/app/not-found.tsx, which this flag enables.
+   *
+   * Not a preference: a root not-found.tsx is serialised into every page's RSC
+   * payload as a boundary fallback, so the site footer it renders ends up in
+   * the HTML of the /lp ad landing pages — the one thing those pages exist to
+   * avoid. global-not-found is handled at the routing level and rendered only
+   * when served. See the note in src/app/global-not-found.tsx.
+   */
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     // Next 16 serves only the qualities declared here; 60 is used for the large
     // photographic heroes, where the extra bytes at 75 buy nothing visible.

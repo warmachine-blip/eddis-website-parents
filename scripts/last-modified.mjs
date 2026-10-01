@@ -7,13 +7,28 @@ import { readdirSync, existsSync, writeFileSync } from "node:fs";
 const APP = "src/app";
 const out = "src/lib/last-modified.ts";
 
+/**
+ * Newest real content date across `files`.
+ *
+ * `--follow --diff-filter=AM` is what makes a moved file keep its date: it
+ * traces each path back through renames and ignores any commit that only
+ * relocated it. Without it, moving every route into the (site) route group
+ * would have restamped all 62 sitemap entries with the date of the move.
+ *
+ * --follow takes a single path, so this runs per file and keeps the latest.
+ */
 function gitDate(files) {
-  const existing = files.filter((f) => existsSync(f));
-  if (!existing.length) return null;
-  const raw = execSync(`git log -1 --format=%cI -- ${existing.map((f) => JSON.stringify(f)).join(" ")}`, {
-    encoding: "utf8",
-  }).trim();
-  return raw || null;
+  const dates = [];
+  for (const file of files) {
+    if (!existsSync(file)) continue;
+    const raw = execSync(
+      `git log -1 --follow --diff-filter=AM --format=%cI -- ${JSON.stringify(file)}`,
+      { encoding: "utf8" }
+    ).trim();
+    if (raw) dates.push(raw);
+  }
+  if (!dates.length) return null;
+  return dates.sort().at(-1);
 }
 
 let ok = true;
@@ -45,15 +60,24 @@ function walk(dir, prefix = "") {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     if (entry.name.startsWith("[") || entry.name === "blog") continue;
-    const route = `${prefix}/${entry.name}`;
+    // A route group — (site), (lp) — organises files without adding a URL
+    // segment, so it contributes nothing to the route path. Without this the
+    // homepage would come out as "/(site)" and every sitemap date would miss.
+    const isGroup = /^\(.+\)$/.test(entry.name);
+    const route = isGroup ? prefix : `${prefix}/${entry.name}`;
     const page = `${dir}/${entry.name}/page.tsx`;
-    if (existsSync(page)) routes.push([route, page]);
+    if (existsSync(page)) routes.push([route || "/", page]);
     routes.push(...walk(`${dir}/${entry.name}`, route));
   }
   return routes;
 }
 
-const entries = [["/", `${APP}/page.tsx`], ...walk(APP)];
+// The homepage used to sit at src/app/page.tsx; it now lives inside the (site)
+// group, where walk() finds it. Kept conditional so either layout works.
+const entries = [
+  ...(existsSync(`${APP}/page.tsx`) ? [["/", `${APP}/page.tsx`]] : []),
+  ...walk(APP),
+];
 const conditionSlugs = new Set(
   (await import("../src/lib/conditions.ts").catch((err) => {
     console.error("[last-modified] cannot import conditions:", err);

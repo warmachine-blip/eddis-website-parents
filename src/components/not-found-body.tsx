@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function NotFound() {
+/** The 404 copy, shared by the global 404 and the in-site notFound() boundary. */
+export default function NotFoundBody() {
   return (
     <div className="mx-auto flex max-w-2xl flex-col items-start px-6 py-24 lg:px-10 lg:py-32">
       <p className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-brass-text">

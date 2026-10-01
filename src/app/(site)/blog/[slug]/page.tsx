@@ -13,10 +13,15 @@ import FinalCta from "@/components/final-cta";
 /**
  * Article body, or null while a post is still metadata-only. The path prefix is
  * static so the bundler can resolve the directory; only the slug varies.
+ *
+ * That prefix is relative to *this file*, and the catch below cannot tell a
+ * metadata-only post from a wrong path — it returned null for every post when
+ * this route moved into the (site) route group and the prefix was left a level
+ * short. Re-count the `../` against src/content/blog if this file ever moves.
  */
 async function bodyFor(slug: string) {
   try {
-    const mod = await import(`../../../content/blog/${slug}.mdx`);
+    const mod = await import(`../../../../content/blog/${slug}.mdx`);
     return mod.default as React.ComponentType;
   } catch {
     return null;

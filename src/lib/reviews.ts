@@ -9,10 +9,12 @@ export const reviews = {
   googleProfileUrl:
     "https://www.google.com/maps/search/?api=1&query=HTx+Pain+Institute+13323+Dotson+Rd+Suite+200+Houston+TX+77070",
   /**
-   * The homepage hero stat, and the only place these values are used.
+   * The homepage hero stat, and the credential line on the /lp ad landing
+   * pages. Nowhere else.
    *
    * Deliberately not published as schema.org aggregateRating — see the note in
-   * src/components/organization-schema.tsx for why.
+   * src/components/organization-schema.tsx for why. That applies to the landing
+   * pages too: they show the figures and mark up neither.
    */
   rating: "5.0",
   /**
