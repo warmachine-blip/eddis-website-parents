@@ -1,13 +1,15 @@
-import Script from "next/script";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import OrganizationSchema from "@/components/organization-schema";
 import PageTransition from "@/components/page-transition";
 import ScrollReveal from "@/components/scroll-reveal";
-import ChatGreeting from "@/components/chat-greeting";
+import ChatWidget from "@/components/chat-widget";
 
 /**
  * The main site's chrome: nav, footer, site-wide entity graph, chat widget.
+ *
+ * The chat widget itself lives in src/components/chat-widget.tsx, because the
+ * /lp landing pages render it too without taking any of the rest of this.
  *
  * Extracted out of the root layout when the /lp ad landing pages arrived. Those
  * pages must not render the menu or the footer at all — both are built from
@@ -30,20 +32,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
         <PageTransition>{children}</PageTransition>
       </main>
       <SiteFooter />
-      {/*
-        LeadConnector chat widget. lazyOnload, not defer: a deferred script
-        still runs before the load event and counts against the page's
-        blocking time, while nobody needs the chat bubble in the first second.
-        Loading it after load keeps it out of LCP and TBT entirely.
-      */}
-      <ChatGreeting />
-      <Script
-        id="leadconnector-chat"
-        strategy="lazyOnload"
-        src="https://widgets.leadconnectorhq.com/loader.js"
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="66840b4e178c31f522476378"
-      />
+      <ChatWidget />
     </>
   );
 }

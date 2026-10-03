@@ -7,9 +7,8 @@ import { practice } from "@/lib/nav";
  * instead of linking to /request-appointment. Bookings stay on the page, so the
  * booking listener fires here.
  *
- * No right-side padding for a chat bubble: the LeadConnector widget is part of
- * the site chrome and does not load on these pages.
- *
+ * The right padding clears the LeadConnector chat bubble, which is fixed in the
+ * bottom-right corner and would otherwise sit on top of the Schedule button.
  * The spacer keeps the bar from covering the last line of the footer.
  */
 export default function LpStickyBar() {
@@ -17,7 +16,7 @@ export default function LpStickyBar() {
     <>
       <div aria-hidden="true" className="h-[76px] lg:hidden" />
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-off-white/95 backdrop-blur lg:hidden">
-        <div className="flex items-center gap-2 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))]">
+        <div className="flex items-center gap-2 px-4 pt-2.5 pr-[84px] pb-[max(0.625rem,env(safe-area-inset-bottom))]">
           <a
             href={practice.phoneHref}
             data-phone={practice.phone}

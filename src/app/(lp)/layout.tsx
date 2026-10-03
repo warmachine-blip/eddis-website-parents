@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LpTopBar from "@/components/lp/lp-top-bar";
 import LpFooter from "@/components/lp/lp-footer";
+import ChatWidget from "@/components/chat-widget";
 
 /**
  * Layout for the /lp Google Ads landing pages.
@@ -15,7 +16,12 @@ import LpFooter from "@/components/lp/lp-footer";
  * - OrganizationSchema. Its MedicalOrganization node publishes `knowsAbout`
  *   from src/lib/schema.ts, which lists the disallowed therapy. Each landing
  *   page emits its own narrower structured data instead.
- * - The LeadConnector chat widget, which is site chrome and has no job here.
+ *
+ * The LeadConnector chat widget IS rendered here, loaded exactly as it is on
+ * the rest of the site — same component, same widget id, same lazyOnload — and
+ * it brings the mobile greeting fix with it. The sticky bar in
+ * src/components/lp/lp-sticky-bar.tsx keeps its right padding clear for the
+ * bubble accordingly.
  *
  * The document shell, fonts and the GTM container all come from the root
  * layout, so these pages carry exactly the same GTM-PP5NDT4H install as the
@@ -37,6 +43,7 @@ export default function LpLayout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <LpFooter />
+      <ChatWidget />
     </>
   );
 }

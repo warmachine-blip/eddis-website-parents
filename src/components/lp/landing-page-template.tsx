@@ -191,10 +191,19 @@ export default function LandingPageTemplate({ data }: { data: LandingPage }) {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-5">
+          {/*
+            A grid, not a plain block: InfoCard carries h-full so it can match
+            its siblings' height when it sits in a row of cards. This wrapper is
+            a grid item and is stretched to the row height, which gave h-full a
+            definite height to resolve against — the full column — so the card
+            painted its white background straight over the Quick Facts box
+            below. Giving each child its own auto-sized row makes h-full mean
+            the card's own content height again.
+          */}
+          <div className="grid content-start gap-6 lg:col-span-5">
             <InfoCard icon="pulse" tone="cyan" title={data.symptomsTitle} items={data.symptoms} />
             {data.quickFacts && (
-              <div className="mt-6 rounded-2xl border border-line bg-off-white p-7">
+              <div className="rounded-2xl border border-line bg-off-white p-7">
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
                   Quick Facts
                 </p>
