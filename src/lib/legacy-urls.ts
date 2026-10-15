@@ -61,11 +61,11 @@ export const HTX_PAIN_CARE_PATHS: Record<string, string> = {
  * posts and 7 archive URLs. Nine pages already share a path with a route here
  * and need no entry; the 15 below do not.
  *
- * 25 of the 26 blog slugs were carried over to the WordPress unchanged, so the
- * existing /blog rule already covers them. The exception is
- * "/blog/living-with-fibromyalgia", which WordPress renamed to
- * "living-with-fibromyalgia-symptoms-coping" — worth an entry when the blog is
- * republished, pointless while every /blog URL goes to the homepage.
+ * 25 of the 26 blog slugs were carried over to the WordPress unchanged, so
+ * next.config.ts applies the WordPress blog's per-post map to this host too.
+ * The exception is "/blog/living-with-fibromyalgia", which WordPress renamed
+ * to "living-with-fibromyalgia-symptoms-coping"; it follows that post to the
+ * same destination below.
  */
 export const TX_PAIN_SPECIALISTS_PATHS: Record<string, string> = {
   // Pages this site names differently.
@@ -90,4 +90,6 @@ export const TX_PAIN_SPECIALISTS_PATHS: Record<string, string> = {
   // Never captured by the archive, so its content is unknown — the homepage is
   // the only honest destination.
   "/google": "/",
+  // The one blog post WordPress renamed (see the note above).
+  "/blog/living-with-fibromyalgia": "/fibromyalgia",
 };
