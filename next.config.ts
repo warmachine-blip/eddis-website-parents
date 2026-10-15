@@ -108,6 +108,13 @@ const nextConfig: NextConfig = {
       // a kept post keeps its slug and is carried by domainRedirect below.
       ...pathRedirects(HTX_PAIN_CARE_HOST, HTX_PAIN_CARE_BLOG_PATHS),
       ...pathRedirects(TX_PAIN_SPECIALISTS_HOST, TX_PAIN_SPECIALISTS_PATHS),
+      // The old txpainspecialists.com blog. 25 of its 26 post slugs were
+      // carried to the WordPress blog unchanged, so the same per-post map
+      // applies here; without it these URLs fall through to the catch-all
+      // below and land on /blog/<slug> on the live site, which 404s for every
+      // post that wasn't migrated. The one renamed post is in
+      // TX_PAIN_SPECIALISTS_PATHS.
+      ...pathRedirects(TX_PAIN_SPECIALISTS_HOST, HTX_PAIN_CARE_BLOG_PATHS),
       // Archive URLs off the legacy hosts, before the catch-all below, so they
       // reach the canonical blog directly instead of bouncing through the old
       // path on the new domain.
