@@ -43,10 +43,19 @@ export const metadata: Metadata = {
     url: "./",
     images: [
       {
-        url: "/images/og/htx-pain-institute.jpg",
+        /*
+          The card every platform shows when the site is shared. Built by
+          scripts/social-card.mjs — see that file before changing this.
+
+          The filename matters: previews are cached against the image URL for
+          weeks, so a new card ships under a new name rather than overwriting
+          the old one. og/htx-pain-institute.jpg is the previous card and stays
+          in the repo so links shared before this change still resolve.
+        */
+        url: "/images/og/htx-pain-institute-card.jpg",
         width: 1200,
         height: 630,
-        alt: "The HTx Pain Institute team at the reception desk",
+        alt: "Edward Baumgartner Jr., MD, beside the HTx Pain Institute logo",
       },
     ],
   },
