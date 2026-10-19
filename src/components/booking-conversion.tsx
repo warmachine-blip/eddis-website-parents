@@ -1,14 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { BOOKING_CONVERSION_EVENT } from "@/lib/analytics";
+import { pushBookingConfirmed } from "@/lib/analytics";
 import { scheduling } from "@/lib/scheduling";
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
 
 /**
  * Fires the booking conversion when the embedded Nimblr scheduler reports a
@@ -16,8 +10,9 @@ declare global {
  *
  * Nimblr posts a message up to the parent page when a patient finishes, shaped
  * like { i: "...", a: "scheduled", c: "..." }. Only `a` is read. Nothing from
- * the message, and nothing about the patient, goes into the dataLayer push —
- * the push carries the event name and nothing else — and nothing is logged.
+ * the message, and nothing about the patient, goes into the dataLayer push
+ * or the Google Analytics hit — the push carries the event name and nothing
+ * else, and the Analytics hit adds only the page path — and nothing is logged.
  *
  * This replaces a push that ran on /appointment-confirmed simply because the
  * page had been viewed. That page is reachable without booking anything: the
@@ -52,8 +47,7 @@ export default function BookingConversion() {
       if (fired) return;
       fired = true;
 
-      const dataLayer = (window.dataLayer = window.dataLayer || []);
-      dataLayer.push({ event: BOOKING_CONVERSION_EVENT });
+      pushBookingConfirmed();
     }
 
     window.addEventListener("message", onMessage);
