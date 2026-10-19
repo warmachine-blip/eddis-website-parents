@@ -19,14 +19,14 @@ export const reviews = {
   rating: "5.0",
   /**
    * A floor, not the live total. New reviews land every few weeks, so an exact
-   * figure is wrong within days of being typed. "650+" stays true on its own
-   * and only needs raising once the real count passes 700.
+   * figure is wrong within days of being typed. "700+" stays true on its own
+   * and only needs raising once the real count passes 750.
    *
    * The "+" is part of the value rather than of the template, so a later edit
    * to the hero cannot quietly turn a floor back into a false exact claim.
-   * Real total behind it when last read off the widget: 653.
+   * Real total behind it when last read off the widget: 744.
    */
-  reviewCountFloor: "650+",
+  reviewCountFloor: "700+",
   /** When the rating and the real total behind the floor were last checked. */
-  countLastChecked: "2026-09-19",
+  countLastChecked: "2026-10-19",
 };
