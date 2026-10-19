@@ -1,4 +1,5 @@
 import AnalyticsClicks from "@/components/analytics-clicks";
+import Ga4PageViews from "@/components/ga4-page-views";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
 
 /**
@@ -46,10 +47,12 @@ export default function DocumentShell({
           request costs one round trip instead of DNS + TLS + fetch.
         */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         {/*
           Google Tag Manager — first element in <head>, per Google's snippet.
-          The container owns every tag, the Google Ads conversion included; the
-          site loads no gtag.js of its own. See src/lib/analytics.ts.
+          The container is the Google Ads install. GA4 is not a tag in it and
+          is not loaded with gtag.js; page views are sent by Ga4PageViews.
+          See src/lib/analytics.ts.
         */}
         <script
           id="gtm-container"
@@ -68,6 +71,7 @@ export default function DocumentShell({
           />
         </noscript>
         <AnalyticsClicks />
+        <Ga4PageViews />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"

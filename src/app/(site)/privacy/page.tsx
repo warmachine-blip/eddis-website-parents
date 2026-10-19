@@ -12,7 +12,7 @@ const data = {
   title: "Privacy Policy",
   eyebrow: "Legal",
   breadcrumbLabel: "Privacy",
-  effectiveLine: "Effective September 19, 2026",
+  effectiveLine: "Effective October 19, 2026",
   intro:
     "This policy describes how we collect, use, and protect your information, including HIPAA-protected health information.",
   sections: [
@@ -47,8 +47,8 @@ const data = {
       heading: "5. Cookies, Analytics, and Third-Party Services",
       paragraphs: [
         "This website sets cookies and loads content from other companies. Some of it runs on every page, some only on the pages that need it. This is the full list.",
-        "On every page. Google Tag Manager loads the two Google tags below. Google Ads conversion tracking tells us which of our ads led someone to book; it sets a cookie named _gcl_au. Google Analytics tells us which pages people visit and how they move through the site; it sets cookies named _ga and _ga_7LR9NYKKQ3. A chat widget from LeadConnector lets you text the office; it stores data in your browser, including an identifier for your conversation and a list of the pages you have viewed here, and it does this whether or not you open the chat. The chat widget also loads its fonts from an outside font service.",
-        "On certain pages. Our contact and location pages embed a Google Map, which loads when you scroll down to it. Our home and contact pages embed a Birdeye widget showing our patient reviews. Our appointment page embeds the Nimblr scheduler, which runs its own Google Analytics property, separate from ours. Our video library displays thumbnail images served by YouTube.",
+        "On every page. Google Tag Manager loads Google Ads conversion tracking, which tells us which of our ads led someone to book. It sets a cookie named _gcl_au. This website also records, in Google Analytics, which pages are visited and which appointment and phone links are clicked. It sets cookies named _ga and _ga_27RHPSC41Y. A visit is recorded as the page path: the part of the address after the site name. We do not send the query string, your name, your phone number, your email, what you type into a form, or what you type into the scheduler. A chat widget from LeadConnector lets you text the office; it stores data in your browser, including an identifier for your conversation and a list of the pages you have viewed here, and it does this whether or not you open the chat. The chat widget also loads its fonts from an outside font service.",
+        "On certain pages. Our contact and location pages embed a Google Map, which loads when you scroll down to it. Our home and contact pages embed a Birdeye widget showing our patient reviews. Our appointment page embeds the Nimblr scheduler. The scheduler loads on Nimblr's site, inside a frame, and that frame can send its own visit data to Google Analytics. This website does not send the scheduler's contents. Our video library displays thumbnail images served by YouTube.",
         "Each of these companies receives your IP address and basic browser information when its content loads on the page, and each handles that under its own privacy policy rather than ours. We do not pass your name, your contact details, or any health information to Google through these measurement tags.",
         "What you can do. You can block or delete cookies in your browser settings, which will also clear what the chat widget has stored. Google publishes a browser add-on that opts you out of Google Analytics, and you can review or turn off ad personalization in your Google account settings. Blocking these will not affect your ability to use this site, call us, or book an appointment. This website does not currently respond to Do Not Track or Global Privacy Control browser signals.",
       ],

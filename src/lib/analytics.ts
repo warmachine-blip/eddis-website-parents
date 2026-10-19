@@ -1,25 +1,61 @@
 /**
- * Google measurement — one place, so the tags in the root layout and any
- * conversion event fired from a page can never drift apart.
+ * Google measurement, in one place.
  *
- * How analytics is loaded: Google Tag Manager only. The site does not load
- * gtag.js, and it does not use @next/third-parties. There is no GA4 measurement
- * ID (G-…) in this repo. Do not add one. A GA4 property, like the Google Ads
- * conversion, belongs as a tag inside the container below.
+ * Two pipelines, kept apart on purpose:
+ *
+ * 1. Google Tag Manager container GTM-PP5NDT4H. This is the Google Ads
+ *    container. Leave it in place. There is no access to that container, so
+ *    the Ads tags cannot be moved, and a GA4 tag must not be added beside
+ *    them — this file sends GA4 itself, and a second copy in the container
+ *    would count every page twice.
+ *
+ * 2. GA4 measurement ID G-27RHPSC41Y, sent directly from this file to
+ *    google-analytics.com. The site does not load gtag.js for that ID.
+ *
+ * Why there is no gtag.js snippet: the Google tag published for this ID
+ * (the one labeled Holly Web Scheduler) is configured to collect email
+ * addresses, phone numbers, and street addresses from the page, and to
+ * record enhanced-measurement events — form interactions, site-search query
+ * parameters, and a page view on every history change that includes the
+ * full URL. Loading gtag/js?id=G-27RHPSC41Y runs that configuration. This
+ * site's hits are built in src/lib/ga4-collect.ts instead, and the only
+ * page field on them is the path.
+ *
+ * Nimblr's embed helper (https://assets.nimblr.ai/js/iframe.js) defines its
+ * own gtag() and, on every postMessage from the scheduler, calls
+ * gtag("config", message.i) and gtag("event", message.a, {event_category,
+ * event_label}) on window.dataLayer. message.i is the measurement ID Holly
+ * was given — this one. Those calls do not load gtag.js, and this file
+ * never reads them. Wiring gtag.js up to window.dataLayer would turn each
+ * scheduler message into another page view and would forward the message's
+ * category and label. The scheduler frame's own container (GTM-NF63NFX)
+ * measures book.nimblr.co under a different ID, G-XWCRHXNRQC.
  */
 
-/** Google Tag Manager container. Loads gtm.js and owns every tag configured in GTM. */
+import {
+  buildCollectQuery,
+  GA_COLLECT_URL,
+  GA_MEASUREMENT_ID,
+  GA_SESSION_COOKIE,
+  pagePathOnly,
+  parseClientId,
+  parseSession,
+  safePageTitle,
+  sessionCookieValue,
+  sessionIsExpired,
+  type Ga4EventName,
+  type GaSession,
+} from "@/lib/ga4-collect";
+
+export { GA_MEASUREMENT_ID, pagePathOnly };
+
+/** Google Tag Manager container. Loads gtm.js and owns the Google Ads tags. */
 export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
 
 /**
  * Google Ads conversion ID AW-700388531 is NOT configured here. It is a tag
- * inside the GTM container above, which is the only thing that should load it.
- *
- * This file used to also hard-code a gtag.js loader and a gtag('config', ...)
- * for that same ID. With the container tag in place, both were live: two
- * connections to one conversion ID, double-counting every booking. The
- * hard-coded pair was removed — do not restore it. A second destination (a GA4
- * property, another Ads account) belongs in the container too, not here.
+ * inside the GTM container above. An earlier hard-coded gtag.js loader for
+ * that same Ads ID double-counted bookings. Do not restore it.
  */
 
 declare global {
@@ -35,7 +71,7 @@ declare global {
  *
  * Params are location (which control), label (its visible text), and page_path
  * (pathname only). Nothing else — no query string, no form fields, no patient
- * details. GTM forwards this to GA4 once a GA4 Event tag listens for it.
+ * details. The same three fields are sent to GA4.
  */
 export const APPOINTMENT_REQUEST_CLICK_EVENT = "appointment_request_click";
 
@@ -53,22 +89,26 @@ function cleanParam(value: string): string {
 }
 
 /**
- * Push a click event onto dataLayer. The payload is the event name plus
- * location, label, and page_path. page_path is the pathname only, so a query
- * string can never ride along.
+ * Push a click event onto dataLayer, and send the same event to GA4.
+ * page_path is the pathname only, so a query string can never ride along.
+ * The dataLayer push is what the Google Ads container can listen for.
  */
 export function pushClickEvent(
   event: ClickEventName,
   params: { location: string; label: string },
 ) {
   if (typeof window === "undefined") return;
+  const location = cleanParam(params.location) || "unknown";
+  const label = cleanParam(params.label) || "unlabeled";
+  const page_path = (window.location.pathname || "/").slice(0, 120);
   const dataLayer = (window.dataLayer = window.dataLayer || []);
   dataLayer.push({
     event,
-    location: cleanParam(params.location) || "unknown",
-    label: cleanParam(params.label) || "unlabeled",
-    page_path: (window.location.pathname || "/").slice(0, 120),
+    location,
+    label,
+    page_path,
   });
+  sendGa4Event(event, { location, label, page_path: pagePathOnly(page_path) });
 }
 
 /**
@@ -77,8 +117,153 @@ export function pushClickEvent(
  * conversion rather than a URL-path trigger: /appointment-confirmed is
  * reachable without booking anything, since the legacy /thank-you URLs
  * redirect to it.
+ *
+ * The GA4 hit for this event carries the event name and the page path.
+ * Nothing from the scheduler message is included.
  */
 export const BOOKING_CONVERSION_EVENT = "appointment_confirmed";
+
+export function pushBookingConfirmed() {
+  if (typeof window === "undefined") return;
+  const dataLayer = (window.dataLayer = window.dataLayer || []);
+  dataLayer.push({ event: BOOKING_CONVERSION_EVENT });
+  sendGa4Event(BOOKING_CONVERSION_EVENT, {
+    page_path: pagePathOnly(window.location.pathname),
+  });
+}
+
+/** A page view for the App Router, including client-side route changes. */
+export function trackPageView(pathname: string, referrer: string) {
+  sendGa4Event("page_view", { page_path: pagePathOnly(pathname) }, referrer);
+}
+
+const GA_CLIENT_COOKIE = "_ga";
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365 * 2;
+
+let pageId = 0;
+let hitCount = 0;
+
+function readCookie(name: string): string | null {
+  const parts = document.cookie ? document.cookie.split("; ") : [];
+  for (const part of parts) {
+    const eq = part.indexOf("=");
+    if (eq === -1) continue;
+    if (part.slice(0, eq) === name) return part.slice(eq + 1);
+  }
+  return null;
+}
+
+function writeCookie(name: string, value: string) {
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${name}=${value}; Path=/; Max-Age=${COOKIE_MAX_AGE}; SameSite=Lax${secure}`;
+}
+
+function createClientId(nowSeconds: number): string {
+  let n = 0;
+  if (typeof crypto !== "undefined" && crypto.getRandomValues) {
+    const buf = new Uint32Array(1);
+    crypto.getRandomValues(buf);
+    n = buf[0] ?? 0;
+  }
+  if (!n) n = Math.floor(Math.random() * 1_000_000_000) + 1;
+  return `${n}.${nowSeconds}`;
+}
+
+function resolveIdentity(nowSeconds: number): {
+  clientId: string;
+  session: GaSession;
+  firstVisit: boolean;
+  newSession: boolean;
+} {
+  const existingClient = parseClientId(readCookie(GA_CLIENT_COOKIE));
+  const firstVisit = !existingClient;
+  const clientId = existingClient ?? createClientId(nowSeconds);
+  const parsed = parseSession(readCookie(GA_SESSION_COOKIE));
+  const expired = !parsed || sessionIsExpired(parsed, nowSeconds);
+  if (!parsed || expired) {
+    return {
+      clientId,
+      firstVisit,
+      newSession: true,
+      session: {
+        sid: String(nowSeconds),
+        sct: parsed ? parsed.sct + 1 : 1,
+        engaged: false,
+        last: nowSeconds,
+      },
+    };
+  }
+  return { clientId, session: parsed, firstVisit, newSession: false };
+}
+
+function sendGa4Event(
+  eventName: Ga4EventName,
+  params: { location?: string; label?: string; page_path?: string },
+  referrer = "",
+) {
+  if (typeof window === "undefined") return;
+  const origin = window.location.origin;
+  if (!origin || origin === "null") return;
+
+  const now = Math.floor(Date.now() / 1000);
+  const identity = resolveIdentity(now);
+  const engaged =
+    identity.session.engaged || eventName !== "page_view" || !identity.newSession;
+  const session: GaSession = {
+    sid: identity.session.sid,
+    sct: identity.session.sct,
+    engaged,
+    last: now,
+  };
+  writeCookie(GA_CLIENT_COOKIE, `GA1.1.${identity.clientId}`);
+  writeCookie(GA_SESSION_COOKIE, sessionCookieValue(session));
+
+  if (!pageId) {
+    pageId = Math.floor(Math.random() * 1_000_000_000) + 1;
+  }
+  hitCount += 1;
+
+  const path = pagePathOnly(params.page_path || window.location.pathname);
+  const language = typeof navigator !== "undefined" ? navigator.language : "";
+  const screenSize =
+    typeof screen !== "undefined" && screen.width && screen.height
+      ? `${screen.width}x${screen.height}`
+      : "";
+
+  const body = buildCollectQuery({
+    measurementId: GA_MEASUREMENT_ID,
+    clientId: identity.clientId,
+    sessionId: session.sid,
+    sessionNumber: session.sct,
+    sessionEngaged: engaged,
+    hitNumber: hitCount,
+    pageId,
+    eventName,
+    pageLocation: `${origin}${path}`,
+    pageReferrer: referrer,
+    pageTitle: safePageTitle(document.title || ""),
+    language,
+    screen: screenSize,
+    firstVisit: identity.firstVisit,
+    sessionStart: identity.newSession,
+    location: params.location,
+    label: params.label,
+  });
+  if (!body) return;
+  deliver(body);
+}
+
+function deliver(body: string) {
+  const url = `${GA_COLLECT_URL}?${body}`;
+  try {
+    if (navigator.sendBeacon?.(url)) return;
+  } catch {
+    // sendBeacon can throw if the URL is rejected; fetch below is the fallback.
+  }
+  fetch(url, { method: "POST", keepalive: true, mode: "no-cors", credentials: "omit" }).catch(
+    () => {},
+  );
+}
 
 /** Google Tag Manager container bootstrap — Google's published snippet, minified. */
 export const GTM_SNIPPET = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`;
