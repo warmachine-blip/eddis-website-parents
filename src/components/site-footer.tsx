@@ -25,23 +25,31 @@ const footerLinkBlockClass =
 function FooterLink({
   href,
   external,
+  location,
   children,
 }: {
   href: string;
   external?: boolean;
+  location?: string;
   children: ReactNode;
 }) {
   const className = `${footerLinkClass} min-h-11 py-2`;
   // The scheduler lives on Nimblr, so that one link leaves the app entirely.
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-analytics-location={location}
+        className={className}
+      >
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} className={className}>
+    <Link href={href} data-analytics-location={location} className={className}>
       {children}
     </Link>
   );
@@ -59,7 +67,7 @@ const serviceLinks = servicesNav.filter((s) => !s.note);
 
 const patientLinks = [
   ...patientsNav,
-  { label: "Schedule Appointment", href: "/request-appointment" },
+  { label: "Schedule Appointment", href: "/request-appointment", location: "footer" },
   // External (Nimblr). Patients were phoning the front desk to reschedule.
   { label: "Reschedule Appointment", href: scheduling.manageUrl, external: true },
 ];
@@ -140,7 +148,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-1 text-sm">
               {patientLinks.map((l) => (
                 <li key={l.href}>
-                  <FooterLink href={l.href} external={"external" in l}>
+                  <FooterLink href={l.href} external={"external" in l} location={"location" in l ? l.location : undefined}>
                     {l.label}
                   </FooterLink>
                 </li>
@@ -168,7 +176,7 @@ export default function SiteFooter() {
                   <span className="sr-only"> (get directions in Google Maps)</span>
                 </a>
                 <br />
-                <a href={practice.phoneHref} data-phone={practice.phone} className={`min-h-11 py-2 tabular-nums ${footerLinkClass} phone`}>
+                <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="footer" className={`min-h-11 py-2 tabular-nums ${footerLinkClass} phone`}>
                   {practice.phone}
                 </a>
               </address>

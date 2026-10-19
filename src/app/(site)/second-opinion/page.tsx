@@ -95,12 +95,14 @@ export default function SecondOpinionPage() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="second-opinion-hero"
               className="rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Request Second Opinion
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="second-opinion-hero"
               className="rounded-full border border-off-white/30 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
@@ -289,12 +291,14 @@ export default function SecondOpinionPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="second-opinion-closing"
               className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Request Second Opinion
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="second-opinion-closing"
               className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}

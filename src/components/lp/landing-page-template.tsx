@@ -141,6 +141,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPage }) {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#schedule"
+                data-analytics-location="lp-hero"
                 className="inline-flex min-h-11 items-center rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
               >
                 Schedule Appointment
@@ -148,6 +149,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPage }) {
               <a
                 href={practice.phoneHref}
                 data-phone={practice.phone}
+                data-analytics-location="lp-hero"
                 className="inline-flex min-h-11 items-center rounded-full border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-off-white hover:border-off-white phone"
               >
                 {practice.phone}
@@ -447,6 +449,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPage }) {
               <a
                 href={practice.phoneHref}
                 data-phone={practice.phone}
+                data-analytics-location="lp-schedule"
                 className="mt-7 inline-flex min-h-11 items-center rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-navy-deep hover:bg-brass-light phone"
               >
                 {practice.phone}

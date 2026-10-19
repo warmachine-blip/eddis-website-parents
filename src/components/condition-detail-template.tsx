@@ -101,12 +101,14 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="condition-hero"
               className="border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="condition-hero"
               className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}

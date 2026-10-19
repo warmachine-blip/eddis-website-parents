@@ -68,7 +68,7 @@ export default function ContactForm() {
         Ask us anything about your pain, our procedures, or insurance. We
         typically respond within one business day. To book or reschedule a visit,
         use our{" "}
-        <Link href="/request-appointment" className="font-medium text-brass-text underline">
+        <Link href="/request-appointment" data-analytics-location="contact-form" className="font-medium text-brass-text underline">
           online scheduler
         </Link>
         .
@@ -90,7 +90,7 @@ export default function ContactForm() {
           {status === "unavailable" ? (
             <p role="status" className="mt-3 text-sm leading-relaxed text-charcoal-soft">
               Our message window isn&rsquo;t loading. Call us at{" "}
-              <a href={practice.phoneHref} data-phone={practice.phone} className="font-semibold text-brass-text underline tabular-nums phone">
+              <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="contact-form" className="font-semibold text-brass-text underline tabular-nums phone">
                 {practice.phone}
               </a>{" "}
               and we will pick it up from there.

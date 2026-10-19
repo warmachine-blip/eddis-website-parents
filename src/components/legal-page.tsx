@@ -10,7 +10,7 @@ function withContactLinks(text: string): ReactNode[] {
   return text.split(CONTACT_RE).map((part, i) => {
     if (part === practice.phone) {
       return (
-        <a key={i} href={practice.phoneHref} data-phone={practice.phone} className="whitespace-nowrap underline underline-offset-2 phone">
+        <a key={i} href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="legal" className="whitespace-nowrap underline underline-offset-2 phone">
           {part}
         </a>
       );

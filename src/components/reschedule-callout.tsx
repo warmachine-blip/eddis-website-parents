@@ -49,6 +49,7 @@ export default function RescheduleCallout({
             online in about a minute. Prefer to talk to someone? Call{" "}
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="reschedule"
               className={`font-medium tabular-nums underline underline-offset-2 ${
                 dark ? "text-brass-light hover:text-off-white" : "text-brass-text"
               } phone`}

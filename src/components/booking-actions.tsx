@@ -72,12 +72,14 @@ export function InlineBooking({ lead }: { lead?: string }) {
             <div className="flex flex-none flex-wrap items-center gap-3">
               <Link
                 href="/request-appointment"
+                data-analytics-location="inline-booking"
                 className="inline-flex min-h-11 items-center rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
               >
                 Schedule Appointment
               </Link>
               <a
                 href={practice.phoneHref} data-phone={practice.phone}
+                data-analytics-location="inline-booking"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-7 py-3.5 font-sans text-sm font-medium tracking-wide tabular-nums text-navy hover:border-brass phone"
               >
                 {PHONE_SVG}
@@ -107,6 +109,7 @@ export function StickyBookingBar() {
         <div className="flex items-center gap-2 px-4 pt-2.5 pr-[84px] pb-[max(0.625rem,env(safe-area-inset-bottom))]">
           <a
             href={practice.phoneHref} data-phone={practice.phone}
+            data-analytics-location="sticky-bar"
             className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-3 font-sans text-sm font-semibold tabular-nums text-navy phone"
           >
             {PHONE_SVG}
@@ -114,6 +117,7 @@ export function StickyBookingBar() {
           </a>
           <Link
             href="/request-appointment"
+            data-analytics-location="sticky-bar"
             className="inline-flex min-h-11 flex-[1.4] items-center justify-center rounded-full border border-brass bg-brass px-3 font-sans text-sm font-semibold text-navy-deep"
           >
             Schedule

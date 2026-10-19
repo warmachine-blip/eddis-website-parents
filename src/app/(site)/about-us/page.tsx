@@ -243,6 +243,7 @@ export default function AboutUsPage() {
               </p>
               <Link
                 href="/request-appointment"
+                data-analytics-location="about"
                 className="group mt-7 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full bg-brass px-5 py-3.5 text-sm font-semibold text-navy-deep transition-all hover:bg-brass-light sm:px-7"
               >
                 Request a Consultation

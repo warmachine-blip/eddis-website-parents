@@ -72,12 +72,14 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="location-hero"
               className="border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="location-hero"
               className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
@@ -134,6 +136,7 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                 <div className="mt-5 grid gap-2">
                   <a
                     href={practice.phoneHref} data-phone={practice.phone}
+                    data-analytics-location="location-office"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy phone"
                   >
                     {practice.phone}
@@ -316,12 +319,14 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="location-closing"
               className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="location-closing"
               className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}

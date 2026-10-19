@@ -1,6 +1,11 @@
 /**
- * Google measurement IDs — one place, so the tags in the root layout and any
+ * Google measurement — one place, so the tags in the root layout and any
  * conversion event fired from a page can never drift apart.
+ *
+ * How analytics is loaded: Google Tag Manager only. The site does not load
+ * gtag.js, and it does not use @next/third-parties. There is no GA4 measurement
+ * ID (G-…) in this repo. Do not add one. A GA4 property, like the Google Ads
+ * conversion, belongs as a tag inside the container below.
  */
 
 /** Google Tag Manager container. Loads gtm.js and owns every tag configured in GTM. */
@@ -16,6 +21,55 @@ export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
  * hard-coded pair was removed — do not restore it. A second destination (a GA4
  * property, another Ads account) belongs in the container too, not here.
  */
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+/**
+ * Click on a control that starts a new booking: a link to /request-appointment,
+ * a link to the Nimblr booking page, an in-page jump to the embedded scheduler,
+ * or the first interaction with that embed.
+ *
+ * Params are location (which control), label (its visible text), and page_path
+ * (pathname only). Nothing else — no query string, no form fields, no patient
+ * details. GTM forwards this to GA4 once a GA4 Event tag listens for it.
+ */
+export const APPOINTMENT_REQUEST_CLICK_EVENT = "appointment_request_click";
+
+/** Click on a tel: link for the practice number. 911 is not included. */
+export const PHONE_CLICK_EVENT = "phone_click";
+
+export type ClickEventName =
+  | typeof APPOINTMENT_REQUEST_CLICK_EVENT
+  | typeof PHONE_CLICK_EVENT;
+
+const MAX_PARAM = 80;
+
+function cleanParam(value: string): string {
+  return value.replace(/\s+/g, " ").trim().slice(0, MAX_PARAM);
+}
+
+/**
+ * Push a click event onto dataLayer. The payload is the event name plus
+ * location, label, and page_path. page_path is the pathname only, so a query
+ * string can never ride along.
+ */
+export function pushClickEvent(
+  event: ClickEventName,
+  params: { location: string; label: string },
+) {
+  if (typeof window === "undefined") return;
+  const dataLayer = (window.dataLayer = window.dataLayer || []);
+  dataLayer.push({
+    event,
+    location: cleanParam(params.location) || "unknown",
+    label: cleanParam(params.label) || "unlabeled",
+    page_path: (window.location.pathname || "/").slice(0, 120),
+  });
+}
 
 /**
  * dataLayer event pushed when the embedded Nimblr scheduler reports a booking
