@@ -108,6 +108,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/request-appointment"
+                data-analytics-location="homepage-hero"
                 className="border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep transition-colors hover:bg-brass-light"
               >
                 Schedule Appointment
@@ -278,6 +279,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/request-appointment"
+                data-analytics-location="homepage-physician"
                 className="inline-flex min-h-11 items-center font-sans text-sm font-semibold text-navy underline decoration-brass decoration-2 underline-offset-4 hover:text-brass-text"
               >
                 Schedule with Dr. B
@@ -417,7 +419,7 @@ export default function Home() {
                 <br />
                 {office.addressLine2}
                 <br />
-                <a href={practice.phoneHref} data-phone={practice.phone} className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text phone">
+                <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="homepage-locations" className="inline-flex min-h-11 items-center tabular-nums underline underline-offset-4 hover:text-brass-text phone">
                   {practice.phone}
                 </a>
               </address>
@@ -437,6 +439,7 @@ export default function Home() {
                 </a>
                 <a
                   href={practice.phoneHref} data-phone={practice.phone}
+                  data-analytics-location="homepage-locations"
                   className="inline-flex min-h-11 items-center justify-center border border-line px-5 py-3 font-sans text-sm font-medium tracking-wide text-navy hover:border-brass phone"
                 >
                   Call this office

@@ -144,12 +144,14 @@ export default function InjuriesPainPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="injuries-closing"
               className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="injuries-closing"
               className="rounded-full border border-off-white/30 px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}

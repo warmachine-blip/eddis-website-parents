@@ -61,6 +61,7 @@ export default function LpTopBar() {
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
+                  data-analytics-location={section.id === "schedule" ? "lp-header" : undefined}
                   className="inline-flex min-h-9 items-center whitespace-nowrap font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass-text lg:min-h-11"
                 >
                   {section.label}
@@ -73,6 +74,7 @@ export default function LpTopBar() {
         <a
           href={practice.phoneHref}
           data-phone={practice.phone}
+          data-analytics-location="lp-header"
           className="ml-auto inline-flex min-h-11 shrink-0 items-center gap-2 border border-line px-3.5 font-sans text-sm font-semibold tabular-nums text-navy transition-colors hover:border-brass sm:px-5 lg:ml-0 phone"
         >
           <svg

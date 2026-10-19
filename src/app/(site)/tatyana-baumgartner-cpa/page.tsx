@@ -107,6 +107,7 @@ export default function TatyanaBaumgartnerPage() {
                 </p>
                 <Link
                   href="/request-appointment"
+                  data-analytics-location="tatyana-sidebar"
                   className="group mt-5 inline-flex items-center gap-2 rounded-full bg-brass px-5 py-2.5 text-sm font-semibold text-navy-deep hover:bg-brass-light"
                 >
                   Schedule Appointment

@@ -73,6 +73,7 @@ export default function AppointmentConfirmedPage() {
             simply want to speak to someone — call us at{" "}
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="appointment-confirmed"
               className="font-medium tabular-nums text-brass-light underline decoration-brass-light/50 underline-offset-4 hover:text-off-white phone"
             >
               {practice.phone}
@@ -82,6 +83,7 @@ export default function AppointmentConfirmedPage() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="appointment-confirmed"
               className="rounded-full border border-brass bg-brass px-8 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
             >
               Call {practice.phone}

@@ -1,3 +1,4 @@
+import AnalyticsClicks from "@/components/analytics-clicks";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
 
 /**
@@ -66,6 +67,7 @@ export default function DocumentShell({
             title="Google Tag Manager"
           />
         </noscript>
+        <AnalyticsClicks />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"

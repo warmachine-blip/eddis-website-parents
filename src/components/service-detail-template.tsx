@@ -105,12 +105,14 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/request-appointment"
+              data-analytics-location="service-hero"
               className="border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light"
             >
               Schedule Appointment
             </Link>
             <a
               href={practice.phoneHref} data-phone={practice.phone}
+              data-analytics-location="service-hero"
               className="border border-off-white/40 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-off-white hover:border-off-white phone"
             >
               {practice.phone}
@@ -156,6 +158,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 </dl>
                 <Link
                   href="/request-appointment"
+                  data-analytics-location="service-quick-facts"
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy"
                 >
                   Schedule Appointment

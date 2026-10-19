@@ -129,6 +129,7 @@ export default function InsurancePage() {
                 </p>
                 <a
                   href={practice.phoneHref} data-phone={practice.phone}
+                  data-analytics-location="insurance-verify"
                   className="mt-5 inline-flex items-center gap-2 rounded-full bg-brass px-5 py-3 text-sm font-semibold text-navy-deep hover:bg-brass-light phone"
                 >
                   <PhoneIcon />
@@ -211,6 +212,7 @@ export default function InsurancePage() {
               </ul>
               <Link
                 href="/request-appointment"
+                data-analytics-location="insurance"
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-off-white hover:bg-navy-deep"
               >
                 Schedule Appointment

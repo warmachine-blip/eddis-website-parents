@@ -99,10 +99,10 @@ export default function FinalCta({
         Two Houston-area locations. Same-week consults available. Most insurance accepted.
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <Link href="/request-appointment" className={PRIMARY[shape]}>
+        <Link href="/request-appointment" data-analytics-location="final-cta" className={PRIMARY[shape]}>
           Schedule Appointment
         </Link>
-        <a href={practice.phoneHref} data-phone={practice.phone} className={`${SECONDARY[shape]} phone`}>
+        <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="final-cta" className={`${SECONDARY[shape]} phone`}>
           {practice.phone}
         </a>
       </div>

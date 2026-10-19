@@ -101,6 +101,7 @@ export default function SiteHeader() {
         <div className="hidden shrink-0 items-center gap-5 lg:flex">
           <Link
             href="/request-appointment"
+            data-analytics-location="header"
             className="shrink-0 whitespace-nowrap border border-brass bg-navy px-2.5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep xl:px-5 xl:text-sm"
           >
             Schedule Appointment
@@ -111,6 +112,7 @@ export default function SiteHeader() {
             reachable only after opening the menu. */}
         <a
           href={practice.phoneHref} data-phone={practice.phone}
+          data-analytics-location="header"
           aria-label={`Call ${practice.phone}`}
           className="ml-auto mr-2 flex h-11 w-11 items-center justify-center border border-line text-navy lg:hidden phone"
         >
@@ -201,11 +203,12 @@ export default function SiteHeader() {
             </li>
           </ul>
           <div className="flex flex-col gap-3 border-t border-line px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
-            <a href={practice.phoneHref} data-phone={practice.phone} className="flex min-h-12 items-center justify-center border border-line text-center text-sm font-semibold tabular-nums text-navy phone">
+            <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="header-menu" className="flex min-h-12 items-center justify-center border border-line text-center text-sm font-semibold tabular-nums text-navy phone">
               {practice.phone}
             </a>
             <Link
               href="/request-appointment"
+              data-analytics-location="header-menu"
               onClick={closeMobile}
               className="border border-brass bg-navy px-5 py-3 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white"
             >

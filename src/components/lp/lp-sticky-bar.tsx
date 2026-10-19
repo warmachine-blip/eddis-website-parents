@@ -20,6 +20,7 @@ export default function LpStickyBar() {
           <a
             href={practice.phoneHref}
             data-phone={practice.phone}
+            data-analytics-location="lp-sticky"
             className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-line px-3 font-sans text-sm font-semibold tabular-nums text-navy phone"
           >
             <svg
@@ -38,6 +39,7 @@ export default function LpStickyBar() {
           </a>
           <a
             href="#schedule"
+            data-analytics-location="lp-sticky"
             className="inline-flex min-h-11 flex-[1.4] items-center justify-center rounded-full border border-brass bg-brass px-3 font-sans text-sm font-semibold text-navy-deep"
           >
             Schedule

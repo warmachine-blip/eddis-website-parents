@@ -107,6 +107,8 @@ export default function PatientsPage() {
                 href={card.href}
                 target={"external" in card ? "_blank" : undefined}
                 rel={"external" in card ? "noopener noreferrer" : undefined}
+                data-analytics-location={card.href === "/request-appointment" ? "patients-resources" : undefined}
+                data-analytics-label={card.href === "/request-appointment" ? card.linkLabel : undefined}
                 className="group flex h-full flex-col rounded-2xl border border-line bg-off-white p-7 transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <IconBadge icon={card.icon} tone={card.tone} />
@@ -179,6 +181,7 @@ export default function PatientsPage() {
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a
                   href={practice.phoneHref} data-phone={practice.phone}
+                  data-analytics-location="patients-insurance"
                   className="rounded-full border border-brass bg-brass px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
                 >
                   Verify Benefits — {practice.phone}
@@ -210,6 +213,7 @@ export default function PatientsPage() {
                   </a>
                   <Link
                     href="/request-appointment"
+                    data-analytics-location="patients-forms"
                     className="text-sm font-semibold text-off-white underline-offset-4 hover:underline"
                   >
                     Schedule appointment instead

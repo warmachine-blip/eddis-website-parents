@@ -73,6 +73,7 @@ export default function RequestAppointmentPage() {
               </p>
               <a
                 href={practice.phoneHref} data-phone={practice.phone}
+                data-analytics-location="request-appointment"
                 className="mt-5 inline-block rounded-full border border-brass bg-brass px-6 py-3 font-sans text-sm font-medium tracking-wide text-navy-deep hover:bg-brass-light phone"
               >
                 {practice.phone}
