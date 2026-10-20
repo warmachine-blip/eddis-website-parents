@@ -142,6 +142,21 @@ export const blogPosts: BlogPost[] = [
     relatedHref: "/intracept-procedure",
     relatedLabel: "Intracept Procedure",
   },
+  {
+    slug: "when-back-pain-needs-a-specialist",
+    title: "Acute, Subacute or Chronic: When Back Pain Needs a Specialist",
+    seoTitle: "When to see a doctor for back pain",
+    excerpt:
+      "Most back pain eases within weeks. Here is how doctors tell acute pain from chronic pain, which symptoms need prompt attention, and what an evaluation involves.",
+    image: "clinician-palpating-lower-back-seated-patient.jpg",
+    alt: "A clinician in mint-green scrubs examines the lower back of a woman seated on an exam table.",
+    category: "Conditions",
+    datePublished: "2026-10-20",
+    lastReviewed: "2026-10-20",
+    readTime: "4 min read",
+    relatedHref: "/back-pain",
+    relatedLabel: "Back Pain",
+  },
 ];
 
 /**
