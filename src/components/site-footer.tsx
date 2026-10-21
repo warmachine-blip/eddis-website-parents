@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
 import { socialItems } from "@/components/social-icons";
+import ConsentSettingsButton from "@/components/consent-settings-button";
 import CopyrightYear from "@/components/copyright-year";
 
 /**
@@ -205,6 +206,9 @@ export default function SiteFooter() {
                   <FooterLink href={l.href}>{l.label}</FooterLink>
                 </li>
               ))}
+              <li>
+                <ConsentSettingsButton className={`${footerLinkClass} min-h-11 py-2`} />
+              </li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import AnalyticsClicks from "@/components/analytics-clicks";
+import ConsentBanner from "@/components/consent-banner";
 import Ga4PageViews from "@/components/ga4-page-views";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
+import { consentBootstrap } from "@/lib/consent";
 
 /**
  * The document itself — <html>, <head>, <body>, the fonts and the GTM
@@ -49,10 +51,19 @@ export default function DocumentShell({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         {/*
-          Google Tag Manager — first element in <head>, per Google's snippet.
-          The container is the Google Ads install. GA4 is not a tag in it and
-          is not loaded with gtag.js; page views are sent by Ga4PageViews.
-          See src/lib/analytics.ts.
+          Consent Mode default, parser-executed, before any Google tag. The
+          first request has to see ad storage denied. Keep this script when
+          the container below is wrapped or removed. Copy and the analytics
+          default live in src/lib/consent.ts.
+        */}
+        <script
+          id="consent-default"
+          dangerouslySetInnerHTML={{ __html: consentBootstrap() }}
+        />
+        {/*
+          Google Tag Manager. The container is the Google Ads install. GA4 is
+          not a tag in it and is not loaded with gtag.js; page views are sent
+          by Ga4PageViews. See src/lib/analytics.ts.
         */}
         <script
           id="gtm-container"
@@ -79,6 +90,7 @@ export default function DocumentShell({
           Skip to content
         </a>
         {children}
+        <ConsentBanner />
       </body>
     </html>
   );

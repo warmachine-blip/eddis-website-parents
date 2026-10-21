@@ -57,6 +57,10 @@ export type CollectInput = {
   engagementTimeMsec?: number;
   location?: string;
   label?: string;
+  /** Consent Mode values. Omitted from the hit when missing or malformed. */
+  gcs?: string;
+  gcd?: string;
+  npa?: "0" | "1";
 };
 
 /** Pathname only: no origin, no query string, no hash. */
@@ -224,6 +228,10 @@ export function buildCollectQuery(input: CollectInput): string | null {
   if (location) query.set("ep.location", location);
   const label = input.label ? safeEventParam(input.label) : "";
   if (label) query.set("ep.label", label);
+
+  if (input.gcs && /^G1[01][01]$/.test(input.gcs)) query.set("gcs", input.gcs);
+  if (input.gcd && /^13[a-z]3[a-z]3[a-z]3[a-z]5l1$/.test(input.gcd)) query.set("gcd", input.gcd);
+  if (input.npa === "0" || input.npa === "1") query.set("npa", input.npa);
 
   return query.toString();
 }
