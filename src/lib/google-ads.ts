@@ -27,13 +27,15 @@
  * GOOGLE_ADS_TRANSPORT is the only switch. "code" sends the hit above and
  * does not load GTM-PP5NDT4H. "gtm" loads the container and does not send
  * the hit. The container still has these labels, and this repo cannot pause
- * them, so both must not run. See docs/gtm-inventory.md.
+ * them, so both must not run. The current value is "gtm": PatientEdge's
+ * container, remarketing, and G-7LR9NYKKQ3 stay on, and these in-code hits
+ * stay off. See docs/gtm-inventory.md.
  */
 
 import { referrerOrigin, urlWithAllowedParams } from "./ga4-collect.ts";
 
-/** "code" sends the hits in this file. "gtm" loads GTM-PP5NDT4H instead. */
-export const GOOGLE_ADS_TRANSPORT: "code" | "gtm" = "code";
+/** "gtm" loads GTM-PP5NDT4H and does not send the hits in this file. */
+export const GOOGLE_ADS_TRANSPORT: "code" | "gtm" = "gtm";
 
 export const GOOGLE_ADS_CONVERSION_ID = "700388531";
 export const GOOGLE_ADS_ID = `AW-${GOOGLE_ADS_CONVERSION_ID}`;
@@ -187,6 +189,19 @@ export function buildAdsConversionUrl(input: AdsConversionInput): string | null 
   return `${GOOGLE_ADS_CONVERSION_ENDPOINT}?${params.toString()}`;
 }
 
+/**
+ * The pixel URL this transport would send, or null when it must not.
+ * "gtm" is always null: GTM-PP5NDT4H is the only conversion source for
+ * AW-700388531, for both the phone label and the booking label.
+ */
+export function adsConversionRequestUrl(
+  transport: "code" | "gtm",
+  input: AdsConversionInput,
+): string | null {
+  if (transport !== "code") return null;
+  return buildAdsConversionUrl(input);
+}
+
 function writeAdsClickCookies(pageUrl: string) {
   if (typeof document === "undefined") return;
   const secure = window.location.protocol === "https:" ? "; Secure" : "";
@@ -223,16 +238,16 @@ function deliverConversion(url: string) {
 }
 
 function fireAdsConversion(label: string) {
-  if (GOOGLE_ADS_TRANSPORT !== "code") return;
   if (typeof window === "undefined") return;
-  writeAdsClickCookies(window.location.href);
-  const url = buildAdsConversionUrl({
+  const url = adsConversionRequestUrl(GOOGLE_ADS_TRANSPORT, {
     label,
     pageUrl: window.location.href,
     referrer: document.referrer,
     storedClickIds: clickIdsFromCookieHeader(document.cookie),
   });
+  // "gtm" returns null before any cookie write or network call.
   if (!url) return;
+  writeAdsClickCookies(window.location.href);
   deliverConversion(url);
 }
 
