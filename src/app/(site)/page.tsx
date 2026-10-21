@@ -55,7 +55,7 @@ const credentials = [
 const whyHtx = [
   {
     title: "Double Board-Certified",
-    body: "Anesthesiology and Pain Medicine — the credentials that signal both technical mastery and a focused subspecialty.",
+    body: "Anesthesiology and Pain Medicine, the credentials that signal both technical mastery and a focused subspecialty.",
   },
   {
     title: "Patient-First Philosophy",
@@ -63,7 +63,7 @@ const whyHtx = [
   },
   {
     title: "Cutting-Edge Treatments",
-    body: "Spinal cord stimulation, Intracept, kyphoplasty, RFA, PRP — the full modern toolkit, applied with skill.",
+    body: "Spinal cord stimulation, Intracept, kyphoplasty, RFA, and PRP, the full modern toolkit, applied with skill.",
   },
   {
     title: "Non-Invasive Focus",
@@ -74,7 +74,7 @@ const whyHtx = [
 const injuries = [
   {
     title: "Work Injuries & Accidents",
-    body: "Comprehensive care for workplace injuries — back and neck strain, repetitive stress, and post-incident pain. We coordinate with workers' compensation carriers and case managers.",
+    body: "Comprehensive care for workplace injuries, including back and neck strain, repetitive stress, and post-incident pain. We coordinate with workers' compensation carriers and case managers.",
     href: "/work-injuries-accidents",
   },
   {
@@ -95,13 +95,13 @@ export default function Home() {
           <div className="max-w-[480px] text-off-white">
             <div className="mb-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
               <span className="h-px w-8 bg-brass-light" aria-hidden="true" />
-              {practice.tagline}
+              Pain management in Houston and Humble, TX
             </div>
 
             <HeroHeadline />
 
             <p className="mb-11 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
-              Advanced interventional pain management and regenerative wellness —
+              Advanced interventional pain management and regenerative wellness,
               personalized to your life, your goals, and your body.
             </p>
 
@@ -205,19 +205,19 @@ export default function Home() {
                   Meet Your Physician
                 </span>
                 <p className="mt-3 max-w-sm font-serif text-2xl leading-tight text-off-white">
-                  Why I founded HTx Pain — and what makes our care different.
+                  Why I founded HTx Pain, and what makes our care different.
                 </p>
               </div>
             </div>
 
-            {/* Phones: same caption, below the photo — legible, and it cannot
+            {/* Phones: same caption, below the photo. Legible, and it cannot
                 collide with the play control however the text wraps. */}
             <div className="mt-4 sm:hidden">
               <span className="inline-block bg-navy-deep px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-off-white">
                 Meet Your Physician
               </span>
               <p className="mt-3 font-serif text-xl leading-tight text-navy">
-                Why I founded HTx Pain — and what makes our care different.
+                Why I founded HTx Pain, and what makes our care different.
               </p>
             </div>
           </div>
@@ -232,10 +232,10 @@ export default function Home() {
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
               Edward Baumgartner Jr., MD founded HTx Pain Institute with a clear
-              mission: bring the modern interventional toolkit to Houston — applied
+              mission: bring the modern interventional toolkit to Houston, applied
               with the time, precision, and judgment every patient deserves. Just
               the care he&rsquo;d want for his own family. He operates at Townsen
-              Memorial Hospital, Houston Methodist, and St. Luke&rsquo;s Health.
+              Memorial Hospital, Houston Methodist Willowbrook, and St. Luke&rsquo;s Health.
             </p>
 
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -295,7 +295,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What We Treat"
             title="Modern interventional care, tailored to your pain."
-            lead="Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit — applied with the precision and judgment every patient deserves."
+            lead="Image-guided procedures, regenerative therapies, and the full modern pain-medicine toolkit, applied with the precision and judgment every patient deserves."
           />
           <TiltCardGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services
@@ -318,8 +318,8 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <SectionHeading
           eyebrow="Pain Center"
-          title="The conditions we treat — with the expertise they require."
-          lead="From neuropathic pain to chronic back pain, knee pain, and more — find the diagnosis that fits and the right path forward."
+          title="The conditions we treat, with the expertise they require."
+          lead="From neuropathic pain to chronic back pain, knee pain, and more. Find the diagnosis that fits and the right path forward."
         />
         <TiltCardGroup className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {conditions
@@ -348,7 +348,7 @@ export default function Home() {
             tone="dark"
             eyebrow="Why HTx Pain"
             title="The standard of pain care, raised to where it belongs."
-            lead="A clinic built around clinical excellence and the human relationship between physician and patient — without compromise on either."
+            lead="A clinic built around clinical excellence and the human relationship between physician and patient, without compromise on either."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyHtx.map((item) => (
@@ -372,7 +372,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Injuries"
             title="Injuries, accidents, and the documentation your case requires."
-            lead="Specialized care for work injuries and motor vehicle accidents — coordinated with carriers, attorneys, and case managers."
+            lead="Specialized care for work injuries and motor vehicle accidents, coordinated with carriers, attorneys, and case managers."
           />
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {injuries.map((item) => (

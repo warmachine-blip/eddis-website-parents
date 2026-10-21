@@ -1,3 +1,5 @@
+import { ablationBlogFaqs, stellateBlockFaqs, stimulatorTrialFaqs } from "./page-faqs";
+
 export type BlogPost = {
   slug: string;
   /** The headline, used as the H1 and — unless seoTitle is set — the title tag. */
@@ -30,6 +32,8 @@ export type BlogPost = {
   readTime: string;
   relatedHref: string;
   relatedLabel: string;
+  /** Visible FAQ, also emitted as FAQPage JSON-LD. Every answer needs physician review. */
+  faqs?: { q: string; a: string }[];
 };
 
 export const blogCategories = [
@@ -62,6 +66,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2024-02-06",
     dateModified: "2025-03-28",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "4 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
@@ -69,32 +74,38 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "understanding-radiofrequency-ablation",
     title: "What if Radiofrequency Ablation Doesn’t Work?",
+    seoTitle: "What if Radiofrequency Ablation Doesn't Work? Next Steps",
     excerpt:
-      "A misidentified pain source, needle placement, or ordinary biological variation can each blunt the result. What that points to next, and which options remain.",
+      "Why radiofrequency ablation sometimes gives less relief than hoped, how a pain doctor looks for the reason, and the other options worth discussing.",
     image: "blog-radiofrequency-ablation-next-steps.jpg",
     alt: "Illustration of radiofrequency probes targeting the nerves around a knee and a hip",
     category: "Procedures",
     datePublished: "2023-10-13",
     dateModified: "2025-04-02",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "3 min read",
     relatedHref: "/radiofrequency-ablation",
     relatedLabel: "Radiofrequency Ablation",
+    faqs: ablationBlogFaqs,
   },
   {
     slug: "spinal-cord-stimulator-trial-works",
     title: "How a Spinal Cord Stimulator Trial Works",
+    seoTitle: "Spinal Cord Stimulator Trial: How It Works, Step by Step",
     excerpt:
-      "The trial is the point: a temporary lead lets you test the therapy for days before anything is implanted. What the week involves, and how success is judged.",
+      "A spinal cord stimulator trial tests the therapy with temporary leads for about a week before any implant decision. What happens at each step.",
     image: "blog-spinal-cord-stimulator-trial.jpg",
     alt: "Illustration of spinal cord stimulator leads and pulse generator along the lower spine",
     category: "Procedures",
     datePublished: "2023-11-20",
     dateModified: "2025-04-02",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "4 min read",
     relatedHref: "/spinal-cord-stimulation-specialist",
     relatedLabel: "Spinal Cord Stimulation",
+    faqs: stimulatorTrialFaqs,
   },
   {
     slug: "how-long-does-it-take-to-feel-better-after-kyphoplasty",
@@ -108,25 +119,27 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2023-08-07",
     dateModified: "2025-04-02",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "3 min read",
     relatedHref: "/kyphoplasty-specialist",
     relatedLabel: "Kyphoplasty",
   },
   {
     slug: "understanding-stellate-ganglion-block",
-    title: "Understanding Stellate Ganglion Block: A Path to Pain Relief",
-    seoTitle: "What a stellate ganglion block treats",
+    title: "Stellate Ganglion Block: What It Treats and What to Expect",
     excerpt:
-      "An injection near a cluster of sympathetic nerves in the neck. It both diagnoses and treats — CRPS, shingles pain, phantom limb pain and some facial pain.",
+      "An injection near a group of nerves in the neck, used to diagnose and treat some nerve-related pain. Who it may help, how it is done and recovery.",
     image: "blog-stellate-ganglion-block.jpg",
     alt: "Cervical spine highlighted on a person holding the back of their neck",
     category: "Procedures",
     datePublished: "2024-01-05",
     dateModified: "2025-03-06",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "3 min read",
     relatedHref: "/injections-blocks-specialist",
     relatedLabel: "Injections & Nerve Blocks",
+    faqs: stellateBlockFaqs,
   },
   {
     slug: "intracept-procedure-for-chronic-low-back-pain",
@@ -138,6 +151,7 @@ export const blogPosts: BlogPost[] = [
     category: "Procedures",
     datePublished: "2026-04-07",
     lastReviewed: "2026-09-25",
+    author: "physician",
     readTime: "2 min read",
     relatedHref: "/intracept-procedure",
     relatedLabel: "Intracept Procedure",
@@ -153,6 +167,7 @@ export const blogPosts: BlogPost[] = [
     category: "Conditions",
     datePublished: "2026-10-20",
     lastReviewed: "2026-10-20",
+    author: "physician",
     readTime: "4 min read",
     relatedHref: "/back-pain",
     relatedLabel: "Back Pain",

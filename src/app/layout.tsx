@@ -61,11 +61,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   title: {
-    default: "HTx Pain Institute · Precision Pain Management in Houston",
+    default: "HTx Pain Institute · Pain Management Doctor in Houston, TX",
     template: "%s · HTx Pain Institute",
   },
   description:
-    "Precision pain management in Houston and Humble. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy.",
+    "Double board-certified pain medicine with Dr. Edward Baumgartner Jr., MD in Houston (Willowbrook) and Humble. Same-week consultations are often available.",
 };
 
 export const viewport: Viewport = {

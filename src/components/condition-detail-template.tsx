@@ -242,7 +242,7 @@ export default function ConditionDetailTemplate({ data }: { data: ConditionDetai
                   Common Questions
                 </span>
                 <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
-                  Direct answers — no jargon.
+                  Direct answers, no jargon.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   If your question isn&rsquo;t here, ask us at your consultation.

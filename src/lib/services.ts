@@ -87,7 +87,7 @@ export const services: Service[] = [
     href: "/peptides",
     title: "Wellness & Peptides",
     summary:
-      "Physician-supervised peptide therapies and weight-loss programs — a dedicated wellness page is coming soon.",
+      "Physician-supervised peptide therapies and weight-loss programs. A dedicated wellness page is coming soon.",
     icon: "sparkles",
     comingSoon: true,
   },

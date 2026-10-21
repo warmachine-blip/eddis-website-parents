@@ -10,10 +10,16 @@ import {
   mapsHref,
   MEDICAL_SPECIALTY,
   KNOWS_ABOUT,
+  foundingYear,
+  physicianNode,
 } from "@/lib/schema";
 import JsonLd from "@/components/json-ld";
 
-/** Spoken at both offices. schema.org accepts these as plain text or Language nodes. */
+/**
+ * Spoken by staff at both offices. schema.org accepts these as plain text.
+ * Do not copy this list onto the physician node. Dr. Baumgartner sees
+ * patients in English. Spanish is a staff language.
+ */
 const SPOKEN_LANGUAGES = ["English", "Spanish"];
 
 /**
@@ -72,13 +78,14 @@ export default function OrganizationSchema() {
         knowsLanguage: SPOKEN_LANGUAGES,
         availableLanguage: SPOKEN_LANGUAGES,
         founder: { "@id": FOUNDER_ID },
-        foundingDate: "2018",
+        foundingDate: foundingYear,
         areaServed,
         // The organization's own profiles. The doctor's personal LinkedIn is
         // sameAs on his Person node, not here.
         sameAs: [facebookUrl, instagramUrl, youtubeChannelUrl],
         department: offices.map((office) => ({ "@id": clinicId(office) })),
       },
+      physicianNode(),
       ...offices.map((office) => ({
         "@type": "MedicalClinic",
         "@id": clinicId(office),

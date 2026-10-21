@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
+import FaqBlock from "@/components/faq-block";
 import NimblrScheduler from "@/components/nimblr-scheduler";
 import RescheduleCallout from "@/components/reschedule-callout";
+import { appointmentFaqs } from "@/lib/page-faqs";
 import { practice } from "@/lib/nav";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pain Management Appointment in Houston",
+  title: "Book a Pain Management Visit in Houston",
   description:
-    "Book a pain management visit at our Houston or Humble office online, or call us. Same-week consultations available. Hablamos español.",
+    "Book online at our Houston (Willowbrook) or Humble office, or call (832) 960-7160. Same-week consultations are often available. Hablamos español.",
 };
 
 const nextSteps = [
@@ -41,7 +44,7 @@ export default function RequestAppointmentPage() {
             Schedule Appointment
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Schedule your consultation.
+            Schedule your pain management consultation.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Same-week consultations are typically available. Pick a time in the
@@ -68,7 +71,7 @@ export default function RequestAppointmentPage() {
               </p>
               <h2 className="mt-1.5 font-serif text-xl text-navy">Call us directly.</h2>
               <p className="mt-1.5 text-sm text-charcoal-soft">
-                Our front desk can typically schedule you on the spot — and answer
+                Our front desk can typically schedule you on the spot, and answer
                 any questions about your visit.
               </p>
               <a
@@ -121,6 +124,12 @@ export default function RequestAppointmentPage() {
           </div>
         </div>
       </div>
+
+      <FaqBlock
+        heading="Common questions"
+        faqs={appointmentFaqs}
+        schemaId={`${SITE_URL}/request-appointment#faq`}
+      />
     </div>
   );
 }

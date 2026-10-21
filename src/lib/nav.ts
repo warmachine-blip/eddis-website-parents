@@ -53,7 +53,7 @@ export const offices: Office[] = [
     city: "Houston",
     state: "TX",
     zip: "77070",
-    label: "HTx Pain Institute — Houston (Willowbrook)",
+    label: "HTx Pain Institute, Houston (Willowbrook)",
     shortLabel: "Houston (Willowbrook)",
     navLabel: "Houston (Willowbrook) / Northwest Houston",
     pageHref: "/locations/northwest-houston",
@@ -67,7 +67,7 @@ export const offices: Office[] = [
     city: "Humble",
     state: "TX",
     zip: "77338",
-    label: "HTx Pain Institute — Humble (FM 1960)",
+    label: "HTx Pain Institute, Humble (FM 1960)",
     shortLabel: "Humble (FM 1960)",
     navLabel: "Humble (FM 1960)",
     pageHref: "/locations/humble",
@@ -207,7 +207,7 @@ function formatDays(days: Weekday[]): string {
 
   const parts = runs.map((run) =>
     run.length >= 3
-      ? `${DAY_ABBR[run[0]]}–${DAY_ABBR[run[run.length - 1]]}`
+      ? `${DAY_ABBR[run[0]]}-${DAY_ABBR[run[run.length - 1]]}`
       : run.map((d) => DAY_ABBR[d]).join(", ")
   );
 
@@ -218,7 +218,7 @@ function formatDays(days: Weekday[]): string {
 /** "Mon–Fri 7AM–5PM" */
 export function formatHours(spec: OpeningHours[]): string {
   return spec
-    .map((h) => `${formatDays(h.days)} ${formatTime(h.opens)}–${formatTime(h.closes)}`)
+    .map((h) => `${formatDays(h.days)} ${formatTime(h.opens)}-${formatTime(h.closes)}`)
     .join(" · ");
 }
 
@@ -236,6 +236,6 @@ export const practice = {
   email: "info@htxpaininstitute.com",
   tagline: "Precision. Lasting Relief.",
   hours: formatHours(openingHours),
-  hoursWeekend: "Sat–Sun: Closed",
+  hoursWeekend: "Sat-Sun: Closed",
 };
 

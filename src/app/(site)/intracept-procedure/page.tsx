@@ -6,7 +6,7 @@ import { serviceDetails } from "@/lib/service-details";
 const data = serviceDetails["intracept-procedure"];
 
 export const metadata: Metadata = {
-  title: `${data.title} in Houston`,
+  title: "Intracept Procedure in Houston, TX",
   description: data.metaDescription,
   ...socialImage(data.slug, data.heroImageAlt),
 };

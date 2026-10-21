@@ -56,7 +56,7 @@ export default function ScrollStroke() {
             drawn around you.
           </h2>
           <p className="max-w-lg text-pretty text-base leading-relaxed text-off-white/80 sm:text-lg">
-            No two patients feel pain the same way — so no two treatment plans
+            No two patients feel pain the same way, so no two treatment plans
             should look the same either.
           </p>
         </div>
