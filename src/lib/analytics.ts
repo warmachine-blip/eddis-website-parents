@@ -18,8 +18,10 @@
  * record enhanced-measurement events — form interactions, site-search query
  * parameters, and a page view on every history change that includes the
  * full URL. Loading gtag/js?id=G-27RHPSC41Y runs that configuration. This
- * site's hits are built in src/lib/ga4-collect.ts instead, and the only
- * page field on them is the path.
+ * site's hits are built in src/lib/ga4-collect.ts instead. Page location on
+ * those hits is window.location.href run through an allowlist: ad click IDs
+ * and UTM parameters stay, and every other query parameter and the hash are
+ * dropped. The referrer and the page_path parameter stay path and origin only.
  *
  * Nimblr's embed helper (https://assets.nimblr.ai/js/iframe.js) defines its
  * own gtag() and, on every postMessage from the scheduler, calls
@@ -43,6 +45,7 @@ import {
   safePageTitle,
   sessionCookieValue,
   sessionIsExpired,
+  urlWithAllowedParams,
   type Ga4EventName,
   type GaSession,
 } from "@/lib/ga4-collect";
@@ -71,7 +74,7 @@ declare global {
  *
  * Params are location (which control), label (its visible text), and page_path
  * (pathname only). Nothing else — no query string, no form fields, no patient
- * details. The same three fields are sent to GA4.
+ * details. The same three fields are sent to GA4 as event parameters.
  */
 export const APPOINTMENT_REQUEST_CLICK_EVENT = "appointment_request_click";
 
@@ -90,8 +93,9 @@ function cleanParam(value: string): string {
 
 /**
  * Push a click event onto dataLayer, and send the same event to GA4.
- * page_path is the pathname only, so a query string can never ride along.
- * The dataLayer push is what the Google Ads container can listen for.
+ * page_path is the pathname only. The dataLayer push never includes a query
+ * string; that push is what the Google Ads container can listen for. The
+ * GA4 hit's page location is window.location.href through the ad/UTM allowlist.
  */
 export function pushClickEvent(
   event: ClickEventName,
@@ -118,8 +122,9 @@ export function pushClickEvent(
  * reachable without booking anything, since the legacy /thank-you URLs
  * redirect to it.
  *
- * The GA4 hit for this event carries the event name and the page path.
- * Nothing from the scheduler message is included.
+ * The GA4 hit carries the event name, the page path, and any allowlisted ad
+ * parameters already on the page URL. Nothing from the scheduler message
+ * is included.
  */
 export const BOOKING_CONVERSION_EVENT = "appointment_confirmed";
 
@@ -223,7 +228,6 @@ function sendGa4Event(
   }
   hitCount += 1;
 
-  const path = pagePathOnly(params.page_path || window.location.pathname);
   const language = typeof navigator !== "undefined" ? navigator.language : "";
   const screenSize =
     typeof screen !== "undefined" && screen.width && screen.height
@@ -239,7 +243,10 @@ function sendGa4Event(
     hitNumber: hitCount,
     pageId,
     eventName,
-    pageLocation: `${origin}${path}`,
+    // Current URL, not params.page_path. buildCollectQuery keeps allowlisted
+    // ad and UTM parameters on dl and drops every other query parameter and
+    // the hash. ep.page_path is the pathname only.
+    pageLocation: urlWithAllowedParams(window.location.href),
     pageReferrer: referrer,
     pageTitle: safePageTitle(document.title || ""),
     language,
