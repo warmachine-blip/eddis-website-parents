@@ -4,10 +4,72 @@ import {
   GOOGLE_ADS_BOOKING_LABEL,
   GOOGLE_ADS_CONVERSION_ENDPOINT,
   GOOGLE_ADS_PHONE_LABEL,
+  GOOGLE_ADS_TRANSPORT,
+  adsConversionRequestUrl,
   buildAdsConversionUrl,
   clickIdsFromCookieHeader,
   linkerCookieEntries,
+  trackAdsBookingConversion,
+  trackAdsPhoneConversion,
 } from "./google-ads.ts";
+
+const PIXEL = "/pagead/conversion/700388531/";
+
+describe("GOOGLE_ADS_TRANSPORT", () => {
+  it("is gtm so the container loads and this module does not send", () => {
+    assert.equal(GOOGLE_ADS_TRANSPORT, "gtm");
+  });
+
+  it("builds no /pagead/conversion url for phone or booking when transport is gtm", () => {
+    const input = {
+      pageUrl: PAGE,
+      referrer: "https://www.google.com/search?q=jane@doe.com",
+      storedClickIds: { gclid: "test123", wbraid: "testWbraid1", gbraid: "testGbraid1" },
+    };
+    for (const label of [GOOGLE_ADS_PHONE_LABEL, GOOGLE_ADS_BOOKING_LABEL]) {
+      assert.equal(adsConversionRequestUrl("gtm", { ...input, label }), null);
+      const codeUrl = adsConversionRequestUrl("code", { ...input, label });
+      assert.equal(codeUrl?.includes(PIXEL), true);
+      assert.ok(codeUrl?.includes(`label=${label}`));
+    }
+  });
+
+  it("does not request a pixel when the phone and booking trackers run", () => {
+    const requested: string[] = [];
+    const previousWindow = globalThis.window;
+    const previousDocument = globalThis.document;
+    const previousFetch = globalThis.fetch;
+    const previousImage = globalThis.Image;
+    globalThis.window = {
+      location: { href: PAGE, protocol: "https:" },
+    } as unknown as Window & typeof globalThis;
+    globalThis.document = {
+      referrer: "https://www.google.com/",
+      cookie: "_gcl_aw=GCL.1.test123",
+    } as unknown as Document;
+    globalThis.fetch = ((url: string) => {
+      requested.push(String(url));
+      return Promise.resolve(new Response());
+    }) as typeof fetch;
+    globalThis.Image = class {
+      set src(value: string) {
+        requested.push(value);
+      }
+    } as unknown as typeof Image;
+
+    try {
+      trackAdsPhoneConversion();
+      trackAdsBookingConversion();
+    } finally {
+      globalThis.window = previousWindow;
+      globalThis.document = previousDocument;
+      globalThis.fetch = previousFetch;
+      globalThis.Image = previousImage;
+    }
+
+    assert.deepEqual(requested, []);
+  });
+});
 
 const PAGE = "https://htxpaininstitute.com/lp/back-pain?email=a@b.com&name=Jane&phone=8325551212&gclid=test123&utm_source=test";
 

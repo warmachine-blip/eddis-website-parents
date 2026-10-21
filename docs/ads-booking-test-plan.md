@@ -14,7 +14,7 @@ Open this URL, with the made-up click id in the query string:
 
 `previewtest1` is letters and digits only. It is not a live Google click. The scheduler on this page is the iframe (`iframe=true`). Do not click "Open it in a new tab" in this session. That path does not send our Ads pixel, and mixing it in would make the count ambiguous.
 
-`GOOGLE_ADS_TRANSPORT` in this branch is `"code"`. The HTML must not contain `GTM-PP5NDT4H`.
+`GOOGLE_ADS_TRANSPORT` is `"gtm"` on the restore branch, so `gtm.js?id=GTM-PP5NDT4H` loads and the in-code booking pixel does not. This plan was written for `"code"` mode. Do not use it to judge the container.
 
 ## Fake identity
 

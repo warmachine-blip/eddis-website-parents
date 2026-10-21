@@ -10,9 +10,9 @@ import { GOOGLE_ADS_TRANSPORT } from "@/lib/google-ads";
  * which bypasses layouts entirely and so has to build its own document.
  *
  * Google Ads measurement is chosen by GOOGLE_ADS_TRANSPORT in
- * src/lib/google-ads.ts. "code" (the default) does not load GTM and does not
- * load gtag.js. "gtm" loads container GTM-PP5NDT4H and the in-code conversion
- * hits stay off. The two are not rendered together.
+ * src/lib/google-ads.ts. "gtm" (the current setting) loads container
+ * GTM-PP5NDT4H and the in-code conversion hits stay off. "code" does not
+ * load GTM and does not load gtag.js. The two are not rendered together.
  *
  * The fonts are NOT here. next/font derives its generated class name from the
  * file that calls it, so hoisting those calls out of src/app/layout.tsx would

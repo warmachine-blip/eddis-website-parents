@@ -7,10 +7,9 @@
  *    src/lib/google-ads.ts and sent only for a tel: click or a completed
  *    booking. The combined Google tag (gtag/js?id=AW-700388531) is not
  *    loaded: its published settings also send G-7LR9NYKKQ3 and collect
- *    email, phone, and address from the page. GTM-PP5NDT4H is not loaded
- *    while GOOGLE_ADS_TRANSPORT is "code", because the container still
- *    fires the same conversion labels. Flip that switch to "gtm" to load
- *    the container again and stop the in-code hits. Do not run both.
+ *    email, phone, and address from the page. GOOGLE_ADS_TRANSPORT is
+ *    "gtm", so GTM-PP5NDT4H loads and the in-code hits stay off. The
+ *    container still fires the same conversion labels. Do not run both.
  *
  * 2. GA4 measurement ID G-27RHPSC41Y, sent directly from this file to
  *    google-analytics.com. The site does not load gtag.js for that ID.

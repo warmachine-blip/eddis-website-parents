@@ -92,7 +92,7 @@ Blocking those URLs from the page after the script loads is not the approach thi
 
 ## What the site sends now
 
-`GOOGLE_ADS_TRANSPORT` in `src/lib/google-ads.ts` is the only switch. Default is `"code"`.
+`GOOGLE_ADS_TRANSPORT` in `src/lib/google-ads.ts` is the only switch. It is set to `"gtm"` so container `GTM-PP5NDT4H` loads and the in-code conversion hits do not.
 
 | Mode | Loads GTM-PP5NDT4H | Sends the in-code conversion | Loads `gtag/js?id=AW-700388531` |
 | --- | --- | --- | --- |
@@ -189,7 +189,7 @@ A later change can do option 1 after Nimblr confirms the opener post. Until that
 
 ## Needs decision / outside this PR
 
-1. **Double firing.** This branch avoids it by not loading `GTM-PP5NDT4H` while `GOOGLE_ADS_TRANSPORT` is `"code"`. The other way is for a GTM admin to pause the Ads tags (the Google tag, tag_id 8, and both conversion tags) and only then turn the container back on. Pausing only the two conversion tags is not enough: tag_id 8 still loads the combined tag, the full URL, remarketing, and `G-7LR9NYKKQ3`. Confirm which option should ship before merge. Flipping the switch back to `"gtm"` restores the container, including G-7, and turns the in-code hits off.
+1. **Double firing.** `GOOGLE_ADS_TRANSPORT` is `"gtm"`, so `GTM-PP5NDT4H` loads and the in-code hits do not. That is one copy of each label. Pausing only the two conversion tags is not enough if someone later sets the switch to `"code"` while tag_id 8 is still published: tag_id 8 still loads the combined tag, the full URL, remarketing, and `G-7LR9NYKKQ3`. Do not set the switch to `"code"` until those tags are paused.
 
 2. **Needs a Google tag settings change by an Ads admin.** In the Google tag (`GT-PJNQD84H` / `AW-700388531`), unlink destination `G-7LR9NYKKQ3` and turn off automatic collection of user-provided data (email, phone, and address), Google signals, and enhanced measurement. This repository cannot change those settings. Do not install `gtag/js?id=AW-700388531` until that is done. Code cannot suppress the second destination.
 
