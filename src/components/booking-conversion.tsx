@@ -12,7 +12,8 @@ import { scheduling } from "@/lib/scheduling";
  * like { i: "...", a: "scheduled", c: "..." }. Only `a` is read. Nothing from
  * the message, and nothing about the patient, goes into the dataLayer push
  * or the Google Analytics hit — the push carries the event name and nothing
- * else, and the Analytics hit adds only the page path — and nothing is logged.
+ * else, and the Analytics hit adds the page path plus any allowlisted ad
+ * parameters already on the page URL — and nothing is logged.
  *
  * This replaces a push that ran on /appointment-confirmed simply because the
  * page had been viewed. That page is reachable without booking anything: the

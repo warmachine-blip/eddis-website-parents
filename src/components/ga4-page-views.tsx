@@ -10,8 +10,10 @@ import { trackPageView } from "@/lib/analytics";
  * The App Router does not reload the document on navigation, so a hit sent
  * only from the first HTML response would miss every later page. The query
  * string is not part of the pathname, and a change that only touches it
- * does not send another view. The module-level path survives React's
- * development remount, so that remount does not count the same page twice.
+ * does not send another view. The hit reads window.location.href, so
+ * allowlisted ad click IDs and UTM parameters on that URL are kept. The
+ * module-level path survives React's development remount, so that remount
+ * does not count the same page twice.
  */
 let lastPath: string | null = null;
 

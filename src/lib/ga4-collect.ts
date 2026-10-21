@@ -1,9 +1,14 @@
 /**
  * Builds one Google Analytics 4 collect hit.
  *
- * The hit is a flat list of fields we choose. Nothing is read from the page
- * URL here: a caller that passes a query string still gets a path-only
- * `dl` and `dr`, and the only event parameters copied across are location,
+ * `dl` (page location) is the page origin and path, plus an allowlist of ad
+ * click IDs and UTM parameters. Every other query parameter is dropped, and
+ * the hash is never sent — anything else could carry patient information.
+ * A value has to match a strict character set. A utm_* value that looks like
+ * an email or contains a run of 7 or more digits is dropped as well. Click
+ * IDs and gad_campaignid are not held to that digit rule: they are
+ * base64url-like, or a numeric Ads campaign id. `dr` (referrer) stays origin
+ * and path only. The only event parameters copied across are location,
  * label, and page_path.
  */
 
@@ -38,7 +43,10 @@ export type CollectInput = {
   hitNumber: number;
   pageId: number;
   eventName: Ga4EventName;
-  /** Absolute page URL. Search and hash are removed before the hit is built. */
+  /**
+   * Absolute page URL. Allowlisted ad click IDs and UTM parameters are kept
+   * on `dl`. Every other query parameter and the hash are dropped.
+   */
   pageLocation: string;
   pageReferrer?: string;
   pageTitle?: string;
@@ -64,6 +72,56 @@ export function urlWithoutSearch(value: string): string {
     const url = new URL(value);
     if (url.protocol !== "https:" && url.protocol !== "http:") return "";
     return url.origin + pagePathOnly(url.pathname);
+  } catch {
+    return "";
+  }
+}
+
+/** Query params allowed on dl. Everything else is dropped (could carry PHI). */
+const ALLOWED_QUERY_PARAMS = new Set([
+  "gclid",
+  "gbraid",
+  "wbraid",
+  "gad_source",
+  "gad_campaignid",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "utm_id",
+]);
+
+/**
+ * Unreserved characters only, so an email, a space, or phone punctuation
+ * cannot ride along. `~` is in the set; URLSearchParams serializes it as %7E.
+ */
+const ALLOWED_VALUE = /^[A-Za-z0-9._~\-]{1,200}$/;
+
+/**
+ * utm_* values that look like an email or a long digit run (a phone, an MRN,
+ * a date of birth written as digits). Not applied to click IDs: a gclid is
+ * base64url-like and can contain a 7-digit run that is not patient data.
+ */
+const UTM_PHI_VALUE = /@|\d{7,}/;
+
+/** Origin + path + only allowlisted params. Never the hash. */
+export function urlWithAllowedParams(value: string): string {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return "";
+    const base = url.origin + pagePathOnly(url.pathname);
+    const kept = new URLSearchParams();
+    for (const [key, val] of url.searchParams) {
+      const k = key.toLowerCase();
+      if (!ALLOWED_QUERY_PARAMS.has(k)) continue;
+      if (!ALLOWED_VALUE.test(val)) continue;
+      if (k.startsWith("utm_") && UTM_PHI_VALUE.test(val)) continue;
+      if (kept.has(k)) continue;
+      kept.set(k, val);
+    }
+    const qs = kept.toString();
+    return qs ? `${base}?${qs}` : base;
   } catch {
     return "";
   }
@@ -131,7 +189,7 @@ export function buildCollectQuery(input: CollectInput): string | null {
   if (!Number.isInteger(input.sessionNumber) || input.sessionNumber < 1) return null;
   if (!Number.isInteger(input.hitNumber) || input.hitNumber < 1) return null;
 
-  const pageLocation = urlWithoutSearch(input.pageLocation);
+  const pageLocation = urlWithAllowedParams(input.pageLocation);
   if (!pageLocation) return null;
   const path = pagePathOnly(new URL(pageLocation).pathname);
 
