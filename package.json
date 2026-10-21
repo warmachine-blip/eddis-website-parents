@@ -9,7 +9,7 @@
     "postbuild": "node scripts/check-metadata.mjs",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/ga4-collect.test.ts"
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/ga4-collect.test.ts src/lib/consent.test.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

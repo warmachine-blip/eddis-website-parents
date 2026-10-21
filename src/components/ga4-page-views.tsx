@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { trackPageView } from "@/lib/analytics";
+import { CONSENT_CHANGE_EVENT, type ConsentChangeDetail } from "@/lib/consent";
 
 /**
  * One page view per pathname, including client-side route changes.
@@ -26,6 +27,18 @@ export default function Ga4PageViews() {
     const referrer = lastPath ? `${window.location.origin}${lastPath}` : document.referrer;
     lastPath = path;
     trackPageView(path, referrer);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onChange = (event: Event) => {
+      const detail = (event as CustomEvent<ConsentChangeDetail>).detail;
+      if (!detail || detail.previousAnalytics === detail.nextAnalytics) return;
+      const path = pathname || "/";
+      lastPath = path;
+      trackPageView(path, document.referrer);
+    };
+    window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
   }, [pathname]);
 
   return null;

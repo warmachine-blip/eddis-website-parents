@@ -1,4 +1,5 @@
 import { practice } from "@/lib/nav";
+import ConsentSettingsButton from "@/components/consent-settings-button";
 import CopyrightYear from "@/components/copyright-year";
 
 /**
@@ -20,6 +21,8 @@ export default function LpFooter() {
         <a href="/privacy" className="underline underline-offset-2 hover:text-brass-text">
           Privacy Policy
         </a>
+        <span aria-hidden="true">&middot;</span>
+        <ConsentSettingsButton className="underline underline-offset-2 hover:text-brass-text" />
       </div>
     </footer>
   );

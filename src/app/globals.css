@@ -148,3 +148,11 @@ main section[data-reveal][data-reveal-visible] {
     transition: none;
   }
 }
+
+/* The cookie notice stays above the mobile booking bar so Call and Schedule
+   remain tappable. 4.75rem matches the bar's in-flow spacer. */
+@media (max-width: 1023px) {
+  body:has([data-sticky-booking]) .consent-banner {
+    bottom: 4.75rem;
+  }
+}

@@ -105,7 +105,7 @@ export function StickyBookingBar() {
   return (
     <>
       <div aria-hidden="true" className="h-[76px] lg:hidden" />
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-off-white/95 backdrop-blur lg:hidden">
+      <div data-sticky-booking="" className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-off-white/95 backdrop-blur lg:hidden">
         <div className="flex items-center gap-2 px-4 pt-2.5 pr-[84px] pb-[max(0.625rem,env(safe-area-inset-bottom))]">
           <a
             href={practice.phoneHref} data-phone={practice.phone}
