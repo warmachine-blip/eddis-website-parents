@@ -5,34 +5,24 @@
  * (`user-session.js`) reads `document.location.href` and `document.referrer`,
  * then POSTs them to services.msgsndr.com. The same page object is copied onto
  * the chat form when someone sends a message. Both have to go through the same
- * allowlist GA4 uses (`urlWithAllowedParams`): ad click ids and utm_* stay,
- * every other query parameter is dropped, and the hash is never included.
+ * allowlist GA4 uses (`urlWithAllowedParams`): gclid, gbraid, wbraid,
+ * gad_source, gad_campaignid, and utm_* stay, every other query parameter is
+ * dropped, and the hash is never included.
  *
- * The address bar keeps that allowlist too, so a later read (a GA4 hit, an Ads
- * conversion, the widget itself after a client navigation) still sees gclid
- * and utm_*. Blanking the query would drop those on any read that happens
- * after the bar is rewritten. A plain in-page hash (`#schedule`, `#services`)
- * stays on the bar so those jumps still work. It is still removed from
- * anything we send.
+ * The address bar is not rewritten. Google Tag Manager and the Google tags
+ * read `window.location` themselves, and a replaceState here would change the
+ * page URL those tags send. Sanitizing happens only on the way out, and only
+ * for msgsndr.com and leadconnectorhq.com.
  */
 
 import { urlWithAllowedParams, urlWithoutSearch } from "./ga4-collect.ts";
 
 /**
  * Referrer-Policy on a request to the chat vendor. Origin only, so the header
- * carries the site name and not the path, query, or hash.
+ * carries the site name and not the path, query, or hash. Applied per request.
+ * There is no document-wide policy: that would also cover Google.
  */
 export const CHAT_REFERRER_POLICY = "origin";
-
-/**
- * Document policy. Cross-origin requests (the widget's scripts, frames, and
- * fetches) send the origin only. This is the modern browser default, set
- * explicitly so an older default cannot attach the query string.
- */
-export const DOCUMENT_REFERRER_POLICY = "strict-origin-when-cross-origin";
-
-/** Section ids this site actually uses. No `=`, `?`, `@`, or encoded bytes. */
-const SAFE_HASH = /^#[A-Za-z][A-Za-z0-9_-]{0,80}$/;
 
 export function isChatVendorHost(hostname: string): boolean {
   const host = hostname.toLowerCase().replace(/\.+$/, "");
@@ -51,55 +41,6 @@ export function isChatVendorUrl(value: string, base?: string): boolean {
   } catch {
     return false;
   }
-}
-
-export function isSafePageHash(hash: string): boolean {
-  return SAFE_HASH.test(hash);
-}
-
-/**
- * Address bar value for `href`, or null when it should be left alone.
- * Allowlisted query plus a safe hash. Null for a non-http URL, and null when
- * `href` is already in that shape.
- */
-export function addressBarHref(href: string): string | null {
-  let url: URL;
-  try {
-    url = new URL(href);
-  } catch {
-    return null;
-  }
-  if (url.protocol !== "http:" && url.protocol !== "https:") return null;
-  const base = urlWithAllowedParams(href);
-  if (!base) return null;
-  const hash = isSafePageHash(url.hash) ? url.hash : "";
-  const next = base + hash;
-  return next === href ? null : next;
-}
-
-/**
- * Third argument to `history.pushState` / `replaceState`, rewritten when it
- * carries a query or hash the address bar is not allowed to keep. Null means
- * the caller should pass the argument through unchanged.
- *
- * A relative input stays relative so the router sees the same shape it wrote.
- */
-export function historyUrl(next: string | URL, currentHref: string): string | null {
-  const raw = next instanceof URL ? next.href : String(next);
-  if (!raw) return null;
-  const wasRelative = !(next instanceof URL) && !/^[a-z][a-z0-9+.-]*:/i.test(raw);
-  let absolute: URL;
-  try {
-    absolute = new URL(raw, currentHref);
-  } catch {
-    return null;
-  }
-  if (absolute.protocol !== "http:" && absolute.protocol !== "https:") return null;
-  const sanitized = addressBarHref(absolute.href);
-  if (sanitized == null) return null;
-  if (!wasRelative) return sanitized;
-  const url = new URL(sanitized);
-  return `${url.pathname}${url.search}${url.hash}`;
 }
 
 /** Referrer copied into a chat payload: origin and path only. */

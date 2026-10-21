@@ -2,11 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   CHAT_REFERRER_POLICY,
-  DOCUMENT_REFERRER_POLICY,
-  addressBarHref,
-  historyUrl,
   isChatVendorHost,
-  isSafePageHash,
   referrerForChat,
   sanitizeChatPayload,
   sanitizeChatRequestUrl,
@@ -16,71 +12,6 @@ const ORIGIN = "https://htxpaininstitute.com";
 
 /** The URL the task uses to check that a visit is not forwarded raw. */
 const DIRTY = `${ORIGIN}/?q=back+pain&email=x@y.com&gclid=test#frag`;
-
-describe("addressBarHref", () => {
-  it("keeps gclid, drops the other query params, and keeps a plain hash", () => {
-    assert.equal(addressBarHref(DIRTY), `${ORIGIN}/?gclid=test#frag`);
-  });
-
-  it("drops a hash that is not a section id", () => {
-    assert.equal(
-      addressBarHref(`${ORIGIN}/contact?email=x@y.com#email=x@y.com`),
-      `${ORIGIN}/contact`,
-    );
-    assert.equal(isSafePageHash("#schedule"), true);
-    assert.equal(isSafePageHash("#services"), true);
-    assert.equal(isSafePageHash("#main-content"), true);
-    assert.equal(isSafePageHash("#email=x@y.com"), false);
-    assert.equal(isSafePageHash("#q=back+pain"), false);
-  });
-
-  it("keeps an in-page hash on an otherwise clean URL", () => {
-    assert.equal(addressBarHref(`${ORIGIN}/lp/back-pain#schedule`), null);
-    assert.equal(addressBarHref(`${ORIGIN}/#services`), null);
-  });
-
-  it("keeps allowlisted utm params and drops a utm value that looks like contact data", () => {
-    assert.equal(
-      addressBarHref(
-        `${ORIGIN}/lp/neck-pain?utm_source=google&utm_medium=cpc&utm_term=neck&utm_term=jane@x.com&phone=8325551212`,
-      ),
-      `${ORIGIN}/lp/neck-pain?utm_source=google&utm_medium=cpc&utm_term=neck`,
-    );
-  });
-
-  it("returns null when nothing would change", () => {
-    assert.equal(addressBarHref(`${ORIGIN}/contact?gclid=test`), null);
-    assert.equal(addressBarHref(`${ORIGIN}/contact`), null);
-  });
-
-  it("returns null for a non-http URL", () => {
-    assert.equal(addressBarHref("javascript:alert(1)"), null);
-    assert.equal(addressBarHref("not a url"), null);
-  });
-});
-
-describe("historyUrl", () => {
-  const here = `${ORIGIN}/?gclid=test#frag`;
-
-  it("rewrites a relative URL the router pushes after a client navigation", () => {
-    assert.equal(
-      historyUrl("/contact?email=x@y.com&q=back+pain&gclid=abc#schedule", here),
-      "/contact?gclid=abc#schedule",
-    );
-  });
-
-  it("leaves a clean relative URL alone", () => {
-    assert.equal(historyUrl("/contact#schedule", here), null);
-    assert.equal(historyUrl("/lp/back-pain", here), null);
-  });
-
-  it("rewrites an absolute URL and drops an unsafe hash", () => {
-    assert.equal(
-      historyUrl(`${ORIGIN}/contact?name=Jane#note=back`, here),
-      `${ORIGIN}/contact`,
-    );
-  });
-});
 
 describe("sanitizeChatPayload", () => {
   it("strips the raw query and hash from a msgsndr page-visit body and keeps gclid", () => {
@@ -118,6 +49,24 @@ describe("sanitizeChatPayload", () => {
     assert.equal(JSON.stringify(sent).includes("back"), false);
     assert.equal(JSON.stringify(sent).includes("#"), false);
     assert.equal(JSON.stringify(sent).includes("frag"), false);
+  });
+
+  it("keeps gclid and utm_source and drops email", () => {
+    const page = `${ORIGIN}/?gclid=test-click&utm_source=google&email=x@y.com#note`;
+    const body = JSON.stringify({
+      sessions: {
+        url_params: { gclid: "test-click", utm_source: "google", email: "x@y.com" },
+        page: { url: page, title: "Home" },
+        keyword: "x@y.com",
+        campaign: "",
+      },
+    });
+    const sent = JSON.parse(sanitizeChatPayload(body));
+    assert.equal(sent.sessions.page.url, `${ORIGIN}/?gclid=test-click&utm_source=google`);
+    assert.deepEqual(sent.sessions.url_params, { gclid: "test-click", utm_source: "google" });
+    assert.equal(sent.sessions.keyword, "");
+    assert.equal(JSON.stringify(sent).includes("email"), false);
+    assert.equal(JSON.stringify(sent).includes("#"), false);
   });
 
   it("keeps a utm keyword that survived the allowlist", () => {
@@ -224,8 +173,7 @@ describe("referrer and request URL", () => {
     assert.equal(isChatVendorHost("www.google-analytics.com"), false);
   });
 
-  it("names the referrer policies the widget and the document use", () => {
+  it("names the referrer policy used on a chat-vendor request", () => {
     assert.equal(CHAT_REFERRER_POLICY, "origin");
-    assert.equal(DOCUMENT_REFERRER_POLICY, "strict-origin-when-cross-origin");
   });
 });

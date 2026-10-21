@@ -195,7 +195,7 @@ A later change can do option 1 after Nimblr confirms the opener post. Until that
 
 3. **No consent banner and no Consent Mode.** Production tags were observed firing as all-granted (`gcd=13l3l3l3l1l1`, `npa=0`). This PR does not add a banner. The in-code hit uses `npa=1` and sends no user data. That is not Consent Mode.
 
-4. **LeadConnector receives the raw URL.** `src/components/chat-widget.tsx` loads the widget, and the widget sends the full URL and `url_params` to `services.msgsndr.com`. Not changed here. Sanitizing the address with `history.replaceState` before the widget loads is a separate follow-up PR.
+4. **LeadConnector receives the raw URL.** `src/components/chat-widget.tsx` loads the widget, and the widget sends the full URL and `url_params` to `services.msgsndr.com`. Not changed in the Ads work. The follow-up filters those msgsndr.com and leadconnectorhq.com requests only. It must not use `history.replaceState`: that would change the page URL GTM and the Google tags send.
 
 5. **Privacy page, section 5.** The Ads sentence now matches the in-code conversion (call or booking, no audience, click-id cookies only when a click id is present, allowlisted page URL). It does not yet disclose `G-7LR9NYKKQ3`, remarketing, or that LeadConnector receives query parameters. A broader rewrite of section 5 needs the owner's ok. The effective date is October 21, 2026 because the Ads sentence changed.
 

@@ -1,6 +1,5 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
-import { DOCUMENT_REFERRER_POLICY } from "./src/lib/chat-page-url";
 import { SITE_URL } from "./src/lib/site";
 import { HTX_PAIN_CARE_PATHS, TX_PAIN_SPECIALISTS_PATHS } from "./src/lib/legacy-urls";
 import { HTX_PAIN_CARE_BLOG_PATHS } from "./src/lib/blog-redirects";
@@ -92,13 +91,6 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
-      {
-        // Cross-origin requests, including the chat widget's scripts and frames,
-        // send the origin only. The browser default is already this. Setting it
-        // keeps an older default from attaching the query string as the referrer.
-        source: "/:path*",
-        headers: [{ key: "Referrer-Policy", value: DOCUMENT_REFERRER_POLICY }],
-      },
       {
         // Photos and the hero video change by filename, so they can be cached for a year.
         source: "/:dir(images|videos)/:path*",

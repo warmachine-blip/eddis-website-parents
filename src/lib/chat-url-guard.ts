@@ -1,24 +1,19 @@
 /**
- * Keeps the chat widget from reading a raw page URL.
+ * Keeps a raw page URL out of LeadConnector without changing what Google sees.
  *
- * Installed once, before the loader script is inserted. Two layers:
+ * The address bar is left alone. GTM and the Google tags read
+ * `window.location` on their own schedule, including after a client
+ * navigation, so `history.replaceState` is not used.
  *
- * 1. The address bar is rewritten to the allowlisted query. `pushState` and
- *    `replaceState` go through the same rewrite, so a client-side navigation
- *    cannot put a dropped parameter back, and the widget's later read of
- *    `document.location.href` (it does this again when the form is submitted)
- *    sees the reduced URL. A plain section hash is preserved.
- *
- * 2. `fetch` and `sendBeacon` to msgsndr.com / leadconnectorhq.com have their
- *    JSON bodies rewritten. That catches the hash we left on the address bar,
- *    a referrer that still has a query string, and query params the vendor
- *    script merges back in from a session it stored earlier.
+ * `fetch` and `sendBeacon` are patched once, and only when the destination
+ * host is msgsndr.com or leadconnectorhq.com (or a subdomain of either).
+ * Those calls get a sanitized URL, a sanitized JSON body, and
+ * `referrerPolicy: "origin"`. Every other host, including Google, is passed
+ * through to the original function with the original arguments.
  */
 
 import {
   CHAT_REFERRER_POLICY,
-  addressBarHref,
-  historyUrl,
   isChatVendorUrl,
   sanitizeChatPayload,
   sanitizeChatRequestUrl,
@@ -41,30 +36,6 @@ function requestHref(input: RequestInfo | URL): string | null {
   if (input instanceof URL) return input.href;
   if (typeof Request !== "undefined" && input instanceof Request) return input.url;
   return null;
-}
-
-function wrapHistory() {
-  const origPush = history.pushState.bind(history);
-  const origReplace = history.replaceState.bind(history);
-  const clean = (url?: string | URL | null) => {
-    if (url == null || url === "") return url;
-    const next = historyUrl(url, window.location.href);
-    return next == null ? url : next;
-  };
-  history.pushState = (data, unused, url) => {
-    origPush(data, unused, clean(url));
-  };
-  history.replaceState = (data, unused, url) => {
-    origReplace(data, unused, clean(url));
-  };
-
-  const rewriteCurrent = () => {
-    const next = addressBarHref(window.location.href);
-    if (!next) return;
-    origReplace(history.state, "", next);
-  };
-  window.addEventListener("hashchange", rewriteCurrent);
-  window.addEventListener("popstate", rewriteCurrent);
 }
 
 function wrapFetch() {
@@ -127,21 +98,12 @@ function wrapBeacon() {
   };
 }
 
-function rewriteAddressBar() {
-  const next = addressBarHref(window.location.href);
-  if (!next) return;
-  history.replaceState(history.state, "", next);
-}
-
-/** Idempotent. Safe to call again after a client navigation. */
+/** Idempotent. Does not touch history or the address bar. */
 export function installChatUrlGuard(): void {
   if (typeof window === "undefined") return;
   const guarded = window as GuardedWindow;
-  if (!guarded[GUARD_FLAG]) {
-    guarded[GUARD_FLAG] = true;
-    wrapHistory();
-    wrapFetch();
-    wrapBeacon();
-  }
-  rewriteAddressBar();
+  if (guarded[GUARD_FLAG]) return;
+  guarded[GUARD_FLAG] = true;
+  wrapFetch();
+  wrapBeacon();
 }

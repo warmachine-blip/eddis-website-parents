@@ -10,14 +10,10 @@ import { installChatUrlGuard } from "@/lib/chat-url-guard";
  * The loader used to be a next/script tag with strategy="lazyOnload". That
  * waits for the load event so the bubble stays out of LCP and TBT, which
  * matters on a paid landing page. The same wait is kept here. The difference
- * is ordering: the guard rewrites the address bar and patches fetch before
- * this script exists, so the widget cannot read the raw query string.
- *
- * GA4's page-view effect is an earlier sibling of this component and uses
- * useEffect, so it reads window.location.href before the rewrite below. The
- * rewrite keeps the same ad click ids and utm_* params that read would have
- * kept, which is what a later Ads or GA4 read (a phone click, a booking)
- * needs to find still on the URL.
+ * is ordering: the guard patches fetch and sendBeacon before this script
+ * exists. It does not rewrite the address bar. GTM and the Google tags keep
+ * reading the real page URL, including the query string. Only requests to
+ * msgsndr.com and leadconnectorhq.com are sanitized.
  */
 
 const LOADER_SRC = "https://widgets.leadconnectorhq.com/loader.js";
