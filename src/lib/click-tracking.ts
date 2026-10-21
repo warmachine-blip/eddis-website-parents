@@ -31,7 +31,7 @@ function samePhone(href: string, practicePhoneHref: string): boolean {
 /**
  * @param href The anchor's href attribute, as authored (relative is fine).
  * @param pageUrl The page the click happened on, used to resolve relative hrefs.
- * @param practicePhoneHref The practice tel: href, e.g. tel:+18329908600.
+ * @param practicePhoneHref The practice tel: href, e.g. tel:+18329607160.
  */
 export function classifyTrackedClick(
   href: string,
