@@ -12,6 +12,7 @@ import { offices, practice } from "@/lib/nav";
 
 export default function LocationDetailTemplate({ data }: { data: LocationDetail }) {
   const office = offices.find((o) => o.key === data.nearestOfficeKey)!;
+  const isThisOffice = office.pageHref === `/locations/${data.slug}`;
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.mapsQuery)}`;
   const url = `${SITE_URL}/locations/${data.slug}`;
 
@@ -128,6 +129,11 @@ export default function LocationDetailTemplate({ data }: { data: LocationDetail 
                   <br />
                   {office.addressLine2}
                 </p>
+                {isThisOffice ? (
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal-soft" lang="es">
+                    Hablamos español
+                  </p>
+                ) : null}
                 <p className="mt-4 text-sm text-charcoal-soft">
                   {practice.hours}
                   <br />

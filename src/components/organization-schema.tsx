@@ -13,6 +13,9 @@ import {
 } from "@/lib/schema";
 import JsonLd from "@/components/json-ld";
 
+/** Spoken at both offices. schema.org accepts these as plain text or Language nodes. */
+const SPOKEN_LANGUAGES = ["English", "Spanish"];
+
 /**
  * The site-wide entity graph: the practice, the website, and one MedicalClinic
  * per office. Every fact derives from src/lib/nav.ts so structured data can
@@ -66,7 +69,8 @@ export default function OrganizationSchema() {
         slogan: practice.tagline,
         medicalSpecialty: MEDICAL_SPECIALTY,
         knowsAbout: KNOWS_ABOUT,
-        knowsLanguage: ["English", "Spanish"],
+        knowsLanguage: SPOKEN_LANGUAGES,
+        availableLanguage: SPOKEN_LANGUAGES,
         founder: { "@id": FOUNDER_ID },
         foundingDate: "2018",
         areaServed,
@@ -99,6 +103,8 @@ export default function OrganizationSchema() {
         email: practice.email,
         image: `${SITE_URL}/images/lobby.webp`,
         medicalSpecialty: MEDICAL_SPECIALTY,
+        knowsLanguage: SPOKEN_LANGUAGES,
+        availableLanguage: SPOKEN_LANGUAGES,
         areaServed,
         openingHoursSpecification,
       })),

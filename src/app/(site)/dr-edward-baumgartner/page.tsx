@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
 import { SITE_URL } from "@/lib/site";
 import { linkedInUrl, txTopDocsUrl } from "@/lib/social";
-import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT } from "@/lib/schema";
+import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT, MEDICAL_SPECIALTY, clinicId } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
-import { practice } from "@/lib/nav";
+import { offices, practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
 import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
@@ -69,12 +69,16 @@ function ArrowIcon() {
 }
 
 /**
- * The founder as a real person, referenced by `founder` on the organization
- * node. Only credentials this page actually states are claimed here.
+ * The founder as a Physician, referenced by `founder` on the organization
+ * node. Physician is a Person, so the existing @id stays valid. Only facts
+ * this page or the office list already state are claimed: name, the two
+ * board certifications, the Anesthesiology specialty (pain medicine has no
+ * schema.org enumeration of its own; the page's "Pain Medicine" wording is
+ * in knowsAbout and the credential name), both offices by @id, url, and image.
  */
 const physicianLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "Physician",
   "@id": FOUNDER_ID,
   name: "Edward Baumgartner Jr., MD",
   givenName: "Edward",
@@ -84,6 +88,8 @@ const physicianLd = {
   url: `${SITE_URL}/dr-edward-baumgartner`,
   image: `${SITE_URL}/images/dr-baumgartner.webp`,
   worksFor: { "@id": ORG_ID },
+  workLocation: offices.map((office) => ({ "@id": clinicId(office) })),
+  medicalSpecialty: MEDICAL_SPECIALTY,
   knowsAbout: KNOWS_ABOUT,
   award: "Texas Top Doctor",
   affiliation: [
