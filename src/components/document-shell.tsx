@@ -1,7 +1,9 @@
 import AnalyticsClicks from "@/components/analytics-clicks";
+import ConsentBanner from "@/components/consent-banner";
 import Ga4PageViews from "@/components/ga4-page-views";
 import GoogleAdsLinker from "@/components/google-ads-linker";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
+import { consentBootstrap } from "@/lib/consent";
 import { GOOGLE_ADS_TRANSPORT } from "@/lib/google-ads";
 
 /**
@@ -57,6 +59,17 @@ export default function DocumentShell({
         )}
         <link rel="preconnect" href="https://www.google-analytics.com" />
         {/*
+          Consent default, parser-executed, before any Google tag. The
+          default is granted, so this does not turn measurement off. Keep
+          the script outside the transport switch: "gtm" and "code" both
+          need it, and it has to stay ahead of the container. Copy and
+          GPC_DENIES_ADS live in src/lib/consent.ts.
+        */}
+        <script
+          id="consent-default"
+          dangerouslySetInnerHTML={{ __html: consentBootstrap() }}
+        />
+        {/*
           GTM only when the transport switch is "gtm". In "code" mode there is
           no container and no gtag.js. GA4 page views are sent by Ga4PageViews.
           See src/lib/analytics.ts and src/lib/google-ads.ts.
@@ -90,6 +103,7 @@ export default function DocumentShell({
           Skip to content
         </a>
         {children}
+        <ConsentBanner />
       </body>
     </html>
   );

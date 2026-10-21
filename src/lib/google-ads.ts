@@ -32,6 +32,7 @@
  * stay off. See docs/gtm-inventory.md.
  */
 
+import { adsConversionAllowed, readBrowserConsent } from "./consent.ts";
 import { referrerOrigin, urlWithAllowedParams } from "./ga4-collect.ts";
 
 /** "gtm" loads GTM-PP5NDT4H and does not send the hits in this file. */
@@ -239,6 +240,10 @@ function deliverConversion(url: string) {
 
 function fireAdsConversion(label: string) {
   if (typeof window === "undefined") return;
+  // Opt-out only. Granted, including no choice yet, still builds the same
+  // URL. "gtm" still returns null inside adsConversionRequestUrl, before
+  // any cookie write or network call.
+  if (!adsConversionAllowed(readBrowserConsent())) return;
   const url = adsConversionRequestUrl(GOOGLE_ADS_TRANSPORT, {
     label,
     pageUrl: window.location.href,
@@ -262,5 +267,6 @@ export function trackAdsBookingConversion() {
 export function rememberAdsClickIds() {
   if (GOOGLE_ADS_TRANSPORT !== "code") return;
   if (typeof window === "undefined") return;
+  if (!adsConversionAllowed(readBrowserConsent())) return;
   writeAdsClickCookies(window.location.href);
 }

@@ -51,6 +51,7 @@ import {
   type Ga4EventName,
   type GaSession,
 } from "@/lib/ga4-collect";
+import { collectConsentFields, readBrowserConsent } from "@/lib/consent";
 import { trackAdsBookingConversion } from "@/lib/google-ads";
 
 export { GA_MEASUREMENT_ID, pagePathOnly };
@@ -64,7 +65,7 @@ export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: unknown[];
   }
 }
 
@@ -151,6 +152,36 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 365 * 2;
 
 let pageId = 0;
 let hitCount = 0;
+let memoryClientId = "";
+let memorySession: GaSession | null = null;
+
+/**
+ * Identity used while analytics storage is denied. Held in memory for this
+ * page only, so a cookieless ping still has a client id and nothing is written.
+ */
+function memoryIdentity(nowSeconds: number): {
+  clientId: string;
+  session: GaSession;
+  firstVisit: boolean;
+  newSession: boolean;
+} {
+  const firstVisit = !memoryClientId;
+  if (!memoryClientId) memoryClientId = createClientId(nowSeconds);
+  const expired = !memorySession || sessionIsExpired(memorySession, nowSeconds);
+  if (!memorySession || expired) {
+    const session: GaSession = {
+      sid: String(nowSeconds),
+      sct: memorySession ? memorySession.sct + 1 : 1,
+      engaged: false,
+      last: nowSeconds,
+    };
+    memorySession = session;
+    return { clientId: memoryClientId, session, firstVisit, newSession: true };
+  }
+  const session: GaSession = { ...memorySession, last: nowSeconds };
+  memorySession = session;
+  return { clientId: memoryClientId, session, firstVisit: false, newSession: false };
+}
 
 function readCookie(name: string): string | null {
   const parts = document.cookie ? document.cookie.split("; ") : [];
@@ -214,8 +245,15 @@ function sendGa4Event(
   const origin = window.location.origin;
   if (!origin || origin === "null") return;
 
+  // Granted is the default, and that hit matches a page with no Consent Mode:
+  // no gcs, gcd, or npa added here. Reject (or a GPC ads denial) is what
+  // switches the hit to a cookieless ping and adds those fields.
+  const consent = readBrowserConsent();
+  const consentFields = collectConsentFields(consent);
+  const persist = consent.signals.analytics_storage === "granted";
+
   const now = Math.floor(Date.now() / 1000);
-  const identity = resolveIdentity(now);
+  const identity = persist ? resolveIdentity(now) : memoryIdentity(now);
   const engaged =
     identity.session.engaged || eventName !== "page_view" || !identity.newSession;
   const session: GaSession = {
@@ -224,8 +262,12 @@ function sendGa4Event(
     engaged,
     last: now,
   };
-  writeCookie(GA_CLIENT_COOKIE, `GA1.1.${identity.clientId}`);
-  writeCookie(GA_SESSION_COOKIE, sessionCookieValue(session));
+  if (persist) {
+    writeCookie(GA_CLIENT_COOKIE, `GA1.1.${identity.clientId}`);
+    writeCookie(GA_SESSION_COOKIE, sessionCookieValue(session));
+  } else {
+    memorySession = session;
+  }
 
   if (!pageId) {
     pageId = Math.floor(Math.random() * 1_000_000_000) + 1;
@@ -259,6 +301,9 @@ function sendGa4Event(
     sessionStart: identity.newSession,
     location: params.location,
     label: params.label,
+    gcs: consentFields.gcs,
+    gcd: consentFields.gcd,
+    npa: consentFields.npa,
   });
   if (!body) return;
   deliver(body);
