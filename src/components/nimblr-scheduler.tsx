@@ -19,6 +19,13 @@ export default function NimblrScheduler() {
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted">
         Scheduler not loading?{" "}
+        {/*
+          This tab never returns to our site. Nimblr does not post the
+          booking message to the opener, so no Ads conversion is sent.
+          Leave the link. Counting it without a completion signal would
+          false-count, so there is no flag. Options are in
+          docs/gtm-inventory.md under "New-tab booking fallback".
+        */}
         <a
           href={scheduling.bookingUrl}
           target="_blank"

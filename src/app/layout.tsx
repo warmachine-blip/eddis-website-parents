@@ -6,8 +6,8 @@ import { practice } from "@/lib/nav";
 import "./globals.css";
 
 /**
- * The shared shell: document, fonts, and the analytics container — everything
- * every route needs and nothing that differs between them.
+ * The shared shell: document, fonts, and measurement. Everything every route
+ * needs and nothing that differs between them.
  *
  * The site's nav, footer, entity graph and chat widget used to live here. They
  * moved down into src/app/(site)/layout.tsx so the /lp ad landing pages, in

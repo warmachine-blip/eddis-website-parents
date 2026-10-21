@@ -1,5 +1,5 @@
-import { services } from "./services";
-import { conditions } from "./conditions";
+import { services } from "./services.ts";
+import { conditions } from "./conditions.ts";
 
 export type NavLink = {
   label: string;
@@ -227,6 +227,12 @@ export const practice = {
   formerNames: "Texas Interventional Pain Specialists and HTx Pain Care",
   phone: "(832) 960-7160",
   phoneHref: "tel:+18329607160",
+  /**
+   * Extra published numbers that count as this line, such as a Google
+   * call-tracking number. Ads and GA4 both use this list. 911 is never a
+   * match, even if it is added here.
+   */
+  trackingPhoneHrefs: [] as string[],
   email: "info@htxpaininstitute.com",
   tagline: "Precision. Lasting Relief.",
   hours: formatHours(openingHours),

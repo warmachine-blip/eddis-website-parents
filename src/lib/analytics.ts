@@ -3,11 +3,14 @@
  *
  * Two pipelines, kept apart on purpose:
  *
- * 1. Google Tag Manager container GTM-PP5NDT4H. This is the Google Ads
- *    container. Leave it in place. There is no access to that container, so
- *    the Ads tags cannot be moved, and a GA4 tag must not be added beside
- *    them — this file sends GA4 itself, and a second copy in the container
- *    would count every page twice.
+ * 1. Google Ads conversions for AW-700388531. Those hits are built in
+ *    src/lib/google-ads.ts and sent only for a tel: click or a completed
+ *    booking. The combined Google tag (gtag/js?id=AW-700388531) is not
+ *    loaded: its published settings also send G-7LR9NYKKQ3 and collect
+ *    email, phone, and address from the page. GTM-PP5NDT4H is not loaded
+ *    while GOOGLE_ADS_TRANSPORT is "code", because the container still
+ *    fires the same conversion labels. Flip that switch to "gtm" to load
+ *    the container again and stop the in-code hits. Do not run both.
  *
  * 2. GA4 measurement ID G-27RHPSC41Y, sent directly from this file to
  *    google-analytics.com. The site does not load gtag.js for that ID.
@@ -49,17 +52,16 @@ import {
   type Ga4EventName,
   type GaSession,
 } from "@/lib/ga4-collect";
+import { trackAdsBookingConversion } from "@/lib/google-ads";
 
 export { GA_MEASUREMENT_ID, pagePathOnly };
 
-/** Google Tag Manager container. Loads gtm.js and owns the Google Ads tags. */
-export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
-
 /**
- * Google Ads conversion ID AW-700388531 is NOT configured here. It is a tag
- * inside the GTM container above. An earlier hard-coded gtag.js loader for
- * that same Ads ID double-counted bookings. Do not restore it.
+ * Google Tag Manager container. Loaded only when GOOGLE_ADS_TRANSPORT is
+ * "gtm". In "code" mode the snippet stays in this file so the install can
+ * be turned back on without reconstructing it, and it is not rendered.
  */
+export const GTM_CONTAINER_ID = "GTM-PP5NDT4H";
 
 declare global {
   interface Window {
@@ -124,7 +126,9 @@ export function pushClickEvent(
  *
  * The GA4 hit carries the event name, the page path, and any allowlisted ad
  * parameters already on the page URL. Nothing from the scheduler message
- * is included.
+ * is included. The same call sends the Google Ads booking conversion when
+ * transport is "code" (see src/lib/google-ads.ts). The dataLayer push stays
+ * so a GTM admin can still listen for it if the container is turned back on.
  */
 export const BOOKING_CONVERSION_EVENT = "appointment_confirmed";
 
@@ -135,6 +139,7 @@ export function pushBookingConfirmed() {
   sendGa4Event(BOOKING_CONVERSION_EVENT, {
     page_path: pagePathOnly(window.location.pathname),
   });
+  trackAdsBookingConversion();
 }
 
 /** A page view for the App Router, including client-side route changes. */

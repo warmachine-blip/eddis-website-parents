@@ -11,9 +11,10 @@ import { scheduling } from "@/lib/scheduling";
  * Nimblr posts a message up to the parent page when a patient finishes, shaped
  * like { i: "...", a: "scheduled", c: "..." }. Only `a` is read. Nothing from
  * the message, and nothing about the patient, goes into the dataLayer push
- * or the Google Analytics hit — the push carries the event name and nothing
- * else, and the Analytics hit adds the page path plus any allowlisted ad
- * parameters already on the page URL — and nothing is logged.
+ * or the Google Analytics hit. The push carries the event name and nothing
+ * else. The Analytics hit adds the page path plus any allowlisted ad
+ * parameters already on the page URL. The Ads booking conversion is sent
+ * from that same call. Nothing is logged.
  *
  * This replaces a push that ran on /appointment-confirmed simply because the
  * page had been viewed. That page is reachable without booking anything: the
