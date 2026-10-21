@@ -42,7 +42,7 @@ const data = {
       paragraphs: [
         "The Send us a message button on the contact page opens the LeadConnector chat widget described in section 5. It asks for your name, phone number, and message. What you enter goes to LeadConnector and then to the office. Before it sends, the widget asks you to agree to be contacted by SMS or email at the number or address you gave.",
         "Online appointment scheduling runs through Nimblr. The scheduler is embedded on the appointment page (/request-appointment) and on the landing pages under /lp. What you enter there, including your name, contact information, and appointment preferences, goes to Nimblr and to the office so the visit can be booked. A reschedule link on this website opens Nimblr at appointment.nimblr.ai.",
-        "The company that hosts this website keeps standard server logs. Those logs can include your IP address, browser type, and the pages you request.",
+        "Our website host and other service providers that help us run the site receive technical information needed to deliver the pages. That can include your IP address, browser type, and the pages you request, including in server logs and in files loaded so the page can display.",
         "The companies named in section 5 also receive information about the visit, as that section describes.",
       ],
     },
@@ -62,7 +62,7 @@ const data = {
         "When advertising cookies are allowed, a conversion is one request to googleadservices.com for AW-700388531. The request is marked non-personalized (npa=1). The page address on that request keeps an ad click ID or a campaign label and drops every other query parameter. The referring address on that request is the site name only. If advertising cookies are allowed and the address includes an ad click ID, the site stores that ID in a cookie named _gcl_aw for gclid, _gcl_gb for wbraid, or _gcl_ag for gbraid. The cookie _gcl_au is not set. A phone-link click is counted only for the practice phone number. A booking is counted when the scheduler on book.nimblr.co reports that the appointment was saved.",
         "Chat. A LeadConnector chat widget loads on every page from widgets.leadconnectorhq.com, so you can message the office. It stores data in your browser, including an identifier for the conversation and a list of pages you have viewed here, whether or not you open the chat. The widget sends that visit information to msgsndr.com. The address the widget and msgsndr.com receive does not include the raw query string or the hash.",
         "Maps, reviews, the scheduler, and video thumbnails. The contact page, the locations page, and each location page embed a Google Map, which loads when you scroll down to it. The home page and the contact page embed a Birdeye widget that shows reviews. The appointment page and the landing pages embed the Nimblr scheduler from book.nimblr.co, and this website loads Nimblr's helper script from assets.nimblr.ai. The scheduler frame runs its own measurement under Google Tag Manager container GTM-NF63NFX and Google Analytics property G-XWCRHXNRQC. This website does not send the words you type into the scheduler to Google. When the frame reports that a booking was saved, this website records an appointment_confirmed event in G-27RHPSC41Y and, if advertising cookies are allowed, the Google Ads booking conversion described above. If you open the scheduler in a new tab, that tab is on Nimblr's website, and Nimblr can send its own booking event to G-27RHPSC41Y from there. The video library loads thumbnail images from YouTube at i.ytimg.com. A link that plays a video opens youtube.com.",
-        "Each of these companies receives your IP address and basic browser information when its content loads. Each company handles that information under its own privacy policy.",
+        "Each of the companies named above receives your IP address and basic browser information when its content loads. Each company handles that information under its own privacy policy. Our website host and other service providers that help us run the site can receive that same kind of technical information when they deliver the pages.",
       ],
     },
     {
@@ -90,7 +90,7 @@ const data = {
     {
       heading: "9. Contact",
       paragraphs: [
-        `For questions about this page, contact the Privacy Officer at ${practice.phone} or ${practice.email}.`,
+        `For questions about this page, contact the practice at ${practice.phone} or ${practice.email}.`,
         officeContact("houston"),
         officeContact("humble"),
       ],
