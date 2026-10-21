@@ -6,7 +6,6 @@ import {
   GOOGLE_ADS_PHONE_LABEL,
   buildAdsConversionUrl,
   clickIdsFromCookieHeader,
-  isAdsTelClick,
   linkerCookieEntries,
 } from "./google-ads.ts";
 
@@ -57,6 +56,9 @@ describe("buildAdsConversionUrl", () => {
     assert.equal(url.searchParams.get("script"), "0");
     assert.equal(url.searchParams.get("npa"), "1");
     assert.equal(url.searchParams.get("gclaw"), "test123");
+    assert.equal(url.searchParams.get("gclgb"), null);
+    assert.equal(url.searchParams.get("wbraid"), null);
+    assert.equal(url.searchParams.get("gbraid"), null);
     assert.equal(
       url.searchParams.get("url"),
       "https://htxpaininstitute.com/lp/back-pain?gclid=test123&utm_source=test",
@@ -82,6 +84,68 @@ describe("buildAdsConversionUrl", () => {
     assert.equal(url.searchParams.get("url"), "https://htxpaininstitute.com/request-appointment");
   });
 
+  it("sends wbraid as gclgb when there is no gclid", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_PHONE_LABEL,
+      pageUrl: "https://htxpaininstitute.com/contact?wbraid=testWbraid1&email=a@b.com",
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("gclgb"), "testWbraid1");
+    assert.equal(url.searchParams.get("gclaw"), null);
+    assert.equal(url.searchParams.get("wbraid"), null);
+    assert.equal(url.searchParams.get("gbraid"), null);
+  });
+
+  it("sends gbraid as gclgb when there is no gclid", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_PHONE_LABEL,
+      pageUrl: "https://htxpaininstitute.com/contact?gbraid=testGbraid1",
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("gclgb"), "testGbraid1");
+    assert.equal(url.searchParams.get("gbraid"), null);
+  });
+
+  it("joins wbraid and gbraid into one gclgb value", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_BOOKING_LABEL,
+      pageUrl: "https://htxpaininstitute.com/request-appointment?wbraid=testWbraid1&gbraid=testGbraid1",
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("gclgb"), "testWbraid1.testGbraid1");
+    assert.equal(url.searchParams.get("gclaw"), null);
+  });
+
+  it("prefers gclaw and omits gclgb when a gclid is also present", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_PHONE_LABEL,
+      pageUrl: "https://htxpaininstitute.com/?gclid=testGclid1&wbraid=testWbraid1",
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("gclaw"), "testGclid1");
+    assert.equal(url.searchParams.get("gclgb"), null);
+  });
+
+  it("uses a stored wbraid after the landing query is gone", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_BOOKING_LABEL,
+      pageUrl: "https://htxpaininstitute.com/request-appointment",
+      storedClickIds: { wbraid: "testWbraid1" },
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("gclgb"), "testWbraid1");
+  });
+
   it("does not invent a conversion label", () => {
     assert.equal(
       buildAdsConversionUrl({
@@ -93,10 +157,3 @@ describe("buildAdsConversionUrl", () => {
   });
 });
 
-describe("isAdsTelClick", () => {
-  it("matches a tel link and ignores a normal link", () => {
-    assert.equal(isAdsTelClick("tel:+18329607160"), true);
-    assert.equal(isAdsTelClick("TEL:911"), true);
-    assert.equal(isAdsTelClick("https://htxpaininstitute.com/contact"), false);
-  });
-});

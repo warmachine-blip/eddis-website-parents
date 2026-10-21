@@ -5,6 +5,7 @@ Marketing site for HTx Pain Institute (Houston and Humble, TX), built with Next.
 ## Stack
 
 - Next.js 16 (App Router, Turbopack), React 19, TypeScript
+- Node.js 22.6 or newer (`engines` in `package.json`). `npm test` runs the TypeScript tests with Node itself.
 - Tailwind CSS v4 — brand tokens live in `src/app/globals.css`
 - framer-motion for the tilt cards and the scroll-drawn line on the homepage
 - `next/font` for Inter and Cormorant Garamond

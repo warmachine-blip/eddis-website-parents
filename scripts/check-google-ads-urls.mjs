@@ -190,6 +190,9 @@ try {
     expect(phone.searchParams.get("npa") === "1", "phone hit missing npa=1");
     expect(phone.searchParams.get("script") === "0", "phone hit is not a pixel");
     expect(phone.searchParams.get("gclaw") === "test123", "phone hit missing gclaw");
+    expect(phone.searchParams.get("gclgb") === null, "gclid hit also sent gclgb");
+    expect(phone.searchParams.get("wbraid") === null, "hit used a wbraid parameter");
+    expect(phone.searchParams.get("gbraid") === null, "hit used a gbraid parameter");
     expect(
       phone.searchParams.get("url") ===
         "https://htxpaininstitute.com/contact?gclid=test123&utm_source=test" ||
@@ -210,9 +213,42 @@ try {
   });
   await settle(page, 1500);
   const emergency = hits.slice(before911).filter((url) => url.includes("/pagead/conversion/700388531/"));
-  expect(emergency.length === 1, `expected the 911 tel: link to count as an Ads conversion, got ${emergency.length}`);
+  expect(emergency.length === 0, `911 must not send an Ads conversion, got ${emergency.length}`);
   const gaPhoneAfter = hits.filter((url) => url.includes("en=phone_click"));
   expect(gaPhoneAfter.length === 1, "911 was sent to GA4 as phone_click");
+
+  async function expectBraid(query, gclgb) {
+    const braidContext = await browser.newContext();
+    const braidPage = await braidContext.newPage();
+    const seen = [];
+    watch(braidPage, seen);
+    await braidPage.goto(`${BASE}/contact?${query}&email=a%40b.com&name=Jane&phone=8325551212`, {
+      waitUntil: "domcontentloaded",
+      referer: REFERRER,
+    });
+    await braidPage.locator('a[href="tel:+18329607160"]').first().evaluate((el) => {
+      el.click();
+    });
+    await settle(braidPage, 1500);
+    const conv = seen.filter((url) => url.includes("/pagead/conversion/700388531/"));
+    expect(conv.length === 1, `${query}: expected 1 conversion, got ${conv.length}`);
+    if (conv[0]) {
+      const url = new URL(conv[0]);
+      expect(url.searchParams.get("gclgb") === gclgb, `${query}: gclgb=${url.searchParams.get("gclgb")}`);
+      expect(url.searchParams.get("wbraid") === null, `${query}: hit used a wbraid parameter`);
+      expect(url.searchParams.get("gbraid") === null, `${query}: hit used a gbraid parameter`);
+      expect(url.searchParams.get("gclaw") === null, `${query}: hit used gclaw`);
+    }
+    for (const url of seen) {
+      const found = problemsInUrl(url);
+      if (found.length) failures.push(`${found.join(", ")} in ${url.slice(0, 500)}`);
+    }
+    await braidContext.close();
+  }
+
+  await expectBraid("wbraid=testWbraid1", "testWbraid1");
+  await expectBraid("gbraid=testGbraid1", "testGbraid1");
+  await expectBraid("wbraid=testWbraid1&gbraid=testGbraid1", "testWbraid1.testGbraid1");
 
   const bookingPage = await context.newPage();
   const bookingHits = [];

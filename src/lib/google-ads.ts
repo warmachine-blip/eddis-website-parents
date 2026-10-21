@@ -8,8 +8,9 @@
  * allow_enhanced_conversions, or Consent Mode defaults does not stop that
  * linked destination. This file therefore does not load that script.
  *
- * What it does send is one conversion hit, and only when someone calls a
- * tel: link or the scheduler reports a booking. The hit uses the same
+ * What it does send is one conversion hit, and only when someone calls the
+ * practice number (or a configured tracking number) or the scheduler
+ * reports a booking. The hit uses the same
  * conversion id and labels as the container. The page address on it is
  * urlWithAllowedParams. The referrer is the origin only. npa=1 asks Google
  * not to use the hit for ad personalization. No user_data and no enhanced
@@ -51,11 +52,20 @@ export const GOOGLE_ADS_CONVERSION_ENDPOINT = `https://www.googleadservices.com/
 /**
  * First-party click-id cookies, same names the conversion linker uses:
  * gclid in _gcl_aw, wbraid in _gcl_gb, gbraid in _gcl_ag.
+ *
+ * The conversion request does not use query keys named wbraid or gbraid.
+ * Checked against gtag/js?id=AW-700388531 on 2026-10-21, with the conversion
+ * request aborted before it left the browser: gclid is sent as gclaw, and
+ * wbraid and gbraid are sent as one parameter, gclgb. wbraid alone is
+ * gclgb=<wbraid>. gbraid alone is gclgb=<gbraid>. Both, with no gclid, are
+ * gclgb=<wbraid>.<gbraid>. When gclid is present, gtag sends gclaw and omits
+ * gclgb. iPhone clicks usually arrive as wbraid or gbraid without a gclid,
+ * so gclgb is the parameter that attributes them.
  */
 const CLICK_COOKIES = [
-  { param: "gclid", name: "_gcl_aw", hit: "gclaw" },
-  { param: "wbraid", name: "_gcl_gb", hit: "wbraid" },
-  { param: "gbraid", name: "_gcl_ag", hit: "gbraid" },
+  { param: "gclid", name: "_gcl_aw" },
+  { param: "wbraid", name: "_gcl_gb" },
+  { param: "gbraid", name: "_gcl_ag" },
 ] as const;
 
 const CLICK_MAX_AGE = 60 * 60 * 24 * 90;
@@ -66,11 +76,6 @@ export type StoredClickIds = {
   wbraid?: string;
   gbraid?: string;
 };
-
-/** GTM's phone conversion fired when the clicked URL contained "tel:". */
-export function isAdsTelClick(href: string): boolean {
-  return href.toLowerCase().includes("tel:");
-}
 
 function cleanClickId(value: string | null | undefined): string {
   if (!value || !CLICK_VALUE.test(value)) return "";
@@ -166,9 +171,11 @@ export function buildAdsConversionUrl(input: AdsConversionInput): string | null 
   params.set("url", page);
   const ref = input.referrer ? referrerOrigin(input.referrer) : "";
   if (ref) params.set("ref", ref);
-  for (const cookie of CLICK_COOKIES) {
-    const id = ids[cookie.param];
-    if (id) params.set(cookie.hit, id);
+  if (ids.gclid) {
+    params.set("gclaw", ids.gclid);
+  } else {
+    const braids = [ids.wbraid, ids.gbraid].filter((id) => id);
+    if (braids.length) params.set("gclgb", braids.join("."));
   }
   return `${GOOGLE_ADS_CONVERSION_ENDPOINT}?${params.toString()}`;
 }
@@ -183,19 +190,26 @@ function writeAdsClickCookies(pageUrl: string) {
 }
 
 function deliverConversion(url: string) {
-  // One GET. sendBeacon would POST, and the conversion endpoint records a GET
-  // pixel. keepalive covers a click that leaves the page.
+  // One GET. sendBeacon would POST, and the conversion endpoint records a GET.
+  // keepalive covers a click that leaves the page.
+  //
+  // A gclgb hit 302s to viewthroughconversion. mode "no-cors" is not allowed
+  // to set redirect "manual", so this uses "cors". The response is opaque and
+  // unused. The browser does not follow that redirect, which is the
+  // remarketing request. The conversion GET itself still goes out.
   try {
     void fetch(url, {
       method: "GET",
-      mode: "no-cors",
+      mode: "cors",
+      redirect: "manual",
       credentials: "omit",
       keepalive: true,
       cache: "no-store",
     }).catch(() => {});
     return;
   } catch {
-    // fetch can throw on a rejected URL; the image is the same GET.
+    // fetch can throw on a rejected URL. The image follows redirects, so it
+    // is only the fallback.
   }
   const img = new Image();
   img.src = url;

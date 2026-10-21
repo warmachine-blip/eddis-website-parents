@@ -105,18 +105,36 @@ In `code` mode the hit is one GET to:
 
 `https://www.googleadservices.com/pagead/conversion/700388531/?random=&guid=ON&script=0&fmt=3&label=LABEL&npa=1&url=SANITIZED&ref=ORIGIN`
 
-plus `gclaw`, `wbraid`, or `gbraid` when an allowlisted click id is on the page or in the first-party cookie. `script=0` and `fmt=3` ask for a pixel rather than the Google tag. `npa=1` is the personalization opt-out on this pixel. No `user_data`, no `em`, no `ec_*`.
+plus `gclaw` when a gclid is present. wbraid and gbraid are not separate hit parameters. Checked against `gtag/js?id=AW-700388531` on 2026-10-21 (the conversion request was aborted in the browser before it was sent): a wbraid alone is `gclgb=<wbraid>`, a gbraid alone is `gclgb=<gbraid>`, and both with no gclid are `gclgb=<wbraid>.<gbraid>`. When a gclid is present, gtag sends `gclaw` and omits `gclgb`. iPhone clicks usually arrive as wbraid or gbraid without a gclid, so `gclgb` is what attributes them. Following that pixel's redirect loads `viewthroughconversion`, so the fetch uses `redirect: "manual"` and does not follow it. `script=0` and `fmt=3` ask for a pixel rather than the Google tag. `npa=1` is the personalization opt-out on this pixel. No `user_data`, no `em`, no `ec_*`.
 
 Click ids are stored by `GoogleAdsLinker` as `GCL.<unixSeconds>.<id>` in `_gcl_aw` (gclid), `_gcl_gb` (wbraid), and `_gcl_ag` (gbraid), for 90 days. `_gcl_au` is not set. The conversion linker in GTM did set `_gcl_au` on every page. That stops while the container is not loaded.
 
 Labels, unchanged:
 
-- Phone, any `tel:` link: `sekFCNPF0ugcELOp_M0C`
+- Phone, a link to the practice number in `src/lib/nav.ts` or a number in `practice.trackingPhoneHrefs`: `sekFCNPF0ugcELOp_M0C`. The published GTM tag fired on any `tel:` link, including 911. This branch does not. GA4 `phone_click` uses the same `samePhone()` check, so the two counts stay on the same numbers.
 - Booking, Nimblr message `a === "scheduled"` from origin `https://book.nimblr.co`: `Yo8FCL7U-oodELOp_M0C`
 
 `appointment_request_click` is not an Ads conversion. The paused thank-you tag is not recreated.
 
 `gtag('set', {allow_ad_personalization_signals:false, allow_google_signals:false, ads_data_redaction:true})` and Consent Mode defaults that deny `ad_user_data` and `ad_personalization` are not installed. They only apply inside the combined script, and loading that script brings `G-7LR9NYKKQ3` back. Nothing is pushed onto `window.dataLayer` for consent, because Nimblr's iframe helper and a restored GTM container both read that array. There is no consent banner in this change.
+
+## Where the GA4 event `scheduled` comes from
+
+It is not sent by this repository.
+
+Nimblr's scheduler bundle (`book.nimblr.co/js/chunk-6a92058f.111cbfc3.js`, loaded with the embed on 2026-10-21) calls `updateGAFlag` in `app.878cdd8d.js` when the scheduled step runs. The location API returns `config.idGA` = `G-27RHPSC41Y`. In an iframe, that function does not call gtag. It posts `{ i: "G-27RHPSC41Y", a: "scheduled", c: "holly" }` to the parent. Outside an iframe it calls `gtag("config", idGA)` and `gtag("event", "scheduled", ...)` inside `book.nimblr.co`.
+
+On our page, `https://assets.nimblr.ai/js/iframe.js` (loaded by `src/components/nimblr-scheduler.tsx`) handles that message by defining its own `gtag()` and pushing `gtag("event", "scheduled", ...)` onto `window.dataLayer`. That function does not load gtag.js. This site does not define a real `window.gtag`, and it does not send a GA4 hit named `scheduled`. `pushBookingConfirmed` sends GA4 event `appointment_confirmed` on `G-27RHPSC41Y` and, in `code` mode, the Ads booking conversion.
+
+`GTM-PP5NDT4H` has no GA4 tag and no trigger for `scheduled`. Dropping that container does not stop a `scheduled` hit, because this page never sends one. The dataLayer push from `iframe.js` stays, and nothing here reads it.
+
+Nimblr's own container `GTM-NF63NFX` (fetched the same day) has one tag: Google tag `G-XWCRHXNRQC`, page views only. It does not contain `AW-700388531`, `700388531`, or the string `scheduled`. The published tag for `G-XWCRHXNRQC` lists destinations `G-XWCRHXNRQC|GT-K5MPSL3` and does not list `AW-700388531`. The published tag for `G-27RHPSC41Y` lists `G-27RHPSC41Y|GT-WB23HXPL` and does not list `AW-700388531`. From those published files, the embedded scheduler's container would not also fire this Ads conversion.
+
+The scheduler bundle also names a Google Maps conversion endpoint (`https://www.google.com/maps/conversion/collect`, partner id `20000870`). That is not `AW-700388531`. Whether a finished booking actually requests it, or calls any tag that is not in the published containers, needs a live test booking. So does confirming that the parent receives `{ a: "scheduled" }` only after a real appointment is saved. The Playwright check stubs that message. It does not complete a booking.
+
+## New-tab booking fallback
+
+`src/components/nimblr-scheduler.tsx` links "Open it in a new tab" to `https://book.nimblr.co/HTxPainInstitute`. That tab does not navigate back here, so `BookingConversion` never sees the message and no Ads conversion is sent. The link stays. In that tab, Nimblr's own code can still send GA4 event `scheduled` to `G-27RHPSC41Y` through the gtag it loads there. That does not depend on our GTM loader.
 
 ## Needs decision / outside this PR
 
@@ -126,7 +144,7 @@ Labels, unchanged:
 
 3. **No consent banner and no Consent Mode.** Production tags were observed firing as all-granted (`gcd=13l3l3l3l1l1`, `npa=0`). This PR does not add a banner. The in-code hit uses `npa=1` and sends no user data. That is not Consent Mode.
 
-4. **LeadConnector receives the raw URL.** `src/components/chat-widget.tsx` loads the widget, and the widget sends the full URL and `url_params` to `services.msgsndr.com`. This PR does not change that file. A follow-up, if the owner wants it, is to replace the address with the allowlisted URL (`history.replaceState`) before the widget loads. The site does not read the query string for its own routing, so that replace is likely safe, and it is still a separate change.
+4. **LeadConnector receives the raw URL.** `src/components/chat-widget.tsx` loads the widget, and the widget sends the full URL and `url_params` to `services.msgsndr.com`. Not changed here. Sanitizing the address with `history.replaceState` before the widget loads is a separate follow-up PR.
 
 5. **Privacy page, section 5.** The Ads sentence now matches the in-code conversion (call or booking, no audience, click-id cookies only when a click id is present, allowlisted page URL). It does not yet disclose `G-7LR9NYKKQ3`, remarketing, or that LeadConnector receives query parameters. A broader rewrite of section 5 needs the owner's ok. The effective date is October 21, 2026 because the Ads sentence changed.
 

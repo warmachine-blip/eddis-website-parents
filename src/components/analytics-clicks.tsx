@@ -2,9 +2,8 @@
 
 import { useEffect } from "react";
 import { pushClickEvent } from "@/lib/analytics";
-import { classifyTrackedClick } from "@/lib/click-tracking";
-import { isAdsTelClick, trackAdsPhoneConversion } from "@/lib/google-ads";
-import { practice } from "@/lib/nav";
+import { classifyTrackedClick, samePhone } from "@/lib/click-tracking";
+import { trackAdsPhoneConversion } from "@/lib/google-ads";
 
 /**
  * One listener for every booking and phone link on the site.
@@ -45,13 +44,13 @@ export default function AnalyticsClicks() {
       const href = anchor.getAttribute("href");
       if (!href) return;
 
-      // The Ads phone conversion matches GTM: any tel: link, including 911.
-      // GA4 phone_click stays practice-number only, via classifyTrackedClick.
-      if (isAdsTelClick(href) || isAdsTelClick(anchor.href)) {
+      // Same numbers as GA4: the practice line plus tracking numbers. 911
+      // is not one of them. samePhone is the shared check.
+      if (samePhone(href) || samePhone(anchor.href)) {
         trackAdsPhoneConversion();
       }
 
-      const kind = classifyTrackedClick(href, window.location.href, practice.phoneHref);
+      const kind = classifyTrackedClick(href, window.location.href);
       if (!kind) return;
 
       pushClickEvent(kind, {

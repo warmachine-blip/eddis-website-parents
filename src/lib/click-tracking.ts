@@ -4,11 +4,22 @@
  * Pure on purpose so the document listener in analytics-clicks.tsx can be
  * checked without a browser. The Nimblr embed fires the same event itself,
  * because clicks inside that frame never reach the listener.
- * Rescheduling an existing visit (appointment.nimblr.ai) does not count —
- * that is a different job from requesting one. tel:911 does not count.
+ * Rescheduling an existing visit (appointment.nimblr.ai) does not count.
+ * That is a different job from requesting one. tel:911 does not count.
+ *
+ * Phone matches are the practice number in src/lib/nav.ts plus
+ * practice.trackingPhoneHrefs. Google Ads uses the same check, so the two
+ * counts stay on the same numbers.
  */
 
+import { practice } from "./nav.ts";
+
 export const APPOINTMENT_PATH = "/request-appointment";
+
+/** Practice line, then any configured tracking numbers. */
+export function trackedPhoneHrefs(): readonly string[] {
+  return [practice.phoneHref, ...practice.trackingPhoneHrefs];
+}
 
 /** Nimblr's booking host. The manage/reschedule host is a different origin. */
 export const NIMBLR_BOOK_ORIGIN = "https://book.nimblr.co";
@@ -19,27 +30,45 @@ function digits(value: string): string {
   return value.replace(/\D/g, "");
 }
 
-/** US practice numbers match with or without the leading country code. */
-function samePhone(href: string, practicePhoneHref: string): boolean {
+/**
+ * True when href is a tel: link for one of allowedHrefs. Defaults to the
+ * practice number plus tracking numbers. 911 never matches. A leading US
+ * country code is optional on either side.
+ */
+export function samePhone(
+  href: string,
+  allowedHrefs: readonly string[] = trackedPhoneHrefs(),
+): boolean {
   if (!/^tel:/i.test(href)) return false;
   const clicked = digits(href.slice(href.indexOf(":") + 1).split("?")[0] ?? "");
-  const practice = digits(practicePhoneHref);
-  if (!clicked || !practice || clicked === "911") return false;
-  return clicked === practice || clicked === practice.replace(/^1/, "") || `1${clicked}` === practice;
+  if (!clicked || clicked === "911") return false;
+  for (const allowed of allowedHrefs) {
+    const practiceDigits = digits(allowed);
+    if (!practiceDigits || practiceDigits === "911") continue;
+    if (
+      clicked === practiceDigits ||
+      clicked === practiceDigits.replace(/^1/, "") ||
+      `1${clicked}` === practiceDigits
+    ) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
  * @param href The anchor's href attribute, as authored (relative is fine).
  * @param pageUrl The page the click happened on, used to resolve relative hrefs.
- * @param practicePhoneHref The practice tel: href, e.g. tel:+18329607160.
+ * @param allowedPhoneHrefs Numbers that count as the practice line. Defaults
+ *   to the practice number plus tracking numbers.
  */
 export function classifyTrackedClick(
   href: string,
   pageUrl: string,
-  practicePhoneHref: string,
+  allowedPhoneHrefs: readonly string[] = trackedPhoneHrefs(),
 ): TrackedClick | null {
   if (!href) return null;
-  if (samePhone(href, practicePhoneHref)) return "phone_click";
+  if (samePhone(href, allowedPhoneHrefs)) return "phone_click";
   if (/^tel:/i.test(href)) return null;
 
   let url: URL;

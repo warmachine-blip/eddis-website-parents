@@ -19,6 +19,11 @@ export default function NimblrScheduler() {
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted">
         Scheduler not loading?{" "}
+        {/*
+          This tab never returns to our site, so the booking message is not
+          posted here and no Ads conversion is sent. Leave the link. The gap
+          is recorded in docs/gtm-inventory.md.
+        */}
         <a
           href={scheduling.bookingUrl}
           target="_blank"
