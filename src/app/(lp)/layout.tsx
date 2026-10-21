@@ -23,9 +23,9 @@ import ChatWidget from "@/components/chat-widget";
  * src/components/lp/lp-sticky-bar.tsx keeps its right padding clear for the
  * bubble accordingly.
  *
- * The document shell, fonts and the GTM container all come from the root
- * layout, so these pages carry exactly the same GTM-PP5NDT4H install as the
- * rest of the site.
+ * The document shell and fonts come from the root layout, so these pages
+ * carry the same Google Ads and Google Analytics install as the rest of
+ * the site. See GOOGLE_ADS_TRANSPORT in src/lib/google-ads.ts.
  *
  * noindex is set here so it applies to every page in the group and cannot be
  * forgotten on a new one; `follow` is kept, and robots.txt still allows these

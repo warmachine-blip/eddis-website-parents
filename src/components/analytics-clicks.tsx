@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { pushClickEvent } from "@/lib/analytics";
 import { classifyTrackedClick } from "@/lib/click-tracking";
+import { isAdsTelClick, trackAdsPhoneConversion } from "@/lib/google-ads";
 import { practice } from "@/lib/nav";
 
 /**
@@ -43,6 +44,12 @@ export default function AnalyticsClicks() {
       if (!(anchor instanceof HTMLAnchorElement)) return;
       const href = anchor.getAttribute("href");
       if (!href) return;
+
+      // The Ads phone conversion matches GTM: any tel: link, including 911.
+      // GA4 phone_click stays practice-number only, via classifyTrackedClick.
+      if (isAdsTelClick(href) || isAdsTelClick(anchor.href)) {
+        trackAdsPhoneConversion();
+      }
 
       const kind = classifyTrackedClick(href, window.location.href, practice.phoneHref);
       if (!kind) return;

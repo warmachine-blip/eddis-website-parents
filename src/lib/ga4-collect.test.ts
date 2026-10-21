@@ -3,6 +3,7 @@ import { describe, it } from "node:test";
 import {
   buildCollectQuery,
   GA_MEASUREMENT_ID,
+  referrerOrigin,
   urlWithAllowedParams,
   type CollectInput,
 } from "./ga4-collect.ts";
@@ -180,6 +181,17 @@ describe("buildCollectQuery page location", () => {
     });
     assert.equal(params.get("dr"), "https://www.google.com/search");
     assert.equal(params.get("dl"), `${ORIGIN}/lp/chronic-pain?gclid=Cj0abc_-1`);
+  });
+
+  it("reduces a referrer to its origin", () => {
+    assert.equal(
+      referrerOrigin("https://www.google.com/search?q=jane@x.com&phone=8325551212#x"),
+      "https://www.google.com",
+    );
+    assert.equal(referrerOrigin("http://news.example.com/a/b?q=1"), "http://news.example.com");
+    assert.equal(referrerOrigin(""), "");
+    assert.equal(referrerOrigin("not a url"), "");
+    assert.equal(referrerOrigin("javascript:alert(1)"), "");
   });
 
   it("returns null for a non-http page location", () => {

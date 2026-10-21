@@ -1,0 +1,102 @@
+import assert from "node:assert/strict";
+import { describe, it } from "node:test";
+import {
+  GOOGLE_ADS_BOOKING_LABEL,
+  GOOGLE_ADS_CONVERSION_ENDPOINT,
+  GOOGLE_ADS_PHONE_LABEL,
+  buildAdsConversionUrl,
+  clickIdsFromCookieHeader,
+  isAdsTelClick,
+  linkerCookieEntries,
+} from "./google-ads.ts";
+
+const PAGE = "https://htxpaininstitute.com/lp/back-pain?email=a@b.com&name=Jane&phone=8325551212&gclid=test123&utm_source=test";
+
+describe("linkerCookieEntries", () => {
+  it("stores gclid, wbraid, and gbraid under the linker cookie names", () => {
+    const url =
+      "https://htxpaininstitute.com/?gclid=test123&wbraid=CjwKCAjw_test-1&gbraid=0AAAA-abc_def.1&email=a@b.com";
+    assert.deepEqual(linkerCookieEntries(url, 1700000000), [
+      { name: "_gcl_aw", value: "GCL.1700000000.test123" },
+      { name: "_gcl_gb", value: "GCL.1700000000.CjwKCAjw_test-1" },
+      { name: "_gcl_ag", value: "GCL.1700000000.0AAAA-abc_def.1" },
+    ]);
+  });
+
+  it("does not store a click id that fails the value check", () => {
+    const url = "https://htxpaininstitute.com/?gclid=a@b.com&email=a@b.com";
+    assert.deepEqual(linkerCookieEntries(url, 1700000000), []);
+  });
+});
+
+describe("clickIdsFromCookieHeader", () => {
+  it("reads the linker cookies back", () => {
+    assert.deepEqual(
+      clickIdsFromCookieHeader("_gcl_aw=GCL.1700000000.test123; _gcl_ag=GCL.1700000000.braid1"),
+      { gclid: "test123", gbraid: "braid1" },
+    );
+  });
+
+  it("drops a cookie value that is not a click id", () => {
+    assert.deepEqual(clickIdsFromCookieHeader("_gcl_aw=GCL.1700000000.a@b.com"), {});
+  });
+});
+
+describe("buildAdsConversionUrl", () => {
+  it("sends the phone label, the allowlisted url, and npa=1", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_PHONE_LABEL,
+      pageUrl: PAGE,
+      referrer: "https://www.google.com/search?q=jane%40doe.com&phone=8325551212",
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.origin + url.pathname, GOOGLE_ADS_CONVERSION_ENDPOINT);
+    assert.equal(url.searchParams.get("label"), GOOGLE_ADS_PHONE_LABEL);
+    assert.equal(url.searchParams.get("script"), "0");
+    assert.equal(url.searchParams.get("npa"), "1");
+    assert.equal(url.searchParams.get("gclaw"), "test123");
+    assert.equal(
+      url.searchParams.get("url"),
+      "https://htxpaininstitute.com/lp/back-pain?gclid=test123&utm_source=test",
+    );
+    assert.equal(url.searchParams.get("ref"), "https://www.google.com");
+    const serialized = raw.toLowerCase();
+    for (const forbidden of ["email", "jane", "8325551212", "g-7lr9", "viewthrough", "rmkt", "1p-user-list", "user_data", "ec_"]) {
+      assert.equal(serialized.includes(forbidden), false, forbidden);
+    }
+  });
+
+  it("uses a stored gclid after the landing query is gone", () => {
+    const raw = buildAdsConversionUrl({
+      label: GOOGLE_ADS_BOOKING_LABEL,
+      pageUrl: "https://htxpaininstitute.com/request-appointment",
+      storedClickIds: { gclid: "test123" },
+      nowMs: 1700000000000,
+    });
+    assert.ok(raw);
+    const url = new URL(raw);
+    assert.equal(url.searchParams.get("label"), GOOGLE_ADS_BOOKING_LABEL);
+    assert.equal(url.searchParams.get("gclaw"), "test123");
+    assert.equal(url.searchParams.get("url"), "https://htxpaininstitute.com/request-appointment");
+  });
+
+  it("does not invent a conversion label", () => {
+    assert.equal(
+      buildAdsConversionUrl({
+        label: "not-a-real-label",
+        pageUrl: "https://htxpaininstitute.com/",
+      }),
+      null,
+    );
+  });
+});
+
+describe("isAdsTelClick", () => {
+  it("matches a tel link and ignores a normal link", () => {
+    assert.equal(isAdsTelClick("tel:+18329607160"), true);
+    assert.equal(isAdsTelClick("TEL:911"), true);
+    assert.equal(isAdsTelClick("https://htxpaininstitute.com/contact"), false);
+  });
+});

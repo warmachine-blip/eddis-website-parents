@@ -77,6 +77,17 @@ export function urlWithoutSearch(value: string): string {
   }
 }
 
+/** Scheme and host only. An unparseable or non-http value becomes "". */
+export function referrerOrigin(value: string): string {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return "";
+    return url.origin;
+  } catch {
+    return "";
+  }
+}
+
 /** Query params allowed on dl. Everything else is dropped (could carry PHI). */
 const ALLOWED_QUERY_PARAMS = new Set([
   "gclid",

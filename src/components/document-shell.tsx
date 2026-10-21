@@ -1,15 +1,18 @@
 import AnalyticsClicks from "@/components/analytics-clicks";
 import Ga4PageViews from "@/components/ga4-page-views";
+import GoogleAdsLinker from "@/components/google-ads-linker";
 import { GTM_NOSCRIPT_SRC, GTM_SNIPPET } from "@/lib/analytics";
+import { GOOGLE_ADS_TRANSPORT } from "@/lib/google-ads";
 
 /**
- * The document itself — <html>, <head>, <body>, the fonts and the GTM
- * container. Rendered by src/app/layout.tsx for every route, and by
- * src/app/global-not-found.tsx, which bypasses layouts entirely and so has to
- * build its own document.
+ * The document itself: <html>, <head>, and <body>. Rendered by
+ * src/app/layout.tsx for every route, and by src/app/global-not-found.tsx,
+ * which bypasses layouts entirely and so has to build its own document.
  *
- * Extracted rather than duplicated so the GTM install can only exist once. See
- * the note in src/lib/analytics.ts about two connections to one conversion ID.
+ * Google Ads measurement is chosen by GOOGLE_ADS_TRANSPORT in
+ * src/lib/google-ads.ts. "code" (the default) does not load GTM and does not
+ * load gtag.js. "gtm" loads container GTM-PP5NDT4H and the in-code conversion
+ * hits stay off. The two are not rendered together.
  *
  * The fonts are NOT here. next/font derives its generated class name from the
  * file that calls it, so hoisting those calls out of src/app/layout.tsx would
@@ -25,6 +28,7 @@ export default function DocumentShell({
   className: string;
   children: React.ReactNode;
 }) {
+  const useGtm = GOOGLE_ADS_TRANSPORT === "gtm";
   return (
     <html lang="en" className={className}>
       {/*
@@ -46,32 +50,39 @@ export default function DocumentShell({
           until the CSS lands. Warming the connection here means the container
           request costs one round trip instead of DNS + TLS + fetch.
         */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {useGtm ? (
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+        ) : (
+          <link rel="preconnect" href="https://www.googleadservices.com" />
+        )}
         <link rel="preconnect" href="https://www.google-analytics.com" />
         {/*
-          Google Tag Manager — first element in <head>, per Google's snippet.
-          The container is the Google Ads install. GA4 is not a tag in it and
-          is not loaded with gtag.js; page views are sent by Ga4PageViews.
-          See src/lib/analytics.ts.
+          GTM only when the transport switch is "gtm". In "code" mode there is
+          no container and no gtag.js. GA4 page views are sent by Ga4PageViews.
+          See src/lib/analytics.ts and src/lib/google-ads.ts.
         */}
-        <script
-          id="gtm-container"
-          dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
-        />
+        {useGtm ? (
+          <script
+            id="gtm-container"
+            dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
+          />
+        ) : null}
       </head>
       <body className="min-h-full flex flex-col bg-off-white text-charcoal">
-        {/* Google Tag Manager (noscript) — immediately after <body>. */}
-        <noscript>
-          <iframe
-            src={GTM_NOSCRIPT_SRC}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
+        {useGtm ? (
+          <noscript>
+            <iframe
+              src={GTM_NOSCRIPT_SRC}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
         <AnalyticsClicks />
         <Ga4PageViews />
+        {useGtm ? null : <GoogleAdsLinker />}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"
