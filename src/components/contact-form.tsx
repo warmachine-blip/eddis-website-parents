@@ -19,10 +19,10 @@ import { leadFormConfigured } from "@/lib/lead-form";
  *
  *   window.leadConnector.chatWidget.openWidget()   // also closeWidget, isActive, isLoaded
  *
- * The widget is loaded with next/script strategy="lazyOnload", so a fast
- * clicker can reach the button before the widget exists. openChat polls briefly
- * rather than assuming, and if the widget never arrives it says so and points
- * at the phone number instead of failing silently.
+ * The widget is inserted after the page load event, so a fast clicker can
+ * reach the button before the widget exists. openChat polls briefly rather
+ * than assuming, and if the widget never arrives it says so and points at the
+ * phone number instead of failing silently.
  *
  * When the agency's inline form embed lands in src/lib/lead-form.ts, that form
  * replaces the button here, same as on the ad landing pages.

@@ -18,8 +18,8 @@ import ChatWidget from "@/components/chat-widget";
  *   page emits its own narrower structured data instead.
  *
  * The LeadConnector chat widget IS rendered here, loaded exactly as it is on
- * the rest of the site — same component, same widget id, same lazyOnload — and
- * it brings the mobile greeting fix with it. The sticky bar in
+ * the rest of the site — same component, same widget id, same wait for the
+ * load event — and it brings the mobile greeting fix with it. The sticky bar in
  * src/components/lp/lp-sticky-bar.tsx keeps its right padding clear for the
  * bubble accordingly.
  *
