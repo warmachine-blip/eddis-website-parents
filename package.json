@@ -12,7 +12,7 @@
     "postbuild": "node scripts/check-metadata.mjs",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/ga4-collect.test.ts src/lib/google-ads.test.ts src/lib/click-tracking.test.ts",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/ga4-collect.test.ts src/lib/google-ads.test.ts src/lib/click-tracking.test.ts src/lib/chat-page-url.test.ts",
     "test:ads": "node scripts/check-google-ads-urls.mjs"
   },
   "dependencies": {

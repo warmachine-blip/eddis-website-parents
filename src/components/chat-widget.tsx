@@ -1,12 +1,12 @@
-import Script from "next/script";
 import ChatGreeting from "@/components/chat-greeting";
+import ChatWidgetLoader from "@/components/chat-widget-loader";
 
 /**
  * The LeadConnector chat widget, plus the greeting fix that goes with it.
  *
  * Extracted from src/components/site-chrome.tsx when the agency asked for the
  * widget on the /lp ad landing pages too. Both entry points render this, so the
- * widget id and the loading strategy exist once — a second copy of the id
+ * widget id and the loading strategy exist once. A second copy of the id
  * somewhere else is how two chat bubbles end up on one page.
  *
  * ChatGreeting is not optional decoration: it is what hides the greeting bubble
@@ -14,22 +14,17 @@ import ChatGreeting from "@/components/chat-greeting";
  * greeting back on mobile. See that file for why the rule has to go inside the
  * widget's shadow root.
  *
- * lazyOnload, not defer: a deferred script still runs before the load event and
- * counts against the page's blocking time, while nobody needs the chat bubble
- * in the first second. Loading it after load keeps it out of LCP and TBT
- * entirely — which matters more on a paid landing page than anywhere else.
+ * The loader waits for the page load event, same reason the old lazyOnload
+ * script did: a script that runs before load still counts against the page's
+ * blocking time, and nobody needs the chat bubble in the first second. It also
+ * installs the URL guard before the vendor script exists. See
+ * src/components/chat-widget-loader.tsx.
  */
 export default function ChatWidget() {
   return (
     <>
       <ChatGreeting />
-      <Script
-        id="leadconnector-chat"
-        strategy="lazyOnload"
-        src="https://widgets.leadconnectorhq.com/loader.js"
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="66840b4e178c31f522476378"
-      />
+      <ChatWidgetLoader />
     </>
   );
 }
