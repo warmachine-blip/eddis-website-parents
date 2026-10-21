@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
-import { CheckBullet, IconBadge } from "@/components/icon-badge";
+import { IconBadge } from "@/components/icon-badge";
+import AcceptedInsuranceList from "@/components/accepted-insurance-list";
 import { practice } from "@/lib/nav";
-import { acceptedPlans } from "@/lib/insurance";
+import { coverageNote } from "@/lib/insurance";
 import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
   title: "Insurance & Financing in Houston",
   description:
-    `Most major insurance accepted at HTx Pain Institute. We verify your benefits before your visit and offer financing options. Call ${practice.phone}.`,
+    `See the plans HTx Pain Institute can check, including Medicare, Medicaid, and commercial insurance. Call ${practice.phone} to confirm your benefits.`,
 };
-
-const plans = acceptedPlans;
 
 const steps = [
   {
@@ -37,15 +36,15 @@ const steps = [
 const faqs = [
   {
     q: "Do you take Medicare?",
-    a: "Yes — including Medicare Advantage.",
+    a: "The Medicare, Medicare supplement, and Medicare Advantage plans on this page are ones we can check. Call the office to confirm your specific plan before your visit.",
   },
   {
-    q: "What about workers’ comp?",
-    a: "Yes, we accept most carriers and coordinate with case managers.",
+    q: "What about workers' comp?",
+    a: "We can check the workers' compensation carriers on this page and coordinate with case managers. Call the office to confirm your claim.",
   },
   {
-    q: "What if my plan isn’t listed?",
-    a: "Call us. The list is not exhaustive — verification is the reliable answer.",
+    q: "What if my plan is not listed?",
+    a: "Call the office. A plan that is not on this page still needs a benefits check, and a plan that is listed is not a promise of coverage.",
   },
 ];
 
@@ -89,9 +88,8 @@ export default function InsurancePage() {
             <em className="italic text-brass-light">in Houston &amp; Humble.</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            HTx Pain Institute is in-network with most major insurance carriers in
-            the Houston market — and our team handles the legwork so you don&rsquo;t
-            have to.
+            Tell us which plan you have. Our team checks your benefits before
+            your visit and explains what the plan says.
           </p>
         </div>
       </section>
@@ -102,20 +100,13 @@ export default function InsurancePage() {
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="Accepted Insurance"
-              title="Major commercial, Medicare, and government plans."
-              lead="This is not a complete list — and individual plans within each carrier vary. The most reliable way to confirm in-network status for your specific plan is to call us. We verify benefits as part of the new-patient intake at no cost to you."
+              title="Medicare, Medicaid, commercial, and workers' compensation."
+              lead={coverageNote}
             />
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {plans.map((plan) => (
-                <li
-                  key={plan}
-                  className="flex items-start gap-3 rounded-xl border border-line bg-off-white px-5 py-4"
-                >
-                  <CheckBullet tone="brass" />
-                  <span className="text-sm leading-relaxed text-charcoal-soft">{plan}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal-soft">
+              Our team checks benefits during new-patient intake.
+            </p>
+            <AcceptedInsuranceList />
           </div>
           <div className="lg:col-span-5">
             <div className="grid gap-4 lg:sticky lg:top-32">

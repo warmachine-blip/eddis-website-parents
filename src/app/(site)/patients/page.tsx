@@ -4,9 +4,10 @@ import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import RescheduleCallout from "@/components/reschedule-callout";
-import { CheckBullet, IconBadge } from "@/components/icon-badge";
+import { IconBadge } from "@/components/icon-badge";
+import AcceptedInsuranceList from "@/components/accepted-insurance-list";
 import { practice } from "@/lib/nav";
-import { acceptedPlans } from "@/lib/insurance";
+import { coverageNote } from "@/lib/insurance";
 import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
@@ -64,8 +65,6 @@ const steps = [
     body: "We measure outcomes carefully and refine your plan as needed.",
   },
 ];
-
-const plans = acceptedPlans;
 
 function ArrowIcon() {
   return (
@@ -156,29 +155,23 @@ export default function PatientsPage() {
       {/* Insurance */}
       <section className="bg-pearl">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-6">
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
                 <span className="h-px w-8 bg-current opacity-50" />
                 Insurance &amp; Billing
               </span>
               <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
-                We work with most major plans.
+                Plans we can check before your visit.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                Our team verifies your insurance benefits in advance, so there are
-                no surprises. If there&rsquo;s a coverage issue, we&rsquo;ll reach out
-                before your appointment.
+                Our team checks your insurance benefits before your appointment and
+                will reach out if something needs attention.
               </p>
-              <ul className="mt-7 grid gap-3">
-                {plans.map((plan) => (
-                  <li key={plan} className="flex items-start gap-3 text-sm leading-relaxed text-charcoal-soft">
-                    <CheckBullet tone="cyan" />
-                    {plan}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-9 flex flex-wrap items-center gap-4">
+              <p className="mt-3 text-base leading-relaxed text-navy">
+                {coverageNote}
+              </p>
+              <div className="mt-7 flex flex-wrap items-center gap-4">
                 <a
                   href={practice.phoneHref} data-phone={practice.phone}
                   data-analytics-location="patients-insurance"
@@ -222,6 +215,7 @@ export default function PatientsPage() {
               </div>
             </div>
           </div>
+          <AcceptedInsuranceList />
         </div>
       </section>
 
