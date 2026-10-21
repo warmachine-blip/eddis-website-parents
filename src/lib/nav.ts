@@ -225,8 +225,8 @@ export function formatHours(spec: OpeningHours[]): string {
 export const practice = {
   name: "HTx Pain Institute",
   formerNames: "Texas Interventional Pain Specialists and HTx Pain Care",
-  phone: "832.990.8600",
-  phoneHref: "tel:+18329908600",
+  phone: "(832) 960-7160",
+  phoneHref: "tel:+18329607160",
   email: "info@htxpaininstitute.com",
   tagline: "Precision. Lasting Relief.",
   hours: formatHours(openingHours),
