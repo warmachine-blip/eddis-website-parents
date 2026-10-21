@@ -105,7 +105,7 @@ In `code` mode the hit is one GET to:
 
 `https://www.googleadservices.com/pagead/conversion/700388531/?random=&guid=ON&script=0&fmt=3&label=LABEL&npa=1&url=SANITIZED&ref=ORIGIN`
 
-plus `gclaw` when a gclid is present. wbraid and gbraid are not separate hit parameters. Checked against `gtag/js?id=AW-700388531` on 2026-10-21 (the conversion request was aborted in the browser before it was sent): a wbraid alone is `gclgb=<wbraid>`, a gbraid alone is `gclgb=<gbraid>`, and both with no gclid are `gclgb=<wbraid>.<gbraid>`. When a gclid is present, gtag sends `gclaw` and omits `gclgb`. iPhone clicks usually arrive as wbraid or gbraid without a gclid, so `gclgb` is what attributes them. Following that pixel's redirect loads `viewthroughconversion`, so the fetch uses `redirect: "manual"` and does not follow it. `script=0` and `fmt=3` ask for a pixel rather than the Google tag. `npa=1` is the personalization opt-out on this pixel. No `user_data`, no `em`, no `ec_*`.
+plus `gclaw` when a gclid is present. wbraid and gbraid are not separate hit parameters. See "Conversion pixel parameter names" below. Following that pixel's redirect loads `viewthroughconversion`, so the fetch uses `redirect: "manual"` and does not follow it. `script=0` and `fmt=3` ask for a pixel rather than the Google tag. `npa=1` is the personalization opt-out on this pixel. No `user_data`, no `em`, no `ec_*`.
 
 Click ids are stored by `GoogleAdsLinker` as `GCL.<unixSeconds>.<id>` in `_gcl_aw` (gclid), `_gcl_gb` (wbraid), and `_gcl_ag` (gbraid), for 90 days. `_gcl_au` is not set. The conversion linker in GTM did set `_gcl_au` on every page. That stops while the container is not loaded.
 
@@ -115,6 +115,37 @@ Labels, unchanged:
 - Booking, Nimblr message `a === "scheduled"` from origin `https://book.nimblr.co`: `Yo8FCL7U-oodELOp_M0C`
 
 `appointment_request_click` is not an Ads conversion. The paused thank-you tag is not recreated.
+
+## Conversion pixel parameter names
+
+Checked again on 2026-10-21 against Google's published docs and against the Google tag this id actually loads. The in-code hit was already using the pixel's keys. No parameter was renamed.
+
+Google's help pages name the identifiers on the landing page and in the offline upload. They do not publish a dictionary of browser-pixel query keys.
+
+| Where the name appears | Names Google documents | Source |
+| --- | --- | --- |
+| Landing page URL, iOS app-to-web (GCLID is not sent) | `wbraid` | [Updates to iOS 14 campaign measurement](https://support.google.com/google-ads/answer/10417364) |
+| Landing page URL, iOS app deep links | `gbraid` | Same article. [Analytics Help](https://support.google.com/analytics/answer/11367152) says the same split: GBRAID is web-to-app, WBRAID is app-to-web. |
+| Offline conversion upload | `gclid`, `wbraid`, `gbraid` | [ClickConversion](https://developers.google.com/google-ads/api/reference/rpc/v22/ClickConversion). These are API fields, not pixel query keys. |
+| First-party cookies | click info stored in cookies; no pixel key list | [Conversion linker](https://support.google.com/tagmanager/answer/7549390) |
+
+The pixel keys are in `gtag/js?id=AW-700388531`, fetched the same day. The conversion hit map (the object's name in that file is `di`) sends:
+
+- the `_gcl_aw` value (URL `gclid`) as query parameter `gclaw`
+- the braid cookies as one query parameter, `gclgb`
+
+`wbraid` and `gbraid` are not keys on that map. A second map in the same file (`Np`) does emit `wbraid` and `gbraid`, and it is the GA-style collect, not `pagead/conversion`. This site sends the conversion pixel, so the keys are `gclaw` and `gclgb`.
+
+In that file, `gclgb` is written when the hit has no gclid. An internal experiment flag in the same function (`Q(421)`) would also send `gclgb` when a gclid is present. The capture below did not do that, so that flag was not active in the tag we loaded, and this branch does not send both.
+
+The braid value is the `_gcl_gb` cookie (wbraid) and the `_gcl_ag` cookie (gbraid), joined with a dot. A capture the same day, with the conversion request aborted in the browser before it was sent, matched the tag:
+
+- wbraid alone: `gclgb=<wbraid>`
+- gbraid alone: `gclgb=<gbraid>`
+- both, and no gclid: `gclgb=<wbraid>.<gbraid>`
+- gclid present: `gclaw=<gclid>`, and no `gclgb`
+
+[Tag Master](https://tagmaster.dev/parameters/google-ads-conversion) is a third-party catalog, not a Google spec. It documents `gclaw` as the click id stored in `_gcl_aw` on `googleadservices.com/pagead/conversion/`. It does not document `gclgb`. It also lists a `gclid` key on the conversion request. The Google tag's conversion map does not emit `gclid`. It emits `gclaw`. This branch follows the tag.
 
 `gtag('set', {allow_ad_personalization_signals:false, allow_google_signals:false, ads_data_redaction:true})` and Consent Mode defaults that deny `ad_user_data` and `ad_personalization` are not installed. They only apply inside the combined script, and loading that script brings `G-7LR9NYKKQ3` back. Nothing is pushed onto `window.dataLayer` for consent, because Nimblr's iframe helper and a restored GTM container both read that array. There is no consent banner in this change.
 
@@ -132,9 +163,29 @@ Nimblr's own container `GTM-NF63NFX` (fetched the same day) has one tag: Google 
 
 The scheduler bundle also names a Google Maps conversion endpoint (`https://www.google.com/maps/conversion/collect`, partner id `20000870`). That is not `AW-700388531`. Whether a finished booking actually requests it, or calls any tag that is not in the published containers, needs a live test booking. So does confirming that the parent receives `{ a: "scheduled" }` only after a real appointment is saved. The Playwright check stubs that message. It does not complete a booking.
 
+The plan for one fake booking on a preview is `docs/ads-booking-test-plan.md`. It was not run. It needs the owner's approval, and it must not use real patient data.
+
 ## New-tab booking fallback
 
 `src/components/nimblr-scheduler.tsx` links "Open it in a new tab" to `https://book.nimblr.co/HTxPainInstitute`. That tab does not navigate back here, so `BookingConversion` never sees the message and no Ads conversion is sent. The link stays. In that tab, Nimblr's own code can still send GA4 event `scheduled` to `G-27RHPSC41Y` through the gtag it loads there. That does not depend on our GTM loader.
+
+No flag was added. Every trigger this repository can install either misses the booking or counts a visit that did not book.
+
+The scheduler bundle fetched on 2026-10-21 (`chunk-6a92058f.111cbfc3.js` and `app.878cdd8d.js`) has no return URL, no redirect after save, no `window.opener` post, and no `localStorage` or `sessionStorage` write. `updateGAFlag` posts `{ a: "scheduled" }` to `window.top` only when the page is in an iframe (`useIframe`, set from the `iframe` query parameter). In a top-level tab it calls `gtag` on `book.nimblr.co`. Our link uses `rel="noopener"`, so that tab cannot see this page even if Nimblr posted to `window.opener`.
+
+The same hole exists when the iframe message never arrives. `iframe.js` and `BookingConversion` both depend on that one `postMessage`. There is no second signal that a booking was saved.
+
+Options, and why each one is or is not in this branch:
+
+1. **Nimblr posts to `window.opener` on the non-iframe path only.** This is the design that counts once. Our listener already accepts origin `https://book.nimblr.co` and fires once per page. The iframe path posts to `window.top`, not to the opener, so the same booking is not reported twice. The iframe path and the new-tab path are different windows. Two real bookings would correctly be two conversions. We would remove `noopener` only after Nimblr ships that post. Removing it now counts nothing, and it lets the new tab reach the page that opened it. Not done here. It is blocked on Nimblr, not on a flag in this repo.
+
+2. **Count a view of `/appointment-confirmed`.** Rejected. `/thank-you` and `/thank-you-for-requesting-consultation` redirect there (`src/lib/legacy-urls.ts`) without a booking. That page-view conversion was removed for this reason. Setting a `sessionStorage` bit when the visitor clicks "Open it in a new tab", then consuming it on `/appointment-confirmed`, has the same hole: Nimblr does not send the visitor to that URL, and an old thank-you link in the same browser would consume the bit.
+
+3. **Count the click on "Open it in a new tab".** Rejected. That click is an intent, not a saved appointment. If the visitor then finishes in the iframe, the `postMessage` would count the same visit again.
+
+4. **Point the new tab at `/request-appointment` instead of `book.nimblr.co`.** Rejected as a replacement for the link. That page already mounts `BookingConversion`, so a completed embed there would count once, in that tab, and would not also notify the original tab. It does not help when the browser blocks iframes, which is why the direct Nimblr URL exists. Replacing the link would remove the working fallback.
+
+A later change can do option 1 after Nimblr confirms the opener post. Until that post exists, the switch would have nothing safe to turn on.
 
 ## Needs decision / outside this PR
 

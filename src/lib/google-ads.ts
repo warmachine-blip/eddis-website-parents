@@ -53,14 +53,21 @@ export const GOOGLE_ADS_CONVERSION_ENDPOINT = `https://www.googleadservices.com/
  * First-party click-id cookies, same names the conversion linker uses:
  * gclid in _gcl_aw, wbraid in _gcl_gb, gbraid in _gcl_ag.
  *
- * The conversion request does not use query keys named wbraid or gbraid.
- * Checked against gtag/js?id=AW-700388531 on 2026-10-21, with the conversion
- * request aborted before it left the browser: gclid is sent as gclaw, and
- * wbraid and gbraid are sent as one parameter, gclgb. wbraid alone is
- * gclgb=<wbraid>. gbraid alone is gclgb=<gbraid>. Both, with no gclid, are
- * gclgb=<wbraid>.<gbraid>. When gclid is present, gtag sends gclaw and omits
- * gclgb. iPhone clicks usually arrive as wbraid or gbraid without a gclid,
- * so gclgb is the parameter that attributes them.
+ * Landing-page names and the conversion-pixel names are different.
+ * Google's help pages name gclid, wbraid (iOS app-to-web), and gbraid
+ * (iOS app deep links) on the landing URL, and the offline upload API uses
+ * those same three field names. They do not document the pixel query keys.
+ * Sources are listed in docs/gtm-inventory.md.
+ *
+ * The pixel keys come from gtag/js?id=AW-700388531, fetched 2026-10-21.
+ * Its conversion hit map sends the _gcl_aw value as gclaw and the braid
+ * cookies as one parameter, gclgb. wbraid and gbraid are not keys on that
+ * map. wbraid alone is gclgb=<wbraid>. gbraid alone is gclgb=<gbraid>.
+ * Both, with no gclid, are gclgb=<wbraid>.<gbraid>. When gclid is present,
+ * that tag sends gclaw and omits gclgb. A capture the same day, aborted
+ * before the request left the browser, matched those values. iPhone clicks
+ * usually arrive as wbraid or gbraid without a gclid, so gclgb is the
+ * parameter that attributes them.
  */
 const CLICK_COOKIES = [
   { param: "gclid", name: "_gcl_aw" },
