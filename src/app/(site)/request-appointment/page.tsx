@@ -5,9 +5,9 @@ import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Schedule an Appointment in Houston",
+  title: "Pain Management Appointment in Houston",
   description:
-    "Book an appointment at HTx Pain Institute in Houston or Humble online in a few minutes, or call us. Same-week consultations available.",
+    "Book a pain management visit at our Houston or Humble office online, or call us. Same-week consultations available. Hablamos español.",
 };
 
 const nextSteps = [

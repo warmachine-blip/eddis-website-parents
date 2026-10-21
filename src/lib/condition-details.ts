@@ -81,7 +81,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "back-pain",
     adLanding: true,
     title: "Back Pain",
-    metaDescription: "Back pain treatment in Houston and Humble. We find the source — disc, facet, SI joint, or nerve — then treat it with targeted, minimally invasive care.",
+    metaDescription: "Back pain treatment in Houston and Humble. We find the source: disc, facet, SI joint, or nerve, then treat it with targeted, minimally invasive care.",
     lastReviewed: "2026-09-10",
     leadLine: "The most common reason patients come to us — and where we have the most to offer.",
     heroImage: "woman-from-behind-hand-on-lower-back-outdoors.jpg",

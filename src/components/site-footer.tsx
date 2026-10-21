@@ -180,6 +180,9 @@ export default function SiteFooter() {
                   {practice.phone}
                 </a>
               </address>
+              <p className="mt-1 text-sm leading-relaxed text-off-white/75" lang="es">
+                Hablamos español
+              </p>
             </div>
           ))}
         </div>

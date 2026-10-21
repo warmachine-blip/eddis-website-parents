@@ -61,7 +61,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "radiofrequency-ablation",
     title: "Radiofrequency Ablation",
     metaDescription:
-      "Radiofrequency ablation in Houston and Humble. A 15-minute outpatient procedure that quiets the nerves carrying your pain, with relief lasting 6–18 months.",
+      "Radiofrequency ablation in Houston and Humble. A 15-minute outpatient procedure that quiets the nerves carrying your pain, with relief lasting 6 to 18 months.",
     lastReviewed: "2026-09-10",
     heroImage: "surgeon-under-operating-lights.jpg",
     heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
