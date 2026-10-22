@@ -30,7 +30,7 @@ export function llmsText(): string {
 
   const pages: [string, string][] = [
     ["Dr. Edward Baumgartner Jr., MD", "/dr-edward-baumgartner"],
-    ["Intracept Procedure", "/intracept-procedure"],
+    ["Basivertebral Nerve Ablation (BVN)", "/intracept-procedure"],
     ["Spinal Cord Stimulation", "/spinal-cord-stimulation-specialist"],
     ["Radiofrequency Ablation", "/radiofrequency-ablation"],
     ["Second Opinion Before Surgery", "/second-opinion"],

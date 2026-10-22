@@ -37,7 +37,7 @@ const education = [
 ];
 
 const toolkit = [
-  "Intracept Procedure for vertebrogenic low-back pain.",
+  "Basivertebral nerve ablation (BVN) for vertebrogenic low-back pain.",
   "Spinal cord stimulation (trial and permanent implant).",
   "Radiofrequency ablation, cervical, lumbar, SI, and genicular.",
   "SI joint fusion (LinQ and other systems) and Minuteman lumbar interspinous fusion.",
@@ -50,7 +50,7 @@ const toolkit = [
 ];
 
 const servicesProvided = [
-  { label: "Intracept Procedure", href: "/intracept-procedure" },
+  { label: "Basivertebral Nerve Ablation (BVN)", href: "/intracept-procedure" },
   { label: "Spinal Cord Stimulation", href: "/spinal-cord-stimulation-specialist" },
   { label: "Radiofrequency Ablation", href: "/radiofrequency-ablation" },
   { label: "Minuteman Lumbar Fusion", href: "/minuteman-procedure" },

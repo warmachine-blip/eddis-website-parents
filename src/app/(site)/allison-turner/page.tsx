@@ -31,7 +31,7 @@ const credentials = [
 
 const responsibilities = [
   "New-patient consultations — taking a thorough history, reviewing imaging, and laying out a plan in plain English.",
-  "Post-procedural follow-up — checking in after RFA, SCS trials, Intracept, kyphoplasty, and other procedures to make sure recovery is on track.",
+  "Post-procedural follow-up — checking in after RFA, SCS trials, basivertebral nerve ablation (BVN), kyphoplasty, and other procedures to make sure recovery is on track.",
   "Medication management — thoughtful, conservative prescribing of adjunctive medications, with an emphasis on minimizing reliance on long-term opioids.",
   "Care coordination — communicating with primary care, specialists, physical therapists, and case managers so nothing falls through the cracks.",
   "Procedural support — assisting Dr. Baumgartner during procedures and ensuring each patient is comfortable, informed, and prepared.",

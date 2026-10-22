@@ -115,7 +115,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         slug: "intracept-procedure",
-        title: "Intracept Procedure",
+        title: "Basivertebral Nerve Ablation (BVN)",
         blurb: "Implant-free procedure for vertebrogenic low-back pain.",
       },
       {
@@ -154,7 +154,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Back pain with fever, unexplained weight loss, or bowel or bladder change. Seek care immediately.",
     ],
     recoveryOutlook:
-      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks may be treated with radiofrequency ablation. The procedure itself takes about 15 minutes. How long any relief lasts varies, and the procedure can be repeated when it helped. For vertebrogenic pain treated with Intracept, return to work timing varies, and your doctor will advise you based on your job and recovery. Sacroiliac pain that has failed conservative care may lead to SI joint fusion. We give you the timeline for your diagnosis, not an average.",
+      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks may be treated with radiofrequency ablation. The procedure itself takes about 15 minutes. How long any relief lasts varies, and the procedure can be repeated when it helped. For vertebrogenic pain treated with basivertebral nerve ablation (BVN), return to work timing varies, and your doctor will advise you based on your job and recovery. Sacroiliac pain that has failed conservative care may lead to SI joint fusion. We give you the timeline for your diagnosis, not an average.",
     faqs: [
       {
         q: "Do I need an MRI before my first visit?",

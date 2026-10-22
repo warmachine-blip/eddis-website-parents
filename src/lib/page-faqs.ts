@@ -46,7 +46,7 @@ export const physicianFaqs = [
   },
   {
     q: "What procedures does he perform?",
-    a: "Procedures include Intracept, spinal cord stimulator trials and implants, radiofrequency ablation, SI joint fusion, Minuteman lumbar fusion, kyphoplasty, the MILD procedure, epidural steroid injections, nerve blocks and PRP. Whether a procedure fits you depends on your exam and imaging.",
+    a: "Procedures include basivertebral nerve ablation (BVN), spinal cord stimulator trials and implants, radiofrequency ablation, SI joint fusion, Minuteman lumbar fusion, kyphoplasty, the MILD procedure, epidural steroid injections, nerve blocks and PRP. Whether a procedure fits you depends on your exam and imaging.",
   },
   {
     q: "What insurance does the practice accept?",
@@ -111,7 +111,7 @@ export const stimulatorTrialFaqs = [
 export const stellateBlockFaqs = [
   {
     q: "How long does a stellate ganglion block take?",
-    a: "The injection itself usually takes a few minutes. Plan on more time at the office for check-in and a short observation period afterward.",
+    a: "The injection itself usually takes a few minutes. Plan on more time for check-in and a short observation period afterward.",
   },
   {
     q: "What does it feel like afterward?",
@@ -146,7 +146,7 @@ export const ablationBlogFaqs = [
   },
   {
     q: "What other options are there?",
-    a: "Depending on the cause, options can include a different injection, physical therapy, medicine changes, spinal cord stimulation, or for vertebral endplate pain, Intracept.",
+    a: "Depending on the cause, options can include a different injection, physical therapy, medicine changes, spinal cord stimulation, or for vertebral endplate pain, basivertebral nerve ablation (BVN).",
   },
 ];
 

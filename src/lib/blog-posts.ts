@@ -143,9 +143,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "intracept-procedure-for-chronic-low-back-pain",
-    title: "Intracept Procedure for Chronic Low Back Pain",
+    title: "Basivertebral Nerve Ablation (BVN) for Chronic Back Pain",
     excerpt:
-      "Vertebrogenic pain comes from the vertebral endplates, not the disc or facet. Intracept ablates the basivertebral nerve that carries it, implanting nothing.",
+      "Vertebrogenic pain comes from the vertebral endplates, not the disc or facet. Basivertebral nerve ablation (BVN) targets that nerve and leaves no implant.",
     image: "blog-intracept-procedure.jpg",
     alt: "Illustration of a probe reaching the basivertebral nerve inside a vertebral body",
     category: "Procedures",
@@ -154,7 +154,7 @@ export const blogPosts: BlogPost[] = [
     author: "physician",
     readTime: "2 min read",
     relatedHref: "/intracept-procedure",
-    relatedLabel: "Intracept Procedure",
+    relatedLabel: "Basivertebral Nerve Ablation (BVN)",
   },
   {
     slug: "when-back-pain-needs-a-specialist",

@@ -231,7 +231,7 @@ export default function SecondOpinionPage() {
               <p>
                 And where the source is found and it is treatable here, the
                 options are the ones a pain practice can actually offer:
-                radiofrequency ablation, Intracept, spinal cord stimulation,
+                radiofrequency ablation, basivertebral nerve ablation (BVN), spinal cord stimulation,
                 genicular blocks, image-guided joint injections, PRP.
               </p>
               <p>

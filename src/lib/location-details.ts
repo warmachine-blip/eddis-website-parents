@@ -66,7 +66,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
       { slug: "mild-procedure", title: "MILD Procedure", blurb: "Minimally invasive lumbar decompression to relieve neurogenic claudication from spinal stenosis." },
     ],
@@ -98,7 +98,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From most of The Woodlands, take I-45 South to US-59/I-69 South, then exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 15–25 minutes.",
     whyThisCityBlurb:
-      "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers Intracept, MILD, LinQ SI fusion, Minuteman lumbar fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
+      "The Woodlands has plenty of pain options — but our patients consistently come to us because of the diagnostic discipline and the procedural breadth. Dr. Baumgartner offers basivertebral nerve ablation (BVN), MILD, LinQ SI fusion, Minuteman lumbar fusion, advanced spinal cord stimulation, and a level of imaging review that many practices simply do not provide. For Woodlands patients used to a high standard of healthcare, that matters.",
     landmarks: [
       "Approximately 15–25 minutes from The Woodlands Mall via I-45 South to FM 1960",
       "Easy access from Research Forest Drive, Lake Woodlands Drive, and Grogan's Mill",
@@ -115,7 +115,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     ],
     commonServices: [
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "prp-procedure", title: "PRP (Platelet-Rich Plasma)", blurb: "Non-surgical regenerative therapy using your own platelets to accelerate healing." },
     ],
@@ -196,7 +196,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From most of Tomball, take Texas 249 South toward Willowbrook. Our Houston office is at 13323 Dotson Rd, Suite 200. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
-      "For Tomball patients, the proximity to advanced interventional procedures matters. Our Houston office offers Intracept, MILD, spinal cord stimulation, and SI joint fusion — procedures most Tomball patients had been told required a referral into the Texas Medical Center. We are minutes from the office park to home, and we coordinate with Tomball-area primary care and surgical colleagues.",
+      "For Tomball patients, the proximity to advanced interventional procedures matters. Our Houston office offers basivertebral nerve ablation (BVN), MILD, spinal cord stimulation, and SI joint fusion — procedures most Tomball patients had been told required a referral into the Texas Medical Center. We are minutes from the office park to home, and we coordinate with Tomball-area primary care and surgical colleagues.",
     landmarks: [
       "Texas 249 South — straight shot from downtown Tomball to the office",
       "Approximately 10 minutes from the Tomball Town Center area",
@@ -212,7 +212,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "shoulder-injuries", title: "Shoulder Injuries", blurb: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully." },
     ],
     commonServices: [
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "mild-procedure", title: "MILD Procedure", blurb: "Minimally invasive lumbar decompression to relieve neurogenic claudication from spinal stenosis." },
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
@@ -263,7 +263,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
     ],
   },
@@ -313,7 +313,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "prp-procedure", title: "PRP (Platelet-Rich Plasma)", blurb: "Non-surgical regenerative therapy using your own platelets to accelerate healing." },
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
     ],
   },
   "kingwood": {
@@ -343,7 +343,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From Kingwood, take Kingwood Drive west to US-59/I-69 South, exit at FM 1960. Our Humble office is at 1485 FM 1960 Bypass Rd. E, Suite 100. Most patients reach us in 10–15 minutes.",
     whyThisCityBlurb:
-      "Kingwood patients value clinicians who respect both their activity level and their preference to stay out of major surgical pathways. We deliver that — biologic options for tendinopathy, MILD and Intracept for stenosis and vertebrogenic pain, and a stepwise approach that keeps patients on the trails as much as possible while we treat what is going on.",
+      "Kingwood patients value clinicians who respect both their activity level and their preference to stay out of major surgical pathways. We deliver that — biologic options for tendinopathy, MILD and basivertebral nerve ablation (BVN) for stenosis and vertebrogenic pain, and a stepwise approach that keeps patients on the trails as much as possible while we treat what is going on.",
     landmarks: [
       "Easy access from Kingwood Drive west to US-59/I-69 South",
       "Approximately 12 minutes from the Kingwood Town Center area",
@@ -359,7 +359,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "sports-injuries", title: "Sports Injuries", blurb: "Get back to your sport — with diagnostics and biologics that respect the timeline." },
     ],
     commonServices: [
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "prp-procedure", title: "PRP (Platelet-Rich Plasma)", blurb: "Non-surgical regenerative therapy using your own platelets to accelerate healing." },
@@ -411,7 +411,7 @@ export const locationDetails: Record<string, LocationDetail> = {
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
     ],
   },
   "humble": {
@@ -459,7 +459,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "spinal-cord-stimulation-specialist", title: "Spinal Cord Stimulation", blurb: "Implantable system that delivers gentle electrical fields to block pain signals before they reach the brain." },
     ],
   },
@@ -490,7 +490,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     directionsIntro:
       "From most of Northwest Houston, our Houston office is at 13323 Dotson Rd, Suite 200, near Willowbrook. Easy access from Beltway 8 and Sam Houston Tollway; ample parking on site.",
     whyThisCityBlurb:
-      "Northwest Houston has more pain options than most parts of the city — but most of those practices specialize narrowly. We bring the full institute-caliber toolkit (Intracept, MILD, Minuteman, LinQ, SCS, RFA, biologics) into a single practice with diagnostic discipline that is hard to match. For patients in this corridor, that combination is the reason to choose HTx Pain Institute.",
+      "Northwest Houston has more pain options than most parts of the city — but most of those practices specialize narrowly. We bring the full institute-caliber toolkit (basivertebral nerve ablation (BVN), MILD, Minuteman, LinQ, SCS, RFA, biologics) into a single practice with diagnostic discipline that is hard to match. For patients in this corridor, that combination is the reason to choose HTx Pain Institute.",
     landmarks: [
       "Texas 249 corridor: easy access from Beltway 8 / Sam Houston Tollway",
       "Approximately 10 minutes from Vintage Park and Willowbrook Mall",
@@ -508,7 +508,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     commonServices: [
       { slug: "radiofrequency-ablation", title: "Radiofrequency Ablation", blurb: "Outpatient procedure using precise electrical current to quiet damaged or inflamed nerves." },
       { slug: "injections-blocks-specialist", title: "Injections & Nerve Blocks", blurb: "Image-guided injections that calm inflamed joints, nerves, and spinal structures." },
-      { slug: "intracept-procedure", title: "Intracept Procedure", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
+      { slug: "intracept-procedure", title: "Basivertebral Nerve Ablation (BVN)", blurb: "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source." },
       { slug: "prp-procedure", title: "PRP (Platelet-Rich Plasma)", blurb: "Non-surgical regenerative therapy using your own platelets to accelerate healing." },
     ],
   },

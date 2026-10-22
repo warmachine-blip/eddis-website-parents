@@ -134,7 +134,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Are there alternatives to RFA?",
-        a: "Yes. Depending on the source of your pain, alternatives can include Intracept, spinal cord stimulation, SI joint fusion, or continued conservative care. We discuss the full landscape with you before recommending RFA.",
+        a: "Yes. Depending on the source of your pain, alternatives can include basivertebral nerve ablation (BVN), spinal cord stimulation, SI joint fusion, or continued conservative care. We discuss the full landscape with you before recommending RFA.",
       },
     ],
     insuranceBlurb:
@@ -218,7 +218,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "How many injections can I have?",
-        a: "We follow evidence-based limits — typically no more than three to four corticosteroid injections per region per year — and prefer to use injections strategically rather than as ongoing therapy. If you find yourself needing repeat injections every few months, that is a signal to consider a more durable option like RFA, Intracept, or spinal cord stimulation.",
+        a: "We follow evidence-based limits — typically no more than three to four corticosteroid injections per region per year — and prefer to use injections strategically rather than as ongoing therapy. If you find yourself needing repeat injections every few months, that is a signal to consider a more durable option like RFA, basivertebral nerve ablation (BVN), or spinal cord stimulation.",
       },
       {
         q: "Are these injections only diagnostic, or therapeutic?",
@@ -645,16 +645,16 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   "intracept-procedure": {
     slug: "intracept-procedure",
-    title: "Intracept Procedure",
+    title: "Basivertebral Nerve Ablation (BVN)",
     metaDescription:
-      "Intracept treats vertebrogenic low back pain by targeting the basivertebral nerve, with no implant left behind. Offered in Houston and Humble.",
+      "Basivertebral nerve ablation (BVN) treats vertebrogenic low back pain by targeting that nerve, with no implant left behind. Offered in Houston and Humble.",
     lastReviewed: "2026-09-10",
     heroImage: "treatment-intracept-procedure.jpg",
-    heroImageAlt: "Intracept procedure for vertebrogenic low-back pain at HTx Pain Institute",
-    eyebrow: "Intracept",
+    heroImageAlt: "Basivertebral nerve ablation (BVN) for vertebrogenic low-back pain at HTx Pain Institute",
+    eyebrow: "Basivertebral nerve ablation (BVN)",
     leadLine: "An FDA-cleared procedure for vertebrogenic low-back pain.",
     intro:
-      "Intracept is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain, pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve. Results vary from person to person.",
+      "Basivertebral nerve ablation (BVN) is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain, pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve. It is also known as Intracept. Results vary from person to person.",
     quickFacts: {
       setting: "Outpatient, same day",
       anesthesia: "Sedation + local anesthesia",
@@ -696,41 +696,41 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       {
         q: "How is this different from RFA?",
-        a: "Standard RFA targets the small medial branch nerves outside the spine. Intracept targets a different nerve, the basivertebral nerve inside the vertebra, which carries vertebrogenic pain signals not addressed by traditional RFA.",
+        a: "Standard RFA targets the small medial branch nerves outside the spine. Basivertebral nerve ablation (BVN) targets a different nerve, the basivertebral nerve inside the vertebra, which carries vertebrogenic pain signals not addressed by traditional RFA.",
       },
       {
         q: "Will I need a fusion later?",
-        a: "Intracept does not remove or fuse anything, so it leaves the spine as it is. Some patients who were considering fusion choose Intracept first. Whether fusion is ever needed depends on your condition, and Intracept does not rule it out.",
+        a: "Basivertebral nerve ablation (BVN) does not remove or fuse anything, so it leaves the spine as it is. Some patients who were considering fusion choose this procedure first. Whether fusion is ever needed depends on your condition, and this procedure does not rule it out.",
       },
       {
         q: "What are Modic changes?",
-        a: "Modic changes are signal changes in the vertebral endplates seen on MRI. Type 1 and Type 2 changes are associated with vertebrogenic pain, pain originating from the endplate itself, and are the imaging hallmark of Intracept candidacy.",
+        a: "Modic changes are signal changes in the vertebral endplates seen on MRI. Type 1 and Type 2 changes are associated with vertebrogenic pain, pain originating from the endplate itself, and are the imaging hallmark of basivertebral nerve ablation (BVN) candidacy.",
       },
       {
         q: "Is anything left in my body afterward?",
-        a: "No. Intracept is implant-free. The basivertebral nerve is heated and ablated with controlled radiofrequency energy. Nothing is removed or excised, and no hardware is left behind. The bone heals around the treated area over time.",
+        a: "No. Basivertebral nerve ablation (BVN) is implant-free. The basivertebral nerve is heated and ablated with controlled radiofrequency energy. Nothing is removed or excised, and no hardware is left behind. The bone heals around the treated area over time.",
       },
       {
         q: "How long does relief last?",
         a: "Studies have followed patients for up to five years after a single treatment, and many reported lasting improvement in pain and function. Results vary from person to person.",
       },
       {
-        q: "Can Intracept be done at multiple levels?",
-        a: "Yes. Intracept can be performed at one or multiple lumbar levels in a single procedure, depending on which endplates show Modic changes on your MRI.",
+        q: "Can basivertebral nerve ablation (BVN) be done at multiple levels?",
+        a: "Yes. It can be performed at one or multiple lumbar levels in a single procedure, depending on which endplates show Modic changes on your MRI.",
       },
       {
-        q: "Is Intracept covered by insurance?",
-        a: "Intracept is covered by Medicare and a growing list of commercial insurers, particularly when imaging confirms Modic changes and conservative care has failed. We handle prior authorization for you. Call (832) 960-7160 to confirm your benefits.",
+        q: "Is basivertebral nerve ablation (BVN) covered by insurance?",
+        a: "Basivertebral nerve ablation (BVN) is covered by Medicare and a growing list of commercial insurers, particularly when imaging confirms Modic changes and conservative care has failed. We handle prior authorization for you. Call (832) 960-7160 to confirm your benefits.",
       },
       {
-        q: "Is HTx Pain Institute an Intracept provider?",
-        a: "Yes. Dr. Baumgartner performs Intracept at our Houston-area practice. Call (832) 960-7160 to ask whether your MRI findings may fit.",
+        q: "Does HTx Pain Institute offer basivertebral nerve ablation (BVN)?",
+        a: "Yes. Dr. Baumgartner performs basivertebral nerve ablation (BVN) at our Houston-area practice. Call (832) 960-7160 to ask whether your MRI findings may fit.",
       },
     ],
     insuranceBlurb:
-      "Intracept is covered by Medicare and many commercial insurers when MRI demonstrates Modic Type 1 or Type 2 endplate changes and conservative care has failed. Coverage and prior authorization vary by plan. Our team manages the process for you. Call (832) 960-7160 to confirm your benefits.",
+      "Basivertebral nerve ablation (BVN) is covered by Medicare and many commercial insurers when MRI demonstrates Modic Type 1 or Type 2 endplate changes and conservative care has failed. Coverage and prior authorization vary by plan. Our team manages the process for you. Call (832) 960-7160 to confirm your benefits.",
     expertiseBlurb:
-      "Dr. Baumgartner is among the experienced Intracept providers in the Houston area. He has published-data familiarity with the procedure and a careful approach to patient selection. Intracept is considered when the pain is vertebrogenic, and we will not perform the procedure on patients who do not meet criteria.",
+      "Dr. Baumgartner is among the experienced basivertebral nerve ablation (BVN) providers in the Houston area. He has published-data familiarity with the procedure and a careful approach to patient selection. It is considered when the pain is vertebrogenic, and we will not perform the procedure on patients who do not meet criteria.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",

@@ -63,7 +63,7 @@ const whyHtx = [
   },
   {
     title: "Cutting-Edge Treatments",
-    body: "Spinal cord stimulation, Intracept, kyphoplasty, RFA, and PRP, the full modern toolkit, applied with skill.",
+    body: "Spinal cord stimulation, basivertebral nerve ablation (BVN), kyphoplasty, RFA, and PRP, the full modern toolkit, applied with skill.",
   },
   {
     title: "Non-Invasive Focus",
