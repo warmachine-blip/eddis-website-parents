@@ -23,14 +23,20 @@ import { GOOGLE_ADS_TRANSPORT } from "@/lib/google-ads";
 export default function DocumentShell({
   className,
   children,
+  lang = "en",
+  skipToContent = "Skip to content",
 }: {
   /** Goes on <html> — the font variable classes plus the base utilities. */
   className: string;
   children: React.ReactNode;
+  /** Document language. English everywhere except the Spanish root layout. */
+  lang?: "en" | "es";
+  /** Skip link. Spanish pages pass their own; the default stays English. */
+  skipToContent?: string;
 }) {
   const useGtm = GOOGLE_ADS_TRANSPORT === "gtm";
   return (
-    <html lang="en" className={className}>
+    <html lang={lang} className={className}>
       {/*
         Written as a literal <head> rather than next/script: in the App Router
         `strategy="beforeInteractive"` does not emit a real <script>, it queues
@@ -87,7 +93,7 @@ export default function DocumentShell({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-off-white"
         >
-          Skip to content
+          {skipToContent}
         </a>
         {children}
       </body>

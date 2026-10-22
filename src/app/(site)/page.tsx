@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { languageAlternates } from "@/lib/spanish";
+
+export const metadata: Metadata = {
+  alternates: languageAlternates("/", "/es"),
+};
 import HeroBackground from "@/components/hero-background";
 import HeroHeadline from "@/components/hero-headline";
 import SectionHeading from "@/components/section-heading";

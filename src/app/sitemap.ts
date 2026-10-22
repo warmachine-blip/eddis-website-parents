@@ -6,6 +6,7 @@ import { publishedPosts } from "@/lib/blog-posts";
 import { supportedOrgs } from "@/lib/community";
 import { SITE_URL } from "@/lib/site";
 import { lastModified } from "@/lib/last-modified";
+import { SPANISH_ROUTES } from "@/lib/spanish";
 
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
@@ -96,6 +97,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: modified(person.href),
       changeFrequency: "monthly",
       priority: 0.5,
+    });
+  }
+
+  // Spanish twins. hreflang is repeated in the page <head>; the sitemap copy
+  // is the same pair, both directions, with English as x-default.
+  for (const pair of SPANISH_ROUTES) {
+    const enUrl = `${SITE_URL}${pair.en}`;
+    const esUrl = `${SITE_URL}${pair.es}`;
+    const languages = { en: enUrl, es: esUrl, "x-default": enUrl };
+    const english = entries.find((entry) => entry.url === enUrl);
+    if (english) english.alternates = { languages };
+    entries.push({
+      url: esUrl,
+      lastModified: modified(pair.en),
+      changeFrequency: pair.en === "/" ? "weekly" : "monthly",
+      priority: english?.priority ?? 0.5,
+      alternates: { languages },
     });
   }
 

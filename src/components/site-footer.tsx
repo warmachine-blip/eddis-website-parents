@@ -5,6 +5,7 @@ import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from 
 import { scheduling } from "@/lib/scheduling";
 import { socialItems } from "@/components/social-icons";
 import CopyrightYear from "@/components/copyright-year";
+import FooterFrame from "@/components/footer-frame";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -74,7 +75,7 @@ const patientLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-navy-deep text-off-white/85">
+    <FooterFrame>
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-10">
         <div className="grid grid-cols-2 gap-10 pb-12 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
@@ -209,6 +210,6 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-    </footer>
+    </FooterFrame>
   );
 }
