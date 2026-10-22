@@ -7,10 +7,33 @@ import type { Metadata } from "next";
  */
 export const SPANISH_ROUTES = [
   { en: "/", es: "/es" },
+  { en: "/about-us", es: "/es/about-us" },
   { en: "/dr-edward-baumgartner", es: "/es/dr-edward-baumgartner" },
+  { en: "/allison-turner", es: "/es/allison-turner" },
+  { en: "/tatyana-baumgartner-cpa", es: "/es/tatyana-baumgartner-cpa" },
   { en: "/request-appointment", es: "/es/request-appointment" },
+  { en: "/appointment-confirmed", es: "/es/appointment-confirmed" },
   { en: "/insurance", es: "/es/insurance" },
   { en: "/intracept-procedure", es: "/es/intracept-procedure" },
+  { en: "/patients", es: "/es/patients" },
+  { en: "/contact", es: "/es/contact" },
+  { en: "/locations", es: "/es/locations" },
+  { en: "/locations/northwest-houston", es: "/es/locations/northwest-houston" },
+  { en: "/locations/humble", es: "/es/locations/humble" },
+  { en: "/locations/spring-tx", es: "/es/locations/spring-tx" },
+  { en: "/locations/the-woodlands", es: "/es/locations/the-woodlands" },
+  { en: "/locations/cypress", es: "/es/locations/cypress" },
+  { en: "/locations/tomball", es: "/es/locations/tomball" },
+  { en: "/locations/klein", es: "/es/locations/klein" },
+  { en: "/locations/champions", es: "/es/locations/champions" },
+  { en: "/locations/kingwood", es: "/es/locations/kingwood" },
+  { en: "/locations/atascocita", es: "/es/locations/atascocita" },
+  { en: "/community", es: "/es/community" },
+  { en: "/community/imas-home", es: "/es/community/imas-home" },
+  { en: "/community/kel-strong-foundation", es: "/es/community/kel-strong-foundation" },
+  { en: "/community/houston-tennis-academy", es: "/es/community/houston-tennis-academy" },
+  { en: "/terms-of-use", es: "/es/terms-of-use" },
+  { en: "/hipaa-notice", es: "/es/hipaa-notice" },
 ] as const;
 
 export type SpanishRoute = (typeof SPANISH_ROUTES)[number];

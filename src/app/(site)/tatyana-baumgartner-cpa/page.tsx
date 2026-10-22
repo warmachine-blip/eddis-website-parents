@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: "Tatyana Baumgartner, CPA",
   description:
     "Tatyana Baumgartner, CPA, leads operations and community engagement at HTx Pain Institute and serves on the Board of Directors of Ima's Home for Children.",
+  alternates: languageAlternates("/tatyana-baumgartner-cpa", "/es/tatyana-baumgartner-cpa"),
 };
 
 const facts = [

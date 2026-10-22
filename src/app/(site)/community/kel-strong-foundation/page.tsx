@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: "The ‘Kel Strong’ Mabatah Foundation",
   description:
     "‘Kel Strong’ Mabatah Foundation funds rehabilitation for traumatic brain injury survivors. HTx Pain Institute supports it financially and attended its gala.",
+  alternates: languageAlternates("/community/kel-strong-foundation", "/es/community/kel-strong-foundation"),
 };
 
 /**

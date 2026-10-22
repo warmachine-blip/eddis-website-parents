@@ -22,16 +22,32 @@ const MONTHS = [
   "December",
 ];
 
+const MONTHS_ES = [
+  "enero",
+  "febrero",
+  "marzo",
+  "abril",
+  "mayo",
+  "junio",
+  "julio",
+  "agosto",
+  "septiembre",
+  "octubre",
+  "noviembre",
+  "diciembre",
+];
+
 /**
  * "2026-09-10" -> "September 10, 2026".
  *
  * Parsed from the string rather than through `new Date()`, which would read a
  * bare ISO date as UTC midnight and render the previous day west of Greenwich.
  */
-export function formatReviewDate(iso: string): string {
+export function formatReviewDate(iso: string, locale: "en" | "es" = "en"): string {
   const [year, month, day] = iso.split("-").map(Number);
   if (!year || !month || !day || month < 1 || month > 12) {
     throw new Error(`formatReviewDate: expected YYYY-MM-DD, got "${iso}"`);
   }
+  if (locale === "es") return `${day} de ${MONTHS_ES[month - 1]} de ${year}`;
   return `${MONTHS[month - 1]} ${day}, ${year}`;
 }

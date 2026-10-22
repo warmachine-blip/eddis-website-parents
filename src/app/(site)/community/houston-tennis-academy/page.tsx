@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: "Houston Tennis Academy Partnership",
   description:
     "HTx Pain Institute partners with Houston Tennis Academy to support injury prevention and Houston's junior tennis community.",
+  alternates: languageAlternates("/community/houston-tennis-academy", "/es/community/houston-tennis-academy"),
 };
 
 /**

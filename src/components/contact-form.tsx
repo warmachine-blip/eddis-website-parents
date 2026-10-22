@@ -53,8 +53,9 @@ async function openChat(): Promise<boolean> {
   return false;
 }
 
-export default function ContactForm() {
+export default function ContactForm({ locale = "en" }: { locale?: "en" | "es" }) {
   const [status, setStatus] = useState<"idle" | "opening" | "unavailable">("idle");
+  const spanish = locale === "es";
 
   async function handleClick() {
     setStatus("opening");
@@ -63,13 +64,13 @@ export default function ContactForm() {
 
   return (
     <div className="rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-9">
-      <h2 className="font-serif text-2xl text-navy">Send us a message</h2>
+      <h2 className="font-serif text-2xl text-navy">{spanish ? "Envíenos un mensaje" : "Send us a message"}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-charcoal-soft">
-        Ask us anything about your pain, our procedures, or insurance. We
-        typically respond within one business day. To book or reschedule a visit,
-        use our{" "}
-        <Link href="/request-appointment" data-analytics-location="contact-form" className="font-medium text-brass-text underline">
-          online scheduler
+        {spanish
+          ? "Pregúntenos sobre su dolor, los procedimientos o el seguro. Por lo general respondemos en un día hábil. Para pedir o cambiar una cita, use el "
+          : "Ask us anything about your pain, our procedures, or insurance. We typically respond within one business day. To book or reschedule a visit, use our "}
+        <Link href={spanish ? "/es/request-appointment" : "/request-appointment"} data-analytics-location="contact-form" className="font-medium text-brass-text underline">
+          {spanish ? "calendario en línea" : "online scheduler"}
         </Link>
         .
       </p>
@@ -85,24 +86,24 @@ export default function ContactForm() {
             className="mt-6 w-full border border-brass bg-navy px-6 py-3.5 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep disabled:opacity-70"
             disabled={status === "opening"}
           >
-            {status === "opening" ? "Opening…" : "Send us a message"}
+            {status === "opening" ? (spanish ? "Abriendo…" : "Opening…") : spanish ? "Envíenos un mensaje" : "Send us a message"}
           </button>
           {status === "unavailable" ? (
             <p role="status" className="mt-3 text-sm leading-relaxed text-charcoal-soft">
-              Our message window isn&rsquo;t loading. Call us at{" "}
+              {spanish ? "La ventana de mensajes no está cargando. Llámenos al " : "Our message window isn’t loading. Call us at "}
               <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="contact-form" className="font-semibold text-brass-text underline tabular-nums phone">
                 {practice.phone}
               </a>{" "}
-              and we will pick it up from there.
+              {spanish ? "y seguimos desde ahí." : "and we will pick it up from there."}
             </p>
           ) : null}
         </>
       )}
 
       <p className="mt-6 border-t border-line pt-6 text-xs leading-relaxed text-muted">
-        Please don&rsquo;t send medical details or anything you consider private
-        through the message window, and don&rsquo;t use it for emergencies. If
-        this is an emergency, call 911.
+        {spanish
+          ? "No envíe datos médicos ni nada que considere privado por la ventana de mensajes, y no la use en una emergencia. Si es una emergencia, llame al 911."
+          : "Please don’t send medical details or anything you consider private through the message window, and don’t use it for emergencies. If this is an emergency, call 911."}
       </p>
     </div>
   );

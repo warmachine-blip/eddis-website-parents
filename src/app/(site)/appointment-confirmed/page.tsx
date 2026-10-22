@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Link from "next/link";
 import { practice } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   // A booking end-point, not a landing page: it should never rank or be
   // crawled, but its links back into the site are still worth following.
   robots: { index: false, follow: true },
-  alternates: { canonical: "/appointment-confirmed" },
+  alternates: languageAlternates("/appointment-confirmed", "/es/appointment-confirmed"),
 };
 
 const nextSteps = [

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import LocationDetailTemplate from "@/components/location-detail-template";
 import { locationDetails } from "@/lib/location-details";
+import { languageAlternates } from "@/lib/spanish";
 
 const data = locationDetails["spring-tx"];
 
 export const metadata: Metadata = {
   title: `Pain Doctor in ${data.city}, TX`,
   description: data.metaDescription,
+  alternates: languageAlternates("/locations/spring-tx", "/es/locations/spring-tx"),
 };
 
 export default function Page() {

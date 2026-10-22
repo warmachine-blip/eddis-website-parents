@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: "Patient Resources · Houston & Humble",
   description:
     "Everything you need before, during, and after your visit to HTx Pain Institute — insurance, what to expect, video library, and more.",
+  alternates: languageAlternates("/patients", "/es/patients"),
 };
 
 const resourceCards = [

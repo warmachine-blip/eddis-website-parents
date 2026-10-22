@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import LegalPage from "@/components/legal-page";
 import { practice } from "@/lib/nav";
 
@@ -6,6 +7,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "The terms governing your use of the HTx Pain Institute website, including acceptable use, medical disclaimers, and limitations of liability.",
+  alternates: languageAlternates("/terms-of-use", "/es/terms-of-use"),
 };
 
 const data = {

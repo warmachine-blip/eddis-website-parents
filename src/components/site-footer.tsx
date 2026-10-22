@@ -11,7 +11,7 @@ import CopyrightYear from "@/components/copyright-year";
 import EnglishOnlyMark from "@/components/english-only-mark";
 import FooterFrame from "@/components/footer-frame";
 import FooterServiceLinks from "@/components/footer-service-links";
-import { localizeNavLink, spanishLabel, spanishSocialLabel } from "@/lib/spanish-nav";
+import { localizeNavLink, spanishHref, spanishLabel, spanishSocialLabel } from "@/lib/spanish-nav";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -183,12 +183,15 @@ export default function SiteFooter() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 border-t border-off-white/10 py-10 sm:grid-cols-2">
-          {offices.map((office) => (
+          {offices.map((office) => {
+            const officeHref = isSpanish ? spanishHref(office.pageHref) : office.pageHref;
+            const officeEnglishOnly = isSpanish && officeHref === office.pageHref;
+            return (
             <div key={office.key}>
               <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-                <FooterLink href={office.pageHref}>
+                <FooterLink href={officeHref}>
                   {isSpanish ? `Oficina de ${office.shortLabel}` : `${office.shortLabel} Office`}
-                  {isSpanish ? <EnglishOnlyMark tone="dark" /> : null}
+                  {officeEnglishOnly ? <EnglishOnlyMark tone="dark" /> : null}
                 </FooterLink>
               </h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-off-white/75">
@@ -212,7 +215,8 @@ export default function SiteFooter() {
                 Hablamos español
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="border-t border-off-white/10 pt-8">

@@ -109,7 +109,7 @@ export default function SpanishDoctorPage() {
             ariaLabel="Migas de pan"
             items={[
               { label: "Inicio", href: "/es" },
-              { label: "Quiénes somos", href: "/about-us" },
+              { label: "Quiénes somos", href: "/es/about-us" },
               { label: "Edward Baumgartner Jr., MD" },
             ]}
           />
@@ -295,11 +295,10 @@ export default function SpanishDoctorPage() {
 
               <div>
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Comunidad</h2>
-                <p className="mt-3 text-sm leading-relaxed text-charcoal-soft">Las páginas de la comunidad están en inglés.</p>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     El Dr. Baumgartner apoya de manera constante a{" "}
-                    <Link href="/community/imas-home" className="font-semibold text-brass-text hover:text-navy">
+                    <Link href="/es/community/imas-home" className="font-semibold text-brass-text hover:text-navy">
                       Ima&apos;s Home for Children
                     </Link>
                     , una organización 501(c)(3) que cuida a niños huérfanos en Filipinas. El consultorio apoya a
@@ -308,7 +307,7 @@ export default function SpanishDoctorPage() {
                   </p>
                   <p>
                     El consultorio también apoya económicamente a la{" "}
-                    <Link href="/community/kel-strong-foundation" className="font-semibold text-brass-text hover:text-navy">
+                    <Link href="/es/community/kel-strong-foundation" className="font-semibold text-brass-text hover:text-navy">
                       &apos;Kel Strong&apos; Mabatah Foundation
                     </Link>
                     , una organización 501(c)(3) que financia rehabilitación para personas que sobrevivieron a una
@@ -316,7 +315,7 @@ export default function SpanishDoctorPage() {
                   </p>
                   <p>
                     También colabora con{" "}
-                    <Link href="/community/houston-tennis-academy" className="font-semibold text-brass-text hover:text-navy">
+                    <Link href="/es/community/houston-tennis-academy" className="font-semibold text-brass-text hover:text-navy">
                       Houston Tennis Academy
                     </Link>{" "}
                     en Club Westside en la prevención de lesiones de sus jugadores juveniles, con charlas para los

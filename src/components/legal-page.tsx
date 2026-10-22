@@ -42,11 +42,13 @@ export type LegalPageData = {
   intro: string;
   sections: LegalSection[];
   card?: boolean;
+  home?: { label: string; href: string };
+  ariaLabel?: string;
 };
 
 export default function LegalPage({ data }: { data: LegalPageData }) {
   const crumbs = [
-    { label: "Home", href: "/" },
+    data.home ?? { label: "Home", href: "/" },
     ...(data.parentCrumb ? [data.parentCrumb] : []),
     { label: data.breadcrumbLabel ?? data.title },
   ];
@@ -55,7 +57,7 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
     <div>
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-          <Breadcrumb dark items={crumbs} />
+          <Breadcrumb dark ariaLabel={data.ariaLabel} items={crumbs} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
             {data.eyebrow}
