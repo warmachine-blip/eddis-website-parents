@@ -69,9 +69,10 @@ declare global {
 }
 
 /**
- * Click on a control that starts a new booking: a link to /request-appointment,
- * a link to the Nimblr booking page, an in-page jump to the embedded scheduler,
- * or the first interaction with that embed.
+ * Click on a control that starts a new booking: a link to /request-appointment
+ * or /es/request-appointment, a link to the Nimblr booking page, an in-page
+ * jump to the embedded scheduler, or the first interaction with that embed.
+ * The EN|ES language switch is not one of those controls.
  *
  * Params are location (which control), label (its visible text), and page_path
  * (pathname only). Nothing else — no query string, no form fields, no patient

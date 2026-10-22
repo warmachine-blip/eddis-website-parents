@@ -16,7 +16,7 @@ export default function LanguageSwitch() {
     "inline-flex min-h-11 items-center whitespace-nowrap px-0.5 font-sans text-[11px] font-semibold tracking-[0.08em] min-[400px]:tracking-[0.14em]";
 
   return (
-    <nav aria-label={isSpanish ? "Idioma" : "Language"} className="flex shrink-0 items-center">
+    <nav aria-label={isSpanish ? "Idioma" : "Language"} data-language-switch="" className="flex shrink-0 items-center">
       <Link
         href={enHref}
         hrefLang="en"
