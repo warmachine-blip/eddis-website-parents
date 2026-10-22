@@ -1,7 +1,25 @@
 "use client";
 
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
+
+type ScrollStrokeCopy = {
+  eyebrow: string;
+  title: ReactNode;
+  body: string;
+};
+
+const englishCopy: ScrollStrokeCopy = {
+  eyebrow: "Our Philosophy",
+  title: (
+    <>
+      A precise path,
+      <br />
+      drawn around you.
+    </>
+  ),
+  body: "No two patients feel pain the same way, so no two treatment plans should look the same either.",
+};
 
 /**
  * Scroll-driven stroke line — the brass path draws itself in as the section scrolls by.
@@ -13,7 +31,7 @@ import { useRef } from "react";
  * phones, where the desktop path would be an illegible tangle. Heights use svh (not
  * vh) so a collapsing mobile URL bar cannot resize the section mid-scroll.
  */
-export default function ScrollStroke() {
+export default function ScrollStroke({ copy = englishCopy }: { copy?: ScrollStrokeCopy }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
 
@@ -48,16 +66,13 @@ export default function ScrollStroke() {
         <div className="relative z-10 flex max-w-3xl flex-col items-center gap-5 text-center sm:gap-6">
           <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
             <span className="h-px w-8 bg-brass-light" aria-hidden="true" />
-            Our Philosophy
+            {copy.eyebrow}
           </p>
           <h2 className="text-balance font-serif text-[clamp(34px,10vw,44px)] leading-[1.08] sm:text-6xl lg:text-7xl">
-            A precise path,
-            <br />
-            drawn around you.
+            {copy.title}
           </h2>
           <p className="max-w-lg text-pretty text-base leading-relaxed text-off-white/80 sm:text-lg">
-            No two patients feel pain the same way, so no two treatment plans
-            should look the same either.
+            {copy.body}
           </p>
         </div>
       </div>

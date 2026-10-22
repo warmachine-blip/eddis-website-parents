@@ -106,6 +106,7 @@ export default function SpanishDoctorPage() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
           <Breadcrumb
             dark
+            ariaLabel="Migas de pan"
             items={[
               { label: "Inicio", href: "/es" },
               { label: "Quiénes somos", href: "/about-us" },

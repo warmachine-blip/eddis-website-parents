@@ -65,7 +65,7 @@ export default function SpanishRequestAppointmentPage() {
     <div>
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-          <Breadcrumb dark items={[{ label: "Inicio", href: "/es" }, { label: "Pedir cita" }]} />
+          <Breadcrumb dark ariaLabel="Migas de pan" items={[{ label: "Inicio", href: "/es" }, { label: "Pedir cita" }]} />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
             Pedir cita
@@ -83,10 +83,10 @@ export default function SpanishRequestAppointmentPage() {
 
       <div className="mx-auto max-w-7xl px-6 pt-10 lg:px-10 lg:pt-14">
         <p className="mb-4 max-w-3xl text-sm leading-relaxed text-charcoal-soft">
-          ¿Ya tiene una cita? Para cambiarla o cancelarla, use el recuadro de abajo. Está en inglés. Si prefiere
-          hacerlo por teléfono, el personal le ayuda en español.
+          ¿Ya tiene una cita? Para cambiarla o cancelarla, use el recuadro de abajo. El enlace abre una página en
+          inglés. Si prefiere hacerlo por teléfono, el personal le ayuda en español.
         </p>
-        <RescheduleCallout />
+        <RescheduleCallout locale="es" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -96,7 +96,7 @@ export default function SpanishRequestAppointmentPage() {
               El calendario en línea está en inglés. Si prefiere ayuda en español, llame al {practice.phone}. El
               personal puede programar su cita y responder sus preguntas.
             </p>
-            <NimblrScheduler />
+            <NimblrScheduler locale="es" />
           </div>
 
           <div className="space-y-8 lg:col-span-5">
