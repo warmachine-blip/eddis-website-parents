@@ -128,7 +128,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
             <IconBadge icon="bolt" tone="cyan" />
             <SectionHeading
               eyebrow="Treatment Overview"
-              title="Built around the patient — not the procedure."
+              title="Built around the patient, not the procedure."
               lead={data.intro}
             />
           </div>
@@ -272,7 +272,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
                 FAQ
               </span>
               <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
-                Direct answers — no jargon.
+                Direct answers, no jargon.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                 If your question isn&rsquo;t here, ask us at your consultation. We will give you the

@@ -61,14 +61,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "radiofrequency-ablation",
     title: "Radiofrequency Ablation",
     metaDescription:
-      "Radiofrequency ablation in Houston and Humble. A 15-minute outpatient procedure that quiets the nerves carrying your pain, with relief lasting 6 to 18 months.",
+      "Radiofrequency ablation in Houston and Humble for back, neck, SI joint and knee pain. Test blocks usually come first. How long relief lasts varies.",
     lastReviewed: "2026-09-10",
     heroImage: "surgeon-under-operating-lights.jpg",
     heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
     eyebrow: "RFA",
-    leadLine: "Lasting nerve-pain relief, on an outpatient schedule.",
+    leadLine: "Nerve pain treatment, on an outpatient schedule.",
     intro:
-      "Radiofrequency ablation (RFA) uses radio-wave energy to create a small, controlled lesion on the nerves carrying pain signals — interrupting the signal at its source. The result is durable, medication-free relief that often lasts six to eighteen months and can be repeated as needed.",
+      "Radiofrequency ablation (RFA) uses radio-wave energy to create a small, controlled lesion on the nerves carrying pain signals, interrupting the signal at its source. How long any relief lasts varies from person to person, and the procedure can be repeated when it helped.",
     quickFacts: {
       setting: "In-office, outpatient",
       anesthesia: "Local + light sedation",
@@ -84,27 +84,27 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Chronic neck or low-back pain that hasn't responded to conservative care",
       "Confirmed facet-joint pain on diagnostic blocks",
       "Sacroiliac (SI) joint pain",
-      "Patients seeking durable relief without long-term opioid medication",
+      "Patients who want to discuss options other than long-term opioid medication",
     ],
     whatToExpect: [
       "The procedure itself takes about 15 minutes; total time in the office is longer to allow for prep and recovery.",
-      "Mild soreness at the site is normal for 2–5 days.",
+      "Mild soreness at the site is normal for 2 to 5 days.",
       "Relief builds gradually over the following weeks as the treated nerve quiets.",
     ],
     recoveryResults: [
       "Most patients return to light activity the next day.",
-      "Avoid heavy lifting for 24–48 hours.",
-      "Resume gentle stretching and walking within 1–2 days.",
+      "Avoid heavy lifting for 24 to 48 hours.",
+      "Resume gentle stretching and walking within 1 to 2 days.",
       "Full benefit is reached at about the 6-week mark.",
-      "Relief commonly lasts 6–18 months and the procedure can be repeated.",
+      "How long relief lasts varies, and the procedure can be repeated when it helped.",
     ],
     risksIntro:
-      "Every procedure carries some risk. We explain everything in plain language during your consultation, and again on the day of the procedure — so you know what is normal, what to watch for, and when to call.",
+      "Every procedure carries some risk. We explain everything in plain language during your consultation, and again on the day of the procedure, so you know what is normal, what to watch for, and when to call.",
     risks: [
-      "Mild soreness at the access site for 2–5 days, often relieved with ice and acetaminophen.",
-      "Temporary increase in pain in the first 1–3 days as the treated area settles.",
+      "Mild soreness at the access site for 2 to 5 days, often relieved with ice and acetaminophen.",
+      "Temporary increase in pain in the first 1 to 3 days as the treated area settles.",
       "Rare risk of infection, bleeding, or numbness in the treated dermatome.",
-      "Very rare risk of motor nerve injury — the procedure is designed to target sensory nerves only.",
+      "Very rare risk of motor nerve injury. The procedure is designed to target sensory nerves only.",
       "Procedure may not provide relief; in that case we revisit the diagnosis and consider alternatives.",
     ],
     faqs: [
@@ -114,19 +114,19 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "How long does relief last?",
-        a: "Most patients experience 6 to 18 months of meaningful relief. As the nerve regenerates over time, the procedure can be repeated safely.",
+        a: "How long relief lasts varies from person to person. As the nerve can regrow over time, repeat ablation is sometimes an option when the first one helped.",
       },
       {
         q: "Will I be on medications afterward?",
-        a: "RFA is specifically designed to reduce reliance on long-term pain medications. Many patients are able to taper or stop oral pain medications after a successful ablation.",
+        a: "RFA is one option to discuss when the goal is to rely less on long-term pain medication. Whether any medicine can be reduced depends on how you respond.",
       },
       {
         q: "Why are diagnostic blocks done first?",
-        a: "We use a two-block paradigm — two separate diagnostic medial branch blocks on different days — to confirm that the small nerves we plan to ablate are in fact the source of your pain. Both blocks must provide meaningful relief; this is the standard before RFA and is also what insurers require. If the blocks do not provide meaningful relief, RFA is unlikely to help — and we will redirect to a different therapy.",
+        a: "We use a two-block paradigm, two separate diagnostic medial branch blocks on different days, to confirm that the small nerves we plan to ablate are in fact the source of your pain. Both blocks must provide meaningful relief. This is the standard before RFA and is also what insurers require. If the blocks do not provide meaningful relief, RFA is unlikely to help, and we will redirect to a different therapy. Call (832) 960-7160 to confirm your benefits.",
       },
       {
         q: "How quickly can I get back to work?",
-        a: "Most patients return to desk work the next day and to physical work within 2–3 days, depending on the area treated. We will give you specific guidance based on your job.",
+        a: "Most patients return to desk work the next day and to physical work within 2 to 3 days, depending on the area treated. We will give you specific guidance based on your job.",
       },
       {
         q: "Can RFA be done if I had previous spine surgery?",
@@ -134,13 +134,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "Are there alternatives to RFA?",
-        a: "Yes — depending on the source of your pain, alternatives can include Intracept, spinal cord stimulation, SI joint fusion, or continued conservative care. We discuss the full landscape with you before recommending RFA.",
+        a: "Yes. Depending on the source of your pain, alternatives can include basivertebral nerve ablation (BVN), spinal cord stimulation, SI joint fusion, or continued conservative care. We discuss the full landscape with you before recommending RFA.",
       },
     ],
     insuranceBlurb:
-      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and Medicare Advantage plans when medical-necessity criteria are met (two successful diagnostic medial branch blocks). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling.",
+      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and Medicare Advantage plans when medical-necessity criteria are met (two successful diagnostic medial branch blocks). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling. Call (832) 960-7160 to confirm your benefits.",
     expertiseBlurb:
-      "Dr. Baumgartner has performed thousands of radiofrequency ablation procedures since 2018, with particular expertise in cervical, lumbar, SI, and genicular targets. We use modern probe technology, live fluoroscopic guidance, and the time it takes to do the procedure right — never rushed by the clock.",
+      "Dr. Baumgartner has performed thousands of radiofrequency ablation procedures since 2018, with particular expertise in cervical, lumbar, SI, and genicular targets. We use modern probe technology, live fluoroscopic guidance, and the time it takes to do the procedure right, never rushed by the clock.",
     relatedServices: [
       {
         slug: "injections-blocks-specialist",
@@ -218,7 +218,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
       {
         q: "How many injections can I have?",
-        a: "We follow evidence-based limits — typically no more than three to four corticosteroid injections per region per year — and prefer to use injections strategically rather than as ongoing therapy. If you find yourself needing repeat injections every few months, that is a signal to consider a more durable option like RFA, Intracept, or spinal cord stimulation.",
+        a: "We follow evidence-based limits — typically no more than three to four corticosteroid injections per region per year — and prefer to use injections strategically rather than as ongoing therapy. If you find yourself needing repeat injections every few months, that is a signal to consider a more durable option like RFA, basivertebral nerve ablation (BVN), or spinal cord stimulation.",
       },
       {
         q: "Are these injections only diagnostic, or therapeutic?",
@@ -645,88 +645,92 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   "intracept-procedure": {
     slug: "intracept-procedure",
-    title: "Intracept Procedure",
+    title: "Basivertebral Nerve Ablation (BVN)",
     metaDescription:
-      "Intracept in Houston and Humble. An implant-free, FDA-cleared procedure that treats vertebrogenic low-back pain at its source, the basivertebral nerve.",
+      "Basivertebral nerve ablation (BVN) treats vertebrogenic low back pain by targeting that nerve, with no implant left behind. Offered in Houston and Humble.",
     lastReviewed: "2026-09-10",
     heroImage: "treatment-intracept-procedure.jpg",
-    heroImageAlt: "Intracept procedure for vertebrogenic low-back pain at HTx Pain Institute",
-    eyebrow: "Intracept",
-    leadLine: "An FDA-cleared answer for vertebrogenic low-back pain.",
+    heroImageAlt: "Basivertebral nerve ablation (BVN) for vertebrogenic low-back pain at HTx Pain Institute",
+    eyebrow: "Basivertebral nerve ablation (BVN)",
+    leadLine: "An FDA-cleared procedure for vertebrogenic low-back pain.",
     intro:
-      "Intracept is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain — pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve, with proven long-term improvement in pain and function.",
+      "Basivertebral nerve ablation (BVN) is an FDA-cleared, implant-free procedure for chronic vertebrogenic low-back pain, pain that originates from the vertebral endplates rather than the disc or muscles. It uses radiofrequency energy to ablate the basivertebral nerve. It is also known as Intracept. Results vary from person to person.",
     quickFacts: {
       setting: "Outpatient, same day",
       anesthesia: "Sedation + local anesthesia",
-      recovery: "Light activity 1–2 days; work 1–2 weeks",
+      recovery: "Return to activity timing varies",
     },
     steps: [
-      "MRI confirms Modic Type 1 or Type 2 endplate changes — the hallmark of vertebrogenic pain.",
+      "MRI confirms Modic Type 1 or Type 2 endplate changes, the hallmark of vertebrogenic pain.",
       "Through a small access point, a probe is guided into the vertebral body.",
       "The basivertebral nerve is ablated with controlled radiofrequency energy.",
-      "Nothing is left implanted — the bone heals around the treatment zone.",
+      "Nothing is left implanted. The bone heals around the treatment zone.",
     ],
     whoIsItFor: [
-      "Chronic low-back pain ≥6 months",
+      "Chronic low-back pain of 6 months or more",
       "Modic changes on MRI consistent with vertebrogenic pain",
       "Failure of conservative care including PT and injections",
-      "Patients seeking durable relief without an implant or fusion",
+      "Patients considering a procedure with no implant and no fusion",
     ],
     whatToExpect: [
       "Procedure time is approximately 1 hour.",
       "Performed under sedation and local anesthesia.",
-      "Outpatient — most patients leave the same day.",
+      "Outpatient. Most patients leave the same day.",
       "No hardware or implant remains in the body.",
     ],
     recoveryResults: [
-      "Light activity within 1–2 days.",
-      "Most patients return to work within 1–2 weeks.",
-      "Improvement progresses over 3–6 months.",
-      "Published data shows durable relief at 5 years.",
+      "Light activity within 1 to 2 days.",
+      "Return to work timing varies. Your doctor will advise you based on your job and recovery.",
+      "Any change is followed over the months after treatment. Results vary.",
+      "Studies have followed patients for up to five years after a single treatment. Results vary from person to person.",
     ],
     risksIntro:
-      "Every procedure carries some risk. We explain everything in plain language during your consultation, and again on the day of the procedure — so you know what is normal, what to watch for, and when to call.",
+      "Every procedure carries some risk. We explain everything in plain language during your consultation, and again on the day of the procedure, so you know what is normal, what to watch for, and when to call.",
     risks: [
       "Mild low-back soreness at the access site for several days.",
-      "Temporary increase in pain during the first 1–2 weeks as healing progresses.",
+      "Temporary increase in pain during the first 1 to 2 weeks as healing progresses.",
       "Rare risk of infection, bleeding, or nerve injury.",
-      "Procedure may not provide relief in patients without true vertebrogenic pain — careful selection is essential.",
+      "Procedure may not provide relief in patients without true vertebrogenic pain. Careful selection matters.",
       "No long-term complications related to implants because there are none.",
     ],
     faqs: [
       {
         q: "How is this different from RFA?",
-        a: "Standard RFA targets the small medial branch nerves outside the spine. Intracept targets a different nerve — the basivertebral nerve inside the vertebra — which carries vertebrogenic pain signals not addressed by traditional RFA.",
+        a: "Standard RFA targets the small medial branch nerves outside the spine. Basivertebral nerve ablation (BVN) targets a different nerve, the basivertebral nerve inside the vertebra, which carries vertebrogenic pain signals not addressed by traditional RFA.",
       },
       {
         q: "Will I need a fusion later?",
-        a: "Many patients who would otherwise be candidates for fusion experience durable improvement with Intracept and are able to avoid fusion altogether.",
+        a: "Basivertebral nerve ablation (BVN) does not remove or fuse anything, so it leaves the spine as it is. Some patients who were considering fusion choose this procedure first. Whether fusion is ever needed depends on your condition, and this procedure does not rule it out.",
       },
       {
         q: "What are Modic changes?",
-        a: "Modic changes are signal changes in the vertebral endplates seen on MRI. Type 1 and Type 2 changes are associated with vertebrogenic pain — pain originating from the endplate itself — and are the imaging hallmark of Intracept candidacy.",
+        a: "Modic changes are signal changes in the vertebral endplates seen on MRI. Type 1 and Type 2 changes are associated with vertebrogenic pain, pain originating from the endplate itself, and are the imaging hallmark of basivertebral nerve ablation (BVN) candidacy.",
       },
       {
         q: "Is anything left in my body afterward?",
-        a: "No. Intracept is implant-free — the basivertebral nerve is heated and ablated with controlled radiofrequency energy; nothing is removed or excised, and no hardware is left behind. The bone heals around the treated area over time.",
+        a: "No. Basivertebral nerve ablation (BVN) is implant-free. The basivertebral nerve is heated and ablated with controlled radiofrequency energy. Nothing is removed or excised, and no hardware is left behind. The bone heals around the treated area over time.",
       },
       {
         q: "How long does relief last?",
-        a: "Published 5-year data shows that the majority of Intracept patients maintain significant pain and function improvement 5 years after a single treatment.",
+        a: "Studies have followed patients for up to five years after a single treatment, and many reported lasting improvement in pain and function. Results vary from person to person.",
       },
       {
-        q: "Can Intracept be done at multiple levels?",
-        a: "Yes — Intracept can be performed at one or multiple lumbar levels in a single procedure, depending on which endplates show Modic changes on your MRI.",
+        q: "Can basivertebral nerve ablation (BVN) be done at multiple levels?",
+        a: "Yes. It can be performed at one or multiple lumbar levels in a single procedure, depending on which endplates show Modic changes on your MRI.",
       },
       {
-        q: "Is Intracept covered by insurance?",
-        a: "Intracept is covered by Medicare and a growing list of commercial insurers, particularly when imaging confirms Modic changes and conservative care has failed. We handle prior authorization for you.",
+        q: "Is basivertebral nerve ablation (BVN) covered by insurance?",
+        a: "Basivertebral nerve ablation (BVN) is covered by Medicare and a growing list of commercial insurers, particularly when imaging confirms Modic changes and conservative care has failed. We handle prior authorization for you. Call (832) 960-7160 to confirm your benefits.",
+      },
+      {
+        q: "Does HTx Pain Institute offer basivertebral nerve ablation (BVN)?",
+        a: "Yes. Dr. Baumgartner performs basivertebral nerve ablation (BVN) at our Houston-area practice. Call (832) 960-7160 to ask whether your MRI findings may fit.",
       },
     ],
     insuranceBlurb:
-      "Intracept is covered by Medicare and many commercial insurers when MRI demonstrates Modic Type 1 or Type 2 endplate changes and conservative care has failed. Coverage and prior authorization vary by plan; our team manages the process for you.",
+      "Basivertebral nerve ablation (BVN) is covered by Medicare and many commercial insurers when MRI demonstrates Modic Type 1 or Type 2 endplate changes and conservative care has failed. Coverage and prior authorization vary by plan. Our team manages the process for you. Call (832) 960-7160 to confirm your benefits.",
     expertiseBlurb:
-      "Dr. Baumgartner is among the experienced Intracept providers in the Houston area. He has published-data familiarity with the procedure and a careful approach to patient selection — Intracept only works when the pain truly is vertebrogenic, and we will not perform the procedure on patients who do not meet criteria.",
+      "Dr. Baumgartner is among the experienced basivertebral nerve ablation (BVN) providers in the Houston area. He has published-data familiarity with the procedure and a careful approach to patient selection. It is considered when the pain is vertebrogenic, and we will not perform the procedure on patients who do not meet criteria.",
     relatedServices: [
       {
         slug: "radiofrequency-ablation",

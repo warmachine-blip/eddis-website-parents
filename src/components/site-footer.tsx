@@ -90,7 +90,7 @@ export default function SiteFooter() {
               {practice.tagline}
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-off-white/60">
-              {practice.name} — formerly {practice.formerNames}. Same Dr. Baumgartner,
+              {practice.name}, formerly {practice.formerNames}. Same Dr. Baumgartner,
               same Houston-area locations, expanded clinical scope.
             </p>
             <ul className="mt-5 flex items-center gap-3" aria-label="Social media">

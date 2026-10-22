@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
+import FaqBlock from "@/components/faq-block";
 import SectionHeading from "@/components/section-heading";
 import { CheckBullet } from "@/components/icon-badge";
 import { practice } from "@/lib/nav";
+import { secondOpinionFaqs } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Houston Second Opinions Before Surgery",
+  title: "Second Opinion Before Spine Surgery",
   description:
-    "Told you need an operation? A second opinion from a physician who does not perform joint replacements or open fusions, and has nothing riding on your answer.",
+    "A pain medicine second opinion before you agree to spine or joint surgery. Records are read before your visit. Patients from outside Houston welcome.",
 };
 
 /**
@@ -86,9 +89,9 @@ export default function SecondOpinionPage() {
             be the one operating.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Most back and joint pain never needs surgery. Edward Baumgartner
-            Jr., MD is double board-certified in Anesthesiology and Pain
-            Medicine, and he does not perform joint replacements or open
+            Surgery is one option, not the only question to ask. Edward
+            Baumgartner Jr., MD is double board-certified in Anesthesiology and
+            Pain Medicine, and he does not perform joint replacements or open
             fusions. Whatever he tells you about yours, he has nothing riding
             on it.
           </p>
@@ -213,10 +216,10 @@ export default function SecondOpinionPage() {
           <div className="mt-6 grid max-w-5xl gap-x-14 gap-y-4 text-base leading-relaxed text-off-white/80 lg:grid-cols-2">
             <div className="space-y-4">
               <p>
-                Most back and joint pain has a source that can be found and
+                Some back and joint pain has a source that can be found and
                 treated directly. Where that is true, the work is to identify
-                the structure, confirm it, and treat it. An operation never
-                enters the conversation.
+                the structure, confirm it, and treat it. An operation is not
+                assumed.
               </p>
               <p>
                 Sometimes it runs the other way. If the exam, the imaging and
@@ -228,7 +231,7 @@ export default function SecondOpinionPage() {
               <p>
                 And where the source is found and it is treatable here, the
                 options are the ones a pain practice can actually offer:
-                radiofrequency ablation, Intracept, spinal cord stimulation,
+                radiofrequency ablation, basivertebral nerve ablation (BVN), spinal cord stimulation,
                 genicular blocks, image-guided joint injections, PRP.
               </p>
               <p>
@@ -274,7 +277,13 @@ export default function SecondOpinionPage() {
         </div>
       </section>
 
-      {/* Final CTA — this page keeps its own band; the headline is its own. */}
+      <FaqBlock
+        heading="Common questions"
+        faqs={secondOpinionFaqs}
+        schemaId={`${SITE_URL}/second-opinion#faq`}
+      />
+
+      {/* This page keeps its own closing band. The headline is its own. */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-10 lg:py-24">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">

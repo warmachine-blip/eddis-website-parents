@@ -54,7 +54,7 @@ export default function OfficeMap({ office, height = 240 }: { office: Office; he
           style={{ border: 0 }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title={`Map to HTx Pain Institute — ${office.city}`}
+          title={`Map to HTx Pain Institute, ${office.city}`}
         />
       ) : (
         <div className="flex h-full items-center justify-center px-4 text-center text-sm text-charcoal-soft">

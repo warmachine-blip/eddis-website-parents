@@ -6,7 +6,7 @@ import { conditionDetails } from "@/lib/condition-details";
 const data = conditionDetails["back-pain"];
 
 export const metadata: Metadata = {
-  title: `${data.title} in Houston`,
+  title: "Back Pain Doctor in Houston and Humble",
   description: data.metaDescription,
   ...socialImage(data.slug, data.heroImageAlt),
 };

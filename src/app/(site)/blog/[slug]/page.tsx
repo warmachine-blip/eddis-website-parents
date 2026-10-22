@@ -9,6 +9,7 @@ import { formatReviewDate } from "@/lib/review";
 import { SITE_URL } from "@/lib/site";
 import { ORG_ID, FOUNDER_ID, WEBSITE_ID } from "@/lib/schema";
 import FinalCta from "@/components/final-cta";
+import FaqBlock from "@/components/faq-block";
 
 /**
  * Article body, or null while a post is still metadata-only. The path prefix is
@@ -83,7 +84,16 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     image: `${SITE_URL}/images/${post.image}`,
     datePublished: post.datePublished,
     dateModified: post.dateModified ?? post.datePublished,
-    author: { "@id": post.author === "physician" ? FOUNDER_ID : ORG_ID },
+    author:
+      post.author === "physician"
+        ? {
+            "@type": "Person",
+            "@id": FOUNDER_ID,
+            name: "Edward Baumgartner Jr., MD",
+            url: `${SITE_URL}/dr-edward-baumgartner`,
+            jobTitle: "Founding Physician",
+          }
+        : { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
     inLanguage: "en-US",
@@ -103,7 +113,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
             items={[
               { label: "Home", href: "/" },
               { label: "Blog", href: "/blog" },
-              { label: post.category },
+              { label: post.title },
             ]}
           />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
@@ -113,7 +123,13 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           <h1 className="mt-5 text-balance font-serif text-3xl leading-tight text-off-white sm:text-4xl">
             {post.title}
           </h1>
-          <div className="mt-6 flex items-center gap-3 text-sm text-off-white/70">
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-off-white/70">
+            {post.author === "physician" ? (
+              <>
+                <span>By Edward Baumgartner Jr., MD</span>
+                <span aria-hidden="true">&middot;</span>
+              </>
+            ) : null}
             <span>{formatReviewDate(post.datePublished)}</span>
             <span aria-hidden="true">&middot;</span>
             <span>{post.readTime}</span>
@@ -136,6 +152,15 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
             </div>
           ) : null}
 
+          {post.faqs?.length ? (
+            <FaqBlock
+              compact
+              heading="Common questions"
+              faqs={post.faqs}
+              schemaId={`${url}#faq`}
+            />
+          ) : null}
+
           <div className="mt-10 rounded-2xl border border-line bg-off-white p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
               Go Deeper
@@ -144,8 +169,8 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
               Full clinical detail on {post.relatedLabel}
             </h3>
             <p className="mt-1.5 text-sm leading-relaxed text-charcoal-soft">
-              For the complete picture — candidacy, what to expect, and answers to
-              common questions — visit our {post.relatedLabel} page.
+              For the complete picture, including candidacy, what to expect, and answers to
+              common questions, visit our {post.relatedLabel} page.
             </p>
             <Link
               href={post.relatedHref}

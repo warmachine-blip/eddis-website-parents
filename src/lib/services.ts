@@ -53,7 +53,7 @@ export const services: Service[] = [
   {
     slug: "intracept-procedure",
     href: "/intracept-procedure",
-    title: "Intracept Procedure",
+    title: "Basivertebral Nerve Ablation (BVN)",
     summary:
       "Targets the basivertebral nerve to address chronic low-back pain at its anatomic source.",
     icon: "sparkles",
@@ -87,7 +87,7 @@ export const services: Service[] = [
     href: "/peptides",
     title: "Wellness & Peptides",
     summary:
-      "Physician-supervised peptide therapies and weight-loss programs — a dedicated wellness page is coming soon.",
+      "Physician-supervised peptide therapies and weight-loss programs. A dedicated wellness page is coming soon.",
     icon: "sparkles",
     comingSoon: true,
   },

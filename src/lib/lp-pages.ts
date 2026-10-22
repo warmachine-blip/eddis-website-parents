@@ -133,7 +133,7 @@ export const landingPages: Record<string, LandingPage> = {
           "Durable relief for facet- or SI-mediated pain confirmed on two diagnostic medial branch blocks.",
       },
       {
-        title: "Intracept Procedure",
+        title: "Basivertebral Nerve Ablation (BVN)",
         blurb: "Implant-free relief for vertebrogenic low-back pain.",
       },
       {
@@ -163,7 +163,7 @@ export const landingPages: Record<string, LandingPage> = {
     philosophy:
       "There is no single back pain procedure, and any practice offering one is guessing. Dr. Baumgartner's approach is to name the pain generator before treating it — history, exam, imaging, and where needed a diagnostic block that has to actually confirm the hypothesis. It sometimes takes an extra visit. It also avoids the far more expensive mistake of a well-executed procedure on the wrong structure.",
     outlook:
-      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks is treated with radiofrequency ablation: the procedure itself takes about 15 minutes, most patients return to light activity the next day, and full benefit is reached at about the 6-week mark, commonly lasting 6 to 18 months and repeatable. Vertebrogenic pain treated with Intracept follows a different arc — light activity within a day or two, and most patients back to work inside two weeks. Sacroiliac pain that has failed conservative care may lead to SI joint fusion, where most patients walk unassisted the same day and reach full activity between 6 and 12 weeks. We give you the timeline for your diagnosis, not an average.",
+      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks is treated with radiofrequency ablation: the procedure itself takes about 15 minutes, most patients return to light activity the next day, and full benefit is reached at about the 6-week mark, commonly lasting 6 to 18 months and repeatable. Vertebrogenic pain treated with basivertebral nerve ablation (BVN) follows a different arc — light activity within a day or two, and most patients back to work inside two weeks. Sacroiliac pain that has failed conservative care may lead to SI joint fusion, where most patients walk unassisted the same day and reach full activity between 6 and 12 weeks. We give you the timeline for your diagnosis, not an average.",
     faqs: [
       {
         q: "Do I need an MRI before my first visit?",

@@ -1,25 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
+import { preload } from "react-dom";
 
 /**
- * Hero backdrop: poster image first, video layered over it once the browser is idle.
- *
- * One 636 KB file serves every viewport. The original was 3.4 MB at the same
- * 1280x720 — it was simply encoded at 2,303 kb/s against this one's 421 kb/s —
- * so the large file bought no extra resolution anywhere and was dropped.
- *
- * The video mounts only after load + idle, so its bytes never contend with the
- * poster, which is the hero's LCP candidate. Reduced-motion visitors keep the
- * poster and fetch no video at all.
- *
- * The poster image is the video's own frame 0 and sits directly beneath the
- * video in the same container, so nothing shifts when the video takes over and
- * the <video> needs no `poster` attribute of its own — that only re-downloaded
- * the same frame unoptimized.
+ * Hero backdrop. The poster is frame 0 of the clinic hallway video (1600x900,
+ * about 97 KB) and is the element that should paint first, including on mobile.
+ * preload() runs during render so the poster link is in the document head.
+ * The video file is attached only after load and idle, and only when the
+ * visitor has not asked for reduced motion.
  */
-const POSTER = "/videos/hero-clinic-hallway-poster.jpg";
+export const HERO_POSTER = "/videos/hero-clinic-hallway-poster.jpg";
 const VIDEO = "/videos/hero-clinic-hallway-720.mp4";
 const MOTION_OK = "(prefers-reduced-motion: no-preference)";
 
@@ -55,27 +46,33 @@ function subscribe(onChange: () => void) {
 }
 
 export default function HeroBackground() {
+  preload(HERO_POSTER, { as: "image", fetchPriority: "high" });
+  const videoRef = useRef<HTMLVideoElement>(null);
   const playVideo = useSyncExternalStore(
     subscribe,
     () => isIdle && window.matchMedia(MOTION_OK).matches,
     () => false,
   );
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !playVideo) return;
+    video.play().catch(() => {});
+  }, [playVideo]);
+
   return (
     <div className="absolute inset-0" aria-hidden="true">
-      <Image src={POSTER} alt="" fill priority sizes="100vw" className="object-cover max-md:object-[25%_50%]" />
-      {playVideo && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover max-md:object-[25%_50%]"
-        >
-          <source src={VIDEO} type="video/mp4" />
-        </video>
-      )}
+      <video
+        ref={videoRef}
+        poster={HERO_POSTER}
+        muted
+        loop
+        playsInline
+        preload="none"
+        className="absolute inset-0 h-full w-full object-cover max-md:object-[25%_50%]"
+      >
+        {playVideo ? <source src={VIDEO} type="video/mp4" /> : null}
+      </video>
       <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-navy-deep/50 to-navy-deep/20" />
     </div>
   );

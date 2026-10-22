@@ -21,7 +21,7 @@ export const conditions: Condition[] = [
     slug: "chronic-pain",
     href: "/chronic-pain",
     title: "Chronic Pain",
-    summary: "Pain that persists beyond expected healing — and the comprehensive plan it requires.",
+    summary: "Pain that persists beyond expected healing, and the comprehensive plan it requires.",
   },
   {
     slug: "pelvic-pain",
@@ -34,7 +34,7 @@ export const conditions: Condition[] = [
     slug: "joint-pain",
     href: "/joint-pain",
     title: "Joint Pain",
-    summary: "From shoulder to hip — image-guided care for the joints that move you.",
+    summary: "From shoulder to hip, image-guided care for the joints that move you.",
   },
   {
     slug: "knee-pain",
@@ -46,13 +46,13 @@ export const conditions: Condition[] = [
     slug: "neck-pain",
     href: "/neck-pain",
     title: "Neck Pain",
-    summary: "Precision care for the cervical spine — without rushing to surgery.",
+    summary: "Precision care for the cervical spine, without rushing to surgery.",
   },
   {
     slug: "back-pain",
     href: "/back-pain",
     title: "Back Pain",
-    summary: "The most common reason patients come to us — and where we have the most to offer.",
+    summary: "The most common reason patients come to us, and where we have the most to offer.",
   },
   {
     slug: "other-pain-conditions",
@@ -82,19 +82,19 @@ export const conditions: Condition[] = [
     slug: "hip-pain",
     href: "/hip-pain",
     title: "Hip Pain",
-    summary: "From bursitis to osteoarthritis — image-guided care for the hip joint.",
+    summary: "From bursitis to osteoarthritis, image-guided care for the hip joint.",
   },
   {
     slug: "shoulder-injuries",
     href: "/shoulder-injuries",
     title: "Shoulder Injuries",
-    summary: "Rotator cuff, labrum, and tendon issues — diagnosed precisely, treated thoughtfully.",
+    summary: "Rotator cuff, labrum, and tendon issues, diagnosed precisely and treated thoughtfully.",
   },
   {
     slug: "migraines",
     href: "/migraines",
     title: "Migraines & Chronic Headache",
-    summary: "Beyond medication management — interventional options when headaches don't respond.",
+    summary: "Beyond medication management, with interventional options when headaches don't respond.",
   },
   {
     slug: "fibromyalgia",
@@ -106,12 +106,12 @@ export const conditions: Condition[] = [
     slug: "sports-injuries",
     href: "/sports-injuries",
     title: "Sports Injuries",
-    summary: "Get back to your sport — with diagnostics and biologics that respect the timeline.",
+    summary: "Get back to your sport, with diagnostics and biologics that respect the timeline.",
   },
   {
     slug: "post-surgical-pain",
     href: "/post-surgical-pain",
     title: "Post-Surgical Pain",
-    summary: "When surgery resolved the issue but pain remained — interventional options that can help.",
+    summary: "When surgery resolved the issue but pain remained, with interventional options that can help.",
   },
 ];

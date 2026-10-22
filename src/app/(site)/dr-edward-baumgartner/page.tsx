@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
-import JsonLd from "@/components/json-ld";
-import { SITE_URL } from "@/lib/site";
-import { linkedInUrl, txTopDocsUrl } from "@/lib/social";
-import { ORG_ID, FOUNDER_ID, KNOWS_ABOUT, MEDICAL_SPECIALTY, clinicId } from "@/lib/schema";
+import FaqBlock from "@/components/faq-block";
+import { txTopDocsUrl } from "@/lib/social";
+import { hospitalAffiliations } from "@/lib/schema";
 import { CheckBullet } from "@/components/icon-badge";
-import { offices, practice } from "@/lib/nav";
+import { practice } from "@/lib/nav";
+import { physicianFaqs } from "@/lib/page-faqs";
+import { SITE_URL } from "@/lib/site";
 import FinalCta from "@/components/final-cta";
 import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
 export const metadata: Metadata = {
-  title: "Edward Baumgartner Jr., MD",
+  title: { absolute: "Dr. Edward Baumgartner Jr., MD · Houston Pain Medicine" },
   description:
-    "Edward Baumgartner Jr., MD — Houston native, double board-certified in Anesthesiology and Pain Medicine, founder of HTx Pain Institute in Houston and Humble.",
+    "Double board-certified in Anesthesiology and Pain Medicine. Houston native, Rush University trained, founder of HTx Pain Institute in Houston and Humble.",
 };
 
 const facts = [
@@ -22,13 +23,13 @@ const facts = [
   { label: "Board Cert.", value: "Pain Medicine" },
   { label: "Experience", value: "15+ years" },
   { label: "Recognition", value: "Texas Top Doctor" },
-  { label: "Hospitals", value: "Townsen Memorial, Houston Methodist, St. Luke’s Health" },
+  { label: "Hospitals", value: "Townsen Memorial, Houston Methodist Willowbrook, St. Luke's Health" },
   { label: "Founded", value: "2018" },
 ];
 
 const education = [
-  "B.S. in Biomedical Science, Texas A&M University — Magna Cum Laude, with University and Foundation Honors.",
-  "M.D., University of Texas Health Science Center at Houston — awarded the Alpha Omega Alpha Research Fellowship, a research scholarship.",
+  "B.S. in Biomedical Science, Texas A&M University, Magna Cum Laude, with University and Foundation Honors.",
+  "M.D., University of Texas Health Science Center at Houston, awarded the Alpha Omega Alpha Research Fellowship, a research scholarship.",
   "General Surgery Internship (2 years), University of Illinois at Chicago / Mount Sinai Hospital Medical Center.",
   "Anesthesiology Residency, Rush University Medical Center, Chicago.",
   "Pain Medicine Fellowship, Rush University Medical Center, Chicago.",
@@ -36,20 +37,20 @@ const education = [
 ];
 
 const toolkit = [
-  "Intracept Procedure for vertebrogenic low-back pain.",
+  "Basivertebral nerve ablation (BVN) for vertebrogenic low-back pain.",
   "Spinal cord stimulation (trial and permanent implant).",
-  "Radiofrequency ablation — cervical, lumbar, SI, and genicular.",
+  "Radiofrequency ablation, cervical, lumbar, SI, and genicular.",
   "SI joint fusion (LinQ and other systems) and Minuteman lumbar interspinous fusion.",
   "Kyphoplasty for vertebral compression fractures.",
   "MILD procedure for lumbar spinal stenosis.",
   "Epidural steroid injections and selective nerve blocks.",
   "Peripheral nerve blocks, including suprascapular for the shoulder.",
-  "Ultrasound-guided joint injections — knee, hip, and shoulder.",
+  "Ultrasound-guided joint injections, knee, hip, and shoulder.",
   "PRP therapy for tendinopathy and select joint pain.",
 ];
 
 const servicesProvided = [
-  { label: "Intracept Procedure", href: "/intracept-procedure" },
+  { label: "Basivertebral Nerve Ablation (BVN)", href: "/intracept-procedure" },
   { label: "Spinal Cord Stimulation", href: "/spinal-cord-stimulation-specialist" },
   { label: "Radiofrequency Ablation", href: "/radiofrequency-ablation" },
   { label: "Minuteman Lumbar Fusion", href: "/minuteman-procedure" },
@@ -68,57 +69,10 @@ function ArrowIcon() {
   );
 }
 
-/**
- * The founder as a Physician, referenced by `founder` on the organization
- * node. Physician is a Person, so the existing @id stays valid. Only facts
- * this page or the office list already state are claimed: name, the two
- * board certifications, the Anesthesiology specialty (pain medicine has no
- * schema.org enumeration of its own; the page's "Pain Medicine" wording is
- * in knowsAbout and the credential name), both offices by @id, url, and image.
- */
-const physicianLd = {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "@id": FOUNDER_ID,
-  name: "Edward Baumgartner Jr., MD",
-  givenName: "Edward",
-  familyName: "Baumgartner",
-  honorificSuffix: "MD",
-  jobTitle: "Founding Physician",
-  url: `${SITE_URL}/dr-edward-baumgartner`,
-  image: `${SITE_URL}/images/dr-baumgartner.webp`,
-  worksFor: { "@id": ORG_ID },
-  workLocation: offices.map((office) => ({ "@id": clinicId(office) })),
-  medicalSpecialty: MEDICAL_SPECIALTY,
-  knowsAbout: KNOWS_ABOUT,
-  award: "Texas Top Doctor",
-  affiliation: [
-    { "@type": "Organization", name: "Rush Health System" },
-    // Operating privileges, named as each system writes itself. No campuses:
-    // he works across more than one location within these systems.
-    { "@type": "Hospital", name: "Townsen Memorial Hospital" },
-    { "@type": "Hospital", name: "Houston Methodist" },
-    { "@type": "Hospital", name: "St. Luke's Health" },
-  ],
-  sameAs: [linkedInUrl, txTopDocsUrl],
-  hasCredential: [
-    {
-      "@type": "EducationalOccupationalCredential",
-      credentialCategory: "Board Certification",
-      name: "Board Certified in Anesthesiology",
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      credentialCategory: "Board Certification",
-      name: "Board Certified in Pain Medicine",
-    },
-  ],
-};
-
 export default function DrBaumgartnerPage() {
+  const hospitals = hospitalAffiliations.join(", ").replace(/, ([^,]+)$/, ", and $1");
   return (
     <div>
-      <JsonLd data={physicianLd} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -167,7 +121,7 @@ export default function DrBaumgartnerPage() {
               <div className="relative aspect-[4/3] max-h-[60svh] w-full overflow-hidden rounded-2xl bg-line sm:aspect-[3/2] lg:aspect-[3/4] lg:max-h-none">
                 <Image
                   src="/images/dr-baumgartner.webp"
-                  alt="Edward Baumgartner Jr., MD — Founder of HTx Pain Institute"
+                  alt="Edward Baumgartner Jr., MD, founder of HTx Pain Institute"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover object-top"
@@ -218,12 +172,11 @@ export default function DrBaumgartnerPage() {
               board-certified specialist in Anesthesiology and Pain Medicine, with
               over fifteen years of interventional pain medicine experience. He
               served as Medical Director at US Pain &amp; Spine Hospital from
-              2013 to 2018. He founded the practice in 2018 — first as Texas
+              2013 to 2018. He founded the practice in 2018, first as Texas
               Interventional Pain Specialists, then HTx Pain Care, and now HTx
-              Pain Institute — to bring the modern minimally invasive toolkit to
+              Pain Institute, to bring the modern minimally invasive toolkit to
               Houston with the time, precision, and judgment every patient
-              deserves. He operates at Townsen Memorial Hospital, Houston
-              Methodist, and St. Luke&rsquo;s Health.
+              deserves. He operates at {hospitals}.
             </p>
 
             <div className="mt-12 space-y-12">
@@ -232,7 +185,7 @@ export default function DrBaumgartnerPage() {
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                   Dr. Baumgartner&rsquo;s training represents a deliberate
                   progression through some of the most respected institutions in
-                  American medicine — building both academic depth and
+                  American medicine, building both academic depth and
                   procedural breadth.
                 </p>
                 <ul className="mt-5 grid gap-3">
@@ -262,7 +215,7 @@ export default function DrBaumgartnerPage() {
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Dr. Baumgartner has a particular focus on patients who have
-                    been told their only remaining option is spine surgery —
+                    been told their only remaining option is spine surgery,
                     patients who have been through physical therapy, injections,
                     and conservative care without lasting relief, and are
                     looking for an alternative path.
@@ -284,17 +237,17 @@ export default function DrBaumgartnerPage() {
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
                     Dr. Baumgartner founded the practice after experiencing the
-                    realities of group practice — and concluding that
+                    realities of group practice, and concluding that
                     patient-first care required building a different kind of
                     practice from the ground up. He believes the best pain
                     medicine combines{" "}
                     <span className="font-semibold text-navy">technical excellence</span> with{" "}
-                    <span className="font-semibold text-navy">unhurried clinical judgment</span> — the time to
+                    <span className="font-semibold text-navy">unhurried clinical judgment</span>, the time to
                     understand the full picture before recommending a plan.
                   </p>
                   <p className="font-serif text-xl italic leading-snug text-brass-text">
                     &ldquo;Precision. Lasting Relief.&rdquo; is more than a
-                    tagline — it is the standard he holds himself to with every
+                    tagline. It is the standard he holds himself to with every
                     patient.
                   </p>
                 </div>
@@ -319,8 +272,8 @@ export default function DrBaumgartnerPage() {
                     <Link href="/community/kel-strong-foundation" className="font-semibold text-brass-text hover:text-navy">
                       ‘Kel Strong’ Mabatah Foundation
                     </Link>{" "}
-                    financially — a 501(c)(3) funding rehabilitation for
-                    traumatic brain injury survivors — and attended its annual
+                    financially, a 501(c)(3) funding rehabilitation for
+                    traumatic brain injury survivors, and attended its annual
                     fundraising gala.
                   </p>
                   <p>
@@ -366,6 +319,12 @@ export default function DrBaumgartnerPage() {
           </div>
         </div>
       </section>
+
+      <FaqBlock
+        heading="Common questions about Dr. Baumgartner"
+        faqs={physicianFaqs}
+        schemaId={`${SITE_URL}/dr-edward-baumgartner#faq`}
+      />
 
       <InlineBooking />
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
-import { practice } from "@/lib/nav";
-import { libraryVideos, youtubeChannelUrl } from "@/lib/video-library";
+import JsonLd from "@/components/json-ld";
+import { libraryVideoGraph, libraryVideos, youtubeChannelUrl } from "@/lib/video-library";
 import FinalCta from "@/components/final-cta";
 
 export const metadata: Metadata = {
@@ -29,6 +29,7 @@ function YoutubeIcon() {
 export default function VideoLibraryPage() {
   return (
     <div>
+      <JsonLd data={libraryVideoGraph()} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep to-navy">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -41,7 +42,7 @@ export default function VideoLibraryPage() {
             Pain management videos from our Houston practice.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Physician interviews, patient education, and practice stories —
+            Physician interviews, patient education, and practice stories,
             straight from our YouTube channel.
           </p>
         </div>

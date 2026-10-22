@@ -81,16 +81,17 @@ export const conditionDetails: Record<string, ConditionDetail> = {
     slug: "back-pain",
     adLanding: true,
     title: "Back Pain",
-    metaDescription: "Back pain treatment in Houston and Humble. We find the source: disc, facet, SI joint, or nerve, then treat it with targeted, minimally invasive care.",
+    metaDescription:
+      "Back pain care in Houston and Humble. We look for the source first: disc, facet joint, SI joint, vertebral endplate or nerve, then plan treatment.",
     lastReviewed: "2026-09-10",
-    leadLine: "The most common reason patients come to us — and where we have the most to offer.",
+    leadLine: "The most common reason patients come to us, and where we have the most to offer.",
     heroImage: "woman-from-behind-hand-on-lower-back-outdoors.jpg",
     heroImageAlt: "Woman in black athletic wear seen from behind outdoors, pressing one hand to her lower back.",
     intro:
-      "Most adults will experience meaningful back pain at some point. The right care begins with the right diagnosis: is the pain coming from the disc, the facet joint, the SI joint, the endplate, or the nerve? Each of those answers points to a different — and far more effective — treatment.",
+      "Most adults will experience meaningful back pain at some point. The right care begins with the right diagnosis: is the pain coming from the disc, the facet joint, the SI joint, the endplate, or the nerve? Each of those answers points to a different treatment.",
     introParagraphs: [
-      "Back pain is the most common reason patients come to us, and the least useful diagnosis they arrive with. \"Low back pain\" names a location, not a cause. The lumbar spine has several structures that can generate pain independently — the disc and its vertebral endplates, the facet joints at the back of each segment, the sacroiliac joints at the base, and the nerve roots that exit between them. Each produces a recognizable pattern, and each responds to a different treatment.",
-      "That is why the first appointment is spent narrowing the field rather than reaching for a prescription. Where the pain sits, what provokes it, what relieves it, and what your imaging shows will usually shortlist one or two candidates. A diagnostic block then confirms which one is doing the talking. Only after that do we recommend a procedure — because a facet-mediated back is treated very differently from a vertebrogenic one, and the wrong procedure is not a small mistake.",
+      "Back pain is the most common reason patients come to us, and the least useful diagnosis they arrive with. \"Low back pain\" names a location, not a cause. The lumbar spine has several structures that can generate pain independently. Those include the disc and its vertebral endplates, the facet joints at the back of each segment, the sacroiliac joints at the base, and the nerve roots that exit between them. Each produces a recognizable pattern, and each responds to a different treatment.",
+      "That is why the first appointment is spent narrowing the field rather than reaching for a prescription. Where the pain sits, what provokes it, what relieves it, and what your imaging shows will usually shortlist one or two candidates. A diagnostic block then confirms which one is doing the talking. Only after that do we recommend a procedure, because a facet-mediated back is treated very differently from a vertebrogenic one, and the wrong procedure is not a small mistake.",
     ],
     symptoms: [
       "Localized low-back pain",
@@ -110,12 +111,12 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       {
         slug: "radiofrequency-ablation",
         title: "Radiofrequency Ablation",
-        blurb: "Durable relief for confirmed facet- or SI-mediated pain.",
+        blurb: "For confirmed facet- or SI-mediated pain, after test blocks.",
       },
       {
         slug: "intracept-procedure",
-        title: "Intracept Procedure",
-        blurb: "Implant-free relief for vertebrogenic low-back pain.",
+        title: "Basivertebral Nerve Ablation (BVN)",
+        blurb: "Implant-free procedure for vertebrogenic low-back pain.",
       },
       {
         slug: "spinal-cord-stimulation-specialist",
@@ -139,10 +140,10 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
     ],
     diagnosisWorkup: [
-      "Detailed history — where the pain sits, what provokes it, and whether it radiates below the knee.",
+      "Detailed history, including where the pain sits, what provokes it, and whether it radiates below the knee.",
       "Physical exam including range of motion, provocative facet and SI maneuvers, and a neurologic screen.",
       "Review of existing imaging; MRI when the pattern suggests disc, nerve, or endplate involvement.",
-      "Diagnostic medial branch blocks when facet-mediated pain is suspected — two separate blocks are required before radiofrequency ablation.",
+      "Diagnostic medial branch blocks when facet-mediated pain is suspected. Two separate blocks are required before radiofrequency ablation.",
       "Diagnostic sacroiliac injection when pain localizes to the buttock and provocative testing is positive.",
     ],
     whenToSeeSpecialist: [
@@ -150,10 +151,10 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       "Pain radiating into the leg, or numbness and weakness anywhere below the waist.",
       "Pain that wakes you at night or prevents a full day of work.",
       "A prior spine surgery that helped less than expected, or not at all.",
-      "Back pain with fever, unexplained weight loss, or bowel or bladder change — seek care immediately.",
+      "Back pain with fever, unexplained weight loss, or bowel or bladder change. Seek care immediately.",
     ],
     recoveryOutlook:
-      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks is treated with radiofrequency ablation: the procedure itself takes about 15 minutes, most patients return to light activity the next day, and full benefit is reached at about the 6-week mark, commonly lasting 6 to 18 months and repeatable. Vertebrogenic pain treated with Intracept follows a different arc — light activity within a day or two, and most patients back to work inside two weeks. Sacroiliac pain that has failed conservative care may lead to SI joint fusion, where most patients walk unassisted the same day and reach full activity between 6 and 12 weeks. We give you the timeline for your diagnosis, not an average.",
+      "Timelines depend entirely on the source. Facet-mediated pain confirmed on two diagnostic blocks may be treated with radiofrequency ablation. The procedure itself takes about 15 minutes. How long any relief lasts varies, and the procedure can be repeated when it helped. For vertebrogenic pain treated with basivertebral nerve ablation (BVN), return to work timing varies, and your doctor will advise you based on your job and recovery. Sacroiliac pain that has failed conservative care may lead to SI joint fusion. We give you the timeline for your diagnosis, not an average.",
     faqs: [
       {
         q: "Do I need an MRI before my first visit?",
@@ -161,19 +162,19 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
       {
         q: "Why are two blocks needed before radiofrequency ablation?",
-        a: "Two separate diagnostic medial branch blocks on different days confirm that the small nerves we plan to treat are genuinely the source. Both must provide meaningful relief. This is the standard before ablation and what insurers require — and if the blocks do not help, ablation is unlikely to, so we look elsewhere.",
+        a: "Two separate diagnostic medial branch blocks on different days confirm that the small nerves we plan to treat are genuinely the source. Both must provide meaningful relief. This is the standard before ablation and what insurers require. If the blocks do not help, ablation is unlikely to, so we look elsewhere.",
       },
       {
         q: "Is my back pain coming from a disc?",
-        a: "Sometimes, but less often than people expect. Disc herniation more typically produces leg pain than back pain. Pain centered in the back itself is more often facet, sacroiliac, or vertebrogenic in origin — which is what the diagnostic workup is for.",
+        a: "Sometimes, but less often than people expect. Disc herniation more typically produces leg pain than back pain. Pain centered in the back itself is more often facet, sacroiliac, or vertebrogenic in origin, which is what the diagnostic workup is for.",
       },
       {
         q: "Will I need surgery?",
-        a: "Most patients we see do not. A large part of this practice is people who were told surgery was the only option and who had not yet had a specific diagnosis. When surgery genuinely is the right answer, we say so and refer.",
+        a: "Many people who come in were told surgery was the only option and had not yet had a specific diagnosis. When surgery is the right answer, we say so and refer.",
       },
       {
         q: "Can I keep exercising?",
-        a: "In almost all cases yes, and you should. Prolonged rest makes back pain worse. What changes is the type and the load, not whether you move — and we will be specific about that once we know the cause.",
+        a: "In almost all cases yes, and you should. Prolonged rest makes back pain worse. What changes is the type and the load, not whether you move, and we will be specific about that once we know the cause.",
       },
       {
         q: "How long do injections last?",
@@ -185,7 +186,7 @@ export const conditionDetails: Record<string, ConditionDetail> = {
       },
     ],
     philosophyBlurb:
-      "There is no single back pain procedure, and any practice offering one is guessing. Dr. Baumgartner's approach is to name the pain generator before treating it — history, exam, imaging, and where needed a diagnostic block that has to actually confirm the hypothesis. It sometimes takes an extra visit. It also avoids the far more expensive mistake of a well-executed procedure on the wrong structure.",
+      "There is no single back pain procedure, and any practice offering one is guessing. Dr. Baumgartner's approach is to name the pain generator before treating it. That means history, exam, imaging, and where needed a diagnostic block that has to actually confirm the hypothesis. It sometimes takes an extra visit. It also avoids the far more expensive mistake of a well-executed procedure on the wrong structure.",
     relatedConditions: relatedFor("back-pain"),
   },
 
