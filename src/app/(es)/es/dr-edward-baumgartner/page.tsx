@@ -78,7 +78,7 @@ const physicianFaqs = [
   },
   {
     q: "¿Qué seguros acepta el consultorio?",
-    a: "Medicare, muchos planes de Medicare Advantage, Texas Medicaid, la mayoría de los principales planes comerciales y compensación laboral. Los planes cambian, así que llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "Medicare, muchos planes Medicare Advantage, Texas Medicaid, la mayoría de los principales planes comerciales y compensación laboral. Los planes cambian, así que llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿En la oficina hablan español?",

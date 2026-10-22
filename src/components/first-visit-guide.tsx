@@ -114,7 +114,7 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
                 </p>
                 <p>
                   Algunos planes piden un referido. Muchos no. Eso lo revisamos al verificar sus beneficios. Podemos
-                  verificar Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family
+                  verificar Medicare, muchos planes Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family
                   Health Plan, la mayoría de los planes comerciales principales, compensación laboral y casos de
                   lesiones personales. También se puede pagar por cuenta propia. Que un plan aparezca en la lista no
                   garantiza la cobertura. La cobertura depende de su plan.
@@ -137,7 +137,7 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
                 </p>
                 <p>
                   Some insurance plans require a referral. Many don&apos;t. We check that when we verify your benefits.
-                  We can check Medicare, Medicare Advantage plans, Texas Medicaid, TRICARE Prime through US Family
+                  We can check Medicare, many Medicare Advantage plans, Texas Medicaid, TRICARE Prime through US Family
                   Health Plan, most major commercial plans, workers&apos; compensation, and personal injury cases.
                   Self-pay is also available. A plan on our list is not a promise of coverage. Coverage depends on your
                   specific plan.

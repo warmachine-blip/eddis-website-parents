@@ -138,7 +138,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and Medicare Advantage plans when medical-necessity criteria are met (two successful diagnostic medial branch blocks). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling. Call (832) 960-7160 to confirm your benefits.",
+      "Radiofrequency ablation is covered by most major commercial insurance, Medicare, and many Medicare Advantage plans when medical-necessity criteria are met (two successful diagnostic medial branch blocks). Our team verifies your benefits, prior-authorization requirements, and out-of-pocket cost before scheduling. Call (832) 960-7160 to confirm your benefits.",
     expertiseBlurb:
       "Dr. Baumgartner has performed thousands of radiofrequency ablation procedures since 2018, with particular expertise in cervical, lumbar, SI, and genicular targets. We use modern probe technology, live fluoroscopic guidance, and the time it takes to do the procedure right, never rushed by the clock.",
     relatedServices: [
@@ -254,7 +254,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "Image-guided injections and nerve blocks are covered by Medicare, Medicare Advantage, and most commercial insurance plans when medically indicated. Coverage varies by injection type and target. Diagnostic blocks performed before RFA are typically covered as part of the workup. Our team verifies benefits and prior authorization for each planned injection in advance.",
+      "Image-guided injections and nerve blocks are covered by Medicare, many Medicare Advantage plans, and most commercial insurance plans when medically indicated. Coverage varies by injection type and target. Diagnostic blocks performed before RFA are typically covered as part of the workup. Our team verifies benefits and prior authorization for each planned injection in advance.",
     expertiseBlurb:
       "Image-guided injections are not all the same. Dr. Baumgartner performs every injection under live fluoroscopy or ultrasound (no 'landmark-only' injections), uses contrast to confirm needle position before delivering medication, and selects medications and doses based on your specific case. The accuracy and judgment matter — particularly when the injection is also a diagnostic test.",
     relatedServices: [
@@ -371,7 +371,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "Kyphoplasty is covered by Medicare, Medicare Advantage, and most major commercial insurers when MRI confirms an acute or subacute compression fracture and conservative care has not provided relief. Our team handles benefits verification and prior authorization. Self-pay options are available with transparent pricing.",
+      "Kyphoplasty is covered by Medicare, many Medicare Advantage plans, and most major commercial insurers when MRI confirms an acute or subacute compression fracture and conservative care has not provided relief. Our team handles benefits verification and prior authorization. Self-pay options are available with transparent pricing.",
     expertiseBlurb:
       "Dr. Baumgartner has performed hundreds of kyphoplasties since fellowship and is fluoroscopy-fluent in both unipedicular and bipedicular approaches. We are particular about case selection — we will not perform kyphoplasty on patients without a clear acute fracture, and we will refer to surgery in the rare cases where vertebroplasty/kyphoplasty is not enough. Bone-health follow-up is built into every kyphoplasty case.",
     relatedServices: [
@@ -488,7 +488,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "SI joint fusion (LinQ and similar systems) is covered by Medicare, Medicare Advantage, and most major commercial insurers when SI joint pain is confirmed by diagnostic injections and conservative care has failed. Prior authorization is typically required and our team manages it. Workers' compensation and motor-vehicle injury cases are also commonly covered.",
+      "SI joint fusion (LinQ and similar systems) is covered by Medicare, many Medicare Advantage plans, and most major commercial insurers when SI joint pain is confirmed by diagnostic injections and conservative care has failed. Prior authorization is typically required and our team manages it. Workers' compensation and motor-vehicle injury cases are also commonly covered.",
     expertiseBlurb:
       "We use more than one SI fusion system and graft type — including allograft and implant-based options — where most pain practices commit to a single device. That matters because SI joint anatomy varies, and the right implant or graft for your case may not be the same as your neighbor's. Dr. Baumgartner's diagnostic discipline — confirming the SI joint as the pain source before recommending fusion — means we do not perform the procedure on patients who are unlikely to benefit.",
     relatedServices: [
@@ -620,7 +620,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
     insuranceBlurb:
-      "Spinal cord stimulation is covered by Medicare, Medicare Advantage, and most major commercial insurance plans when criteria are met. Both the trial and permanent implant typically require prior authorization, which our team handles for you.",
+      "Spinal cord stimulation is covered by Medicare, many Medicare Advantage plans, and most major commercial insurance plans when criteria are met. Both the trial and permanent implant typically require prior authorization, which our team handles for you.",
     expertiseBlurb:
       "Spinal cord stimulation is one of Dr. Baumgartner's areas of clinical focus. He has performed hundreds of SCS trials and implants since fellowship and works directly with the major device manufacturers — selecting the right system and waveform for each patient rather than defaulting to one platform.",
     relatedServices: [

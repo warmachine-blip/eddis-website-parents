@@ -45,7 +45,7 @@ const appointmentFaqs = [
   },
   {
     q: "¿Qué planes de seguro aceptan?",
-    a: "Trabajamos con Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los principales planes comerciales, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros y llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "Trabajamos con Medicare, muchos planes Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los principales planes comerciales, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros y llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿Hablan español?",
