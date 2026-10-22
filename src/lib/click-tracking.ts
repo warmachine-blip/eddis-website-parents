@@ -15,6 +15,12 @@
 import { practice } from "./nav.ts";
 
 export const APPOINTMENT_PATH = "/request-appointment";
+/** Spanish booking page. Same event and the same parameters as the English path. */
+const APPOINTMENT_PATH_ES = "/es/request-appointment";
+
+function isAppointmentRequestPath(path: string): boolean {
+  return path === APPOINTMENT_PATH || path === APPOINTMENT_PATH_ES;
+}
 
 /** Practice line, then any configured tracking numbers. */
 export function trackedPhoneHrefs(): readonly string[] {
@@ -84,7 +90,7 @@ export function classifyTrackedClick(
 
   if (url.origin === page.origin) {
     const path = url.pathname.replace(/\/$/, "") || "/";
-    if (path === APPOINTMENT_PATH) return "appointment_request_click";
+    if (isAppointmentRequestPath(path)) return "appointment_request_click";
     // In-page jump to the embedded scheduler on the ad landing pages.
     if (url.hash === "#schedule" && url.pathname === page.pathname) {
       return "appointment_request_click";
