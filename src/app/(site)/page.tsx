@@ -211,7 +211,7 @@ export default function Home() {
                   Meet Your Physician
                 </span>
                 <p className="mt-3 max-w-sm font-serif text-2xl leading-tight text-off-white">
-                  Why I founded HTx Pain, and what makes our care different.
+                  Why I founded HTx Pain Institute, and what makes our care different.
                 </p>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function Home() {
                 Meet Your Physician
               </span>
               <p className="mt-3 font-serif text-xl leading-tight text-navy">
-                Why I founded HTx Pain, and what makes our care different.
+                Why I founded HTx Pain Institute, and what makes our care different.
               </p>
             </div>
           </div>

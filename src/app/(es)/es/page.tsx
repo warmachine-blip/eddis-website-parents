@@ -343,7 +343,7 @@ export default function SpanishHomePage() {
                   Conozca a su médico
                 </span>
                 <p className="mt-3 max-w-sm font-serif text-2xl leading-tight text-off-white">
-                  Por qué fundé HTx Pain, y qué hace distinto el cuidado que damos.
+                  Por qué fundé HTx Pain Institute, y qué hace distinto el cuidado que damos.
                 </p>
               </div>
             </div>
@@ -352,7 +352,7 @@ export default function SpanishHomePage() {
                 Conozca a su médico
               </span>
               <p className="mt-3 font-serif text-xl leading-tight text-navy">
-                Por qué fundé HTx Pain, y qué hace distinto el cuidado que damos.
+                Por qué fundé HTx Pain Institute, y qué hace distinto el cuidado que damos.
               </p>
             </div>
           </div>
