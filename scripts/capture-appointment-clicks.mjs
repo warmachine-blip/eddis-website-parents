@@ -90,17 +90,40 @@ async function readDataLayer(page) {
   return page.evaluate(() => window.dataLayer || []);
 }
 
-async function clickAndRecord(page, href) {
-  const locator = page.locator(`a[href="${href}"]`);
-  const count = await locator.count();
-  if (count === 0) return { href, anchors: 0, added: [], hits: [] };
+const TARGETS = ["lang-en", "lang-es", "book-en", "book-es", "phone", "other"];
+
+async function clickNamed(page, name) {
   const hits = [];
   const onRequest = (request) => {
     const reduced = reduceHit(request.url());
     if (reduced) hits.push(reduced);
   };
   page.on("request", onRequest);
-  const pushed = await page.evaluate((targetHref) => {
+  const result = await page.evaluate((targetName) => {
+    const isLang = (anchor) =>
+      Boolean(anchor.closest('[data-language-switch], nav[aria-label="Language"], nav[aria-label="Idioma"]'));
+    const pathOf = (href) => {
+      if (!href || href.startsWith("#") || href.startsWith("tel:")) return "";
+      try {
+        return new URL(href, location.href).pathname.replace(/\/$/, "") || "/";
+      } catch {
+        return "";
+      }
+    };
+    const anchors = [...document.querySelectorAll("a[href]")];
+    const matchers = {
+      "lang-en": (anchor) => isLang(anchor) && anchor.getAttribute("hreflang") === "en",
+      "lang-es": (anchor) => isLang(anchor) && anchor.getAttribute("hreflang") === "es",
+      "book-en": (anchor) => !isLang(anchor) && pathOf(anchor.getAttribute("href")) === "/request-appointment",
+      "book-es": (anchor) => !isLang(anchor) && pathOf(anchor.getAttribute("href")) === "/es/request-appointment",
+      phone: (anchor) => (anchor.getAttribute("href") || "").startsWith("tel:+18329607160"),
+      other: (anchor) => {
+        const path = pathOf(anchor.getAttribute("href"));
+        return !isLang(anchor) && anchor.closest("header") && (path === "/" || path === "/es");
+      },
+    };
+    const anchor = anchors.find(matchers[targetName]);
+    if (!anchor) return { found: false, pushed: [] };
     const captured = [];
     const dataLayer = (window.dataLayer = window.dataLayer || []);
     const original = dataLayer.push.bind(dataLayer);
@@ -108,13 +131,26 @@ async function clickAndRecord(page, href) {
       captured.push(args[0]);
       return original(...args);
     };
-    const anchor = document.querySelector(`a[href="${targetHref}"]`);
     anchor.click();
-    return captured;
-  }, href);
+    return {
+      found: true,
+      href: anchor.getAttribute("href"),
+      text: (anchor.innerText || "").replace(/\s+/g, " ").trim(),
+      languageSwitch: isLang(anchor),
+      pushed: captured,
+    };
+  }, name);
   await page.waitForTimeout(300);
   page.off("request", onRequest);
-  return { href, anchors: count, added: siteEvents(pushed), hits };
+  return {
+    name,
+    href: result.href ?? null,
+    text: result.text ?? null,
+    languageSwitch: result.languageSwitch ?? false,
+    found: result.found,
+    added: siteEvents(result.pushed || []),
+    hits,
+  };
 }
 
 const browser = await chromium.launch({
@@ -158,45 +194,15 @@ try {
       consentDefault: html.includes("ad_storage") || html.includes("ad_user_data"),
     };
 
-    const hrefs = await page.$$eval("a[href]", (anchors) => anchors.map((anchor) => anchor.getAttribute("href")));
-    const wanted = [];
-    const seen = new Set();
-    let sampledOther = false;
-    for (const href of hrefs) {
-      if (!href || seen.has(href) || href.startsWith("#")) continue;
-      const pathName = href.startsWith("tel:") ? href.split("?")[0] : normalizePath(href);
-      const appointment = pathName === "/request-appointment" || pathName === "/es/request-appointment";
-      const phone = href.startsWith("tel:+18329607160");
-      const other = pathName === "/insurance" || pathName === "/es" || pathName === "/";
-      if (!appointment && !phone && !other) continue;
-      if (other) {
-        if (sampledOther) continue;
-        sampledOther = true;
-      }
-      seen.add(href);
-      wanted.push(href);
-    }
-
     await context.close();
 
     const clicks = [];
-    for (const href of wanted) {
+    for (const name of TARGETS) {
       const clickContext = await browser.newContext();
       const clickPage = await clickContext.newPage();
       await clickPage.goto(`${BASE}${path}`, { waitUntil: "domcontentloaded" });
       await clickPage.waitForRequest((request) => request.url().includes("en=page_view"), { timeout: 15000 });
-      await clickPage.evaluate(() => {
-        document.addEventListener(
-          "click",
-          (event) => {
-            const target = event.target;
-            if (!(target instanceof Element)) return;
-            if (target.closest("a")) event.preventDefault();
-          },
-          false,
-        );
-      });
-      const recorded = await clickAndRecord(clickPage, href);
+      const recorded = await clickNamed(clickPage, name);
       recorded.added = recorded.added.filter((entry) => entry.page_path === path);
       recorded.hits = recorded.hits.filter(
         (hit) =>

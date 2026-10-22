@@ -32,6 +32,18 @@ export const NIMBLR_BOOK_ORIGIN = "https://book.nimblr.co";
 
 export type TrackedClick = "appointment_request_click" | "phone_click";
 
+/**
+ * The EN|ES control is not a booking request, even when its href is a booking
+ * page. Phone clicks are left alone.
+ */
+export function trackedClickForControl(
+  kind: TrackedClick | null,
+  languageSwitch: boolean,
+): TrackedClick | null {
+  if (languageSwitch && kind === "appointment_request_click") return null;
+  return kind;
+}
+
 function digits(value: string): string {
   return value.replace(/\D/g, "");
 }

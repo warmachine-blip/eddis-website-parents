@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { pushClickEvent } from "@/lib/analytics";
-import { classifyTrackedClick, samePhone } from "@/lib/click-tracking";
+import { classifyTrackedClick, samePhone, trackedClickForControl } from "@/lib/click-tracking";
 import { trackAdsPhoneConversion } from "@/lib/google-ads";
 
 /**
@@ -50,7 +50,10 @@ export default function AnalyticsClicks() {
         trackAdsPhoneConversion();
       }
 
-      const kind = classifyTrackedClick(href, window.location.href);
+      const kind = trackedClickForControl(
+        classifyTrackedClick(href, window.location.href),
+        anchor.closest("[data-language-switch]") !== null,
+      );
       if (!kind) return;
 
       pushClickEvent(kind, {

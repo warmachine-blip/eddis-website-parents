@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { classifyTrackedClick, samePhone } from "./click-tracking.ts";
+import { classifyTrackedClick, samePhone, trackedClickForControl } from "./click-tracking.ts";
 
 const PAGE = "https://htxpaininstitute.com/contact";
 const PRACTICE = "tel:+18329607160";
@@ -68,6 +68,14 @@ describe("classifyTrackedClick", () => {
     assert.equal(classifyTrackedClick("/es/insurance", pages[2]), null);
     assert.equal(classifyTrackedClick("https://example.com/request-appointment", pages[0]), null);
     assert.equal(classifyTrackedClick("https://example.com/es/request-appointment", pages[0]), null);
+  });
+
+  it("drops a booking click from the language switch and keeps every other click", () => {
+    assert.equal(trackedClickForControl("appointment_request_click", true), null);
+    assert.equal(trackedClickForControl("appointment_request_click", false), "appointment_request_click");
+    assert.equal(trackedClickForControl("phone_click", true), "phone_click");
+    assert.equal(trackedClickForControl("phone_click", false), "phone_click");
+    assert.equal(trackedClickForControl(null, true), null);
   });
 
   it("still counts the in-page scheduler, Nimblr booking, and the practice phone", () => {
