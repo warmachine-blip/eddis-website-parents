@@ -5,12 +5,15 @@ import { serviceDetails } from "@/lib/service-details";
 
 const data = serviceDetails["intracept-procedure"];
 
+// Absolute: the procedure name plus Houston, Texas does not fit the title template.
+const title = "Basivertebral Nerve Ablation (BVN) in Houston, Texas";
+
 export const metadata: Metadata = {
-  title: "Basivertebral Nerve Ablation (BVN)",
+  title: { absolute: title },
   description: data.metaDescription,
   ...socialImage(data.slug, data.heroImageAlt),
 };
 
 export default function Page() {
-  return <ServiceDetailTemplate data={data} />;
+  return <ServiceDetailTemplate data={data} pageName={title} />;
 }

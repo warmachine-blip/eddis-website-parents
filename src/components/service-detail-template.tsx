@@ -14,7 +14,17 @@ import { practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
 import { InlineBooking, StickyBookingBar } from "@/components/booking-actions";
 
-export default function ServiceDetailTemplate({ data }: { data: ServiceDetail }) {
+export default function ServiceDetailTemplate({
+  data,
+  pageName,
+}: {
+  data: ServiceDetail;
+  /**
+   * Rendered document title, when it differs from `${data.title} in Houston`.
+   * Passed through so the MedicalWebPage name matches `<title>`.
+   */
+  pageName?: string;
+}) {
   const url = `${SITE_URL}/${data.slug}`;
 
   /**
@@ -37,7 +47,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetail })
         "@type": "MedicalWebPage",
         "@id": `${url}#webpage`,
         url,
-        name: `${data.title} in Houston`,
+        name: pageName ?? `${data.title} in Houston`,
         description: data.metaDescription,
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": `${url}#procedure` },
