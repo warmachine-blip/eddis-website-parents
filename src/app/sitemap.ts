@@ -102,7 +102,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Spanish twins. hreflang is repeated in the page <head>; the sitemap copy
   // is the same pair, both directions, with English as x-default.
+  // The confirmation page is noindex. Keep the twin for the language switch
+  // and the page head, and leave both URLs out of the sitemap.
+  const sitemapSkip = new Set(["/appointment-confirmed"]);
+
   for (const pair of SPANISH_ROUTES) {
+    if (sitemapSkip.has(pair.en)) continue;
     const enUrl = `${SITE_URL}${pair.en}`;
     const esUrl = `${SITE_URL}${pair.es}`;
     const languages = { en: enUrl, es: esUrl, "x-default": enUrl };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
 import SectionHeading from "@/components/section-heading";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "Ima's Home for Children",
   description:
     "Ima's Home for Children cares for 155 orphaned children in the Philippines. Twelve years of HTx Pain Institute support, five as presenting sponsor of its 5K.",
+  alternates: languageAlternates("/community/imas-home", "/es/community/imas-home"),
 };
 
 const quickLinks = [

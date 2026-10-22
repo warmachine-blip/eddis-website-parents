@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: "Community",
   description:
     "Who HTx Pain Institute supports and partners with: Ima's Home for Children, the ‘Kel Strong’ Mabatah Foundation, and Houston Tennis Academy.",
+  alternates: languageAlternates("/community", "/es/community"),
 };
 
 export default function CommunityPage() {

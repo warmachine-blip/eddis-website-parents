@@ -1,4 +1,5 @@
 import { CheckBullet } from "@/components/icon-badge";
+import { insuranceGroupNamesEs, insurancePlanNamesEs, otherPaymentGroupNameEs } from "@/lib/insurance-es";
 import { insuranceGroups, otherPaymentOptions } from "@/lib/insurance";
 
 function groupId(name: string) {
@@ -6,10 +7,17 @@ function groupId(name: string) {
 }
 
 /** Grouped plan list, using the check-card pattern from /insurance. */
-export default function AcceptedInsuranceList() {
+export default function AcceptedInsuranceList({ locale = "en" }: { locale?: "en" | "es" }) {
+  const spanish = locale === "es";
   const groups = [
-    ...insuranceGroups,
-    { name: "Personal injury and self pay", plans: otherPaymentOptions },
+    ...insuranceGroups.map((group) => ({
+      name: spanish ? (insuranceGroupNamesEs[group.name] ?? group.name) : group.name,
+      plans: group.plans.map((plan) => (spanish ? (insurancePlanNamesEs[plan] ?? plan) : plan)),
+    })),
+    {
+      name: spanish ? otherPaymentGroupNameEs : "Personal injury and self pay",
+      plans: otherPaymentOptions.map((plan) => (spanish ? (insurancePlanNamesEs[plan] ?? plan) : plan)),
+    },
   ];
 
   return (

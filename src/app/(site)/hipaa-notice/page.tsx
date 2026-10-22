@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import LegalPage from "@/components/legal-page";
 import { offices, practice } from "@/lib/nav";
 import FinalCta from "@/components/final-cta";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices",
   description:
     "HTx Pain Institute Notice of Privacy Practices, describing how your protected health information may be used and disclosed.",
+  alternates: languageAlternates("/hipaa-notice", "/es/hipaa-notice"),
 };
 
 const data = {

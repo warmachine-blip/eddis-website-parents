@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "About Our Houston Pain Practice",
   description:
     "Founded by Edward Baumgartner Jr., MD in 2018, HTx Pain Institute brings institute-caliber clinical scope and family-led warmth to Houston pain medicine.",
+  alternates: languageAlternates("/about-us", "/es/about-us"),
 };
 
 const pillars = [

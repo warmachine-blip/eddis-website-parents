@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Breadcrumb from "@/components/breadcrumb";
 import OfficeMap from "@/components/office-map";
 import ContactForm from "@/components/contact-form";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "Contact Our Houston & Humble Offices",
   description:
     "Contact HTx Pain Institute in Houston or Humble by phone, email, or message. Two Houston-area locations, with same-week consultations available.",
+  alternates: languageAlternates("/contact", "/es/contact"),
 };
 
 function PhoneIcon({ className }: { className?: string }) {

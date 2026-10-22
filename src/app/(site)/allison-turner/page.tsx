@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   title: "Allison Turner, DNP, APRN, FNP-C",
   description:
     "Allison Turner, DNP, APRN, FNP-C — Doctor of Nursing Practice at HTx Pain Institute, coordinating consultations, follow-ups, and ongoing pain care.",
+  alternates: languageAlternates("/allison-turner", "/es/allison-turner"),
 };
 
 const facts = [

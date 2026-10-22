@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/spanish";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   title: "Houston & Humble Clinic Locations",
   description:
     "HTx Pain Institute serves Houston, Humble, Spring, The Woodlands, Cypress, Tomball, Kingwood, Atascocita, and surrounding communities.",
+  alternates: languageAlternates("/locations", "/es/locations"),
 };
 
 export default function LocationsPage() {

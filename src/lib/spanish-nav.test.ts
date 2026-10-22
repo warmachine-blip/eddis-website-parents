@@ -47,16 +47,32 @@ describe("spanish nav labels", () => {
     assert.equal(spanishLabel("Basivertebral Nerve Ablation (BVN)"), "Ablación del nervio basivertebral (BVN)");
   });
 
-  it("points the five Spanish pages at their twins and leaves the rest in English", () => {
+  it("points translated pages at their twins and leaves medical pages in English", () => {
     assert.equal(spanishHref("/"), "/es");
     assert.equal(spanishHref("/dr-edward-baumgartner"), "/es/dr-edward-baumgartner");
     assert.equal(spanishHref("/request-appointment"), "/es/request-appointment");
     assert.equal(spanishHref("/insurance"), "/es/insurance");
     assert.equal(spanishHref("/intracept-procedure"), "/es/intracept-procedure");
+    assert.equal(spanishHref("/about-us"), "/es/about-us");
+    assert.equal(spanishHref("/patients"), "/es/patients");
+    assert.equal(spanishHref("/contact"), "/es/contact");
+    assert.equal(spanishHref("/locations/spring-tx"), "/es/locations/spring-tx");
+    assert.equal(spanishHref("/community/kel-strong-foundation"), "/es/community/kel-strong-foundation");
+    assert.equal(spanishHref("/terms-of-use"), "/es/terms-of-use");
+    assert.equal(spanishHref("/hipaa-notice"), "/es/hipaa-notice");
+    assert.equal(spanishHref("/privacy"), "/privacy");
+    assert.equal(spanishHref("/video-library"), "/video-library");
+    assert.equal(spanishHref("/second-opinion"), "/second-opinion");
+    assert.equal(spanishHref("/services"), "/services");
+    assert.equal(spanishHref("/blog"), "/blog");
     assert.equal(spanishHref("/neuropathic-pain"), "/neuropathic-pain");
     assert.equal(localizeNavLink({ label: "About", href: "/about-us" }, false).label, "About");
+    assert.equal(localizeNavLink({ label: "Our Story", href: "/about-us" }, true).href, "/es/about-us");
+    assert.equal(localizeNavLink({ label: "Our Story", href: "/about-us" }, true).englishOnly, false);
     assert.equal(localizeNavLink({ label: "Insurance & Financing", href: "/insurance" }, true).href, "/es/insurance");
     assert.equal(localizeNavLink({ label: "Sciatica", href: "/sciatica" }, true).englishOnly, true);
+    assert.equal(localizeNavLink({ label: "Video Library", href: "/video-library" }, true).englishOnly, true);
+    assert.equal(localizeNavLink({ label: "Privacy", href: "/privacy" }, true).englishOnly, true);
   });
 });
 
@@ -77,11 +93,22 @@ describe("locale switch targets", () => {
     }
   });
 
-  it("does not pretend a community page has a Spanish twin", () => {
+  it("maps a community page to its Spanish twin", () => {
     const target = localeSwitchTarget("/community/kel-strong-foundation");
     assert.equal(target.isSpanish, false);
     assert.equal(target.enHref, "/community/kel-strong-foundation");
+    assert.equal(target.esHref, "/es/community/kel-strong-foundation");
+    assert.equal(target.esFallsBackToHome, false);
+    const back = localeSwitchTarget("/es/community/kel-strong-foundation");
+    assert.equal(back.enHref, "/community/kel-strong-foundation");
+    assert.equal(back.esFallsBackToHome, false);
+  });
+
+  it("keeps a medical page on the English notice", () => {
+    const target = localeSwitchTarget("/sciatica");
     assert.equal(target.esHref, "/es");
     assert.equal(target.esFallsBackToHome, true);
+    const privacy = localeSwitchTarget("/privacy");
+    assert.equal(privacy.esFallsBackToHome, true);
   });
 });
