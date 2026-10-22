@@ -3,25 +3,29 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 import EsFinalCta from "@/components/es-final-cta";
+import FaqAccordion from "@/components/faq-accordion";
 import { CheckBullet } from "@/components/icon-badge";
 import { offices, practice } from "@/lib/nav";
 import { txTopDocsUrl } from "@/lib/social";
 import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
-export const metadata: Metadata = spanishPageMetadata({
-  title: "Edward Baumgartner Jr., MD",
-  description:
-    "Edward Baumgartner Jr., MD, anestesiología y medicina del dolor. Fundador de HTx Pain Institute. Atiende en inglés. El personal habla español.",
-  en: "/dr-edward-baumgartner",
-  es: "/es/dr-edward-baumgartner",
-});
+export const metadata: Metadata = {
+  ...spanishPageMetadata({
+    title: "Edward Baumgartner Jr., MD",
+    description:
+      "Doble certificación en anestesiología y medicina del dolor. De Houston, formado en Rush University, fundador de HTx Pain Institute en Houston y Humble.",
+    en: "/dr-edward-baumgartner",
+    es: "/es/dr-edward-baumgartner",
+  }),
+  title: { absolute: "Dr. Edward Baumgartner Jr., MD · Dolor en Houston" },
+};
 
 const facts = [
   { label: "Certificación", value: "Anestesiología" },
   { label: "Certificación", value: "Medicina del dolor" },
   { label: "Experiencia", value: "Más de 15 años" },
   { label: "Reconocimiento", value: "Texas Top Doctor" },
-  { label: "Hospitales", value: "Townsen Memorial, Houston Methodist, St. Luke's Health" },
+  { label: "Hospitales", value: "Townsen Memorial, Houston Methodist Willowbrook, St. Luke's Health" },
   { label: "Fundado", value: "2018" },
 ];
 
@@ -57,6 +61,37 @@ const servicesProvided = [
   { label: "Procedimiento MILD", href: "/mild-procedure", english: true },
   { label: "Inyecciones epidurales de esteroides", href: "/injections-blocks-specialist", english: true },
   { label: "Terapia con PRP", href: "/prp-procedure", english: true },
+];
+
+const physicianFaqs = [
+  {
+    q: "¿Dónde atiende el Dr. Baumgartner?",
+    a: "En las dos oficinas de HTx Pain Institute: 13323 Dotson Rd, Suite 200, Houston, TX 77070 (área de Willowbrook) y 1485 FM 1960 Bypass Rd. E, Suite 100, Humble, TX 77338. Las dos abren de lunes a viernes, de 7:00 a. m. a 5:00 p. m.",
+  },
+  {
+    q: "¿El Dr. Baumgartner está certificado por la junta?",
+    a: "Sí. Tiene certificación en anestesiología y en medicina del dolor.",
+  },
+  {
+    q: "¿Qué procedimientos realiza?",
+    a: "Los procedimientos incluyen Intracept, pruebas e implantes de estimulación de la médula espinal, ablación por radiofrecuencia, fusión de la articulación SI, fusión lumbar Minuteman, cifoplastia, el procedimiento MILD, inyecciones epidurales de esteroides, bloqueos nerviosos y PRP. Que un procedimiento sea adecuado para usted depende del examen y de los estudios de imagen.",
+  },
+  {
+    q: "¿Qué seguros acepta el consultorio?",
+    a: "Medicare, muchos planes de Medicare Advantage, Texas Medicaid, la mayoría de los planes comerciales grandes y compensación laboral. Los planes cambian, así que llame al (832) 960-7160 para confirmar sus beneficios.",
+  },
+  {
+    q: "¿En la oficina hablan español?",
+    a: "Sí, el personal puede ayudarle en español. El Dr. Baumgartner atiende en inglés. Hablamos español.",
+  },
+  {
+    q: "¿Cuál es su número NPI?",
+    a: "1548402407. Puede consultarlo en el registro nacional NPPES.",
+  },
+  {
+    q: "¿Dónde se formó?",
+    a: "En Texas A&M University (licenciatura), en University of Texas Health Science Center at Houston (M.D.) y en Rush University Medical Center, en Chicago (residencia en anestesiología y fellowship en medicina del dolor).",
+  },
 ];
 
 const officeName: Record<string, string> = {
@@ -171,7 +206,7 @@ export default function SpanishDoctorPage() {
               de US Pain &amp; Spine Hospital de 2013 a 2018. Fundó el consultorio en 2018, primero como Texas
               Interventional Pain Specialists, luego HTx Pain Care y ahora HTx Pain Institute, para traer a Houston el
               conjunto actual de tratamientos mínimamente invasivos, con el tiempo, la precisión y el criterio que cada
-              paciente merece. Opera en Townsen Memorial Hospital, Houston Methodist y St. Luke&apos;s Health.
+              paciente merece. Opera en Townsen Memorial Hospital, Houston Methodist Willowbrook y St. Luke&apos;s Health.
             </p>
 
             <div className="mt-12 space-y-12">
@@ -318,6 +353,16 @@ export default function SpanishDoctorPage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-navy-50">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <h2 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">Preguntas frecuentes</h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">{STAFF_NOTE_ES}</p>
+          <div className="mt-8 max-w-3xl">
+            <FaqAccordion faqs={physicianFaqs} />
           </div>
         </div>
       </section>

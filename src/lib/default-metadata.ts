@@ -9,6 +9,12 @@ import { SITE_URL } from "@/lib/site";
  * separate root layout and no top-level layout.tsx. Edit the title and
  * description here. The Spanish root layout spreads this and overrides the
  * strings it has to.
+ *
+ * These two strings match draft PR #17 (branch
+ * cursor/seo-ai-search-quick-wins-2e1b), which edits them in
+ * src/app/layout.tsx. That file is deleted on this branch, so a merge of the
+ * two drafts conflicts only there. Keep this file and leave layout.tsx
+ * deleted.
  */
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,11 +44,11 @@ export const defaultMetadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   title: {
-    default: "HTx Pain Institute · Precision Pain Management in Houston",
+    default: "HTx Pain Institute · Pain Management Doctor in Houston, TX",
     template: "%s · HTx Pain Institute",
   },
   description:
-    "Precision pain management in Houston and Humble. Double board-certified care, advanced minimally invasive procedures, and a patient-first philosophy.",
+    "Double board-certified pain medicine with Dr. Edward Baumgartner Jr., MD in Houston (Willowbrook) and Humble. Same-week consultations are often available.",
 };
 
 export const defaultViewport: Viewport = {

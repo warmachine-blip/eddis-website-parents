@@ -16,13 +16,16 @@ import { services, type Service } from "@/lib/services";
 import { txTopDocsUrl } from "@/lib/social";
 import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
-export const metadata: Metadata = spanishPageMetadata({
-  title: "Dolor en Houston y Humble",
-  description:
-    "Manejo del dolor en Houston y Humble con el Dr. Edward Baumgartner Jr., MD. El doctor atiende en inglés. El personal habla español.",
-  en: "/",
-  es: "/es",
-});
+export const metadata: Metadata = {
+  ...spanishPageMetadata({
+    title: "Dolor en Houston y Humble",
+    description:
+      "Medicina del dolor con doble certificación, con el Dr. Edward Baumgartner Jr., MD, en Houston (Willowbrook) y Humble. A menudo hay consultas en la misma semana.",
+    en: "/",
+    es: "/es",
+  }),
+  title: { absolute: "HTx Pain Institute · Médico del dolor en Houston, TX" },
+};
 
 const heroStats: { value: string; label: string; href?: string }[] = [
   { value: "15+", label: "Años de experiencia" },
@@ -67,7 +70,7 @@ const whyHtx = [
   },
   {
     title: "Tratamientos de vanguardia",
-    body: "Estimulación de la médula espinal, Intracept, cifoplastia, ablación por radiofrecuencia (RFA) y PRP: el conjunto actual de tratamientos, aplicado con destreza.",
+    body: "Estimulación de la médula espinal, Intracept, cifoplastia, ablación por radiofrecuencia (RFA) y PRP, el conjunto actual de tratamientos, aplicado con destreza.",
   },
   {
     title: "Enfoque no invasivo",
@@ -193,7 +196,7 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
 const injuries = [
   {
     title: "Lesiones y accidentes de trabajo",
-    body: "Atención integral para lesiones en el trabajo: tensión de espalda y cuello, esfuerzo repetitivo y dolor después del incidente. Coordinamos con las aseguradoras de compensación laboral y con los coordinadores del caso.",
+    body: "Atención integral para lesiones en el trabajo. Incluye tensión de espalda y cuello, esfuerzo repetitivo y dolor después del incidente. Coordinamos con las aseguradoras de compensación laboral y con los coordinadores del caso.",
     href: "/work-injuries-accidents",
   },
   {
@@ -236,7 +239,7 @@ export default function SpanishHomePage() {
           <div className="max-w-[520px] text-off-white">
             <div className="mb-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">
               <span className="h-px w-8 bg-brass-light" aria-hidden="true" />
-              Precisión. Alivio duradero.
+              Manejo del dolor en Houston y Humble, TX
             </div>
             <EsHeroHeadline />
             <p className="mb-6 max-w-[520px] text-[20px] leading-[1.6] text-off-white/85 max-md:text-[17px]">
@@ -353,7 +356,7 @@ export default function SpanishHomePage() {
               Edward Baumgartner Jr., MD fundó HTx Pain Institute con una misión clara: traer a Houston el conjunto
               actual de tratamientos intervencionistas, con el tiempo, la precisión y el criterio que cada paciente
               merece. El mismo cuidado que él querría para su propia familia. Opera en Townsen Memorial Hospital, Houston
-              Methodist y St. Luke&apos;s Health.
+              Methodist Willowbrook y St. Luke&apos;s Health.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-charcoal-soft">{STAFF_NOTE_ES}</p>
             <TiltCardGroup className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">

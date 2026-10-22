@@ -8,7 +8,7 @@ import { IconBadge, InfoCard } from "@/components/icon-badge";
 import SectionHeading from "@/components/section-heading";
 import { socialImage } from "@/lib/metadata";
 import { practice } from "@/lib/nav";
-import { CONFIRM_BENEFITS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 const social = socialImage(
   "intracept-procedure",
@@ -17,9 +17,9 @@ const social = socialImage(
 
 export const metadata: Metadata = {
   ...spanishPageMetadata({
-    title: "Intracept en Houston",
+    title: "Procedimiento Intracept en Houston, TX",
     description:
-      "Intracept en Houston y Humble. Procedimiento sin implante, con autorización FDA (FDA-cleared), para el dolor lumbar vertebrogénico en el nervio basivertebral.",
+      "Intracept trata el dolor lumbar vertebrogénico al actuar sobre el nervio basivertebral, sin dejar un implante. Se ofrece en Houston y Humble.",
     en: "/intracept-procedure",
     es: "/es/intracept-procedure",
   }),
@@ -42,7 +42,7 @@ const whoIsItFor = [
   "Dolor lumbar crónico de 6 meses o más.",
   "Cambios de Modic en la MRI, compatibles con dolor vertebrogénico.",
   "El cuidado conservador, incluida la terapia física y las inyecciones, no ha funcionado.",
-  "Pacientes que buscan un alivio duradero, sin implante ni fusión.",
+  "Pacientes que consideran un procedimiento sin implante y sin fusión.",
 ];
 
 const whatToExpect = [
@@ -54,16 +54,16 @@ const whatToExpect = [
 
 const recovery = [
   "Actividad ligera en 1 a 2 días.",
-  "La mayoría de los pacientes vuelven al trabajo en 1 a 2 semanas.",
-  "La mejoría avanza a lo largo de 3 a 6 meses.",
-  "Datos publicados muestran un alivio que se mantiene a los 5 años.",
+  "El tiempo para volver al trabajo varía. Su médico le indicará según su trabajo y su recuperación.",
+  "Cualquier cambio se sigue durante los meses posteriores al tratamiento. Los resultados varían.",
+  "Hay estudios que han seguido a pacientes hasta cinco años después de un solo tratamiento. Los resultados varían de una persona a otra.",
 ];
 
 const risks = [
   "Molestia leve en la zona lumbar del acceso, durante varios días.",
   "Aumento temporal del dolor durante las primeras 1 a 2 semanas, mientras avanza la cicatrización.",
   "Riesgo poco frecuente de infección, sangrado o lesión de un nervio.",
-  "El procedimiento puede no aliviar el dolor si este no es realmente vertebrogénico. Por eso la selección cuidadosa del paciente es esencial.",
+  "El procedimiento puede no aliviar el dolor si este no es realmente vertebrogénico. La selección cuidadosa importa.",
   "No hay complicaciones a largo plazo relacionadas con implantes, porque no los hay.",
 ];
 
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "¿Voy a necesitar una fusión después?",
-    a: "Muchos pacientes que, de otro modo, serían candidatos a una fusión mejoran de forma duradera con Intracept y logran evitar la fusión por completo.",
+    a: "Intracept no quita ni fusiona nada, así que deja la columna como está. Algunos pacientes que estaban considerando una fusión eligen Intracept primero. Que alguna vez se necesite una fusión depende de su condición, e Intracept no la descarta.",
   },
   {
     q: "¿Qué son los cambios de Modic?",
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto dura el alivio?",
-    a: "Datos publicados a 5 años muestran que la mayoría de los pacientes de Intracept mantienen una mejoría importante del dolor y de la función 5 años después de un solo tratamiento.",
+    a: "Hay estudios que han seguido a pacientes hasta cinco años después de un solo tratamiento, y muchos informaron una mejoría duradera del dolor y de la función. Los resultados varían de una persona a otra.",
   },
   {
     q: "¿Se puede hacer Intracept en varios niveles?",
@@ -95,6 +95,10 @@ const faqs = [
   {
     q: "¿El seguro cubre Intracept?",
     a: "Intracept lo cubre Medicare y una lista creciente de seguros comerciales, en particular cuando la imagen confirma cambios de Modic y el cuidado conservador no ha funcionado. Nosotros gestionamos la autorización previa. Llame al (832) 960-7160 para confirmar sus beneficios.",
+  },
+  {
+    q: "¿HTx Pain Institute ofrece Intracept?",
+    a: "Sí. El Dr. Baumgartner realiza Intracept en nuestro consultorio del área de Houston. Llame al (832) 960-7160 para preguntar si los hallazgos de su resonancia podrían encajar.",
   },
 ];
 
@@ -150,7 +154,7 @@ export default function SpanishIntraceptPage() {
             Procedimiento Intracept
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Una opción con autorización FDA (FDA-cleared) para el dolor lumbar vertebrogénico.
+            Un procedimiento FDA-cleared para el dolor lumbar vertebrogénico.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-off-white/80">{STAFF_NOTE_ES}</p>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -180,7 +184,7 @@ export default function SpanishIntraceptPage() {
             <SectionHeading
               eyebrow="Resumen del tratamiento"
               title="Construido en torno al paciente, no al procedimiento."
-              lead="Intracept es un procedimiento con autorización FDA (FDA-cleared) y sin implante para el dolor lumbar crónico de origen vertebrogénico: un dolor que nace en los platillos vertebrales, y no en el disco ni en los músculos. Usa energía de radiofrecuencia para ablacionar el nervio basivertebral, con una mejoría comprobada del dolor y de la función a largo plazo."
+              lead="Intracept es un procedimiento FDA-cleared y sin implante para el dolor lumbar crónico de origen vertebrogénico, un dolor que nace en los platillos vertebrales, y no en el disco ni en los músculos. Usa energía de radiofrecuencia para ablacionar el nervio basivertebral. Los resultados varían de una persona a otra."
             />
           </div>
           <div className="lg:col-span-5">
@@ -191,7 +195,7 @@ export default function SpanishIntraceptPage() {
                   {[
                     ["Lugar", "Ambulatorio, el mismo día"],
                     ["Anestesia", "Sedación y anestesia local"],
-                    ["Recuperación", "Actividad ligera 1 a 2 días; trabajo 1 a 2 semanas"],
+                    ["Recuperación", "El tiempo para retomar la actividad varía"],
                     ["Lo realiza", "Dr. Baumgartner"],
                   ].map(([label, value]) => (
                     <div key={label} className="flex flex-col gap-0.5 border-b border-line pb-3 last:border-b-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
@@ -304,7 +308,8 @@ export default function SpanishIntraceptPage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">
               Intracept lo cubre Medicare y muchos seguros comerciales cuando la MRI muestra cambios de Modic tipo 1 o
               tipo 2 en los platillos y el cuidado conservador no ha funcionado. La cobertura y la autorización previa
-              cambian según el plan. Nuestro equipo gestiona el proceso. {CONFIRM_BENEFITS_ES}
+              cambian según el plan. Nuestro equipo gestiona el proceso. Llame al (832) 960-7160 para confirmar sus
+              beneficios.
             </p>
             <Link
               href="/es/insurance"
@@ -317,8 +322,8 @@ export default function SpanishIntraceptPage() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">Respuestas breves</h3>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-charcoal-soft">
               <li>
-                <span className="font-semibold text-navy">¿Mi seguro lo cubre?</span> Lo verificamos antes de su visita.{" "}
-                {CONFIRM_BENEFITS_ES}
+                <span className="font-semibold text-navy">¿Mi seguro lo cubre?</span> Lo verificamos antes de su visita.
+                Llame al (832) 960-7160 para confirmar sus beneficios.
               </li>
               <li>
                 <span className="font-semibold text-navy">¿Pago por cuenta propia?</span> Sí, con precios claros.
@@ -338,8 +343,8 @@ export default function SpanishIntraceptPage() {
         />
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-charcoal-soft">
           El Dr. Baumgartner es uno de los médicos con experiencia en Intracept en el área de Houston. Conoce los datos
-          publicados del procedimiento y es cuidadoso al elegir a quién se lo ofrece. Intracept solo funciona cuando el
-          dolor es realmente vertebrogénico, y no hacemos el procedimiento en pacientes que no cumplen los criterios.
+          publicados del procedimiento y es cuidadoso al elegir a quién se lo ofrece. Intracept se considera cuando el
+          dolor es vertebrogénico, y no hacemos el procedimiento en pacientes que no cumplen los criterios.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-charcoal-soft">{STAFF_NOTE_ES}</p>
       </section>

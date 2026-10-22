@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
+import FaqAccordion from "@/components/faq-accordion";
 import NimblrScheduler from "@/components/nimblr-scheduler";
 import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
 import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 export const metadata: Metadata = spanishPageMetadata({
-  title: "Pedir cita en Houston",
+  title: "Cita de manejo del dolor en Houston",
   description:
-    "Pida cita en la oficina de Houston o de Humble, o llame al (832) 960-7160. Por lo general hay consultas en la misma semana. El personal habla español.",
+    "Pida cita en línea en Houston (Willowbrook) o Humble, o llame al (832) 960-7160. A menudo hay consultas en la misma semana. El personal habla español.",
   en: "/request-appointment",
   es: "/es/request-appointment",
 });
@@ -32,6 +33,33 @@ const nextSteps = [
   },
 ];
 
+const appointmentFaqs = [
+  {
+    q: "¿Qué debo llevar a la primera visita?",
+    a: "Su identificación con foto, la tarjeta del seguro, una lista de sus medicamentos actuales, y cualquier informe o disco de estudios de imagen y registros de tratamientos previos para el dolor. Si le han operado la columna o una articulación, lleve el informe de la cirugía si lo tiene.",
+  },
+  {
+    q: "¿Necesito una referencia?",
+    a: "Algunos planes de seguro la piden y muchos no. Nuestro equipo lo verifica cuando revisa sus beneficios antes de la visita. Llame al (832) 960-7160 para confirmar sus beneficios.",
+  },
+  {
+    q: "¿Qué planes de seguro aceptan?",
+    a: "Trabajamos con Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los planes comerciales grandes, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros, y llame al (832) 960-7160 para confirmar sus beneficios.",
+  },
+  {
+    q: "¿Hablan español?",
+    a: "Sí. La recepción puede ayudarle en español cuando llame al (832) 960-7160. El Dr. Baumgartner atiende en inglés.",
+  },
+  {
+    q: "¿Qué oficina me conviene?",
+    a: "Elija la que le quede más cerca. La oficina de Houston está en 13323 Dotson Rd, Suite 200, en el área de Willowbrook, y la de Humble en 1485 FM 1960 Bypass Rd. E, Suite 100. Las dos abren de lunes a viernes, de 7:00 a. m. a 5:00 p. m.",
+  },
+  {
+    q: "Vivo fuera de Houston. ¿Pueden verme?",
+    a: "Sí. Llámenos antes de reservar para decirle qué registros y estudios debe enviar antes. La clínica puede revisar los registros antes de que un paciente de fuera de la ciudad viaje, para que la primera visita se centre en un diagnóstico y un plan.",
+  },
+];
+
 export default function SpanishRequestAppointmentPage() {
   return (
     <div>
@@ -43,7 +71,7 @@ export default function SpanishRequestAppointmentPage() {
             Pedir cita
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Programe su consulta.
+            Programe su consulta de manejo del dolor.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Por lo general hay consultas en la misma semana. Elija un horario en el calendario de abajo, o llámenos y la
@@ -117,6 +145,16 @@ export default function SpanishRequestAppointmentPage() {
           </div>
         </div>
       </div>
+
+      <section className="bg-navy-50">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <h2 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">Preguntas frecuentes</h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">{STAFF_NOTE_ES}</p>
+          <div className="mt-8 max-w-3xl">
+            <FaqAccordion faqs={appointmentFaqs} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

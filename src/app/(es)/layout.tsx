@@ -17,11 +17,11 @@ import "../globals.css";
 export const metadata: Metadata = {
   ...defaultMetadata,
   title: {
-    default: "HTx Pain Institute · Dolor en Houston",
+    default: "HTx Pain Institute · Médico del dolor en Houston, TX",
     template: "%s · HTx Pain Institute",
   },
   description:
-    "Manejo del dolor en Houston y Humble. El Dr. Baumgartner atiende en inglés. El personal de la clínica habla español.",
+    "Dolor en Houston (Willowbrook) y Humble. A menudo hay consultas en la misma semana. El Dr. Baumgartner atiende en inglés. El personal habla español.",
   openGraph: {
     ...defaultMetadata.openGraph,
     locale: "es_US",
