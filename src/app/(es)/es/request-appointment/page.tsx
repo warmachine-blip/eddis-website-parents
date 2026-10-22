@@ -115,7 +115,7 @@ export default function SpanishRequestAppointmentPage() {
                 {practice.phone}
               </a>
               <p className="mt-4 text-sm leading-relaxed text-charcoal-soft">
-                Horario de ambas oficinas (Willowbrook y Humble): {HOURS_ES.toLowerCase()}. {HOURS_CLOSED_ES}
+                Horario de ambas oficinas (Willowbrook y Humble): {HOURS_ES.toLowerCase()} {HOURS_CLOSED_ES}
               </p>
             </div>
 

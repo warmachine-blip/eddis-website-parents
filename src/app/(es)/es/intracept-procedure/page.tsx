@@ -400,7 +400,7 @@ export default function SpanishIntraceptPage() {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
               El dolor vertebrogénico viene de los platillos vertebrales, no del disco ni de las articulaciones facetarias. La ablación del
-              nervio basivertebral (BVN) actúa sobre ese nervio y no deja un implante.
+              nervio basivertebral (BVN) actúa sobre el nervio basivertebral y no deja un implante.
             </p>
           </Link>
         </div>
