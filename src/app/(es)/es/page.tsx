@@ -14,7 +14,7 @@ import { offices, practice } from "@/lib/nav";
 import { reviews } from "@/lib/reviews";
 import { services, type Service } from "@/lib/services";
 import { txTopDocsUrl } from "@/lib/social";
-import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { HOURS_CLOSED_ES, HOURS_ES_STANDALONE, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 import { spanishLabel } from "@/lib/spanish-nav";
 
 export const metadata: Metadata = {
@@ -575,7 +575,7 @@ export default function SpanishHomePage() {
                 </a>
               </address>
               <p className="mt-3 text-sm text-charcoal-soft">
-                {HOURS_ES}
+                {HOURS_ES_STANDALONE}
                 <br />
                 {HOURS_CLOSED_ES}
               </p>

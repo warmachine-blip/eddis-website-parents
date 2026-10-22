@@ -7,7 +7,7 @@ import FaqAccordion from "@/components/faq-accordion";
 import { CheckBullet } from "@/components/icon-badge";
 import { offices, practice } from "@/lib/nav";
 import { txTopDocsUrl } from "@/lib/social";
-import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { HOURS_CLOSED_ES, HOURS_ES_STANDALONE, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 export const metadata: Metadata = {
   ...spanishPageMetadata({
@@ -214,7 +214,7 @@ export default function SpanishDoctorPage() {
               <div>
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Dónde atiende</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                  Atiende en las dos oficinas de HTx Pain Institute. {HOURS_ES} {HOURS_CLOSED_ES}
+                  Atiende en las dos oficinas de HTx Pain Institute. {HOURS_ES_STANDALONE} {HOURS_CLOSED_ES}
                 </p>
                 <ul className="mt-5 grid gap-3">
                   {offices.map((office) => (

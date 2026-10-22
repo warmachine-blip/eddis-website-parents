@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/site";
 import { WEBSITE_ID, FOUNDER_ID, clinicId } from "@/lib/schema";
 import { locationDetails, type LocationDetail } from "@/lib/location-details";
 import { offices, practice } from "@/lib/nav";
-import { HOURS_CLOSED_ES, HOURS_ES, STAFF_NOTE_ES } from "@/lib/spanish";
+import { HOURS_CLOSED_ES, HOURS_ES_STANDALONE, STAFF_NOTE_ES } from "@/lib/spanish";
 
 export default function LocationDetailTemplate({
   data,
@@ -151,7 +151,7 @@ export default function LocationDetailTemplate({
                   </p>
                 ) : null}
                 <p className="mt-4 text-sm text-charcoal-soft">
-                  {spanish ? HOURS_ES : practice.hours}
+                  {spanish ? HOURS_ES_STANDALONE : practice.hours}
                   <br />
                   {spanish ? HOURS_CLOSED_ES : practice.hoursWeekend}
                 </p>

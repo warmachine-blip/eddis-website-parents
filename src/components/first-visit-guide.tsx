@@ -30,23 +30,22 @@ function englishHours(): string {
 const bringEn = [
   "Your photo ID",
   "Your insurance card",
-  "A list of your current medicines",
+  "A list of the medicines you take now",
   "Imaging reports or discs, and records from past pain treatment",
-  "The operative report, if you have had spine or joint surgery and you have it",
+  "The operative report from any spine or joint surgery, if you have a copy",
 ];
 
 const bringEs = [
   "Su identificación con foto",
   "Su tarjeta del seguro",
-  "Una lista de los medicamentos que toma ahora",
+  "Una lista de los medicamentos que toma actualmente",
   "Informes o discos de sus estudios de imagen, y expedientes de tratamientos anteriores para el dolor",
-  "El informe de la cirugía, si le han operado la columna o una articulación y lo tiene",
+  "El informe de la cirugía de columna o de articulación, si le operaron y tiene una copia",
 ];
 
 export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es" }) {
   const spanish = locale === "es";
   const insuranceHref = spanish ? "/es/insurance" : "/insurance";
-  const hours = spanish ? `${HOURS_ES} ${HOURS_CLOSED_ES}` : `${englishHours()}. Saturday and Sunday are closed.`;
 
   return (
     <section className="border-t border-line bg-pearl">
@@ -62,25 +61,25 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
             {spanish ? (
               <div className="mt-4 space-y-3 text-sm leading-relaxed text-charcoal-soft">
                 <p>
-                  Usted llega y llena unos formularios breves de registro. También puede llenarlos antes de la cita. La
-                  oficina puede enviárselos por correo electrónico o por correo postal.
+                  Al llegar, usted llenará unos formularios breves de registro. Si prefiere, también puede llenarlos
+                  antes de la cita. La oficina se los puede enviar por correo electrónico o por correo postal.
                 </p>
                 <p>
-                  Después se reúne con el Dr. Baumgartner o con Allison Turner, DNP. En la visita se revisan su
-                  historia, el examen, los estudios de imagen y los tratamientos anteriores. La cita dura lo suficiente
-                  para revisar eso y sus preguntas. Juntos preparamos su plan personalizado.
+                  Después, se reunirá con el Dr. Baumgartner o con Allison Turner, DNP. Juntos revisarán su historial
+                  médico, su examen, sus estudios de imagen y los tratamientos que ya ha recibido. La cita dura lo
+                  suficiente para ver todo eso y contestar sus preguntas. Luego preparamos juntos su plan personalizado.
                 </p>
               </div>
             ) : (
               <div className="mt-4 space-y-3 text-sm leading-relaxed text-charcoal-soft">
                 <p>
-                  You arrive and complete a brief intake. You can also complete the intake forms before the
-                  appointment. The office can email or mail them to you.
+                  When you arrive, you&apos;ll fill out a short intake. If you&apos;d rather do it ahead of time, the
+                  office can email or mail you the forms.
                 </p>
                 <p>
-                  You then meet with Dr. Baumgartner or Allison Turner, DNP. The visit includes a review of your
-                  history, your exam, your imaging, and prior treatments. The appointment is long enough to go through
-                  those and your questions. Together we build your personalized plan.
+                  Next, you&apos;ll meet with Dr. Baumgartner or Allison Turner, DNP. You&apos;ll go over your history,
+                  your exam, your imaging, and any treatments you&apos;ve already tried. The appointment is long enough
+                  to cover all of that and answer your questions. Then we build your personalized plan together.
                 </p>
               </div>
             )}
@@ -95,8 +94,8 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
             </ul>
             <p className="mt-4 text-sm leading-relaxed text-charcoal-soft">
               {spanish
-                ? "No necesita una resonancia magnética nueva antes de la primera visita. Traiga los estudios que ya tenga. Le diremos si hace falta alguno más."
-                : "You do not need a new MRI before the first visit. Bring whatever imaging you already have, and we will tell you whether more is needed."}
+                ? "No necesita una resonancia magnética nueva antes de su primera visita. Traiga los estudios que ya tenga y le diremos si hace falta alguno más."
+                : "You don't need a new MRI before your first visit. Bring whatever imaging you already have, and we'll tell you if you need more."}
             </p>
           </article>
 
@@ -107,20 +106,21 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
             {spanish ? (
               <div className="mt-4 space-y-3 text-sm leading-relaxed text-charcoal-soft">
                 <p>
-                  Cuando le llamemos para confirmar la cita, tenga a mano su tarjeta del seguro. Reunimos lo necesario
-                  para verificar sus beneficios. Nuestro equipo se comunica con su aseguradora antes de la visita para
-                  confirmar la cobertura, los copagos, los deducibles y cualquier autorización previa. Si hay un
-                  problema de cobertura, nos comunicamos con usted antes de la cita.
+                  Cuando le llamemos para confirmar la cita, por favor tenga a mano su tarjeta del seguro para que
+                  podamos reunir lo necesario y verificar sus beneficios. Antes de la visita, nuestro equipo se
+                  comunica con su aseguradora para confirmar la cobertura, los copagos, los deducibles y cualquier
+                  autorización previa. Si hay algún problema con la cobertura, nos comunicaremos con usted antes de la
+                  cita.
                 </p>
                 <p>
-                  Algunos planes piden un referido y muchos no. Eso lo revisamos al verificar sus beneficios. Podemos
+                  Algunos planes piden un referido. Muchos no. Eso lo revisamos al verificar sus beneficios. Podemos
                   verificar Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family
                   Health Plan, la mayoría de los planes comerciales principales, compensación laboral y casos de
                   lesiones personales. También se puede pagar por cuenta propia. Que un plan aparezca en la lista no
                   garantiza la cobertura. La cobertura depende de su plan.
                 </p>
                 <p>
-                  Llame al {practice.phone} para confirmar sus beneficios, o vea la lista completa en la{" "}
+                  Llame al {practice.phone} para confirmar sus beneficios, o vea la lista completa en nuestra{" "}
                   <Link href={insuranceHref} className="font-medium text-brass-text underline">
                     página de seguros
                   </Link>
@@ -130,15 +130,15 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
             ) : (
               <div className="mt-4 space-y-3 text-sm leading-relaxed text-charcoal-soft">
                 <p>
-                  When we call to confirm your appointment, have your insurance card handy. We collect what we need to
-                  verify your benefits. Our team contacts your insurer before the visit to confirm coverage, copays,
-                  deductibles, and any prior authorization. If there is a coverage issue, we will reach out before your
-                  appointment.
+                  When we call to confirm your appointment, please have your insurance card handy so we can collect
+                  what we need to verify your benefits. Before your visit, our team contacts your insurer to confirm
+                  coverage, copays, deductibles, and any prior authorization. If there&apos;s a coverage issue,
+                  we&apos;ll reach out before your appointment.
                 </p>
                 <p>
-                  Some insurance plans require a referral and many do not. We check that when we verify your benefits.
+                  Some insurance plans require a referral. Many don&apos;t. We check that when we verify your benefits.
                   We can check Medicare, Medicare Advantage plans, Texas Medicaid, TRICARE Prime through US Family
-                  Health Plan, most major commercial plans, workers&rsquo; compensation, and personal injury cases.
+                  Health Plan, most major commercial plans, workers&apos; compensation, and personal injury cases.
                   Self-pay is also available. A plan on our list is not a promise of coverage. Coverage depends on your
                   specific plan.
                 </p>
@@ -159,22 +159,26 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
             </h3>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-charcoal-soft">
               {spanish ? (
-                <p>
-                  HTx Pain Institute tiene dos oficinas. Horario de las dos: {HOURS_ES} {HOURS_CLOSED_ES} El teléfono de
-                  las dos oficinas es{" "}
-                  <a
-                    href={practice.phoneHref}
-                    data-phone={practice.phone}
-                    data-analytics-location="request-appointment"
-                    className="font-medium tabular-nums text-brass-text underline phone"
-                  >
-                    {practice.phone}
-                  </a>
-                  . Hay estacionamiento en las dos oficinas.
-                </p>
+                <>
+                  <p>
+                    HTx Pain Institute tiene dos oficinas. Horario de las dos: {HOURS_ES} {HOURS_CLOSED_ES} El teléfono
+                    de las dos oficinas es{" "}
+                    <a
+                      href={practice.phoneHref}
+                      data-phone={practice.phone}
+                      data-analytics-location="request-appointment"
+                      className="font-medium tabular-nums text-brass-text underline phone"
+                    >
+                      {practice.phone}
+                    </a>
+                    . Las dos oficinas tienen estacionamiento.
+                  </p>
+                  <p>Hablamos español.</p>
+                </>
               ) : (
                 <p>
-                  HTx Pain Institute has two offices. Both are open {hours} The phone number for both offices is{" "}
+                  HTx Pain Institute has two offices. Both are open {englishHours()}, and closed Saturday and Sunday.
+                  The phone number for both offices is{" "}
                   <a
                     href={practice.phoneHref}
                     data-phone={practice.phone}
@@ -183,7 +187,7 @@ export default function FirstVisitGuide({ locale = "en" }: { locale?: "en" | "es
                   >
                     {practice.phone}
                   </a>
-                  . There is parking at both offices.
+                  . Both offices have parking.
                 </p>
               )}
             </div>

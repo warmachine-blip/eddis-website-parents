@@ -5,7 +5,7 @@ import OfficeMap from "@/components/office-map";
 import RescheduleCallout from "@/components/reschedule-callout";
 import ReviewsSection from "@/components/reviews-section";
 import { offices, practice } from "@/lib/nav";
-import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { HOURS_CLOSED_ES, HOURS_ES_STANDALONE, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 export const metadata: Metadata = spanishPageMetadata({
   title: "Contacto en Houston y Humble",
@@ -115,7 +115,7 @@ export default function SpanishContactPage() {
                   <dd className="flex items-start gap-2.5">
                     <ClockIcon className="mt-1 h-4 w-4 shrink-0 text-brass-light" />
                     <span>
-                      {HOURS_ES}
+                      {HOURS_ES_STANDALONE}
                       <br />
                       {HOURS_CLOSED_ES}
                     </span>
@@ -189,7 +189,7 @@ export default function SpanishContactPage() {
                   </a>
                 </address>
                 <p className="mt-2 text-sm text-charcoal-soft">
-                  {HOURS_ES}
+                  {HOURS_ES_STANDALONE}
                   <br />
                   {HOURS_CLOSED_ES}
                 </p>
