@@ -15,15 +15,18 @@ const social = socialImage(
   "Ablación del nervio basivertebral (BVN) para dolor lumbar vertebrogénico en HTx Pain Institute",
 );
 
+// Absolute: the procedure name plus Houston, Texas does not fit the title template.
+const title = "Ablación del nervio basivertebral (BVN) en Houston, Texas";
+
 export const metadata: Metadata = {
   ...spanishPageMetadata({
-    title: "Ablación del nervio basivertebral (BVN)",
+    title,
     description:
-      "La ablación del nervio basivertebral (BVN) trata el dolor lumbar vertebrogénico, sin dejar un implante. Se ofrece en Houston y Humble.",
+      "La ablación del nervio basivertebral (BVN), también llamada Intracept, trata el dolor lumbar vertebrogénico sin implante. Se ofrece en Houston, Texas y Humble.",
     en: "/intracept-procedure",
     es: "/es/intracept-procedure",
   }),
-  title: { absolute: "Ablación del nervio basivertebral (BVN) · HTx Pain" },
+  title: { absolute: title },
   openGraph: {
     locale: "es_US",
     url: "/es/intracept-procedure",

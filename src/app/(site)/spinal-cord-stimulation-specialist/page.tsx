@@ -5,12 +5,14 @@ import { serviceDetails } from "@/lib/service-details";
 
 const data = serviceDetails["spinal-cord-stimulation-specialist"];
 
+const title = "Spinal Cord Stimulation in Houston, TX";
+
 export const metadata: Metadata = {
-  title: `${data.title} in Houston`,
+  title,
   description: data.metaDescription,
   ...socialImage(data.slug, data.heroImageAlt),
 };
 
 export default function Page() {
-  return <ServiceDetailTemplate data={data} />;
+  return <ServiceDetailTemplate data={data} pageName={`${title} · HTx Pain Institute`} />;
 }

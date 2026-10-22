@@ -61,7 +61,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "radiofrequency-ablation",
     title: "Radiofrequency Ablation",
     metaDescription:
-      "Radiofrequency ablation in Houston and Humble for back, neck, SI joint and knee pain. Test blocks usually come first. How long relief lasts varies.",
+      "Radiofrequency ablation in Houston, Texas and Humble for back, neck, SI joint, and knee pain. Test blocks usually come first. How long any relief lasts varies.",
     lastReviewed: "2026-09-10",
     heroImage: "surgeon-under-operating-lights.jpg",
     heroImageAlt: "A physician in a blue surgical gown, cap, and mask looks down while working beneath bright overhead procedure lights, flanked by two colleagues seen from behind.",
@@ -281,7 +281,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "kyphoplasty-specialist",
     title: "Kyphoplasty",
     metaDescription:
-      "Kyphoplasty in Houston and Humble for painful vertebral compression fractures. A minimally invasive procedure that stabilizes the bone and relieves pain.",
+      "Kyphoplasty in Houston, Texas and Humble for painful vertebral compression fractures. A balloon and bone cement stabilize the vertebra on a same-day visit.",
     lastReviewed: "2026-09-10",
     heroImage: "older-man-walking-upright-garden-path.jpg",
     heroImageAlt: "A white-haired man in a green shirt, jeans and flat cap walks upright away from the camera along a dirt path lined with green shrubs.",
@@ -516,7 +516,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     adLanding: true,
     title: "Spinal Cord Stimulation",
     metaDescription:
-      "Spinal cord and dorsal root ganglion (DRG) stimulation in Houston and Humble. A trial-first implant that interrupts pain signals. Fully reversible.",
+      "Spinal cord and dorsal root ganglion (DRG) stimulation in Houston, Texas and Humble. A trial comes before an implant. Leads are removed if it is not a fit.",
     lastReviewed: "2026-09-28",
     heroImage: "practitioner-showing-spine-model-to-patient.jpg",
     heroImageAlt: "A clinician holds a color-coded anatomical spine model and explains it to a seated woman in a rehab studio with large windows and plants.",
@@ -647,7 +647,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "intracept-procedure",
     title: "Basivertebral Nerve Ablation (BVN)",
     metaDescription:
-      "Basivertebral nerve ablation (BVN) treats vertebrogenic low back pain by targeting that nerve, with no implant left behind. Offered in Houston and Humble.",
+      "Basivertebral nerve ablation (BVN), also called Intracept, treats vertebrogenic low back pain. No implant is left behind. Offered in Houston, Texas and Humble.",
     lastReviewed: "2026-09-10",
     heroImage: "treatment-intracept-procedure.jpg",
     heroImageAlt: "Basivertebral nerve ablation (BVN) for vertebrogenic low-back pain at HTx Pain Institute",
@@ -872,7 +872,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     slug: "mild-procedure",
     title: "MILD Procedure",
     metaDescription:
-      "MILD procedure for lumbar spinal stenosis at HTx Pain Institute. Outpatient, no implants, walk out the same day. Schedule your consultation today.",
+      "The MILD procedure for lumbar spinal stenosis in Houston, Texas and Humble. Outpatient, no implant, and no general anesthesia. Patients go home the same day.",
     lastReviewed: "2026-09-10",
     heroImage: "fluoroscopy-c-arm-procedure-suite.jpg",
     heroImageAlt: "A fluoroscopy C-arm and patient table in a bright, empty interventional procedure suite with a bank of imaging monitors.",
