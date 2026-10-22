@@ -9,16 +9,17 @@ import NimblrFrame from "@/components/nimblr-frame";
  * (afterInteractive) so it never blocks first paint; the iframe itself is
  * plain HTML so it renders with or without JavaScript.
  */
-export default function NimblrScheduler() {
+export default function NimblrScheduler({ locale = "en" }: { locale?: "en" | "es" }) {
+  const spanish = locale === "es";
   return (
     <div>
       <BookingConversion />
       <Script src={scheduling.scriptSrc} strategy="afterInteractive" />
       <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-        <NimblrFrame src={scheduling.embedUrl} title="Schedule Appointment" />
+        <NimblrFrame src={scheduling.embedUrl} title={spanish ? "Calendario para pedir cita" : "Schedule Appointment"} />
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted">
-        Scheduler not loading?{" "}
+        {spanish ? "¿No carga el calendario? " : "Scheduler not loading? "}
         {/*
           This tab never returns to our site. Nimblr does not post the
           booking message to the opener, so no Ads conversion is sent.
@@ -33,9 +34,9 @@ export default function NimblrScheduler() {
           data-analytics-location="nimblr-scheduler"
           className="font-medium text-brass-text underline"
         >
-          Open it in a new tab
+          {spanish ? "Ábralo en una pestaña nueva" : "Open it in a new tab"}
         </a>{" "}
-        or call{" "}
+        {spanish ? "o llame al " : "or call "}
         <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="nimblr-scheduler" className="font-medium tabular-nums text-brass-text underline phone">
           {practice.phone}
         </a>

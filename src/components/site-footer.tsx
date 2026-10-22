@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { aboutNav, legalNav, offices, patientsNav, practice, servicesNav } from "@/lib/nav";
 import { scheduling } from "@/lib/scheduling";
 import { socialItems } from "@/components/social-icons";
 import CopyrightYear from "@/components/copyright-year";
+import EnglishOnlyMark from "@/components/english-only-mark";
 import FooterFrame from "@/components/footer-frame";
 import FooterServiceLinks from "@/components/footer-service-links";
+import { localizeNavLink, spanishLabel, spanishSocialLabel } from "@/lib/spanish-nav";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -57,24 +62,38 @@ function FooterLink({
   );
 }
 
-// Link columns come from src/lib/nav.ts so the footer can never drift from the header.
-const practiceLinks = [
-  ...aboutNav,
-  { label: "Community", href: "/community" },
-  { label: "Locations", href: "/locations" },
-  { label: "Contact", href: "/contact" },
-];
-
-const serviceLinks = servicesNav.filter((s) => !s.note);
-
-const patientLinks = [
-  ...patientsNav,
-  { label: "Schedule Appointment", href: "/request-appointment", location: "footer" },
-  // External (Nimblr). Patients were phoning the front desk to reschedule.
-  { label: "Reschedule Appointment", href: scheduling.manageUrl, external: true },
-];
+type FooterItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+  location?: string;
+};
 
 export default function SiteFooter() {
+  const path = usePathname() ?? "/";
+  const isSpanish = path === "/es" || path.startsWith("/es/");
+
+  // Link columns come from src/lib/nav.ts so the footer can never drift from the header.
+  const practiceLinks = [
+    ...aboutNav,
+    { label: "Community", href: "/community" },
+    { label: "Locations", href: "/locations" },
+    { label: "Contact", href: "/contact" },
+  ].map((link) => localizeNavLink(link, isSpanish));
+
+  const serviceLinks = servicesNav
+    .filter((link) => !link.note)
+    .map((link) => localizeNavLink(link, isSpanish));
+
+  const patientLinks: (FooterItem & { englishOnly: boolean })[] = [
+    ...patientsNav,
+    { label: "Schedule Appointment", href: "/request-appointment", location: "footer" },
+    // External (Nimblr). Patients were phoning the front desk to reschedule.
+    { label: "Reschedule Appointment", href: scheduling.manageUrl, external: true },
+  ].map((link) => ({ ...link, ...localizeNavLink(link, isSpanish) }));
+
+  const legalLinks = legalNav.map((link) => localizeNavLink(link, isSpanish));
+
   return (
     <FooterFrame>
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-10">
@@ -89,20 +108,21 @@ export default function SiteFooter() {
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-sm font-serif text-lg italic text-brass-light">
-              {practice.tagline}
+              {isSpanish ? "Precisión. Alivio duradero." : practice.tagline}
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-off-white/60">
-              {practice.name}, formerly {practice.formerNames}. Same Dr. Baumgartner,
-              same Houston-area locations, expanded clinical scope.
+              {isSpanish
+                ? `${practice.name}, antes ${practice.formerNames}. El mismo Dr. Baumgartner, las mismas oficinas del área de Houston y un alcance clínico más amplio.`
+                : `${practice.name}, formerly ${practice.formerNames}. Same Dr. Baumgartner, same Houston-area locations, expanded clinical scope.`}
             </p>
-            <ul className="mt-5 flex items-center gap-3" aria-label="Social media">
+            <ul className="mt-5 flex items-center gap-3" aria-label={isSpanish ? "Redes sociales" : "Social media"}>
               {socialItems.map((item) => (
                 <li key={item.key}>
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={item.label}
+                    aria-label={isSpanish ? spanishSocialLabel(item.key, item.label) : item.label}
                     className="flex h-11 w-11 items-center justify-center rounded-full border border-off-white/15 text-off-white/70 transition-colors hover:border-brass-light hover:text-brass-light"
                   >
                     <item.Icon className="h-4 w-4" />
@@ -114,12 +134,15 @@ export default function SiteFooter() {
 
           <div>
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-              Practice
+              {isSpanish ? spanishLabel("Practice") : "Practice"}
             </h3>
             <ul className="mt-4 space-y-1 text-sm">
               {practiceLinks.map((l) => (
                 <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
+                  <FooterLink href={l.href}>
+                    {l.label}
+                    {l.englishOnly ? <EnglishOnlyMark tone="dark" /> : null}
+                  </FooterLink>
                 </li>
               ))}
             </ul>
@@ -127,13 +150,16 @@ export default function SiteFooter() {
 
           <div>
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-              Services
+              {isSpanish ? spanishLabel("Services") : "Services"}
             </h3>
             <ul className="mt-4 space-y-1 text-sm">
               <FooterServiceLinks links={serviceLinks} />
               <li className="pt-1">
                 <FooterLink href="/services">
-                  <span className="font-medium text-brass-light">All Services →</span>
+                  <span className="font-medium text-brass-light">
+                    {isSpanish ? spanishLabel("All Services →") : "All Services →"}
+                    {isSpanish ? <EnglishOnlyMark tone="dark" /> : null}
+                  </span>
                 </FooterLink>
               </li>
             </ul>
@@ -141,13 +167,14 @@ export default function SiteFooter() {
 
           <div>
             <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-              For Patients
+              {isSpanish ? spanishLabel("For Patients") : "For Patients"}
             </h3>
             <ul className="mt-4 space-y-1 text-sm">
               {patientLinks.map((l) => (
                 <li key={l.href}>
-                  <FooterLink href={l.href} external={"external" in l} location={"location" in l ? l.location : undefined}>
+                  <FooterLink href={l.href} external={l.external} location={l.location}>
                     {l.label}
+                    {l.englishOnly ? <EnglishOnlyMark tone="dark" /> : null}
                   </FooterLink>
                 </li>
               ))}
@@ -159,7 +186,10 @@ export default function SiteFooter() {
           {offices.map((office) => (
             <div key={office.key}>
               <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-brass-light">
-                <FooterLink href={office.pageHref}>{office.shortLabel} Office</FooterLink>
+                <FooterLink href={office.pageHref}>
+                  {isSpanish ? `Oficina de ${office.shortLabel}` : `${office.shortLabel} Office`}
+                  {isSpanish ? <EnglishOnlyMark tone="dark" /> : null}
+                </FooterLink>
               </h3>
               <address className="mt-3 not-italic text-sm leading-relaxed text-off-white/75">
                 <a
@@ -171,7 +201,7 @@ export default function SiteFooter() {
                   {office.addressLine1}
                   <br />
                   {office.addressLine2}
-                  <span className="sr-only"> (get directions in Google Maps)</span>
+                  <span className="sr-only">{isSpanish ? " (cómo llegar en Google Maps)" : " (get directions in Google Maps)"}</span>
                 </a>
                 <br />
                 <a href={practice.phoneHref} data-phone={practice.phone} data-analytics-location="footer" className={`min-h-11 py-2 tabular-nums ${footerLinkClass} phone`}>
@@ -187,20 +217,33 @@ export default function SiteFooter() {
 
         <div className="border-t border-off-white/10 pt-8">
           <p className="max-w-3xl text-xs leading-relaxed text-off-white/50">
-            <span className="font-semibold text-off-white/70">Medical disclaimer:</span>{" "}
-            Information on this site is not medical advice. Always consult your
-            physician. Individual results may vary. Content is medically reviewed by
-            Edward Baumgartner Jr., MD.
+            {isSpanish ? (
+              <>
+                <span className="font-semibold text-off-white/70">Aviso médico:</span> La información de este sitio no
+                es consejo médico. Consulte siempre a su médico. Los resultados varían de una persona a otra. El
+                contenido cuenta con la revisión médica de Edward Baumgartner Jr., MD.
+              </>
+            ) : (
+              <>
+                <span className="font-semibold text-off-white/70">Medical disclaimer:</span>{" "}
+                Information on this site is not medical advice. Always consult your
+                physician. Individual results may vary. Content is medically reviewed by
+                Edward Baumgartner Jr., MD.
+              </>
+            )}
           </p>
 
           <div className="mt-6 flex flex-col gap-4 text-xs text-off-white/60 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © <CopyrightYear /> {practice.name}. All rights reserved.
+              © <CopyrightYear /> {practice.name}. {isSpanish ? "Todos los derechos reservados." : "All rights reserved."}
             </p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
-              {legalNav.map((l) => (
+              {legalLinks.map((l) => (
                 <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
+                  <FooterLink href={l.href}>
+                    {l.label}
+                    {l.englishOnly ? <EnglishOnlyMark tone="dark" /> : null}
+                  </FooterLink>
                 </li>
               ))}
             </ul>

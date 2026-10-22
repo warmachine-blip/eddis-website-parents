@@ -11,10 +11,13 @@ import { scheduling } from "@/lib/scheduling";
  */
 export default function RescheduleCallout({
   tone = "light",
+  locale = "en",
 }: {
   tone?: "light" | "dark";
+  locale?: "en" | "es";
 }) {
   const dark = tone === "dark";
+  const spanish = locale === "es";
 
   return (
     <div
@@ -31,22 +34,23 @@ export default function RescheduleCallout({
               dark ? "text-brass-light" : "text-brass-text"
             }`}
           >
-            Already have an appointment?
+            {spanish ? "¿Ya tiene una cita?" : "Already have an appointment?"}
           </p>
           <h2
             className={`mt-2 font-serif text-xl leading-tight sm:text-2xl ${
               dark ? "text-off-white" : "text-navy"
             }`}
           >
-            Reschedule or cancel it yourself, any time.
+            {spanish ? "Reprográmela o cancélela cuando usted quiera." : "Reschedule or cancel it yourself, any time."}
           </h2>
           <p
             className={`mt-2 max-w-xl text-sm leading-relaxed ${
               dark ? "text-off-white/70" : "text-charcoal-soft"
             }`}
           >
-            No need to call during office hours. Change your date and time
-            online in about a minute. Prefer to talk to someone? Call{" "}
+            {spanish
+              ? "No hace falta llamar en el horario de oficina. Puede cambiar la fecha y la hora en línea en aproximadamente un minuto. ¿Prefiere hablar con alguien? Llame al "
+              : "No need to call during office hours. Change your date and time online in about a minute. Prefer to talk to someone? Call "}
             <a
               href={practice.phoneHref} data-phone={practice.phone}
               data-analytics-location="reschedule"
@@ -70,7 +74,7 @@ export default function RescheduleCallout({
               : "border border-navy bg-navy text-off-white hover:bg-navy-deep"
           }`}
         >
-          Reschedule appointment
+          {spanish ? "Reprogramar la cita" : "Reschedule appointment"}
         </a>
       </div>
     </div>

@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { practice, primaryNav } from "@/lib/nav";
 import ContactSocialReveal from "@/components/contact-social-reveal";
+import EnglishOnlyMark from "@/components/english-only-mark";
 import LanguageSwitch from "@/components/language-switch";
-import { localeSwitchTarget, spanishVisibleNavItem } from "@/lib/spanish";
+import { localizeNavLink } from "@/lib/spanish-nav";
+import { localeSwitchTarget } from "@/lib/spanish";
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
@@ -37,6 +39,16 @@ export default function SiteHeader() {
   const bookLabel = isSpanish ? "Pedir cita" : "Schedule Appointment";
   const menuLabel = isSpanish ? "Abrir o cerrar el menú" : "Toggle menu";
   const callLabel = isSpanish ? `Llamar al ${practice.phone}` : `Call ${practice.phone}`;
+  const groups = primaryNav.map((group) => {
+    const items = group.items.map((item) => localizeNavLink(item, isSpanish));
+    return {
+      key: group.label,
+      parent: localizeNavLink({ label: group.label, href: group.href }, isSpanish),
+      items,
+      allEnglish: isSpanish && items.every((item) => item.englishOnly),
+    };
+  });
+  const contact = localizeNavLink({ label: "Contact", href: "/contact" }, isSpanish);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -66,17 +78,17 @@ export default function SiteHeader() {
         </Link>
 
         <nav
-          aria-label="Primary"
-          lang={isSpanish ? "en" : undefined}
+          aria-label={isSpanish ? "Navegación principal" : "Primary"}
           className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:gap-6"
         >
-          {primaryNav.map((group) => (
-            <div key={group.label} className="group relative">
+          {groups.map((group) => (
+            <div key={group.key} className="group relative">
               <Link
-                href={group.href}
+                href={group.parent.href}
                 className="inline-flex items-center gap-1 py-2 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-charcoal-soft transition-colors hover:text-brass-text group-hover:text-brass-text group-focus-within:text-brass-text"
               >
-                {group.label}
+                {group.parent.label}
+                {group.parent.englishOnly ? <EnglishOnlyMark /> : null}
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -92,27 +104,32 @@ export default function SiteHeader() {
               </Link>
 
               <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                <div className="w-72 rounded-sm border border-line bg-off-white p-2 shadow-[0_18px_40px_-24px_rgba(15,26,46,0.35)]">
+                <div className={`${isSpanish ? "w-80" : "w-72"} rounded-sm border border-line bg-off-white p-2 shadow-[0_18px_40px_-24px_rgba(15,26,46,0.35)]`}>
                   <div className="grid max-h-[min(70vh,44rem)] gap-0.5 overflow-y-auto">
-                    {group.items.map((item) => {
-                      const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
-                      return (
-                        <Link
-                          key={item.href}
-                          href={visible.href}
-                          lang={visible.lang}
-                          className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
-                        >
-                          {visible.label}
-                        </Link>
-                      );
-                    })}
+                    {group.allEnglish ? (
+                      <p className="px-3 py-1.5 text-[11px] leading-snug text-charcoal-soft/70">Estas páginas están en inglés.</p>
+                    ) : null}
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
+                      >
+                        {item.label}
+                        {!group.allEnglish && item.englishOnly ? <EnglishOnlyMark /> : null}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           ))}
-          <ContactSocialReveal />
+          <ContactSocialReveal
+            label={contact.label}
+            href={contact.href}
+            markEnglish={contact.englishOnly}
+            translateSocial={isSpanish}
+          />
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-3 lg:ml-0 lg:gap-4">
@@ -162,30 +179,30 @@ export default function SiteHeader() {
       {mobileOpen && (
         <nav
           id="mobile-menu"
-          aria-label="Mobile"
-          lang={isSpanish ? "en" : undefined}
+          aria-label={isSpanish ? "Navegación móvil" : "Mobile"}
           className="max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-line bg-off-white lg:hidden"
         >
           <ul className="divide-y divide-line px-6">
-            {primaryNav.map((group) => {
-              const subId = `mobile-sub-${slugify(group.label)}`;
-              const expanded = mobileGroup === group.label;
+            {groups.map((group) => {
+              const subId = `mobile-sub-${slugify(group.key)}`;
+              const expanded = mobileGroup === group.key;
               return (
-                <li key={group.label}>
+                <li key={group.key}>
                   <div className="flex items-stretch justify-between">
                     <Link
-                      href={group.href}
+                      href={group.parent.href}
                       className="flex min-h-11 flex-1 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
                       onClick={closeMobile}
                     >
-                      {group.label}
+                      {group.parent.label}
+                      {group.parent.englishOnly ? <EnglishOnlyMark /> : null}
                     </Link>
                     <button
                       type="button"
-                      aria-label={`Toggle ${group.label} submenu`}
+                      aria-label={isSpanish ? `Abrir o cerrar el submenú de ${group.parent.label}` : `Toggle ${group.key} submenu`}
                       aria-expanded={expanded}
                       aria-controls={subId}
-                      onClick={() => setMobileGroup(expanded ? null : group.label)}
+                      onClick={() => setMobileGroup(expanded ? null : group.key)}
                       className="-mr-2 flex h-11 w-11 shrink-0 items-center justify-center text-navy"
                     >
                       <svg
@@ -200,21 +217,21 @@ export default function SiteHeader() {
                   </div>
                   {expanded && (
                     <ul id={subId} className="pb-3 pl-2">
-                      {group.items.map((item) => {
-                        const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
-                        return (
-                          <li key={item.href}>
-                            <Link
-                              href={visible.href}
-                              lang={visible.lang}
-                              onClick={closeMobile}
-                              className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft"
-                            >
-                              {visible.label}
-                            </Link>
-                          </li>
-                        );
-                      })}
+                      {group.allEnglish ? (
+                        <li className="py-1 text-[11px] leading-snug text-charcoal-soft/70">Estas páginas están en inglés.</li>
+                      ) : null}
+                      {group.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={closeMobile}
+                            className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft"
+                          >
+                            {item.label}
+                            {!group.allEnglish && item.englishOnly ? <EnglishOnlyMark /> : null}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </li>
@@ -222,11 +239,12 @@ export default function SiteHeader() {
             })}
             <li>
               <Link
-                href="/contact"
+                href={contact.href}
                 className="flex min-h-11 items-center py-3 font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-charcoal"
                 onClick={closeMobile}
               >
-                Contact
+                {contact.label}
+                {contact.englishOnly ? <EnglishOnlyMark /> : null}
               </Link>
             </li>
           </ul>

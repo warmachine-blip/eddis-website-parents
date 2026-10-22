@@ -20,7 +20,15 @@ function ChevronIcon() {
   );
 }
 
-export default function Breadcrumb({ items, dark }: { items: Crumb[]; dark?: boolean }) {
+export default function Breadcrumb({
+  items,
+  dark,
+  ariaLabel = "Breadcrumb",
+}: {
+  items: Crumb[];
+  dark?: boolean;
+  ariaLabel?: string;
+}) {
   const textColor = dark ? "text-off-white/90" : "text-charcoal-soft";
   const currentColor = dark ? "text-off-white" : "text-navy";
 
@@ -44,7 +52,7 @@ export default function Breadcrumb({ items, dark }: { items: Crumb[]; dark?: boo
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      <nav aria-label="Breadcrumb" className={`mb-6 text-xs font-medium ${textColor}`}>
+      <nav aria-label={ariaLabel} className={`mb-6 text-xs font-medium ${textColor}`}>
         <ol className="flex flex-wrap items-center gap-x-1.5">
           {items.map((item, i) => {
             const isLast = i === items.length - 1;

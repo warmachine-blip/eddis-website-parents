@@ -15,6 +15,7 @@ import { reviews } from "@/lib/reviews";
 import { services, type Service } from "@/lib/services";
 import { txTopDocsUrl } from "@/lib/social";
 import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { spanishLabel } from "@/lib/spanish-nav";
 
 export const metadata: Metadata = {
   ...spanishPageMetadata({
@@ -160,7 +161,7 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
     summary: "Dolor que baja por la pierna por compresión o irritación del nervio ciático.",
   },
   "herniated-discs": {
-    title: "Discos herniados",
+    title: "Hernia de disco",
     summary: "Cuando el material blando del interior del disco atraviesa la pared externa e irrita un nervio.",
   },
   "spinal-stenosis": {
@@ -215,7 +216,7 @@ function localizedService(service: Service): Service {
   const copy = serviceCopy[service.slug];
   return {
     ...service,
-    title: copy?.title ?? service.title,
+    title: spanishLabel(service.title),
     summary: copy?.summary ?? service.summary,
     href: service.slug === "intracept-procedure" ? "/es/intracept-procedure" : service.href,
   };
@@ -228,7 +229,7 @@ export default function SpanishHomePage() {
     .filter((condition) => !condition.deEmphasized)
     .map((condition) => {
       const copy = conditionCopy[condition.slug];
-      return copy ? { ...condition, title: copy.title, summary: copy.summary } : condition;
+      return copy ? { ...condition, title: spanishLabel(condition.title), summary: copy.summary } : condition;
     });
 
   return (
@@ -298,7 +299,19 @@ export default function SpanishHomePage() {
         </div>
       </section>
 
-      <ScrollStroke />
+      <ScrollStroke
+        copy={{
+          eyebrow: "Nuestra filosofía",
+          title: (
+            <>
+              Un camino preciso,
+              <br />
+              trazado para usted.
+            </>
+          ),
+          body: "No hay dos pacientes que sientan el dolor de la misma manera, así que los planes de tratamiento tampoco deberían ser iguales.",
+        }}
+      />
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
