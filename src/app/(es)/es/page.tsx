@@ -235,7 +235,7 @@ export default function SpanishHomePage() {
   return (
     <>
       <section className="relative flex items-center overflow-hidden bg-charcoal max-md:min-h-[70svh] max-md:flex-col md:min-h-[88svh]">
-        <HeroBackground />
+        <HeroBackground alt="Pasillo de la clínica con puertas de vidrio, piso que parece madera y luces empotradas en el techo." />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-[100px]">
           <div className="max-w-[520px] text-off-white">
             <div className="mb-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brass-light">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
+import FirstVisitGuide from "@/components/first-visit-guide";
 import NimblrScheduler from "@/components/nimblr-scheduler";
 import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
@@ -146,6 +147,8 @@ export default function SpanishRequestAppointmentPage() {
           </div>
         </div>
       </div>
+
+      <FirstVisitGuide locale="es" />
 
       <section className="bg-navy-50">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

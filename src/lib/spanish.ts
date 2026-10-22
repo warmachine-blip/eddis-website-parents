@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { practice } from "./nav.ts";
 
 /**
  * English pages that have a Spanish twin. Anything else sends the ES control
@@ -62,6 +63,18 @@ export function languageAlternates(en: string, es: string): NonNullable<Metadata
   };
 }
 
+/**
+ * Same card as the English site (`public/images/og/htx-pain-institute-card.jpg`).
+ * A page `openGraph` object replaces the layout's, so the image has to live
+ * here or /es ships with no share image. Alt text is for the Spanish pages.
+ */
+const SPANISH_SHARE_IMAGE = {
+  url: "/images/og/htx-pain-institute-card.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Edward Baumgartner Jr., MD, junto al logotipo de HTx Pain Institute",
+};
+
 export function spanishPageMetadata(opts: {
   title: string;
   description: string;
@@ -76,8 +89,15 @@ export function spanishPageMetadata(opts: {
       canonical: opts.es,
     },
     openGraph: {
+      type: "website",
+      siteName: practice.name,
       locale: "es_US",
       url: opts.es,
+      images: [SPANISH_SHARE_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [SPANISH_SHARE_IMAGE],
     },
   };
 }

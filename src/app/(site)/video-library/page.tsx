@@ -65,7 +65,7 @@ export default function VideoLibraryPage() {
                     src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
                     srcSet={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg 480w, https://i.ytimg.com/vi/${video.videoId}/maxresdefault.jpg 1280w`}
                     sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 92vw"
-                    alt=""
+                    alt={video.alt}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />

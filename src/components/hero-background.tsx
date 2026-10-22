@@ -52,7 +52,10 @@ function loadVideoSnapshot() {
   return afterWindowLoad && window.matchMedia(MOTION_OK).matches;
 }
 
-export default function HeroBackground() {
+const DEFAULT_HERO_ALT =
+  "Clinic hallway with glass doors, wood-look flooring, and recessed ceiling lights.";
+
+export default function HeroBackground({ alt = DEFAULT_HERO_ALT }: { alt?: string }) {
   preload(HERO_POSTER, { as: "image", fetchPriority: "high" });
   const videoRef = useRef<HTMLVideoElement>(null);
   const loadVideo = useSyncExternalStore(subscribe, loadVideoSnapshot, () => false);
@@ -116,7 +119,7 @@ export default function HeroBackground() {
     <div className="absolute inset-0" aria-hidden="true">
       <Image
         src={HERO_POSTER}
-        alt=""
+        alt={alt}
         fill
         priority
         unoptimized
