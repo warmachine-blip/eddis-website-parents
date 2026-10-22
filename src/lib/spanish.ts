@@ -59,6 +59,24 @@ export function spanishPageMetadata(opts: {
   };
 }
 
+/** Visible procedure name. The brand Intracept appears once, on the Spanish procedure page. */
+export const BVN_TITLE_ES = "Ablación del nervio basivertebral (BVN)";
+
+/**
+ * On Spanish pages, show the Spanish procedure name and open the Spanish page.
+ * English pages keep the shared label from the service list.
+ */
+export function spanishVisibleNavItem(
+  href: string,
+  label: string,
+  isSpanish: boolean,
+): { href: string; label: string; lang?: "es" } {
+  if (isSpanish && href === "/intracept-procedure") {
+    return { href: "/es/intracept-procedure", label: BVN_TITLE_ES, lang: "es" };
+  }
+  return { href, label };
+}
+
 export function localeSwitchTarget(pathname: string): {
   isSpanish: boolean;
   enHref: string;

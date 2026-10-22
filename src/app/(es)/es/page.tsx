@@ -70,7 +70,7 @@ const whyHtx = [
   },
   {
     title: "Tratamientos de vanguardia",
-    body: "Estimulación de la médula espinal, Intracept, cifoplastia, ablación por radiofrecuencia (RFA) y PRP, el conjunto actual de tratamientos, aplicado con destreza.",
+    body: "Estimulación de la médula espinal, ablación del nervio basivertebral (BVN), cifoplastia, ablación por radiofrecuencia (RFA) y PRP, el conjunto actual de tratamientos, aplicado con destreza.",
   },
   {
     title: "Enfoque no invasivo",
@@ -101,7 +101,7 @@ const serviceCopy: Record<string, { title: string; summary: string }> = {
       "Sistema implantable que envía campos eléctricos suaves para bloquear las señales de dolor antes de que lleguen al cerebro.",
   },
   "intracept-procedure": {
-    title: "Procedimiento Intracept",
+    title: "Ablación del nervio basivertebral (BVN)",
     summary: "Actúa sobre el nervio basivertebral para tratar el dolor lumbar crónico en su origen anatómico.",
   },
   "prp-procedure": {
@@ -414,7 +414,7 @@ export default function SpanishHomePage() {
             lead="Procedimientos con guía de imagen, terapias regenerativas y el conjunto moderno y completo de la medicina del dolor, aplicados con la precisión y el criterio que cada paciente merece."
           />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-charcoal-soft">
-            Estas páginas están en inglés, excepto Intracept.
+            Estas páginas están en inglés, excepto la ablación del nervio basivertebral (BVN).
           </p>
           <TiltCardGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {liveServices.map((service) => (

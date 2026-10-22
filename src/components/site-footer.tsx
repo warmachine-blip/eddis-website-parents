@@ -6,6 +6,7 @@ import { scheduling } from "@/lib/scheduling";
 import { socialItems } from "@/components/social-icons";
 import CopyrightYear from "@/components/copyright-year";
 import FooterFrame from "@/components/footer-frame";
+import FooterServiceLinks from "@/components/footer-service-links";
 
 /**
  * Underline sweeps in from the left on hover, retracts to the right on
@@ -129,11 +130,7 @@ export default function SiteFooter() {
               Services
             </h3>
             <ul className="mt-4 space-y-1 text-sm">
-              {serviceLinks.map((l) => (
-                <li key={l.href}>
-                  <FooterLink href={l.href}>{l.label}</FooterLink>
-                </li>
-              ))}
+              <FooterServiceLinks links={serviceLinks} />
               <li className="pt-1">
                 <FooterLink href="/services">
                   <span className="font-medium text-brass-light">All Services →</span>

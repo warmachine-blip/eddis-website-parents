@@ -10,10 +10,9 @@ import { SITE_URL } from "@/lib/site";
  * description here. The Spanish root layout spreads this and overrides the
  * strings it has to.
  *
- * These two strings match draft PR #17 (branch
- * cursor/seo-ai-search-quick-wins-2e1b), which edits them in
- * src/app/layout.tsx. That file is deleted on this branch, so a merge of the
- * two drafts conflicts only there. Keep this file and leave layout.tsx
+ * The title and description are the ones from main after PR #17. That pull
+ * request edited them in src/app/layout.tsx. This branch deletes that file so
+ * Spanish can have its own root layout. Keep this file and leave layout.tsx
  * deleted.
  */
 export const defaultMetadata: Metadata = {

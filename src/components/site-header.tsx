@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { practice, primaryNav } from "@/lib/nav";
 import ContactSocialReveal from "@/components/contact-social-reveal";
 import LanguageSwitch from "@/components/language-switch";
-import { localeSwitchTarget } from "@/lib/spanish";
+import { localeSwitchTarget, spanishVisibleNavItem } from "@/lib/spanish";
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
@@ -94,15 +94,19 @@ export default function SiteHeader() {
               <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 <div className="w-72 rounded-sm border border-line bg-off-white p-2 shadow-[0_18px_40px_-24px_rgba(15,26,46,0.35)]">
                   <div className="grid max-h-[min(70vh,44rem)] gap-0.5 overflow-y-auto">
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                    {group.items.map((item) => {
+                      const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={visible.href}
+                          lang={visible.lang}
+                          className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
+                        >
+                          {visible.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -196,13 +200,21 @@ export default function SiteHeader() {
                   </div>
                   {expanded && (
                     <ul id={subId} className="pb-3 pl-2">
-                      {group.items.map((item) => (
-                        <li key={item.href}>
-                          <Link href={item.href} onClick={closeMobile} className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft">
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
+                      {group.items.map((item) => {
+                        const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              href={visible.href}
+                              lang={visible.lang}
+                              onClick={closeMobile}
+                              className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft"
+                            >
+                              {visible.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </li>

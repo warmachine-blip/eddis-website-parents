@@ -39,7 +39,7 @@ const education = [
 ];
 
 const toolkit = [
-  "Procedimiento Intracept para el dolor lumbar vertebrogénico.",
+  "Ablación del nervio basivertebral (BVN) para el dolor lumbar vertebrogénico.",
   "Estimulación de la médula espinal (prueba y implante permanente).",
   "Ablación por radiofrecuencia: cervical, lumbar, articulación SI y genicular.",
   "Fusión de la articulación SI (LinQ y otros sistemas) y fusión interespinosa lumbar Minuteman.",
@@ -52,7 +52,7 @@ const toolkit = [
 ];
 
 const servicesProvided = [
-  { label: "Procedimiento Intracept", href: "/es/intracept-procedure", english: false },
+  { label: "Ablación del nervio basivertebral (BVN)", href: "/es/intracept-procedure", english: false },
   { label: "Estimulación de la médula espinal", href: "/spinal-cord-stimulation-specialist", english: true },
   { label: "Ablación por radiofrecuencia", href: "/radiofrequency-ablation", english: true },
   { label: "Fusión lumbar Minuteman", href: "/minuteman-procedure", english: true },
@@ -74,7 +74,7 @@ const physicianFaqs = [
   },
   {
     q: "¿Qué procedimientos realiza?",
-    a: "Los procedimientos incluyen Intracept, pruebas e implantes de estimulación de la médula espinal, ablación por radiofrecuencia, fusión de la articulación SI, fusión lumbar Minuteman, cifoplastia, el procedimiento MILD, inyecciones epidurales de esteroides, bloqueos nerviosos y PRP. Que un procedimiento sea adecuado para usted depende del examen y de los estudios de imagen.",
+    a: "Los procedimientos incluyen la ablación del nervio basivertebral (BVN), pruebas e implantes de estimulación de la médula espinal, ablación por radiofrecuencia, fusión de la articulación SI, fusión lumbar Minuteman, cifoplastia, el procedimiento MILD, inyecciones epidurales de esteroides, bloqueos nerviosos y PRP. Que un procedimiento sea adecuado para usted depende del examen y de los estudios de imagen.",
   },
   {
     q: "¿Qué seguros acepta el consultorio?",
@@ -337,7 +337,7 @@ export default function SpanishDoctorPage() {
             <div className="mt-12 rounded-2xl border border-line bg-off-white p-7">
               <h3 className="font-serif text-xl text-navy">Servicios que ofrece el Dr. Baumgartner</h3>
               <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
-                La página de Intracept está en español. Las demás están en inglés.
+                La página de la ablación del nervio basivertebral (BVN) está en español. Las demás están en inglés.
               </p>
               <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {servicesProvided.map((service) => (

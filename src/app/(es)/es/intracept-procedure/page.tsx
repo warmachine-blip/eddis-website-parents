@@ -12,14 +12,14 @@ import { spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 const social = socialImage(
   "intracept-procedure",
-  "Procedimiento Intracept para dolor lumbar vertebrogénico en HTx Pain Institute",
+  "Ablación del nervio basivertebral (BVN) para dolor lumbar vertebrogénico en HTx Pain Institute",
 );
 
 export const metadata: Metadata = {
   ...spanishPageMetadata({
-    title: "Procedimiento Intracept en Houston, TX",
+    title: "Ablación del nervio basivertebral (BVN)",
     description:
-      "Intracept trata el dolor lumbar vertebrogénico al actuar sobre el nervio basivertebral, sin dejar un implante. Se ofrece en Houston y Humble.",
+      "La ablación del nervio basivertebral (BVN) trata el dolor lumbar vertebrogénico, sin dejar un implante. Se ofrece en Houston y Humble.",
     en: "/intracept-procedure",
     es: "/es/intracept-procedure",
   }),
@@ -70,35 +70,35 @@ const risks = [
 const faqs = [
   {
     q: "¿En qué se diferencia de la ablación por radiofrecuencia?",
-    a: "La ablación por radiofrecuencia habitual actúa sobre los pequeños nervios de la rama medial, fuera de la columna. Intracept actúa sobre otro nervio, el nervio basivertebral, dentro de la vértebra, que lleva señales de dolor vertebrogénico que la ablación tradicional no trata.",
+    a: "La ablación por radiofrecuencia habitual actúa sobre los pequeños nervios de la rama medial, fuera de la columna. La ablación del nervio basivertebral actúa sobre otro nervio, dentro de la vértebra, que lleva señales de dolor vertebrogénico que la ablación tradicional no trata.",
   },
   {
     q: "¿Voy a necesitar una fusión después?",
-    a: "Intracept no quita ni fusiona nada, así que deja la columna como está. Algunos pacientes que estaban considerando una fusión eligen Intracept primero. Que alguna vez se necesite una fusión depende de su condición, e Intracept no la descarta.",
+    a: "La ablación del nervio basivertebral no quita ni fusiona nada, así que deja la columna como está. Algunos pacientes que estaban considerando una fusión eligen este procedimiento primero. Que alguna vez se necesite una fusión depende de su condición, y esta ablación no la descarta.",
   },
   {
     q: "¿Qué son los cambios de Modic?",
-    a: "Los cambios de Modic son cambios de señal en los platillos vertebrales que se ven en la resonancia magnética. Los tipos 1 y 2 se asocian con el dolor vertebrogénico, un dolor que nace en el platillo, y son el signo en la imagen que indica si Intracept puede ser una opción.",
+    a: "Los cambios de Modic son cambios de señal en los platillos vertebrales que se ven en la resonancia magnética. Los tipos 1 y 2 se asocian con el dolor vertebrogénico, un dolor que nace en el platillo, y son el signo en la imagen que indica si la ablación del nervio basivertebral puede ser una opción.",
   },
   {
     q: "¿Queda algo en mi cuerpo después?",
-    a: "No. Intracept no deja implante. El nervio basivertebral se calienta y se ablaciona con energía de radiofrecuencia controlada. No se quita ni se extirpa nada, y no queda ningún aparato. Con el tiempo, el hueso cicatriza alrededor de la zona tratada.",
+    a: "No. La ablación del nervio basivertebral no deja implante. El nervio basivertebral se calienta y se ablaciona con energía de radiofrecuencia controlada. No se quita ni se extirpa nada, y no queda ningún aparato. Con el tiempo, el hueso cicatriza alrededor de la zona tratada.",
   },
   {
     q: "¿Cuánto dura el alivio?",
     a: "Hay estudios que han seguido a pacientes hasta cinco años después de un solo tratamiento, y muchos informaron una mejoría duradera del dolor y de la función. Los resultados varían de una persona a otra.",
   },
   {
-    q: "¿Se puede hacer Intracept en varios niveles?",
-    a: "Sí. Intracept se puede hacer en uno o en varios niveles lumbares en un mismo procedimiento, según qué platillos muestren cambios de Modic en su MRI.",
+    q: "¿Se puede hacer la ablación del nervio basivertebral en varios niveles?",
+    a: "Sí. Se puede hacer en uno o en varios niveles lumbares en un mismo procedimiento, según qué platillos muestren cambios de Modic en su MRI.",
   },
   {
-    q: "¿El seguro cubre Intracept?",
-    a: "Intracept lo cubre Medicare y una lista creciente de seguros comerciales, en particular cuando la imagen confirma cambios de Modic y el cuidado conservador no ha funcionado. Nosotros gestionamos la autorización previa. Llame al (832) 960-7160 para confirmar sus beneficios.",
+    q: "¿El seguro cubre la ablación del nervio basivertebral?",
+    a: "La cubre Medicare y una lista creciente de seguros comerciales, en particular cuando la imagen confirma cambios de Modic y el cuidado conservador no ha funcionado. Nosotros gestionamos la autorización previa. Llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
-    q: "¿HTx Pain Institute ofrece Intracept?",
-    a: "Sí. El Dr. Baumgartner realiza Intracept en nuestro consultorio del área de Houston. Llame al (832) 960-7160 para preguntar si los hallazgos de su resonancia podrían encajar.",
+    q: "¿HTx Pain Institute ofrece la ablación del nervio basivertebral?",
+    a: "Sí. El Dr. Baumgartner la realiza en nuestro consultorio del área de Houston. Llame al (832) 960-7160 para preguntar si los hallazgos de su resonancia podrían encajar.",
   },
 ];
 
@@ -143,15 +143,15 @@ export default function SpanishIntraceptPage() {
             items={[
               { label: "Inicio", href: "/es" },
               { label: "Servicios", href: "/services" },
-              { label: "Procedimiento Intracept" },
+              { label: "Ablación del nervio basivertebral (BVN)" },
             ]}
           />
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brass-light">
             <span className="h-px w-8 bg-current opacity-70" />
-            Intracept
+            Ablación del nervio basivertebral (BVN)
           </p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-tight text-off-white sm:text-5xl">
-            Procedimiento Intracept
+            Ablación del nervio basivertebral (BVN)
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
             Un procedimiento FDA-cleared para el dolor lumbar vertebrogénico.
@@ -184,7 +184,7 @@ export default function SpanishIntraceptPage() {
             <SectionHeading
               eyebrow="Resumen del tratamiento"
               title="Construido en torno al paciente, no al procedimiento."
-              lead="Intracept es un procedimiento FDA-cleared y sin implante para el dolor lumbar crónico de origen vertebrogénico, un dolor que nace en los platillos vertebrales, y no en el disco ni en los músculos. Usa energía de radiofrecuencia para ablacionar el nervio basivertebral. Los resultados varían de una persona a otra."
+              lead="La ablación del nervio basivertebral (BVN) es un procedimiento FDA-cleared y sin implante para el dolor lumbar crónico de origen vertebrogénico, un dolor que nace en los platillos vertebrales, y no en el disco ni en los músculos. Usa energía de radiofrecuencia para ablacionar el nervio basivertebral. También se conoce como Intracept. Los resultados varían de una persona a otra."
             />
           </div>
           <div className="lg:col-span-5">
@@ -215,7 +215,7 @@ export default function SpanishIntraceptPage() {
               <div className="relative isolate aspect-[4/3] overflow-hidden rounded-2xl bg-line">
                 <Image
                   src="/images/treatment-intracept-procedure.jpg"
-                  alt="Procedimiento Intracept para dolor lumbar vertebrogénico en HTx Pain Institute"
+                  alt="Ablación del nervio basivertebral (BVN) para dolor lumbar vertebrogénico en HTx Pain Institute"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
                   className="object-cover object-[50%_35%]"
@@ -306,7 +306,7 @@ export default function SpanishIntraceptPage() {
               Verificamos sus beneficios antes de la visita.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">
-              Intracept lo cubre Medicare y muchos seguros comerciales cuando la MRI muestra cambios de Modic tipo 1 o
+              La ablación del nervio basivertebral la cubre Medicare y muchos seguros comerciales cuando la MRI muestra cambios de Modic tipo 1 o
               tipo 2 en los platillos y el cuidado conservador no ha funcionado. La cobertura y la autorización previa
               cambian según el plan. Nuestro equipo gestiona el proceso. Llame al (832) 960-7160 para confirmar sus
               beneficios.
@@ -339,19 +339,20 @@ export default function SpanishIntraceptPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <SectionHeading
           eyebrow="Experiencia"
-          title="El estándar del cuidado con Intracept, llevado al lugar que le corresponde."
+          title="El estándar del cuidado con la ablación del nervio basivertebral (BVN), llevado al lugar que le corresponde."
         />
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-charcoal-soft">
-          El Dr. Baumgartner es uno de los médicos con experiencia en Intracept en el área de Houston. Conoce los datos
-          publicados del procedimiento y es cuidadoso al elegir a quién se lo ofrece. Intracept se considera cuando el
-          dolor es vertebrogénico, y no hacemos el procedimiento en pacientes que no cumplen los criterios.
+          El Dr. Baumgartner es uno de los médicos con experiencia en la ablación del nervio basivertebral en el área de
+          Houston. Conoce los datos publicados del procedimiento y es cuidadoso al elegir a quién se lo ofrece. Se
+          considera cuando el dolor es vertebrogénico, y no hacemos el procedimiento en pacientes que no cumplen los
+          criterios.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-charcoal-soft">{STAFF_NOTE_ES}</p>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <h2 className="text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
-          Para qué se usa Intracept.
+          Para qué se usa la ablación del nervio basivertebral (BVN).
         </h2>
         <p className="mt-3 text-sm text-charcoal-soft">Estas páginas están en inglés.</p>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -394,11 +395,11 @@ export default function SpanishIntraceptPage() {
               Artículo en inglés
             </span>
             <h3 className="mt-3 font-serif text-lg leading-tight text-navy">
-              Intracept Procedure for Chronic Low Back Pain
+              Ablación del nervio basivertebral (BVN) para el dolor de espalda crónico
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
-              El dolor vertebrogénico viene de los platillos vertebrales, no del disco ni de la faceta. Intracept
-              ablaciona el nervio basivertebral que lo transmite, y no implanta nada.
+              El dolor vertebrogénico viene de los platillos vertebrales, no del disco ni de la faceta. La ablación del
+              nervio basivertebral (BVN) actúa sobre ese nervio y no deja un implante.
             </p>
           </Link>
         </div>
