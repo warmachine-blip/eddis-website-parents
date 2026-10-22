@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { practice, primaryNav } from "@/lib/nav";
 import ContactSocialReveal from "@/components/contact-social-reveal";
+import LanguageSwitch from "@/components/language-switch";
+import { localeSwitchTarget, spanishVisibleNavItem } from "@/lib/spanish";
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
@@ -29,6 +31,13 @@ export default function SiteHeader() {
     setMobileGroup(null);
   };
 
+  const { isSpanish } = localeSwitchTarget(pathname);
+  const homeHref = isSpanish ? "/es" : "/";
+  const bookHref = isSpanish ? "/es/request-appointment" : "/request-appointment";
+  const bookLabel = isSpanish ? "Pedir cita" : "Schedule Appointment";
+  const menuLabel = isSpanish ? "Abrir o cerrar el menú" : "Toggle menu";
+  const callLabel = isSpanish ? `Llamar al ${practice.phone}` : `Call ${practice.phone}`;
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key !== "Escape") return;
@@ -43,20 +52,24 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-off-white/92 backdrop-blur-md [--header-h:6.0625rem] max-lg:landscape:[--header-h:3.8125rem]">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 py-2 pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] max-lg:landscape:py-1 sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] lg:gap-2 lg:py-2.5 xl:gap-6">
-        <Link href="/" className="shrink-0" onClick={closeMobile}>
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-1.5 py-2 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] max-lg:landscape:py-1 sm:gap-2 sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] lg:py-2.5 xl:gap-6">
+        <Link href={homeHref} className="min-w-0 shrink" onClick={closeMobile}>
           <Image
             src="/images/htx-pain-institute-logo.png"
             alt="HTx Pain Institute"
             width={144}
             height={96}
             sizes="120px"
-            className="h-20 w-auto max-lg:landscape:h-13"
+            className="h-auto max-h-12 w-auto max-w-full min-[400px]:max-h-16 min-[480px]:h-20 min-[480px]:max-h-none max-lg:landscape:max-h-13"
             priority
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:gap-6">
+        <nav
+          aria-label="Primary"
+          lang={isSpanish ? "en" : undefined}
+          className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:gap-6"
+        >
           {primaryNav.map((group) => (
             <div key={group.label} className="group relative">
               <Link
@@ -81,15 +94,19 @@ export default function SiteHeader() {
               <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 <div className="w-72 rounded-sm border border-line bg-off-white p-2 shadow-[0_18px_40px_-24px_rgba(15,26,46,0.35)]">
                   <div className="grid max-h-[min(70vh,44rem)] gap-0.5 overflow-y-auto">
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                    {group.items.map((item) => {
+                      const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={visible.href}
+                          lang={visible.lang}
+                          className="rounded-sm px-3 py-2 text-[13px] font-medium text-charcoal-soft transition-colors hover:bg-pearl hover:text-brass-text"
+                        >
+                          {visible.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -98,13 +115,15 @@ export default function SiteHeader() {
           <ContactSocialReveal />
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-5 lg:flex">
+        <div className="ml-auto flex shrink-0 items-center gap-3 lg:ml-0 lg:gap-4">
+          <LanguageSwitch />
           <Link
-            href="/request-appointment"
+            href={bookHref}
             data-analytics-location="header"
-            className="shrink-0 whitespace-nowrap border border-brass bg-navy px-2.5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep xl:px-5 xl:text-sm"
+            lang={isSpanish ? "es" : undefined}
+            className="hidden shrink-0 whitespace-nowrap border border-brass bg-navy px-2.5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-off-white transition-colors hover:bg-navy-deep lg:inline-block xl:px-5 xl:text-sm"
           >
-            Schedule Appointment
+            {bookLabel}
           </Link>
         </div>
 
@@ -113,8 +132,8 @@ export default function SiteHeader() {
         <a
           href={practice.phoneHref} data-phone={practice.phone}
           data-analytics-location="header"
-          aria-label={`Call ${practice.phone}`}
-          className="ml-auto mr-2 flex h-11 w-11 items-center justify-center border border-line text-navy lg:hidden phone"
+          aria-label={callLabel}
+          className="flex h-11 w-11 shrink-0 items-center justify-center border border-line text-navy lg:hidden phone"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
@@ -124,10 +143,10 @@ export default function SiteHeader() {
         <button
           ref={toggleRef}
           type="button"
-          className="flex h-11 w-11 items-center justify-center border border-line text-navy lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center border border-line text-navy lg:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
-          aria-label="Toggle menu"
+          aria-label={menuLabel}
           onClick={() => (mobileOpen ? closeMobile() : setMobileOpen(true))}
         >
           <svg viewBox="0 0 20 16" className="h-4 w-5" fill="none" aria-hidden="true">
@@ -144,6 +163,7 @@ export default function SiteHeader() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
+          lang={isSpanish ? "en" : undefined}
           className="max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-line bg-off-white lg:hidden"
         >
           <ul className="divide-y divide-line px-6">
@@ -180,13 +200,21 @@ export default function SiteHeader() {
                   </div>
                   {expanded && (
                     <ul id={subId} className="pb-3 pl-2">
-                      {group.items.map((item) => (
-                        <li key={item.href}>
-                          <Link href={item.href} onClick={closeMobile} className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft">
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
+                      {group.items.map((item) => {
+                        const visible = spanishVisibleNavItem(item.href, item.label, isSpanish);
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              href={visible.href}
+                              lang={visible.lang}
+                              onClick={closeMobile}
+                              className="flex min-h-11 items-center py-2 text-sm text-charcoal-soft"
+                            >
+                              {visible.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </li>
@@ -207,12 +235,13 @@ export default function SiteHeader() {
               {practice.phone}
             </a>
             <Link
-              href="/request-appointment"
+              href={bookHref}
               data-analytics-location="header-menu"
+              lang={isSpanish ? "es" : undefined}
               onClick={closeMobile}
               className="border border-brass bg-navy px-5 py-3 text-center font-sans text-sm font-semibold uppercase tracking-wide text-off-white"
             >
-              Schedule Appointment
+              {bookLabel}
             </Link>
           </div>
         </nav>
