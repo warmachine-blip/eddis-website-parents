@@ -19,7 +19,7 @@ export const appointmentFaqs = [
   },
   {
     q: "Which insurance plans do you take?",
-    a: `We work with Medicare, Medicare Advantage plans, Texas Medicaid, TRICARE Prime through US Family Health Plan, most major commercial plans, workers' compensation and personal injury cases. Self-pay is also available. See the full list on our insurance page, and call ${phone} to confirm your benefits.`,
+    a: `We work with Medicare, many Medicare Advantage plans, Texas Medicaid, TRICARE Prime through US Family Health Plan, most major commercial plans, workers' compensation and personal injury cases. Self-pay is also available. See the full list on our insurance page, and call ${phone} to confirm your benefits.`,
   },
   {
     q: "¿Hablan español?",

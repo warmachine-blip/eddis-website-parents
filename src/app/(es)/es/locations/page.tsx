@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 import { spanishLocation } from "@/lib/location-details-es";
 import { locationDetails } from "@/lib/location-details";
 import { offices, practice } from "@/lib/nav";
-import { HOURS_CLOSED_ES, HOURS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
+import { HOURS_CLOSED_ES, HOURS_ES_STANDALONE, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 const communities = Object.keys(locationDetails).map((slug) => {
   const page = spanishLocation(slug)!;
@@ -66,7 +66,7 @@ export default function SpanishLocationsPage() {
                 </a>
               </address>
               <p className="mt-3 text-sm text-charcoal-soft">
-                {HOURS_ES}
+                {HOURS_ES_STANDALONE}
                 <br />
                 {HOURS_CLOSED_ES}
               </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqBlock from "@/components/faq-block";
+import FirstVisitGuide from "@/components/first-visit-guide";
 import NimblrScheduler from "@/components/nimblr-scheduler";
 import RescheduleCallout from "@/components/reschedule-callout";
 import { appointmentFaqs } from "@/lib/page-faqs";
@@ -124,6 +125,8 @@ export default function RequestAppointmentPage() {
           </div>
         </div>
       </div>
+
+      <FirstVisitGuide />
 
       <FaqBlock
         heading="Common questions"

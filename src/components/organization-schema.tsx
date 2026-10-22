@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/site";
+import { reviews } from "@/lib/reviews";
 import { facebookUrl, instagramUrl } from "@/lib/social";
 import { youtubeChannelUrl } from "@/lib/video-library";
 import { offices, openingHours, practice, serviceAreas } from "@/lib/nav";
@@ -81,8 +82,9 @@ export default function OrganizationSchema() {
         foundingDate: foundingYear,
         areaServed,
         // The organization's own profiles. The doctor's personal LinkedIn is
-        // sameAs on his Person node, not here.
-        sameAs: [facebookUrl, instagramUrl, youtubeChannelUrl],
+        // sameAs on his Person node, not here. googleProfileUrl is the Maps
+        // link already used on the site. It is a search URL, not a place_id.
+        sameAs: [facebookUrl, instagramUrl, youtubeChannelUrl, reviews.googleProfileUrl],
         department: offices.map((office) => ({ "@id": clinicId(office) })),
       },
       physicianNode(),

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/breadcrumb";
 import FaqAccordion from "@/components/faq-accordion";
+import FirstVisitGuide from "@/components/first-visit-guide";
 import NimblrScheduler from "@/components/nimblr-scheduler";
 import RescheduleCallout from "@/components/reschedule-callout";
 import { practice } from "@/lib/nav";
@@ -44,7 +45,7 @@ const appointmentFaqs = [
   },
   {
     q: "¿Qué planes de seguro aceptan?",
-    a: "Trabajamos con Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los principales planes comerciales, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros y llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "Trabajamos con Medicare, muchos planes Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los principales planes comerciales, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros y llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿Hablan español?",
@@ -146,6 +147,8 @@ export default function SpanishRequestAppointmentPage() {
           </div>
         </div>
       </div>
+
+      <FirstVisitGuide locale="es" />
 
       <section className="bg-navy-50">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

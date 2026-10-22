@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { practice } from "./nav.ts";
 
 /**
  * English pages that have a Spanish twin. Anything else sends the ES control
@@ -42,7 +43,9 @@ export type SpanishRoute = (typeof SPANISH_ROUTES)[number];
 export const STAFF_NOTE_ES =
   "El Dr. Baumgartner atiende en inglés. El personal de la clínica habla español y puede ayudarle a programar la cita y a resolver sus preguntas.";
 
-export const HOURS_ES = "Lunes a viernes, de 7:00 a.m. a 5:00 p.m.";
+export const HOURS_ES = "lunes a viernes, de 7:00 a.m. a 5:00 p.m.";
+/** Same hours when the line starts on its own or after a period. */
+export const HOURS_ES_STANDALONE = `${HOURS_ES.charAt(0).toUpperCase()}${HOURS_ES.slice(1)}`;
 export const HOURS_CLOSED_ES = "Sábado y domingo: cerrado.";
 
 /** The insurance-page requirement, in the Spanish patients actually use. */
@@ -62,6 +65,18 @@ export function languageAlternates(en: string, es: string): NonNullable<Metadata
   };
 }
 
+/**
+ * Same card as the English site (`public/images/og/htx-pain-institute-card.jpg`).
+ * A page `openGraph` object replaces the layout's, so the image has to live
+ * here or /es ships with no share image. Alt text is for the Spanish pages.
+ */
+const SPANISH_SHARE_IMAGE = {
+  url: "/images/og/htx-pain-institute-card.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Edward Baumgartner Jr., MD, junto al logotipo de HTx Pain Institute",
+};
+
 export function spanishPageMetadata(opts: {
   title: string;
   description: string;
@@ -76,8 +91,15 @@ export function spanishPageMetadata(opts: {
       canonical: opts.es,
     },
     openGraph: {
+      type: "website",
+      siteName: practice.name,
       locale: "es_US",
       url: opts.es,
+      images: [SPANISH_SHARE_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [SPANISH_SHARE_IMAGE],
     },
   };
 }
