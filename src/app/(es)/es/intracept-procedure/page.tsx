@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     en: "/intracept-procedure",
     es: "/es/intracept-procedure",
   }),
+  title: { absolute: "Ablación del nervio basivertebral (BVN) · HTx Pain" },
   openGraph: {
     locale: "es_US",
     url: "/es/intracept-procedure",
@@ -34,14 +35,14 @@ export const metadata: Metadata = {
 const steps = [
   "La resonancia magnética (MRI) confirma cambios de Modic tipo 1 o tipo 2 en los platillos vertebrales, el signo característico del dolor vertebrogénico.",
   "Por un punto de acceso pequeño, se guía una sonda hasta el cuerpo vertebral.",
-  "Se ablaciona el nervio basivertebral con energía de radiofrecuencia controlada.",
+  "Se realiza la ablación del nervio basivertebral con energía de radiofrecuencia controlada.",
   "No queda nada implantado. El hueso cicatriza alrededor de la zona tratada.",
 ];
 
 const whoIsItFor = [
   "Dolor lumbar crónico de 6 meses o más.",
   "Cambios de Modic en la MRI, compatibles con dolor vertebrogénico.",
-  "El cuidado conservador, incluida la terapia física y las inyecciones, no ha funcionado.",
+  "El tratamiento conservador, incluidas la terapia física y las inyecciones, no ha funcionado.",
   "Pacientes que consideran un procedimiento sin implante y sin fusión.",
 ];
 
@@ -55,26 +56,26 @@ const whatToExpect = [
 const recovery = [
   "Actividad ligera en 1 a 2 días.",
   "El tiempo para volver al trabajo varía. Su médico le indicará según su trabajo y su recuperación.",
-  "Cualquier cambio se sigue durante los meses posteriores al tratamiento. Los resultados varían.",
+  "Su evolución se revisa durante los meses posteriores al tratamiento. Los resultados varían.",
   "Hay estudios que han seguido a pacientes hasta cinco años después de un solo tratamiento. Los resultados varían de una persona a otra.",
 ];
 
 const risks = [
-  "Molestia leve en la zona lumbar del acceso, durante varios días.",
+  "Molestia leve en la parte baja de la espalda, en el sitio de acceso, durante varios días.",
   "Aumento temporal del dolor durante las primeras 1 a 2 semanas, mientras avanza la cicatrización.",
   "Riesgo poco frecuente de infección, sangrado o lesión de un nervio.",
-  "El procedimiento puede no aliviar el dolor si este no es realmente vertebrogénico. La selección cuidadosa importa.",
+  "Es posible que el procedimiento no alivie el dolor si este no es realmente vertebrogénico. Por eso es importante elegir con cuidado a cada paciente.",
   "No hay complicaciones a largo plazo relacionadas con implantes, porque no los hay.",
 ];
 
 const faqs = [
   {
     q: "¿En qué se diferencia de la ablación por radiofrecuencia?",
-    a: "La ablación por radiofrecuencia habitual actúa sobre los pequeños nervios de la rama medial, fuera de la columna. La ablación del nervio basivertebral actúa sobre otro nervio, dentro de la vértebra, que lleva señales de dolor vertebrogénico que la ablación tradicional no trata.",
+    a: "La ablación por radiofrecuencia habitual actúa sobre los pequeños nervios de la rama medial, fuera de la columna. La ablación del nervio basivertebral (BVN) actúa sobre otro nervio, el nervio basivertebral, que está dentro de la vértebra y lleva señales de dolor vertebrogénico que la ablación por radiofrecuencia tradicional no trata.",
   },
   {
     q: "¿Voy a necesitar una fusión después?",
-    a: "La ablación del nervio basivertebral no quita ni fusiona nada, así que deja la columna como está. Algunos pacientes que estaban considerando una fusión eligen este procedimiento primero. Que alguna vez se necesite una fusión depende de su condición, y esta ablación no la descarta.",
+    a: "La ablación del nervio basivertebral (BVN) no quita ni fusiona nada, así que deja la columna como está. Algunos pacientes que estaban considerando una fusión eligen este procedimiento primero. Que en el futuro necesite o no una fusión depende de su condición, y este procedimiento no descarta esa posibilidad.",
   },
   {
     q: "¿Qué son los cambios de Modic?",
@@ -82,7 +83,7 @@ const faqs = [
   },
   {
     q: "¿Queda algo en mi cuerpo después?",
-    a: "No. La ablación del nervio basivertebral no deja implante. El nervio basivertebral se calienta y se ablaciona con energía de radiofrecuencia controlada. No se quita ni se extirpa nada, y no queda ningún aparato. Con el tiempo, el hueso cicatriza alrededor de la zona tratada.",
+    a: "No. La ablación del nervio basivertebral (BVN) no deja implante. El nervio basivertebral se trata con calor (ablación) mediante energía de radiofrecuencia controlada. No se quita ni se extirpa nada, y no queda ningún aparato. Con el tiempo, el hueso cicatriza alrededor de la zona tratada.",
   },
   {
     q: "¿Cuánto dura el alivio?",
@@ -94,11 +95,11 @@ const faqs = [
   },
   {
     q: "¿El seguro cubre la ablación del nervio basivertebral?",
-    a: "La cubre Medicare y una lista creciente de seguros comerciales, en particular cuando la imagen confirma cambios de Modic y el cuidado conservador no ha funcionado. Nosotros gestionamos la autorización previa. Llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "La cubren Medicare y una lista creciente de seguros comerciales, en particular cuando la imagen confirma cambios de Modic y el tratamiento conservador no ha funcionado. Nosotros nos encargamos de la autorización previa. Llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿HTx Pain Institute ofrece la ablación del nervio basivertebral?",
-    a: "Sí. El Dr. Baumgartner la realiza en nuestro consultorio del área de Houston. Llame al (832) 960-7160 para preguntar si los hallazgos de su resonancia podrían encajar.",
+    a: "Sí. El Dr. Baumgartner realiza la ablación del nervio basivertebral (BVN) en nuestro consultorio del área de Houston. Llame al (832) 960-7160 para preguntar si los resultados de su resonancia indican que podría ser una opción para usted.",
   },
 ];
 
@@ -154,7 +155,7 @@ export default function SpanishIntraceptPage() {
             Ablación del nervio basivertebral (BVN)
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-off-white/90">
-            Un procedimiento FDA-cleared para el dolor lumbar vertebrogénico.
+            Un procedimiento autorizado por la FDA para el dolor lumbar vertebrogénico.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-off-white/80">{STAFF_NOTE_ES}</p>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -183,8 +184,8 @@ export default function SpanishIntraceptPage() {
             <IconBadge icon="bolt" tone="cyan" />
             <SectionHeading
               eyebrow="Resumen del tratamiento"
-              title="Construido en torno al paciente, no al procedimiento."
-              lead="La ablación del nervio basivertebral (BVN) es un procedimiento FDA-cleared y sin implante para el dolor lumbar crónico de origen vertebrogénico, un dolor que nace en los platillos vertebrales, y no en el disco ni en los músculos. Usa energía de radiofrecuencia para ablacionar el nervio basivertebral. También se conoce como Intracept. Los resultados varían de una persona a otra."
+              title="Pensado para el paciente, no para el procedimiento."
+              lead="La ablación del nervio basivertebral (BVN) es un procedimiento autorizado por la FDA y sin implante para el dolor lumbar crónico de origen vertebrogénico, es decir, un dolor que nace en los platillos vertebrales (las superficies de arriba y de abajo de cada vértebra), y no en el disco ni en los músculos. Usa energía de radiofrecuencia para realizar la ablación del nervio basivertebral. También se conoce como Intracept. Los resultados varían de una persona a otra."
             />
           </div>
           <div className="lg:col-span-5">
@@ -249,10 +250,10 @@ export default function SpanishIntraceptPage() {
             <div className="lg:col-span-5">
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">
                 <span className="h-px w-8 bg-current opacity-50" />
-                Riesgos y efectos
+                Riesgos y efectos secundarios
               </span>
               <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-navy sm:text-4xl">
-                Con honestidad sobre lo que puede esperar.
+                Le hablamos con honestidad sobre lo que puede esperar.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
                 Todo procedimiento tiene algún riesgo. Lo explicamos con palabras claras en la consulta y otra vez el
@@ -284,7 +285,7 @@ export default function SpanishIntraceptPage() {
                 Respuestas directas, sin jerga.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                Si su pregunta no está aquí, hágala en la consulta. Le daremos la misma respuesta con palabras claras.
+                Si su pregunta no está aquí, hágala en su consulta y se la responderemos con palabras claras.
                 {` ${STAFF_NOTE_ES}`}
               </p>
             </div>
@@ -306,9 +307,9 @@ export default function SpanishIntraceptPage() {
               Verificamos sus beneficios antes de la visita.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-charcoal-soft">
-              La ablación del nervio basivertebral la cubre Medicare y muchos seguros comerciales cuando la MRI muestra cambios de Modic tipo 1 o
-              tipo 2 en los platillos y el cuidado conservador no ha funcionado. La cobertura y la autorización previa
-              cambian según el plan. Nuestro equipo gestiona el proceso. Llame al (832) 960-7160 para confirmar sus
+              Medicare y muchos seguros comerciales cubren la ablación del nervio basivertebral (BVN) cuando la resonancia magnética (MRI) muestra cambios de Modic tipo 1 o
+              tipo 2 en los platillos vertebrales y el tratamiento conservador no ha funcionado. La cobertura y la autorización previa
+              varían según el plan. Nuestro equipo se encarga del proceso. Llame al (832) 960-7160 para confirmar sus
               beneficios.
             </p>
             <Link
@@ -339,7 +340,7 @@ export default function SpanishIntraceptPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <SectionHeading
           eyebrow="Experiencia"
-          title="El estándar del cuidado con la ablación del nervio basivertebral (BVN), llevado al lugar que le corresponde."
+          title="Un alto estándar de cuidado en la ablación del nervio basivertebral (BVN)."
         />
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-charcoal-soft">
           El Dr. Baumgartner es uno de los médicos con experiencia en la ablación del nervio basivertebral en el área de
@@ -398,7 +399,7 @@ export default function SpanishIntraceptPage() {
               Ablación del nervio basivertebral (BVN) para el dolor de espalda crónico
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
-              El dolor vertebrogénico viene de los platillos vertebrales, no del disco ni de la faceta. La ablación del
+              El dolor vertebrogénico viene de los platillos vertebrales, no del disco ni de las articulaciones facetarias. La ablación del
               nervio basivertebral (BVN) actúa sobre ese nervio y no deja un implante.
             </p>
           </Link>
@@ -409,8 +410,8 @@ export default function SpanishIntraceptPage() {
         <div className="mx-auto max-w-7xl px-6 pt-10 text-center lg:px-10">
           <p className="font-sans text-xs uppercase tracking-wide text-off-white/60">Revisión médica</p>
           <p className="mt-1 text-sm text-off-white/70">
-            Revisado por Edward Baumgartner Jr., MD. Última revisión: 10 de septiembre de 2026. La información de esta
-            página no es consejo médico. Consulte siempre a su médico.
+            Contenido médico revisado en inglés por Edward Baumgartner Jr., MD. Última revisión: 10 de septiembre de 2026. La información de esta
+            página no sustituye el consejo médico. Consulte siempre a su médico.
           </p>
         </div>
         <EsFinalCta />

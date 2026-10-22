@@ -21,11 +21,11 @@ const nextSteps = [
   },
   {
     number: "2",
-    body: "Nuestro equipo verifica sus beneficios del seguro por adelantado, para que no haya sorpresas. Si hay un problema de cobertura, le llamamos antes de la cita.",
+    body: "Nuestro equipo verifica sus beneficios del seguro por adelantado, para que no haya sorpresas. Si hay algún problema de cobertura, nos comunicaremos con usted antes de su cita.",
   },
   {
     number: "3",
-    body: "Usted llega, completa un ingreso breve y se reúne con el Dr. Baumgartner o con Allison Turner, DNP.",
+    body: "Usted llega, llena unos formularios breves de registro y se reúne con el Dr. Baumgartner o con Allison Turner, DNP.",
   },
   {
     number: "4",
@@ -36,15 +36,15 @@ const nextSteps = [
 const appointmentFaqs = [
   {
     q: "¿Qué debo llevar a la primera visita?",
-    a: "Su identificación con foto, la tarjeta del seguro, una lista de sus medicamentos actuales, y cualquier informe o disco de estudios de imagen y registros de tratamientos previos para el dolor. Si le han operado la columna o una articulación, lleve el informe de la cirugía si lo tiene.",
+    a: "Su identificación con foto, la tarjeta del seguro, una lista de sus medicamentos actuales y cualquier informe o disco (CD) de sus estudios de imagen, además de los expedientes de tratamientos anteriores para el dolor. Si le han operado la columna o una articulación, traiga el informe de la cirugía si lo tiene.",
   },
   {
-    q: "¿Necesito una referencia?",
-    a: "Algunos planes de seguro la piden y muchos no. Nuestro equipo lo verifica cuando revisa sus beneficios antes de la visita. Llame al (832) 960-7160 para confirmar sus beneficios.",
+    q: "¿Necesito un referido de mi médico?",
+    a: "Algunos planes de seguro lo piden y muchos no. Nuestro equipo lo verifica cuando revisa sus beneficios antes de la visita. Llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿Qué planes de seguro aceptan?",
-    a: "Trabajamos con Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los planes comerciales grandes, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros, y llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "Trabajamos con Medicare, planes de Medicare Advantage, Texas Medicaid, TRICARE Prime por medio de US Family Health Plan, la mayoría de los principales planes comerciales, compensación laboral y casos de lesiones personales. También se puede pagar por cuenta propia. Vea la lista completa en la página de seguros y llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿Hablan español?",
@@ -52,11 +52,11 @@ const appointmentFaqs = [
   },
   {
     q: "¿Qué oficina me conviene?",
-    a: "Elija la que le quede más cerca. La oficina de Houston está en 13323 Dotson Rd, Suite 200, en el área de Willowbrook, y la de Humble en 1485 FM 1960 Bypass Rd. E, Suite 100. Las dos abren de lunes a viernes, de 7:00 a. m. a 5:00 p. m.",
+    a: "Elija la que le quede más cerca. La oficina de Houston está en 13323 Dotson Rd, Suite 200, en el área de Willowbrook, y la de Humble en 1485 FM 1960 Bypass Rd. E, Suite 100. Las dos abren de lunes a viernes, de 7:00 a.m. a 5:00 p.m.",
   },
   {
-    q: "Vivo fuera de Houston. ¿Pueden verme?",
-    a: "Sí. Llámenos antes de reservar para decirle qué registros y estudios debe enviar antes. La clínica puede revisar los registros antes de que un paciente de fuera de la ciudad viaje, para que la primera visita se centre en un diagnóstico y un plan.",
+    q: "Vivo fuera de Houston. ¿Pueden atenderme?",
+    a: "Sí. Llámenos antes de reservar y le diremos qué expedientes médicos y estudios de imagen debe enviar con anticipación. La clínica puede revisar sus expedientes antes de que usted viaje, para que la primera visita se centre en el diagnóstico y el plan.",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function SpanishRequestAppointmentPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-text">¿Más rápido?</p>
               <h2 className="mt-1.5 font-serif text-xl text-navy">Llámenos directamente.</h2>
               <p className="mt-1.5 text-sm text-charcoal-soft">
-                La recepción por lo general puede agendarle la cita en el momento, y responder preguntas sobre su visita.
+                Por lo general, la recepción puede agendarle la cita en el momento y responder cualquier pregunta sobre su visita.
               </p>
               <a
                 href={practice.phoneHref}
@@ -115,7 +115,7 @@ export default function SpanishRequestAppointmentPage() {
                 {practice.phone}
               </a>
               <p className="mt-4 text-sm leading-relaxed text-charcoal-soft">
-                {HOURS_ES} {HOURS_CLOSED_ES} Willowbrook y Humble.
+                Horario de ambas oficinas (Willowbrook y Humble): {HOURS_ES.toLowerCase()}. {HOURS_CLOSED_ES}
               </p>
             </div>
 
@@ -135,8 +135,9 @@ export default function SpanishRequestAppointmentPage() {
 
             <div className="space-y-4 rounded-2xl border border-line bg-white p-7">
               <p className="text-sm leading-relaxed text-charcoal-soft">
-                Las citas en línea se programan por Nimblr, nuestro calendario. Lo que usted escribe allí llega a Nimblr
-                y a nuestra oficina para reservar la visita. Guarde los detalles médicos para la llamada o para la visita.
+                Las citas en línea se programan por medio de Nimblr, nuestro calendario. Lo que usted escriba allí llega a Nimblr
+                y a nuestra oficina para reservar la visita. Por favor, no escriba detalles médicos allí. Puede compartirlos
+                durante la llamada o en su visita.
               </p>
               <p className="text-sm leading-relaxed text-charcoal-soft">
                 Por lo general hay consultas en la misma semana.

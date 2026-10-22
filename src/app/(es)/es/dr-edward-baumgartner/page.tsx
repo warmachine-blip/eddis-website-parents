@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     en: "/dr-edward-baumgartner",
     es: "/es/dr-edward-baumgartner",
   }),
-  title: { absolute: "Dr. Edward Baumgartner Jr., MD · Dolor en Houston" },
+  title: { absolute: "Dr. Edward Baumgartner · Especialista en dolor en Houston" },
 };
 
 const facts = [
@@ -34,21 +34,21 @@ const education = [
   "Doctor en medicina (M.D.), University of Texas Health Science Center at Houston. Recibió la beca de investigación Alpha Omega Alpha Research Fellowship.",
   "Internado de cirugía general (2 años), University of Illinois at Chicago / Mount Sinai Hospital Medical Center.",
   "Residencia en anestesiología, Rush University Medical Center, Chicago.",
-  "Fellowship en medicina del dolor, Rush University Medical Center, Chicago.",
+  "Subespecialidad (fellowship) en medicina del dolor, Rush University Medical Center, Chicago.",
   "Profesor adjunto, Rush Health System.",
 ];
 
 const toolkit = [
   "Ablación del nervio basivertebral (BVN) para el dolor lumbar vertebrogénico.",
   "Estimulación de la médula espinal (prueba y implante permanente).",
-  "Ablación por radiofrecuencia: cervical, lumbar, articulación SI y genicular.",
+  "Ablación por radiofrecuencia: cervical, lumbar, de la articulación sacroilíaca (SI) y de rodilla (nervios geniculares).",
   "Fusión de la articulación SI (LinQ y otros sistemas) y fusión interespinosa lumbar Minuteman.",
   "Cifoplastia para fracturas vertebrales por compresión.",
   "Procedimiento MILD para estenosis espinal lumbar.",
   "Inyecciones epidurales de esteroides y bloqueos nerviosos selectivos.",
   "Bloqueos de nervios periféricos, incluido el supraescapular para el hombro.",
   "Inyecciones de articulaciones con guía de ultrasonido: rodilla, cadera y hombro.",
-  "Terapia con PRP para tendinopatía y para algunos dolores de articulación.",
+  "Terapia con PRP para problemas de tendones (tendinopatía) y algunos tipos de dolor articular.",
 ];
 
 const servicesProvided = [
@@ -66,11 +66,11 @@ const servicesProvided = [
 const physicianFaqs = [
   {
     q: "¿Dónde atiende el Dr. Baumgartner?",
-    a: "En las dos oficinas de HTx Pain Institute: 13323 Dotson Rd, Suite 200, Houston, TX 77070 (área de Willowbrook) y 1485 FM 1960 Bypass Rd. E, Suite 100, Humble, TX 77338. Las dos abren de lunes a viernes, de 7:00 a. m. a 5:00 p. m.",
+    a: "En las dos oficinas de HTx Pain Institute: 13323 Dotson Rd, Suite 200, Houston, TX 77070 (área de Willowbrook) y 1485 FM 1960 Bypass Rd. E, Suite 100, Humble, TX 77338. Las dos abren de lunes a viernes, de 7:00 a.m. a 5:00 p.m.",
   },
   {
-    q: "¿El Dr. Baumgartner está certificado por la junta?",
-    a: "Sí. Tiene certificación en anestesiología y en medicina del dolor.",
+    q: "¿El Dr. Baumgartner tiene certificación de especialidad (board certified)?",
+    a: "Sí. Está certificado en anestesiología y en medicina del dolor.",
   },
   {
     q: "¿Qué procedimientos realiza?",
@@ -78,11 +78,11 @@ const physicianFaqs = [
   },
   {
     q: "¿Qué seguros acepta el consultorio?",
-    a: "Medicare, muchos planes de Medicare Advantage, Texas Medicaid, la mayoría de los planes comerciales grandes y compensación laboral. Los planes cambian, así que llame al (832) 960-7160 para confirmar sus beneficios.",
+    a: "Medicare, muchos planes de Medicare Advantage, Texas Medicaid, la mayoría de los principales planes comerciales y compensación laboral. Los planes cambian, así que llame al (832) 960-7160 para confirmar sus beneficios.",
   },
   {
     q: "¿En la oficina hablan español?",
-    a: "Sí, el personal puede ayudarle en español. El Dr. Baumgartner atiende en inglés. Hablamos español.",
+    a: "Sí. El personal de la clínica puede ayudarle en español. El Dr. Baumgartner atiende en inglés.",
   },
   {
     q: "¿Cuál es su número NPI?",
@@ -90,7 +90,7 @@ const physicianFaqs = [
   },
   {
     q: "¿Dónde se formó?",
-    a: "En Texas A&M University (licenciatura), en University of Texas Health Science Center at Houston (M.D.) y en Rush University Medical Center, en Chicago (residencia en anestesiología y fellowship en medicina del dolor).",
+    a: "En Texas A&M University (licenciatura), en University of Texas Health Science Center at Houston (M.D.) y en Rush University Medical Center, en Chicago (residencia en anestesiología y subespecialidad en medicina del dolor).",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function SpanishDoctorPage() {
             dark
             items={[
               { label: "Inicio", href: "/es" },
-              { label: "El doctor", href: "/about-us" },
+              { label: "Quiénes somos", href: "/about-us" },
               { label: "Edward Baumgartner Jr., MD" },
             ]}
           />
@@ -261,7 +261,7 @@ export default function SpanishDoctorPage() {
                   <p>
                     El Dr. Baumgartner pone una atención particular en los pacientes a quienes les han dicho que la
                     única opción que les queda es una cirugía de columna: personas que ya pasaron por terapia física,
-                    inyecciones y cuidado conservador sin un alivio que se mantuviera, y que buscan otro camino.
+                    inyecciones y otros tratamientos conservadores sin un alivio duradero, y que buscan otro camino.
                   </p>
                   <p>Su conjunto de procedimientos cubre el espectro actual de la medicina intervencionista del dolor:</p>
                 </div>
@@ -279,16 +279,15 @@ export default function SpanishDoctorPage() {
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Filosofía de cuidado</h2>
                 <div className="mt-5 space-y-4 text-base leading-relaxed text-charcoal-soft">
                   <p>
-                    El Dr. Baumgartner fundó el consultorio después de conocer la realidad de la práctica grupal, y de
-                    concluir que un cuidado centrado en el paciente exigía construir otro tipo de consultorio desde
+                    El Dr. Baumgartner fundó el consultorio después de conocer de cerca cómo funciona un grupo médico y de
+                    concluir que, para poner al paciente primero, tenía que construir otro tipo de consultorio desde
                     cero. Cree que la mejor medicina del dolor une la{" "}
                     <span className="font-semibold text-navy">excelencia técnica</span> con un{" "}
                     <span className="font-semibold text-navy">criterio clínico sin prisa</span>: el tiempo para entender
                     el cuadro completo antes de recomendar un plan.
                   </p>
                   <p className="font-serif text-xl italic leading-snug text-brass-text">
-                    «Precisión. Alivio duradero.» es más que un lema. Es el estándar que él se exige con cada paciente.
-                    En inglés, el lema del consultorio es «Precision. Lasting Relief.»
+                    "Precisión. Alivio duradero." es más que un lema. Es el estándar que él se exige con cada paciente.
                   </p>
                 </div>
               </div>
@@ -304,7 +303,7 @@ export default function SpanishDoctorPage() {
                     </Link>
                     , una organización 501(c)(3) que cuida a niños huérfanos en Filipinas. El consultorio apoya a
                     Ima&apos;s Home desde hace doce años y ha sido el patrocinador principal de su carrera anual de 5K
-                    durante los últimos cinco. Su esposa, Tatyana, forma parte de la junta directiva.
+                    durante los últimos cinco años. Su esposa, Tatyana, forma parte de la junta directiva.
                   </p>
                   <p>
                     El consultorio también apoya económicamente a la{" "}
@@ -328,8 +327,8 @@ export default function SpanishDoctorPage() {
               <div>
                 <h2 className="font-serif text-2xl leading-tight text-navy sm:text-3xl">Fuera de la clínica</h2>
                 <p className="mt-5 text-base leading-relaxed text-charcoal-soft">
-                  De Houston de toda la vida, el Dr. Baumgartner se formó en Chicago y volvió a casa para servir a su
-                  comunidad. Fuera de la clínica, le gusta correr distancias largas y pasar tiempo con su familia.
+                  Houstoniano de toda la vida, el Dr. Baumgartner se formó en Chicago y volvió a casa para atender a su
+                  comunidad. Fuera de la clínica, le gusta correr largas distancias y pasar tiempo con su familia.
                 </p>
               </div>
             </div>

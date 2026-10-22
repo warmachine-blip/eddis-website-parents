@@ -19,7 +19,7 @@ export type SpanishRoute = (typeof SPANISH_ROUTES)[number];
 export const STAFF_NOTE_ES =
   "El Dr. Baumgartner atiende en inglés. El personal de la clínica habla español y puede ayudarle a programar la cita y a resolver sus preguntas.";
 
-export const HOURS_ES = "Lunes a viernes, 7:00 a. m. a 5:00 p. m.";
+export const HOURS_ES = "Lunes a viernes, de 7:00 a.m. a 5:00 p.m.";
 export const HOURS_CLOSED_ES = "Sábado y domingo: cerrado.";
 
 /** The insurance-page requirement, in the Spanish patients actually use. */

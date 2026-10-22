@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   ...spanishPageMetadata({
     title: "Dolor en Houston y Humble",
     description:
-      "Medicina del dolor con doble certificación, con el Dr. Edward Baumgartner Jr., MD, en Houston (Willowbrook) y Humble. A menudo hay consultas en la misma semana.",
+      "Especialista en dolor con doble certificación: Dr. Edward Baumgartner Jr., MD, en Houston (Willowbrook) y Humble. A menudo hay consultas en la misma semana.",
     en: "/",
     es: "/es",
   }),
-  title: { absolute: "HTx Pain Institute · Médico del dolor en Houston, TX" },
+  title: { absolute: "HTx Pain Institute · Especialista en dolor en Houston, TX" },
 };
 
 const heroStats: { value: string; label: string; href?: string }[] = [
@@ -36,7 +36,7 @@ const heroStats: { value: string; label: string; href?: string }[] = [
 const valueProps = [
   { title: "Con guía de imagen", subtitle: "Procedimientos de precisión" },
   { title: "La misma semana", subtitle: "Citas" },
-  { title: "Concierge", subtitle: "Experiencia del paciente" },
+  { title: "Atención personalizada", subtitle: "Para cada paciente" },
   { title: "Dentro de la red", subtitle: "Principales aseguradoras" },
 ];
 
@@ -46,7 +46,7 @@ const credentials = [
     title: "Doble certificación",
     subtitle: "Anestesiología y medicina del dolor",
   },
-  { icon: "cap" as const, title: "Rush University", subtitle: "Residencia y fellowship" },
+  { icon: "cap" as const, title: "Rush University", subtitle: "Residencia y subespecialidad" },
   {
     icon: "award" as const,
     title: "Beca de investigación",
@@ -62,15 +62,15 @@ const credentials = [
 const whyHtx = [
   {
     title: "Doble certificación",
-    body: "Anestesiología y medicina del dolor: las credenciales que indican tanto el dominio técnico como una subespecialidad enfocada.",
+    body: "Anestesiología y medicina del dolor: una formación que refleja dominio técnico y una subespecialidad bien definida.",
   },
   {
     title: "El paciente primero",
-    body: "El Dr. Baumgartner dejó la práctica grupal para crear una clínica que da prioridad al tiempo, a escuchar y a los planes individuales, por encima del volumen de pacientes.",
+    body: "El Dr. Baumgartner dejó el trabajo en un grupo médico para crear una clínica que da prioridad al tiempo, a escuchar y a los planes personalizados, por encima del volumen de pacientes.",
   },
   {
     title: "Tratamientos de vanguardia",
-    body: "Estimulación de la médula espinal, ablación del nervio basivertebral (BVN), cifoplastia, ablación por radiofrecuencia (RFA) y PRP, el conjunto actual de tratamientos, aplicado con destreza.",
+    body: "Estimulación de la médula espinal, ablación del nervio basivertebral (BVN), cifoplastia, ablación por radiofrecuencia (RFA) y PRP: las opciones más actuales, aplicadas con destreza.",
   },
   {
     title: "Enfoque no invasivo",
@@ -93,7 +93,7 @@ const serviceCopy: Record<string, { title: string; summary: string }> = {
   },
   "si-joint-fusions": {
     title: "Fusión de la articulación SI",
-    summary: "Fusión mínimamente invasiva para la disfunción sacroilíaca que no ha respondido al cuidado conservador.",
+    summary: "Fusión mínimamente invasiva para la disfunción sacroilíaca que no ha mejorado con tratamiento conservador.",
   },
   "spinal-cord-stimulation-specialist": {
     title: "Estimulación de la médula espinal",
@@ -116,12 +116,12 @@ const serviceCopy: Record<string, { title: string; summary: string }> = {
   "minuteman-procedure": {
     title: "Fusión lumbar Minuteman",
     summary:
-      "Un implante interespinoso e interlaminar posterior que estabiliza un segmento lumbar doloroso, con poca alteración.",
+      "Implante interespinoso e interlaminar posterior que estabiliza un segmento lumbar doloroso de forma mínimamente invasiva.",
   },
   peptides: {
     title: "Bienestar y péptidos",
     summary:
-      "Terapias con péptidos y programas de pérdida de peso supervisados por el médico. La página de bienestar está por llegar.",
+      "Terapias con péptidos y programas de pérdida de peso supervisados por el médico. Pronto tendremos una página dedicada al bienestar.",
   },
 };
 
@@ -152,8 +152,8 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
     summary: "El motivo más frecuente por el que llegan los pacientes, y el área en la que más podemos ofrecer.",
   },
   "other-pain-conditions": {
-    title: "Otras condiciones de dolor",
-    summary: "Dolores de cabeza, dolor abdominal, dolor después de una cirugía, CRPS y más.",
+    title: "Otros tipos de dolor",
+    summary: "Dolores de cabeza, dolor abdominal, dolor después de una cirugía, síndrome de dolor regional complejo (CRPS) y más.",
   },
   sciatica: {
     title: "Ciática",
@@ -173,7 +173,7 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
   },
   "shoulder-injuries": {
     title: "Lesiones de hombro",
-    summary: "Manguito rotador, labrum y problemas de tendones: un diagnóstico preciso y un tratamiento con criterio.",
+    summary: "Problemas del manguito rotador, del labrum (cartílago del hombro) y de los tendones: diagnóstico preciso y tratamiento cuidadoso.",
   },
   migraines: {
     title: "Migraña y dolor de cabeza crónico",
@@ -185,7 +185,7 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
   },
   "sports-injuries": {
     title: "Lesiones deportivas",
-    summary: "Volver a su deporte, con estudios y tratamientos biológicos que respetan el tiempo de recuperación.",
+    summary: "Vuelva a su deporte con estudios y terapias regenerativas que respetan el tiempo de recuperación.",
   },
   "post-surgical-pain": {
     title: "Dolor después de una cirugía",
@@ -196,12 +196,12 @@ const conditionCopy: Record<string, { title: string; summary: string }> = {
 const injuries = [
   {
     title: "Lesiones y accidentes de trabajo",
-    body: "Atención integral para lesiones en el trabajo. Incluye tensión de espalda y cuello, esfuerzo repetitivo y dolor después del incidente. Coordinamos con las aseguradoras de compensación laboral y con los coordinadores del caso.",
+    body: "Atención integral para lesiones en el trabajo, como distensiones de espalda y cuello, lesiones por esfuerzo repetitivo y dolor después de un accidente. Trabajamos con las aseguradoras de compensación laboral y con los administradores de casos.",
     href: "/work-injuries-accidents",
   },
   {
     title: "Lesiones por accidente de auto",
-    body: "El latigazo cervical, los dolores de cabeza después de una conmoción y el dolor crónico de columna después de un choque están entre las lesiones que con más frecuencia quedan sin diagnosticar. Preparamos documentación detallada para los abogados.",
+    body: "El latigazo cervical, los dolores de cabeza después de una conmoción y el dolor crónico de columna después de un choque están entre las lesiones que más vemos sin diagnosticar. Preparamos documentación detallada para su abogado.",
     href: "/motor-vehicle-injuries",
   },
 ];
@@ -353,7 +353,7 @@ export default function SpanishHomePage() {
               Criado en Houston. Formado en Chicago. De vuelta en casa para poner al paciente primero.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft">
-              Edward Baumgartner Jr., MD fundó HTx Pain Institute con una misión clara: traer a Houston el conjunto
+              Edward Baumgartner Jr., MD, fundó HTx Pain Institute con una misión clara: traer a Houston el conjunto
               actual de tratamientos intervencionistas, con el tiempo, la precisión y el criterio que cada paciente
               merece. El mismo cuidado que él querría para su propia familia. Opera en Townsen Memorial Hospital, Houston
               Methodist Willowbrook y St. Luke&apos;s Health.
@@ -411,10 +411,10 @@ export default function SpanishHomePage() {
           <SectionHeading
             eyebrow="Qué tratamos"
             title="Cuidado intervencionista moderno, adaptado a su dolor."
-            lead="Procedimientos con guía de imagen, terapias regenerativas y el conjunto moderno y completo de la medicina del dolor, aplicados con la precisión y el criterio que cada paciente merece."
+            lead="Procedimientos con guía de imagen, terapias regenerativas y todas las opciones modernas de la medicina del dolor, aplicados con la precisión y el buen juicio que cada paciente merece."
           />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-charcoal-soft">
-            Estas páginas están en inglés, excepto la ablación del nervio basivertebral (BVN).
+            Estas páginas están en inglés, excepto la de ablación del nervio basivertebral (BVN).
           </p>
           <TiltCardGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {liveServices.map((service) => (
@@ -455,7 +455,7 @@ export default function SpanishHomePage() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <SectionHeading
           eyebrow="Centro del dolor"
-          title="Las condiciones que tratamos, con la experiencia que requieren."
+          title="Las condiciones que tratamos, con el conocimiento especializado que requieren."
           lead="Del dolor neuropático al dolor crónico de espalda, el dolor de rodilla y más: encuentre el diagnóstico que corresponde y el camino a seguir."
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-charcoal-soft">Estas páginas están en inglés.</p>
@@ -479,7 +479,7 @@ export default function SpanishHomePage() {
           <SectionHeading
             tone="dark"
             eyebrow="Por qué HTx Pain"
-            title="El estándar del cuidado del dolor, llevado al lugar que le corresponde."
+            title="Elevamos el estándar del cuidado del dolor."
             lead="Una clínica construida alrededor de la excelencia clínica y de la relación humana entre el médico y el paciente, sin ceder en ninguna de las dos."
           />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -514,7 +514,7 @@ export default function SpanishHomePage() {
           <SectionHeading
             eyebrow="Lesiones"
             title="Lesiones, accidentes y la documentación que su caso necesita."
-            lead="Cuidado especializado para lesiones de trabajo y accidentes de auto, coordinado con aseguradoras, abogados y coordinadores del caso."
+            lead="Cuidado especializado para lesiones de trabajo y accidentes de auto, coordinado con aseguradoras, abogados y administradores de casos."
           />
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {injuries.map((item) => (

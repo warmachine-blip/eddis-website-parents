@@ -9,7 +9,7 @@ import { practice } from "@/lib/nav";
 import { CONFIRM_BENEFITS_ES, spanishPageMetadata, STAFF_NOTE_ES } from "@/lib/spanish";
 
 export const metadata: Metadata = spanishPageMetadata({
-  title: "Seguros en Houston",
+  title: "Seguros y financiamiento en Houston",
   description:
     "Vea los planes que HTx Pain Institute puede verificar, como Medicare, Medicaid y seguros comerciales. Llame al (832) 960-7160 para confirmar sus beneficios.",
   en: "/insurance",
@@ -82,7 +82,7 @@ const steps = [
   },
   {
     title: "Le explicamos las cifras con palabras claras",
-    body: "Usted sabrá cuánto debe, qué cubre el plan y qué autorizaciones previas hacen falta, si es que hace falta alguna. Sin sorpresas al momento de pagar.",
+    body: "Usted sabrá cuánto debe, qué cubre su plan y si necesita alguna autorización previa. Sin sorpresas al momento de pagar.",
   },
   {
     title: "Financiamiento si lo necesita",
@@ -97,11 +97,11 @@ const faqs = [
   },
   {
     q: "¿Y la compensación laboral?",
-    a: "Podemos verificar las aseguradoras de compensación laboral de esta página y coordinar con los coordinadores del caso. Llame a la oficina para confirmar su reclamo.",
+    a: "Podemos verificar las aseguradoras de compensación laboral que aparecen en esta página y trabajar con los administradores de casos. Llame a la oficina para confirmar su reclamo.",
   },
   {
     q: "¿Y si mi plan no está en la lista?",
-    a: "Llame a la oficina. Un plan que no está en esta página igual necesita una verificación de beneficios, y un plan que sí está en la lista no es una promesa de cobertura.",
+    a: "Llame a la oficina. Un plan que no aparece en esta página también necesita una verificación de beneficios, y que un plan aparezca en la lista no garantiza la cobertura.",
   },
 ];
 
@@ -159,7 +159,7 @@ export default function SpanishInsurancePage() {
               lead={`La cobertura depende de su plan específico. ${CONFIRM_BENEFITS_ES}`}
             />
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-charcoal-soft">
-              Nuestro equipo verifica los beneficios durante el ingreso de pacientes nuevos.
+              Nuestro equipo verifica los beneficios durante el registro de pacientes nuevos.
             </p>
             <div className="mt-8 grid gap-10">
               {groups.map((group) => (
@@ -206,7 +206,7 @@ export default function SpanishInsurancePage() {
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
                   En casos de accidente de auto y de lesión de trabajo, trabajamos con aseguradoras, abogados y
-                  coordinadores del caso, y aceptamos cartas de protección. Díganoslo cuando llame.
+                  administradores de casos, y aceptamos cartas de protección (Letter of Protection). Avísenos cuando llame.
                 </p>
               </div>
             </div>
@@ -247,8 +247,8 @@ export default function SpanishInsurancePage() {
                 Algunos servicios, en particular las terapias regenerativas electivas como el PRP y ciertos programas
                 de bienestar, no los cubre la mayoría de los seguros. Damos{" "}
                 <span className="font-semibold text-navy">precios claros de pago por cuenta propia</span> desde el
-                principio y ofrecemos <span className="font-semibold text-navy">financiamiento con CareCredit</span> a
-                quien prefiera repartir el pago en el tiempo.
+                principio y ofrecemos <span className="font-semibold text-navy">financiamiento con CareCredit</span> para
+                quienes prefieran pagar a plazos.
               </p>
             </div>
             <div className="lg:col-span-5 lg:border-l lg:border-line lg:pl-10">
